@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="RP_WwiseProject_2024-03-18" GUID="{6A659D33-32ED-439B-B358-42E9E587746A}" Generator="2022.1.11.8414"/>
+	<CacheRoot>../../../../../Documents/Wwise Projects/RP_WwiseProject_2024-03-18/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{F96F540A-6CAB-4C81-8148-0F16A78B7A1F}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="Mac"/>
+		<Platform Name="Windows" GUID="{4A040FB2-0191-4D94-8606-D587C5115A9A}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{1E637822-199B-4DDD-8275-E7997C6E6C58}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{62965F7C-BE55-4F2E-097E-046C19EBE999}</FileHash>
+</ProjectInfo>
