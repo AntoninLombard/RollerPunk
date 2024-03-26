@@ -213,16 +213,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27bd44d9d09ce143885c90940986127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardAccel: 1
-  brakingAccel: 1
-  turningRate: 1
+  forwardAccel: 5
+  brakingRatio: 0
+  turningRate: 5
   gravityStrength: 1
   isAccelerating: 0
   isBraking: 0
   isTurning: 0
-  acceleration: 0
-  turningValue: 0
-  character: {fileID: 0}
+  isGrounded: 0
+  speed: 0
+  currentSpeed: 0
+  turningInput: 0
+  accelInput: 0
+  character: {fileID: 7419748931926834056}
   rb: {fileID: 7070500973027750270}
 --- !u!1 &3384846639625369860
 GameObject:
