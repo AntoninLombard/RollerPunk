@@ -7,12 +7,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region VARIABLES
-    
+
     [Header("DRIVING VALUES")]
+    [SerializeField] private float maxSpeed;
     [SerializeField] private float forwardAccel = 0;
     [SerializeField] private float brakingRatio = 0;
     [SerializeField] private float turningRate = 0;
     [SerializeField] private float gravityStrength = 0.0f;
+    [SerializeField] private float drag;
     
     
     [Header("DRIVING STATE (DO NOT MODIFY)")]
@@ -41,20 +43,28 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //rb.transform.parent = null;
     }
 
     
     // Update is called once per frame
     void Update()
     {
-        transform.position = rb.position;
+        Vector3 _previousPos = rb.transform.position;
+        transform.position = rb.position - transform.up*0.5f;
+        //rb.transform.position = _previousPos;
 
         turningInput = Input.GetAxis("Horizontal");
         accelInput = Input.GetAxis("Vertical");
         
         
-        if (accelInput > 0f)
+        //Apply drag force
+        currentSpeed = currentSpeed * (1-drag * Time.deltaTime);
+        if (!isGrounded)
+        {
+            
+        }
+        else if (accelInput > 0f)
         {
             isBraking = false;
             isAccelerating = true;
@@ -64,7 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             isBraking = true;
             isAccelerating = false;
-            currentSpeed = currentSpeed * brakingRatio * Time.deltaTime;
+            currentSpeed = currentSpeed * (1-brakingRatio * Time.deltaTime);
         } else
         {
             isBraking = false;
@@ -79,13 +89,21 @@ public class PlayerController : MonoBehaviour
         {
             isTurning = false;
         }
+        
+        if (currentSpeed > maxSpeed)
+        {
+            currentSpeed = maxSpeed;
+        }
+        
+        groundCheck(Time.deltaTime);
     }
     
     void FixedUpdate()
     {
         
-        rb.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
-        
+        rb.AddForce(transform.forward * currentSpeed + Vector3.down * gravityStrength, ForceMode.Acceleration);
+        //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
+
         
         /*//Speeding up the player
         if (isAccelerating & !isBraking)
@@ -105,24 +123,16 @@ public class PlayerController : MonoBehaviour
         //Turning the player toward the new direction
         if (isTurning)
         {
-            isGrounded = true;
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0,transform.eulerAngles.y + turningInput * turningRate, 0), Time.deltaTime * 5f);
         }
+
+
+        //groundCheck();
         
         //Applying gravity force down ward
-        //rb.AddForce(Vector3.down * gravityStrength, ForceMode.Acceleration);
-        
-        //Adjust character model to the surface normal it's on
-        RaycastHit hitOn;
-        if (Physics.Raycast(character.position, Vector3.down * 0.5f, out hitOn))
+        if (!isGrounded)
         {
-            isGrounded = true;
-            character.up = Vector3.Lerp(character.up, hitOn.normal, Time.deltaTime * 8.0f);
-            character.Rotate(0, transform.eulerAngles.y, 0);
-        }
-        else
-        {
-            isGrounded = false;
+            //rb.AddForce(Vector3.down * gravityStrength, ForceMode.Acceleration);
         }
 
         speed = rb.velocity.magnitude;
@@ -134,8 +144,34 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         //Draw the suspension
         Gizmos.DrawLine(
-            transform.position + Vector3.up *3f, transform.position + rb.velocity * 10f + Vector3.up *3f
+            transform.position + Vector3.up *3f, transform.position + rb.velocity + Vector3.up *3f
         );
+        
+        RaycastHit hit;
+        if (Physics.Raycast(character.position, -character.up,out hit,0.5f))
+        {
+            Gizmos.color = Color.green;
+        }
+        //Draw the suspension
+        Gizmos.DrawLine(character.position, character.position + -character.up * 0.5f);
     }
+
+
+    void groundCheck(float time)
+    {
+        //Adjust character model to the surface normal it's on
+        RaycastHit hitOn;
+        if (Physics.Raycast(character.position, Vector3.down, out hitOn, 0.5f))
+        {
+            isGrounded = true;
+            character.up = Vector3.Lerp(character.up, hitOn.normal, time * 2f);
+            character.Rotate(0, transform.eulerAngles.y, 0);
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+    
 }
 
