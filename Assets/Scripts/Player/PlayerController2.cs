@@ -52,10 +52,10 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         velocity = Vector3.zero;
-        move();
-        steer();
-        gravity();
-        groundCheck();
+        move(Time.deltaTime);
+        steer(Time.deltaTime);
+        gravity(Time.deltaTime);
+        groundCheck(Time.deltaTime);
     }
 
     private void FixedUpdate()
@@ -67,7 +67,7 @@ public class PlayerController2 : MonoBehaviour
 
     #region MY FUNCTIONS
 
-    private void move()
+    private void move(float time)
     {
         float driveInput = driveAction.ReadValue<float>();
         if (!isGrounded)
@@ -75,7 +75,7 @@ public class PlayerController2 : MonoBehaviour
         }
         if (driveInput > 0)
         {
-            currentSpeed += forwardAccel * Time.deltaTime;
+            currentSpeed += forwardAccel * time;
         }
 
         if (currentSpeed > maxSpeed)
@@ -90,34 +90,36 @@ public class PlayerController2 : MonoBehaviour
         velocity += character.forward * currentSpeed;
     }
 
-    private void steer()
+    private void steer(float time)
     {
         float steerInput = steerAction.ReadValue<float>();
         turningInput = steerInput;
         if (steerInput != 0f)
         {
-            character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * turningRate, 0), Time.deltaTime * 5f));
+            character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * turningRate, 0), time * 5f));
         }
     }
 
-    private void gravity()
+    private void gravity(float time)
     {
         velocity += Vector3.down * gravityStrength;
     }
-
-    private void groundCheck()
+    
+    
+    void groundCheck(float time)
     {
-        if (Physics.Raycast(character.position, -character.up,out var hit,0.5f))
+        //Adjust character model to the surface normal it's on
+        if (Physics.Raycast(character.position, Vector3.down, out var hit, 0.5f))
         {
             isGrounded = true;
             Vector3 rot = character.rotation.eulerAngles;
-            character.up = Vector3.Lerp(character.up, hit.normal, Time.deltaTime * 8.0f);
+            character.up = Vector3.Lerp(character.up, hit.normal, Time.deltaTime * 2.0f);
             character.Rotate(0, rot.y, 0);
-
-            return;
         }
-        isGrounded = false;
-        
+        else
+        {
+            isGrounded = false;
+        }
     }
     
     void OnDrawGizmosSelected()

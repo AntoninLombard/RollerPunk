@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector3 _previousPos = rb.transform.position;
-        transform.position = rb.position - transform.up*0.5f;
+        character.position = rb.position - character.up*0.5f;
         //rb.transform.position = _previousPos;
 
         turningInput = Input.GetAxis("Horizontal");
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         
-        rb.AddForce(transform.forward * currentSpeed + Vector3.down * gravityStrength, ForceMode.Acceleration);
+        rb.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
         //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
 
         
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         //Turning the player toward the new direction
         if (isTurning)
         {
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0,transform.eulerAngles.y + turningInput * turningRate, 0), Time.deltaTime * 5f);
+            character.eulerAngles = Vector3.Lerp(character.eulerAngles, new Vector3(0,character.eulerAngles.y + turningInput * turningRate, 0), Time.deltaTime * 5f);
         }
 
 
@@ -160,12 +160,12 @@ public class PlayerController : MonoBehaviour
     void groundCheck(float time)
     {
         //Adjust character model to the surface normal it's on
-        RaycastHit hitOn;
-        if (Physics.Raycast(character.position, Vector3.down, out hitOn, 0.5f))
+        if (Physics.Raycast(character.position, Vector3.down, out var hit, 0.5f))
         {
             isGrounded = true;
-            character.up = Vector3.Lerp(character.up, hitOn.normal, time * 2f);
-            character.Rotate(0, transform.eulerAngles.y, 0);
+            Vector3 rot = character.rotation.eulerAngles;
+            character.up = Vector3.Lerp(character.up, hit.normal, Time.deltaTime * 2.0f);
+            character.Rotate(0, rot.y, 0);
         }
         else
         {
