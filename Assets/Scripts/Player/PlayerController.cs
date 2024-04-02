@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using AK.Wwise;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform character;
     #endregion
     
-    
+    public AK.Wwise.RTPC engineSpeed;
     
     
     
@@ -96,6 +97,9 @@ public class PlayerController : MonoBehaviour
         }
         
         groundCheck(Time.deltaTime);
+
+        engineSpeed.SetValue(gameObject, currentSpeed);
+
     }
     
     void FixedUpdate()

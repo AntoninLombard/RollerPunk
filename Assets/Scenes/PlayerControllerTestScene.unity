@@ -271,6 +271,12 @@ PrefabInstance:
       propertyPath: gravityStrength
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7317821273378505133, guid: 078c085860f0db141bdb545e01da828a,
+        type: 3}
+      propertyPath: engineSpeed.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: af5d3130f56fab54f9f57bd72ca7fb0d,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -279,6 +285,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 103573553}
+    - targetCorrespondingSourceObject: {fileID: 1496698478244632734, guid: 078c085860f0db141bdb545e01da828a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103573557}
   m_SourcePrefab: {fileID: 100100000, guid: 078c085860f0db141bdb545e01da828a, type: 3}
 --- !u!1 &103573550 stripped
 GameObject:
@@ -298,6 +308,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235ffbe18a60b2b45b2a723c122bb02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &103573557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103573550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db3ccd85da505846abb754e4ef51438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
+      type: 2}
+  engineStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 94632c7b2da19fa40b0f9bf9ce7d5738,
+      type: 2}
 --- !u!1 &448579796
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +490,9 @@ GameObject:
   m_Component:
   - component: {fileID: 629631498}
   - component: {fileID: 629631497}
+  - component: {fileID: 629631501}
+  - component: {fileID: 629631500}
+  - component: {fileID: 629631499}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -506,6 +541,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629631499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629631496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eed8594685d4d47b996d4ae4f2273b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &629631500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629631496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3957cd69a5efee54cafaadd800d9e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &629631501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629631496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fd556ef8cee444c9999331b2b445fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bac986b7780990b4dab6d716459cf8e1,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!43 &672764346
 Mesh:
   m_ObjectHideFlags: 8
@@ -834,7 +930,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3059947211623483126, guid: fa9809a5847211a4696b12fe027c343e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1788326796}
   m_SourcePrefab: {fileID: 100100000, guid: fa9809a5847211a4696b12fe027c343e, type: 3}
 --- !u!1 &972872030
 GameObject:
@@ -1108,6 +1208,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1788326792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3059947211623483126, guid: fa9809a5847211a4696b12fe027c343e,
+    type: 3}
+  m_PrefabInstance: {fileID: 841781946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1788326796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788326792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db3ccd85da505846abb754e4ef51438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fb40e504de3671a4f82b50a75cab88e2,
+      type: 2}
+  engineStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e60ea06d343ad9f44812732862c28030,
+      type: 2}
 --- !u!1 &1877764840
 GameObject:
   m_ObjectHideFlags: 0

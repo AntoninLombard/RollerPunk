@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{ADC418B3-23FA-CDF7-6433-E99E3403B0DA}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CE6CD2FC-2DD7-EE31-BB04-1703DC51826E}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,10 +19,21 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="1635194249" Name="P4"/>
+				<Bus Id="1635194252" Name="P1"/>
+				<Bus Id="1635194254" Name="P3"/>
+				<Bus Id="1635194255" Name="P2"/>
+				<Bus Id="3370470011" Name="Void"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<GameParameters>
+				<GameParameter Id="16764168" Name="Direction"/>
+				<GameParameter Id="212170665" Name="Acceleration"/>
+				<GameParameter Id="332343887" Name="isGrounded"/>
+				<GameParameter Id="640949982" Name="Speed"/>
+				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="822292696" Name="Skid"/>
 				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
@@ -148,15 +159,87 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{56614012-8486-7D85-8162-6B9C910EC9F8}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CF826299-FA8C-5E60-33AE-59C928325DF0}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="218509902" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="326974387" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="478236145" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 3000rpm_Stop_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 3000rpm_Stop_OnLoad_677EF273.wem</CachePath>
+				</File>
+				<File Id="502755110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="650612369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="708396941" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="757558792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="832922043" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 3000rpm_Start_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 3000rpm_Start_OnLoad_70C4B49B.wem</CachePath>
+				</File>
+				<File Id="970935755" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Plugins>
 				<Custom>
 					<Plugin Id="756155750" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
 				</Custom>
 			</Plugins>
 			<Events>
+				<Event Id="173106804" Name="P1_Engine_Start" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="218509902"/>
+						<MediaRef Id="326974387"/>
+						<MediaRef Id="502755110"/>
+						<MediaRef Id="650612369"/>
+						<MediaRef Id="708396941"/>
+						<MediaRef Id="757558792"/>
+						<MediaRef Id="832922043"/>
+						<MediaRef Id="970935755"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="140559848" Name="P1_Engine_Stop" DurationType="OneShot" DurationMin="1.7797291" DurationMax="1.7797291">
+					<MediaRefs>
+						<MediaRef Id="478236145"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="736621041" Name="P2_Engine_Start" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="218509902"/>
+						<MediaRef Id="326974387"/>
+						<MediaRef Id="502755110"/>
+						<MediaRef Id="650612369"/>
+						<MediaRef Id="708396941"/>
+						<MediaRef Id="757558792"/>
+						<MediaRef Id="832922043"/>
+						<MediaRef Id="970935755"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3919745899" Name="P2_Engine_Stop" DurationType="OneShot" DurationMin="1.7797291" DurationMax="1.7797291">
+					<MediaRefs>
+						<MediaRef Id="478236145"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3187507146" Name="Play_test" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<PluginRefs>
 						<Custom>
@@ -165,7 +248,11 @@
 					</PluginRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="212170665" Name="Acceleration"/>
+				<GameParameter Id="796049864" Name="RPM"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8F826968-1EE5-949D-E6FF-2B6DD8E0BD39}</FileHash>
+	<FileHash>{A6722B1B-0129-7E5B-F712-BF02C2B6ACA3}</FileHash>
 </SoundBanksInfo>

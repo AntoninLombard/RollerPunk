@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584908118907375808
+    m_lastTime: -8584895379576611655
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -319,6 +319,88 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: P1
+      guid: 5149f5ff80cb97488710bcde43c4b701
+      id: 1635194252
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: P1
+        ObjectType: 2
+        guid: 5149f5ff80cb97488710bcde43c4b701
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\P1
+    - name: P2
+      guid: b9c268ada80caf43903f4bf9fd65c69a
+      id: 1635194255
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: P2
+        ObjectType: 2
+        guid: b9c268ada80caf43903f4bf9fd65c69a
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\P2
+    - name: P3
+      guid: 8de03c3273fd0b48a1dff84f109b7586
+      id: 1635194254
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: P3
+        ObjectType: 2
+        guid: 8de03c3273fd0b48a1dff84f109b7586
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\P3
+    - name: P4
+      guid: bfabee9590358945b4a334697f6bc6ec
+      id: 1635194249
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: P4
+        ObjectType: 2
+        guid: bfabee9590358945b4a334697f6bc6ec
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\P4
+    - name: Void
+      guid: dd1f590bd5f7a343ba603fe847828060
+      id: 3370470011
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Void
+        ObjectType: 2
+        guid: dd1f590bd5f7a343ba603fe847828060
+      Path: Master-Mixer Hierarchy\Default Work Unit\Void
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -331,7 +413,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584902283146232494
+    m_lastTime: -8584895359658789333
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -378,6 +460,87 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.5
       minDuration: 0.5
+  - PhysicalPath: Events\RP_Vehicule.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: RP_Vehicule
+      ObjectType: 12
+      guid: b3615b940e8d94469069d49d4d79c295
+    ParentPath: Events\RP_Vehicule
+    guid: b3615b940e8d94469069d49d4d79c295
+    GuidInternal: 
+    m_lastTime: -8584895358047509695
+    List:
+    - name: P1_Engine_Start
+      guid: 7b4ce96814ed7f4dab45c60f77f64457
+      id: 173106804
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: P1_Engine_Start
+        ObjectType: 3
+        guid: 7b4ce96814ed7f4dab45c60f77f64457
+      Path: Events\RP_Vehicule\P1_Engine_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: P1_Engine_Stop
+      guid: f547776bd4b5b042808df44f2e1d03f0
+      id: 140559848
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: P1_Engine_Stop
+        ObjectType: 3
+        guid: f547776bd4b5b042808df44f2e1d03f0
+      Path: Events\RP_Vehicule\P1_Engine_Stop
+      maxAttenuation: 0
+      maxDuration: 1.7797291
+      minDuration: 1.7797291
+    - name: P2_Engine_Start
+      guid: 4def3e9855b110468129783c7465a89e
+      id: 736621041
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: P2_Engine_Start
+        ObjectType: 3
+        guid: 4def3e9855b110468129783c7465a89e
+      Path: Events\RP_Vehicule\P2_Engine_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: P2_Engine_Stop
+      guid: 83627be0adf4f04ca035d07c869235c8
+      id: 3919745899
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: P2_Engine_Stop
+        ObjectType: 3
+        guid: 83627be0adf4f04ca035d07c869235c8
+      Path: Events\RP_Vehicule\P2_Engine_Stop
+      maxAttenuation: 0
+      maxDuration: 1.7797291
+      minDuration: 1.7797291
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -545,6 +708,103 @@ MonoBehaviour:
         ObjectType: 13
         guid: 197ba8edaa73a0409f192073606db710
       Path: Game Parameters\Factory Soundseed Air Game Syncs\SS_Air_Turbulence
+  - PhysicalPath: Game Parameters\RP_Vehicule.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: RP_Vehicule
+      ObjectType: 12
+      guid: 8475fbbe91ed934ebdbae4fd07cc3879
+    ParentPath: Game Parameters\RP_Vehicule
+    guid: 8475fbbe91ed934ebdbae4fd07cc3879
+    GuidInternal: 
+    m_lastTime: -8584895368526454983
+    List:
+    - name: Acceleration
+      guid: 7fafa8a0cbafd14c99e863b2ef95a64a
+      id: 212170665
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: 8475fbbe91ed934ebdbae4fd07cc3879
+      - ElementName: Acceleration
+        ObjectType: 13
+        guid: 7fafa8a0cbafd14c99e863b2ef95a64a
+      Path: Game Parameters\RP_Vehicule\Acceleration
+    - name: Direction
+      guid: 6136110bb84f344490180b00896e4244
+      id: 16764168
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: 8475fbbe91ed934ebdbae4fd07cc3879
+      - ElementName: Direction
+        ObjectType: 13
+        guid: 6136110bb84f344490180b00896e4244
+      Path: Game Parameters\RP_Vehicule\Direction
+    - name: isGrounded
+      guid: 962c0862a2352842a34059a83a4b328f
+      id: 332343887
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: 8475fbbe91ed934ebdbae4fd07cc3879
+      - ElementName: isGrounded
+        ObjectType: 13
+        guid: 962c0862a2352842a34059a83a4b328f
+      Path: Game Parameters\RP_Vehicule\isGrounded
+    - name: RPM
+      guid: 18cbde4c609e7d429d77481126a00373
+      id: 796049864
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: 8475fbbe91ed934ebdbae4fd07cc3879
+      - ElementName: RPM
+        ObjectType: 13
+        guid: 18cbde4c609e7d429d77481126a00373
+      Path: Game Parameters\RP_Vehicule\RPM
+    - name: Skid
+      guid: 0c1570a0d2a2dc4c8291c4b6bd59290c
+      id: 822292696
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: 8475fbbe91ed934ebdbae4fd07cc3879
+      - ElementName: Skid
+        ObjectType: 13
+        guid: 0c1570a0d2a2dc4c8291c4b6bd59290c
+      Path: Game Parameters\RP_Vehicule\Skid
+    - name: Speed
+      guid: 17bc93551be88e4fb0974a3b609de34a
+      id: 640949982
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: 8475fbbe91ed934ebdbae4fd07cc3879
+      - ElementName: Speed
+        ObjectType: 13
+        guid: 17bc93551be88e4fb0974a3b609de34a
+      Path: Game Parameters\RP_Vehicule\Speed
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -557,7 +817,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: b3b1a5743ece2d4aa387aae00cb3ad5d
     GuidInternal: 
-    m_lastTime: -8584908118907175808
+    m_lastTime: -8584901373465727614
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -587,7 +847,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 0200000003000000
+  ExpandedFileSystemItemIds: 02000000050000000a0000000c0000000d0000002a0000002c0000003700000039000000
   ExpandedWaapiItemIds: 0200000003000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
