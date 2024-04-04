@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using AK.Wwise;
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -40,6 +41,9 @@ public class PlayerController2 : MonoBehaviour
     private InputAction driveAction;
     private InputAction steerAction;
 
+    [Header("Sound Variables")]
+    [SerializeField] private AK.Wwise.RTPC engineSpeed;
+
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -56,6 +60,7 @@ public class PlayerController2 : MonoBehaviour
         steer(Time.deltaTime);
         gravity(Time.deltaTime);
         groundCheck(Time.deltaTime);
+        engineSpeed.SetValue(gameObject, currentSpeed);
     }
 
     private void FixedUpdate()
@@ -70,12 +75,16 @@ public class PlayerController2 : MonoBehaviour
     private void move(float time)
     {
         float driveInput = driveAction.ReadValue<float>();
+        currentSpeed = currentSpeed * (1f-drag*time);
         if (!isGrounded)
         {
         }
         if (driveInput > 0)
         {
             currentSpeed += forwardAccel * time;
+        } else 
+        {
+            currentSpeed = currentSpeed * (1f-brakingRatio*time);
         }
 
         if (currentSpeed > maxSpeed)

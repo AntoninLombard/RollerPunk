@@ -259,12 +259,12 @@ PrefabInstance:
     - target: {fileID: 7317821273378505133, guid: 078c085860f0db141bdb545e01da828a,
         type: 3}
       propertyPath: brakingRatio
-      value: 1.11
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7317821273378505133, guid: 078c085860f0db141bdb545e01da828a,
         type: 3}
       propertyPath: forwardAccel
-      value: 7
+      value: 15.46
       objectReference: {fileID: 0}
     - target: {fileID: 7317821273378505133, guid: 078c085860f0db141bdb545e01da828a,
         type: 3}
@@ -323,12 +323,12 @@ MonoBehaviour:
   engineStart:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
+    WwiseObjectReference: {fileID: 11400000, guid: fb40e504de3671a4f82b50a75cab88e2,
       type: 2}
   engineStop:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 94632c7b2da19fa40b0f9bf9ce7d5738,
+    WwiseObjectReference: {fileID: 11400000, guid: e60ea06d343ad9f44812732862c28030,
       type: 2}
 --- !u!1 &448579796
 GameObject:
@@ -814,19 +814,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4457839074724325897, guid: fa9809a5847211a4696b12fe027c343e,
         type: 3}
+      propertyPath: drag
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457839074724325897, guid: fa9809a5847211a4696b12fe027c343e,
+        type: 3}
       propertyPath: turningRate
       value: 24.71
       objectReference: {fileID: 0}
     - target: {fileID: 4457839074724325897, guid: fa9809a5847211a4696b12fe027c343e,
         type: 3}
+      propertyPath: brakingRatio
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457839074724325897, guid: fa9809a5847211a4696b12fe027c343e,
+        type: 3}
       propertyPath: forwardAccel
-      value: 7
+      value: 10.27
       objectReference: {fileID: 0}
     - target: {fileID: 4457839074724325897, guid: fa9809a5847211a4696b12fe027c343e,
         type: 3}
       propertyPath: gravityStrength
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4457839074724325897, guid: fa9809a5847211a4696b12fe027c343e,
+        type: 3}
+      propertyPath: engineSpeed.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: af5d3130f56fab54f9f57bd72ca7fb0d,
+        type: 2}
     - target: {fileID: 5615645147874847246, guid: fa9809a5847211a4696b12fe027c343e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1229,12 +1245,12 @@ MonoBehaviour:
   engineStart:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fb40e504de3671a4f82b50a75cab88e2,
+    WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
       type: 2}
   engineStop:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e60ea06d343ad9f44812732862c28030,
+    WwiseObjectReference: {fileID: 11400000, guid: 94632c7b2da19fa40b0f9bf9ce7d5738,
       type: 2}
 --- !u!1 &1877764840
 GameObject:

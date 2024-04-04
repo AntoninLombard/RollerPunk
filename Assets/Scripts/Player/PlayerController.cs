@@ -105,8 +105,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         
-        rb.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
-        //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
+        //rb.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
+        rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
 
         
         /*//Speeding up the player
