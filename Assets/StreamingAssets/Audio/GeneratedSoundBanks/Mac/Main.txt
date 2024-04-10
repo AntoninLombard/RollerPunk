@@ -1,6 +1,25 @@
 Event	ID	Name			Wwise Object Path	Notes
+	140559848	P1_Engine_Stop			\RP_Vehicule\P1_Engine_Stop	
+	173106804	P1_Engine_Start			\RP_Vehicule\P1_Engine_Start	
+	736621041	P2_Engine_Start			\RP_Vehicule\P2_Engine_Start	
 	3187507146	Play_test			\Default Work Unit\Play_test	
+	3919745899	P2_Engine_Stop			\RP_Vehicule\P2_Engine_Stop	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	212170665	Acceleration			\RP_Vehicule\Acceleration	
+	796049864	RPM			\RP_Vehicule\RPM	
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	756155750	Sine	Wwise Sine		\Actor-Mixer Hierarchy\Default Work Unit\test\Sine	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	218509902	CS Car Audi TT 2000rpm Exhaust KMR81i_wav_OffLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Offload\CS Car Audi TT 2000rpm Exhaust KMR81i_wav_OffLoad		190120
+	326974387	CS Car Audi TT Idle V1 Exhaust KMR81i_wav_OnLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Onload\CS Car Audi TT Idle V1 Exhaust KMR81i_wav_OnLoad		518070
+	478236145	P1_VEH_Stop	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 3000rpm_Stop_OnLoad_677EF273.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Stop		170950
+	502755110	CS Car Audi TT 1500rpm Exhaust KMR81i_wav_OnLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Onload\CS Car Audi TT 1500rpm Exhaust KMR81i_wav_OnLoad		227154
+	650612369	CS Car Audi TT 3000rpm Exhaust KMR81i_wav_OffLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Offload\CS Car Audi TT 3000rpm Exhaust KMR81i_wav_OffLoad		88962
+	708396941	CS Car Audi TT 3000rpm Exhaust KMR81i_wav_OnLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Onload\CS Car Audi TT 3000rpm Exhaust KMR81i_wav_OnLoad		88962
+	757558792	CS Car Audi TT 1500rpm Exhaust KMR81i_wav_OffLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Offload\CS Car Audi TT 1500rpm Exhaust KMR81i_wav_OffLoad		227154
+	832922043	P1_VEH_Start	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 3000rpm_Start_OnLoad_70C4B49B.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Start		247124
+	970935755	CS Car Audi TT 2000rpm Exhaust KMR81i_wav_OnLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Player1\P1_Vehicle\P1_VEH_Engine\P1_VEH_ENG_Onload\CS Car Audi TT 2000rpm Exhaust KMR81i_wav_OnLoad		190120
 
