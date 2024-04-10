@@ -147,7 +147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70084896}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
@@ -175,7 +175,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6013644512000239356, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
       type: 3}
-  m_PlayerPrefab: {fileID: 3059947211623483126, guid: fa9809a5847211a4696b12fe027c343e,
+  m_PlayerPrefab: {fileID: 1496698478244632734, guid: 078c085860f0db141bdb545e01da828a,
     type: 3}
   m_SplitScreen: 1
   m_MaintainAspectRatioInSplitScreen: 0
