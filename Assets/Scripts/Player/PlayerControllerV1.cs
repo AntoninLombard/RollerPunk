@@ -1,4 +1,6 @@
 using UnityEngine;
+using AK.Wwise;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,11 +23,26 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float speed = 0;
     [SerializeField] private float currentSpeed = 0;
-    [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
-    [SerializeField] [Range(-1.0f,1.0f)] private float accelInput = 0;
 
 
     [SerializeField] private Transform character;
+    
+    [Header("INPUT SYSTEM")]
+    [SerializeField] private PlayerInput input;
+    private InputAction driveAction;
+    private InputAction steerAction;
+    
+    [Header("PLAYER INPUTS")]
+    [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
+    [SerializeField] [Range(-1.0f,1.0f)] private float driveInput = 0;
+    [SerializeField] private bool punchInput;
+    [SerializeField] private bool slideInput;
+    [SerializeField] private bool fortifyInput;
+    
+    
+    [Header("SOUND")] 
+    [SerializeField] private AK.Wwise.Event startEngineSound;
+    [SerializeField] RTPC engineSpeed;
     #endregion
     
     
@@ -39,7 +56,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rb.transform.parent = null;
+        driveAction = input.actions.FindAction("Driving/Drive");
+        steerAction = input.actions.FindAction("Driving/Steer");
+        startEngineSound.Post(gameObject);
     }
 
     
@@ -50,8 +69,8 @@ public class PlayerController : MonoBehaviour
         character.position = rb.position - character.up*0.5f;
         //rb.transform.position = _previousPos;
 
-        steerInput = Input.GetAxis("Horizontal");
-        accelInput = Input.GetAxis("Vertical");
+        steerInput = steerAction.ReadValue<float>();
+        driveInput = driveAction.ReadValue<float>();
         
         
         //Apply drag force
@@ -60,13 +79,13 @@ public class PlayerController : MonoBehaviour
         {
             
         }
-        else if (accelInput > 0f)
+        else if (driveInput > 0f)
         {
             isBraking = false;
             isAccelerating = true;
             currentSpeed = currentSpeed + forwardAccel * Time.deltaTime;
         }
-        else if(accelInput < 0f)
+        else if(driveInput < 0f)
         {
             isBraking = true;
             isAccelerating = false;
@@ -92,11 +111,16 @@ public class PlayerController : MonoBehaviour
         }
         
         groundCheck(Time.deltaTime);
+        engineSpeed.SetValue(gameObject,currentSpeed);
     }
     
     void FixedUpdate()
     {
-        rb.AddForce(character.forward * (currentSpeed * rb.mass));
+        if (isGrounded)
+        {
+            rb.AddForce(character.forward * (currentSpeed * rb.mass));
+
+        }
         //rb.AddForce(character.forward * currentSpeed, ForceMode.Acceleration);
         //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
 
@@ -104,14 +128,14 @@ public class PlayerController : MonoBehaviour
         /*//Speeding up the player
         if (isAccelerating & !isBraking)
         {
-            rb.AddForce(transform.forward * (forwardAccel * accelInput), ForceMode.Acceleration);
+            rb.AddForce(transform.forward * (forwardAccel * driveInput), ForceMode.Acceleration);
         }
 
         
         //Slowing down the player when braking
         if (isBraking && rb.velocity.magnitude > 0)
         {
-            rb.AddForce(transform.forward * (brakingAccel * rb.velocity.magnitude * accelInput));
+            rb.AddForce(transform.forward * (brakingAccel * rb.velocity.magnitude * driveInput));
         }*/
 
         
@@ -133,8 +157,6 @@ public class PlayerController : MonoBehaviour
 
         speed = rb.velocity.magnitude;
     }
-    
-    #endregion
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -151,7 +173,9 @@ public class PlayerController : MonoBehaviour
         //Draw the suspension
         Gizmos.DrawLine(character.position, character.position + -character.up * 0.5f);
     }
+    #endregion
 
+    #region DRIVING_FUNCTIONS
 
     void groundCheck(float time)
     {
@@ -193,6 +217,29 @@ public class PlayerController : MonoBehaviour
         Vector3 forward = (character.forward - up * Vector3.Dot(character.forward, up)).normalized;
         character.rotation = Quaternion.LookRotation(forward, up);
     }
+
+    #endregion
+
+
+
+    #region INPUT_CALLBACKS
+
+    public void Punch(InputAction.CallbackContext context)
+    {
+        punchInput = !punchInput;
+    }
+
+    public void Slide(InputAction.CallbackContext context)
+    {
+        slideInput = !slideInput;
+    }
+
+    public void Fortify(InputAction.CallbackContext context)
+    {
+        fortifyInput = !fortifyInput;
+    }
+
+    #endregion
 
 }
 

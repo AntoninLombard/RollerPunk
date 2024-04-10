@@ -1,5 +1,7 @@
+using AK.Wwise;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Event = AK.Wwise.Event;
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -22,7 +24,7 @@ public class PlayerController2 : MonoBehaviour
 
     [SerializeField] private float speed = 0;
     [SerializeField] private float currentSpeed = 0;
-    [SerializeField] [Range(-1.0f,1.0f)] private float turningInput = 0;
+    [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
     [SerializeField] [Range(-1.0f,1.0f)] private float driveInput = 0;
 
     [SerializeField] private Vector3 velocity;
@@ -36,12 +38,17 @@ public class PlayerController2 : MonoBehaviour
     private InputAction driveAction;
     private InputAction steerAction;
 
+    [Header("SOUND")] 
+    [SerializeField] private Event startEngineSound;
+    [SerializeField] RTPC engineSpeed;
+
     #endregion
     // Start is called before the first frame update
     void Start()
     {
         driveAction = input.actions.FindAction("Driving/Drive");
         steerAction = input.actions.FindAction("Driving/Steer");
+        startEngineSound.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -54,6 +61,7 @@ public class PlayerController2 : MonoBehaviour
         gravity(Time.deltaTime);
         groundCheck(Time.deltaTime);
         groundForce(Time.deltaTime);
+        engineSpeed.SetValue(gameObject,currentSpeed);
     }
 
     private void FixedUpdate()
@@ -101,8 +109,7 @@ public class PlayerController2 : MonoBehaviour
 
     private void steer(float time)
     {
-        float steerInput = steerAction.ReadValue<float>();
-        turningInput = steerInput;
+        steerInput = steerAction.ReadValue<float>();
         if (steerInput != 0f)
         {
             character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * turningRate, 0), time * 5f));
