@@ -8,10 +8,10 @@ public class PlayerController2 : MonoBehaviour
     [Header("DRIVING VALUES")]
     [SerializeField] private float maxSpeed;
     [SerializeField] private float forwardAccel = 0;
-    [SerializeField] private float brakingRatio = 0;
+    [SerializeField] [Range(0.0f,1.0f)] private float brakingRatio = 0;
     [SerializeField] private float turningRate = 0;
     [SerializeField] private float gravityStrength = 0.0f;
-    [SerializeField] private float dragRatio;
+    [SerializeField] [Range(0.0f,1.0f)] private float dragRatio;
     [SerializeField] private float groundAccel;
     
     [Header("DRIVING STATE (DO NOT MODIFY)")]
@@ -22,8 +22,8 @@ public class PlayerController2 : MonoBehaviour
 
     [SerializeField] private float speed = 0;
     [SerializeField] private float currentSpeed = 0;
-    [SerializeField] private float turningInput = 0;
-    [SerializeField] private float accelInput = 0;
+    [SerializeField] [Range(-1.0f,1.0f)] private float turningInput = 0;
+    [SerializeField] [Range(-1.0f,1.0f)] private float driveInput = 0;
 
     [SerializeField] private Vector3 velocity;
 
@@ -40,8 +40,8 @@ public class PlayerController2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        driveAction = input.actions.FindAction("Player/Drive");
-        steerAction = input.actions.FindAction("Player/Steer");
+        driveAction = input.actions.FindAction("Driving/Drive");
+        steerAction = input.actions.FindAction("Driving/Steer");
     }
 
     // Update is called once per frame
@@ -70,24 +70,23 @@ public class PlayerController2 : MonoBehaviour
     {
         currentSpeed -= dragRatio * time;
     }
+
     private void move(float time)
     {
-        if (!isGrounded)
-        {
-            return;
-        }
-        
-        float driveInput = driveAction.ReadValue<float>();
-        
-        
-        if (driveInput > 0)
-        {
-            currentSpeed += forwardAccel * time;
-        }else if (driveInput < 0)
-        {
-            currentSpeed -= currentSpeed * brakingRatio * time;
-        }
 
+        driveInput = driveAction.ReadValue<float>();
+
+        if (isGrounded)
+        {
+            if (driveInput > 0)
+            {
+                currentSpeed += forwardAccel * time;
+            }
+            else if (driveInput < 0)
+            {
+                currentSpeed -= currentSpeed * brakingRatio * time;
+            }
+        }
         if (currentSpeed > maxSpeed)
         {
             currentSpeed = maxSpeed;
@@ -145,6 +144,7 @@ public class PlayerController2 : MonoBehaviour
         else
         {
             isGrounded = false;
+            alignCharToNormal(Vector3.up, time);
         }
     }
 

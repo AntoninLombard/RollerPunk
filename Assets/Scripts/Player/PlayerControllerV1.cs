@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
-        rb.AddForce(character.forward * currentSpeed);
+        rb.AddForce(character.forward * (currentSpeed * rb.mass));
         //rb.AddForce(character.forward * currentSpeed, ForceMode.Acceleration);
         //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
 
@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             isGrounded = false;
-            alignCharToNormal(Vector3.down, time);
+            alignCharToNormal(Vector3.up, time);
         }
     }
 

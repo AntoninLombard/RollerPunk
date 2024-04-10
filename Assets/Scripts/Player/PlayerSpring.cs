@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class PlayerSpring : MonoBehaviour
     //[SerializeField] private Transform lowerBone;
     [SerializeField] private Transform wheel;
     [SerializeField] private float wheelRadius;
+    [SerializeField] private LayerMask physicMask;
+    private Vector3 delta;
     private Vector3 axis;
     
     [Header("Spring Physic Variables")]
@@ -26,8 +29,8 @@ public class PlayerSpring : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 delta = upperBody.position - wheel.position;
-        axis = delta.normalized;
+        delta = wheel.position- upperBody.position;
+        axis = character.up;
         currentLength = delta.magnitude;
     }
 
@@ -35,32 +38,46 @@ public class PlayerSpring : MonoBehaviour
     void FixedUpdate()
     {
         placingWheel(axis,Time.fixedDeltaTime);
-        Vector3 detla = upperBody.position - wheel.position;
-        currentLength = detla.magnitude;
+        axis = -character.up;
+        delta = wheel.position- upperBody.position;
+        currentLength = delta.magnitude;
         
         
-        velocity -= velocity*damping;
-        velocity += (currentLength - restingLength) * springForce;
-        if (playerController.isGrounded)
-        {
-            velocity += bodyWeight * downForce * Time.deltaTime;
-        }
+        velocity *= damping;
+        velocity -= (currentLength - restingLength) * springForce;
+        // if (playerController.isGrounded)
+        // {
+        //     velocity += bodyWeight * downForce * Time.deltaTime;
+        // }
         currentLength += velocity * Time.fixedDeltaTime;
-        upperBody.position = wheel.position - axis * currentLength;
+        upperBody.position -= axis * (velocity * Time.fixedDeltaTime) ;
 
 
     }
-
+    
 
     void placingWheel(Vector3 direction,float time)
     {
-        if (Physics.Raycast(character.position, direction, out var hit, 0.5f))
+        if (Physics.Raycast(character.position, direction, out var hit, 2f*restingLength,physicMask))
         {
-            wheel.position = hit.point + character.up * wheelRadius;
+            wheel.position = hit.point - axis * wheelRadius;
         }
         else
         {
-            wheel.position = Vector3.Lerp(wheel.position, wheel.position + direction * (currentLength - restingLength),time * 2f);
+            wheel.position = Vector3.Lerp(wheel.position, wheel.position + direction * restingLength,time * 2f);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (Physics.Raycast(character.position, axis, restingLength * 2,physicMask))
+        {
+            Gizmos.color = Color.green;
+        }
+        else
+        {
+            Gizmos.color = Color.red;
+        }
+        Gizmos.DrawLine(character.position,character.position + axis * restingLength*2);
     }
 }
