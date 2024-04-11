@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using AK.Wwise;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -20,17 +22,20 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField] public bool isBraking { get; private set; }
     [field: SerializeField] public bool isTurning { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }   
-
     [SerializeField] private float speed = 0;
     [SerializeField] private float currentSpeed = 0;
 
 
-    [SerializeField] private Transform character;
+    [Header("CHARACTER STATE")]
+    [SerializeField] private bool isPunching;
+    [SerializeField] private bool isSliding;
+    
     
     [Header("INPUT SYSTEM")]
     [SerializeField] private PlayerInput input;
     private InputAction driveAction;
     private InputAction steerAction;
+    
     
     [Header("PLAYER INPUTS")]
     [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
@@ -43,16 +48,37 @@ public class PlayerController : MonoBehaviour
     [Header("SOUND")] 
     [SerializeField] private AK.Wwise.Event startEngineSound;
     [SerializeField] RTPC engineSpeed;
+
+    
+    [Header("Events")] 
+    [SerializeField] public UnityEvent<GameObject> OnHitByPunch;
+    [SerializeField] public UnityEvent<GameObject> OnHitbySlide;
+    [SerializeField] public UnityEvent<GameObject> OnHitbByBall;
+    
+    
+    [Header("CHARACTER PARTS")]
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Transform character;
+    [SerializeField] private GameObject ballAnchorPoint;
+    [SerializeField] private ParticleSystem particleSystem;
+
+    [Header("ATTACK COLLIDERS")]
+    [SerializeField] private GameObject punchCollider;
+    [SerializeField] private GameObject slideCollider;
+    [SerializeField] private GameObject ballCollider;
+    
     #endregion
     
-    
-    
-    
-    
-    [SerializeField] private Rigidbody rb;
-    
-    
     #region UNITY FUNCTIONS
+
+    private void Awake()
+    {
+        OnHitByPunch.AddListener(onHitByPunch);
+        OnHitbySlide.AddListener(onHitBySlide);
+        OnHitbByBall.AddListener(onHitByBall);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +91,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 _previousPos = rb.transform.position;
+        //Vector3 _previousPos = rb.transform.position;
         character.position = rb.position - character.up*0.5f;
         //rb.transform.position = _previousPos;
 
@@ -222,23 +248,86 @@ public class PlayerController : MonoBehaviour
 
 
 
-    #region INPUT_CALLBACKS
+    #region INPUT EVENT CALLBACKS
 
-    public void Punch(InputAction.CallbackContext context)
+    public void onPunch(InputAction.CallbackContext context)
     {
-        punchInput = !punchInput;
+        if (!isSliding && !isPunching && isGrounded)
+        {
+            StartCoroutine(Punch());
+        }
     }
 
-    public void Slide(InputAction.CallbackContext context)
+    public void onSlide(InputAction.CallbackContext context)
     {
-        slideInput = !slideInput;
+        if (!isSliding && !isPunching && isGrounded)
+        {
+            StartCoroutine(Slide());
+        }
     }
 
-    public void Fortify(InputAction.CallbackContext context)
+    public void onFortify(InputAction.CallbackContext context)
     {
         fortifyInput = !fortifyInput;
     }
 
+    #endregion
+
+
+    #region GAMEPLAY EVENTS CALLBACKS
+
+    void onHitBySlide(GameObject source)
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.yellow;
+        particleSystem.Play();
+    }
+    
+    void onHitByPunch(GameObject source)
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.green;
+        particleSystem.Play();
+    }
+    
+    void onHitByBall(GameObject source)
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.red;
+        particleSystem.Play();
+    }
+
+    #endregion
+
+
+    #region ACTIONS COROUTINES
+
+    IEnumerator Punch()
+    {
+        isPunching = true;
+        GameObject collider = Instantiate(punchCollider,character);
+        ColliderBox box = collider.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.Punch);
+        collider.transform.localPosition = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(1);
+        Destroy(collider);
+        isPunching = false;
+    }
+    
+    IEnumerator Slide()
+    {
+        isSliding = true;
+        GameObject collider = Instantiate(slideCollider,character);
+        ColliderBox box = collider.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.Slide);
+        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(1);
+        Destroy(collider);
+        isSliding = false;
+    }
+    
     #endregion
 
 }

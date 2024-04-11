@@ -175,7 +175,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6013644512000239356, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
       type: 3}
-  m_PlayerPrefab: {fileID: 3059947211623483126, guid: fa9809a5847211a4696b12fe027c343e,
+  m_PlayerPrefab: {fileID: 1496698478244632734, guid: 078c085860f0db141bdb545e01da828a,
     type: 3}
   m_SplitScreen: 1
   m_MaintainAspectRatioInSplitScreen: 0
