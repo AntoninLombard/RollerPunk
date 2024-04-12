@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using AK.Wwise;
+using Unity.VisualScripting;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
@@ -27,8 +28,11 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("CHARACTER STATE")]
+    [SerializeField] private bool isRecovering;
     [SerializeField] private bool isPunching;
     [SerializeField] private bool isSliding;
+    [SerializeField] private bool isFortified;
+    [SerializeField] private bool isHoldingBall;
     
     
     [Header("INPUT SYSTEM")]
@@ -54,6 +58,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public UnityEvent<GameObject> OnHitByPunch;
     [SerializeField] public UnityEvent<GameObject> OnHitbySlide;
     [SerializeField] public UnityEvent<GameObject> OnHitbByBall;
+    [SerializeField] public UnityEvent<GameObject> OnGrabbingBall;
     
     
     [Header("CHARACTER PARTS")]
@@ -76,12 +81,14 @@ public class PlayerController : MonoBehaviour
         OnHitByPunch.AddListener(onHitByPunch);
         OnHitbySlide.AddListener(onHitBySlide);
         OnHitbByBall.AddListener(onHitByBall);
+        OnGrabbingBall.AddListener(onGrabbingBall);
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.OnPlayerInstantiate(gameObject);
         driveAction = input.actions.FindAction("Driving/Drive");
         steerAction = input.actions.FindAction("Driving/Steer");
         startEngineSound.Post(gameObject);
@@ -252,15 +259,22 @@ public class PlayerController : MonoBehaviour
 
     public void onPunch(InputAction.CallbackContext context)
     {
-        if (!isSliding && !isPunching && isGrounded)
+        if (!isSliding && !isPunching && isGrounded && !isRecovering)
         {
-            StartCoroutine(Punch());
+            if (!isHoldingBall)
+            {
+                StartCoroutine(Punch());
+            }
+            else
+            {
+                StartCoroutine(BallPunch());
+            }
         }
     }
 
     public void onSlide(InputAction.CallbackContext context)
     {
-        if (!isSliding && !isPunching && isGrounded)
+        if (!isSliding && !isPunching && isGrounded && !isRecovering)
         {
             StartCoroutine(Slide());
         }
@@ -278,23 +292,39 @@ public class PlayerController : MonoBehaviour
 
     void onHitBySlide(GameObject source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.yellow;
-        particleSystem.Play();
+        if (isPunching != true)
+        {
+            StartCoroutine(slideReactWindow());
+            return;
+        }
+        slideCounter();
     }
     
     void onHitByPunch(GameObject source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.green;
-        particleSystem.Play();
+        if (isPunching != true)
+        {
+            StartCoroutine(punchReactWindow());
+            return;
+        }
+        punchCounter();
     }
     
     void onHitByBall(GameObject source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        particleSystem.Play();
+        if (isPunching != true)
+        {
+            StartCoroutine(ballReactWindow());
+            return;
+        }
+        ballCounter();
+    }
+
+    void onGrabbingBall(GameObject ball)
+    {
+        isHoldingBall = true;
+        ball.transform.SetParent(ballAnchorPoint.transform);
+        ball.transform.position = ballAnchorPoint.transform.position;
     }
 
     #endregion
@@ -309,10 +339,13 @@ public class PlayerController : MonoBehaviour
         ColliderBox box = collider.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
         box.SetType(ColliderBox.ColliderType.Punch);
-        collider.transform.localPosition = character.position + character.up + character.forward * 0.5f;
-        yield return new WaitForSeconds(1);
+        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(0.5f);
         Destroy(collider);
         isPunching = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(1);
+        isRecovering = false;
     }
     
     IEnumerator Slide()
@@ -323,9 +356,116 @@ public class PlayerController : MonoBehaviour
         box.SetSource(character.gameObject);
         box.SetType(ColliderBox.ColliderType.Slide);
         collider.transform.position = character.position + character.up + character.forward * 0.5f;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         Destroy(collider);
         isSliding = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(1);
+        isRecovering = false;
+    }
+    
+    IEnumerator BallPunch()
+    {
+        isPunching = true;
+        GameObject collider = Instantiate(punchCollider,character);
+        ColliderBox box = collider.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.Ball);
+        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(collider);
+        isPunching = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(1);
+        isRecovering = false;
+    }
+
+    IEnumerator punchReactWindow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (isPunching != true)
+        {
+            punchHit();
+        }
+        else
+        {
+            punchCounter();
+        }
+    }
+    
+    IEnumerator slideReactWindow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (isSliding != true)
+        {
+            slideHit();
+        }
+        else
+        {
+            slideCounter();
+        }
+    }
+    
+    IEnumerator ballReactWindow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (isPunching != true)
+        {
+            ballHit();
+        }
+        else
+        {
+            ballCounter();
+        }
+    }
+    
+    
+    
+    #endregion
+    
+    
+    #region COMBAT HITS & COUNTERS
+
+    void punchHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.green;
+        particleSystem.Play();
+    }
+
+    void punchCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.white;
+        particleSystem.Play();
+    }
+
+    void slideHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.yellow;
+        particleSystem.Play();
+    }
+
+    void slideCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.white;
+        particleSystem.Play();
+    }
+
+    void ballHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.red;
+        particleSystem.Play();
+    }
+
+    void ballCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.magenta;
+        particleSystem.Play();
     }
     
     #endregion

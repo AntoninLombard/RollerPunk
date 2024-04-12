@@ -29,6 +29,7 @@ public class ColliderBox : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name + other.gameObject.transform.parent.name);
         if (other.gameObject != source)
         {
             PlayerController pc = other.gameObject.GetComponentInParent<PlayerController>();
