@@ -13,11 +13,24 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ATTACK = 180661997U;
+        static const AkUniqueID COUNTER = 3051750219U;
+        static const AkUniqueID DEFENSE = 2564315215U;
+        static const AkUniqueID DRILL = 2168413864U;
+        static const AkUniqueID DRILLBALL_ATTACK = 3235718886U;
+        static const AkUniqueID DRILLBALL_TACKLE = 2892216896U;
+        static const AkUniqueID P1_BURST = 2947226167U;
         static const AkUniqueID P1_ENGINE_START = 173106804U;
         static const AkUniqueID P1_ENGINE_STOP = 140559848U;
         static const AkUniqueID P2_ENGINE_START = 736621041U;
         static const AkUniqueID P2_ENGINE_STOP = 3919745899U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
+        static const AkUniqueID PLAYER_HIT = 871813740U;
+        static const AkUniqueID TACKLE = 203740891U;
+        static const AkUniqueID UI_BACK = 2024222415U;
+        static const AkUniqueID UI_HOVER = 2118900976U;
+        static const AkUniqueID UI_SELECT = 2774129122U;
+        static const AkUniqueID WALL_HIT = 696618827U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

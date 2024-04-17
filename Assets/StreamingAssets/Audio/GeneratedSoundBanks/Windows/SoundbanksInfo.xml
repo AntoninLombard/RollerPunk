@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1DA860E1-FEAD-5DCE-8916-AAAF3804360E}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1CD9219A-B175-44CC-2D75-DE128897F091}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -159,17 +159,45 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CF826299-FA8C-5E60-33AE-59C928325DF0}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F5C9CB52-238D-D630-6346-D4565E1A195A}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="8262130" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_3DA27465.wem</CachePath>
+				</File>
+				<File Id="19193333" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Wood, Impact, Heavy, Metal Details SND52850.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Wood, Impact, Heavy, Metal Details SND52850_0DF3F462.wem</CachePath>
+				</File>
+				<File Id="131610961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Gravel by egomassive Id-536760 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Gravel by egomassive Id-536760 1_C546139D.wem</CachePath>
+				</File>
+				<File Id="213999704" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Krotos UI Button Press Generic Mono-001.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Krotos UI Button Press Generic Mono-001_10C4C929.wem</CachePath>
+				</File>
 				<File Id="218509902" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="251919428" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Sword, Hard, Hit, Swing, Swoosh 04 SND69198.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Sword, Hard, Hit, Swing, Swoosh 04 SND69198_927601BA.wem</CachePath>
+				</File>
 				<File Id="326974387" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="334581792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\JetPack 6085_11.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/JetPack 6085_11_FD09E7B6.wem</CachePath>
+				</File>
+				<File Id="335294035" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Armor, Weapons, Shield, Hit 01 SND69119 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Armor, Weapons, Shield, Hit 01 SND69119 1_4824A06E.wem</CachePath>
 				</File>
 				<File Id="478236145" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm_Stop_OnLoad.wav</ShortName>
@@ -179,9 +207,25 @@
 					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="513283830" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Metal, Impact, Designed Metal Impact, Aggressive, Stretched String 01 SND86395.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Metal, Impact, Designed Metal Impact, Aggressive, Stretched String 01 SND86395_2825F992.wem</CachePath>
+				</File>
+				<File Id="571652412" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\SawCircularSaw 6098_29 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/SawCircularSaw 6098_29 1_007493C9.wem</CachePath>
+				</File>
+				<File Id="591595770" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Electricity, Misc, Electric Impact, Abstract Noise, Sparks 01 SND111758.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Electricity, Misc, Electric Impact, Abstract Noise, Sparks 01 SND111758_7C6573EF.wem</CachePath>
+				</File>
 				<File Id="650612369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="698107653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2_4B826FE0.wem</CachePath>
 				</File>
 				<File Id="708396941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
@@ -191,6 +235,10 @@
 					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="794676280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1_3CBE8998.wem</CachePath>
+				</File>
 				<File Id="832922043" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm_Start_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 3000rpm_Start_OnLoad_70C4B49B.wem</CachePath>
@@ -199,13 +247,58 @@
 					<ShortName>CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="1039991469" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Armor, Impact, Swords Hit Plate 01 SND59345.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Armor, Impact, Swords Hit Plate 01 SND59345_D0253BAE.wem</CachePath>
+				</File>
 			</Media>
 			<Plugins>
 				<Custom>
 					<Plugin Id="756155750" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+					<Plugin Id="856888090" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
 			</Plugins>
 			<Events>
+				<Event Id="180661997" Name="Attack" DurationType="OneShot" DurationMin="1.5503038" DurationMax="1.5503038">
+					<MediaRefs>
+						<MediaRef Id="335294035"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="1.0341706" DurationMax="1.0341706">
+					<MediaRefs>
+						<MediaRef Id="513283830"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2564315215" Name="Defense" DurationType="OneShot" DurationMin="1.7452139" DurationMax="1.7452139">
+					<MediaRefs>
+						<MediaRef Id="19193333"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2168413864" Name="Drill" DurationType="OneShot" DurationMin="3.361816" DurationMax="3.361816">
+					<MediaRefs>
+						<MediaRef Id="8262130"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3235718886" Name="DrillBall_Attack" DurationType="OneShot" DurationMin="4.020889" DurationMax="4.020889">
+					<MediaRefs>
+						<MediaRef Id="251919428"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2892216896" Name="DrillBall_Tackle" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
+					<MediaRefs>
+						<MediaRef Id="131610961"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2947226167" Name="P1_Burst" DurationType="OneShot" DurationMin="5.0347376" DurationMax="5.0347376">
+					<MediaRefs>
+						<MediaRef Id="334581792"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="856888090"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="173106804" Name="P1_Engine_Start" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="218509902"/>
@@ -247,6 +340,37 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
+				<Event Id="871813740" Name="Player_Hit" DurationType="OneShot" DurationMin="1.1195024" DurationMax="1.1195024">
+					<MediaRefs>
+						<MediaRef Id="591595770"/>
+						<MediaRef Id="1039991469"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="203740891" Name="Tackle" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
+					<MediaRefs>
+						<MediaRef Id="131610961"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.33" DurationMax="0.33">
+					<MediaRefs>
+						<MediaRef Id="698107653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2118900976" Name="UI_Hover" DurationType="OneShot" DurationMin="0.048625" DurationMax="0.048625">
+					<MediaRefs>
+						<MediaRef Id="213999704"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.325" DurationMax="0.325">
+					<MediaRefs>
+						<MediaRef Id="794676280"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="696618827" Name="Wall_Hit" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="571652412"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="212170665" Name="Acceleration"/>
@@ -254,5 +378,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9B78F9BB-9C15-DD94-EE55-4A77EF6AE68D}</FileHash>
+	<FileHash>{455F430A-B55C-071E-72C4-DD12899B14E7}</FileHash>
 </SoundBanksInfo>
