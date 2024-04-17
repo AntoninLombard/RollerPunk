@@ -1,5 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using AK.Wwise;
+using Unity.VisualScripting;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -20,17 +23,23 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField] public bool isBraking { get; private set; }
     [field: SerializeField] public bool isTurning { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }   
-
     [SerializeField] private float speed = 0;
     [SerializeField] private float currentSpeed = 0;
 
 
-    [SerializeField] private Transform character;
+    [Header("CHARACTER STATE")]
+    [SerializeField] private bool isRecovering;
+    [SerializeField] private bool isPunching;
+    [SerializeField] private bool isSliding;
+    [SerializeField] private bool isFortified;
+    [SerializeField] private bool isHoldingBall;
+    
     
     [Header("INPUT SYSTEM")]
     [SerializeField] private PlayerInput input;
     private InputAction driveAction;
     private InputAction steerAction;
+    
     
     [Header("PLAYER INPUTS")]
     [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
@@ -43,19 +52,43 @@ public class PlayerController : MonoBehaviour
     [Header("SOUND")] 
     [SerializeField] private AK.Wwise.Event startEngineSound;
     [SerializeField] RTPC engineSpeed;
+
+    
+    [Header("Events")] 
+    [SerializeField] public UnityEvent<GameObject> OnHitByPunch;
+    [SerializeField] public UnityEvent<GameObject> OnHitbySlide;
+    [SerializeField] public UnityEvent<GameObject> OnHitbByBall;
+    [SerializeField] public UnityEvent<GameObject> OnGrabbingBall;
+    
+    
+    [Header("CHARACTER PARTS")]
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Transform character;
+    [SerializeField] private GameObject ballAnchorPoint;
+    [SerializeField] private ParticleSystem particleSystem;
+
+    [Header("ATTACK COLLIDERS")]
+    [SerializeField] private GameObject punchCollider;
+    [SerializeField] private GameObject slideCollider;
+    [SerializeField] private GameObject ballCollider;
+    
     #endregion
     
-    
-    
-    
-    
-    [SerializeField] private Rigidbody rb;
-    
-    
     #region UNITY FUNCTIONS
+
+    private void Awake()
+    {
+        OnHitByPunch.AddListener(onHitByPunch);
+        OnHitbySlide.AddListener(onHitBySlide);
+        OnHitbByBall.AddListener(onHitByBall);
+        OnGrabbingBall.AddListener(onGrabbingBall);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.OnPlayerInstantiate(gameObject);
         driveAction = input.actions.FindAction("Driving/Drive");
         steerAction = input.actions.FindAction("Driving/Steer");
         startEngineSound.Post(gameObject);
@@ -65,7 +98,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 _previousPos = rb.transform.position;
+        //Vector3 _previousPos = rb.transform.position;
         character.position = rb.position - character.up*0.5f;
         //rb.transform.position = _previousPos;
 
@@ -222,23 +255,219 @@ public class PlayerController : MonoBehaviour
 
 
 
-    #region INPUT_CALLBACKS
+    #region INPUT EVENT CALLBACKS
 
-    public void Punch(InputAction.CallbackContext context)
+    public void onPunch(InputAction.CallbackContext context)
     {
-        punchInput = !punchInput;
+        if (!isSliding && !isPunching && isGrounded && !isRecovering)
+        {
+            if (!isHoldingBall)
+            {
+                StartCoroutine(Punch());
+            }
+            else
+            {
+                StartCoroutine(BallPunch());
+            }
+        }
     }
 
-    public void Slide(InputAction.CallbackContext context)
+    public void onSlide(InputAction.CallbackContext context)
     {
-        slideInput = !slideInput;
+        if (!isSliding && !isPunching && isGrounded && !isRecovering)
+        {
+            StartCoroutine(Slide());
+        }
     }
 
-    public void Fortify(InputAction.CallbackContext context)
+    public void onFortify(InputAction.CallbackContext context)
     {
         fortifyInput = !fortifyInput;
     }
 
+    #endregion
+
+
+    #region GAMEPLAY EVENTS CALLBACKS
+
+    void onHitBySlide(GameObject source)
+    {
+        if (isPunching != true)
+        {
+            StartCoroutine(slideReactWindow());
+            return;
+        }
+        slideCounter();
+    }
+    
+    void onHitByPunch(GameObject source)
+    {
+        if (isPunching != true)
+        {
+            StartCoroutine(punchReactWindow());
+            return;
+        }
+        punchCounter();
+    }
+    
+    void onHitByBall(GameObject source)
+    {
+        if (isPunching != true)
+        {
+            StartCoroutine(ballReactWindow());
+            return;
+        }
+        ballCounter();
+    }
+
+    void onGrabbingBall(GameObject ball)
+    {
+        isHoldingBall = true;
+        ball.transform.SetParent(ballAnchorPoint.transform);
+        ball.transform.position = ballAnchorPoint.transform.position;
+    }
+
+    #endregion
+
+
+    #region ACTIONS COROUTINES
+
+    IEnumerator Punch()
+    {
+        isPunching = true;
+        GameObject collider = Instantiate(punchCollider,character);
+        ColliderBox box = collider.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.Punch);
+        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(collider);
+        isPunching = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(1);
+        isRecovering = false;
+    }
+    
+    IEnumerator Slide()
+    {
+        isSliding = true;
+        GameObject collider = Instantiate(slideCollider,character);
+        ColliderBox box = collider.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.Slide);
+        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(collider);
+        isSliding = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(1);
+        isRecovering = false;
+    }
+    
+    IEnumerator BallPunch()
+    {
+        isPunching = true;
+        GameObject collider = Instantiate(punchCollider,character);
+        ColliderBox box = collider.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.Ball);
+        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(collider);
+        isPunching = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(1);
+        isRecovering = false;
+    }
+
+    IEnumerator punchReactWindow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (isPunching != true)
+        {
+            punchHit();
+        }
+        else
+        {
+            punchCounter();
+        }
+    }
+    
+    IEnumerator slideReactWindow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (isSliding != true)
+        {
+            slideHit();
+        }
+        else
+        {
+            slideCounter();
+        }
+    }
+    
+    IEnumerator ballReactWindow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (isPunching != true)
+        {
+            ballHit();
+        }
+        else
+        {
+            ballCounter();
+        }
+    }
+    
+    
+    
+    #endregion
+    
+    
+    #region COMBAT HITS & COUNTERS
+
+    void punchHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.green;
+        particleSystem.Play();
+    }
+
+    void punchCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.white;
+        particleSystem.Play();
+    }
+
+    void slideHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.yellow;
+        particleSystem.Play();
+    }
+
+    void slideCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.white;
+        particleSystem.Play();
+    }
+
+    void ballHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.red;
+        particleSystem.Play();
+    }
+
+    void ballCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.magenta;
+        particleSystem.Play();
+    }
+    
     #endregion
 
 }
