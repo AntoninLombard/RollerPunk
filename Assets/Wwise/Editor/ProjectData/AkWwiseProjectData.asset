@@ -413,7 +413,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584883488575336946
+    m_lastTime: -8584882334339687091
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -441,7 +441,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584883488966196330
+    m_lastTime: -8584882334339621825
     List:
     - name: Play_test
       guid: 37b2db60c2ae09418c6243c0338346e0
@@ -471,7 +471,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584883488966300901
+    m_lastTime: -8584882334339565982
     List:
     - name: Attack
       guid: 141d7e9b557f1e43856c1e846a16496a
@@ -488,11 +488,11 @@ MonoBehaviour:
         guid: 141d7e9b557f1e43856c1e846a16496a
       Path: Events\RP_Feedbacks\Attack
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Attack_With_Ball
-      guid: 50ebe91a68392b44ba36e1bb54b44237
-      id: 1343360372
+      maxDuration: 1.5503038
+      minDuration: 1.5503038
+    - name: Counter
+      guid: 0c8bf4ba67847f41871e1dbcef4d8306
+      id: 3051750219
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -500,16 +500,16 @@ MonoBehaviour:
       - ElementName: RP_Feedbacks
         ObjectType: 12
         guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Attack_With_Ball
+      - ElementName: Counter
         ObjectType: 3
-        guid: 50ebe91a68392b44ba36e1bb54b44237
-      Path: Events\RP_Feedbacks\Attack_With_Ball
+        guid: 0c8bf4ba67847f41871e1dbcef4d8306
+      Path: Events\RP_Feedbacks\Counter
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Hit_Checkpoint
-      guid: 0d141e2b114d4c4b9240ffa5bf4add48
-      id: 844723533
+      maxDuration: 1.0341706
+      minDuration: 1.0341706
+    - name: Defense
+      guid: ea04f23fafc5c04db60ddec2cdb33249
+      id: 2564315215
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -517,13 +517,98 @@ MonoBehaviour:
       - ElementName: RP_Feedbacks
         ObjectType: 12
         guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Hit_Checkpoint
+      - ElementName: Defense
+        ObjectType: 3
+        guid: ea04f23fafc5c04db60ddec2cdb33249
+      Path: Events\RP_Feedbacks\Defense
+      maxAttenuation: 0
+      maxDuration: 1.7452139
+      minDuration: 1.7452139
+    - name: Drill
+      guid: 0d141e2b114d4c4b9240ffa5bf4add48
+      id: 2168413864
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Drill
         ObjectType: 3
         guid: 0d141e2b114d4c4b9240ffa5bf4add48
-      Path: Events\RP_Feedbacks\Hit_Checkpoint
+      Path: Events\RP_Feedbacks\Drill
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 3.361816
+      minDuration: 3.361816
+    - name: DrillBall_Attack
+      guid: 50ebe91a68392b44ba36e1bb54b44237
+      id: 3235718886
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: DrillBall_Attack
+        ObjectType: 3
+        guid: 50ebe91a68392b44ba36e1bb54b44237
+      Path: Events\RP_Feedbacks\DrillBall_Attack
+      maxAttenuation: 0
+      maxDuration: 4.020889
+      minDuration: 4.020889
+    - name: DrillBall_Grab
+      guid: b0e7ece1ad48e34ea95c58477e177d4d
+      id: 3731495412
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: DrillBall_Grab
+        ObjectType: 3
+        guid: b0e7ece1ad48e34ea95c58477e177d4d
+      Path: Events\RP_Feedbacks\DrillBall_Grab
+      maxAttenuation: 0
+      maxDuration: 1.2281718
+      minDuration: 1.2281718
+    - name: DrillBall_Tackle
+      guid: d03cf66bfb18e041b91cf0313bd02018
+      id: 2892216896
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: DrillBall_Tackle
+        ObjectType: 3
+        guid: d03cf66bfb18e041b91cf0313bd02018
+      Path: Events\RP_Feedbacks\DrillBall_Tackle
+      maxAttenuation: 0
+      maxDuration: 1.1628706
+      minDuration: 1.1628706
+    - name: Player_Hit
+      guid: 846fb5f3be68a747be4f29d622bcc5b3
+      id: 871813740
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Player_Hit
+        ObjectType: 3
+        guid: 846fb5f3be68a747be4f29d622bcc5b3
+      Path: Events\RP_Feedbacks\Player_Hit
+      maxAttenuation: 0
+      maxDuration: 1.1195024
+      minDuration: 1.1195024
     - name: Tackle
       guid: ddf8fb39332a3447a8cf3b01d1503f8f
       id: 203740891
@@ -539,8 +624,8 @@ MonoBehaviour:
         guid: ddf8fb39332a3447a8cf3b01d1503f8f
       Path: Events\RP_Feedbacks\Tackle
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.1628706
+      minDuration: 1.1628706
     - name: Wall_Hit
       guid: 72df72b72bb36c4c95bfea07c85181b8
       id: 696618827
@@ -556,8 +641,8 @@ MonoBehaviour:
         guid: 72df72b72bb36c4c95bfea07c85181b8
       Path: Events\RP_Feedbacks\Wall_Hit
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\RP_UI.wwu
     PathAndIcons:
     - ElementName: Events
@@ -569,7 +654,7 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584883489305519271
+    m_lastTime: -8584883460710356260
     List:
     - name: UI_Back
       guid: b147f398c136ab49a070625cc968f28f
@@ -586,8 +671,8 @@ MonoBehaviour:
         guid: b147f398c136ab49a070625cc968f28f
       Path: Events\RP_UI\UI_Back
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.33
+      minDuration: 0.33
     - name: UI_Hover
       guid: 6e768f2bc9c4134b930ee0a13f0f8d72
       id: 2118900976
@@ -603,8 +688,8 @@ MonoBehaviour:
         guid: 6e768f2bc9c4134b930ee0a13f0f8d72
       Path: Events\RP_UI\UI_Hover
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.048625
+      minDuration: 0.048625
     - name: UI_Select
       guid: 6989d29919fb7240a238f60a0c960870
       id: 2774129122
@@ -620,8 +705,8 @@ MonoBehaviour:
         guid: 6989d29919fb7240a238f60a0c960870
       Path: Events\RP_UI\UI_Select
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.325
+      minDuration: 0.325
   - PhysicalPath: Events\RP_Vehicule.wwu
     PathAndIcons:
     - ElementName: Events
@@ -633,7 +718,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Vehicule
     guid: b3615b940e8d94469069d49d4d79c295
     GuidInternal: 
-    m_lastTime: -8584883498486213847
+    m_lastTime: -8584882344742874494
     List:
     - name: P1_Burst
       guid: 0df3a7f2e2dbe74f901fc28c0fab42a5
@@ -650,8 +735,8 @@ MonoBehaviour:
         guid: 0df3a7f2e2dbe74f901fc28c0fab42a5
       Path: Events\RP_Vehicule\P1_Burst
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 5.0347376
+      minDuration: 5.0347376
     - name: P1_Engine_Start
       guid: 7b4ce96814ed7f4dab45c60f77f64457
       id: 173106804
@@ -1026,8 +1111,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 020000000a0000000c0000000d0000002a0000002c0000002d00000037000000390000003a000000
-  ExpandedWaapiItemIds: 0200000003000000
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 02000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 1

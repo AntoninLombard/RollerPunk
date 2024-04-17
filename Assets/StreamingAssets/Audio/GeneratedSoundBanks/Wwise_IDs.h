@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID DEFENSE = 2564315215U;
         static const AkUniqueID DRILL = 2168413864U;
         static const AkUniqueID DRILLBALL_ATTACK = 3235718886U;
+        static const AkUniqueID DRILLBALL_GRAB = 3731495412U;
         static const AkUniqueID DRILLBALL_TACKLE = 2892216896U;
         static const AkUniqueID P1_BURST = 2947226167U;
         static const AkUniqueID P1_ENGINE_START = 173106804U;

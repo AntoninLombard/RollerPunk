@@ -159,7 +159,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F5C9CB52-238D-D630-6346-D4565E1A195A}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{97EDFD5F-1974-7B03-5DD4-B2808E7AF29A}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -235,6 +235,10 @@
 					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="791110778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Sword, Heavy Sword, Axe, Medieval Melee Weapon, Whoosh, Hard Metallic Impact x5 02 SND76061 2.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Sword, Heavy Sword, Axe, Medieval Melee Weapon, Whoosh, Hard Metallic Impact x5 02 SND76061 2_5B635EB1.wem</CachePath>
+				</File>
 				<File Id="794676280" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1.wav</ShortName>
 					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1_3CBE8998.wem</CachePath>
@@ -282,6 +286,11 @@
 				<Event Id="3235718886" Name="DrillBall_Attack" DurationType="OneShot" DurationMin="4.020889" DurationMax="4.020889">
 					<MediaRefs>
 						<MediaRef Id="251919428"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3731495412" Name="DrillBall_Grab" DurationType="OneShot" DurationMin="1.2281718" DurationMax="1.2281718">
+					<MediaRefs>
+						<MediaRef Id="791110778"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2892216896" Name="DrillBall_Tackle" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
@@ -378,5 +387,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{455F430A-B55C-071E-72C4-DD12899B14E7}</FileHash>
+	<FileHash>{FE2D448C-6560-99CB-EB66-D72D0B708B0B}</FileHash>
 </SoundBanksInfo>

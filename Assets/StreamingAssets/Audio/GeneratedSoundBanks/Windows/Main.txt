@@ -16,6 +16,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3051750219	Counter			\RP_Feedbacks\Counter	
 	3187507146	Play_test			\Default Work Unit\Play_test	
 	3235718886	DrillBall_Attack			\RP_Feedbacks\DrillBall_Attack	
+	3731495412	DrillBall_Grab			\RP_Feedbacks\DrillBall_Grab	
 	3919745899	P2_Engine_Stop			\RP_Vehicule\P2_Engine_Stop	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
@@ -27,7 +28,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	856888090	Silence	Wwise Silence		\Actor-Mixer Hierarchy\RP_Feedbacks\Player1\P1_Vehicle\P1_Burst\Burst_Loop\Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	8262130	Drill	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_3DA27465.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Drill\Drill		645564
+	8262130	Drill	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_3DA27465.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\DrillBall\Drill\Drill		645564
 	19193333	Shield	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Wood, Impact, Heavy, Metal Details SND52850_0DF3F462.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player1\P1_Defense\Shield		335176
 	131610961	tackle	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Gravel by egomassive Id-536760 1_C546139D.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player1\P1_DrillBall_Tackle\tackle		55914
 	213999704	UI_Hover	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Krotos UI Button Press Generic Mono-001_10C4C929.wem		\Actor-Mixer Hierarchy\RP_UI\UI_Hover		4764
@@ -45,6 +46,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	698107653	UI_Back	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2_4B826FE0.wem		\Actor-Mixer Hierarchy\RP_UI\UI_Back		63456
 	708396941	CS Car Audi TT 3000rpm Exhaust KMR81i_wav_OnLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player2\P2_Vehicle\P2_VEH_Engine\P2_VEH_ENG_Onload\CS Car Audi TT 3000rpm Exhaust KMR81i_wav_OnLoad		88962
 	757558792	CS Car Audi TT 1500rpm Exhaust KMR81i_wav_OffLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player2\P2_Vehicle\P2_VEH_Engine\P2_VEH_ENG_Offload\CS Car Audi TT 1500rpm Exhaust KMR81i_wav_OffLoad		227154
+	791110778	DrillBall_Grab	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Weapons, Sword, Heavy Sword, Axe, Medieval Melee Weapon, Whoosh, Hard Metallic Impact x5 02 SND76061 2_5B635EB1.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player1\P1_DrillBall_Grab\DrillBall_Grab		235904
 	794676280	UI_Select	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1_3CBE8998.wem		\Actor-Mixer Hierarchy\RP_UI\UI_Select		62496
 	832922043	P2_VEH_Start	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\CS Car Audi TT 3000rpm_Start_OnLoad_70C4B49B.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player2\P2_Vehicle\P2_VEH_Start		247124
 	970935755	CS Car Audi TT 2000rpm Exhaust KMR81i_wav_OnLoad	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Player2\P2_Vehicle\P2_VEH_Engine\P2_VEH_ENG_Onload\CS Car Audi TT 2000rpm Exhaust KMR81i_wav_OnLoad		190120
