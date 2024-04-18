@@ -13,32 +13,58 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ATTACK = 180661997U;
+        static const AkUniqueID BALL_GRAB = 2618017047U;
+        static const AkUniqueID BALL_PUNCH = 2389598339U;
+        static const AkUniqueID BALL_SLIDE = 3430352712U;
         static const AkUniqueID COUNTER = 3051750219U;
         static const AkUniqueID DEFENSE = 2564315215U;
         static const AkUniqueID DRILL = 2168413864U;
-        static const AkUniqueID DRILLBALL_ATTACK = 3235718886U;
-        static const AkUniqueID DRILLBALL_GRAB = 3731495412U;
-        static const AkUniqueID DRILLBALL_TACKLE = 2892216896U;
+        static const AkUniqueID HIT_BYBALL = 602331051U;
+        static const AkUniqueID HIT_BYPUNCH = 3549005828U;
+        static const AkUniqueID HIT_BYSLIDE = 2537114299U;
+        static const AkUniqueID HIT_BYWALL = 2308453416U;
         static const AkUniqueID P1_BURST = 2947226167U;
         static const AkUniqueID P1_ENGINE_START = 173106804U;
         static const AkUniqueID P1_ENGINE_STOP = 140559848U;
         static const AkUniqueID P2_ENGINE_START = 736621041U;
         static const AkUniqueID P2_ENGINE_STOP = 3919745899U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
-        static const AkUniqueID PLAYER_HIT = 871813740U;
-        static const AkUniqueID TACKLE = 203740891U;
+        static const AkUniqueID PUNCH = 645565787U;
+        static const AkUniqueID SLIDE = 3686556480U;
         static const AkUniqueID UI_BACK = 2024222415U;
         static const AkUniqueID UI_HOVER = 2118900976U;
         static const AkUniqueID UI_SELECT = 2774129122U;
-        static const AkUniqueID WALL_HIT = 696618827U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace GROUNDED
+        {
+            static const AkUniqueID GROUP = 2907122923U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FALSE = 2452206122U;
+                static const AkUniqueID TRUE = 3053630529U;
+            } // namespace SWITCH
+        } // namespace GROUNDED
+
+        namespace THROTTLE
+        {
+            static const AkUniqueID GROUP = 2995819693U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FALSE = 2452206122U;
+                static const AkUniqueID TRUE = 3053630529U;
+            } // namespace SWITCH
+        } // namespace THROTTLE
+
+    } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID ACCELERATION = 212170665U;
         static const AkUniqueID DIRECTION = 16764168U;
-        static const AkUniqueID ISGROUNDED = 332343887U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID SKID = 822292696U;
         static const AkUniqueID SPEED = 640949982U;
@@ -52,6 +78,7 @@ namespace AK
         static const AkUniqueID SS_AIR_STORM = 3715662592U;
         static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
         static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
+        static const AkUniqueID THROTTLE = 2995819693U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -67,7 +94,6 @@ namespace AK
         static const AkUniqueID P2 = 1635194255U;
         static const AkUniqueID P3 = 1635194254U;
         static const AkUniqueID P4 = 1635194249U;
-        static const AkUniqueID VOID = 3370470011U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

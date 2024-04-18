@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb2f954ece6639489d2b4aec127c08b, type: 3}
+  m_Name: 3D8787C5-42D6-4FBD-8C76-FE75AD18D3C3
+  m_EditorClassIdentifier: 
+  objectName: Grounded
+  id: 2907122923
+  guid: 3D8787C5-42D6-4FBD-8C76-FE75AD18D3C3

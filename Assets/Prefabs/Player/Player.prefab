@@ -49,18 +49,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 100
   forwardAccel: 7
-  brakingRatio: 0.642
+  brakingRatio: 0.633
   turningRate: 19.06
   gravityStrength: 4
-  drag: 0.119
+  drag: 0.09
   <isAccelerating>k__BackingField: 0
   <isBraking>k__BackingField: 0
   <isTurning>k__BackingField: 0
   <isGrounded>k__BackingField: 0
   speed: 0
   currentSpeed: 0
+  isRecovering: 0
   isPunching: 0
   isSliding: 0
+  isFortified: 0
+  isHoldingBall: 0
   input: {fileID: -5604953935165361315}
   steerInput: 0
   driveInput: 0
@@ -72,20 +75,131 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
       type: 2}
+  events:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 803ecc7ccb801a1479b54801bfbb672a,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ee21b94f5dd19fc41b1d381c5ed30793,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a0afff67375974f48a802f6d08f5ef3d,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
+      type: 2}
   engineSpeed:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: af5d3130f56fab54f9f57bd72ca7fb0d,
       type: 2}
+  vehicleSpeed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0df42ae906fe1b443896468896f67d77,
+      type: 2}
+  throttle:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ed6226692a88dc1448c151ed85a0ffd7,
+      type: 2}
+  direction:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 66559373f0cf2c947b9f555e1d3ea415,
+      type: 2}
+  onGround:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c1413fd2caf4ec843a6b846a9a2d0938,
+      type: 2}
+  offGround:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ca1ab254b3c70f44197a63ad1cd4b986,
+      type: 2}
+  onAcceleration:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 07503d5cb679fa54793671cf9ffe0501,
+      type: 2}
+  offAcceleration:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3379904296e319140ba4d188197eb8d7,
+      type: 2}
   OnHitByPunch:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7317821273378505133}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHitbySlide:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7317821273378505133}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHitbByBall:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7317821273378505133}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnGrabbingBall:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7317821273378505133}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   rb: {fileID: 7070500973027750270}
   character: {fileID: 7419748931926834056}
   ballAnchorPoint: {fileID: 7118435520767477873}
