@@ -49,6 +49,19 @@ namespace AK
             } // namespace SWITCH
         } // namespace GROUNDED
 
+        namespace PLAYER
+        {
+            static const AkUniqueID GROUP = 1069431850U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID P1 = 1635194252U;
+                static const AkUniqueID P2 = 1635194255U;
+                static const AkUniqueID P3 = 1635194254U;
+                static const AkUniqueID P4 = 1635194249U;
+            } // namespace SWITCH
+        } // namespace PLAYER
+
         namespace THROTTLE
         {
             static const AkUniqueID GROUP = 2995819693U;

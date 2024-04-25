@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 100
-  forwardAccel: 7
-  brakingRatio: 0.633
+  forwardAccel: 10
+  brakingRatio: 0.2
   turningRate: 19.06
   gravityStrength: 4
   drag: 0.09
@@ -125,20 +125,6 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ca1ab254b3c70f44197a63ad1cd4b986,
-      type: 2}
-  onAcceleration:
-    idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 07503d5cb679fa54793671cf9ffe0501,
-      type: 2}
-  offAcceleration:
-    idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3379904296e319140ba4d188197eb8d7,
       type: 2}
   OnHitByPunch:
     m_PersistentCalls:
