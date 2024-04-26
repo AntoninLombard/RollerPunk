@@ -59,8 +59,11 @@ MonoBehaviour:
   <isGrounded>k__BackingField: 0
   speed: 0
   currentSpeed: 0
+  isRecovering: 0
   isPunching: 0
   isSliding: 0
+  isFortified: 0
+  isHoldingBall: 0
   input: {fileID: -5604953935165361315}
   steerInput: 0
   driveInput: 0
@@ -84,6 +87,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHitbByBall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGrabbingBall:
     m_PersistentCalls:
       m_Calls: []
   rb: {fileID: 7070500973027750270}
@@ -5254,7 +5260,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8489517819033615366}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d13e7296f765423489c4fbf906054757, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

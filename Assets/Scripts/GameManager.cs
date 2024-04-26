@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     
     
     [Header("Players")]
-    [SerializeField] private List<PlayerController> players;
+    [SerializeField] private List<PlayerControllerV3> players;
     [SerializeField] private int[] score;
     [SerializeField] private int nbHumanPlayer;
     [SerializeField] private int nbPlayer;
 
     [Header("Gameplay")] 
     [SerializeField] private bool isRaceOn;
-    [SerializeField] private PlayerController ballHolder;
+    [SerializeField] private PlayerControllerV3 ballHolder;
     [SerializeField] private float timer;
     [SerializeField] private BallScript ball;
     [SerializeField] private List<CheckpointScript> checkpoints;
@@ -63,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerInstantiate(GameObject player)
     {
-        players.Add(player.GetComponent<PlayerController>());
+        players.Add(player.GetComponent<PlayerControllerV3>());
         player.transform.position =  spawnPoints[nbHumanPlayer].position;
         nbHumanPlayer++;
         nbPlayer++;

@@ -192,19 +192,47 @@ public class PlayerController : MonoBehaviour
     }
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        //Draw the suspension
-        Gizmos.DrawLine(
-            transform.position + Vector3.up *3f, transform.position + rb.velocity + Vector3.up *3f
-        );
+        Vector3 pos = character.position;
+        Vector3 up = character.up;
+        Vector3 right = character.right;
+        Vector3 forward = character.forward;
         
-        RaycastHit hit;
-        if (Physics.Raycast(character.position, -character.up,out hit,0.5f))
+        Gizmos.color = Color.red;
+        if (Physics.Raycast(character.position, -up, out var hitUnder, 0.5f))
         {
             Gizmos.color = Color.green;
         }
-        //Draw the suspension
-        Gizmos.DrawLine(character.position, character.position + -character.up * 0.5f);
+        Gizmos.DrawLine(pos, pos + -character.up * 0.5f);
+
+        
+        Gizmos.color = Color.red;
+        if (Physics.Raycast(character.position, -up - right, out var hitLeft, 0.5f))
+        {
+            Gizmos.color = Color.green;
+        }
+        Gizmos.DrawLine(pos, pos + (-up - right).normalized * 0.5f);
+        
+        
+        Gizmos.color = Color.red;
+        if (Physics.Raycast(character.position, -up + right, out var hitRight, 0.5f))
+        {
+            Gizmos.color = Color.green;
+        }
+        Gizmos.DrawLine(pos, pos + (-up + right).normalized * 0.5f);
+        
+        Gizmos.color = Color.red;
+        if (Physics.Raycast(character.position, -up + forward, out var hitFront, 0.5f))
+        {
+            Gizmos.color = Color.green;
+        }
+        Gizmos.DrawLine(pos, pos + (-up + forward).normalized * 0.5f);
+        
+        Gizmos.color = Color.red;
+        if (Physics.Raycast(character.position, -up -forward, out var hitBack, 0.5f))
+        {
+            Gizmos.color = Color.green;
+        }
+        Gizmos.DrawLine(pos, pos + (-up - forward).normalized * 0.5f);
     }
     #endregion
 
@@ -212,34 +240,54 @@ public class PlayerController : MonoBehaviour
 
     void groundCheck(float time)
     {
-        //Adjust character model to the surface normal it's on
-        if (Physics.Raycast(character.position, -character.up, out var hit, 0.5f))
+        Vector3 pos = character.position;
+        Vector3 up = character.up;
+        Vector3 right = character.right;
+        Vector3 forward = character.forward;
+
+        int count = 0;
+        Vector3 normal = Vector3.zero;
+        if (Physics.Raycast(pos, -character.up, out var hitUnder, 0.5f))
+        {
+            count += 3;
+            normal += hitUnder.normal*3;
+        }
+        if (Physics.Raycast(pos, -up - right, out var hitLeft, 0.5f))
+        {
+            count++;
+            normal += hitLeft.normal;
+        }
+        if (Physics.Raycast(pos, -up + right, out var hitRight, 0.5f))
+        {
+            count++;
+            normal += hitRight.normal;
+        }
+        if (Physics.Raycast(pos, -up + forward, out var hitFront, 0.5f))
+        {
+            count++;
+            normal += hitFront.normal;
+        }
+        if (Physics.Raycast(pos, -up -forward, out var hitBack, 0.5f))
+        {
+            count++;
+            normal += hitBack.normal;
+        }
+
+        if (count != 0)
         {
             isGrounded = true;
-            //METHOD 1
-            //Vector3 rot = character.rotation.eulerAngles;
-            //character.up = Vector3.Lerp(character.up, hit.normal, time * 2.0f);
-            //character.Rotate(0, rot.y, 0);
-            
-            
-            //METHOD 2
-            //Quaternion rot = Quaternion.FromToRotation(character.up,hit.normal) * transform.rotation;
-            //character.rotation = Quaternion.Slerp(character.rotation, rot * character.rotation, 10.0f * time);
-            //character.rotation = rot;
-
-
-
-            //METHOD 3
-            alignCharToNormal(hit.normal, time);
+            normal /= count;
+            alignCharToNormal(normal, time);
         }
-        else if (Physics.Raycast(character.position, Vector3.down, out var hitDown, 1.0f))
+        else if (Physics.Raycast(character.position, Vector3.down, out var hitDown, 0.5f))
         {
-            alignCharToNormal(hitDown.normal, time);
+            isGrounded = true;
+            alignCharToNormal(hitDown.normal, time/2);
         }
         else
         {
             isGrounded = false;
-            alignCharToNormal(Vector3.up, time);
+            alignCharToNormal(Vector3.up, time/5);
         }
     }
 
