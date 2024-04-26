@@ -2,8 +2,11 @@
 <PluginInfo Platform="Mac" BasePlatform="Mac">
 	<PluginLibs>
 		<PluginLib LibName="Wwise Sine" LibId="6553602" Type="Source" DLL="AkSineTone" StaticLib="AkSineSource"/>
+		<PluginLib LibName="Wwise Silence" LibId="6619138" Type="Source" DLL="AkSilenceGenerator" StaticLib="AkSilenceSource"/>
+		<PluginLib LibName="Wwise Parametric EQ" LibId="6881283" Type="Effect" DLL="AkParametricEQ" StaticLib="AkParametricEQFX"/>
+		<PluginLib LibName="Wwise Guitar Distortion" LibId="8257539" Type="Effect" DLL="AkGuitarDistortion" StaticLib="AkGuitarDistortionFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{107F24AF-412A-EDA3-C050-12EC00ECAFF2}</FileHash>
+	<FileHash>{E72553D2-7C05-E456-E5D6-E4F46EAD921E}</FileHash>
 </PluginInfo>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CE6CD2FC-2DD7-EE31-BB04-1703DC51826E}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{00055671-3B1D-186F-6C35-2EEF6C78E226}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -23,13 +23,10 @@
 				<Bus Id="1635194252" Name="P1"/>
 				<Bus Id="1635194254" Name="P3"/>
 				<Bus Id="1635194255" Name="P2"/>
-				<Bus Id="3370470011" Name="Void"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<GameParameters>
 				<GameParameter Id="16764168" Name="Direction"/>
-				<GameParameter Id="212170665" Name="Acceleration"/>
-				<GameParameter Id="332343887" Name="isGrounded"/>
 				<GameParameter Id="640949982" Name="Speed"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
@@ -37,6 +34,7 @@
 				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="2995819693" Name="Throttle"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
 				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
 				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
@@ -44,6 +42,28 @@
 				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
 				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="1069431850" Name="Player">
+					<Switches>
+						<Switch Id="1635194249" Name="P4"/>
+						<Switch Id="1635194252" Name="P1"/>
+						<Switch Id="1635194254" Name="P3"/>
+						<Switch Id="1635194255" Name="P2"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="2907122923" Name="Grounded">
+					<Switches>
+						<Switch Id="2452206122" Name="False"/>
+						<Switch Id="3053630529" Name="True"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="2995819693" Name="Throttle">
+					<Switches>
+						<Switch Id="2452206122" Name="False"/>
+						<Switch Id="3053630529" Name="True"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
 					<Properties>
@@ -159,29 +179,85 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CF826299-FA8C-5E60-33AE-59C928325DF0}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F016488C-63E0-91D3-CD3B-D4F03DFBBFB6}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="8262130" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_3DA27465.wem</CachePath>
+				</File>
+				<File Id="19193333" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Wood, Impact, Heavy, Metal Details SND52850.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Wood, Impact, Heavy, Metal Details SND52850_0DF3F462.wem</CachePath>
+				</File>
+				<File Id="88947134" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M1_Start.wav</ShortName>
+					<CachePath>SFX/M1_Start_47FAB305.wem</CachePath>
+				</File>
+				<File Id="101842239" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_2.wav</ShortName>
+					<CachePath>SFX/M2_2_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="131610961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Gravel by egomassive Id-536760 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Gravel by egomassive Id-536760 1_C546139D.wem</CachePath>
+				</File>
+				<File Id="213999704" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Krotos UI Button Press Generic Mono-001.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Krotos UI Button Press Generic Mono-001_10C4C929.wem</CachePath>
+				</File>
 				<File Id="218509902" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="251919428" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Sword, Hard, Hit, Swing, Swoosh 04 SND69198.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Sword, Hard, Hit, Swing, Swoosh 04 SND69198_4267CFA0.wem</CachePath>
 				</File>
 				<File Id="326974387" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT Idle V1 Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
 				</File>
-				<File Id="478236145" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CS Car Audi TT 3000rpm_Stop_OnLoad.wav</ShortName>
-					<CachePath>SFX/CS Car Audi TT 3000rpm_Stop_OnLoad_677EF273.wem</CachePath>
+				<File Id="334581792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\JetPack 6085_11.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/JetPack 6085_11_FD09E7B6.wem</CachePath>
+				</File>
+				<File Id="335294035" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Armor, Weapons, Shield, Hit 01 SND69119 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Armor, Weapons, Shield, Hit 01 SND69119 1_3B23401B.wem</CachePath>
+				</File>
+				<File Id="421357980" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_1.wav</ShortName>
+					<CachePath>SFX/M2_1_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="502755110" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="503999046" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_3.wav</ShortName>
+					<CachePath>SFX/M2_3_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="513283830" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Metal, Impact, Designed Metal Impact, Aggressive, Stretched String 01 SND86395.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Metal, Impact, Designed Metal Impact, Aggressive, Stretched String 01 SND86395_2825F992.wem</CachePath>
+				</File>
+				<File Id="571652412" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\SawCircularSaw 6098_29 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/SawCircularSaw 6098_29 1_007493C9.wem</CachePath>
+				</File>
+				<File Id="591595770" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Electricity, Misc, Electric Impact, Abstract Noise, Sparks 01 SND111758.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Electricity, Misc, Electric Impact, Abstract Noise, Sparks 01 SND111758_7C6573EF.wem</CachePath>
+				</File>
 				<File Id="650612369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="698107653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2_4B826FE0.wem</CachePath>
 				</File>
 				<File Id="708396941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
@@ -191,6 +267,22 @@
 					<ShortName>CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 1500rpm Exhaust KMR81i.wav_OffLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="780776096" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CS Car Audi TT 3000rpm_Stop_OnLoad.wav</ShortName>
+					<CachePath>SFX/CS Car Audi TT 3000rpm_Stop_OnLoad_E53A40FA.wem</CachePath>
+				</File>
+				<File Id="791110778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Sword, Heavy Sword, Axe, Medieval Melee Weapon, Whoosh, Hard Metallic Impact x5 02 SND76061 2.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Sword, Heavy Sword, Axe, Medieval Melee Weapon, Whoosh, Hard Metallic Impact x5 02 SND76061 2_5B635EB1.wem</CachePath>
+				</File>
+				<File Id="794676280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1_3CBE8998.wem</CachePath>
+				</File>
+				<File Id="821058410" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_Saw.wav</ShortName>
+					<CachePath>SFX/M2_Saw_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="832922043" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm_Start_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 3000rpm_Start_OnLoad_70C4B49B.wem</CachePath>
@@ -199,28 +291,121 @@
 					<ShortName>CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad.wav</ShortName>
 					<CachePath>SFX/CS Car Audi TT 2000rpm Exhaust KMR81i.wav_OnLoad_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="1039991469" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundly Audio\Weapons, Armor, Impact, Swords Hit Plate 01 SND59345.wav</ShortName>
+					<CachePath>SFX/Soundly Audio/Weapons, Armor, Impact, Swords Hit Plate 01 SND59345_D0253BAE.wem</CachePath>
+				</File>
 			</Media>
 			<Plugins>
 				<Custom>
+					<Plugin Id="738060054" Name="Guitar Distortion (Custom)" LibName="Wwise Guitar Distortion" LibId="8257539"/>
 					<Plugin Id="756155750" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+					<Plugin Id="856888090" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
+				<ShareSets>
+					<Plugin Id="759487314" Name="Engines" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="173106804" Name="P1_Engine_Start" DurationType="Infinite">
+				<Event Id="2618017047" Name="Ball_Grab" DurationType="OneShot" DurationMin="1.2281718" DurationMax="1.2281718">
 					<MediaRefs>
-						<MediaRef Id="218509902"/>
-						<MediaRef Id="326974387"/>
-						<MediaRef Id="502755110"/>
-						<MediaRef Id="650612369"/>
-						<MediaRef Id="708396941"/>
-						<MediaRef Id="757558792"/>
-						<MediaRef Id="832922043"/>
-						<MediaRef Id="970935755"/>
+						<MediaRef Id="791110778"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="140559848" Name="P1_Engine_Stop" DurationType="OneShot" DurationMin="1.7797291" DurationMax="1.7797291">
+				<Event Id="2389598339" Name="Ball_Punch" DurationType="OneShot" DurationMin="0.46790645" DurationMax="0.46790645">
 					<MediaRefs>
-						<MediaRef Id="478236145"/>
+						<MediaRef Id="251919428"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3430352712" Name="Ball_Slide" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
+					<MediaRefs>
+						<MediaRef Id="131610961"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="1.0341706" DurationMax="1.0341706">
+					<MediaRefs>
+						<MediaRef Id="513283830"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2564315215" Name="Defense" DurationType="OneShot" DurationMin="1.7452139" DurationMax="1.7452139">
+					<MediaRefs>
+						<MediaRef Id="19193333"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2168413864" Name="Drill" DurationType="OneShot" DurationMin="3.361816" DurationMax="3.361816">
+					<MediaRefs>
+						<MediaRef Id="8262130"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="602331051" Name="Hit_ByBall" DurationType="OneShot" DurationMin="0.94138557" DurationMax="0.94138557">
+					<MediaRefs>
+						<MediaRef Id="591595770"/>
+						<MediaRef Id="1039991469"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3549005828" Name="Hit_ByPunch" DurationType="OneShot" DurationMin="1.3313202" DurationMax="1.3313202">
+					<MediaRefs>
+						<MediaRef Id="591595770"/>
+						<MediaRef Id="1039991469"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2537114299" Name="Hit_BySlide" DurationType="OneShot" DurationMin="2.2390049" DurationMax="2.2390049">
+					<MediaRefs>
+						<MediaRef Id="591595770"/>
+						<MediaRef Id="1039991469"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2308453416" Name="Hit_ByWall" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="571652412"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2947226167" Name="P1_Burst" DurationType="OneShot" DurationMin="5.0347376" DurationMax="5.0347376">
+					<MediaRefs>
+						<MediaRef Id="334581792"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="856888090"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="173106804" Name="P1_Engine_Start" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="88947134"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="3657550167"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="101842239"/>
+								<MediaRef Id="421357980"/>
+								<MediaRef Id="503999046"/>
+								<MediaRef Id="821058410"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="738060054"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="759487314"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="140559848" Name="P1_Engine_Stop" DurationType="OneShot" DurationMin="2.9931357" DurationMax="2.9931357">
+					<MediaRefs>
+						<MediaRef Id="780776096"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="736621041" Name="P2_Engine_Start" DurationType="Infinite">
@@ -235,9 +420,9 @@
 						<MediaRef Id="970935755"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3919745899" Name="P2_Engine_Stop" DurationType="OneShot" DurationMin="1.7797291" DurationMax="1.7797291">
+				<Event Id="3919745899" Name="P2_Engine_Stop" DurationType="OneShot" DurationMin="2.9931357" DurationMax="2.9931357">
 					<MediaRefs>
-						<MediaRef Id="478236145"/>
+						<MediaRef Id="780776096"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3187507146" Name="Play_test" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
@@ -247,12 +432,48 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
+				<Event Id="645565787" Name="Punch" DurationType="OneShot" DurationMin="0.94272983" DurationMax="0.94272983">
+					<MediaRefs>
+						<MediaRef Id="335294035"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3686556480" Name="Slide" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
+					<MediaRefs>
+						<MediaRef Id="131610961"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.33" DurationMax="0.33">
+					<MediaRefs>
+						<MediaRef Id="698107653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2118900976" Name="UI_Hover" DurationType="OneShot" DurationMin="0.048625" DurationMax="0.048625">
+					<MediaRefs>
+						<MediaRef Id="213999704"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.325" DurationMax="0.325">
+					<MediaRefs>
+						<MediaRef Id="794676280"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
-				<GameParameter Id="212170665" Name="Acceleration"/>
+				<GameParameter Id="16764168" Name="Direction"/>
 				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="2995819693" Name="Throttle"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="1069431850" Name="Player">
+					<Switches>
+						<Switch Id="1635194249" Name="P4"/>
+						<Switch Id="1635194252" Name="P1"/>
+						<Switch Id="1635194254" Name="P3"/>
+						<Switch Id="1635194255" Name="P2"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A6722B1B-0129-7E5B-F712-BF02C2B6ACA3}</FileHash>
+	<FileHash>{A0529ACC-B2A0-1B58-F2D4-F8013104F132}</FileHash>
 </SoundBanksInfo>

@@ -2,8 +2,11 @@
 <PluginInfo Platform="Windows" BasePlatform="Windows">
 	<PluginLibs>
 		<PluginLib LibName="Wwise Sine" LibId="6553602" Type="Source" DLL="AkSineTone" StaticLib="AkSineSource"/>
+		<PluginLib LibName="Wwise Silence" LibId="6619138" Type="Source" DLL="AkSilenceGenerator" StaticLib="AkSilenceSource"/>
+		<PluginLib LibName="Wwise Parametric EQ" LibId="6881283" Type="Effect" DLL="AkParametricEQ" StaticLib="AkParametricEQFX"/>
+		<PluginLib LibName="Wwise Guitar Distortion" LibId="8257539" Type="Effect" DLL="AkGuitarDistortion" StaticLib="AkGuitarDistortionFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{3655B581-5FE5-16B8-4F1C-FE24BD82FFA5}</FileHash>
+	<FileHash>{349894C2-98FB-A3F8-7C6F-8F2A70531BD3}</FileHash>
 </PluginInfo>

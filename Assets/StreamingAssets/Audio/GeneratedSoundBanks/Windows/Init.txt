@@ -19,7 +19,6 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	1635194252	P1			\Default Work Unit\Master Audio Bus\P1	
 	1635194254	P3			\Default Work Unit\Master Audio Bus\P3	
 	1635194255	P2			\Default Work Unit\Master Audio Bus\P2	
-	3370470011	Void			\Default Work Unit\Void	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Audio Devices	ID	Name	Type				Notes

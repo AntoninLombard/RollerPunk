@@ -51,7 +51,13 @@ public class PlayerController : MonoBehaviour
     
     [Header("SOUND")] 
     [SerializeField] private AK.Wwise.Event startEngineSound;
+    [SerializeField] private AK.Wwise.Event[] events;
     [SerializeField] RTPC engineSpeed;
+    [SerializeField] RTPC vehicleSpeed;
+    [SerializeField] RTPC throttle;
+    [SerializeField] RTPC direction;
+    [SerializeField] AK.Wwise.Switch onGround;
+    [SerializeField] AK.Wwise.Switch offGround;
 
     
     [Header("Events")] 
@@ -105,28 +111,34 @@ public class PlayerController : MonoBehaviour
         steerInput = steerAction.ReadValue<float>();
         driveInput = driveAction.ReadValue<float>();
         
+        //Apply float input values to engine sound effect
+        throttle.SetValue(gameObject, driveInput);
+        direction.SetValue(gameObject, steerInput);
         
         //Apply drag force
         currentSpeed -= currentSpeed * drag * Time.deltaTime;
         if (!isGrounded)
         {
-            
+            offGround.SetValue(gameObject);
         }
         else if (driveInput > 0f)
         {
             isBraking = false;
             isAccelerating = true;
             currentSpeed = currentSpeed + forwardAccel * Time.deltaTime;
+            onGround.SetValue(gameObject);
         }
         else if(driveInput < 0f)
         {
             isBraking = true;
             isAccelerating = false;
             currentSpeed = currentSpeed * (1-brakingRatio * Time.deltaTime);
+            onGround.SetValue(gameObject);
         } else
         {
             isBraking = false;
             isAccelerating = false;
+            onGround.SetValue(gameObject);
         }
 
         if (steerInput != 0)
@@ -518,5 +530,13 @@ public class PlayerController : MonoBehaviour
     
     #endregion
 
+    #region WWISE RELATED FUNCTIONS
+
+    public void PlayWwiseEvent(int i)
+    {
+        events[i].Post(gameObject);
+    }
+
+    #endregion
 }
 
