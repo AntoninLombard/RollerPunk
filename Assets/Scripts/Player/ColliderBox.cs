@@ -10,7 +10,8 @@ public class ColliderBox : MonoBehaviour
     {
         Slide,
         Punch,
-        Ball
+        BallPunch,
+        BallSlide
     }
     [SerializeField] private GameObject source;
     [SerializeField] private ColliderType type;
@@ -43,8 +44,11 @@ public class ColliderBox : MonoBehaviour
                     case ColliderType.Punch:
                         pc.OnHitByPunch.Invoke(source);
                         break;
-                    case ColliderType.Ball:
-                        pc.OnHitbByBall.Invoke(source);
+                    case ColliderType.BallPunch:
+                        pc.OnHitbByBallPunch.Invoke(source);
+                        break;
+                    case ColliderType.BallSlide:
+                        pc.OnHitbByBallSlide.Invoke(source);
                         break;
                 }
             }

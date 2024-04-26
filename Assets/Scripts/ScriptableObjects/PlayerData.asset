@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a559a010f40bac9478696e09f5e5bb9b, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  maxSpeed: 80
+  forwardAccel: 50
+  brakingRatio: 0
+  turningRate: 20
+  gravityStrength: 0
+  drag: 0
+  counterWindow: 0.5
+  actionsCooldown: 1.5
+  startEngineSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
+      type: 2}
+  punchSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 01ef736ccd51798479c503bdfd9908ac,
+      type: 2}
+  slideSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0f7c5d8fe450c9344887aee3b0d009c9,
+      type: 2}
+  balLPunchSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1066e2603f01b264abf5f3896d8a3784,
+      type: 2}
+  ballSlideSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1c8c96c311bb4a342b9f1595c3c0ec37,
+      type: 2}
+  punchHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 803ecc7ccb801a1479b54801bfbb672a,
+      type: 2}
+  slideHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ee21b94f5dd19fc41b1d381c5ed30793,
+      type: 2}
+  ballPunchHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a0afff67375974f48a802f6d08f5ef3d,
+      type: 2}
+  ballSlideHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a0afff67375974f48a802f6d08f5ef3d,
+      type: 2}
+  punchCounterSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
+      type: 2}
+  slideCounterSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
+      type: 2}
+  ballPunchCounterSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
+      type: 2}
+  ballSlideCounterSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
+      type: 2}
+  engineSpeed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: af5d3130f56fab54f9f57bd72ca7fb0d,
+      type: 2}
+  vehicleSpeed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0df42ae906fe1b443896468896f67d77,
+      type: 2}
+  throttle:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ed6226692a88dc1448c151ed85a0ffd7,
+      type: 2}
+  direction:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 66559373f0cf2c947b9f555e1d3ea415,
+      type: 2}
+  onGround:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c1413fd2caf4ec843a6b846a9a2d0938,
+      type: 2}
+  offGround:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ca1ab254b3c70f44197a63ad1cd4b986,
+      type: 2}
+  punchCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
+    type: 3}
+  slideCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
+    type: 3}
+  ballPunchCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
+    type: 3}
+  ballSlideCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
+    type: 3}

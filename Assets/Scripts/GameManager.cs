@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviour
     
     
     [Header("Players")]
-    [SerializeField] private List<PlayerControllerV3> players;
+    [SerializeField] private List<PlayerController> players;
     [SerializeField] private int[] score;
     [SerializeField] private int nbHumanPlayer;
     [SerializeField] private int nbPlayer;
 
     [Header("Gameplay")] 
     [SerializeField] private bool isRaceOn;
-    [SerializeField] private PlayerControllerV3 ballHolder;
+    [SerializeField] private PlayerController ballHolder;
     [SerializeField] private float timer;
     [SerializeField] private BallScript ball;
     [SerializeField] private List<CheckpointScript> checkpoints;
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerInstantiate(GameObject player)
     {
-        players.Add(player.GetComponent<PlayerControllerV3>());
+        players.Add(player.GetComponent<PlayerController>());
         player.transform.position =  spawnPoints[nbHumanPlayer].position;
         nbHumanPlayer++;
         nbPlayer++;

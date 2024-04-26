@@ -225,7 +225,7 @@ MonoBehaviour:
   isGrounded: 0
   speed: 0
   currentSpeed: 0
-  turningInput: 0
+  steerInput: 0
   driveInput: 0
   velocity: {x: 0, y: 0, z: 0}
   character: {fileID: 1706618883694479924}
@@ -302,6 +302,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4014009144695739909, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a43f2a56dfcbaf74bb7fc4c074b69afb,
+        type: 2}
     - target: {fileID: 4014009144695739909, guid: 188551011c7b90243b1c6c7358411fed,
         type: 3}
       propertyPath: m_IsTrigger

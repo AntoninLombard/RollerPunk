@@ -9,29 +9,20 @@ public class PlayerController : MonoBehaviour
 {
     #region VARIABLES
 
-    [Header("DRIVING VALUES")]
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float forwardAccel = 0;
-    [SerializeField] [Range(0.0f,1.0f)] private float brakingRatio = 0;
-    [SerializeField] private float turningRate = 0;
-    [SerializeField] private float gravityStrength = 0.0f;
-    [SerializeField] [Range(0.0f,1.0f)] private float drag;
+    [SerializeField] private PlayerControllerData controllerData; 
 
-
-    [field: Header("DRIVING STATE (DO NOT MODIFY)")]
+    [field: Header("DRIVING STATE")]
     [field: SerializeField] public bool isAccelerating { get; private set; }
     [field: SerializeField] public bool isBraking { get; private set; }
     [field: SerializeField] public bool isTurning { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }   
     [SerializeField] private float speed = 0;
-    [SerializeField] private float currentSpeed = 0;
-
-
+    
     [Header("CHARACTER STATE")]
     [SerializeField] private bool isRecovering;
     [SerializeField] private bool isPunching;
     [SerializeField] private bool isSliding;
-    [SerializeField] private bool isFortified;
+    [SerializeField] private bool isStunned;
     [SerializeField] private bool isHoldingBall;
     
     
@@ -49,21 +40,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool fortifyInput;
     
     
-    [Header("SOUND")] 
-    [SerializeField] private AK.Wwise.Event startEngineSound;
-    [SerializeField] private AK.Wwise.Event[] events;
-    [SerializeField] RTPC engineSpeed;
-    [SerializeField] RTPC vehicleSpeed;
-    [SerializeField] RTPC throttle;
-    [SerializeField] RTPC direction;
-    [SerializeField] AK.Wwise.Switch onGround;
-    [SerializeField] AK.Wwise.Switch offGround;
-
-    
     [Header("Events")] 
     [SerializeField] public UnityEvent<GameObject> OnHitByPunch;
     [SerializeField] public UnityEvent<GameObject> OnHitbySlide;
-    [SerializeField] public UnityEvent<GameObject> OnHitbByBall;
+    [SerializeField] public UnityEvent<GameObject> OnHitbByBallPunch;
+    [SerializeField] public UnityEvent<GameObject> OnHitbByBallSlide;
     [SerializeField] public UnityEvent<GameObject> OnGrabbingBall;
     
     
@@ -72,12 +53,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform character;
     [SerializeField] private GameObject ballAnchorPoint;
     [SerializeField] private ParticleSystem particleSystem;
-
-    [Header("ATTACK COLLIDERS")]
-    [SerializeField] private GameObject punchCollider;
-    [SerializeField] private GameObject slideCollider;
-    [SerializeField] private GameObject ballCollider;
-    
     #endregion
     
     #region UNITY FUNCTIONS
@@ -86,7 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         OnHitByPunch.AddListener(onHitByPunch);
         OnHitbySlide.AddListener(onHitBySlide);
-        OnHitbByBall.AddListener(onHitByBall);
+        OnHitbByBallPunch.AddListener(onHitByBallPunch);
+        OnHitbByBallSlide.AddListener(onHitByBallSlide);
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
 
@@ -97,7 +73,7 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.OnPlayerInstantiate(gameObject);
         driveAction = input.actions.FindAction("Driving/Drive");
         steerAction = input.actions.FindAction("Driving/Steer");
-        startEngineSound.Post(gameObject);
+        controllerData.startEngineSound.Post(gameObject);
     }
 
     
@@ -112,83 +88,75 @@ public class PlayerController : MonoBehaviour
         driveInput = driveAction.ReadValue<float>();
         
         //Apply float input values to engine sound effect
-        throttle.SetValue(gameObject, driveInput);
-        direction.SetValue(gameObject, steerInput);
+        controllerData.throttle.SetValue(gameObject, driveInput);
+        controllerData.direction.SetValue(gameObject, steerInput);
         
-        //Apply drag force
-        currentSpeed -= currentSpeed * drag * Time.deltaTime;
-        if (!isGrounded)
-        {
-            offGround.SetValue(gameObject);
-        }
-        else if (driveInput > 0f)
-        {
-            isBraking = false;
-            isAccelerating = true;
-            currentSpeed = currentSpeed + forwardAccel * Time.deltaTime;
-            onGround.SetValue(gameObject);
-        }
-        else if(driveInput < 0f)
-        {
-            isBraking = true;
-            isAccelerating = false;
-            currentSpeed = currentSpeed * (1-brakingRatio * Time.deltaTime);
-            onGround.SetValue(gameObject);
-        } else
-        {
-            isBraking = false;
-            isAccelerating = false;
-            onGround.SetValue(gameObject);
-        }
 
         if (steerInput != 0)
         {
+            character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), Time.deltaTime * 5f));
             isTurning = true;
         }
         else
         {
             isTurning = false;
         }
-        
-        if (currentSpeed > maxSpeed)
-        {
-            currentSpeed = maxSpeed;
-        }
+
+        //currentVelocity = Vector3.ClampMagnitude(currentVelocity,controllerData.maxSpeed);
         
         groundCheck(Time.deltaTime);
-        engineSpeed.SetValue(gameObject,currentSpeed);
+        controllerData.engineSpeed.SetValue(gameObject,speed);
     }
     
     void FixedUpdate()
     {
-        if (isGrounded)
+        Vector3 currentVelocity = rb.velocity;
+        Vector3 deltaVelocity = Vector3.zero;
+        
+        deltaVelocity -= currentVelocity * (controllerData.drag * Time.deltaTime);
+        
+        
+        if (!isGrounded)
         {
-            rb.AddForce(character.forward * (currentSpeed * rb.mass));
-
+            controllerData.offGround.SetValue(gameObject);
         }
+        else 
+        {
+            controllerData.onGround.SetValue(gameObject);
+            switch (driveInput)
+            {
+                case > 0f:
+                    isBraking = false;
+                    isAccelerating = true;
+                    deltaVelocity += character.forward * (driveInput * controllerData.forwardAccel * Time.fixedDeltaTime);
+                    break;
+                case < 0f:
+                    isBraking = true;
+                    isAccelerating = false;
+                    deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
+                    break;
+                default:
+                    isBraking = false;
+                    isAccelerating = false;
+                    break;
+            }
+        
+        }
+        
+        // if (isGrounded && !isStunned)
+        // {
+        //     rb.AddForce(currentVelocity ,ForceMode.VelocityChange);
+        //
+        // }
+        rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
         //rb.AddForce(character.forward * currentSpeed, ForceMode.Acceleration);
         //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
 
-        
-        /*//Speeding up the player
-        if (isAccelerating & !isBraking)
-        {
-            rb.AddForce(transform.forward * (forwardAccel * driveInput), ForceMode.Acceleration);
-        }
 
-        
-        //Slowing down the player when braking
-        if (isBraking && rb.velocity.magnitude > 0)
+        currentVelocity = rb.velocity;
+        if (currentVelocity.magnitude > controllerData.maxSpeed)
         {
-            rb.AddForce(transform.forward * (brakingAccel * rb.velocity.magnitude * driveInput));
-        }*/
-
-        
-        
-        //Turning the player toward the new direction
-        if (isTurning)
-        {
-            character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * turningRate, 0), Time.fixedDeltaTime * 5f));
+            rb.AddForce(currentVelocity.normalized * controllerData.maxSpeed - currentVelocity,ForceMode.VelocityChange);
         }
 
 
@@ -336,7 +304,15 @@ public class PlayerController : MonoBehaviour
     {
         if (!isSliding && !isPunching && isGrounded && !isRecovering)
         {
-            StartCoroutine(Slide());
+            if (!isHoldingBall)
+            {
+                StartCoroutine(Slide());
+            }
+            else
+            {
+                StartCoroutine(BallSlide());
+            }
+
         }
     }
 
@@ -370,14 +346,24 @@ public class PlayerController : MonoBehaviour
         punchCounter();
     }
     
-    void onHitByBall(GameObject source)
+    void onHitByBallPunch(GameObject source)
     {
         if (isPunching != true)
         {
-            StartCoroutine(ballReactWindow());
+            StartCoroutine(ballPunchReactWindow());
             return;
         }
-        ballCounter();
+        ballPunchCounter();
+    }
+    
+    void onHitByBallSlide(GameObject source)
+    {
+        if (isPunching != true)
+        {
+            StartCoroutine(ballSlideReactWindow());
+            return;
+        }
+        ballSlideCounter();
     }
 
     void onGrabbingBall(GameObject ball)
@@ -395,54 +381,75 @@ public class PlayerController : MonoBehaviour
     IEnumerator Punch()
     {
         isPunching = true;
-        GameObject collider = Instantiate(punchCollider,character);
-        ColliderBox box = collider.GetComponent<ColliderBox>();
+        controllerData.punchSound.Post(gameObject);
+        GameObject hitBox = Instantiate(controllerData.punchCollider,character);
+        ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
         box.SetType(ColliderBox.ColliderType.Punch);
-        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
-        Destroy(collider);
+        Destroy(hitBox);
         isPunching = false;
         isRecovering = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(controllerData.actionsCooldown);
         isRecovering = false;
     }
     
     IEnumerator Slide()
     {
         isSliding = true;
-        GameObject collider = Instantiate(slideCollider,character);
-        ColliderBox box = collider.GetComponent<ColliderBox>();
+        controllerData.slideSound.Post(gameObject);
+        GameObject hitBox = Instantiate(controllerData.slideCollider,character);
+        ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
         box.SetType(ColliderBox.ColliderType.Slide);
-        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
-        Destroy(collider);
+        Destroy(hitBox);
         isSliding = false;
         isRecovering = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(controllerData.actionsCooldown);
         isRecovering = false;
     }
+    
     
     IEnumerator BallPunch()
     {
         isPunching = true;
-        GameObject collider = Instantiate(punchCollider,character);
-        ColliderBox box = collider.GetComponent<ColliderBox>();
+        controllerData.balLPunchSound.Post(gameObject);
+        GameObject hitBox = Instantiate(controllerData.ballPunchCollider,character);
+        ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
-        box.SetType(ColliderBox.ColliderType.Ball);
-        collider.transform.position = character.position + character.up + character.forward * 0.5f;
+        box.SetType(ColliderBox.ColliderType.BallPunch);
+        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
-        Destroy(collider);
+        Destroy(hitBox);
         isPunching = false;
         isRecovering = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(controllerData.actionsCooldown);
+        isRecovering = false;
+    }
+    
+    IEnumerator BallSlide()
+    {
+        isSliding = true;
+        controllerData.ballSlideSound.Post(gameObject);
+        GameObject hitBox = Instantiate(controllerData.ballSlideCollider,character);
+        ColliderBox box = hitBox.GetComponent<ColliderBox>();
+        box.SetSource(character.gameObject);
+        box.SetType(ColliderBox.ColliderType.BallSlide);
+        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(hitBox);
+        isSliding = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(controllerData.actionsCooldown);
         isRecovering = false;
     }
 
     IEnumerator punchReactWindow()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(controllerData.counterWindow);
         if (isPunching != true)
         {
             punchHit();
@@ -455,7 +462,7 @@ public class PlayerController : MonoBehaviour
     
     IEnumerator slideReactWindow()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(controllerData.counterWindow);
         if (isSliding != true)
         {
             slideHit();
@@ -466,16 +473,29 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    IEnumerator ballReactWindow()
+    IEnumerator ballPunchReactWindow()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(controllerData.counterWindow);
         if (isPunching != true)
         {
-            ballHit();
+            ballPunchHit();
         }
         else
         {
-            ballCounter();
+            ballPunchCounter();
+        }
+    }
+    
+    IEnumerator ballSlideReactWindow()
+    {
+        yield return new WaitForSeconds(controllerData.counterWindow);
+        if (isPunching != true)
+        {
+            ballSlideHit();
+        }
+        else
+        {
+            ballSlideCounter();
         }
     }
     
@@ -490,6 +510,7 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
+        controllerData.punchHitSound.Post(gameObject);
         particleSystem.Play();
     }
 
@@ -497,6 +518,7 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
+        controllerData.punchCounterSound.Post(gameObject);
         particleSystem.Play();
     }
 
@@ -504,6 +526,7 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.yellow;
+        controllerData.slideHitSound.Post(gameObject);
         particleSystem.Play();
     }
 
@@ -511,32 +534,43 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
+        controllerData.slideCounterSound.Post(gameObject);
         particleSystem.Play();
     }
 
-    void ballHit()
+    void ballSlideHit()
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
+        controllerData.ballSlideHitSound.Post(gameObject);
+        particleSystem.Play();
+    }
+    
+    void ballPunchHit()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.red;
+        controllerData.ballPunchHitSound.Post(gameObject);
         particleSystem.Play();
     }
 
-    void ballCounter()
+    void ballPunchCounter()
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
+        controllerData.ballPunchCounterSound.Post(gameObject);
+        particleSystem.Play();
+    }
+    
+    void ballSlideCounter()
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.magenta;
+        controllerData.ballSlideCounterSound.Post(gameObject);
         particleSystem.Play();
     }
     
     #endregion
-
-    #region WWISE RELATED FUNCTIONS
-
-    public void PlayWwiseEvent(int i)
-    {
-        events[i].Post(gameObject);
-    }
-
-    #endregion
+    
 }
 
