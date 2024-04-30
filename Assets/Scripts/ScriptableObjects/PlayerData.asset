@@ -85,6 +85,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
       type: 2}
+  grabbingBallSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
+      type: 2}
   engineSpeed:
     idInternal: 0
     valueGuidInternal: 
