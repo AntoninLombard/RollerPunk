@@ -371,6 +371,7 @@ public class PlayerController : MonoBehaviour
         isHoldingBall = true;
         ball.transform.SetParent(ballAnchorPoint.transform);
         ball.transform.position = ballAnchorPoint.transform.position;
+        controllerData.grabbingBallSound.Post(gameObject);
     }
 
     #endregion

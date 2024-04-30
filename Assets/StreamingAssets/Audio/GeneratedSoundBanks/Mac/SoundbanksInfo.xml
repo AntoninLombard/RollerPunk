@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{00055671-3B1D-186F-6C35-2EEF6C78E226}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DDD0FE5D-95E3-0C31-9820-F2CA9D9D4CAC}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -179,7 +179,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F016488C-63E0-91D3-CD3B-D4F03DFBBFB6}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7159EDDA-0FE5-0497-FEBC-12E4628898E1}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -193,15 +193,11 @@
 				</File>
 				<File Id="88947134" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M1_Start.wav</ShortName>
-					<CachePath>SFX/M1_Start_47FAB305.wem</CachePath>
+					<CachePath>SFX/M1_Start_5DDACC69.wem</CachePath>
 				</File>
 				<File Id="101842239" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_2.wav</ShortName>
 					<CachePath>SFX/M2_2_D79FB2B7.wem</CachePath>
-				</File>
-				<File Id="131610961" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Gravel by egomassive Id-536760 1.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Gravel by egomassive Id-536760 1_C546139D.wem</CachePath>
 				</File>
 				<File Id="213999704" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Krotos UI Button Press Generic Mono-001.wav</ShortName>
@@ -269,7 +265,7 @@
 				</File>
 				<File Id="780776096" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CS Car Audi TT 3000rpm_Stop_OnLoad.wav</ShortName>
-					<CachePath>SFX/CS Car Audi TT 3000rpm_Stop_OnLoad_E53A40FA.wem</CachePath>
+					<CachePath>SFX/CS Car Audi TT 3000rpm_Stop_OnLoad_787533E1.wem</CachePath>
 				</File>
 				<File Id="791110778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Weapons, Sword, Heavy Sword, Axe, Medieval Melee Weapon, Whoosh, Hard Metallic Impact x5 02 SND76061 2.wav</ShortName>
@@ -318,11 +314,7 @@
 						<MediaRef Id="251919428"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3430352712" Name="Ball_Slide" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
-					<MediaRefs>
-						<MediaRef Id="131610961"/>
-					</MediaRefs>
-				</Event>
+				<Event Id="3430352712" Name="Ball_Slide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="1.0341706" DurationMax="1.0341706">
 					<MediaRefs>
 						<MediaRef Id="513283830"/>
@@ -437,11 +429,7 @@
 						<MediaRef Id="335294035"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3686556480" Name="Slide" DurationType="OneShot" DurationMin="1.1628706" DurationMax="1.1628706">
-					<MediaRefs>
-						<MediaRef Id="131610961"/>
-					</MediaRefs>
-				</Event>
+				<Event Id="3686556480" Name="Slide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.33" DurationMax="0.33">
 					<MediaRefs>
 						<MediaRef Id="698107653"/>
@@ -475,5 +463,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A0529ACC-B2A0-1B58-F2D4-F8013104F132}</FileHash>
+	<FileHash>{0E9B95D4-EEF3-823F-7351-FCE2514EA050}</FileHash>
 </SoundBanksInfo>
