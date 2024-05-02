@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK.Wwise;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +73,7 @@ public class GameManager : MonoBehaviour
         player.transform.position =  spawnPoints[nbHumanPlayer].position;
         nbHumanPlayer++;
         nbPlayer++;
+        playerNumber.SetValue(player, nbPlayer);
     }
-    
+
 }
