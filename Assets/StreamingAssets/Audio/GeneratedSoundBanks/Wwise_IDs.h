@@ -19,18 +19,21 @@ namespace AK
         static const AkUniqueID COUNTER = 3051750219U;
         static const AkUniqueID DEFENSE = 2564315215U;
         static const AkUniqueID DRILL = 2168413864U;
+        static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
         static const AkUniqueID HIT_BYPUNCH = 3549005828U;
         static const AkUniqueID HIT_BYSLIDE = 2537114299U;
         static const AkUniqueID HIT_BYWALL = 2308453416U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID P1_BURST = 2947226167U;
-        static const AkUniqueID P1_ENGINE_START = 173106804U;
         static const AkUniqueID P1_ENGINE_STOP = 140559848U;
         static const AkUniqueID P2_ENGINE_START = 736621041U;
         static const AkUniqueID P2_ENGINE_STOP = 3919745899U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID PUNCH = 645565787U;
+        static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
         static const AkUniqueID SLIDE = 3686556480U;
+        static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BACK = 2024222415U;
         static const AkUniqueID UI_HOVER = 2118900976U;
         static const AkUniqueID UI_SELECT = 2774129122U;
@@ -78,9 +81,15 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID DIRECTION = 16764168U;
+        static const AkUniqueID DUCKING_FROM_P1 = 90100353U;
+        static const AkUniqueID DUCKING_FROM_P2 = 90100354U;
+        static const AkUniqueID DUCKING_FROM_P3 = 90100355U;
+        static const AkUniqueID DUCKING_FROM_P4 = 90100356U;
+        static const AkUniqueID PLAYER_NUMBER = 1659248646U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID SKID = 822292696U;
         static const AkUniqueID SPEED = 640949982U;
+        static const AkUniqueID SPREAD = 1449435024U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;
@@ -102,12 +111,34 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID BASS = 1291433344U;
+        static const AkUniqueID DRUMS = 2726606664U;
+        static const AkUniqueID DRUMS_B = 3042377063U;
+        static const AkUniqueID DUCKING_BUS = 3511642625U;
+        static const AkUniqueID ENGINE_P1 = 2631124783U;
+        static const AkUniqueID ENGINE_P2 = 2631124780U;
+        static const AkUniqueID ENGINE_P3 = 2631124781U;
+        static const AkUniqueID ENGINE_P4 = 2631124778U;
+        static const AkUniqueID ENGINES = 759487314U;
+        static const AkUniqueID GUITAR = 3232836819U;
+        static const AkUniqueID LEAD = 54442139U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID OTHER = 2376466361U;
         static const AkUniqueID P1 = 1635194252U;
         static const AkUniqueID P2 = 1635194255U;
         static const AkUniqueID P3 = 1635194254U;
         static const AkUniqueID P4 = 1635194249U;
+        static const AkUniqueID PLAYERS = 2188949101U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID DUCKING_P1 = 1557387256U;
+        static const AkUniqueID DUCKING_P2 = 1557387259U;
+        static const AkUniqueID DUCKING_P3 = 1557387258U;
+        static const AkUniqueID DUCKING_P4 = 1557387261U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
