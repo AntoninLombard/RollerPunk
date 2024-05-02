@@ -21,8 +21,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BallScript ball;
     [SerializeField] private List<CheckpointScript> checkpoints;
     [SerializeField] private List<Transform> spawnPoints;
-    
-    
+
+    [Header("Wwise")]
+    [SerializeField] private AK.Wwise.Switch playerNumber;
+
+
     private void Awake()
     {
         if (Instance == null)
