@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 80
   forwardAccel: 50
-  brakingRatio: 0
+  brakingRatio: 0.316
   turningRate: 20
   gravityStrength: 0
-  drag: 0
-  counterWindow: 0.5
+  drag: 0.158
+  counterWindow: 0.05
   actionsCooldown: 1.5
   startEngineSound:
     idInternal: 0
