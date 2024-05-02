@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK.Wwise;
 
 
 
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BallScript ball;
     [SerializeField] private List<CheckpointScript> checkpoints;
     [SerializeField] private List<Transform> spawnPoints;
+
+    public RTPC playerNumber;
     
     
     private void Awake()
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
         player.transform.position =  spawnPoints[nbHumanPlayer].position;
         nbHumanPlayer++;
         nbPlayer++;
+        playerNumber.SetValue(player, nbPlayer);
     }
-    
+
 }

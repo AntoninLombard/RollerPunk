@@ -228,6 +228,11 @@ MonoBehaviour:
   - {fileID: 2049503506}
   - {fileID: 1076621603}
   - {fileID: 465266646}
+  playerNumber:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 84931dbca886db7489a3a9cc92fb9900,
+      type: 2}
 --- !u!1 &428515976
 GameObject:
   m_ObjectHideFlags: 0

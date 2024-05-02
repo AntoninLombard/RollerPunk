@@ -303,8 +303,290 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584881720687160454
+    m_lastTime: -8584871090591344655
     List:
+    - name: Bass
+      guid: ff2488a6496d384098edf9f317f5ce82
+      id: 1291433344
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      - ElementName: Bass
+        ObjectType: 2
+        guid: ff2488a6496d384098edf9f317f5ce82
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\Bass
+    - name: Drums
+      guid: 46946d97c41916438263b8dd9de08798
+      id: 2726606664
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      - ElementName: Drums
+        ObjectType: 2
+        guid: 46946d97c41916438263b8dd9de08798
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\Drums
+    - name: Drums_B
+      guid: 4253e138dc76fa41a720bafc9676d392
+      id: 3042377063
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      - ElementName: Drums
+        ObjectType: 2
+        guid: 46946d97c41916438263b8dd9de08798
+      - ElementName: Drums_B
+        ObjectType: 2
+        guid: 4253e138dc76fa41a720bafc9676d392
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\Drums\Drums_B
+    - name: Ducking_Bus
+      guid: 7cf15fb859ad5540af2305b17f690919
+      id: 3511642625
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Ducking_Bus
+        ObjectType: 2
+        guid: 7cf15fb859ad5540af2305b17f690919
+      Path: Master-Mixer Hierarchy\Default Work Unit\Ducking_Bus
+    - name: Ducking_P1
+      guid: 304f5441223cae4ea7a72f5573a6b260
+      id: 1557387256
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Ducking_Bus
+        ObjectType: 2
+        guid: 7cf15fb859ad5540af2305b17f690919
+      - ElementName: Ducking_P1
+        ObjectType: 1
+        guid: 304f5441223cae4ea7a72f5573a6b260
+      Path: Master-Mixer Hierarchy\Default Work Unit\Ducking_Bus\Ducking_P1
+    - name: Ducking_P2
+      guid: 24f14baba4bdee4c9178cd8d75db7a29
+      id: 1557387259
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Ducking_Bus
+        ObjectType: 2
+        guid: 7cf15fb859ad5540af2305b17f690919
+      - ElementName: Ducking_P2
+        ObjectType: 1
+        guid: 24f14baba4bdee4c9178cd8d75db7a29
+      Path: Master-Mixer Hierarchy\Default Work Unit\Ducking_Bus\Ducking_P2
+    - name: Ducking_P3
+      guid: 590c024ae074aa43bdf59960826c15a8
+      id: 1557387258
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Ducking_Bus
+        ObjectType: 2
+        guid: 7cf15fb859ad5540af2305b17f690919
+      - ElementName: Ducking_P3
+        ObjectType: 1
+        guid: 590c024ae074aa43bdf59960826c15a8
+      Path: Master-Mixer Hierarchy\Default Work Unit\Ducking_Bus\Ducking_P3
+    - name: Ducking_P4
+      guid: 9e48c7cc8c97c64cb17b92170b14d748
+      id: 1557387261
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Ducking_Bus
+        ObjectType: 2
+        guid: 7cf15fb859ad5540af2305b17f690919
+      - ElementName: Ducking_P4
+        ObjectType: 1
+        guid: 9e48c7cc8c97c64cb17b92170b14d748
+      Path: Master-Mixer Hierarchy\Default Work Unit\Ducking_Bus\Ducking_P4
+    - name: Engine_P1
+      guid: 0cb79e1f68348541b5b92a37d701f340
+      id: 2631124783
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Engines
+        ObjectType: 2
+        guid: d83f253a820e35498a83cc82ed53b6bf
+      - ElementName: Engine_P1
+        ObjectType: 2
+        guid: 0cb79e1f68348541b5b92a37d701f340
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Engines\Engine_P1
+    - name: Engine_P2
+      guid: f8750b1f8c932a4aa41f89b5ad6f05cd
+      id: 2631124780
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Engines
+        ObjectType: 2
+        guid: d83f253a820e35498a83cc82ed53b6bf
+      - ElementName: Engine_P2
+        ObjectType: 2
+        guid: f8750b1f8c932a4aa41f89b5ad6f05cd
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Engines\Engine_P2
+    - name: Engine_P3
+      guid: 71336bc17db0e248a654f844f4cc8bde
+      id: 2631124781
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Engines
+        ObjectType: 2
+        guid: d83f253a820e35498a83cc82ed53b6bf
+      - ElementName: Engine_P3
+        ObjectType: 2
+        guid: 71336bc17db0e248a654f844f4cc8bde
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Engines\Engine_P3
+    - name: Engine_P4
+      guid: 53993e04cd5e63429be1fbe8879e0882
+      id: 2631124778
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Engines
+        ObjectType: 2
+        guid: d83f253a820e35498a83cc82ed53b6bf
+      - ElementName: Engine_P4
+        ObjectType: 2
+        guid: 53993e04cd5e63429be1fbe8879e0882
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Engines\Engine_P4
+    - name: Engines
+      guid: d83f253a820e35498a83cc82ed53b6bf
+      id: 759487314
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Engines
+        ObjectType: 2
+        guid: d83f253a820e35498a83cc82ed53b6bf
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Engines
+    - name: Guitar
+      guid: b5a5cbf1b611d04a9e8b5cd669a11a1c
+      id: 3232836819
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      - ElementName: Guitar
+        ObjectType: 2
+        guid: b5a5cbf1b611d04a9e8b5cd669a11a1c
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\Guitar
+    - name: Lead
+      guid: 9c89b1e2fd31e14bbd0bdef4bb446798
+      id: 54442139
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      - ElementName: Lead
+        ObjectType: 2
+        guid: 9c89b1e2fd31e14bbd0bdef4bb446798
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\Lead
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -319,6 +601,43 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 10317c29e02214488a4ee1e3f10b5eb8
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: Other
+      guid: e8f7ef2611c4264189465c6c3dbd9da4
+      id: 2376466361
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d4cddb47d436bc4e894af1dbc096e7b6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 10317c29e02214488a4ee1e3f10b5eb8
+      - ElementName: Other
+        ObjectType: 2
+        guid: e8f7ef2611c4264189465c6c3dbd9da4
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music\Other
     - name: P1
       guid: 5149f5ff80cb97488710bcde43c4b701
       id: 1635194252
@@ -457,7 +776,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584875677985562911
+    m_lastTime: -8584871100212729857
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -474,7 +793,7 @@ MonoBehaviour:
         guid: b0e7ece1ad48e34ea95c58477e177d4d
       Path: Events\RP_Feedbacks\Ball_Grab
       maxAttenuation: 0
-      maxDuration: 1.2281718
+      maxDuration: Infinity
       minDuration: 1.2281718
     - name: Ball_Punch
       guid: 50ebe91a68392b44ba36e1bb54b44237
@@ -508,8 +827,8 @@ MonoBehaviour:
         guid: d03cf66bfb18e041b91cf0313bd02018
       Path: Events\RP_Feedbacks\Ball_Slide
       maxAttenuation: 0
-      maxDuration: 1.1628706
-      minDuration: 1.1628706
+      maxDuration: 1
+      minDuration: 1
     - name: Counter
       guid: 0c8bf4ba67847f41871e1dbcef4d8306
       id: 3051750219
@@ -646,6 +965,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.94272983
       minDuration: 0.94272983
+    - name: setplayernumber
+      guid: 7ce0baffa6486a41b2b2fdf03aa777e3
+      id: 3687251531
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: setplayernumber
+        ObjectType: 3
+        guid: 7ce0baffa6486a41b2b2fdf03aa777e3
+      Path: Events\RP_Feedbacks\setplayernumber
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Slide
       guid: ddf8fb39332a3447a8cf3b01d1503f8f
       id: 3686556480
@@ -661,8 +997,25 @@ MonoBehaviour:
         guid: ddf8fb39332a3447a8cf3b01d1503f8f
       Path: Events\RP_Feedbacks\Slide
       maxAttenuation: 0
-      maxDuration: 1.1628706
-      minDuration: 1.1628706
+      maxDuration: 1
+      minDuration: 1
+    - name: test
+      guid: 83dab06271a1b240ae325c19a4199637
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: test
+        ObjectType: 3
+        guid: 83dab06271a1b240ae325c19a4199637
+      Path: Events\RP_Feedbacks\test
+      maxAttenuation: 0
+      maxDuration: Infinity
+      minDuration: 1.2281718
   - PhysicalPath: Events\RP_UI.wwu
     PathAndIcons:
     - ElementName: Events
@@ -738,7 +1091,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Vehicule
     guid: b3615b940e8d94469069d49d4d79c295
     GuidInternal: 
-    m_lastTime: -8584875553192147152
+    m_lastTime: -8584871161396845139
     List:
     - name: P1_Burst
       guid: 0df3a7f2e2dbe74f901fc28c0fab42a5
@@ -837,8 +1190,78 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 16ff3389254ae24a8ec01413e62e9d26
     GuidInternal: 
-    m_lastTime: -8584908118907075808
-    List: []
+    m_lastTime: -8584871117647577542
+    List:
+    - name: Ducking_From_P1
+      guid: 4c2b597780913248a28031fe688b5e4e
+      id: 90100353
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Ducking_From_P1
+        ObjectType: 13
+        guid: 4c2b597780913248a28031fe688b5e4e
+      Path: Game Parameters\Default Work Unit\Ducking_From_P1
+    - name: Ducking_From_P2
+      guid: 2f2309d20a1a1c498ea3dddc73af835b
+      id: 90100354
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Ducking_From_P2
+        ObjectType: 13
+        guid: 2f2309d20a1a1c498ea3dddc73af835b
+      Path: Game Parameters\Default Work Unit\Ducking_From_P2
+    - name: Ducking_From_P3
+      guid: eeea76d700e6e441ba6a145506f1e38c
+      id: 90100355
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Ducking_From_P3
+        ObjectType: 13
+        guid: eeea76d700e6e441ba6a145506f1e38c
+      Path: Game Parameters\Default Work Unit\Ducking_From_P3
+    - name: Ducking_From_P4
+      guid: 5e6f8446f8a14242bfc716c213acca26
+      id: 90100356
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Ducking_From_P4
+        ObjectType: 13
+        guid: 5e6f8446f8a14242bfc716c213acca26
+      Path: Game Parameters\Default Work Unit\Ducking_From_P4
+    - name: Player_Number
+      guid: 27ea0b73092daf45a9f0aa4bd5829a52
+      id: 1659248646
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Player_Number
+        ObjectType: 13
+        guid: 27ea0b73092daf45a9f0aa4bd5829a52
+      Path: Game Parameters\Default Work Unit\Player_Number
   - PhysicalPath: Game Parameters\Factory Soundseed Air Game Syncs.wwu
     PathAndIcons:
     - ElementName: Game Parameters
@@ -1003,7 +1426,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584875567365394830
+    m_lastTime: -8584871404844877047
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244
@@ -1101,7 +1524,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 7e5a09c5ce7412479cd97d3c4b50a46f
     GuidInternal: 
-    m_lastTime: -8584875679368486204
+    m_lastTime: -8584871187662756130
     List:
     - name: Grounded
       guid: c587873dd642bd4f8c76fe75ad18d3c3
@@ -1299,8 +1722,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 02000000050000001c0000001d0000001e0000001f000000200000002100000041000000430000004e00000050000000
-  ExpandedWaapiItemIds: 02000000050000001000000014000000
+  ExpandedFileSystemItemIds: 02000000050000005500000056000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 1

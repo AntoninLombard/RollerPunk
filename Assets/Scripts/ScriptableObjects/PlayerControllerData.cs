@@ -31,6 +31,7 @@ public class PlayerControllerData : ScriptableObject
     public  AK.Wwise.Event slideCounterSound;
     public AK.Wwise.Event ballPunchCounterSound;
     public AK.Wwise.Event ballSlideCounterSound;
+    public AK.Wwise.Event grabbingBallSound;
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC vehicleSpeed;
     public AK.Wwise.RTPC throttle;
