@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Transform> spawnPoints;
 
     [Header("Wwise")]
-    [SerializeField] private AK.Wwise.Switch playerNumber;
+    [SerializeField] private AK.Wwise.Switch[] playerNumber;
 
 
     private void Awake()
@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
         player.transform.position =  spawnPoints[nbHumanPlayer].position;
         nbHumanPlayer++;
         nbPlayer++;
-        playerNumber.SetValue(player, nbPlayer);
+        playerNumber[nbHumanPlayer].SetValue(player);
+        Debug.Log(playerNumber[nbHumanPlayer].ToString());
     }
 
 }
