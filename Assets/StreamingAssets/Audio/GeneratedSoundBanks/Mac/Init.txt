@@ -8,13 +8,10 @@ Switch	ID	Name	Switch Group			Notes
 	1635194255	P2	Player			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	90100353	Ducking_From_P1			\Default Work Unit\Ducking_From_P1	
-	90100354	Ducking_From_P2			\Default Work Unit\Ducking_From_P2	
-	90100355	Ducking_From_P3			\Default Work Unit\Ducking_From_P3	
-	90100356	Ducking_From_P4			\Default Work Unit\Ducking_From_P4	
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
 	841620460	Concrete			\Factory Acoustic Textures\Textures\Concrete	
+	1449435024	Spread			\Default Work Unit\Spread	
 	1755085759	Wood_Deep			\Factory Acoustic Textures\Textures\Wood_Deep	
 	1873957695	Anechoic			\Factory Acoustic Textures\Textures\Anechoic	
 	1970351858	Fabric			\Factory Acoustic Textures\Textures\Fabric	
@@ -31,10 +28,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	54442139	Lead			\Default Work Unit\Master Audio Bus\Music\Lead	
 	759487314	Engines			\Default Work Unit\Master Audio Bus\Engines	
 	1291433344	Bass			\Default Work Unit\Master Audio Bus\Music\Bass	
-	1635194249	P4			\Default Work Unit\Master Audio Bus\P4	
-	1635194252	P1			\Default Work Unit\Master Audio Bus\P1	
-	1635194254	P3			\Default Work Unit\Master Audio Bus\P3	
-	1635194255	P2			\Default Work Unit\Master Audio Bus\P2	
+	1635194249	P4			\Default Work Unit\Master Audio Bus\Players\P4	
+	1635194252	P1			\Default Work Unit\Master Audio Bus\Players\P1	
+	1635194254	P3			\Default Work Unit\Master Audio Bus\Players\P3	
+	1635194255	P2			\Default Work Unit\Master Audio Bus\Players\P2	
+	2188949101	Players			\Default Work Unit\Master Audio Bus\Players	
 	2376466361	Other			\Default Work Unit\Master Audio Bus\Music\Other	
 	2631124778	Engine_P4			\Default Work Unit\Master Audio Bus\Engines\Engine_P4	
 	2631124780	Engine_P2			\Default Work Unit\Master Audio Bus\Engines\Engine_P2	

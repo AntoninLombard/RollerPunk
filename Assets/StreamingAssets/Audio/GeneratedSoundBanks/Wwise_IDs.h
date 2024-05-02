@@ -19,12 +19,13 @@ namespace AK
         static const AkUniqueID COUNTER = 3051750219U;
         static const AkUniqueID DEFENSE = 2564315215U;
         static const AkUniqueID DRILL = 2168413864U;
+        static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
         static const AkUniqueID HIT_BYPUNCH = 3549005828U;
         static const AkUniqueID HIT_BYSLIDE = 2537114299U;
         static const AkUniqueID HIT_BYWALL = 2308453416U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID P1_BURST = 2947226167U;
-        static const AkUniqueID P1_ENGINE_START = 173106804U;
         static const AkUniqueID P1_ENGINE_STOP = 140559848U;
         static const AkUniqueID P2_ENGINE_START = 736621041U;
         static const AkUniqueID P2_ENGINE_STOP = 3919745899U;
@@ -88,6 +89,7 @@ namespace AK
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID SKID = 822292696U;
         static const AkUniqueID SPEED = 640949982U;
+        static const AkUniqueID SPREAD = 1449435024U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;
@@ -127,6 +129,7 @@ namespace AK
         static const AkUniqueID P2 = 1635194255U;
         static const AkUniqueID P3 = 1635194254U;
         static const AkUniqueID P4 = 1635194249U;
+        static const AkUniqueID PLAYERS = 2188949101U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES
