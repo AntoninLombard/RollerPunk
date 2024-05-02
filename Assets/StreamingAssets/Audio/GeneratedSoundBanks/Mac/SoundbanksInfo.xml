@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{AF552756-D08F-B72C-E6A5-E3403668EADB}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CE20FD81-B2C9-8AF5-E501-C75CCD7B1476}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -109,7 +109,6 @@
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="1069431850" Name="Player">
-					<GameParameterRef Id="1659248646"/>
 					<Switches>
 						<Switch Id="1635194249" Name="P4"/>
 						<Switch Id="1635194252" Name="P1"/>
@@ -245,7 +244,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{60293855-B28B-6F55-4A88-8F99ABB7D473}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1DC6C79F-8C05-B56E-03D3-DF30635DC0E0}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -992,7 +991,6 @@
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="1069431850" Name="Player">
-					<GameParameterRef Id="1659248646"/>
 					<Switches>
 						<Switch Id="1635194249" Name="P4"/>
 						<Switch Id="1635194252" Name="P1"/>
@@ -1003,5 +1001,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{83171165-F816-71BF-C579-6247058EF97A}</FileHash>
+	<FileHash>{CB3695B4-690C-5724-FFC4-2B3CA5C143CE}</FileHash>
 </SoundBanksInfo>

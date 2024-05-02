@@ -25,9 +25,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<CheckpointScript> checkpoints;
     [SerializeField] private List<Transform> spawnPoints;
 
-    public RTPC playerNumber;
-    
-    
+    [Header("Wwise")]
+    [SerializeField] private AK.Wwise.Switch[] playerNumber;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -72,7 +73,8 @@ public class GameManager : MonoBehaviour
         player.transform.position =  spawnPoints[nbHumanPlayer].position;
         nbHumanPlayer++;
         nbPlayer++;
-        playerNumber.SetValue(player, nbPlayer);
+        playerNumber[nbHumanPlayer].SetValue(player);
+        Debug.Log(playerNumber[nbHumanPlayer].ToString());
     }
 
     public void OnPlayerDeath(PlayerController player)
