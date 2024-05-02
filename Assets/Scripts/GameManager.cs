@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AK.Wwise;
-
+using Random = UnityEngine.Random;
 
 
 public class GameManager : MonoBehaviour
@@ -75,4 +75,11 @@ public class GameManager : MonoBehaviour
         playerNumber.SetValue(player, nbPlayer);
     }
 
+    public void OnPlayerDeath(PlayerController player)
+    {
+        Vector3 pos = spawnPoints[Random.Range(0, nbHumanPlayer)].position;
+        //player.transform.position = pos;
+        player.rb.position = pos;
+
+    }
 }

@@ -212,30 +212,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e29b58255667a4a9934b06b2743d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 100
-  forwardAccel: 9.53
-  brakingRatio: 0.49
-  turningRate: 24.71
-  gravityStrength: 4
-  dragRatio: 0.09
-  groundAccel: 1.87
-  isAccelerating: 0
-  isBraking: 0
-  isTurning: 0
-  isGrounded: 0
+  controllerData: {fileID: 11400000, guid: ba71b6badf5cf8743b3c83336024f4c4, type: 2}
+  <isAccelerating>k__BackingField: 0
+  <isBraking>k__BackingField: 0
+  <isTurning>k__BackingField: 0
+  <isGrounded>k__BackingField: 0
   speed: 0
-  currentSpeed: 0
+  isRecovering: 0
+  isPunching: 0
+  isSliding: 0
+  isStunned: 0
+  isHoldingBall: 0
+  input: {fileID: 1435602356178349144}
   steerInput: 0
   driveInput: 0
-  velocity: {x: 0, y: 0, z: 0}
-  character: {fileID: 1706618883694479924}
+  punchInput: 0
+  slideInput: 0
+  fortifyInput: 0
+  OnHitByPunch:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitbySlide:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitbByBallPunch:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitbByBallSlide:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGrabbingBall:
+    m_PersistentCalls:
+      m_Calls: []
   rb: {fileID: 8963657871566459159}
-  input: {fileID: 1435602356178349144}
-  startEngineSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
-      type: 2}
+  character: {fileID: 1706618883694479924}
+  ballAnchorPoint: {fileID: 1413811315643660749}
+  particleSystem: {fileID: 9039159071009336896}
   engineSpeed:
     idInternal: 0
     valueGuidInternal: 
@@ -279,6 +291,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4a7f7a88-5f2b-4b4f-a155-067be0e201c1
     m_ActionName: Menu/Join[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d35ac15-4fc7-4385-8d1a-d682c8858f27
+    m_ActionName: Driving/Punch[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24d50bce-a569-4cf2-acb9-ce63d8c11cd6
+    m_ActionName: Driving/Slide[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb
+    m_ActionName: Driving/Fortify[/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Driving
@@ -390,8 +414,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463738427857651074}
   serializedVersion: 4
-  m_Mass: 100
-  m_Drag: 2
+  m_Mass: 300
+  m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -409,9 +433,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!1 &1413811315643660749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4574413081267013205, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1706618883694479924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4272342943821034924, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &9039159071009336896 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5878537647589085656, guid: 188551011c7b90243b1c6c7358411fed,
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}

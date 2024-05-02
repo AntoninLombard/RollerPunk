@@ -54,6 +54,7 @@ MonoBehaviour:
   <isTurning>k__BackingField: 0
   <isGrounded>k__BackingField: 0
   speed: 0
+  deltaSpeed: 0
   isRecovering: 0
   isPunching: 0
   isSliding: 0
@@ -84,6 +85,7 @@ MonoBehaviour:
   character: {fileID: 7419748931926834056}
   ballAnchorPoint: {fileID: 7118435520767477873}
   particleSystem: {fileID: 875551873128636412}
+  lastPlayerToCallWwiseEvent: {fileID: 0}
 --- !u!114 &-5604953935165361315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +418,7 @@ Rigidbody:
   m_GameObject: {fileID: 8489517819033615366}
   serializedVersion: 4
   m_Mass: 300
-  m_Drag: 2
+  m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField] public bool isTurning { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }   
     [SerializeField] private float speed = 0;
+    [SerializeField] private float deltaSpeed = 0;
+    [SerializeField] private Vector3 currentVelocity;
     
     [Header("CHARACTER STATE")]
     [SerializeField] private bool isRecovering;
@@ -49,7 +51,8 @@ public class PlayerController : MonoBehaviour
     
     
     [Header("CHARACTER PARTS")]
-    [SerializeField] private Rigidbody rb;
+    [SerializeField]
+    public Rigidbody rb;
     [SerializeField] private Transform character;
     [SerializeField] private GameObject ballAnchorPoint;
     [SerializeField] private ParticleSystem particleSystem;
@@ -83,10 +86,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 _previousPos = rb.transform.position;
         character.position = rb.position - character.up*0.5f;
-        //rb.transform.position = _previousPos;
-
         steerInput = steerAction.ReadValue<float>();
         driveInput = driveAction.ReadValue<float>();
         
@@ -95,45 +95,44 @@ public class PlayerController : MonoBehaviour
         controllerData.direction.SetValue(gameObject, steerInput);
         
 
-        if (steerInput != 0)
+        if (steerInput != 0 && !isStunned)
         {
-            character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), Time.deltaTime * 5f));
+            var rotation = character.rotation;
+            rotation = Quaternion.Euler(Vector3.Lerp(rotation.eulerAngles, rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), Time.deltaTime * 5f));
+            character.rotation = rotation;
             isTurning = true;
         }
         else
         {
             isTurning = false;
         }
-
-        //currentVelocity = Vector3.ClampMagnitude(currentVelocity,controllerData.maxSpeed);
-        
         groundCheck(Time.deltaTime);
         controllerData.engineSpeed.SetValue(gameObject,speed);
-
-        
 }
     
     void FixedUpdate()
     {
-        Vector3 currentVelocity = rb.velocity;
+        currentVelocity = rb.velocity;
         Vector3 deltaVelocity = Vector3.zero;
         
-        deltaVelocity -= currentVelocity * (controllerData.drag * Time.deltaTime);
+        deltaVelocity -= currentVelocity * (controllerData.drag * Time.fixedDeltaTime);
         
         
         if (!isGrounded)
         {
             controllerData.offGround.SetValue(gameObject);
         }
-        else 
+        else if(!isStunned)
         {
+            rb.AddForce(Vector3.down * controllerData.gravityStrength, ForceMode.Acceleration);
+            rb.AddForce(-character.up * controllerData.gripAccel, ForceMode.Acceleration);
             controllerData.onGround.SetValue(gameObject);
             switch (driveInput)
             {
                 case > 0f:
                     isBraking = false;
                     isAccelerating = true;
-                    deltaVelocity += character.forward * (driveInput * controllerData.forwardAccel * Time.fixedDeltaTime);
+                    deltaVelocity += character.forward * (driveInput * controllerData.forwardAccel * (!isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
                     break;
                 case < 0f:
                     isBraking = true;
@@ -147,32 +146,18 @@ public class PlayerController : MonoBehaviour
             }
         
         }
-        
-        // if (isGrounded && !isStunned)
-        // {
-        //     rb.AddForce(currentVelocity ,ForceMode.VelocityChange);
-        //
-        // }
+
         rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
-        //rb.AddForce(character.forward * currentSpeed, ForceMode.Acceleration);
-        //rb.velocity = transform.forward * currentSpeed + Vector3.down * gravityStrength;
 
-
-        currentVelocity = rb.velocity;
-        if (currentVelocity.magnitude > controllerData.maxSpeed)
-        {
-            rb.AddForce(currentVelocity.normalized * controllerData.maxSpeed - currentVelocity,ForceMode.VelocityChange);
-        }
-
-
-        //groundCheck();
         
-        //Applying gravity force down ward
-        if (!isGrounded)
+        if (currentVelocity.magnitude > controllerData.maxSpeed * (!isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
-            //rb.AddForce(Vector3.down * gravityStrength, ForceMode.Acceleration);
+            currentVelocity = currentVelocity.normalized * (controllerData.maxSpeed * (!isHoldingBall ? 1 : controllerData.ballMaxSpeedMultipier));
+            rb.AddForce(currentVelocity - currentVelocity, ForceMode.VelocityChange);
         }
+        
 
+        deltaSpeed = deltaVelocity.magnitude;
         speed = rb.velocity.magnitude;
     }
     void OnDrawGizmosSelected()
@@ -285,8 +270,7 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
-
+    
 
     #region INPUT EVENT CALLBACKS
 
@@ -382,7 +366,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    #region ACTIONS COROUTINES
+    #region COMBAT COROUTINES
 
     IEnumerator Punch()
     {
@@ -509,7 +493,22 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    IEnumerator Stun()
+    {
+        isStunned = true;
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(controllerData.stunDuration);
+        isStunned = false;
+    }
     
+    IEnumerator Death()
+    {
+        isStunned = true;
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(controllerData.stunDuration);
+        isStunned = false;
+        GameManager.Instance.OnPlayerDeath(this);
+    }
     
     #endregion
     
@@ -523,6 +522,7 @@ public class PlayerController : MonoBehaviour
         controllerData.punchHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
+        StartCoroutine(Stun());
     }
 
     void punchCounter()
@@ -541,6 +541,7 @@ public class PlayerController : MonoBehaviour
         controllerData.slideHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
+        StartCoroutine(Stun());
     }
 
     void slideCounter()
@@ -559,6 +560,7 @@ public class PlayerController : MonoBehaviour
         controllerData.ballSlideHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
+        StartCoroutine(Death());
     }
     
     void ballPunchHit()
@@ -568,6 +570,7 @@ public class PlayerController : MonoBehaviour
         controllerData.ballPunchHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
+        StartCoroutine(Death());
     }
 
     void ballPunchCounter()
