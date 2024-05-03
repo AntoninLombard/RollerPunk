@@ -89,7 +89,6 @@ namespace AK
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID SKID = 822292696U;
         static const AkUniqueID SPEED = 640949982U;
-        static const AkUniqueID SPREAD = 1449435024U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;

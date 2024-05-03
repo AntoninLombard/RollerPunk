@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{047E839B-69B3-7FD5-7A2B-85067224FC48}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{ED7F7C05-924C-C754-4F10-9908273FB38E}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -96,7 +96,6 @@
 				<GameParameter Id="822292696" Name="Skid"/>
 				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
-				<GameParameter Id="1449435024" Name="Spread"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
@@ -244,7 +243,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1DC6C79F-8C05-B56E-03D3-DF30635DC0E0}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D5B250C9-D984-FEBF-1089-627AD9DFD25E}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -590,12 +589,40 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="2862969430" Name="Engine_Start" DurationType="Infinite">
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="3657550167"/>
-						</ShareSets>
-					</PluginRefs>
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="88947134"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="3657550167"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="88947134"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="3657550167"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="88947134"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="3657550167"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
@@ -1001,5 +1028,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{911AF9DA-A1B6-982A-E5A6-7FC030D542CA}</FileHash>
+	<FileHash>{B0631979-46A3-5644-5072-36B6D5C67023}</FileHash>
 </SoundBanksInfo>

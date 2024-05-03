@@ -54,8 +54,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject ballAnchorPoint;
     [SerializeField] private ParticleSystem particleSystem;
 
-    public GameObject lastPlayerToCallWwiseEvent;
-
     #endregion
 
     #region UNITY FUNCTIONS
@@ -376,7 +374,7 @@ public class PlayerController : MonoBehaviour
         isHoldingBall = true;
         ball.transform.SetParent(ballAnchorPoint.transform);
         ball.transform.position = ballAnchorPoint.transform.position;
-        controllerData.grabbingBallSound.Post(gameObject);
+        controllerData.grabbingBallSound.Post(this.gameObject);
     }
 
     #endregion
@@ -388,7 +386,6 @@ public class PlayerController : MonoBehaviour
     {
         isPunching = true;
         controllerData.punchSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.punchCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
@@ -406,7 +403,6 @@ public class PlayerController : MonoBehaviour
     {
         isSliding = true;
         controllerData.slideSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.slideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
@@ -425,7 +421,6 @@ public class PlayerController : MonoBehaviour
     {
         isPunching = true;
         controllerData.balLPunchSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.ballPunchCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
@@ -443,7 +438,6 @@ public class PlayerController : MonoBehaviour
     {
         isSliding = true;
         controllerData.ballSlideSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.ballSlideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(character.gameObject);
@@ -521,7 +515,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
         controllerData.punchHitSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
 
@@ -530,7 +523,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
         controllerData.punchCounterSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
 
@@ -539,7 +531,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.yellow;
         controllerData.slideHitSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
 
@@ -548,7 +539,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
         controllerData.slideCounterSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
 
@@ -557,7 +547,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
         controllerData.ballSlideHitSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
     
@@ -566,7 +555,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
         controllerData.ballPunchHitSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
 
@@ -575,7 +563,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
         controllerData.ballPunchCounterSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
     
@@ -584,7 +571,6 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
         controllerData.ballSlideCounterSound.Post(gameObject);
-        lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
 
