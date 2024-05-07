@@ -177,13 +177,13 @@ public class PlayerController2 : MonoBehaviour
     private void gravity()
     {
         if(!isGrounded)
-            rb.AddForce(Vector3.down * controllerData.gravityStrength,ForceMode.Acceleration);
+            rb.AddForce(Vector3.down * (controllerData.gravityStrength * Time.fixedDeltaTime),ForceMode.VelocityChange);
     }
     
     private void gripForce()
     {
         if(isGrounded)
-            rb.AddForce(-character.up * controllerData.gripAccel,ForceMode.Acceleration);
+            rb.AddForce(-character.up * (controllerData.gripAccel * Time.fixedDeltaTime),ForceMode.VelocityChange);
     }
     
     void groundCheck(float time)
