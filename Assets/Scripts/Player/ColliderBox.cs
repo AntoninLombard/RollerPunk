@@ -13,7 +13,7 @@ public class ColliderBox : MonoBehaviour
         BallPunch,
         BallSlide
     }
-    [SerializeField] private GameObject source;
+    [SerializeField] private Player source;
     [SerializeField] private ColliderType type;
     
     
@@ -31,33 +31,30 @@ public class ColliderBox : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name + other.gameObject.transform.parent.name);
-        if (other.gameObject != source)
+        Player hit = other.gameObject.transform.parent.GetComponent<Player>();
+        if (hit != source)
         {
-            PlayerController pc = other.gameObject.GetComponentInParent<PlayerController>();
-            if (pc != null)
+            switch (type)
             {
-                switch (type)
-                {
-                    case ColliderType.Slide:
-                        pc.OnHitbySlide.Invoke(source);
-                        break;
-                    case ColliderType.Punch:
-                        pc.OnHitByPunch.Invoke(source);
-                        break;
-                    case ColliderType.BallPunch:
-                        pc.OnHitbByBallPunch.Invoke(source);
-                        break;
-                    case ColliderType.BallSlide:
-                        pc.OnHitbByBallSlide.Invoke(source);
-                        break;
-                }
+                case ColliderType.Slide:
+                    hit.controller.OnHitbySlide.Invoke(source);
+                    break;
+                case ColliderType.Punch:
+                    hit.controller.OnHitByPunch.Invoke(source);
+                    break;
+                case ColliderType.BallPunch:
+                    hit.controller.OnHitbByBallPunch.Invoke(source);
+                    break;
+                case ColliderType.BallSlide:
+                    hit.controller.OnHitbByBallSlide.Invoke(source);
+                    break;
             }
         }
     }
 
-    public void SetSource(GameObject gameObject)
+    public void SetSource(Player player)
     {
-        source = gameObject;
+        source = player;
     }
 
     public void SetType(ColliderType type)

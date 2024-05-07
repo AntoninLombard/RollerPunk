@@ -79,3 +79,4 @@ crashlytics-build.properties
 *.validationcache
 *.wsettings
 IncrementalSoundBankData.xml
+.vscode
