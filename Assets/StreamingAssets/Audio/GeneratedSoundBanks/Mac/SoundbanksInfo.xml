@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9A19E352-97DA-D265-D1C7-97CE320C2E0C}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DBDB7335-B482-B084-92A2-67A08E7D33D5}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -241,7 +241,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{989D4E12-0DA5-0BC0-1B36-74B7BE9484AC}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{FC71762D-FE9A-0458-EA05-DDE07AE9B166}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -511,7 +511,7 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="2618017047" Name="Ball_Grab" DurationType="OneShot" DurationMin="1.2281718" DurationMax="1.2281718">
+				<Event Id="2618017047" Name="Ball_Grab" DurationType="Infinite">
 					<AuxBusRefs>
 						<AuxBusRef Id="1557387256" Name="Ducking_P1"/>
 					</AuxBusRefs>
@@ -961,7 +961,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3157003241" Name="test" DurationType="OneShot" DurationMin="1.2281718" DurationMax="1.2281718">
+				<Event Id="3157003241" Name="test" DurationType="Infinite">
 					<AuxBusRefs>
 						<AuxBusRef Id="1557387256" Name="Ducking_P1"/>
 					</AuxBusRefs>
@@ -1026,5 +1026,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D0D1DCF7-6AE3-9994-C56A-EC37B5A6E874}</FileHash>
+	<FileHash>{75E9D287-C504-9771-F420-80FD0AF9DE33}</FileHash>
 </SoundBanksInfo>
