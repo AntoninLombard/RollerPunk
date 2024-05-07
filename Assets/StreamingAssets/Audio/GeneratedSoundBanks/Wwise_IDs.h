@@ -29,6 +29,7 @@ namespace AK
         static const AkUniqueID P1_ENGINE_STOP = 140559848U;
         static const AkUniqueID P2_ENGINE_START = 736621041U;
         static const AkUniqueID P2_ENGINE_STOP = 3919745899U;
+        static const AkUniqueID PLAY_OUTRO = 431014199U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID PUNCH = 645565787U;
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
@@ -38,6 +39,22 @@ namespace AK
         static const AkUniqueID UI_HOVER = 2118900976U;
         static const AkUniqueID UI_SELECT = 2774129122U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace MUSIC_STATE
+        {
+            static const AkUniqueID GROUP = 3826569560U;
+
+            namespace STATE
+            {
+                static const AkUniqueID END = 529726532U;
+                static const AkUniqueID GAMEPLAY = 89505537U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MUSIC_STATE
+
+    } // namespace STATES
 
     namespace SWITCHES
     {
@@ -109,6 +126,7 @@ namespace AK
     {
         static const AkUniqueID AMBIANCES = 1404066300U;
         static const AkUniqueID BASS = 1291433344U;
+        static const AkUniqueID CROWD_OS = 2077289713U;
         static const AkUniqueID DRUMS = 2726606664U;
         static const AkUniqueID DRUMS_B = 3042377063U;
         static const AkUniqueID DUCKING_BUS = 3511642625U;

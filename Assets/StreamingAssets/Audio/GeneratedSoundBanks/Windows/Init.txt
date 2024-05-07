@@ -7,6 +7,14 @@ Switch	ID	Name	Switch Group			Notes
 	1635194254	P3	Player			
 	1635194255	P2	Player			
 
+State Group	ID	Name			Wwise Object Path	Notes
+	3826569560	Music_State			\Default Work Unit\Music_State	
+
+State	ID	Name	State Group			Notes
+	89505537	Gameplay	Music_State			
+	529726532	End	Music_State			
+	748895195	None	Music_State			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
@@ -32,6 +40,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	1635194252	P1			\Default Work Unit\Master Audio Bus\Players\P1	
 	1635194254	P3			\Default Work Unit\Master Audio Bus\Players\P3	
 	1635194255	P2			\Default Work Unit\Master Audio Bus\Players\P2	
+	2077289713	Crowd_OS			\Default Work Unit\Master Audio Bus\Ambiances\Crowd_OS	
 	2188949101	Players			\Default Work Unit\Master Audio Bus\Players	
 	2376466361	Other			\Default Work Unit\Master Audio Bus\Music\Other	
 	2631124778	Engine_P4			\Default Work Unit\Master Audio Bus\Engines\Engine_P4	

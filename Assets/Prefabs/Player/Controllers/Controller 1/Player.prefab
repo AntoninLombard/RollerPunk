@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VolumesOffset:
-  - -9
+  - 0
   - 0
 --- !u!1 &8489517819033615366
 GameObject:
