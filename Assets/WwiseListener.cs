@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WwiseListener : MonoBehaviour
 {
-    public float[] VolumesOffset = new float[2]; //Panning offset
-    AkChannelConfig cfg = new AkChannelConfig();
+    private float[] VolumesOffset = new float[2]; //Panning offset
     private AK.Wwise.Switch playerNumber;
+
+    AkChannelConfig cfg = new AkChannelConfig();
 
     void Start()
     {
