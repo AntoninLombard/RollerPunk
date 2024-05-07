@@ -214,20 +214,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be326eae78fe89b48baa1fa0fe892ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  score: 
-  nbHumanPlayer: 0
   nbPlayer: 0
   isRaceOn: 0
-  ballHolder: {fileID: 0}
   timer: 100000
-  ball: {fileID: 0}
   checkpoints: []
   spawnPoints:
   - {fileID: 922391103}
   - {fileID: 2049503506}
   - {fileID: 1076621603}
   - {fileID: 465266646}
+  ball: {fileID: 0}
+  ballHolder: {fileID: 0}
+  holderPreviousPosition: {x: 0, y: 0, z: 0}
+  ballDistance: 0
   playerNumber:
   - idInternal: 0
     valueGuidInternal: 
