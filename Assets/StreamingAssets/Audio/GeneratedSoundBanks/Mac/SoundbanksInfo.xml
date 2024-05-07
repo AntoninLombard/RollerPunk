@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{17A49F45-EDA3-116D-41A2-2F287DBE1F96}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9A19E352-97DA-D265-D1C7-97CE320C2E0C}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -31,6 +31,7 @@
 				<Bus Id="54442139" Name="Lead"/>
 				<Bus Id="759487314" Name="Engines"/>
 				<Bus Id="1291433344" Name="Bass"/>
+				<Bus Id="1404066300" Name="Ambiances"/>
 				<Bus Id="1635194249" Name="P4"/>
 				<Bus Id="1635194252" Name="P1"/>
 				<Bus Id="1635194254" Name="P3"/>
@@ -86,10 +87,6 @@
 			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="16764168" Name="Direction"/>
-				<GameParameter Id="90100353" Name="Ducking_From_P1"/>
-				<GameParameter Id="90100354" Name="Ducking_From_P2"/>
-				<GameParameter Id="90100355" Name="Ducking_From_P3"/>
-				<GameParameter Id="90100356" Name="Ducking_From_P4"/>
 				<GameParameter Id="640949982" Name="Speed"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
@@ -97,6 +94,7 @@
 				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
+				<GameParameter Id="2398231425" Name="Score"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
@@ -243,7 +241,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D5B250C9-D984-FEBF-1089-627AD9DFD25E}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{989D4E12-0DA5-0BC0-1B36-74B7BE9484AC}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -1028,5 +1026,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3DCBAB3B-EA15-CC56-3696-161E7E058CD7}</FileHash>
+	<FileHash>{D0D1DCF7-6AE3-9994-C56A-EC37B5A6E874}</FileHash>
 </SoundBanksInfo>

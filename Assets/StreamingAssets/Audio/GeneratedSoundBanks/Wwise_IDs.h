@@ -81,12 +81,9 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID DIRECTION = 16764168U;
-        static const AkUniqueID DUCKING_FROM_P1 = 90100353U;
-        static const AkUniqueID DUCKING_FROM_P2 = 90100354U;
-        static const AkUniqueID DUCKING_FROM_P3 = 90100355U;
-        static const AkUniqueID DUCKING_FROM_P4 = 90100356U;
         static const AkUniqueID PLAYER_NUMBER = 1659248646U;
         static const AkUniqueID RPM = 796049864U;
+        static const AkUniqueID SCORE = 2398231425U;
         static const AkUniqueID SKID = 822292696U;
         static const AkUniqueID SPEED = 640949982U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
@@ -110,6 +107,7 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIANCES = 1404066300U;
         static const AkUniqueID BASS = 1291433344U;
         static const AkUniqueID DRUMS = 2726606664U;
         static const AkUniqueID DRUMS_B = 3042377063U;

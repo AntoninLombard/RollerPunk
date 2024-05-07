@@ -27,6 +27,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	54442139	Lead			\Default Work Unit\Master Audio Bus\Music\Lead	
 	759487314	Engines			\Default Work Unit\Master Audio Bus\Engines	
 	1291433344	Bass			\Default Work Unit\Master Audio Bus\Music\Bass	
+	1404066300	Ambiances			\Default Work Unit\Master Audio Bus\Ambiances	
 	1635194249	P4			\Default Work Unit\Master Audio Bus\Players\P4	
 	1635194252	P1			\Default Work Unit\Master Audio Bus\Players\P1	
 	1635194254	P3			\Default Work Unit\Master Audio Bus\Players\P3	
