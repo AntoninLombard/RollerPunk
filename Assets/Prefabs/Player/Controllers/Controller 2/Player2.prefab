@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5486139339022393608}
   - component: {fileID: 7675405571619096192}
   - component: {fileID: 861341256015156004}
+  - component: {fileID: 577850050313143884}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -144,8 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
+    initialListenerList:
+    - {fileID: 861341256015156004}
+    useDefaultListeners: 0
   isEnvironmentAware: 1
   isStaticObject: 0
   m_positionOffsetData:
@@ -165,8 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eed8594685d4d47b996d4ae4f2273b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDefaultListener: 1
+  isDefaultListener: 0
   listenerId: 0
+--- !u!114 &577850050313143884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040440524431794592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc9357a6ab27be4d8345622c49c79cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3059947211623483126
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +193,7 @@ GameObject:
   - component: {fileID: 4457839074724325897}
   - component: {fileID: 1435602356178349144}
   - component: {fileID: 2075873140783189414}
+  - component: {fileID: -7413900745284218875}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -353,8 +368,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fec3ece221a14d43b0e53113961093c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 4457839074724325897}
   ui: {fileID: 4046299793511324354}
+  listener: {fileID: 577850050313143884}
+--- !u!114 &-7413900745284218875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3059947211623483126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3957cd69a5efee54cafaadd800d9e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList:
+    - {fileID: 861341256015156004}
+    useDefaultListeners: 0
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1001 &1551421523056825757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -621,7 +660,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 14854278065116634, guid: 188551011c7b90243b1c6c7358411fed, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4272342943821034924, guid: 188551011c7b90243b1c6c7358411fed,
         type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 using AK.Wwise;
 using JetBrains.Annotations;
 using Random = UnityEngine.Random;
+using Unity.VisualScripting;
 
 
 public class GameManager : MonoBehaviour
@@ -30,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Wwise")]
     [SerializeField] private AK.Wwise.Switch[] playerNumber;
-
 
     private void Awake()
     {
@@ -72,14 +72,14 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerInstantiate(Player player)
     {
-        players.Add(player,0);
+        players.Add(player, 0);
         //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
         player.controller.character.position = spawnPoints[nbPlayer].position; //for V2
-        nbPlayer++;
         playerNumber[nbPlayer].SetValue(player.gameObject);
         Debug.Log(playerNumber[nbPlayer].ToString());
+        nbPlayer++;
+        player.listener.SetVolumeOffset(nbPlayer);
     }
-
     public void OnPlayerDeath(Player player)
     {
         Vector3 pos = spawnPoints[Random.Range(0, nbPlayer)].position;

@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584865135251124023
+    m_lastTime: -8584865067121409845
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -1272,7 +1272,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 16ff3389254ae24a8ec01413e62e9d26
     GuidInternal: 
-    m_lastTime: -8584865136055169667
+    m_lastTime: -8584865078299768855
     List:
     - name: Master
       guid: 91c2d267fa27364e9a5863c7ac61c00c
@@ -1302,6 +1302,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: bc829adf62c817479215005db29fca87
       Path: Game Parameters\Default Work Unit\Music
+    - name: Pause
+      guid: 8a6c3541854f32478bc2eae0d378b067
+      id: 3092587493
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Pause
+        ObjectType: 13
+        guid: 8a6c3541854f32478bc2eae0d378b067
+      Path: Game Parameters\Default Work Unit\Pause
     - name: Player_Number
       guid: 27ea0b73092daf45a9f0aa4bd5829a52
       id: 1659248646
@@ -1522,7 +1536,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584871404844877047
+    m_lastTime: -8584865067121469047
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244

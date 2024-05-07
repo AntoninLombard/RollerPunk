@@ -5,26 +5,24 @@ using UnityEngine;
 public class WwiseListener : MonoBehaviour
 {
     private float[] VolumesOffset = new float[2]; //Panning offset
-    private AK.Wwise.Switch playerNumber;
-
     AkChannelConfig cfg = new AkChannelConfig();
 
-    void Start()
+   public void SetVolumeOffset(int nb)
     {
-        if (playerNumber.ToString() == "P1" || playerNumber.ToString() == "P3")
+        if (nb%2 == 1)
         {
-            VolumesOffset[0] = 0;
-            VolumesOffset[1] = -9;
+            VolumesOffset[0] = 0f;
+            VolumesOffset[1] = -9f;
         }
-
-        if (playerNumber.ToString() == "P2" || playerNumber.ToString() =="P4")
+        else if (nb%2 == 0)
         {
-            VolumesOffset[0] = -9;
-            VolumesOffset[1] = 0;
+            VolumesOffset[0] = -9f;
+            VolumesOffset[1] = 0f;
         }
 
         //Mofifying Listener spatialisation
         cfg.SetStandard(AkSoundEngine.AK_SPEAKER_SETUP_STEREO);
         AkSoundEngine.SetListenerSpatialization(this.gameObject, true, cfg, VolumesOffset);
     }
+
 }

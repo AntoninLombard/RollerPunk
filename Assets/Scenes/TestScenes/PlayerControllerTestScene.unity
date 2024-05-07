@@ -238,12 +238,6 @@ MonoBehaviour:
     valueGuidInternal: 
     groupIdInternal: 0
     groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3186f40d28d1fe647a837ee8016cff37,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 08a401a213f3d4944a947cbfd48003c8,
       type: 2}
   - idInternal: 0
