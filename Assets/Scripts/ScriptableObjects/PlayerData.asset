@@ -19,7 +19,7 @@ MonoBehaviour:
   gripAccel: 5
   inertiaRatio: 0.25
   brakingRatio: 0.518
-  drag: 0.12
+  drag: 0.372
   ballAccelMultiplier: 1
   ballMaxSpeedMultipier: 1
   counterWindow: 0.05
