@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AK.Wwise;
+using JetBrains.Annotations;
 using Random = UnityEngine.Random;
 
 
@@ -12,22 +13,25 @@ public class GameManager : MonoBehaviour
     
     
     [Header("Players")]
-    [SerializeField] private List<PlayerController> players;
-    [SerializeField] private int[] score;
-    [SerializeField] private int nbHumanPlayer;
+    [SerializeField] private Dictionary<Player,int> players = new Dictionary<Player, int>();
     [SerializeField] private int nbPlayer;
 
     [Header("Gameplay")] 
     [SerializeField] private bool isRaceOn;
-    [SerializeField] private PlayerController ballHolder;
     [SerializeField] private float timer;
-    [SerializeField] private BallScript ball;
-    [SerializeField] private List<CheckpointScript> checkpoints;
+    [SerializeField] private List<Checkpoint> checkpoints;
     [SerializeField] private List<Transform> spawnPoints;
+    
+    [Header("Ball & Ball holder")]
+    [SerializeField] private BallScript ball;
+    [SerializeField] [CanBeNull] private Player ballHolder;
+    [SerializeField] private Vector3 holderPreviousPosition;
+    [SerializeField] private float ballDistance = 0;
 
-    public RTPC playerNumber;
-    
-    
+    [Header("Wwise")]
+    [SerializeField] private AK.Wwise.Switch[] playerNumber;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -66,20 +70,48 @@ public class GameManager : MonoBehaviour
         isRaceOn = true;
     }
 
-    public void OnPlayerInstantiate(GameObject player)
+    public void OnPlayerInstantiate(Player player)
     {
-        players.Add(player.GetComponent<PlayerController>());
-        player.transform.position =  spawnPoints[nbHumanPlayer].position;
-        nbHumanPlayer++;
+        players.Add(player,0);
+        player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
+        //player.controller.character.position = spawnPoints[nbPlayer].position; //for V2
         nbPlayer++;
-        playerNumber.SetValue(player, nbPlayer);
+        playerNumber[nbPlayer].SetValue(player.gameObject);
+        Debug.Log(playerNumber[nbPlayer].ToString());
     }
 
-    public void OnPlayerDeath(PlayerController player)
+    public void OnPlayerDeath(Player player)
     {
-        Vector3 pos = spawnPoints[Random.Range(0, nbHumanPlayer)].position;
+        Vector3 pos = spawnPoints[Random.Range(0, nbPlayer)].position;
         //player.transform.position = pos;
-        player.rb.position = pos;
+        player.controller.rb.position = pos; //for V1
+        //player.controller.character.position = pos; //for V2
 
+    }
+
+    public void OnScoreChange(Player player, int points)
+    {
+        players[player] += points;
+        player.GetComponent<PlayerUI>()?.OnScoreChange(players[player]);
+    }
+
+    public void OnBallGrabbed(Player player)
+    {
+        ballHolder = player;
+        
+    }
+    
+    public void OnPointScored(Player player)
+    {
+        //players[player] += points;
+        //player.GetComponent<PlayerUI>()?.OnScoreChange(players[player]);
+    }
+
+    public void UpdateBallDistance()
+    {
+        if (ballHolder != null)
+        {
+            //ballDistance += 
+        }
     }
 }

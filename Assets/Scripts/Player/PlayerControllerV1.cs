@@ -43,10 +43,10 @@ public class PlayerController : MonoBehaviour
     
     
     [Header("Events")] 
-    [SerializeField] public UnityEvent<GameObject> OnHitByPunch;
-    [SerializeField] public UnityEvent<GameObject> OnHitbySlide;
-    [SerializeField] public UnityEvent<GameObject> OnHitbByBallPunch;
-    [SerializeField] public UnityEvent<GameObject> OnHitbByBallSlide;
+    [SerializeField] public UnityEvent<Player> OnHitByPunch;
+    [SerializeField] public UnityEvent<Player> OnHitbySlide;
+    [SerializeField] public UnityEvent<Player> OnHitbByBallPunch;
+    [SerializeField] public UnityEvent<Player> OnHitbByBallSlide;
     [SerializeField] public UnityEvent<GameObject> OnGrabbingBall;
     
     
@@ -58,7 +58,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem;
 
     public GameObject lastPlayerToCallWwiseEvent;
-
+    [SerializeField] private Player player;
+    private Vector3 previousForward;
+    
+    
     #endregion
 
     #region UNITY FUNCTIONS
@@ -76,7 +79,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.OnPlayerInstantiate(this.gameObject);
+        previousForward = character.forward;
         driveAction = input.actions.FindAction("Driving/Drive");
         steerAction = input.actions.FindAction("Driving/Steer");
         controllerData.startEngineSound.Post(this.gameObject);
@@ -113,6 +116,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         currentVelocity = rb.velocity;
+        //Quaternion deltaRot = Quaternion.FromToRotation(previousForward, character.forward);
+        //Vector3 currentForwardVelocity = Vector3.ProjectOnPlane(currentVelocity, character.up);
+        //Quaternion deltaRot = Quaternion.FromToRotation(currentForwardVelocity, character.forward);
+        //currentVelocity = (deltaRot * currentVelocity) * (1 - controllerData.inertiaRatio * Time.fixedDeltaTime) + currentVelocity * (controllerData.inertiaRatio * Time.fixedDeltaTime) ;
         Vector3 deltaVelocity = Vector3.zero;
         
         deltaVelocity -= currentVelocity * (controllerData.drag * Time.fixedDeltaTime);
@@ -121,44 +128,50 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded)
         {
             controllerData.offGround.SetValue(gameObject);
+            rb.AddForce(Vector3.down * (controllerData.gravityStrength * Time.fixedDeltaTime), ForceMode.VelocityChange);
         }
-        else if(!isStunned)
+        else 
         {
-            rb.AddForce(Vector3.down * controllerData.gravityStrength, ForceMode.Acceleration);
-            rb.AddForce(-character.up * controllerData.gripAccel, ForceMode.Acceleration);
-            controllerData.onGround.SetValue(gameObject);
-            switch (driveInput)
+            rb.AddForce(-character.up * (controllerData.gripAccel * Time.fixedDeltaTime), ForceMode.VelocityChange);
+            if (!isStunned)
             {
-                case > 0f:
-                    isBraking = false;
-                    isAccelerating = true;
-                    deltaVelocity += character.forward * (driveInput * controllerData.forwardAccel * (!isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
-                    break;
-                case < 0f:
-                    isBraking = true;
-                    isAccelerating = false;
-                    deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
-                    break;
-                default:
-                    isBraking = false;
-                    isAccelerating = false;
-                    break;
+                controllerData.onGround.SetValue(gameObject);
+                switch (driveInput)
+                {
+                    case > 0f:
+                        isBraking = false;
+                        isAccelerating = true;
+                        deltaVelocity += character.forward * (driveInput * controllerData.forwardAccel * (!isHoldingBall ? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
+                        break;
+                    case < 0f:
+                        isBraking = true;
+                        isAccelerating = false;
+                        deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
+                        break;
+                    default:
+                        isBraking = false;
+                        isAccelerating = false;
+                        break;
+                }
             }
-        
+
         }
 
-        rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
-
-        
+        //rb.AddForce(deltaVelocity + currentVelocity - rb.velocity ,ForceMode.VelocityChange);
+        rb.AddForce(deltaVelocity,ForceMode.VelocityChange);
+        //rb.AddForce(Vector3.down * (controllerData.gravityStrength * Time.fixedDeltaTime), ForceMode.VelocityChange);
+        //rb.AddForce(-character.up * (controllerData.gripAccel * Time.fixedDeltaTime), ForceMode.VelocityChange);
+        currentVelocity = rb.velocity;
         if (currentVelocity.magnitude > controllerData.maxSpeed * (!isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
             currentVelocity = currentVelocity.normalized * (controllerData.maxSpeed * (!isHoldingBall ? 1 : controllerData.ballMaxSpeedMultipier));
-            rb.AddForce(currentVelocity - currentVelocity, ForceMode.VelocityChange);
+            rb.AddForce(currentVelocity - rb.velocity, ForceMode.VelocityChange);
         }
         
 
         deltaSpeed = deltaVelocity.magnitude;
         speed = rb.velocity.magnitude;
+        previousForward = character.forward;
     }
     void OnDrawGizmosSelected()
     {
@@ -203,6 +216,14 @@ public class PlayerController : MonoBehaviour
             Gizmos.color = Color.green;
         }
         Gizmos.DrawLine(pos, pos + (-up - forward).normalized * 0.5f);
+        
+        
+        
+
+        Gizmos.color = Color.magenta;
+
+        
+        Gizmos.DrawLine(pos+up, pos+up+rb.velocity*10);
     }
     #endregion
 
@@ -315,44 +336,44 @@ public class PlayerController : MonoBehaviour
 
     #region GAMEPLAY EVENTS CALLBACKS
 
-    void onHitBySlide(GameObject source)
+    void onHitBySlide(Player source)
     {
         if (isPunching != true)
         {
-            StartCoroutine(slideReactWindow());
+            StartCoroutine(slideReactWindow(source));
             return;
         }
-        slideCounter();
+        slideCounter(source);
     }
     
-    void onHitByPunch(GameObject source)
+    void onHitByPunch(Player source)
     {
         if (isPunching != true)
         {
-            StartCoroutine(punchReactWindow());
+            StartCoroutine(punchReactWindow(source));
             return;
         }
-        punchCounter();
+        punchCounter(source);
     }
     
-    void onHitByBallPunch(GameObject source)
+    void onHitByBallPunch(Player source)
     {
         if (isPunching != true)
         {
-            StartCoroutine(ballPunchReactWindow());
+            StartCoroutine(ballPunchReactWindow(source));
             return;
         }
-        ballPunchCounter();
+        ballPunchCounter(source);
     }
     
-    void onHitByBallSlide(GameObject source)
+    void onHitByBallSlide(Player source)
     {
         if (isPunching != true)
         {
-            StartCoroutine(ballSlideReactWindow());
+            StartCoroutine(ballSlideReactWindow(source));
             return;
         }
-        ballSlideCounter();
+        ballSlideCounter(source);
     }
 
     void onGrabbingBall(GameObject ball)
@@ -361,6 +382,12 @@ public class PlayerController : MonoBehaviour
         ball.transform.SetParent(ballAnchorPoint.transform);
         ball.transform.position = ballAnchorPoint.transform.position;
         controllerData.grabbingBallSound.Post(gameObject);
+        GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
+    }
+
+    public void onDeath(Player source)
+    {
+        StartCoroutine(Death(source));
     }
 
     #endregion
@@ -375,7 +402,7 @@ public class PlayerController : MonoBehaviour
         lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.punchCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(character.gameObject);
+        box.SetSource(player);
         box.SetType(ColliderBox.ColliderType.Punch);
         hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
@@ -393,7 +420,7 @@ public class PlayerController : MonoBehaviour
         lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.slideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(character.gameObject);
+        box.SetSource(player);
         box.SetType(ColliderBox.ColliderType.Slide);
         hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
@@ -412,7 +439,7 @@ public class PlayerController : MonoBehaviour
         lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.ballPunchCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(character.gameObject);
+        box.SetSource(player);
         box.SetType(ColliderBox.ColliderType.BallPunch);
         hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
@@ -430,7 +457,7 @@ public class PlayerController : MonoBehaviour
         lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.ballSlideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(character.gameObject);
+        box.SetSource(player);
         box.SetType(ColliderBox.ColliderType.BallSlide);
         hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
         yield return new WaitForSeconds(0.5f);
@@ -441,59 +468,59 @@ public class PlayerController : MonoBehaviour
         isRecovering = false;
     }
 
-    IEnumerator punchReactWindow()
+    IEnumerator punchReactWindow(Player source)
     {
         yield return new WaitForSeconds(controllerData.counterWindow);
         if (isPunching != true)
         {
-            punchHit();
+            punchHit(source);
         }
         else
         {
-            punchCounter();
+            punchCounter(source);
         }
     }
     
-    IEnumerator slideReactWindow()
+    IEnumerator slideReactWindow(Player source)
     {
         yield return new WaitForSeconds(controllerData.counterWindow);
         if (isSliding != true)
         {
-            slideHit();
+            slideHit(source);
         }
         else
         {
-            slideCounter();
+            slideCounter(source);
         }
     }
     
-    IEnumerator ballPunchReactWindow()
+    IEnumerator ballPunchReactWindow(Player source)
     {
         yield return new WaitForSeconds(controllerData.counterWindow);
         if (isPunching != true)
         {
-            ballPunchHit();
+            ballPunchHit(source);
         }
         else
         {
-            ballPunchCounter();
+            ballPunchCounter(source);
         }
     }
     
-    IEnumerator ballSlideReactWindow()
+    IEnumerator ballSlideReactWindow(Player source)
     {
         yield return new WaitForSeconds(controllerData.counterWindow);
         if (isPunching != true)
         {
-            ballSlideHit();
+            ballSlideHit(source);
         }
         else
         {
-            ballSlideCounter();
+            ballSlideCounter(source);
         }
     }
     
-    IEnumerator Stun()
+    IEnumerator Stun(Player source)
     {
         isStunned = true;
         rb.velocity = Vector3.zero;
@@ -501,13 +528,15 @@ public class PlayerController : MonoBehaviour
         isStunned = false;
     }
     
-    IEnumerator Death()
+    IEnumerator Death(Player source)
     {
+        if(!(source == null))
+            GameManager.Instance.OnScoreChange(source,1);
         isStunned = true;
         rb.velocity = Vector3.zero;
         yield return new WaitForSeconds(controllerData.stunDuration);
         isStunned = false;
-        GameManager.Instance.OnPlayerDeath(this);
+        GameManager.Instance.OnPlayerDeath(player);
     }
     
     #endregion
@@ -515,17 +544,17 @@ public class PlayerController : MonoBehaviour
     
     #region COMBAT HITS & COUNTERS
 
-    void punchHit()
+    void punchHit(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
         controllerData.punchHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
-        StartCoroutine(Stun());
+        StartCoroutine(Stun(source));
     }
 
-    void punchCounter()
+    void punchCounter(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
@@ -534,17 +563,17 @@ public class PlayerController : MonoBehaviour
         particleSystem.Play();
     }
 
-    void slideHit()
+    void slideHit(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.yellow;
         controllerData.slideHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
-        StartCoroutine(Stun());
+        StartCoroutine(Stun(source));
     }
 
-    void slideCounter()
+    void slideCounter(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
@@ -553,36 +582,36 @@ public class PlayerController : MonoBehaviour
         particleSystem.Play();
     }
 
-    void ballSlideHit()
+    void ballSlideHit(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
         controllerData.ballSlideHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
-        StartCoroutine(Death());
+        StartCoroutine(Death(source));
     }
     
-    void ballPunchHit()
+    void ballPunchHit(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
         controllerData.ballPunchHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
-        StartCoroutine(Death());
+        StartCoroutine(Death(source));
     }
 
-    void ballPunchCounter()
+    void ballPunchCounter(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
         controllerData.ballPunchCounterSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
-        particleSystem.Play();
+        particleSystem.Play(source);
     }
     
-    void ballSlideCounter()
+    void ballSlideCounter(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
   maxSpeed: 40
-  forwardAccel: 100.6
+  forwardAccel: 10
   turningRate: 20
-  gravityStrength: 9.8
-  gripAccel: 2
+  gravityStrength: 204.9
+  gripAccel: 22.55
+  inertiaRatio: 0.156
   brakingRatio: 0.5
-  drag: 0.1
+  drag: 0.401
   ballAccelMultiplier: 1
   ballMaxSpeedMultipier: 1
   counterWindow: 0.05

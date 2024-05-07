@@ -214,24 +214,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be326eae78fe89b48baa1fa0fe892ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  score: 
-  nbHumanPlayer: 0
   nbPlayer: 0
   isRaceOn: 0
-  ballHolder: {fileID: 0}
   timer: 100000
-  ball: {fileID: 0}
   checkpoints: []
   spawnPoints:
   - {fileID: 922391103}
   - {fileID: 2049503506}
   - {fileID: 1076621603}
   - {fileID: 465266646}
+  ball: {fileID: 0}
+  ballHolder: {fileID: 0}
+  holderPreviousPosition: {x: 0, y: 0, z: 0}
+  ballDistance: 0
   playerNumber:
-    idInternal: 0
+  - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 84931dbca886db7489a3a9cc92fb9900,
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3186f40d28d1fe647a837ee8016cff37,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3186f40d28d1fe647a837ee8016cff37,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 08a401a213f3d4944a947cbfd48003c8,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5f1c6149070ae5541bb8a36fb70330cf,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b517812716beed4e9e705b3a2b5878a,
       type: 2}
 --- !u!1 &428515976
 GameObject:
@@ -460,6 +485,9 @@ GameObject:
   - component: {fileID: 629631498}
   - component: {fileID: 629631497}
   - component: {fileID: 629631499}
+  - component: {fileID: 629631502}
+  - component: {fileID: 629631501}
+  - component: {fileID: 629631500}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -533,6 +561,73 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &629631500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629631496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3960617277065f740a1d1186617bd103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 624e9cf8b663f7f42b7093e3af6c70a7,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+--- !u!114 &629631501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629631496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eed8594685d4d47b996d4ae4f2273b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 0
+  listenerId: 0
+--- !u!114 &629631502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629631496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3957cd69a5efee54cafaadd800d9e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList:
+    - {fileID: 629631501}
+    useDefaultListeners: 0
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!43 &672764346
 Mesh:
   m_ObjectHideFlags: 8
