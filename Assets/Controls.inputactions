@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Reverse",
+                    "type": "Button",
+                    "id": "cef94fcb-876d-42f1-9a46-824a7a771772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -66,7 +75,7 @@
                 {
                     "name": "",
                     "id": "75442776-a2c5-4691-85c4-8b32e6e3b2ad",
-                    "path": "<Gamepad>/leftStick/y",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -104,6 +113,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Fortify",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1ed2752-c3c3-46ca-bc63-7e49f713554d",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reverse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -17,8 +17,10 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isTurning { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }   
     [SerializeField] private float speed = 0;
+    [SerializeField] private Vector3 targetForward;
     
     [Header("CHARACTER STATE")]
+    [SerializeField] private bool isInvincible;
     [SerializeField] private bool isRecovering;
     [SerializeField] private bool isPunching;
     [SerializeField] private bool isSliding;
@@ -78,7 +80,7 @@ public class PlayerController2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        previousForward = character.forward;
+        targetForward = character.forward;
         driveAction = input.actions.FindAction("Driving/Drive");
         steerAction = input.actions.FindAction("Driving/Steer");
         controllerData.startEngineSound.Post(this.gameObject);
@@ -123,12 +125,14 @@ public class PlayerController2 : MonoBehaviour
     }
     #endregion
 
-    #region MY FUNCTIONS
+    #region DRIVING FUNCTIONS
 
 
     private Vector3 drag(Vector3 velocity,float time)
     {
-        return -velocity *(controllerData.drag * time);
+        if (isGrounded)
+            return -velocity * (controllerData.drag * time);
+        return -velocity * (controllerData.airDrag * time);
     }
 
     private Vector3 move(Vector3 currentVelocity,float time)
@@ -306,11 +310,11 @@ public class PlayerController2 : MonoBehaviour
         {
             if (!isHoldingBall)
             {
-                StartCoroutine(Punch());
+                StartCoroutine(punch());
             }
             else
             {
-                StartCoroutine(BallPunch());
+                StartCoroutine(ballPunch());
             }
         }
     }
@@ -321,11 +325,11 @@ public class PlayerController2 : MonoBehaviour
         {
             if (!isHoldingBall)
             {
-                StartCoroutine(Slide());
+                StartCoroutine(slide());
             }
             else
             {
-                StartCoroutine(BallSlide());
+                StartCoroutine(ballSlide());
             }
 
         }
@@ -343,7 +347,7 @@ public class PlayerController2 : MonoBehaviour
 
     void onHitBySlide(Player source)
     {
-        if (isPunching != true)
+        if (isPunching != true && !isInvincible)
         {
             StartCoroutine(slideReactWindow(source));
             return;
@@ -353,7 +357,7 @@ public class PlayerController2 : MonoBehaviour
     
     void onHitByPunch(Player source)
     {
-        if (isPunching != true)
+        if (isPunching != true && !isInvincible)
         {
             StartCoroutine(punchReactWindow(source));
             return;
@@ -363,7 +367,7 @@ public class PlayerController2 : MonoBehaviour
     
     void onHitByBallPunch(Player source)
     {
-        if (isPunching != true)
+        if (isPunching != true && !isInvincible)
         {
             StartCoroutine(ballPunchReactWindow(source));
             return;
@@ -373,7 +377,7 @@ public class PlayerController2 : MonoBehaviour
     
     void onHitByBallSlide(Player source)
     {
-        if (isPunching != true)
+        if (isPunching != true && !isInvincible)
         {
             StartCoroutine(ballSlideReactWindow(source));
             return;
@@ -392,7 +396,7 @@ public class PlayerController2 : MonoBehaviour
 
     public void onDeath(Player source)
     {
-        StartCoroutine(Death(source));
+        StartCoroutine(death(source));
     }
 
     #endregion
@@ -400,7 +404,7 @@ public class PlayerController2 : MonoBehaviour
 
     #region COMBAT COROUTINES
 
-    IEnumerator Punch()
+    IEnumerator punch()
     {
         isPunching = true;
         controllerData.punchSound.Post(gameObject);
@@ -417,7 +421,7 @@ public class PlayerController2 : MonoBehaviour
         isRecovering = false;
     }
     
-    IEnumerator Slide()
+    IEnumerator slide()
     {
         isSliding = true;
         controllerData.slideSound.Post(gameObject);
@@ -435,7 +439,7 @@ public class PlayerController2 : MonoBehaviour
     }
     
     
-    IEnumerator BallPunch()
+    IEnumerator ballPunch()
     {
         isPunching = true;
         controllerData.balLPunchSound.Post(gameObject);
@@ -452,7 +456,7 @@ public class PlayerController2 : MonoBehaviour
         isRecovering = false;
     }
     
-    IEnumerator BallSlide()
+    IEnumerator ballSlide()
     {
         isSliding = true;
         controllerData.ballSlideSound.Post(gameObject);
@@ -521,15 +525,16 @@ public class PlayerController2 : MonoBehaviour
         }
     }
     
-    IEnumerator Stun(Player source)
+    IEnumerator stun(Player source)
     {
         isStunned = true;
         rb.velocity = Vector3.zero;
         yield return new WaitForSeconds(controllerData.stunDuration);
         isStunned = false;
+        StartCoroutine(invincibility());
     }
     
-    IEnumerator Death(Player source)
+    IEnumerator death(Player source)
     {
         if(!(source == null))
             GameManager.Instance.OnScoreChange(source,1);
@@ -538,6 +543,14 @@ public class PlayerController2 : MonoBehaviour
         yield return new WaitForSeconds(controllerData.stunDuration);
         isStunned = false;
         GameManager.Instance.OnPlayerDeath(player);
+        StartCoroutine(invincibility());
+    }
+    
+    IEnumerator invincibility()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(controllerData.invincibilityDuration);
+        isInvincible = false;
     }
     
     #endregion
@@ -551,7 +564,7 @@ public class PlayerController2 : MonoBehaviour
         particleSystemMain.startColor = Color.green;
         controllerData.punchHitSound.Post(gameObject);
         particleSystem.Play();
-        StartCoroutine(Stun(source));
+        StartCoroutine(stun(source));
     }
 
     void punchCounter(Player source)
@@ -568,7 +581,7 @@ public class PlayerController2 : MonoBehaviour
         particleSystemMain.startColor = Color.yellow;
         controllerData.slideHitSound.Post(gameObject);
         particleSystem.Play();
-        StartCoroutine(Stun(source));
+        StartCoroutine(stun(source));
     }
 
     void slideCounter(Player source)
@@ -585,7 +598,7 @@ public class PlayerController2 : MonoBehaviour
         particleSystemMain.startColor = Color.red;
         controllerData.ballSlideHitSound.Post(gameObject);
         particleSystem.Play();
-        StartCoroutine(Death(source));
+        StartCoroutine(death(source));
     }
     
     void ballPunchHit(Player source)
@@ -594,7 +607,7 @@ public class PlayerController2 : MonoBehaviour
         particleSystemMain.startColor = Color.red;
         controllerData.ballPunchHitSound.Post(gameObject);
         particleSystem.Play();
-        StartCoroutine(Death(source));
+        StartCoroutine(death(source));
     }
 
     void ballPunchCounter(Player source)

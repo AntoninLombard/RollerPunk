@@ -17,17 +17,9 @@ public class BallScript : MonoBehaviour
     {
         rb.AddForce(transform.forward * speed,ForceMode.Acceleration);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController player = other.gameObject.GetComponentInParent<PlayerController>();
+        PlayerController2 player = other.gameObject.GetComponentInParent<PlayerController2>();
         if (player != null)
         {
             rb.isKinematic = true;

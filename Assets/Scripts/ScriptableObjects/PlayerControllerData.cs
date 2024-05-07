@@ -12,8 +12,9 @@ public class PlayerControllerData : ScriptableObject
     public float gravityStrength = 0.0f;
     public float gripAccel = 0.0f;
     [Range(0.0f,1.0f)] public float inertiaRatio = 0.0f;
-    [Range(0.0f,1.0f)] public  float brakingRatio = 0;
+    [Range(0.0f,1.0f)] public float brakingRatio = 0;
     [Range(0.0f,1.0f)] public float drag;
+    [Range(0.0f,1.0f)] public float airDrag;
     [Range(0.2f,1.0f)] public float ballAccelMultiplier;
     [Range(0.2f,1.0f)] public float ballMaxSpeedMultipier;
     
@@ -21,6 +22,7 @@ public class PlayerControllerData : ScriptableObject
     public float counterWindow;
     public float actionsCooldown;
     public float stunDuration;
+    public float invincibilityDuration;
     
     
     [Header("SOUND")] 
