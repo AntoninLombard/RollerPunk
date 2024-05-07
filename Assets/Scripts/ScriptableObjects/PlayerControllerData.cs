@@ -23,6 +23,7 @@ public class PlayerControllerData : ScriptableObject
     public float actionsCooldown;
     public float stunDuration;
     public float invincibilityDuration;
+    public float slidingDrag;
     
     
     [Header("SOUND")] 

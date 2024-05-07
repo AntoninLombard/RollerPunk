@@ -30,6 +30,7 @@ public class PlayerController2 : MonoBehaviour
     [Header("INPUT SYSTEM")]
     [SerializeField] private PlayerInput input;
     private InputAction driveAction;
+    private InputAction reverseAction;
     private InputAction steerAction;
     
     [Header("PLAYER INPUTS")]
@@ -82,6 +83,7 @@ public class PlayerController2 : MonoBehaviour
     {
         targetForward = character.forward;
         driveAction = input.actions.FindAction("Driving/Drive");
+        reverseAction = input.actions.FindAction("Driving/Reverse");
         steerAction = input.actions.FindAction("Driving/Steer");
         controllerData.startEngineSound.Post(this.gameObject);
     }
@@ -107,6 +109,7 @@ public class PlayerController2 : MonoBehaviour
         
         deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
         deltaVelocity += move(currentVelocity,Time.fixedDeltaTime);
+        deltaVelocity += sliding(targetForward,Time.deltaTime); // TODO change direction 
         groundCheck(Time.deltaTime);
         gravity();
         gripForce();
@@ -138,7 +141,7 @@ public class PlayerController2 : MonoBehaviour
     private Vector3 move(Vector3 currentVelocity,float time)
     {
         Vector3 deltaVelocity = Vector3.zero;
-        driveInput = driveAction.ReadValue<float>();
+        driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
 
         if (!isGrounded)
         {
@@ -241,6 +244,14 @@ public class PlayerController2 : MonoBehaviour
             isGrounded = false;
             alignCharToNormal(Vector3.up, time/5);
         }
+    }
+    
+    
+    private Vector3 sliding(Vector3 dir,float time)
+    {
+        if (isSliding)
+            return -dir  * (controllerData.slidingDrag * time);
+        return Vector3.zero;
     }
 
 
