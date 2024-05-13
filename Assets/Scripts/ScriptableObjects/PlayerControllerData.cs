@@ -24,7 +24,9 @@ public class PlayerControllerData : ScriptableObject
     public float stunDuration;
     public float invincibilityDuration;
     public float slidingDrag;
-    
+
+    [Header("SCORING VALUES")] 
+    public float distancePerPoint;
     
     [Header("SOUND")] 
     public AK.Wwise.Event startEngineSound;
@@ -54,4 +56,7 @@ public class PlayerControllerData : ScriptableObject
     public GameObject slideCollider;
     public GameObject ballPunchCollider;
     public GameObject ballSlideCollider;
+
+    [Header("CAMERA LAYERS")]
+    public List<LayerMask> playerLayer;
 }

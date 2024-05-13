@@ -57,7 +57,9 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         steerInput = steerAction.ReadValue<float>();
-        driveInput = driveAction.ReadValue<float>();
+        driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
+        player.anime.SetBool("Moving",speed > 1);
+        player.anime.SetFloat("Direction",steerInput);
         steer(Time.deltaTime);
         groundCheck(Time.deltaTime);
         controllerData.throttle.SetValue(gameObject, driveInput);
@@ -89,6 +91,7 @@ public class PlayerController2 : MonoBehaviour
             rb.AddForce(currentVelocity.normalized * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
         }
 
+        speed = rb.velocity.magnitude;
         previousForward = player.character.forward;
     }
     #endregion
@@ -106,7 +109,6 @@ public class PlayerController2 : MonoBehaviour
     private Vector3 move(Vector3 currentVelocity,float time)
     {
         Vector3 deltaVelocity = Vector3.zero;
-        driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
 
         if (!isGrounded)
         {

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4694972345323187127}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,8 +296,10 @@ MonoBehaviour:
   ui: {fileID: 4046299793511324354}
   combat: {fileID: 2504526242335050173}
   input: {fileID: 1435602356178349144}
+  camera: {fileID: 7847891520487656286}
   character: {fileID: 1706618883694479924}
   data: {fileID: 11400000, guid: ba71b6badf5cf8743b3c83336024f4c4, type: 2}
+  anime: {fileID: 7979025106373359173}
 --- !u!114 &4457839074724325897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1138,12 @@ Transform:
 --- !u!4 &4913193705995882589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7550955702229790661, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7979025106373359173 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4782392481088178653, guid: 188551011c7b90243b1c6c7358411fed,
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}

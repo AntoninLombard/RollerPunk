@@ -64,6 +64,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (ballHolder != null)
+        {
+            
+        }
+    }
 
     void StartRace()
     {
@@ -73,6 +80,10 @@ public class GameManager : MonoBehaviour
     public void OnPlayerInstantiate(Player player)
     {
         players.Add(player,0);
+        int layer = (int)Math.Log(player.data.playerLayer[nbPlayer], 2);
+        player.camera.gameObject.layer = layer;
+        foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
+            player.camera.cullingMask -= player.camera.cullingMask & mask;
         //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
         player.character.position = spawnPoints[nbPlayer].position; //for V2
         nbPlayer++;
@@ -98,7 +109,6 @@ public class GameManager : MonoBehaviour
     public void OnBallGrabbed(Player player)
     {
         ballHolder = player;
-        
     }
     
     public void OnPointScored(Player player)

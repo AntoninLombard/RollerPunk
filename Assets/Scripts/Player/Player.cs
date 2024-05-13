@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
     public PlayerUI ui;
     public PlayerCombat combat;
     public PlayerInput input;
+    public Camera camera;
     public Transform character;
     public PlayerControllerData data;
+    public Animator anime;
 
 
     private void Awake()

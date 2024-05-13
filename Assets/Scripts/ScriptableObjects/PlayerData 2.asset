@@ -27,6 +27,8 @@ MonoBehaviour:
   actionsCooldown: 1.5
   stunDuration: 2
   invincibilityDuration: 0
+  slidingDrag: 0
+  distancePerPoint: 0
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 
@@ -139,3 +141,12 @@ MonoBehaviour:
     type: 3}
   ballSlideCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
     type: 3}
+  playerLayer:
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 1024

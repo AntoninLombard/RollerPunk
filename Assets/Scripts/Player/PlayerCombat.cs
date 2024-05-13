@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.TextCore.Text;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -31,11 +33,16 @@ public class PlayerCombat : MonoBehaviour
     
     
     [Header("Parts")] 
+    [SerializeField] private GameObject ball;
     [SerializeField] private Transform ballAnchorPoint;
     [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ColliderBox punchCollider;
     [SerializeField] private ColliderBox slideCollider;
 
+
+    private Vector3 previousPosition;
+    private float traveledDistance;
+    private int point;
     
     private void Awake()
     {
@@ -45,8 +52,23 @@ public class PlayerCombat : MonoBehaviour
         OnHitbByBallSlide.AddListener(onHitByBallSlide);
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
-    
-     
+
+    private void FixedUpdate()
+    {
+        if (isHoldingBall)
+        {
+            traveledDistance += (player.character.position - previousPosition).magnitude;
+            player.ui.OnDistanceTraveled(traveledDistance,player.data.distancePerPoint);
+            if (traveledDistance >= player.data.distancePerPoint)
+            {
+                traveledDistance %= player.data.distancePerPoint;
+                point++;
+            }
+            
+        }
+    }
+
+
     #region INPUT EVENT CALLBACKS
 
     public void onPunch(InputAction.CallbackContext context)
@@ -133,6 +155,7 @@ public class PlayerCombat : MonoBehaviour
     void onGrabbingBall(GameObject ball)
     {
         isHoldingBall = true;
+        this.ball = ball;
         ball.transform.SetParent(ballAnchorPoint);
         ball.transform.position = ballAnchorPoint.position;
         player.data.grabbingBallSound.Post(gameObject);
@@ -260,6 +283,12 @@ public class PlayerCombat : MonoBehaviour
     
     IEnumerator stun(Player source)
     {
+        if (isHoldingBall)
+        {
+            isHoldingBall = false;
+            player.combat.onGrabbingBall(ball);
+            ball = null;
+        }
         isStunned = true;
         player.controller.rb.velocity = Vector3.zero;
         yield return new WaitForSeconds(player.data.stunDuration);
@@ -269,6 +298,12 @@ public class PlayerCombat : MonoBehaviour
     
     IEnumerator death(Player source)
     {
+        if (isHoldingBall)
+        {
+            isHoldingBall = false;
+            player.combat.onGrabbingBall(ball);
+            ball = null;
+        }
         if(!(source == null))
             GameManager.Instance.OnScoreChange(source,1);
         isStunned = true;
