@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         players.Add(player,0);
         //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
-        player.controller.character.position = spawnPoints[nbPlayer].position; //for V2
+        player.character.position = spawnPoints[nbPlayer].position; //for V2
         nbPlayer++;
         playerNumber[nbPlayer].SetValue(player.gameObject);
         Debug.Log(playerNumber[nbPlayer].ToString());
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         Vector3 pos = spawnPoints[Random.Range(0, nbPlayer)].position;
         //player.transform.position = pos;
         //player.controller.rb.position = pos; //for V1
-        player.controller.character.position = pos; //for V2
+        player.character.position = pos; //for V2
 
     }
 

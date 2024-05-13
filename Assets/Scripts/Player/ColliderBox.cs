@@ -15,19 +15,9 @@ public class ColliderBox : MonoBehaviour
     }
     [SerializeField] private Player source;
     [SerializeField] private ColliderType type;
+    [SerializeField] private Collider collider;
     
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name + other.gameObject.transform.parent.name);
@@ -37,16 +27,16 @@ public class ColliderBox : MonoBehaviour
             switch (type)
             {
                 case ColliderType.Slide:
-                    hit.controller.OnHitbySlide.Invoke(source);
+                    hit.combat.OnHitbySlide.Invoke(source);
                     break;
                 case ColliderType.Punch:
-                    hit.controller.OnHitByPunch.Invoke(source);
+                    hit.combat.OnHitByPunch.Invoke(source);
                     break;
                 case ColliderType.BallPunch:
-                    hit.controller.OnHitbByBallPunch.Invoke(source);
+                    hit.combat.OnHitbByBallPunch.Invoke(source);
                     break;
                 case ColliderType.BallSlide:
-                    hit.controller.OnHitbByBallSlide.Invoke(source);
+                    hit.combat.OnHitbByBallSlide.Invoke(source);
                     break;
             }
         }
@@ -60,5 +50,10 @@ public class ColliderBox : MonoBehaviour
     public void SetType(ColliderType type)
     {
         this.type = type;
+    }
+
+    public void Toggle(bool isEnabled)
+    {
+        collider.enabled = isEnabled;
     }
 }

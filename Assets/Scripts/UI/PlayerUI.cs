@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField] private Player player;
+    
     [SerializeField] private TextMeshProUGUI textScore;
     [SerializeField] private TextMeshProUGUI textPoints;
     [SerializeField] private Slider slider;
-
+    
+    
+    
     public void OnScoreChange(int newScore)
     {
         textScore.text = "Score: " + newScore;

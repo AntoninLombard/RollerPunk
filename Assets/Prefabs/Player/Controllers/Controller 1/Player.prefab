@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7317821273378505133}
   - component: {fileID: -5604953935165361315}
   - component: {fileID: 8818475234067649919}
-  - component: {fileID: 5430684153910269458}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -175,6 +174,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb
     m_ActionName: Driving/Fortify[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cef94fcb-876d-42f1-9a46-824a7a771772
+    m_ActionName: Driving/Reverse
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Driving
@@ -192,20 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6266cb2116aba6478583e924ca467fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5430684153910269458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496698478244632734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fec3ece221a14d43b0e53113961093c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 7317821273378505133}
-  ui: {fileID: 8307750465213154736}
 --- !u!1 &6739235456333585406
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,15 +757,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6839726033266395887}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8307750465213154736 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3287796634486312799, guid: eb47b7569cc293447837d7b2b4bcc41f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6839726033266395887}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bae4669f40a83546a006fdd7e755e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
