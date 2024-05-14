@@ -142,7 +142,10 @@ public class PlayerController2 : MonoBehaviour
         steerInput = steerAction.ReadValue<float>();
         if (steerInput != 0f)
         {
-            player.character.rotation = Quaternion.Euler(Vector3.Lerp(player.character.rotation.eulerAngles, player.character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), time * 5f));
+            //player.character.rotation = Quaternion.Euler(Vector3.Lerp(player.character.rotation.eulerAngles, player.character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), time * 5f));
+            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
+            //player.character.rotation = player.character.rotation * Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up);
+
         }
     }
 

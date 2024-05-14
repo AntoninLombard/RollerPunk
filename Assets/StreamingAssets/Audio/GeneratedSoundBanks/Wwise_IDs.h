@@ -13,6 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_BALL_LOST = 3846266530U;
+        static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
+        static const AkUniqueID AMB_RUNSTART = 2349163407U;
+        static const AkUniqueID AMB_START = 1589289402U;
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
         static const AkUniqueID CHECKPOINT = 612075679U;

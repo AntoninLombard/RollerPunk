@@ -23,11 +23,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Checkpoint> checkpoints;
     [SerializeField] private List<Transform> spawnPoints;
     
-    [Header("Ball & Ball holder")]
-    [SerializeField] private BallScript ball;
-    [SerializeField] [CanBeNull] private Player ballHolder;
+    [field: Header("Ball & Ball holder")]
+    [field: SerializeField] public BallScript ball { get; private set; }
+    [field: SerializeField] [CanBeNull] public Player ballHolder { get; private set; }
     [SerializeField] private Vector3 holderPreviousPosition;
-    [SerializeField] private float ballDistance = 0;
+    [SerializeField] private Vector3 holderPreviousForward;
+    [SerializeField] private float distanceTraveled = 0;
+    [SerializeField] private int cumulatedPoints;
+    [SerializeField] private int kills;
+    [SerializeField] [CanBeNull] private Checkpoint lastCheckpoint;
 
     //[Header("Wwise")]
     //[SerializeField] private AK.Wwise.Switch[] playerNumber;
@@ -66,10 +70,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ballHolder != null)
-        {
-            
-        }
+        UpdateBallDistance();
     }
 
     void StartRace()
@@ -99,28 +100,55 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void OnScoreChange(Player player, int points)
+    public void OnScoring()
     {
-        players[player] += points;
-        player.GetComponent<PlayerUI>()?.OnScoreChange(players[player]);
+        players[ballHolder] += cumulatedPoints * (1+kills);
+        ballHolder.ui.OnScoreChange(players[ballHolder]);
+        ResetBall();
+    }
+    
+    public void OnBallKill()
+    {
+        kills++;
     }
 
     public void OnBallGrabbed(Player player)
     {
         ballHolder = player;
+        holderPreviousPosition = player.character.position;
+        holderPreviousForward = player.character.forward;
     }
-
-    public void OnPointScored(Player player)
-    {
-        //players[player] += points;
-        //player.GetComponent<PlayerUI>()?.OnScoreChange(players[player]);
-    }
+    
 
     public void UpdateBallDistance()
     {
         if (ballHolder != null)
         {
-            //ballDistance += 
+            distanceTraveled += (ballHolder.character.position - holderPreviousPosition).magnitude * Vector3.Dot( holderPreviousForward,ballHolder.character.forward);
+            ballHolder.ui.OnDistanceTraveled(distanceTraveled,ballHolder.data.distancePerPoint);
+            if (distanceTraveled >= ballHolder.data.distancePerPoint)
+            {
+                distanceTraveled %= ballHolder.data.distancePerPoint;
+                cumulatedPoints++;
+                ballHolder.ui.OnPointsChange(cumulatedPoints,kills);
+            }
+            holderPreviousPosition = ballHolder.character.position;
+            holderPreviousForward = ballHolder.character.forward;
         }
+    }
+
+    public void ChangeLastCheckPoint(Checkpoint checkpoint)
+    {
+        lastCheckpoint = checkpoint;
+    }
+
+    private void ResetBall()
+    {
+        ballHolder = null;
+        distanceTraveled = 0;
+        cumulatedPoints = 0;
+        kills = 0;
+        holderPreviousPosition = Vector3.zero;
+        holderPreviousForward = Vector3.zero;
     }
 }

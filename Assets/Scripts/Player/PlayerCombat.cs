@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -29,20 +30,15 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] public UnityEvent<Player> OnHitbySlide;
     [SerializeField] public UnityEvent<Player> OnHitbByBallPunch;
     [SerializeField] public UnityEvent<Player> OnHitbByBallSlide;
-    [SerializeField] public UnityEvent<GameObject> OnGrabbingBall;
+    [SerializeField] public UnityEvent OnGrabbingBall;
     
     
     [Header("Parts")] 
-    [SerializeField] private GameObject ball;
     [SerializeField] private Transform ballAnchorPoint;
     [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ColliderBox punchCollider;
     [SerializeField] private ColliderBox slideCollider;
-
-
-    private Vector3 previousPosition;
-    private float traveledDistance;
-    private int point;
+    
     
     private void Awake()
     {
@@ -53,20 +49,6 @@ public class PlayerCombat : MonoBehaviour
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
 
-    private void FixedUpdate()
-    {
-        if (isHoldingBall)
-        {
-            traveledDistance += (player.character.position - previousPosition).magnitude;
-            player.ui.OnDistanceTraveled(traveledDistance,player.data.distancePerPoint);
-            if (traveledDistance >= player.data.distancePerPoint)
-            {
-                traveledDistance %= player.data.distancePerPoint;
-                point++;
-            }
-            
-        }
-    }
 
 
     #region INPUT EVENT CALLBACKS
@@ -152,12 +134,16 @@ public class PlayerCombat : MonoBehaviour
         ballSlideCounter(source);
     }
 
-    void onGrabbingBall(GameObject ball)
+    void onGrabbingBall()
     {
+        if (isStunned)
+        {
+            return;
+        }
         isHoldingBall = true;
-        this.ball = ball;
-        ball.transform.SetParent(ballAnchorPoint);
-        ball.transform.position = ballAnchorPoint.position;
+        GameManager.Instance.ball.Toggle(false);
+        GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
+        GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
         player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
     }
@@ -284,8 +270,14 @@ public class PlayerCombat : MonoBehaviour
         if (isHoldingBall)
         {
             isHoldingBall = false;
-            player.combat.onGrabbingBall(ball);
-            ball = null;
+            if (source != null)
+            {
+                source.combat.onGrabbingBall();
+            }
+            else
+            {
+                dropBall(player.character.transform);
+            }
         }
         isStunned = true;
         player.controller.rb.velocity = Vector3.zero;
@@ -299,11 +291,17 @@ public class PlayerCombat : MonoBehaviour
         if (isHoldingBall)
         {
             isHoldingBall = false;
-            player.combat.onGrabbingBall(ball);
-            ball = null;
+            if (source != null)
+            {
+                source.combat.onGrabbingBall();
+            }
+            else
+            {
+                dropBall(player.character.transform);
+            }
         }
-        if(!(source == null))
-            GameManager.Instance.OnScoreChange(source,1);
+        if(source == GameManager.Instance.ballHolder)
+            GameManager.Instance.OnBallKill();
         isStunned = true;
         player.controller.rb.velocity = Vector3.zero;
         yield return new WaitForSeconds(player.data.stunDuration);
@@ -323,6 +321,14 @@ public class PlayerCombat : MonoBehaviour
     
     
     #region COMBAT HITS & COUNTERS
+
+    void dropBall(Transform pos)
+    {
+        GameManager.Instance.ball.Toggle(true);
+        GameManager.Instance.ball.transform.parent = null;
+        GameManager.Instance.ball.transform.position = pos.position;
+        GameManager.Instance.ball.transform.rotation = pos.rotation;
+    }
 
     void punchHit(Player source)
     {

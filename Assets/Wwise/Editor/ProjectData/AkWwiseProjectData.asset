@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584859201166548386
+    m_lastTime: -8584859043591973714
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -702,7 +702,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584859153766801333
+    m_lastTime: -8584859045801671330
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -794,7 +794,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584859302662448225
+    m_lastTime: -8584859045801726525
     List:
     - name: AMB_Ball_Lost
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -811,8 +811,8 @@ MonoBehaviour:
         guid: 6400864745414841b4a0d7a10c3262ea
       Path: Events\RP_Ambiances\AMB_Ball_Lost
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.502922
+      minDuration: 2.6516263
     - name: AMB_Drill_Done
       guid: 0836f61b2d69db43a6848e61ddb8f296
       id: 2925030600
@@ -827,6 +827,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0836f61b2d69db43a6848e61ddb8f296
       Path: Events\RP_Ambiances\AMB_Drill_Done
+      maxAttenuation: 0
+      maxDuration: 8.305368
+      minDuration: 8.305368
+    - name: AMB_RunStart
+      guid: 716005349dfcb147828f1a99afc8f4f9
+      id: 2349163407
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_RunStart
+        ObjectType: 3
+        guid: 716005349dfcb147828f1a99afc8f4f9
+      Path: Events\RP_Ambiances\AMB_RunStart
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -909,8 +926,8 @@ MonoBehaviour:
         guid: 0d141e2b114d4c4b9240ffa5bf4add48
       Path: Events\RP_Feedbacks\Checkpoint
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 3.361816
+      minDuration: 3.361816
     - name: Collision
       guid: ee5128c7eaed844aa55298747c68b800
       id: 1792046091
@@ -1586,8 +1603,154 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: b3b1a5743ece2d4aa387aae00cb3ad5d
     GuidInternal: 
-    m_lastTime: -8584865151709995809
+    m_lastTime: -8584859151786159638
     List:
+    - name: Music
+      guid: 312358bb7d5da54781aefff3d813ce51
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+      - ElementName: Music
+        ObjectType: 9
+        guid: 312358bb7d5da54781aefff3d813ce51
+      Path: States\Default Work Unit\Music
+      values:
+      - name: Bed
+        guid: f2203f5a46ff07438ce1ec2e8f1b4dec
+        id: 446279778
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: Bed
+          ObjectType: 8
+          guid: f2203f5a46ff07438ce1ec2e8f1b4dec
+      - name: End
+        guid: 4a5eedcb05ae3749b56c2ce604a35943
+        id: 529726532
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: End
+          ObjectType: 8
+          guid: 4a5eedcb05ae3749b56c2ce604a35943
+      - name: Menu
+        guid: e56432e88457f14a96f0c2dbd2e5f2ae
+        id: 2607556080
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: Menu
+          ObjectType: 8
+          guid: e56432e88457f14a96f0c2dbd2e5f2ae
+      - name: None
+        guid: f857505ee7e4d746bc7b0706f35331c8
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: None
+          ObjectType: 8
+          guid: f857505ee7e4d746bc7b0706f35331c8
+      - name: P1
+        guid: c67e3b4d8439124d98c3aca413b7f2f3
+        id: 1635194252
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: P1
+          ObjectType: 8
+          guid: c67e3b4d8439124d98c3aca413b7f2f3
+      - name: P2
+        guid: a2a3a4a293f7064193bf7a32033d33db
+        id: 1635194255
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: P2
+          ObjectType: 8
+          guid: a2a3a4a293f7064193bf7a32033d33db
+      - name: P3
+        guid: 274b24c6d7eade43a94cd24a364bac44
+        id: 1635194254
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: P3
+          ObjectType: 8
+          guid: 274b24c6d7eade43a94cd24a364bac44
+      - name: P4
+        guid: 6c43666f382d26449f207c73b7a23fd8
+        id: 1635194249
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music
+          ObjectType: 9
+          guid: 312358bb7d5da54781aefff3d813ce51
+        - ElementName: P4
+          ObjectType: 8
+          guid: 6c43666f382d26449f207c73b7a23fd8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Music_State
       guid: 206710d6a59f1349af955347fd0ebddf
       id: 3826569560
@@ -1864,7 +2027,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 020000000600000019000000
+  ExpandedFileSystemItemIds: 02000000060000000700000019000000
   ExpandedWaapiItemIds: 060000000700000028000000290000002b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
