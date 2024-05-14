@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
-  m_Name: 6BF63CD0-18FB-41E0-B91C-F0313BD02018
+  m_Name: 753FF718-7D2E-4106-8423-FED6A43972C0
   m_EditorClassIdentifier: 
-  objectName: Ball_Slide
-  id: 3430352712
-  guid: 6BF63CD0-18FB-41E0-B91C-F0313BD02018
+  objectName: Parry_Move
+  id: 1084997411
+  guid: 753FF718-7D2E-4106-8423-FED6A43972C0

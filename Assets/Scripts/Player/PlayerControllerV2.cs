@@ -145,11 +145,9 @@ public class PlayerController2 : MonoBehaviour
 
         if (!isGrounded)
         {
-            controllerData.offGround.SetValue(gameObject);
         }
         else if(!isStunned)
         {
-            controllerData.onGround.SetValue(gameObject);
             switch (driveInput)
             {
                 case > 0f:
@@ -435,7 +433,6 @@ public class PlayerController2 : MonoBehaviour
     IEnumerator slide()
     {
         isSliding = true;
-        controllerData.slideSound.Post(gameObject);
         GameObject hitBox = Instantiate(controllerData.slideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(player);
@@ -470,7 +467,6 @@ public class PlayerController2 : MonoBehaviour
     IEnumerator ballSlide()
     {
         isSliding = true;
-        controllerData.ballSlideSound.Post(gameObject);
         GameObject hitBox = Instantiate(controllerData.ballSlideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
         box.SetSource(player);
@@ -590,7 +586,6 @@ public class PlayerController2 : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.yellow;
-        controllerData.slideHitSound.Post(gameObject);
         particleSystem.Play();
         StartCoroutine(stun(source));
     }
@@ -599,7 +594,6 @@ public class PlayerController2 : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
-        controllerData.slideCounterSound.Post(gameObject);
         particleSystem.Play();
     }
 
@@ -607,7 +601,6 @@ public class PlayerController2 : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
-        controllerData.ballSlideHitSound.Post(gameObject);
         particleSystem.Play();
         StartCoroutine(death(source));
     }
@@ -633,7 +626,6 @@ public class PlayerController2 : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
-        controllerData.ballSlideCounterSound.Post(gameObject);
         particleSystem.Play();
     }
 

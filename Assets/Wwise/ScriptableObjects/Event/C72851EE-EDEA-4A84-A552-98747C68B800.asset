@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
-  m_Name: 39FBF8DD-2A33-4734-A8CF-3B01D1503F8F
+  m_Name: C72851EE-EDEA-4A84-A552-98747C68B800
   m_EditorClassIdentifier: 
-  objectName: Slide
-  id: 3686556480
-  guid: 39FBF8DD-2A33-4734-A8CF-3B01D1503F8F
+  objectName: Collision
+  id: 1792046091
+  guid: C72851EE-EDEA-4A84-A552-98747C68B800

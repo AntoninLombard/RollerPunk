@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public PlayerController2 controller;
     public PlayerUI ui;
     public WwiseListener listener;
+    public AK.Wwise.Switch[] playerID;
 
     private void Awake()
     {
@@ -15,4 +16,9 @@ public class Player : MonoBehaviour
         GameManager.Instance.OnPlayerInstantiate(this);
     }
 
+    public void setPlayerID(int nb)
+    {
+        playerID[nb].SetValue(this.gameObject);
+        Debug.Log(playerID[nb].ToString());
+    }
 }

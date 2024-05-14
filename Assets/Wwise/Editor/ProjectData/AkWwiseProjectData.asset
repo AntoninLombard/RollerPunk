@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584865067121409845
+    m_lastTime: -8584859279560211640
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -702,7 +702,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584869634334300726
+    m_lastTime: -8584859284300856020
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -794,7 +794,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584865953741200151
+    m_lastTime: -8584859302662448225
     List:
     - name: AMB_Ball_Lost
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -858,7 +858,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584866071490927438
+    m_lastTime: -8584859299821317808
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -875,11 +875,11 @@ MonoBehaviour:
         guid: b0e7ece1ad48e34ea95c58477e177d4d
       Path: Events\RP_Feedbacks\Ball_Grab
       maxAttenuation: 0
-      maxDuration: 1.2281718
-      minDuration: 1.2281718
-    - name: Ball_Punch
+      maxDuration: 1.9143226
+      minDuration: 1.9143226
+    - name: Ball_Punch_Move
       guid: 50ebe91a68392b44ba36e1bb54b44237
-      id: 2389598339
+      id: 155540885
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -887,16 +887,16 @@ MonoBehaviour:
       - ElementName: RP_Feedbacks
         ObjectType: 12
         guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Ball_Punch
+      - ElementName: Ball_Punch_Move
         ObjectType: 3
         guid: 50ebe91a68392b44ba36e1bb54b44237
-      Path: Events\RP_Feedbacks\Ball_Punch
+      Path: Events\RP_Feedbacks\Ball_Punch_Move
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ball_Slide
-      guid: d03cf66bfb18e041b91cf0313bd02018
-      id: 3430352712
+    - name: Collision
+      guid: ee5128c7eaed844aa55298747c68b800
+      id: 1792046091
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -904,13 +904,30 @@ MonoBehaviour:
       - ElementName: RP_Feedbacks
         ObjectType: 12
         guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Ball_Slide
+      - ElementName: Collision
         ObjectType: 3
-        guid: d03cf66bfb18e041b91cf0313bd02018
-      Path: Events\RP_Feedbacks\Ball_Slide
+        guid: ee5128c7eaed844aa55298747c68b800
+      Path: Events\RP_Feedbacks\Collision
       maxAttenuation: 0
-      maxDuration: 1.2533125
-      minDuration: 1.2533125
+      maxDuration: 2.1666458
+      minDuration: 1.5098125
+    - name: Countdown
+      guid: ddd04c2d3d453c49bcd69e81ded6d324
+      id: 1505888634
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Countdown
+        ObjectType: 3
+        guid: ddd04c2d3d453c49bcd69e81ded6d324
+      Path: Events\RP_Feedbacks\Countdown
+      maxAttenuation: 0
+      maxDuration: 7.3123126
+      minDuration: 7.3123126
     - name: Counter
       guid: 0c8bf4ba67847f41871e1dbcef4d8306
       id: 3051750219
@@ -926,25 +943,8 @@ MonoBehaviour:
         guid: 0c8bf4ba67847f41871e1dbcef4d8306
       Path: Events\RP_Feedbacks\Counter
       maxAttenuation: 0
-      maxDuration: 1.0341706
-      minDuration: 1.0341706
-    - name: Defense
-      guid: ea04f23fafc5c04db60ddec2cdb33249
-      id: 2564315215
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Feedbacks
-        ObjectType: 12
-        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Defense
-        ObjectType: 3
-        guid: ea04f23fafc5c04db60ddec2cdb33249
-      Path: Events\RP_Feedbacks\Defense
-      maxAttenuation: 0
-      maxDuration: 1.7452139
-      minDuration: 1.7452139
+      maxDuration: 3.724
+      minDuration: 3.0974374
     - name: Drill
       guid: 0d141e2b114d4c4b9240ffa5bf4add48
       id: 2168413864
@@ -977,8 +977,8 @@ MonoBehaviour:
         guid: 846fb5f3be68a747be4f29d622bcc5b3
       Path: Events\RP_Feedbacks\Hit_ByBall
       maxAttenuation: 0
-      maxDuration: 0.94138557
-      minDuration: 0.94138557
+      maxDuration: 1.3560926
+      minDuration: 1.1886036
     - name: Hit_ByPunch
       guid: 33696301fcea184884f9a7a8a1bb09b1
       id: 3549005828
@@ -994,25 +994,8 @@ MonoBehaviour:
         guid: 33696301fcea184884f9a7a8a1bb09b1
       Path: Events\RP_Feedbacks\Hit_ByPunch
       maxAttenuation: 0
-      maxDuration: 0.94138557
-      minDuration: 0.94138557
-    - name: Hit_BySlide
-      guid: 85eff329fed408438b31884b33203786
-      id: 2537114299
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Feedbacks
-        ObjectType: 12
-        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Hit_BySlide
-        ObjectType: 3
-        guid: 85eff329fed408438b31884b33203786
-      Path: Events\RP_Feedbacks\Hit_BySlide
-      maxAttenuation: 0
-      maxDuration: 0.94138557
-      minDuration: 0.94138557
+      maxDuration: 4.0156913
+      minDuration: 3.4802487
     - name: Hit_ByWall
       guid: 72df72b72bb36c4c95bfea07c85181b8
       id: 2308453416
@@ -1028,11 +1011,11 @@ MonoBehaviour:
         guid: 72df72b72bb36c4c95bfea07c85181b8
       Path: Events\RP_Feedbacks\Hit_ByWall
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Punch
-      guid: 141d7e9b557f1e43856c1e846a16496a
-      id: 645565787
+      maxDuration: 2.13575
+      minDuration: 1.5748541
+    - name: Parry_Move
+      guid: 18f73f752e7d06418423fed6a43972c0
+      id: 1084997411
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1040,13 +1023,81 @@ MonoBehaviour:
       - ElementName: RP_Feedbacks
         ObjectType: 12
         guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Punch
+      - ElementName: Parry_Move
+        ObjectType: 3
+        guid: 18f73f752e7d06418423fed6a43972c0
+      Path: Events\RP_Feedbacks\Parry_Move
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Parry_Success
+      guid: ea04f23fafc5c04db60ddec2cdb33249
+      id: 1134971709
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Parry_Success
+        ObjectType: 3
+        guid: ea04f23fafc5c04db60ddec2cdb33249
+      Path: Events\RP_Feedbacks\Parry_Success
+      maxAttenuation: 0
+      maxDuration: 3.724
+      minDuration: 1.7452139
+    - name: Punch_AfterParry
+      guid: b08f90e51e7b9544ae9121007248140f
+      id: 972759482
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Punch_AfterParry
+        ObjectType: 3
+        guid: b08f90e51e7b9544ae9121007248140f
+      Path: Events\RP_Feedbacks\Punch_AfterParry
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Punch_Move
+      guid: 141d7e9b557f1e43856c1e846a16496a
+      id: 3055455917
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Punch_Move
         ObjectType: 3
         guid: 141d7e9b557f1e43856c1e846a16496a
-      Path: Events\RP_Feedbacks\Punch
+      Path: Events\RP_Feedbacks\Punch_Move
       maxAttenuation: 0
       maxDuration: 0.94272983
       minDuration: 0.94272983
+    - name: Punch_Taunt
+      guid: b0bf6c63f16822428898dbdfe8d7bba6
+      id: 1403211570
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Punch_Taunt
+        ObjectType: 3
+        guid: b0bf6c63f16822428898dbdfe8d7bba6
+      Path: Events\RP_Feedbacks\Punch_Taunt
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: setplayernumber
       guid: 7ce0baffa6486a41b2b2fdf03aa777e3
       id: 3687251531
@@ -1064,23 +1115,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Slide
-      guid: ddf8fb39332a3447a8cf3b01d1503f8f
-      id: 3686556480
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Feedbacks
-        ObjectType: 12
-        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Slide
-        ObjectType: 3
-        guid: ddf8fb39332a3447a8cf3b01d1503f8f
-      Path: Events\RP_Feedbacks\Slide
-      maxAttenuation: 0
-      maxDuration: 1.2533125
-      minDuration: 1.2533125
     - name: test
       guid: 83dab06271a1b240ae325c19a4199637
       id: 3157003241
@@ -1096,8 +1130,8 @@ MonoBehaviour:
         guid: 83dab06271a1b240ae325c19a4199637
       Path: Events\RP_Feedbacks\test
       maxAttenuation: 0
-      maxDuration: 1.2281718
-      minDuration: 1.2281718
+      maxDuration: 1.9143226
+      minDuration: 1.9143226
   - PhysicalPath: Events\RP_UI.wwu
     PathAndIcons:
     - ElementName: Events
@@ -1173,7 +1207,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Vehicule
     guid: b3615b940e8d94469069d49d4d79c295
     GuidInternal: 
-    m_lastTime: -8584869661784535745
+    m_lastTime: -8584859284300749771
     List:
     - name: Engine_Start
       guid: 7b4ce96814ed7f4dab45c60f77f64457
@@ -1192,74 +1226,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: P1_Burst
-      guid: 0df3a7f2e2dbe74f901fc28c0fab42a5
-      id: 2947226167
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Vehicule
-        ObjectType: 12
-        guid: b3615b940e8d94469069d49d4d79c295
-      - ElementName: P1_Burst
-        ObjectType: 3
-        guid: 0df3a7f2e2dbe74f901fc28c0fab42a5
-      Path: Events\RP_Vehicule\P1_Burst
-      maxAttenuation: 0
-      maxDuration: 5.0347376
-      minDuration: 5.0347376
-    - name: P1_Engine_Stop
-      guid: f547776bd4b5b042808df44f2e1d03f0
-      id: 140559848
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Vehicule
-        ObjectType: 12
-        guid: b3615b940e8d94469069d49d4d79c295
-      - ElementName: P1_Engine_Stop
-        ObjectType: 3
-        guid: f547776bd4b5b042808df44f2e1d03f0
-      Path: Events\RP_Vehicule\P1_Engine_Stop
-      maxAttenuation: 0
-      maxDuration: 2.9931357
-      minDuration: 2.9931357
-    - name: P2_Engine_Start
-      guid: 4def3e9855b110468129783c7465a89e
-      id: 736621041
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Vehicule
-        ObjectType: 12
-        guid: b3615b940e8d94469069d49d4d79c295
-      - ElementName: P2_Engine_Start
-        ObjectType: 3
-        guid: 4def3e9855b110468129783c7465a89e
-      Path: Events\RP_Vehicule\P2_Engine_Start
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: P2_Engine_Stop
-      guid: 83627be0adf4f04ca035d07c869235c8
-      id: 3919745899
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Vehicule
-        ObjectType: 12
-        guid: b3615b940e8d94469069d49d4d79c295
-      - ElementName: P2_Engine_Stop
-        ObjectType: 3
-        guid: 83627be0adf4f04ca035d07c869235c8
-      Path: Events\RP_Vehicule\P2_Engine_Stop
-      maxAttenuation: 0
-      maxDuration: 2.9931357
-      minDuration: 2.9931357
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -1898,7 +1864,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 020000000600000019000000
+  ExpandedFileSystemItemIds: 02000000060000000b00000019000000
   ExpandedWaapiItemIds: 060000000700000028000000290000002b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

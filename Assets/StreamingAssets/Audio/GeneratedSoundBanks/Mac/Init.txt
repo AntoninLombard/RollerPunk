@@ -16,6 +16,7 @@ State	ID	Name	State Group			Notes
 	748895195	None	Music_State			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\SFX	
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
 	841620460	Concrete			\Factory Acoustic Textures\Textures\Concrete	
@@ -28,6 +29,8 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2928161104	Curtains			\Factory Acoustic Textures\Textures\Curtains	
 	3195498748	Cork_Tiles			\Factory Acoustic Textures\Textures\Cork_Tiles	
 	3670307564	Drywall			\Factory Acoustic Textures\Textures\Drywall	
+	3991942870	Music			\Default Work Unit\Music	
+	4056684167	Master			\Default Work Unit\Master	
 	4168643977	Acoustic_Banner			\Factory Acoustic Textures\Textures\Acoustic_Banner	
 	4262522749	Wood_Bright			\Factory Acoustic Textures\Textures\Wood_Bright	
 
@@ -50,21 +53,10 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	2726606664	Drums			\Default Work Unit\Master Audio Bus\Music\Drums	
 	3042377063	Drums_B			\Default Work Unit\Master Audio Bus\Music\Drums\Drums_B	
 	3232836819	Guitar			\Default Work Unit\Master Audio Bus\Music\Guitar	
-	3511642625	Ducking_Bus			\Default Work Unit\Ducking_Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
-Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	1557387256	Ducking_P1			\Default Work Unit\Ducking_Bus\Ducking_P1	
-	1557387258	Ducking_P3			\Default Work Unit\Ducking_Bus\Ducking_P3	
-	1557387259	Ducking_P2			\Default Work Unit\Ducking_Bus\Ducking_P2	
-	1557387261	Ducking_P4			\Default Work Unit\Ducking_Bus\Ducking_P4	
-
 Effect plug-ins	ID	Name	Type				Notes
-	64866452	Meter (Custom)	Wwise Meter			
-	310720571	Meter (Custom)	Wwise Meter			
-	469542286	Meter (Custom)	Wwise Meter			
-	481056633	Meter (Custom)	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
 
 Audio Devices	ID	Name	Type				Notes

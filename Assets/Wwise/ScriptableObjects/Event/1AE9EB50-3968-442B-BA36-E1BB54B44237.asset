@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
   m_Name: 1AE9EB50-3968-442B-BA36-E1BB54B44237
   m_EditorClassIdentifier: 
-  objectName: Ball_Punch
-  id: 2389598339
+  objectName: Ball_Punch_Move
+  id: 155540885
   guid: 1AE9EB50-3968-442B-BA36-E1BB54B44237

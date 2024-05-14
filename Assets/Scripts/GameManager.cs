@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Vector3 holderPreviousPosition;
     [SerializeField] private float ballDistance = 0;
 
-    [Header("Wwise")]
-    [SerializeField] private AK.Wwise.Switch[] playerNumber;
+    //[Header("Wwise")]
+    //[SerializeField] private AK.Wwise.Switch[] playerNumber;
 
     private void Awake()
     {
@@ -75,8 +75,7 @@ public class GameManager : MonoBehaviour
         players.Add(player, 0);
         //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
         player.controller.character.position = spawnPoints[nbPlayer].position; //for V2
-        playerNumber[nbPlayer].SetValue(player.gameObject);
-        Debug.Log(playerNumber[nbPlayer].ToString());
+        player.setPlayerID(nbPlayer);
         nbPlayer++;
         player.listener.SetVolumeOffset(nbPlayer);
     }
@@ -98,9 +97,9 @@ public class GameManager : MonoBehaviour
     public void OnBallGrabbed(Player player)
     {
         ballHolder = player;
-        
+
     }
-    
+
     public void OnPointScored(Player player)
     {
         //players[player] += points;

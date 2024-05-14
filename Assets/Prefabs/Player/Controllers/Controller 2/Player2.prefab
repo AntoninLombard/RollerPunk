@@ -371,6 +371,31 @@ MonoBehaviour:
   controller: {fileID: 4457839074724325897}
   ui: {fileID: 4046299793511324354}
   listener: {fileID: 577850050313143884}
+  playerID:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3186f40d28d1fe647a837ee8016cff37,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 08a401a213f3d4944a947cbfd48003c8,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5f1c6149070ae5541bb8a36fb70330cf,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b517812716beed4e9e705b3a2b5878a,
+      type: 2}
 --- !u!114 &-7413900745284218875
 MonoBehaviour:
   m_ObjectHideFlags: 0

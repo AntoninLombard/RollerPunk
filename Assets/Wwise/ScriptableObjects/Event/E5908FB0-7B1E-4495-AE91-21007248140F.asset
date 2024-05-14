@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
-  m_Name: 29F3EF85-D4FE-4308-8B31-884B33203786
+  m_Name: E5908FB0-7B1E-4495-AE91-21007248140F
   m_EditorClassIdentifier: 
-  objectName: Hit_BySlide
-  id: 2537114299
-  guid: 29F3EF85-D4FE-4308-8B31-884B33203786
+  objectName: Punch_AfterParry
+  id: 972759482
+  guid: E5908FB0-7B1E-4495-AE91-21007248140F

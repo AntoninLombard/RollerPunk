@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour
         
         if (!isGrounded)
         {
-            controllerData.offGround.SetValue(gameObject);
             rb.AddForce(Vector3.down * (controllerData.gravityStrength * Time.fixedDeltaTime), ForceMode.VelocityChange);
         }
         else 
@@ -135,7 +134,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(-character.up * (controllerData.gripAccel * Time.fixedDeltaTime), ForceMode.VelocityChange);
             if (!isStunned)
             {
-                controllerData.onGround.SetValue(gameObject);
                 switch (driveInput)
                 {
                     case > 0f:
@@ -416,7 +414,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator Slide()
     {
         isSliding = true;
-        controllerData.slideSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.slideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
@@ -453,7 +450,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator BallSlide()
     {
         isSliding = true;
-        controllerData.ballSlideSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         GameObject hitBox = Instantiate(controllerData.ballSlideCollider,character);
         ColliderBox box = hitBox.GetComponent<ColliderBox>();
@@ -567,7 +563,6 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.yellow;
-        controllerData.slideHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
         StartCoroutine(Stun(source));
@@ -577,7 +572,6 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
-        controllerData.slideCounterSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
@@ -586,7 +580,6 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
-        controllerData.ballSlideHitSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
         StartCoroutine(Death(source));
@@ -615,7 +608,6 @@ public class PlayerController : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
-        controllerData.ballSlideCounterSound.Post(gameObject);
         lastPlayerToCallWwiseEvent = this.gameObject;
         particleSystem.Play();
     }
