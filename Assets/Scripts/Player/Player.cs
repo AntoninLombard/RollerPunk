@@ -20,16 +20,8 @@ public class Player : MonoBehaviour
     {
         //controller = GetComponent<PlayerController2>();
         GameManager.Instance.OnPlayerInstantiate(this);
-        Debug.Log("Test");
+
     }
 
-    private void Update()
-    {
-        Debug.Log("Test");
-    }
-
-    private void OnDestroy()
-    {
-        Debug.Log("DestroyingPlayer");
-    }
 }
+    

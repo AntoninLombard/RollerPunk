@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerSpring : MonoBehaviour
 {
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerController2 playerController;
 
     [SerializeField] private Transform character;
     [SerializeField] private Transform upperBody;

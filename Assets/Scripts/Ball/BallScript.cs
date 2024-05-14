@@ -22,9 +22,7 @@ public class BallScript : MonoBehaviour
         Player player = other.gameObject.GetComponentInParent<Player>();
         if (player != null)
         {
-            //rb.isKinematic = true;
-            Toggle(false);
-            player.combat.OnGrabbingBall.Invoke(gameObject);
+            player.combat.OnGrabbingBall.Invoke();
         }
     }
 

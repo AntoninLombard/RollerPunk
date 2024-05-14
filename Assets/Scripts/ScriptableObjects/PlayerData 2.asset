@@ -28,7 +28,7 @@ MonoBehaviour:
   stunDuration: 2
   invincibilityDuration: 0
   slidingDrag: 0
-  distancePerPoint: 0
+  distancePerPoint: 50
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 

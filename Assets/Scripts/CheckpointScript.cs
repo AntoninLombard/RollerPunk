@@ -6,6 +6,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] private List<Transform> spawnPoints;
     
     // Start is called before the first frame update
     void Start()
@@ -19,18 +20,23 @@ public class Checkpoint : MonoBehaviour
         
     }
 
-
-
-    public void OnBallHit(GameManager player)
+    private void OnTriggerEnter(Collider other)
     {
-        particles.Play();
-        
-        //GameManager.Instance; // TODO notice the Manager 
+        Player player = other.transform.parent?.gameObject.GetComponent<Player>();
+        if(player == GameManager.Instance.ballHolder)
+        {
+            GameManager.Instance.ChangeLastCheckPoint(this);
+        }
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        other.gameObject.GetComponent<PlayerController>()?.onDeath(null);
-        //TODO notice manager of player collision
+        Debug.Log("CheckPoint Collision");
+        Player player = other.transform.parent?.gameObject.GetComponent<Player>();
+        if(player == GameManager.Instance.ballHolder)
+        {
+            player?.combat.onDeath(null);
+            GameManager.Instance.OnScoring();
+        }
     }
 }
