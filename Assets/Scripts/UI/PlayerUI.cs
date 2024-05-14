@@ -29,6 +29,6 @@ public class PlayerUI : MonoBehaviour
 
     public void OnDistanceTraveled(float distance, float distanceMax)
     {
-        slider.value = distance % distanceMax;
+        slider.value = distance / distanceMax;
     }
 }
