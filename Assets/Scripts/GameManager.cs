@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
             player.camera.cullingMask -= player.camera.cullingMask & mask;
         //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
         player.character.position = spawnPoints[nbPlayer].position; //for V2
+        player.setPlayerID(nbPlayer);
         nbPlayer++;
         player.listener.SetVolumeOffset(nbPlayer);
     }

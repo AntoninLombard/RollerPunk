@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 861341256015156004}
   - component: {fileID: 7244562460984876310}
   - component: {fileID: 4694972345323187127}
+  - component: {fileID: 5529130067093106813}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -146,8 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
+    initialListenerList:
+    - {fileID: 861341256015156004}
+    useDefaultListeners: 0
   isEnvironmentAware: 1
   isStaticObject: 0
   m_positionOffsetData:
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eed8594685d4d47b996d4ae4f2273b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDefaultListener: 1
+  isDefaultListener: 0
   listenerId: 0
 --- !u!114 &7244562460984876310
 MonoBehaviour:
@@ -242,6 +244,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 7125565311248089309}
+--- !u!114 &5529130067093106813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040440524431794592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc9357a6ab27be4d8345622c49c79cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3059947211623483126
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +269,7 @@ GameObject:
   - component: {fileID: 4457839074724325897}
   - component: {fileID: 2504526242335050173}
   - component: {fileID: 1435602356178349144}
+  - component: {fileID: 3556420744916691152}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -300,6 +315,32 @@ MonoBehaviour:
   character: {fileID: 1706618883694479924}
   data: {fileID: 11400000, guid: ba71b6badf5cf8743b3c83336024f4c4, type: 2}
   anime: {fileID: 7979025106373359173}
+  listener: {fileID: 5529130067093106813}
+  playerID:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3186f40d28d1fe647a837ee8016cff37,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 08a401a213f3d4944a947cbfd48003c8,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5f1c6149070ae5541bb8a36fb70330cf,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b517812716beed4e9e705b3a2b5878a,
+      type: 2}
 --- !u!114 &4457839074724325897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +407,7 @@ MonoBehaviour:
   OnGrabbingBall:
     m_PersistentCalls:
       m_Calls: []
+  ball: {fileID: 0}
   ballAnchorPoint: {fileID: 3061583551361753849}
   particleSystem: {fileID: 9039159071009336896}
   punchCollider: {fileID: 1921864688918061852}
@@ -453,6 +495,29 @@ MonoBehaviour:
   m_DefaultActionMap: Driving
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 7847891520487656286}
+--- !u!114 &3556420744916691152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3059947211623483126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3957cd69a5efee54cafaadd800d9e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList:
+    - {fileID: 861341256015156004}
+    useDefaultListeners: 0
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &5063944569789951011
 GameObject:
   m_ObjectHideFlags: 0

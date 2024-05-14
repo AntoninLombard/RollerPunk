@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584859279560211640
+    m_lastTime: -8584859201166548386
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -892,8 +892,8 @@ MonoBehaviour:
         guid: 50ebe91a68392b44ba36e1bb54b44237
       Path: Events\RP_Feedbacks\Ball_Punch_Move
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.46790645
+      minDuration: 0.46790645
     - name: Collision
       guid: ee5128c7eaed844aa55298747c68b800
       id: 1792046091
@@ -1502,7 +1502,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584865067121469047
+    m_lastTime: -8584859205002898104
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244
@@ -1864,7 +1864,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 02000000060000000b00000019000000
+  ExpandedFileSystemItemIds: 02000000060000000b00000019000000220000002300000027000000
   ExpandedWaapiItemIds: 060000000700000028000000290000002b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

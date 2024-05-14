@@ -189,7 +189,6 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator slide()
     {
         isSliding = true;
-        player.data.slideSound.Post(gameObject);
         slideCollider.Toggle(true);
         punchCollider.SetType(ColliderBox.ColliderType.Slide);
         yield return new WaitForSeconds(0.5f);
@@ -218,7 +217,6 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator ballSlide()
     {
         isSliding = true;
-        player.data.ballSlideSound.Post(gameObject);
         slideCollider.Toggle(true);
         slideCollider.SetType(ColliderBox.ColliderType.BallSlide);
         yield return new WaitForSeconds(0.5f);
@@ -347,7 +345,6 @@ public class PlayerCombat : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
         particleSystemMain.startColor = Color.yellow;
-        player.data.slideHitSound.Post(gameObject);
         GetComponent<ParticleSystem>().Play();
         StartCoroutine(stun(source));
     }
@@ -356,7 +353,6 @@ public class PlayerCombat : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
         particleSystemMain.startColor = Color.white;
-        player.data.slideCounterSound.Post(gameObject);
         GetComponent<ParticleSystem>().Play();
     }
 
@@ -364,7 +360,6 @@ public class PlayerCombat : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
         particleSystemMain.startColor = Color.red;
-        player.data.ballSlideHitSound.Post(gameObject);
         GetComponent<ParticleSystem>().Play();
         StartCoroutine(death(source));
     }
@@ -390,7 +385,6 @@ public class PlayerCombat : MonoBehaviour
     {
         ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
         particleSystemMain.startColor = Color.magenta;
-        player.data.ballSlideCounterSound.Post(gameObject);
         GetComponent<ParticleSystem>().Play();
     }
 

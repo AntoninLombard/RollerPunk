@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     public Transform character;
     public PlayerControllerData data;
     public Animator anime;
-
 	public WwiseListener listener;
     public AK.Wwise.Switch[] playerID;
     
