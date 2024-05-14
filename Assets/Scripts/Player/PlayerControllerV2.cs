@@ -19,13 +19,6 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private float speed = 0;
     [SerializeField] private Vector3 targetForward;
     
-    [Header("CHARACTER STATE")]
-    [SerializeField] private bool isInvincible;
-    [SerializeField] private bool isRecovering;
-    [SerializeField] private bool isPunching;
-    [SerializeField] private bool isSliding;
-    [SerializeField] private bool isStunned;
-    [SerializeField] private bool isHoldingBall;
     
     [Header("INPUT SYSTEM")]
     [SerializeField] private PlayerInput input;
@@ -36,52 +29,24 @@ public class PlayerController2 : MonoBehaviour
     [Header("PLAYER INPUTS")]
     [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
     [SerializeField] [Range(-1.0f,1.0f)] private float driveInput = 0;
-    [SerializeField] private bool punchInput;
-    [SerializeField] private bool slideInput;
-    [SerializeField] private bool fortifyInput;
-
-
-    [Header("Events")] 
-    [SerializeField] public UnityEvent<Player> OnHitByPunch;
-    [SerializeField] public UnityEvent<Player> OnHitbySlide;
-    [SerializeField] public UnityEvent<Player> OnHitbByBallPunch;
-    [SerializeField] public UnityEvent<Player> OnHitbByBallSlide;
-    [SerializeField] public UnityEvent<GameObject> OnGrabbingBall;
-    
-    
     
     [Header("CHARACTER PARTS")]
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] public Transform character;
-    [SerializeField] private GameObject ballAnchorPoint;
-    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] public Rigidbody rb;
     
 
     [Header("SOUND")] 
     [SerializeField] RTPC engineSpeed;
-
-
-
+    
     [SerializeField] private Player player;
     private Vector3 previousForward;
     #endregion
 
     #region UNITY FUNCTIONS
-    private void Awake()
-    {
-        OnHitByPunch.AddListener(onHitByPunch);
-        OnHitbySlide.AddListener(onHitBySlide);
-        OnHitbByBallPunch.AddListener(onHitByBallPunch);
-        OnHitbByBallSlide.AddListener(onHitByBallSlide);
-        OnGrabbingBall.AddListener(onGrabbingBall);
-    }
-    
-    
     
     // Start is called before the first frame update
     void Start()
     {
-        targetForward = character.forward;
+        targetForward = player.character.forward;
         driveAction = input.actions.FindAction("Driving/Drive");
         reverseAction = input.actions.FindAction("Driving/Reverse");
         steerAction = input.actions.FindAction("Driving/Steer");
@@ -92,7 +57,9 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         steerInput = steerAction.ReadValue<float>();
-        driveInput = driveAction.ReadValue<float>();
+        driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
+        player.anime.SetBool("Moving",speed > 1);
+        player.anime.SetFloat("Direction",steerInput);
         steer(Time.deltaTime);
         groundCheck(Time.deltaTime);
         controllerData.throttle.SetValue(gameObject, driveInput);
@@ -102,7 +69,7 @@ public class PlayerController2 : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 currentVelocity = rb.velocity;
-        //Quaternion deltaRot = Quaternion.FromToRotation(previousForward, character.forward);
+        //Quaternion deltaRot = Quaternion.FromToRotation(previousForward, player.character.forward);
         //currentVelocity = (deltaRot * currentVelocity) * (1 - controllerData.inertiaRatio) + currentVelocity * controllerData.inertiaRatio ;
         Vector3 deltaVelocity = Vector3.zero;
         
@@ -119,12 +86,13 @@ public class PlayerController2 : MonoBehaviour
         
         currentVelocity = rb.velocity;
         
-        if (currentVelocity.magnitude > controllerData.maxSpeed * (!isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
+        if (currentVelocity.magnitude > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
-            rb.AddForce(currentVelocity.normalized * (controllerData.maxSpeed * (!isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
+            rb.AddForce(currentVelocity.normalized * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
         }
 
-        previousForward = character.forward;
+        speed = rb.velocity.magnitude;
+        previousForward = player.character.forward;
     }
     #endregion
 
@@ -141,19 +109,20 @@ public class PlayerController2 : MonoBehaviour
     private Vector3 move(Vector3 currentVelocity,float time)
     {
         Vector3 deltaVelocity = Vector3.zero;
-        driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
 
         if (!isGrounded)
         {
+            controllerData.offGround.SetValue(gameObject);
         }
-        else if(!isStunned)
+        else if(!player.combat.isStunned)
         {
+            controllerData.onGround.SetValue(gameObject);
             switch (driveInput)
             {
                 case > 0f:
                     isBraking = false;
                     isAccelerating = true;
-                    deltaVelocity += character.forward * (driveInput * controllerData.forwardAccel * (!isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
+                    deltaVelocity += player.character.forward * (driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
                     break;
                 case < 0f:
                     isBraking = true;
@@ -175,7 +144,7 @@ public class PlayerController2 : MonoBehaviour
         steerInput = steerAction.ReadValue<float>();
         if (steerInput != 0f)
         {
-            character.rotation = Quaternion.Euler(Vector3.Lerp(character.rotation.eulerAngles, character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), time * 5f));
+            player.character.rotation = Quaternion.Euler(Vector3.Lerp(player.character.rotation.eulerAngles, player.character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), time * 5f));
         }
     }
 
@@ -188,19 +157,19 @@ public class PlayerController2 : MonoBehaviour
     private void gripForce()
     {
         if(isGrounded)
-            rb.AddForce(-character.up * (controllerData.gripAccel * Time.fixedDeltaTime),ForceMode.VelocityChange);
+            rb.AddForce(-player.character.up * (controllerData.gripAccel * Time.fixedDeltaTime),ForceMode.VelocityChange);
     }
     
     void groundCheck(float time)
     {
-        Vector3 pos = character.position;
-        Vector3 up = character.up;
-        Vector3 right = character.right;
-        Vector3 forward = character.forward;
+        Vector3 pos = player.character.position;
+        Vector3 up = player.character.up;
+        Vector3 right = player.character.right;
+        Vector3 forward = player.character.forward;
 
         int count = 0;
         Vector3 normal = Vector3.zero;
-        if (Physics.Raycast(pos, -character.up, out var hitUnder, 0.5f))
+        if (Physics.Raycast(pos, -player.character.up, out var hitUnder, 0.5f))
         {
             count += 3;
             normal += hitUnder.normal*3;
@@ -232,7 +201,7 @@ public class PlayerController2 : MonoBehaviour
             normal /= count;
             alignCharToNormal(normal, time);
         }
-        else if (Physics.Raycast(character.position, Vector3.down, out var hitDown, 0.5f))
+        else if (Physics.Raycast(player.character.position, Vector3.down, out var hitDown, 0.5f))
         {
             isGrounded = true;
             alignCharToNormal(hitDown.normal, time/2);
@@ -247,36 +216,36 @@ public class PlayerController2 : MonoBehaviour
     
     private Vector3 sliding(Vector3 dir,float time)
     {
-        if (isSliding)
-            return -dir  * (controllerData.slidingDrag * time);
+        // if (player.combat.isSliding)
+        //     return -dir  * (controllerData.slidingDrag * time);
         return Vector3.zero;
     }
 
 
     void alignCharToNormal(Vector3 normal,float time)
     {
-        Vector3 up = Vector3.Lerp(character.up, normal, 3.0f * time);
-        Vector3 forward = (character.forward - up * Vector3.Dot(character.forward, up)).normalized;
-        character.rotation = Quaternion.LookRotation(forward, up);
+        Vector3 up = Vector3.Lerp(player.character.up, normal, 3.0f * time);
+        Vector3 forward = (player.character.forward - up * Vector3.Dot(player.character.forward, up)).normalized;
+        player.character.rotation = Quaternion.LookRotation(forward, up);
     }
     
     void OnDrawGizmosSelected()
     {
-        Vector3 pos = character.position;
-        Vector3 up = character.up;
-        Vector3 right = character.right;
-        Vector3 forward = character.forward;
+        Vector3 pos = player.character.position;
+        Vector3 up = player.character.up;
+        Vector3 right = player.character.right;
+        Vector3 forward = player.character.forward;
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(character.position, -up, out var hitUnder, 0.5f))
+        if (Physics.Raycast(player.character.position, -up, out var hitUnder, 0.5f))
         {
             Gizmos.color = Color.green;
         }
-        Gizmos.DrawLine(pos, pos + -character.up * 0.5f);
+        Gizmos.DrawLine(pos, pos + -player.character.up * 0.5f);
 
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(character.position, -up - right, out var hitLeft, 0.5f))
+        if (Physics.Raycast(player.character.position, -up - right, out var hitLeft, 0.5f))
         {
             Gizmos.color = Color.green;
         }
@@ -284,21 +253,21 @@ public class PlayerController2 : MonoBehaviour
         
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(character.position, -up + right, out var hitRight, 0.5f))
+        if (Physics.Raycast(player.character.position, -up + right, out var hitRight, 0.5f))
         {
             Gizmos.color = Color.green;
         }
         Gizmos.DrawLine(pos, pos + (-up + right).normalized * 0.5f);
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(character.position, -up + forward, out var hitFront, 0.5f))
+        if (Physics.Raycast(player.character.position, -up + forward, out var hitFront, 0.5f))
         {
             Gizmos.color = Color.green;
         }
         Gizmos.DrawLine(pos, pos + (-up + forward).normalized * 0.5f);
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(character.position, -up -forward, out var hitBack, 0.5f))
+        if (Physics.Raycast(player.character.position, -up -forward, out var hitBack, 0.5f))
         {
             Gizmos.color = Color.green;
         }
@@ -307,329 +276,4 @@ public class PlayerController2 : MonoBehaviour
     
     #endregion
     
-    
-    
-    
-    
-    #region INPUT EVENT CALLBACKS
-
-    public void onPunch(InputAction.CallbackContext context)
-    {
-        if (!isSliding && !isPunching && isGrounded && !isRecovering)
-        {
-            if (!isHoldingBall)
-            {
-                StartCoroutine(punch());
-            }
-            else
-            {
-                StartCoroutine(ballPunch());
-            }
-        }
-    }
-
-    public void onSlide(InputAction.CallbackContext context)
-    {
-        if (!isSliding && !isPunching && isGrounded && !isRecovering)
-        {
-            if (!isHoldingBall)
-            {
-                StartCoroutine(slide());
-            }
-            else
-            {
-                StartCoroutine(ballSlide());
-            }
-
-        }
-    }
-
-    public void onFortify(InputAction.CallbackContext context)
-    {
-        fortifyInput = !fortifyInput;
-    }
-
-    #endregion
-
-
-    #region GAMEPLAY EVENTS CALLBACKS
-
-    void onHitBySlide(Player source)
-    {
-        if (isPunching != true && !isInvincible)
-        {
-            StartCoroutine(slideReactWindow(source));
-            return;
-        }
-        slideCounter(source);
-    }
-    
-    void onHitByPunch(Player source)
-    {
-        if (isPunching != true && !isInvincible)
-        {
-            StartCoroutine(punchReactWindow(source));
-            return;
-        }
-        punchCounter(source);
-    }
-    
-    void onHitByBallPunch(Player source)
-    {
-        if (isPunching != true && !isInvincible)
-        {
-            StartCoroutine(ballPunchReactWindow(source));
-            return;
-        }
-        ballPunchCounter(source);
-    }
-    
-    void onHitByBallSlide(Player source)
-    {
-        if (isPunching != true && !isInvincible)
-        {
-            StartCoroutine(ballSlideReactWindow(source));
-            return;
-        }
-        ballSlideCounter(source);
-    }
-
-    void onGrabbingBall(GameObject ball)
-    {
-        isHoldingBall = true;
-        ball.transform.SetParent(ballAnchorPoint.transform);
-        ball.transform.position = ballAnchorPoint.transform.position;
-        controllerData.grabbingBallSound.Post(gameObject);
-        GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
-    }
-
-    public void onDeath(Player source)
-    {
-        StartCoroutine(death(source));
-    }
-
-    #endregion
-
-
-    #region COMBAT COROUTINES
-
-    IEnumerator punch()
-    {
-        isPunching = true;
-        controllerData.punchSound.Post(gameObject);
-        GameObject hitBox = Instantiate(controllerData.punchCollider,character);
-        ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(player);
-        box.SetType(ColliderBox.ColliderType.Punch);
-        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
-        yield return new WaitForSeconds(0.5f);
-        Destroy(hitBox);
-        isPunching = false;
-        isRecovering = true;
-        yield return new WaitForSeconds(controllerData.actionsCooldown);
-        isRecovering = false;
-    }
-    
-    IEnumerator slide()
-    {
-        isSliding = true;
-        GameObject hitBox = Instantiate(controllerData.slideCollider,character);
-        ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(player);
-        box.SetType(ColliderBox.ColliderType.Slide);
-        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
-        yield return new WaitForSeconds(0.5f);
-        Destroy(hitBox);
-        isSliding = false;
-        isRecovering = true;
-        yield return new WaitForSeconds(controllerData.actionsCooldown);
-        isRecovering = false;
-    }
-    
-    
-    IEnumerator ballPunch()
-    {
-        isPunching = true;
-        controllerData.balLPunchSound.Post(gameObject);
-        GameObject hitBox = Instantiate(controllerData.ballPunchCollider,character);
-        ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(player);
-        box.SetType(ColliderBox.ColliderType.BallPunch);
-        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
-        yield return new WaitForSeconds(0.5f);
-        Destroy(hitBox);
-        isPunching = false;
-        isRecovering = true;
-        yield return new WaitForSeconds(controllerData.actionsCooldown);
-        isRecovering = false;
-    }
-    
-    IEnumerator ballSlide()
-    {
-        isSliding = true;
-        GameObject hitBox = Instantiate(controllerData.ballSlideCollider,character);
-        ColliderBox box = hitBox.GetComponent<ColliderBox>();
-        box.SetSource(player);
-        box.SetType(ColliderBox.ColliderType.BallSlide);
-        hitBox.transform.position = character.position + character.up + character.forward * 0.5f;
-        yield return new WaitForSeconds(0.5f);
-        Destroy(hitBox);
-        isSliding = false;
-        isRecovering = true;
-        yield return new WaitForSeconds(controllerData.actionsCooldown);
-        isRecovering = false;
-    }
-
-    IEnumerator punchReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(controllerData.counterWindow);
-        if (isPunching != true)
-        {
-            punchHit(source);
-        }
-        else
-        {
-            punchCounter(source);
-        }
-    }
-    
-    IEnumerator slideReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(controllerData.counterWindow);
-        if (isSliding != true)
-        {
-            slideHit(source);
-        }
-        else
-        {
-            slideCounter(source);
-        }
-    }
-    
-    IEnumerator ballPunchReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(controllerData.counterWindow);
-        if (isPunching != true)
-        {
-            ballPunchHit(source);
-        }
-        else
-        {
-            ballPunchCounter(source);
-        }
-    }
-    
-    IEnumerator ballSlideReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(controllerData.counterWindow);
-        if (isPunching != true)
-        {
-            ballSlideHit(source);
-        }
-        else
-        {
-            ballSlideCounter(source);
-        }
-    }
-    
-    IEnumerator stun(Player source)
-    {
-        isStunned = true;
-        rb.velocity = Vector3.zero;
-        yield return new WaitForSeconds(controllerData.stunDuration);
-        isStunned = false;
-        StartCoroutine(invincibility());
-    }
-    
-    IEnumerator death(Player source)
-    {
-        if(!(source == null))
-            GameManager.Instance.OnScoreChange(source,1);
-        isStunned = true;
-        rb.velocity = Vector3.zero;
-        yield return new WaitForSeconds(controllerData.stunDuration);
-        isStunned = false;
-        GameManager.Instance.OnPlayerDeath(player);
-        StartCoroutine(invincibility());
-    }
-    
-    IEnumerator invincibility()
-    {
-        isInvincible = true;
-        yield return new WaitForSeconds(controllerData.invincibilityDuration);
-        isInvincible = false;
-    }
-    
-    #endregion
-    
-    
-    #region COMBAT HITS & COUNTERS
-
-    void punchHit(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.green;
-        controllerData.punchHitSound.Post(gameObject);
-        particleSystem.Play();
-        StartCoroutine(stun(source));
-    }
-
-    void punchCounter(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.white;
-        controllerData.punchCounterSound.Post(gameObject);
-        particleSystem.Play();
-    }
-
-    void slideHit(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.yellow;
-        particleSystem.Play();
-        StartCoroutine(stun(source));
-    }
-
-    void slideCounter(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.white;
-        particleSystem.Play();
-    }
-
-    void ballSlideHit(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        particleSystem.Play();
-        StartCoroutine(death(source));
-    }
-    
-    void ballPunchHit(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        controllerData.ballPunchHitSound.Post(gameObject);
-        particleSystem.Play();
-        StartCoroutine(death(source));
-    }
-
-    void ballPunchCounter(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.magenta;
-        controllerData.ballPunchCounterSound.Post(gameObject);
-        particleSystem.Play(source);
-    }
-    
-    void ballSlideCounter(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.magenta;
-        particleSystem.Play();
-    }
-
-    #endregion
-
-
 }

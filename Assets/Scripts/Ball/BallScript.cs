@@ -15,19 +15,22 @@ public class BallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(transform.forward * speed,ForceMode.Acceleration);
+        //rb.AddForce(transform.forward * speed,ForceMode.Acceleration);
     }
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController2 player = other.gameObject.GetComponentInParent<PlayerController2>();
+        Player player = other.gameObject.GetComponentInParent<Player>();
         if (player != null)
         {
-            rb.isKinematic = true;
-            physicCollider.enabled = false;
-            triggerCollider.enabled = false;
-            player.OnGrabbingBall.Invoke(gameObject);
+            //rb.isKinematic = true;
+            Toggle(false);
+            player.combat.OnGrabbingBall.Invoke(gameObject);
         }
     }
-    
-    
+
+    public void Toggle(bool isEnabled)
+    {
+        physicCollider.enabled = isEnabled;
+        triggerCollider.enabled = isEnabled;
+    }
 }
