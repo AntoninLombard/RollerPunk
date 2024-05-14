@@ -9,11 +9,20 @@ Switch	ID	Name	Switch Group			Notes
 
 State Group	ID	Name			Wwise Object Path	Notes
 	3826569560	Music_State			\Default Work Unit\Music_State	
+	3991942870	Music			\Default Work Unit\Music	
 
 State	ID	Name	State Group			Notes
 	89505537	Gameplay	Music_State			
 	529726532	End	Music_State			
 	748895195	None	Music_State			
+	446279778	Bed	Music			
+	529726532	End	Music			
+	748895195	None	Music			
+	1635194249	P4	Music			
+	1635194252	P1	Music			
+	1635194254	P3	Music			
+	1635194255	P2	Music			
+	2607556080	Menu	Music			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\SFX	

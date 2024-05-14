@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E8DA5CE2-3AA4-EAA6-89E6-6BE4B4CC457A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F7037CBF-9252-048C-8E6C-BED5EDBEBB62}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -79,6 +79,18 @@
 						<State Id="89505537" Name="Gameplay"/>
 						<State Id="529726532" Name="End"/>
 						<State Id="748895195" Name="None"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3991942870" Name="Music">
+					<States>
+						<State Id="446279778" Name="Bed"/>
+						<State Id="529726532" Name="End"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1635194249" Name="P4"/>
+						<State Id="1635194252" Name="P1"/>
+						<State Id="1635194254" Name="P3"/>
+						<State Id="1635194255" Name="P2"/>
+						<State Id="2607556080" Name="Menu"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
@@ -219,7 +231,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5437DA4F-FF3D-8843-37A5-F8440D19EFEE}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B02CFC2B-7ED7-D4B3-BC16-351516EB8552}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -253,7 +265,7 @@
 				</File>
 				<File Id="58165178" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Countdown.wav</ShortName>
-					<CachePath>SFX/Countdown_D8C07C79.wem</CachePath>
+					<CachePath>SFX/Countdown_702B0C36.wem</CachePath>
 				</File>
 				<File Id="73001858" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByWall-002.wav</ShortName>
@@ -580,6 +592,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="612075679" Name="Checkpoint" DurationType="OneShot" DurationMin="3.361816" DurationMax="3.361816">
+					<MediaRefs>
+						<MediaRef Id="8262130"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1792046091" Name="Collision" DurationType="OneShot" DurationMin="1.5098125" DurationMax="2.1666458">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -680,11 +697,6 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
-				</Event>
-				<Event Id="2168413864" Name="Drill" DurationType="OneShot" DurationMin="3.361816" DurationMax="3.361816">
-					<MediaRefs>
-						<MediaRef Id="8262130"/>
-					</MediaRefs>
 				</Event>
 				<Event Id="2862969430" Name="Engine_Start" DurationType="Infinite">
 					<SwitchContainers>
@@ -1118,5 +1130,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A46C7E97-0CAB-64AC-B4F4-270ECE0A243B}</FileHash>
+	<FileHash>{4DD22806-CBEB-514B-B8B6-0B23D2E13531}</FileHash>
 </SoundBanksInfo>

@@ -15,10 +15,10 @@ namespace AK
     {
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
+        static const AkUniqueID CHECKPOINT = 612075679U;
         static const AkUniqueID COLLISION = 1792046091U;
         static const AkUniqueID COUNTDOWN = 1505888634U;
         static const AkUniqueID COUNTER = 3051750219U;
-        static const AkUniqueID DRILL = 2168413864U;
         static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
         static const AkUniqueID HIT_BYPUNCH = 3549005828U;
@@ -40,6 +40,23 @@ namespace AK
 
     namespace STATES
     {
+        namespace MUSIC
+        {
+            static const AkUniqueID GROUP = 3991942870U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BED = 446279778U;
+                static const AkUniqueID END = 529726532U;
+                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID P1 = 1635194252U;
+                static const AkUniqueID P2 = 1635194255U;
+                static const AkUniqueID P3 = 1635194254U;
+                static const AkUniqueID P4 = 1635194249U;
+            } // namespace STATE
+        } // namespace MUSIC
+
         namespace MUSIC_STATE
         {
             static const AkUniqueID GROUP = 3826569560U;

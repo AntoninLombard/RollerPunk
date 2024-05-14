@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	155540885	Ball_Punch_Move			\RP_Feedbacks\Ball_Punch_Move	
 	431014199	Play_Outro			\Default Work Unit\Play_Outro	
 	602331051	Hit_ByBall			\RP_Feedbacks\Hit_ByBall	
+	612075679	Checkpoint			\RP_Feedbacks\Checkpoint	
 	972759482	Punch_AfterParry			\RP_Feedbacks\Punch_AfterParry	
 	1084997411	Parry_Move			\RP_Feedbacks\Parry_Move	
 	1134971709	Parry_Success			\RP_Feedbacks\Parry_Success	
@@ -10,7 +11,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1792046091	Collision			\RP_Feedbacks\Collision	
 	2024222415	UI_Back			\RP_UI\UI_Back	
 	2118900976	UI_Hover			\RP_UI\UI_Hover	
-	2168413864	Drill			\RP_Feedbacks\Drill	
 	2308453416	Hit_ByWall			\RP_Feedbacks\Hit_ByWall	
 	2618017047	Ball_Grab			\RP_Feedbacks\Ball_Grab	
 	2774129122	UI_Select			\RP_UI\UI_Select	
@@ -62,7 +62,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	19193333	Shield	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Soundly Audio\Wood, Impact, Heavy, Metal Details SND52850_886B72D2.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Parry_Success\Parry_Success_02\Shield		33455
 	42961480	Counter_V2-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Counter_V2-001_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Counter\Counter_02\Counter_V2-001		43197
 	54912899	RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\B2\RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Down the Power Road\B2\RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm		419194
-	58165178	Countdown	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Countdown_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Countdown		151819
+	58165178	Countdown	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Countdown_702B0C36.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Countdown		151853
 	73001858	Hit_ByWall-002	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Hit_ByWall-002_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Hit_ByWall\Wall_Hit_02\Hit_ByWall-002		20359
 	88947134	Engine_P2_Start	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\M1_Start_6610B299.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines_Start\Engine_P2_Start		21315
 	91746234	RP_M_DownThePowerRoad_M002_Intro_Guitar_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Intro\RP_M_DownThePowerRoad_M002_Intro_Guitar_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Down the Power Road\Intro\RP_M_DownThePowerRoad_M002_Intro_Guitar_164Bpm		161843
