@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{339B146A-895C-C289-83C2-E74BCE687C96}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2F74C441-F572-FEB4-E4AA-E55CA2202290}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -232,7 +232,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{FCCA7ACE-63D0-BA81-0515-1FDB90A24AD3}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{8611DD2C-B1E0-1856-9BF9-1343C034A7D7}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -356,7 +356,7 @@
 				</File>
 				<File Id="369933199" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Drill_Done.wav</ShortName>
-					<CachePath>SFX/Drill_Done_056F698B.wem</CachePath>
+					<CachePath>SFX/Drill_Done_0D039E03.wem</CachePath>
 				</File>
 				<File Id="374765796" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-003.wav</ShortName>
@@ -584,7 +584,7 @@
 						<MediaRef Id="1056644497"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2925030600" Name="AMB_Drill_Done" DurationType="OneShot" DurationMin="8.305368" DurationMax="8.305368">
+				<Event Id="2925030600" Name="AMB_Drill_Done" DurationType="OneShot" DurationMin="7.8089247" DurationMax="7.8089247">
 					<MediaRefs>
 						<MediaRef Id="369933199"/>
 					</MediaRefs>
@@ -663,6 +663,9 @@
 					<MediaRefs>
 						<MediaRef Id="8262130"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="2925030600" Name="AMB_Drill_Done"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="1792046091" Name="Collision" DurationType="OneShot" DurationMin="1.5098125" DurationMax="2.1666458">
 					<SwitchContainers>
@@ -1207,5 +1210,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AFEC353D-B746-F22C-19CF-405F928EEA5B}</FileHash>
+	<FileHash>{C5325140-51D4-13B3-7654-EA7F175A14CE}</FileHash>
 </SoundBanksInfo>
