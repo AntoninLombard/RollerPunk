@@ -24,5 +24,10 @@ public class Player : MonoBehaviour
 
     }
 
+    public void setPlayerID(int nb)
+    {
+        playerID[nb].SetValue(gameObject);
+    }
+
 }
     

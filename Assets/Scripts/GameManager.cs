@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int kills;
     [SerializeField] [CanBeNull] private Checkpoint lastCheckpoint;
 
-    //[Header("Wwise")]
-    //[SerializeField] private AK.Wwise.Switch[] playerNumber;
+    [Header("Audio")]
+    [SerializeField] private RTPC crowds;
 
     private void Awake()
     {
@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
                 distanceTraveled %= ballHolder.data.distancePerPoint;
                 cumulatedPoints++;
                 ballHolder.ui.OnPointsChange(cumulatedPoints,kills);
+                crowds.SetGlobalValue(cumulatedPoints);
             }
             holderPreviousPosition = ballHolder.character.position;
             holderPreviousForward = ballHolder.character.forward;

@@ -117,6 +117,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID DIRECTION = 16764168U;
+        static const AkUniqueID GROUNDED = 2907122923U;
         static const AkUniqueID MASTER = 4056684167U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PAUSE = 3092587493U;

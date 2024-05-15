@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D49A2040-5017-F3D1-A80C-587AAED6FAD7}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D92745D3-4ACB-2A36-36A4-416C5F713288}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -62,6 +62,7 @@
 				<GameParameter Id="1659248646" Name="Player_Number"/>
 				<GameParameter Id="2398231425" Name="Score"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="2907122923" Name="Grounded"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
 				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
@@ -231,7 +232,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{39D920BE-666A-32A3-D2CE-55E7947E0C61}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{FCCA7ACE-63D0-BA81-0515-1FDB90A24AD3}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -378,6 +379,10 @@
 					<ShortName>Hit_ByWall-001.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-001_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="407524894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chain_Loop.wav</ShortName>
+					<CachePath>SFX/Chain_Loop_0762CC47.wem</CachePath>
+				</File>
 				<File Id="421357980" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_1.wav</ShortName>
 					<CachePath>SFX/M2_1_0762CC47.wem</CachePath>
@@ -522,6 +527,10 @@
 				<File Id="977991789" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="1013272226" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pics_Loop.wav</ShortName>
+					<CachePath>SFX/Pics_Loop_0762CC47.wem</CachePath>
 				</File>
 				<File Id="1013363216" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Drums_164Bpm.wav</ShortName>
@@ -806,9 +815,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -823,9 +834,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -840,9 +853,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -857,9 +872,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -1166,6 +1183,7 @@
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
 				<GameParameter Id="2398231425" Name="Score"/>
+				<GameParameter Id="2907122923" Name="Grounded"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 			</GameParameters>
 			<StateGroups>
@@ -1189,5 +1207,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F5BED765-D705-F836-5B11-DD8D52515B4A}</FileHash>
+	<FileHash>{C0E466B3-3777-9308-885E-7F2C716A6F50}</FileHash>
 </SoundBanksInfo>
