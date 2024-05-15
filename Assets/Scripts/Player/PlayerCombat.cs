@@ -90,7 +90,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering && !isFortified)
         {
-            //TODO create and start Fortify coroutine here.
+            StartCoroutine(fortify());
         }
     }
 
@@ -167,10 +167,12 @@ public class PlayerCombat : MonoBehaviour
     {
         isPunchingLeft = true;
         player.data.punchSound.Post(gameObject);
+        player.anime.SetBool("WindUp.L",true);
         punchLeftCollider.Toggle(true);
         punchLeftCollider.SetType(ColliderBox.ColliderType.Punch);
         yield return new WaitForSeconds(0.5f);
         punchLeftCollider.Toggle(false);
+        player.anime.SetBool("WindUp.L",false);
         isPunchingLeft = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
@@ -181,14 +183,25 @@ public class PlayerCombat : MonoBehaviour
     {
         isPunchingRight = true;
         player.data.punchSound.Post(gameObject);
+        player.anime.SetBool("WindUp.R",true);
         punchRightCollider.Toggle(true);
         punchRightCollider.SetType(ColliderBox.ColliderType.Punch);
         yield return new WaitForSeconds(0.5f);
         punchRightCollider.Toggle(false);
+        player.anime.SetBool("WindUp.R",false);
         isPunchingRight = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
         isRecovering = false;
+    }
+
+    IEnumerator fortify()
+    {
+        isFortified = true;
+        player.anime.SetTrigger("Parry");
+        yield return new WaitForSeconds(0.5f);
+        isFortified = false;
+        yield return new WaitForSeconds(player.data.actionsCooldown);
     }
     
     // IEnumerator slide()
@@ -211,9 +224,11 @@ public class PlayerCombat : MonoBehaviour
         isPunchingLeft = true;
         player.data.balLPunchSound.Post(gameObject);
         punchLeftCollider.Toggle(true);
+        player.anime.SetBool("WindUp.L",true);
         punchLeftCollider.SetType(ColliderBox.ColliderType.BallPunch);
         yield return new WaitForSeconds(0.5f);
         punchLeftCollider.Toggle(false);
+        player.anime.SetBool("WindUp.L",false);
         isPunchingLeft = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
@@ -225,9 +240,11 @@ public class PlayerCombat : MonoBehaviour
         isPunchingRight = true;
         player.data.balLPunchSound.Post(gameObject);
         punchRightCollider.Toggle(true);
+        player.anime.SetBool("WindUp.R",true);
         punchRightCollider.SetType(ColliderBox.ColliderType.BallPunch);
         yield return new WaitForSeconds(0.5f);
         punchRightCollider.Toggle(false);
+        player.anime.SetBool("WindUp.R",false);
         isPunchingRight = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
