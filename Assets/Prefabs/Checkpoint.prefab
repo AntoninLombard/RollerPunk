@@ -5143,6 +5143,7 @@ GameObject:
   - component: {fileID: 2919218466963086913}
   - component: {fileID: 5025175841305179521}
   - component: {fileID: 4279907456426316685}
+  - component: {fileID: 2266095457329251959}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Checkpoint
@@ -5228,3 +5229,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 5068406900823456964}
   spawnPoints: []
+  scoring:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 14c0e72ae9c405f479b3c378d7dda90b,
+      type: 2}
+--- !u!114 &2266095457329251959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979769414019386422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3957cd69a5efee54cafaadd800d9e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1

@@ -60,6 +60,7 @@ public class PlayerController2 : MonoBehaviour
         driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
         player.anime.SetBool("Moving",speed > 1);
         player.anime.SetFloat("Direction",steerInput);
+        player.anime.SetFloat("Speed",Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed);
         steer(Time.deltaTime);
         groundCheck(Time.deltaTime);
         controllerData.throttle.SetValue(gameObject, driveInput);
