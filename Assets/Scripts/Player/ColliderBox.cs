@@ -26,18 +26,18 @@ public class ColliderBox : MonoBehaviour
         {
             switch (type)
             {
-                case ColliderType.Slide:
-                    hit.combat.OnHitbySlide.Invoke(source);
-                    break;
+                // case ColliderType.Slide:
+                //     hit.combat.OnHitbySlide.Invoke(source);
+                //     break;
                 case ColliderType.Punch:
                     hit.combat.OnHitByPunch.Invoke(source);
                     break;
                 case ColliderType.BallPunch:
                     hit.combat.OnHitbByBallPunch.Invoke(source);
                     break;
-                case ColliderType.BallSlide:
-                    hit.combat.OnHitbByBallSlide.Invoke(source);
-                    break;
+                // case ColliderType.BallSlide:
+                //     hit.combat.OnHitbByBallSlide.Invoke(source);
+                //     break;
             }
         }
     }

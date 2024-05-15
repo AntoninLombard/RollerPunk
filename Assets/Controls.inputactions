@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Punch",
+                    "name": "PunchLeft",
                     "type": "Button",
                     "id": "9d35ac15-4fc7-4385-8d1a-d682c8858f27",
                     "expectedControlType": "Button",
@@ -33,9 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Slide",
+                    "name": "PunchRight",
                     "type": "Button",
-                    "id": "24d50bce-a569-4cf2-acb9-ce63d8c11cd6",
+                    "id": "7f2b62ce-4822-41d5-b545-7016d6a5f334",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -85,23 +85,12 @@
                 },
                 {
                     "name": "",
-                    "id": "10b3930f-aef9-4ba3-b02a-e8836a9c59e9",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Punch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c76699bc-ebf9-4a05-85d1-9ce02e33b18b",
+                    "id": "20ded568-5e5a-44c8-9b4f-37678008251b",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Slide",
+                    "action": "PunchLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -124,6 +113,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2dc4acd9-92d6-4ee5-9247-412e0f438997",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PunchRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

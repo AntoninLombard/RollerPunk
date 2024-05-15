@@ -19,7 +19,9 @@ public class PlayerCombat : MonoBehaviour
     [field: Header("CHARACTER STATE")]
     [field: SerializeField] public bool isInvincible { get; private set; }
     [field: SerializeField] public bool isRecovering { get; private set; }
-    [field: SerializeField] public bool isPunching { get; private set; }
+    [field: SerializeField] public bool isPunchingLeft { get; private set; }
+    [field: SerializeField] public bool isPunchingRight { get; private set; }
+    [field: SerializeField] public bool isFortified { get; private set; }
     [field: SerializeField] public bool isSliding { get; private set; }
     [field: SerializeField] public bool isStunned { get; private set; }
     [field: SerializeField] public bool isHoldingBall { get; private set; }
@@ -27,25 +29,25 @@ public class PlayerCombat : MonoBehaviour
     
     [Header("Events")] 
     [SerializeField] public UnityEvent<Player> OnHitByPunch;
-    [SerializeField] public UnityEvent<Player> OnHitbySlide;
+    //[SerializeField] public UnityEvent<Player> OnHitbySlide;
     [SerializeField] public UnityEvent<Player> OnHitbByBallPunch;
-    [SerializeField] public UnityEvent<Player> OnHitbByBallSlide;
+    //[SerializeField] public UnityEvent<Player> OnHitbByBallSlide;
     [SerializeField] public UnityEvent OnGrabbingBall;
     
     
     [Header("Parts")] 
     [SerializeField] private Transform ballAnchorPoint;
     [SerializeField] private ParticleSystem particleSystem;
-    [SerializeField] private ColliderBox punchCollider;
-    [SerializeField] private ColliderBox slideCollider;
+    [SerializeField] private ColliderBox punchLeftCollider;
+    [SerializeField] private ColliderBox punchRightCollider;
     
     
     private void Awake()
     {
         OnHitByPunch.AddListener(onHitByPunch);
-        OnHitbySlide.AddListener(onHitBySlide);
+        //OnHitbySlide.AddListener(onHitBySlide);
         OnHitbByBallPunch.AddListener(onHitByBallPunch);
-        OnHitbByBallSlide.AddListener(onHitByBallSlide);
+        //OnHitbByBallSlide.AddListener(onHitByBallSlide);
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
 
@@ -53,32 +55,32 @@ public class PlayerCombat : MonoBehaviour
 
     #region INPUT EVENT CALLBACKS
 
-    public void onPunch(InputAction.CallbackContext context)
+    public void onPunchLeft(InputAction.CallbackContext context)
     {
-        if (!isSliding && !isPunching && player.controller.isGrounded && !isRecovering)
+        if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering)
         {
             if (!isHoldingBall)
             {
-                StartCoroutine(punch());
+                StartCoroutine(punchLeft());
             }
             else
             {
-                StartCoroutine(ballPunch());
+                StartCoroutine(ballPunchLeft());
             }
         }
     }
 
-    public void onSlide(InputAction.CallbackContext context)
+    public void onPunchRight(InputAction.CallbackContext context)
     {
-        if (!isSliding && !isPunching && player.controller.isGrounded && !isRecovering)
+        if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering && !isFortified)
         {
             if (!isHoldingBall)
             {
-                StartCoroutine(slide());
+                StartCoroutine(punchRight());
             }
             else
             {
-                StartCoroutine(ballSlide());
+                StartCoroutine(ballPunchRight());
             }
 
         }
@@ -86,7 +88,10 @@ public class PlayerCombat : MonoBehaviour
 
     public void onFortify(InputAction.CallbackContext context)
     {
-        //fortifyInput = !fortifyInput;
+        if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering && !isFortified)
+        {
+            //TODO create and start Fortify coroutine here.
+        }
     }
 
     #endregion
@@ -94,19 +99,19 @@ public class PlayerCombat : MonoBehaviour
 
     #region GAMEPLAY EVENTS CALLBACKS
 
-    void onHitBySlide(Player source)
-    {
-        if (isPunching != true && !isInvincible)
-        {
-            StartCoroutine(slideReactWindow(source));
-            return;
-        }
-        slideCounter(source);
-    }
+    // void onHitBySlide(Player source)
+    // {
+    //     if (isPunching != true && !isInvincible)
+    //     {
+    //         StartCoroutine(slideReactWindow(source));
+    //         return;
+    //     }
+    //     slideCounter(source);
+    // }
     
     void onHitByPunch(Player source)
     {
-        if (isPunching != true && !isInvincible)
+        if (isFortified != true && !isInvincible)
         {
             StartCoroutine(punchReactWindow(source));
             return;
@@ -116,7 +121,7 @@ public class PlayerCombat : MonoBehaviour
     
     void onHitByBallPunch(Player source)
     {
-        if (isPunching != true && !isInvincible)
+        if (isFortified != true && !isInvincible)
         {
             StartCoroutine(ballPunchReactWindow(source));
             return;
@@ -124,15 +129,15 @@ public class PlayerCombat : MonoBehaviour
         ballPunchCounter(source);
     }
     
-    void onHitByBallSlide(Player source)
-    {
-        if (isPunching != true && !isInvincible)
-        {
-            StartCoroutine(ballSlideReactWindow(source));
-            return;
-        }
-        ballSlideCounter(source);
-    }
+    // void onHitByBallSlide(Player source)
+    // {
+    //     if (isPunching != true && !isInvincible)
+    //     {
+    //         StartCoroutine(ballSlideReactWindow(source));
+    //         return;
+    //     }
+    //     ballSlideCounter(source);
+    // }
 
     void onGrabbingBall()
     {
@@ -158,67 +163,95 @@ public class PlayerCombat : MonoBehaviour
 
     #region COMBAT COROUTINES
 
-    IEnumerator punch()
+    IEnumerator punchLeft()
     {
-        isPunching = true;
+        isPunchingLeft = true;
         player.data.punchSound.Post(gameObject);
-        punchCollider.Toggle(true);
-        punchCollider.SetType(ColliderBox.ColliderType.Punch);
+        punchLeftCollider.Toggle(true);
+        punchLeftCollider.SetType(ColliderBox.ColliderType.Punch);
         yield return new WaitForSeconds(0.5f);
-        punchCollider.Toggle(false);
-        isPunching = false;
+        punchLeftCollider.Toggle(false);
+        isPunchingLeft = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
         isRecovering = false;
     }
     
-    IEnumerator slide()
+    IEnumerator punchRight()
     {
-        isSliding = true;
-        player.data.slideSound.Post(gameObject);
-        slideCollider.Toggle(true);
-        punchCollider.SetType(ColliderBox.ColliderType.Slide);
+        isPunchingRight = true;
+        player.data.punchSound.Post(gameObject);
+        punchRightCollider.Toggle(true);
+        punchRightCollider.SetType(ColliderBox.ColliderType.Punch);
         yield return new WaitForSeconds(0.5f);
-        slideCollider.Toggle(false);
-        isSliding = false;
+        punchRightCollider.Toggle(false);
+        isPunchingRight = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
         isRecovering = false;
     }
     
+    // IEnumerator slide()
+    // {
+    //     isSliding = true;
+    //     player.data.slideSound.Post(gameObject);
+    //     slideCollider.Toggle(true);
+    //     punchCollider.SetType(ColliderBox.ColliderType.Slide);
+    //     yield return new WaitForSeconds(0.5f);
+    //     slideCollider.Toggle(false);
+    //     isSliding = false;
+    //     isRecovering = true;
+    //     yield return new WaitForSeconds(player.data.actionsCooldown);
+    //     isRecovering = false;
+    // }
     
-    IEnumerator ballPunch()
+    
+    IEnumerator ballPunchLeft()
     {
-        isPunching = true;
+        isPunchingLeft = true;
         player.data.balLPunchSound.Post(gameObject);
-        punchCollider.Toggle(true);
-        punchCollider.SetType(ColliderBox.ColliderType.BallPunch);
+        punchLeftCollider.Toggle(true);
+        punchLeftCollider.SetType(ColliderBox.ColliderType.BallPunch);
         yield return new WaitForSeconds(0.5f);
-        punchCollider.Toggle(false);
-        isPunching = false;
+        punchLeftCollider.Toggle(false);
+        isPunchingLeft = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
         isRecovering = false;
     }
     
-    IEnumerator ballSlide()
+    IEnumerator ballPunchRight()
     {
-        isSliding = true;
-        player.data.ballSlideSound.Post(gameObject);
-        slideCollider.Toggle(true);
-        slideCollider.SetType(ColliderBox.ColliderType.BallSlide);
+        isPunchingRight = true;
+        player.data.balLPunchSound.Post(gameObject);
+        punchRightCollider.Toggle(true);
+        punchRightCollider.SetType(ColliderBox.ColliderType.BallPunch);
         yield return new WaitForSeconds(0.5f);
-        slideCollider.Toggle(true);
-        isSliding = false;
+        punchRightCollider.Toggle(false);
+        isPunchingRight = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
         isRecovering = false;
     }
+    
+    // IEnumerator ballSlide()
+    // {
+    //     isSliding = true;
+    //     player.data.ballSlideSound.Post(gameObject);
+    //     slideCollider.Toggle(true);
+    //     slideCollider.SetType(ColliderBox.ColliderType.BallSlide);
+    //     yield return new WaitForSeconds(0.5f);
+    //     slideCollider.Toggle(true);
+    //     isSliding = false;
+    //     isRecovering = true;
+    //     yield return new WaitForSeconds(player.data.actionsCooldown);
+    //     isRecovering = false;
+    // }
 
     IEnumerator punchReactWindow(Player source)
     {
         yield return new WaitForSeconds(player.data.counterWindow);
-        if (isPunching != true)
+        if (isFortified != true)
         {
             punchHit(source);
         }
@@ -228,23 +261,23 @@ public class PlayerCombat : MonoBehaviour
         }
     }
     
-    IEnumerator slideReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(player.data.counterWindow);
-        if (isSliding != true)
-        {
-            slideHit(source);
-        }
-        else
-        {
-            slideCounter(source);
-        }
-    }
+    // IEnumerator slideReactWindow(Player source)
+    // {
+    //     yield return new WaitForSeconds(player.data.counterWindow);
+    //     if (isSliding != true)
+    //     {
+    //         slideHit(source);
+    //     }
+    //     else
+    //     {
+    //         slideCounter(source);
+    //     }
+    // }
     
     IEnumerator ballPunchReactWindow(Player source)
     {
         yield return new WaitForSeconds(player.data.counterWindow);
-        if (isPunching != true)
+        if (isFortified != true)
         {
             ballPunchHit(source);
         }
@@ -254,18 +287,18 @@ public class PlayerCombat : MonoBehaviour
         }
     }
     
-    IEnumerator ballSlideReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(player.data.counterWindow);
-        if (isPunching != true)
-        {
-            ballSlideHit(source);
-        }
-        else
-        {
-            ballSlideCounter(source);
-        }
-    }
+    // IEnumerator ballSlideReactWindow(Player source)
+    // {
+    //     yield return new WaitForSeconds(player.data.counterWindow);
+    //     if (isPunching != true)
+    //     {
+    //         ballSlideHit(source);
+    //     }
+    //     else
+    //     {
+    //         ballSlideCounter(source);
+    //     }
+    // }
     
     IEnumerator stun(Player source)
     {
@@ -334,70 +367,70 @@ public class PlayerCombat : MonoBehaviour
 
     void punchHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
         player.data.punchHitSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
         StartCoroutine(stun(source));
     }
 
     void punchCounter(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
         player.data.punchCounterSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
     }
 
     void slideHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.yellow;
         player.data.slideHitSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
         StartCoroutine(stun(source));
     }
 
     void slideCounter(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
         player.data.slideCounterSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
     }
 
     void ballSlideHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
         player.data.ballSlideHitSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
         StartCoroutine(death(source));
     }
     
     void ballPunchHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.red;
         player.data.ballPunchHitSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
         StartCoroutine(death(source));
     }
 
     void ballPunchCounter(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
         player.data.ballPunchCounterSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play(source);
+        particleSystem.Play(source);
     }
     
     void ballSlideCounter(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.magenta;
         player.data.ballSlideCounterSound.Post(gameObject);
-        GetComponent<ParticleSystem>().Play();
+        particleSystem.Play();
     }
 
     #endregion

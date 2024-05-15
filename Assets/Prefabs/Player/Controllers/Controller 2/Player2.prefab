@@ -347,20 +347,16 @@ MonoBehaviour:
   fortifyInput: 0
   <isInvincible>k__BackingField: 0
   <isRecovering>k__BackingField: 0
-  <isPunching>k__BackingField: 0
+  <isPunchingLeft>k__BackingField: 0
+  <isPunchingRight>k__BackingField: 0
+  <isFortified>k__BackingField: 0
   <isSliding>k__BackingField: 0
   <isStunned>k__BackingField: 0
   <isHoldingBall>k__BackingField: 0
   OnHitByPunch:
     m_PersistentCalls:
       m_Calls: []
-  OnHitbySlide:
-    m_PersistentCalls:
-      m_Calls: []
   OnHitbByBallPunch:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHitbByBallSlide:
     m_PersistentCalls:
       m_Calls: []
   OnGrabbingBall:
@@ -368,8 +364,8 @@ MonoBehaviour:
       m_Calls: []
   ballAnchorPoint: {fileID: 3061583551361753849}
   particleSystem: {fileID: 9039159071009336896}
-  punchCollider: {fileID: 1921864688918061852}
-  slideCollider: {fileID: 722594169161332496}
+  punchLeftCollider: {fileID: 1921864688918061852}
+  punchRightCollider: {fileID: 722594169161332496}
 --- !u!114 &1435602356178349144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +408,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2504526242335050173}
         m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
-        m_MethodName: onPunch
+        m_MethodName: onPunchLeft
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -428,7 +424,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2504526242335050173}
         m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
-        m_MethodName: onSlide
+        m_MethodName: onFortify
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -438,16 +434,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 24d50bce-a569-4cf2-acb9-ce63d8c11cd6
-    m_ActionName: Driving/Slide[/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb
     m_ActionName: Driving/Fortify[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cef94fcb-876d-42f1-9a46-824a7a771772
     m_ActionName: Driving/Reverse[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2504526242335050173}
+        m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
+        m_MethodName: onPunchRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f2b62ce-4822-41d5-b545-7016d6a5f334
+    m_ActionName: Driving/PunchRight[/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Driving
@@ -574,7 +582,7 @@ PrefabInstance:
     - target: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_Name
-      value: SlideHitBox
+      value: PunchRightHitBox
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -594,22 +602,22 @@ PrefabInstance:
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710665
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.707107
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -619,7 +627,7 @@ PrefabInstance:
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -686,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_Name
-      value: PunchHitBox
+      value: PunchLeftHitBox
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -706,22 +714,22 @@ PrefabInstance:
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -731,7 +739,7 @@ PrefabInstance:
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
