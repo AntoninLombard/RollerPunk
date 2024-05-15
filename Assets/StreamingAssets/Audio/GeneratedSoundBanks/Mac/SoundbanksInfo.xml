@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D5EF0C0F-5A63-3039-7337-1D869555ED2C}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{69D52EE9-F486-1D8D-442F-2A7C95AF2DD1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -62,6 +62,7 @@
 				<GameParameter Id="1659248646" Name="Player_Number"/>
 				<GameParameter Id="2398231425" Name="Score"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="2907122923" Name="Grounded"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
 				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
@@ -231,7 +232,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B02CFC2B-7ED7-D4B3-BC16-351516EB8552}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{8611DD2C-B1E0-1856-9BF9-1343C034A7D7}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -249,7 +250,7 @@
 				</File>
 				<File Id="14934721" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-004.wav</ShortName>
-					<CachePath>SFX/Hit_ByPunch_V3-004_5623F086.wem</CachePath>
+					<CachePath>SFX/Hit_ByPunch_V3-004_5F031281.wem</CachePath>
 				</File>
 				<File Id="19193333" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Wood, Impact, Heavy, Metal Details SND52850.wav</ShortName>
@@ -281,7 +282,11 @@
 				</File>
 				<File Id="92717575" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByBall-001.wav</ShortName>
-					<CachePath>SFX/Hit_ByBall-001_AA3D4CF9.wem</CachePath>
+					<CachePath>SFX/Hit_ByBall-001_D152A68F.wem</CachePath>
+				</File>
+				<File Id="93796985" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ball_Lost-003.wav</ShortName>
+					<CachePath>SFX/Ball_Lost-003_B4B743FF.wem</CachePath>
 				</File>
 				<File Id="95593411" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Bass_1_164Bpm.wav</ShortName>
@@ -313,7 +318,7 @@
 				</File>
 				<File Id="308867496" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-003.wav</ShortName>
-					<CachePath>SFX/Hit_ByPunch_V3-003_A3FC5A3D.wem</CachePath>
+					<CachePath>SFX/Hit_ByPunch_V3-003_534AD6AD.wem</CachePath>
 				</File>
 				<File Id="311097065" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-004.wav</ShortName>
@@ -349,9 +354,17 @@
 					<Path>Media/369612689.wem</Path>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_BASS_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="369933199" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drill_Done.wav</ShortName>
+					<CachePath>SFX/Drill_Done_0D039E03.wem</CachePath>
+				</File>
 				<File Id="374765796" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-003.wav</ShortName>
 					<CachePath>SFX/Collision-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="378172409" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Medium.wav</ShortName>
+					<CachePath>SFX/Medium_0762CC47.wem</CachePath>
 				</File>
 				<File Id="381252818" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-004.wav</ShortName>
@@ -366,13 +379,21 @@
 					<ShortName>Hit_ByWall-001.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-001_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="407524894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chain_Loop.wav</ShortName>
+					<CachePath>SFX/Chain_Loop_0762CC47.wem</CachePath>
+				</File>
 				<File Id="421357980" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_1.wav</ShortName>
 					<CachePath>SFX/M2_1_0762CC47.wem</CachePath>
 				</File>
 				<File Id="442590708" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-001.wav</ShortName>
-					<CachePath>SFX/Hit_ByPunch_V3-001_6B8ADCE8.wem</CachePath>
+					<CachePath>SFX/Hit_ByPunch_V3-001_3D04E22A.wem</CachePath>
+				</File>
+				<File Id="450881691" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ball_Lost-001.wav</ShortName>
+					<CachePath>SFX/Ball_Lost-001_9F67C50C.wem</CachePath>
 				</File>
 				<File Id="455358662" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_BASS_164Bpm.wav</ShortName>
@@ -382,6 +403,14 @@
 				<File Id="459539678" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-002.wav</ShortName>
 					<CachePath>SFX/Collision-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="471181577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Low_2.wav</ShortName>
+					<CachePath>SFX/Low_2_0762CC47.wem</CachePath>
+				</File>
+				<File Id="493354949" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>High.wav</ShortName>
+					<CachePath>SFX/High_0762CC47.wem</CachePath>
 				</File>
 				<File Id="498718941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm.wav</ShortName>
@@ -441,7 +470,7 @@
 				</File>
 				<File Id="706556744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByBall-002.wav</ShortName>
-					<CachePath>SFX/Hit_ByBall-002_BD022E63.wem</CachePath>
+					<CachePath>SFX/Hit_ByBall-002_3DBFC9B3.wem</CachePath>
 				</File>
 				<File Id="706744031" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-002.wav</ShortName>
@@ -454,6 +483,10 @@
 				<File Id="713640916" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_Drums_164Bpm.wav</ShortName>
 					<CachePath>SFX/D1/RP_M_DownThePowerRoad_M002_D1_Drums_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="771436220" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Go_Drill.wav</ShortName>
+					<CachePath>SFX/Go_Drill_0762CC47.wem</CachePath>
 				</File>
 				<File Id="771518876" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Guitar_164Bpm.wav</ShortName>
@@ -481,7 +514,7 @@
 				</File>
 				<File Id="873930999" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-002.wav</ShortName>
-					<CachePath>SFX/Hit_ByPunch_V3-002_1F808812.wem</CachePath>
+					<CachePath>SFX/Hit_ByPunch_V3-002_2AD929D0.wem</CachePath>
 				</File>
 				<File Id="932054782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_HH_164Bpm.wav</ShortName>
@@ -494,6 +527,10 @@
 				<File Id="977991789" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="1013272226" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pics_Loop.wav</ShortName>
+					<CachePath>SFX/Pics_Loop_0762CC47.wem</CachePath>
 				</File>
 				<File Id="1013363216" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Drums_164Bpm.wav</ShortName>
@@ -518,7 +555,11 @@
 				</File>
 				<File Id="1039416665" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ball_Grab_V5.wav</ShortName>
-					<CachePath>SFX/Ball_Grab_V5_D5C3CE44.wem</CachePath>
+					<CachePath>SFX/Ball_Grab_V5_9457137E.wem</CachePath>
+				</File>
+				<File Id="1056644497" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ball_Lost-002.wav</ShortName>
+					<CachePath>SFX/Ball_Lost-002_3A207BB8.wem</CachePath>
 				</File>
 				<File Id="1067298357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Kick_2_164Bpm.wav</ShortName>
@@ -536,6 +577,32 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="3846266530" Name="AMB_Ball_Lost" DurationType="OneShot" DurationMin="2.6516263" DurationMax="4.502922">
+					<MediaRefs>
+						<MediaRef Id="93796985"/>
+						<MediaRef Id="450881691"/>
+						<MediaRef Id="1056644497"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2925030600" Name="AMB_Drill_Done" DurationType="OneShot" DurationMin="7.8089247" DurationMax="7.8089247">
+					<MediaRefs>
+						<MediaRef Id="369933199"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2349163407" Name="AMB_RunStart" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="369933199"/>
+						<MediaRef Id="493354949"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1589289402" Name="AMB_Start" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="378172409"/>
+						<MediaRef Id="471181577"/>
+						<MediaRef Id="493354949"/>
+						<MediaRef Id="771436220"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2618017047" Name="Ball_Grab" DurationType="OneShot" DurationMin="1.9143226" DurationMax="1.9143226">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -596,6 +663,9 @@
 					<MediaRefs>
 						<MediaRef Id="8262130"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="2925030600" Name="AMB_Drill_Done"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="1792046091" Name="Collision" DurationType="OneShot" DurationMin="1.5098125" DurationMax="2.1666458">
 					<SwitchContainers>
@@ -748,9 +818,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -765,9 +837,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -782,9 +856,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -799,9 +875,11 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="407524894"/>
 								<MediaRef Id="421357980"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
+								<MediaRef Id="1013272226"/>
 							</MediaRefs>
 							<PluginRefs>
 								<Custom>
@@ -1107,6 +1185,8 @@
 				<GameParameter Id="16764168" Name="Direction"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
+				<GameParameter Id="2398231425" Name="Score"/>
+				<GameParameter Id="2907122923" Name="Grounded"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 			</GameParameters>
 			<StateGroups>
@@ -1130,5 +1210,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7485C4E0-B7EF-4AC8-C03C-0B6099BC7404}</FileHash>
+	<FileHash>{0C2BBD5B-3FE2-425B-9139-6604884E42A2}</FileHash>
 </SoundBanksInfo>

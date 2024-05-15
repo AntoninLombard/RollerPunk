@@ -81,18 +81,19 @@ public class PlayerController2 : MonoBehaviour
         groundCheck(Time.deltaTime);
         gravity();
         gripForce();
-        engineSpeed.SetValue(gameObject,rb.velocity.magnitude);
+        
         
         rb.AddForce(deltaVelocity + currentVelocity - rb.velocity ,ForceMode.VelocityChange);
         
         currentVelocity = rb.velocity;
-        
+
         if (currentVelocity.magnitude > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
             rb.AddForce(currentVelocity.normalized * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
         }
 
         speed = rb.velocity.magnitude;
+        engineSpeed.SetValue(gameObject, speed);
         previousForward = player.character.forward;
     }
     #endregion
@@ -146,7 +147,6 @@ public class PlayerController2 : MonoBehaviour
             //player.character.rotation = Quaternion.Euler(Vector3.Lerp(player.character.rotation.eulerAngles, player.character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), time * 5f));
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
             //player.character.rotation = player.character.rotation * Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up);
-
         }
     }
 

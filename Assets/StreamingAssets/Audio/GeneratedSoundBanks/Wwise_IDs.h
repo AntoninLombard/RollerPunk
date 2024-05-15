@@ -13,6 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_BALL_LOST = 3846266530U;
+        static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
+        static const AkUniqueID AMB_RUNSTART = 2349163407U;
+        static const AkUniqueID AMB_START = 1589289402U;
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
         static const AkUniqueID CHECKPOINT = 612075679U;
@@ -113,6 +117,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID DIRECTION = 16764168U;
+        static const AkUniqueID GROUNDED = 2907122923U;
         static const AkUniqueID MASTER = 4056684167U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PAUSE = 3092587493U;
