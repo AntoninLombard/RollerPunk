@@ -113,11 +113,9 @@ public class PlayerController2 : MonoBehaviour
 
         if (!isGrounded)
         {
-            controllerData.offGround.SetValue(gameObject);
         }
         else if(!player.combat.isStunned)
         {
-            controllerData.onGround.SetValue(gameObject);
             switch (driveInput)
             {
                 case > 0f:

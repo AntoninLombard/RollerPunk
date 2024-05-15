@@ -5,6 +5,7 @@ using UnityEngine;
 using AK.Wwise;
 using JetBrains.Annotations;
 using Random = UnityEngine.Random;
+using Unity.VisualScripting;
 
 
 public class GameManager : MonoBehaviour
@@ -32,9 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int kills;
     [SerializeField] [CanBeNull] private Checkpoint lastCheckpoint;
 
-    [Header("Wwise")]
-    [SerializeField] private AK.Wwise.Switch[] playerNumber;
-
+    //[Header("Wwise")]
+    //[SerializeField] private AK.Wwise.Switch[] playerNumber;
 
     private void Awake()
     {
@@ -87,11 +87,10 @@ public class GameManager : MonoBehaviour
             player.camera.cullingMask -= player.camera.cullingMask & mask;
         //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
         player.character.position = spawnPoints[nbPlayer].position; //for V2
+        player.setPlayerID(nbPlayer);
         nbPlayer++;
-        playerNumber[nbPlayer].SetValue(player.gameObject);
-        Debug.Log(playerNumber[nbPlayer].ToString());
+        player.listener.SetVolumeOffset(nbPlayer);
     }
-
     public void OnPlayerDeath(Player player)
     {
         Vector3 pos = spawnPoints[Random.Range(0, nbPlayer)].position;

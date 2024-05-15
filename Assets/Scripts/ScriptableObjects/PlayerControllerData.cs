@@ -30,25 +30,23 @@ public class PlayerControllerData : ScriptableObject
     
     [Header("SOUND")] 
     public AK.Wwise.Event startEngineSound;
-    public AK.Wwise.Event punchSound;
-    public AK.Wwise.Event slideSound;
-    public AK.Wwise.Event balLPunchSound;
-    public AK.Wwise.Event ballSlideSound;
+    public AK.Wwise.Event punchSound; //move
+    public AK.Wwise.Event balLPunchSound; //move
     public AK.Wwise.Event punchHitSound;
-    public AK.Wwise.Event slideHitSound;
     public AK.Wwise.Event ballPunchHitSound;
-    public AK.Wwise.Event ballSlideHitSound;
     public AK.Wwise.Event punchCounterSound;
-    public AK.Wwise.Event slideCounterSound;
     public AK.Wwise.Event ballPunchCounterSound;
-    public AK.Wwise.Event ballSlideCounterSound;
-    public AK.Wwise.Event grabbingBallSound;
+    public AK.Wwise.Event grabbingBallSound = new AK.Wwise.Event();
+    public AK.Wwise.Event collisionSound;
+    public AK.Wwise.Event wallHitSound;
+    public AK.Wwise.Event parrySound;
+    public AK.Wwise.Event parrySuccessSound;
+    public AK.Wwise.Event punchAfterParrySound;
+    public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC vehicleSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;
-    public AK.Wwise.Switch onGround;
-    public AK.Wwise.Switch offGround;
     
     
     [Header("ATTACK COLLIDERS")]

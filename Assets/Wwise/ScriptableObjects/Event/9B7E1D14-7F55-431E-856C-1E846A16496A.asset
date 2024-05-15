@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
   m_Name: 9B7E1D14-7F55-431E-856C-1E846A16496A
   m_EditorClassIdentifier: 
-  objectName: Punch
-  id: 645565787
+  objectName: Punch_Move
+  id: 3055455917
   guid: 9B7E1D14-7F55-431E-856C-1E846A16496A

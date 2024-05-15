@@ -7,11 +7,28 @@ Switch	ID	Name	Switch Group			Notes
 	1635194254	P3	Player			
 	1635194255	P2	Player			
 
+State Group	ID	Name			Wwise Object Path	Notes
+	3826569560	Music_State			\Default Work Unit\Music_State	
+	3991942870	Music			\Default Work Unit\Music	
+
+State	ID	Name	State Group			Notes
+	89505537	Gameplay	Music_State			
+	529726532	End	Music_State			
+	748895195	None	Music_State			
+	446279778	Bed	Music			
+	529726532	End	Music			
+	748895195	None	Music			
+	1635194249	P4	Music			
+	1635194252	P1	Music			
+	1635194254	P3	Music			
+	1635194255	P2	Music			
+	2607556080	Menu	Music			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\SFX	
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
 	841620460	Concrete			\Factory Acoustic Textures\Textures\Concrete	
-	1449435024	Spread			\Default Work Unit\Spread	
 	1755085759	Wood_Deep			\Factory Acoustic Textures\Textures\Wood_Deep	
 	1873957695	Anechoic			\Factory Acoustic Textures\Textures\Anechoic	
 	1970351858	Fabric			\Factory Acoustic Textures\Textures\Fabric	
@@ -21,6 +38,8 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2928161104	Curtains			\Factory Acoustic Textures\Textures\Curtains	
 	3195498748	Cork_Tiles			\Factory Acoustic Textures\Textures\Cork_Tiles	
 	3670307564	Drywall			\Factory Acoustic Textures\Textures\Drywall	
+	3991942870	Music			\Default Work Unit\Music	
+	4056684167	Master			\Default Work Unit\Master	
 	4168643977	Acoustic_Banner			\Factory Acoustic Textures\Textures\Acoustic_Banner	
 	4262522749	Wood_Bright			\Factory Acoustic Textures\Textures\Wood_Bright	
 
@@ -28,10 +47,12 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	54442139	Lead			\Default Work Unit\Master Audio Bus\Music\Lead	
 	759487314	Engines			\Default Work Unit\Master Audio Bus\Engines	
 	1291433344	Bass			\Default Work Unit\Master Audio Bus\Music\Bass	
+	1404066300	Ambiances			\Default Work Unit\Master Audio Bus\Ambiances	
 	1635194249	P4			\Default Work Unit\Master Audio Bus\Players\P4	
 	1635194252	P1			\Default Work Unit\Master Audio Bus\Players\P1	
 	1635194254	P3			\Default Work Unit\Master Audio Bus\Players\P3	
 	1635194255	P2			\Default Work Unit\Master Audio Bus\Players\P2	
+	2077289713	Crowd_OS			\Default Work Unit\Master Audio Bus\Ambiances\Crowd_OS	
 	2188949101	Players			\Default Work Unit\Master Audio Bus\Players	
 	2376466361	Other			\Default Work Unit\Master Audio Bus\Music\Other	
 	2631124778	Engine_P4			\Default Work Unit\Master Audio Bus\Engines\Engine_P4	
@@ -41,21 +62,10 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	2726606664	Drums			\Default Work Unit\Master Audio Bus\Music\Drums	
 	3042377063	Drums_B			\Default Work Unit\Master Audio Bus\Music\Drums\Drums_B	
 	3232836819	Guitar			\Default Work Unit\Master Audio Bus\Music\Guitar	
-	3511642625	Ducking_Bus			\Default Work Unit\Ducking_Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
-Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	1557387256	Ducking_P1			\Default Work Unit\Ducking_Bus\Ducking_P1	
-	1557387258	Ducking_P3			\Default Work Unit\Ducking_Bus\Ducking_P3	
-	1557387259	Ducking_P2			\Default Work Unit\Ducking_Bus\Ducking_P2	
-	1557387261	Ducking_P4			\Default Work Unit\Ducking_Bus\Ducking_P4	
-
 Effect plug-ins	ID	Name	Type				Notes
-	64866452	Meter (Custom)	Wwise Meter			
-	310720571	Meter (Custom)	Wwise Meter			
-	469542286	Meter (Custom)	Wwise Meter			
-	481056633	Meter (Custom)	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
 
 Audio Devices	ID	Name	Type				Notes

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
   m_Name: 3FF204EA-C5AF-4DC0-B60D-DEC2CDB33249
   m_EditorClassIdentifier: 
-  objectName: Defense
-  id: 2564315215
+  objectName: Parry_Success
+  id: 1134971709
   guid: 3FF204EA-C5AF-4DC0-B60D-DEC2CDB33249

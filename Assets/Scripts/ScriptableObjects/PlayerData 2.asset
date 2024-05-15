@@ -39,37 +39,17 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 01ef736ccd51798479c503bdfd9908ac,
       type: 2}
-  slideSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0f7c5d8fe450c9344887aee3b0d009c9,
-      type: 2}
   balLPunchSound:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1066e2603f01b264abf5f3896d8a3784,
-      type: 2}
-  ballSlideSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1c8c96c311bb4a342b9f1595c3c0ec37,
       type: 2}
   punchHitSound:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 803ecc7ccb801a1479b54801bfbb672a,
       type: 2}
-  slideHitSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ee21b94f5dd19fc41b1d381c5ed30793,
-      type: 2}
   ballPunchHitSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a0afff67375974f48a802f6d08f5ef3d,
-      type: 2}
-  ballSlideHitSound:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: a0afff67375974f48a802f6d08f5ef3d,
@@ -79,17 +59,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
       type: 2}
-  slideCounterSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
-      type: 2}
   ballPunchCounterSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
-      type: 2}
-  ballSlideCounterSound:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cb3613ace5936924ebf894c55a42f66b,
@@ -98,6 +68,36 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
+      type: 2}
+  collisionSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 06380e2204bece84cbac32dc33772bc2,
+      type: 2}
+  wallHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6984da5294f39d04b82d3b63640fcaf9,
+      type: 2}
+  parrySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a0e060bf66b80a8408d42db943db1305,
+      type: 2}
+  parrySuccessSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f4f8fb35dfb352c4a9e0f1ce92c17601,
+      type: 2}
+  punchAfterParrySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 726c5eb55d25e3d45947e94bbc296966,
+      type: 2}
+  punchTauntSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d82b6eb836085dc4ca0e595d792b1951,
       type: 2}
   engineSpeed:
     idInternal: 0
@@ -118,20 +118,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 66559373f0cf2c947b9f555e1d3ea415,
-      type: 2}
-  onGround:
-    idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c1413fd2caf4ec843a6b846a9a2d0938,
-      type: 2}
-  offGround:
-    idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ca1ab254b3c70f44197a63ad1cd4b986,
       type: 2}
   punchCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
     type: 3}
