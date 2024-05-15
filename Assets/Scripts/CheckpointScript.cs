@@ -7,6 +7,8 @@ public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private List<Transform> spawnPoints;
+
+    [SerializeField] private AK.Wwise.Event scoring;
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class Checkpoint : MonoBehaviour
         if(player == GameManager.Instance.ballHolder)
         {
             player?.combat.onDeath(null);
+            scoring.Post(gameObject);
             GameManager.Instance.OnScoring();
         }
     }

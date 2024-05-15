@@ -403,7 +403,6 @@ MonoBehaviour:
   OnGrabbingBall:
     m_PersistentCalls:
       m_Calls: []
-  ball: {fileID: 0}
   ballAnchorPoint: {fileID: 3061583551361753849}
   particleSystem: {fileID: 9039159071009336896}
   punchLeftCollider: {fileID: 1921864688918061852}
@@ -1148,6 +1147,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4574413081267013205, guid: 188551011c7b90243b1c6c7358411fed, type: 3}
+    - {fileID: 14854278065116634, guid: 188551011c7b90243b1c6c7358411fed, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7550955702229790661, guid: 188551011c7b90243b1c6c7358411fed,
         type: 3}

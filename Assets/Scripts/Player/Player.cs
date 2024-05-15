@@ -23,6 +23,12 @@ public class Player : MonoBehaviour
         GameManager.Instance.OnPlayerInstantiate(this);
 
     }
+    
+    public void setPlayerID(int nb)
+    {
+        playerID[nb].SetValue(this.gameObject);
+        Debug.Log(playerID[nb].ToString());
+    }
 
 }
     

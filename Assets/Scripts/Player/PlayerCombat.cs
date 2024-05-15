@@ -399,31 +399,31 @@ public class PlayerCombat : MonoBehaviour
         particleSystem.Play();
     }
 
-    void slideHit(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.yellow;
-        player.data.slideHitSound.Post(gameObject);
-        particleSystem.Play();
-        StartCoroutine(stun(source));
-    }
-
-    void slideCounter(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.white;
-        player.data.slideCounterSound.Post(gameObject);
-        particleSystem.Play();
-    }
-
-    void ballSlideHit(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        player.data.ballSlideHitSound.Post(gameObject);
-        particleSystem.Play();
-        StartCoroutine(death(source));
-    }
+    // void slideHit(Player source)
+    // {
+    //     ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+    //     particleSystemMain.startColor = Color.yellow;
+    //     player.data.slideHitSound.Post(gameObject);
+    //     particleSystem.Play();
+    //     StartCoroutine(stun(source));
+    // }
+    //
+    // void slideCounter(Player source)
+    // {
+    //     ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+    //     particleSystemMain.startColor = Color.white;
+    //     player.data.slideCounterSound.Post(gameObject);
+    //     particleSystem.Play();
+    // }
+    //
+    // void ballSlideHit(Player source)
+    // {
+    //     ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+    //     particleSystemMain.startColor = Color.red;
+    //     player.data.ballSlideHitSound.Post(gameObject);
+    //     particleSystem.Play();
+    //     StartCoroutine(death(source));
+    // }
     
     void ballPunchHit(Player source)
     {
@@ -442,13 +442,13 @@ public class PlayerCombat : MonoBehaviour
         particleSystem.Play(source);
     }
     
-    void ballSlideCounter(Player source)
-    {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.magenta;
-        player.data.ballSlideCounterSound.Post(gameObject);
-        particleSystem.Play();
-    }
+    // void ballSlideCounter(Player source)
+    // {
+    //     ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+    //     particleSystemMain.startColor = Color.magenta;
+    //     player.data.ballSlideCounterSound.Post(gameObject);
+    //     particleSystem.Play();
+    // }
 
     #endregion
 
