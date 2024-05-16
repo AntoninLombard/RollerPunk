@@ -17,16 +17,20 @@ public class PlayerControllerData : ScriptableObject
     [Range(0.0f,1.0f)] public float airDrag;
     [Range(0.2f,1.0f)] public float ballAccelMultiplier;
     [Range(0.2f,1.0f)] public float ballMaxSpeedMultipier;
-    
-    [Header("COMBAT VALUES")] 
+
+    [Header("COMBAT VALUES")]
+    public float punchWindUp;
+    public float punchDamageWindow;
+    public float parryWindow;
     public float counterWindow;
     public float actionsCooldown;
     public float stunDuration;
     public float invincibilityDuration;
-    public float slidingDrag;
 
     [Header("SCORING VALUES")] 
     public float distancePerPoint;
+    public int killMultipliatorThreshold;
+    public int killMultiplicatorValue;
     
     [Header("SOUND")] 
     public AK.Wwise.Event startEngineSound;

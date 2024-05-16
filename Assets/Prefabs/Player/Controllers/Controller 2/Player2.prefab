@@ -361,8 +361,8 @@ MonoBehaviour:
   speed: 0
   targetForward: {x: 0, y: 0, z: 0}
   input: {fileID: 1435602356178349144}
-  steerInput: 0
-  driveInput: 0
+  <steerInput>k__BackingField: 0
+  <driveInput>k__BackingField: 0
   rb: {fileID: 8963657871566459159}
   engineSpeed:
     idInternal: 0
@@ -390,6 +390,7 @@ MonoBehaviour:
   <isRecovering>k__BackingField: 0
   <isPunchingLeft>k__BackingField: 0
   <isPunchingRight>k__BackingField: 0
+  <isTaunting>k__BackingField: 0
   <isFortified>k__BackingField: 0
   <isSliding>k__BackingField: 0
   <isStunned>k__BackingField: 0
@@ -449,7 +450,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2504526242335050173}
         m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
-        m_MethodName: onPunchLeft
+        m_MethodName: onPunch
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

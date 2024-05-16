@@ -26,9 +26,9 @@ public class PlayerController2 : MonoBehaviour
     private InputAction reverseAction;
     private InputAction steerAction;
     
-    [Header("PLAYER INPUTS")]
-    [SerializeField] [Range(-1.0f,1.0f)] private float steerInput = 0;
-    [SerializeField] [Range(-1.0f,1.0f)] private float driveInput = 0;
+    [field: Header("PLAYER INPUTS")]
+    [field: SerializeField] [field: Range(-1.0f,1.0f)] public float steerInput { get; private set; }
+    [field: SerializeField] [field: Range(-1.0f,1.0f)] public float driveInput { get; private set; }
     
     [Header("CHARACTER PARTS")]
     [SerializeField] public Rigidbody rb;

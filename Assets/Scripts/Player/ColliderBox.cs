@@ -8,10 +8,8 @@ public class ColliderBox : MonoBehaviour
     
     public enum ColliderType
     {
-        Slide,
         Punch,
-        BallPunch,
-        BallSlide
+        BallPunch
     }
     [SerializeField] private Player source;
     [SerializeField] private ColliderType type;

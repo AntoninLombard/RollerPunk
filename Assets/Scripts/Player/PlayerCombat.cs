@@ -21,6 +21,7 @@ public class PlayerCombat : MonoBehaviour
     [field: SerializeField] public bool isRecovering { get; private set; }
     [field: SerializeField] public bool isPunchingLeft { get; private set; }
     [field: SerializeField] public bool isPunchingRight { get; private set; }
+    [field: SerializeField] public bool isTaunting { get; private set; }
     [field: SerializeField] public bool isFortified { get; private set; }
     [field: SerializeField] public bool isSliding { get; private set; }
     [field: SerializeField] public bool isStunned { get; private set; }
@@ -55,42 +56,101 @@ public class PlayerCombat : MonoBehaviour
 
     #region INPUT EVENT CALLBACKS
 
-    public void onPunchLeft(InputAction.CallbackContext context)
+    public void onPunch(InputAction.CallbackContext context)
     {
-        if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering)
+        if(context.started)
         {
-            if (!isHoldingBall)
+            if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering)
             {
-                StartCoroutine(punchLeft());
+                if (!isHoldingBall)
+                {
+                    switch (player.controller.steerInput)
+                    {
+                        case > 0:
+                            StartCoroutine(punchRight());
+                            break;
+                        case < 0:
+                            StartCoroutine(punchLeft());
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (player.controller.steerInput)
+                    {
+                        case > 0:
+                            StartCoroutine(ballPunchRight());
+                            break;
+                        case < 0:
+                            StartCoroutine(ballPunchLeft());
+                            break;
+                    }
+                }
             }
-            else
+        }
+        else if(context.canceled)
+        {
+            //TODO Trigger the release action to taunt
+            if (isPunchingLeft || isPunchingRight)
             {
-                StartCoroutine(ballPunchLeft());
+                StartCoroutine(taunt());
             }
         }
     }
 
-    public void onPunchRight(InputAction.CallbackContext context)
-    {
-        if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering && !isFortified)
-        {
-            if (!isHoldingBall)
-            {
-                StartCoroutine(punchRight());
-            }
-            else
-            {
-                StartCoroutine(ballPunchRight());
-            }
-
-        }
-    }
+    
+    // public void onPunchLeft(InputAction.CallbackContext context)
+    // {
+    //     if(context.started)
+    //     {
+    //         if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering)
+    //         {
+    //             if (!isHoldingBall)
+    //             {
+    //                 StartCoroutine(punchLeft());
+    //             }
+    //             else
+    //             {
+    //                 StartCoroutine(ballPunchLeft());
+    //             }
+    //         }
+    //     }
+    //     else if(context.canceled)
+    //     {
+    //         //TODO Trigger the release action to taunt
+    //         //punchCancel();
+    //     }
+    // }
+    //
+    // public void onPunchRight(InputAction.CallbackContext context)
+    // {
+    //     if(context.started)
+    //     {
+    //         if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering &&
+    //             !isFortified)
+    //         {
+    //             if (!isHoldingBall)
+    //             {
+    //                 StartCoroutine(punchRight());
+    //             }
+    //             else
+    //             {
+    //                 StartCoroutine(ballPunchRight());
+    //             }
+    //
+    //         }
+    //     }
+    // }
 
     public void onFortify(InputAction.CallbackContext context)
     {
-        if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering && !isFortified)
+        if(context.started)
         {
-            StartCoroutine(fortify());
+            if (!isSliding && !isPunchingLeft & !isPunchingRight && player.controller.isGrounded && !isRecovering &&
+                !isFortified)
+            {
+                StartCoroutine(fortify());
+            }
         }
     }
 
@@ -167,12 +227,17 @@ public class PlayerCombat : MonoBehaviour
     {
         isPunchingLeft = true;
         player.data.punchSound.Post(gameObject);
-        player.anime.SetBool("WindUp.L",true);
+        player.anime.SetTrigger("WindUp.L");
+        yield return new WaitForSeconds(player.data.punchWindUp);
+        if (isTaunting)
+        {
+            yield break;
+        }
         punchLeftCollider.Toggle(true);
         punchLeftCollider.SetType(ColliderBox.ColliderType.Punch);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(player.data.punchDamageWindow);
         punchLeftCollider.Toggle(false);
-        player.anime.SetBool("WindUp.L",false);
+        player.anime.SetTrigger("WindUp.L");
         isPunchingLeft = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
@@ -183,12 +248,12 @@ public class PlayerCombat : MonoBehaviour
     {
         isPunchingRight = true;
         player.data.punchSound.Post(gameObject);
-        player.anime.SetBool("WindUp.R",true);
+        player.anime.SetTrigger("WindUp.R");
         punchRightCollider.Toggle(true);
         punchRightCollider.SetType(ColliderBox.ColliderType.Punch);
         yield return new WaitForSeconds(0.5f);
         punchRightCollider.Toggle(false);
-        player.anime.SetBool("WindUp.R",false);
+        player.anime.SetTrigger("WindUp.R");
         isPunchingRight = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
@@ -199,9 +264,24 @@ public class PlayerCombat : MonoBehaviour
     {
         isFortified = true;
         player.anime.SetTrigger("Parry");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(player.data.parryWindow);
         isFortified = false;
+        isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
+        isRecovering = false;
+    }
+    
+    IEnumerator taunt()
+    {
+        isPunchingLeft = false;
+        isPunchingRight = false;
+        isTaunting = true;
+        //player.anime.SetTrigger("Parry");
+        yield return new WaitForSeconds(0.5f);
+        isTaunting = false;
+        isRecovering = true;
+        yield return new WaitForSeconds(player.data.actionsCooldown);
+        isRecovering = false;
     }
     
     // IEnumerator slide()
@@ -224,11 +304,11 @@ public class PlayerCombat : MonoBehaviour
         isPunchingLeft = true;
         player.data.balLPunchSound.Post(gameObject);
         punchLeftCollider.Toggle(true);
-        player.anime.SetBool("WindUp.L",true);
+        player.anime.SetTrigger("WindUp.L");
         punchLeftCollider.SetType(ColliderBox.ColliderType.BallPunch);
         yield return new WaitForSeconds(0.5f);
         punchLeftCollider.Toggle(false);
-        player.anime.SetBool("WindUp.L",false);
+        player.anime.SetTrigger("WindUp.L");
         isPunchingLeft = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
@@ -240,11 +320,11 @@ public class PlayerCombat : MonoBehaviour
         isPunchingRight = true;
         player.data.balLPunchSound.Post(gameObject);
         punchRightCollider.Toggle(true);
-        player.anime.SetBool("WindUp.R",true);
+        player.anime.SetTrigger("WindUp.R");
         punchRightCollider.SetType(ColliderBox.ColliderType.BallPunch);
         yield return new WaitForSeconds(0.5f);
         punchRightCollider.Toggle(false);
-        player.anime.SetBool("WindUp.R",false);
+        player.anime.SetTrigger("WindUp.R");
         isPunchingRight = false;
         isRecovering = true;
         yield return new WaitForSeconds(player.data.actionsCooldown);
