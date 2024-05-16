@@ -59,6 +59,9 @@ public class PlayerControllerData : ScriptableObject
     public GameObject ballPunchCollider;
     public GameObject ballSlideCollider;
 
+    [Header("ANIMATIONS")] 
+    public AnimationCurve curve;
+
     [Header("CAMERA LAYERS")]
     public List<LayerMask> playerLayer;
 }

@@ -85,8 +85,7 @@ public class GameManager : MonoBehaviour
         player.camera.gameObject.layer = layer;
         foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
             player.camera.cullingMask -= player.camera.cullingMask & mask;
-        //player.controller.rb.position = spawnPoints[nbPlayer].position; //for V1
-        player.character.position = spawnPoints[nbPlayer].position; //for V2
+        if (player.character != null) player.character.position = spawnPoints[nbPlayer].position;
         player.setPlayerID(nbPlayer);
         nbPlayer++;
         player.listener.SetVolumeOffset(nbPlayer);

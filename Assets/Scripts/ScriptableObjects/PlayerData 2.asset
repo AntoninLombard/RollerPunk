@@ -23,12 +23,16 @@ MonoBehaviour:
   airDrag: 0
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
+  punchWindUp: 2
+  punchDamageWindow: 0.2
+  parryWindow: 1
   counterWindow: 0.05
   actionsCooldown: 1.5
   stunDuration: 2
-  invincibilityDuration: 0
-  slidingDrag: 0
+  invincibilityDuration: 1
   distancePerPoint: 50
+  killMultipliatorThreshold: 0
+  killMultiplicatorValue: 0
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 
@@ -127,6 +131,39 @@ MonoBehaviour:
     type: 3}
   ballSlideCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
     type: 3}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.17499924
+      value: 0.018859863
+      inSlope: -1.0084205
+      outSlope: -1.0084205
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.30851018
+    - serializedVersion: 3
+      time: 0.15804139
+      value: 0.9154086
+      inSlope: 0.29964772
+      outSlope: 0.29964772
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   playerLayer:
   - serializedVersion: 2
     m_Bits: 128

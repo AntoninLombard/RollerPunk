@@ -19,9 +19,7 @@ public class Player : MonoBehaviour
     
     private void Awake()
     {
-        //controller = GetComponent<PlayerController2>();
         GameManager.Instance.OnPlayerInstantiate(this);
-
     }
 
     public void setPlayerID(int nb)

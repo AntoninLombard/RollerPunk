@@ -19,23 +19,17 @@ public class ColliderBox : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name + other.gameObject.transform.parent.name);
-        Player hit = other.gameObject.transform.parent.GetComponent<Player>();
+        Player hit = other.gameObject.GetComponentInParent<Player>();
         if (hit != source)
         {
             switch (type)
             {
-                // case ColliderType.Slide:
-                //     hit.combat.OnHitbySlide.Invoke(source);
-                //     break;
                 case ColliderType.Punch:
                     hit.combat.OnHitByPunch.Invoke(source);
                     break;
                 case ColliderType.BallPunch:
                     hit.combat.OnHitbByBallPunch.Invoke(source);
                     break;
-                // case ColliderType.BallSlide:
-                //     hit.combat.OnHitbByBallSlide.Invoke(source);
-                //     break;
             }
         }
     }
