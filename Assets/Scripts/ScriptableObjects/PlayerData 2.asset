@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a559a010f40bac9478696e09f5e5bb9b, type: 3}
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
-  maxSpeed: 30
-  forwardAccel: 20
-  turningRate: 15
-  gravityStrength: 9.8
+  maxSpeed: 75
+  forwardAccel: 53
+  turningRate: 13
+  gravityStrength: 10
   gripAccel: 8
   inertiaRatio: 0
   brakingRatio: 0.5
-  drag: 0.78
+  drag: 0.8
   airDrag: 0
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
