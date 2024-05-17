@@ -203,7 +203,7 @@ public class PlayerCombat : MonoBehaviour
         isWindingUpPunchLeft = false;
         isWindingUpPunchRight = false;
         colliderBox.Toggle(true);
-        punchVFX.Play();
+        //punchVFX.Play();
         
         yield return new WaitForSeconds(player.data.punchDamageWindow);
         
@@ -221,7 +221,7 @@ public class PlayerCombat : MonoBehaviour
     {
         isFortified = true;
         player.anime.animator.SetTrigger("Parry");
-        player.anime.parryVFX.Play();
+        //player.anime.parryVFX.Play();
         yield return new WaitForSeconds(player.data.parryWindow);
         isFortified = false;
         isRecovering = true;
