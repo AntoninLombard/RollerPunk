@@ -315,7 +315,7 @@ MonoBehaviour:
   camera: {fileID: 7847891520487656286}
   character: {fileID: 1706618883694479924}
   data: {fileID: 11400000, guid: ba71b6badf5cf8743b3c83336024f4c4, type: 2}
-  anime: {fileID: 7979025106373359173}
+  anime: {fileID: 3216370738416788856}
   listener: {fileID: 5529130067093106813}
   playerID:
   - idInternal: 0
@@ -542,10 +542,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2075873140783189414}
-  animator: {fileID: 7979025106373359173}
+  <animator>k__BackingField: {fileID: 7979025106373359173}
   punchWindUpL: {fileID: 9163544887542825655, guid: 5ddd509660e7e38408695519faa5d010,
     type: 3}
   punchL: {fileID: -7976132238766587304, guid: 5ddd509660e7e38408695519faa5d010, type: 3}
+  <punchLVFX>k__BackingField: {fileID: 5778857071076996927}
+  <punchRVFX>k__BackingField: {fileID: 1022020563432111704}
+  <parryVFX>k__BackingField: {fileID: 3044704626683875058}
 --- !u!1 &5063944569789951011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1203,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!2083052967 &1022020563432111704 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 2507304159050449344, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1706618883694479924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4272342943821034924, guid: 188551011c7b90243b1c6c7358411fed,
@@ -1212,6 +1221,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &3044704626683875058 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 478999119742316906, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3061583551361753849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475595491666861409, guid: 188551011c7b90243b1c6c7358411fed,
@@ -1221,6 +1236,12 @@ Transform:
 --- !u!4 &3504788944918445810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2037539534439727466, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &5778857071076996927 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 8995894573825804455, guid: 188551011c7b90243b1c6c7358411fed,
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}
