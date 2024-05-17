@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584858165218659061
+    m_lastTime: -8584856664779658294
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -875,7 +875,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584858167396831938
+    m_lastTime: -8584856672153242529
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -926,8 +926,8 @@ MonoBehaviour:
         guid: 0d141e2b114d4c4b9240ffa5bf4add48
       Path: Events\RP_Feedbacks\Checkpoint
       maxAttenuation: 0
-      maxDuration: 3.361816
-      minDuration: 3.361816
+      maxDuration: 5.5586042
+      minDuration: 5.5586042
     - name: Collision
       guid: ee5128c7eaed844aa55298747c68b800
       id: 1792046091
@@ -943,7 +943,7 @@ MonoBehaviour:
         guid: ee5128c7eaed844aa55298747c68b800
       Path: Events\RP_Feedbacks\Collision
       maxAttenuation: 0
-      maxDuration: 2.1666458
+      maxDuration: Infinity
       minDuration: 1.5098125
     - name: Countdown
       guid: ddd04c2d3d453c49bcd69e81ded6d324
@@ -995,7 +995,7 @@ MonoBehaviour:
       Path: Events\RP_Feedbacks\Hit_ByBall
       maxAttenuation: 0
       maxDuration: 1.3560926
-      minDuration: 1.1886036
+      minDuration: 1.2023958
     - name: Hit_ByPunch
       guid: 33696301fcea184884f9a7a8a1bb09b1
       id: 3549005828
@@ -1045,8 +1045,8 @@ MonoBehaviour:
         guid: 18f73f752e7d06418423fed6a43972c0
       Path: Events\RP_Feedbacks\Parry_Move
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.6795
+      minDuration: 0.4815625
     - name: Parry_Success
       guid: ea04f23fafc5c04db60ddec2cdb33249
       id: 1134971709
@@ -1062,8 +1062,8 @@ MonoBehaviour:
         guid: ea04f23fafc5c04db60ddec2cdb33249
       Path: Events\RP_Feedbacks\Parry_Success
       maxAttenuation: 0
-      maxDuration: 3.724
-      minDuration: 1.7452139
+      maxDuration: 3.6789515
+      minDuration: 3.0599685
     - name: Punch_AfterParry
       guid: b08f90e51e7b9544ae9121007248140f
       id: 972759482
@@ -1079,8 +1079,8 @@ MonoBehaviour:
         guid: b08f90e51e7b9544ae9121007248140f
       Path: Events\RP_Feedbacks\Punch_AfterParry
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.9903389
+      minDuration: 0.6556875
     - name: Punch_Move
       guid: 141d7e9b557f1e43856c1e846a16496a
       id: 3055455917
@@ -1096,8 +1096,8 @@ MonoBehaviour:
         guid: 141d7e9b557f1e43856c1e846a16496a
       Path: Events\RP_Feedbacks\Punch_Move
       maxAttenuation: 0
-      maxDuration: 0.94272983
-      minDuration: 0.94272983
+      maxDuration: 0.6795
+      minDuration: 0.4815625
     - name: Punch_Taunt
       guid: b0bf6c63f16822428898dbdfe8d7bba6
       id: 1403211570
@@ -1113,8 +1113,8 @@ MonoBehaviour:
         guid: b0bf6c63f16822428898dbdfe8d7bba6
       Path: Events\RP_Feedbacks\Punch_Taunt
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 5.0809793
+      minDuration: 1.5733541
     - name: setplayernumber
       guid: 7ce0baffa6486a41b2b2fdf03aa777e3
       id: 3687251531
@@ -1255,8 +1255,64 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 16ff3389254ae24a8ec01413e62e9d26
     GuidInternal: 
-    m_lastTime: -8584865078299768855
+    m_lastTime: -8584856709952639648
     List:
+    - name: Enveloppe_P1
+      guid: b1e665bd53f29c478cb8032b4de05a6a
+      id: 256121077
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Enveloppe_P1
+        ObjectType: 13
+        guid: b1e665bd53f29c478cb8032b4de05a6a
+      Path: Game Parameters\Default Work Unit\Enveloppe_P1
+    - name: Enveloppe_P2
+      guid: ef8a9eb8f41d244382a2e5230428d374
+      id: 256121078
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Enveloppe_P2
+        ObjectType: 13
+        guid: ef8a9eb8f41d244382a2e5230428d374
+      Path: Game Parameters\Default Work Unit\Enveloppe_P2
+    - name: Enveloppe_P3
+      guid: ad82fec95bd12441a8d5edd5b5522d6b
+      id: 256121079
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Enveloppe_P3
+        ObjectType: 13
+        guid: ad82fec95bd12441a8d5edd5b5522d6b
+      Path: Game Parameters\Default Work Unit\Enveloppe_P3
+    - name: Enveloppe_P4
+      guid: a818f555973fba45ba1470c3b1b87472
+      id: 256121072
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Enveloppe_P4
+        ObjectType: 13
+        guid: a818f555973fba45ba1470c3b1b87472
+      Path: Game Parameters\Default Work Unit\Enveloppe_P4
     - name: Master
       guid: 91c2d267fa27364e9a5863c7ac61c00c
       id: 4056684167

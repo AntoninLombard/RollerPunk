@@ -25,6 +25,10 @@ State	ID	Name	State Group			Notes
 	2607556080	Menu	Music			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	256121072	Enveloppe_P4			\Default Work Unit\Enveloppe_P4	
+	256121077	Enveloppe_P1			\Default Work Unit\Enveloppe_P1	
+	256121078	Enveloppe_P2			\Default Work Unit\Enveloppe_P2	
+	256121079	Enveloppe_P3			\Default Work Unit\Enveloppe_P3	
 	393239870	SFX			\Default Work Unit\SFX	
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
@@ -66,6 +70,10 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Effect plug-ins	ID	Name	Type				Notes
+	1069431850	Player	Wwise Meter			
+	1635194249	P4	Wwise Meter			
+	1635194254	P3	Wwise Meter			
+	1635194255	P2	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
 
 Audio Devices	ID	Name	Type				Notes

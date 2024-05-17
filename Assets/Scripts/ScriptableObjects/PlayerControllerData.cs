@@ -44,7 +44,7 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event punchAfterParrySound;
     public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.RTPC engineSpeed;
-    public AK.Wwise.RTPC vehicleSpeed;
+    //public AK.Wwise.RTPC vehicleSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;
     
