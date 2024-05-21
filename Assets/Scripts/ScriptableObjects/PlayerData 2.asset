@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a559a010f40bac9478696e09f5e5bb9b, type: 3}
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
-  maxSpeed: 75
-  forwardAccel: 53
+  maxSpeed: 20
+  forwardAccel: 10
   turningRate: 13
   gravityStrength: 10
   gripAccel: 8
@@ -72,10 +72,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
       type: 2}
+  collisionSoundThreshold: 4
   collisionSound:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 06380e2204bece84cbac32dc33772bc2,
+      type: 2}
+  groundHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6bd946da2517079428c4ca36331f0523,
       type: 2}
   wallHitSound:
     idInternal: 0
@@ -92,11 +98,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f4f8fb35dfb352c4a9e0f1ce92c17601,
       type: 2}
-  punchAfterParrySound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 726c5eb55d25e3d45947e94bbc296966,
-      type: 2}
   punchTauntSound:
     idInternal: 0
     valueGuidInternal: 
@@ -106,11 +107,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: af5d3130f56fab54f9f57bd72ca7fb0d,
-      type: 2}
-  vehicleSpeed:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0df42ae906fe1b443896468896f67d77,
       type: 2}
   throttle:
     idInternal: 0

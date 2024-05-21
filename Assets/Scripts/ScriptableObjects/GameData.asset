@@ -17,7 +17,33 @@ MonoBehaviour:
   - {r: 1.0052338, g: 32, b: 0, a: 1}
   - {r: 0, g: 12.601578, b: 23.968626, a: 1}
   - {r: 23.96863, g: 14.794329, b: 0, a: 1}
-  crowdSound:
+  musicStart:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 624e9cf8b663f7f42b7093e3af6c70a7,
+      type: 2}
+  score:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 782cc9a3d387aa14ab0b083705e3d7ee,
+      type: 2}
+  crowdStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8084f5a789da119419c9155097bd7387,
+      type: 2}
+  crowdScoring:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2929a73ca20198d4e8444907cdf64cad,
+      type: 2}
+  crowdKill:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2d05cf6b649cc2d479bc934670234ef7,
+      type: 2}
+  crowdSteal:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7858b644464d3ee4ba2b509554069aae,
+      type: 2}
