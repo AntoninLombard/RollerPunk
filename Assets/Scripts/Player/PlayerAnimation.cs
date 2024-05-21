@@ -6,32 +6,38 @@ using UnityEngine.VFX;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Player player;
+    [SerializeField] public PlayerAnimationData data;
 
     [field:SerializeField] public Animator animator { get; private set; }
-
-    [Header("ANIMATIONS")]
-    [SerializeField] private AnimationClip punchWindUpL;
-    [SerializeField] private AnimationClip punchL;
     
     [field :Header("PARTICLES")]
     [field :SerializeField] public VisualEffect punchLVFX { get; private set; }
     [field :SerializeField] public VisualEffect punchRVFX { get; private set; }
-    [field :SerializeField] public VisualEffect parryVFX { get; private set; }
+    [field :SerializeField] public VisualEffect shieldVFX { get; private set; }
+    [field :SerializeField] public VisualEffect parryLVFX { get; private set; }
+    [field :SerializeField] public VisualEffect parryRVFX { get; private set; }
+    [field :SerializeField] public VisualEffect counterVFX { get; private set; }
     
     
     void Start()
     {
-        animator.SetFloat("PunchWindUpSpeed",player.data.punchWindUp/punchWindUpL.length);
-        animator.SetFloat("PunchSpeed",player.data.punchDamageWindow/punchL.length);
+        animator.SetFloat("PunchWindUpSpeed",data.punchWindUpR.length/player.data.punchWindUp);
+        animator.SetFloat("PunchSpeed",data.punchL.length/player.data.punchDamageWindow);
+        animator.SetFloat("ParrySpeed",data.parry.length/player.data.parryWindow);
         punchLVFX.SetFloat("Lifetime",player.data.punchDamageWindow);
         punchRVFX.SetFloat("Lifetime",player.data.punchDamageWindow);
-        parryVFX.SetFloat("Lifetime",player.data.parryWindow);
+        shieldVFX.SetFloat("Lifetime",player.data.parryWindow);
             
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void SetColor(Color color)
     {
-        
+        punchLVFX.SetVector4("Color",color);
+        punchRVFX.SetVector4("Color",color);
+        parryLVFX.SetVector4("Color",color);
+        parryRVFX.SetVector4("Color",color);
+        counterVFX.SetVector4("Color",color);
+        shieldVFX.SetVector4("Color",color);
     }
 }

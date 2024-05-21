@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563a09a3c8c9caa4e84e4219e67a05e5, type: 3}
+  m_Name: PlayerAnimationData
+  m_EditorClassIdentifier: 
+  punchWindUpR: {fileID: 7997032778565580688, guid: 5ddd509660e7e38408695519faa5d010,
+    type: 3}
+  punchWindUpL: {fileID: 9163544887542825655, guid: 5ddd509660e7e38408695519faa5d010,
+    type: 3}
+  punchL: {fileID: -7976132238766587304, guid: 5ddd509660e7e38408695519faa5d010, type: 3}
+  punchR: {fileID: -674757457323072557, guid: 5ddd509660e7e38408695519faa5d010, type: 3}
+  counterL: {fileID: -1056925886500694944, guid: 5ddd509660e7e38408695519faa5d010,
+    type: 3}
+  counterR: {fileID: 9006005290621105642, guid: 5ddd509660e7e38408695519faa5d010,
+    type: 3}
+  parry: {fileID: -5954038964138929802, guid: 5ddd509660e7e38408695519faa5d010, type: 3}
+  parrySucessL: {fileID: 8972308218680252051, guid: 5ddd509660e7e38408695519faa5d010,
+    type: 3}
+  parrySucessR: {fileID: 3873377233160737557, guid: 5ddd509660e7e38408695519faa5d010,
+    type: 3}

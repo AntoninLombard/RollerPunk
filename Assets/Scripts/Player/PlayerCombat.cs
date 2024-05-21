@@ -16,9 +16,10 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private bool punchInput;
     [SerializeField] private bool slideInput;
     [SerializeField] private bool fortifyInput;
-    
+
 
     [field: Header("CHARACTER STATE")]
+    [SerializeField] public int lastSteerSide;
     [field: SerializeField] public bool isInvincible { get; private set; }
     [field: SerializeField] public bool isRecovering { get; private set; }
     [field: SerializeField] public bool isWindingUpPunchLeft { get; private set; }
@@ -36,8 +37,10 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Events")] 
     [SerializeField] public UnityEvent<Player> OnHitByPunch;
-    [SerializeField] public UnityEvent<Player> OnHitbByBallPunch;
     [SerializeField] public UnityEvent OnGrabbingBall;
+    [SerializeField] public UnityEvent OnHitByParry;
+    [SerializeField] public UnityEvent OnHitByCounter;
+    
     
     
     [Header("Parts")] 
@@ -56,10 +59,14 @@ public class PlayerCombat : MonoBehaviour
     private void Awake()
     {
         OnHitByPunch.AddListener(onHitByPunch);
-        OnHitbByBallPunch.AddListener(onHitByBallPunch);
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
 
+    private void Update()
+    {
+        if(player.controller?.steerInput != 0)
+            lastSteerSide = (player.controller?.steerInput > 0)? 1 : -1;
+    }
 
 
     #region INPUT EVENT CALLBACKS
@@ -85,13 +92,13 @@ public class PlayerCombat : MonoBehaviour
     }
 
  
-    public void onFortify(InputAction.CallbackContext context)
+    public void onParry(InputAction.CallbackContext context)
     {
         if(context.started)
         {
             if (!isBusy)
             {
-                StartCoroutine(fortify());
+                StartCoroutine(parry());
             }
         }
     }
@@ -125,15 +132,6 @@ public class PlayerCombat : MonoBehaviour
         }
     }
     
-    void onHitByBallPunch(Player source)
-    {
-        if (isFortified != true && !isInvincible)
-        {
-            StartCoroutine(ballPunchReactWindow(source));
-            return;
-        }
-        counter(source);
-    }
 
     void onGrabbingBall()
     {
@@ -163,27 +161,25 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator punch()
     {
         ColliderBox colliderBox;
-        VisualEffect punchVFX;
-        if(player.controller.steerInput < 0)
+        int punchSide = lastSteerSide;
+        if(punchSide < 0)
         {
             isWindingUpPunchLeft = true;
             player.anime.animator.SetTrigger("WindUp.L");
             colliderBox = punchLeftCollider;
-            punchVFX = player.anime.punchLVFX;
         }
-        else if (player.controller.steerInput > 0)
+        else if (punchSide > 0)
         {
             isWindingUpPunchRight = true;
             player.anime.animator.SetTrigger("WindUp.R");
             colliderBox = punchRightCollider;
-            punchVFX = player.anime.punchRVFX;
         }
         else
             yield break;
         
         yield return new WaitForSeconds(player.data.punchWindUp);
         
-        if (isTaunting)
+        if (isTaunting || isRecovering)
         {
             yield break;
         }
@@ -191,11 +187,9 @@ public class PlayerCombat : MonoBehaviour
         if (isHoldingBall)
         {
             player.data.balLPunchSound.Post(gameObject);
-            colliderBox.SetType(ColliderBox.ColliderType.BallPunch);
         } else
         {
             player.data.punchSound.Post(gameObject);
-            colliderBox.SetType(ColliderBox.ColliderType.Punch);
         }
 
         isPunchingLeft = isWindingUpPunchLeft;
@@ -203,7 +197,6 @@ public class PlayerCombat : MonoBehaviour
         isWindingUpPunchLeft = false;
         isWindingUpPunchRight = false;
         colliderBox.Toggle(true);
-        //punchVFX.Play();
         
         yield return new WaitForSeconds(player.data.punchDamageWindow);
         
@@ -217,11 +210,10 @@ public class PlayerCombat : MonoBehaviour
         isRecovering = false;
     }
 
-    IEnumerator fortify()
+    IEnumerator parry()
     {
         isFortified = true;
         player.anime.animator.SetTrigger("Parry");
-        //player.anime.parryVFX.Play();
         yield return new WaitForSeconds(player.data.parryWindow);
         isFortified = false;
         isRecovering = true;
@@ -234,8 +226,9 @@ public class PlayerCombat : MonoBehaviour
         isWindingUpPunchLeft = false;
         isWindingUpPunchRight = false;
         isTaunting = true;
+        StopCoroutine(punch());
         player.anime.animator.SetTrigger("Taunt");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(player.anime.data.parry.length);
         player.anime.animator.ResetTrigger("Taunt");
         isTaunting = false;
         isRecovering = true;
@@ -246,28 +239,20 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator punchReactWindow(Player source)
     {
         yield return new WaitForSeconds(player.data.counterWindow);
-        if (isFortified != true)
+        if (isFortified)
         {
-            punchHit(source);
+            parry(source);
+        }
+        else if(isPunching)
+        {
+            counter(source);
         }
         else
         {
-            counter(source);
+            punchHit(source);
         }
     }
     
-    IEnumerator ballPunchReactWindow(Player source)
-    {
-        yield return new WaitForSeconds(player.data.counterWindow);
-        if (isFortified != true)
-        {
-            punchHit(source);
-        }
-        else
-        {
-            counter(source);
-        }
-    }
 
     IEnumerator stun(Player source)
     {
@@ -284,10 +269,13 @@ public class PlayerCombat : MonoBehaviour
             }
         }
         isStunned = true;
+        isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
+        player.anime.animator.SetTrigger("Stunned");
         yield return new WaitForSeconds(player.data.stunDuration);
+        player.anime.animator.SetTrigger("GetUp");
         isStunned = false;
-        StartCoroutine(invincibility());
+        isInvincible = false;
     }
     
     IEnumerator death(Player source)
@@ -307,9 +295,13 @@ public class PlayerCombat : MonoBehaviour
         if(source == GameManager.Instance.ballHolder)
             GameManager.Instance.OnBallKill();
         isStunned = true;
+        isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
+        player.anime.animator.SetTrigger("Stunned");
         yield return new WaitForSeconds(player.data.stunDuration);
+        player.anime.animator.SetTrigger("GetUp");
         isStunned = false;
+        isInvincible = false;
         GameManager.Instance.OnPlayerDeath(player);
         StartCoroutine(invincibility());
     }
@@ -326,7 +318,7 @@ public class PlayerCombat : MonoBehaviour
     
     #region COMBAT HITS & COUNTERS
 
-    void dropBall(Transform pos)
+    public void dropBall(Transform pos)
     {
         GameManager.Instance.ball.Toggle(true);
         GameManager.Instance.ball.transform.parent = null;
@@ -337,15 +329,16 @@ public class PlayerCombat : MonoBehaviour
     void punchHit(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.green;
-        player.data.punchHitSound.Post(gameObject);
+        particleSystemMain.startColor = Color.red;
         particleSystem.Play();
         if(source.combat.isHoldingBall)
         {
+            player.data.ballPunchHitSound.Post(player.character.gameObject);
             StartCoroutine(death(source));
         }
         else
         {
+            player.data.punchHitSound.Post(player.character.gameObject);
             StartCoroutine(stun(source));
         }
         
@@ -358,14 +351,13 @@ public class PlayerCombat : MonoBehaviour
         particleSystemMain.startColor = Color.green;
         player.data.punchCounterSound.Post(gameObject);
         player.anime.animator.SetTrigger("Countered");
-        particleSystem.Play();
-        StartCoroutine(stun(source));
+        //StartCoroutine(stun(source));
     }
     
     void parry(Player source)
     {
         Vector3 cross = Vector3.Cross(player.character.forward, source.character.forward);
-        float dir = Vector3.Dot(cross, player.character.up);
+        float dir = -Vector3.Dot(cross, player.character.up);
         if (dir > 0) // RIGHT
         {
             player.anime.animator.SetTrigger(ParrySuccessR);
@@ -376,10 +368,13 @@ public class PlayerCombat : MonoBehaviour
         }
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
-        player.data.punchHitSound.Post(gameObject);
-        particleSystem.Play();
-        StartCoroutine(stun(source));
+        player.data.parrySound.Post(gameObject);
     }
     #endregion
 
+    public void onFall()
+    {
+        StartCoroutine(stun(null));
+        GameManager.Instance.RespawnPlayer(player);
+    }
 }

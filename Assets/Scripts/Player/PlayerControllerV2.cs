@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Splines.Interpolators;
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -58,13 +59,15 @@ public class PlayerController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         steerInput = steerAction.ReadValue<float>();
         driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
         player.anime.animator.SetBool("Moving",speed > 1);
         player.anime.animator.SetFloat("Direction",steerInput);
-        player.anime.animator.SetFloat("Speed",Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed);
+        player.anime.animator.SetFloat("Speed",speedRatio);
         steer(Time.deltaTime);
         groundCheck(Time.deltaTime);
+        player.virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(player.virtualCamera.m_Lens.FieldOfView,player.data.minFOV + (player.data.maxFOV -player.data.minFOV) * speedRatio,5f * Time.deltaTime);
         controllerData.throttle.SetValue(gameObject, driveInput);
         controllerData.direction.SetValue(gameObject, steerInput);
     }
@@ -277,6 +280,18 @@ public class PlayerController2 : MonoBehaviour
             Gizmos.color = Color.green;
         }
         Gizmos.DrawLine(pos, pos + (-up - forward).normalized * 0.5f);
+    }
+
+    public void TeleportPlayer(Vector3 position, Quaternion rotation)
+    {
+        rb.velocity = Vector3.zero;
+        player.character.position = position;
+        player.character.rotation = rotation;
+    }
+
+    public void ToggleKinematic(bool isKinematic)
+    {
+        rb.isKinematic = isKinematic;
     }
     
     #endregion

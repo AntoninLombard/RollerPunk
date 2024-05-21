@@ -11,6 +11,9 @@ using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    [SerializeField] private GameData gameData;
+    [SerializeField] private ScoringData scoring;
     
     
     [Header("Players")]
@@ -20,8 +23,8 @@ public class GameManager : MonoBehaviour
     [Header("Gameplay")] 
     [SerializeField] private bool isRaceOn;
     [SerializeField] private float timer;
+    [SerializeField] private RespawnPoint raceStart;
     [SerializeField] private List<Checkpoint> checkpoints;
-    [SerializeField] private List<Transform> spawnPoints;
     
     [field: Header("Ball & Ball holder")]
     [field: SerializeField] public BallScript ball { get; private set; }
@@ -31,7 +34,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float distanceTraveled = 0;
     [SerializeField] private int cumulatedPoints;
     [SerializeField] private int kills;
-    [SerializeField] [CanBeNull] private Checkpoint lastCheckpoint;
+    [SerializeField] private int currentMultiplier;
+    [field: SerializeField] [CanBeNull] public RespawnPoint lastRespawnPoint { get; private set; }
 
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
@@ -52,7 +56,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentMultiplier = 1;
+        lastRespawnPoint = raceStart;
     }
 
     // Update is called once per frame
@@ -85,23 +90,24 @@ public class GameManager : MonoBehaviour
         player.camera.gameObject.layer = layer;
         foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
             player.camera.cullingMask -= player.camera.cullingMask & mask;
-        if (player.character != null) player.character.position = spawnPoints[nbPlayer].position;
+        if (player.character != null) player.character.position = raceStart.spawnPoints[nbPlayer].position;
         player.setPlayerID(nbPlayer);
+        player.number = nbPlayer;
+        player.color = gameData.playerColors[nbPlayer];
         nbPlayer++;
         player.listener.SetVolumeOffset(nbPlayer);
     }
     public void OnPlayerDeath(Player player)
     {
-        Vector3 pos = spawnPoints[Random.Range(0, nbPlayer)].position;
-        //player.transform.position = pos;
-        //player.controller.rb.position = pos; //for V1
-        player.character.position = pos; //for V2
+        Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
+        Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
+        player.controller.TeleportPlayer(pos,rot);
 
     }
 
     public void OnScoring()
     {
-        players[ballHolder] += cumulatedPoints * (1+kills);
+        players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
         ballHolder.ui.OnScoreChange(players[ballHolder]);
         ResetBall();
     }
@@ -109,6 +115,11 @@ public class GameManager : MonoBehaviour
     public void OnBallKill()
     {
         kills++;
+        if (kills > scoring.killMultipliatorThreshold)
+        {
+            currentMultiplier = scoring.killMultiplicatorValue;
+            ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+        }
     }
 
     public void OnBallGrabbed(Player player)
@@ -124,12 +135,12 @@ public class GameManager : MonoBehaviour
         if (ballHolder != null)
         {
             distanceTraveled += (ballHolder.character.position - holderPreviousPosition).magnitude * Vector3.Dot( holderPreviousForward,ballHolder.character.forward);
-            ballHolder.ui.OnDistanceTraveled(distanceTraveled,ballHolder.data.distancePerPoint);
-            if (distanceTraveled >= ballHolder.data.distancePerPoint)
+            ballHolder.ui.OnDistanceTraveled(distanceTraveled,scoring.distancePerPoint);
+            if (distanceTraveled >= scoring.distancePerPoint)
             {
-                distanceTraveled %= ballHolder.data.distancePerPoint;
+                distanceTraveled %= scoring.distancePerPoint;
                 cumulatedPoints++;
-                ballHolder.ui.OnPointsChange(cumulatedPoints,kills);
+                ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
                 crowds.SetGlobalValue(cumulatedPoints);
             }
             holderPreviousPosition = ballHolder.character.position;
@@ -137,9 +148,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeLastCheckPoint(Checkpoint checkpoint)
+    public void ChangeLastCheckPoint(RespawnPoint respawnPoint)
     {
-        lastCheckpoint = checkpoint;
+        lastRespawnPoint = respawnPoint;
     }
 
     private void ResetBall()
@@ -147,8 +158,31 @@ public class GameManager : MonoBehaviour
         ballHolder = null;
         distanceTraveled = 0;
         cumulatedPoints = 0;
+        currentMultiplier = 1;
         kills = 0;
         holderPreviousPosition = Vector3.zero;
         holderPreviousForward = Vector3.zero;
+    }
+
+    public void RespawnPlayer(Player player)
+    {
+        Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
+        Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
+        player.controller.TeleportPlayer(pos,rot);
+        if (player == ballHolder)
+        {
+            ResetBall();
+            RespawnBall();
+        }
+    }
+    
+    public void RespawnBall()
+    {
+        ballHolder = null;
+        Transform pos = lastRespawnPoint.spawnPoints[Random.Range(0, 4)];
+        ball.Toggle(true);
+        ball.transform.parent = null;
+        ball.transform.position = pos.position;
+        ball.transform.rotation = pos.rotation;
     }
 }

@@ -23,16 +23,15 @@ MonoBehaviour:
   airDrag: 0
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
-  punchWindUp: 1.5
-  punchDamageWindow: 0.3
-  parryWindow: 1
+  punchWindUp: 1
+  punchDamageWindow: 0.5
+  parryWindow: 0.5
   counterWindow: 0.05
   actionsCooldown: 1.5
   stunDuration: 2
   invincibilityDuration: 1
-  distancePerPoint: 50
-  killMultipliatorThreshold: 0
-  killMultiplicatorValue: 0
+  minFOV: 40
+  maxFOV: 90
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 

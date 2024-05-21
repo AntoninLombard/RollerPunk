@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PunchLeft",
+                    "name": "Punch",
                     "type": "Button",
                     "id": "9d35ac15-4fc7-4385-8d1a-d682c8858f27",
                     "expectedControlType": "Button",
@@ -33,16 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PunchRight",
-                    "type": "Button",
-                    "id": "7f2b62ce-4822-41d5-b545-7016d6a5f334",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Fortify",
+                    "name": "Parry",
                     "type": "Button",
                     "id": "b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb",
                     "expectedControlType": "Button",
@@ -54,6 +45,15 @@
                     "name": "Reverse",
                     "type": "Button",
                     "id": "cef94fcb-876d-42f1-9a46-824a7a771772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "fb45708b-8a83-43e2-b9a5-1923f999cc1d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -90,7 +90,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PunchLeft",
+                    "action": "Punch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -101,7 +101,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Fortify",
+                    "action": "Parry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -118,12 +118,12 @@
                 },
                 {
                     "name": "",
-                    "id": "2dc4acd9-92d6-4ee5-9247-412e0f438997",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "c6b8005d-6b68-46d7-bd57-8ea79aa87443",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "PunchRight",
+                    "action": "Ready",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

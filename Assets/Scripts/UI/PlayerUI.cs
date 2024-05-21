@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textScore;
     [SerializeField] private TextMeshProUGUI textPoints;
     [SerializeField] private Slider slider;
+    [SerializeField] private Image sliderFill;
     
     
     
@@ -30,5 +31,12 @@ public class PlayerUI : MonoBehaviour
     public void OnDistanceTraveled(float distance, float distanceMax)
     {
         slider.value = distance / distanceMax;
+    }
+
+    public void SetColor(Color color)
+    {
+        textScore.color = color;
+        textScore.color = color;
+        sliderFill.color = color;
     }
 }

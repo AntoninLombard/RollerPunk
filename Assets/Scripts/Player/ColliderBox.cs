@@ -6,13 +6,13 @@ using UnityEngine;
 public class ColliderBox : MonoBehaviour
 {
     
-    public enum ColliderType
-    {
-        Punch,
-        BallPunch
-    }
+    // public enum ColliderType
+    // {
+    //     Punch,
+    //     BallPunch
+    // }
     [SerializeField] private Player source;
-    [SerializeField] private ColliderType type;
+    //[SerializeField] private ColliderType type;
     [SerializeField] private Collider collider;
     
     
@@ -22,15 +22,7 @@ public class ColliderBox : MonoBehaviour
         Player hit = other.gameObject.GetComponentInParent<Player>();
         if (hit != source)
         {
-            switch (type)
-            {
-                case ColliderType.Punch:
-                    hit.combat.OnHitByPunch.Invoke(source);
-                    break;
-                case ColliderType.BallPunch:
-                    hit.combat.OnHitbByBallPunch.Invoke(source);
-                    break;
-            }
+            hit.combat.OnHitByPunch.Invoke(source);
         }
     }
 
@@ -39,10 +31,10 @@ public class ColliderBox : MonoBehaviour
         source = player;
     }
 
-    public void SetType(ColliderType type)
-    {
-        this.type = type;
-    }
+    // public void SetType(ColliderType type)
+    // {
+    //     this.type = type;
+    // }
 
     public void Toggle(bool isEnabled)
     {
