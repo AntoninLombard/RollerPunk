@@ -41,11 +41,12 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event punchCounterSound;
     public AK.Wwise.Event ballPunchCounterSound;
     public AK.Wwise.Event grabbingBallSound = new AK.Wwise.Event();
+    public float collisionSoundThreshold;
     public AK.Wwise.Event collisionSound;
+    public AK.Wwise.Event groundHitSound;
     public AK.Wwise.Event wallHitSound;
     public AK.Wwise.Event parrySound;
     public AK.Wwise.Event parrySuccessSound;
-    public AK.Wwise.Event punchAfterParrySound;
     public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.RTPC engineSpeed;
     //public AK.Wwise.RTPC vehicleSpeed;
@@ -64,4 +65,5 @@ public class PlayerControllerData : ScriptableObject
 
     [Header("CAMERA LAYERS")]
     public List<LayerMask> playerLayer;
+    
 }

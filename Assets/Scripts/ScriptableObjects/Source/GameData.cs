@@ -11,5 +11,10 @@ public class GameData : ScriptableObject
     
     
     [Header("SOUND")]
-    public AK.Wwise.Event crowdSound;
+    public AK.Wwise.Event musicStart;
+    public AK.Wwise.RTPC score;
+    public AK.Wwise.Event crowdStart;
+    public AK.Wwise.Event crowdScoring;
+    public AK.Wwise.Event crowdKill;
+    public AK.Wwise.Event crowdSteal;
 }
