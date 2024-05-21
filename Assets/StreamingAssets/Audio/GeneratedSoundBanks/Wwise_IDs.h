@@ -27,18 +27,20 @@ namespace AK
         static const AkUniqueID HIT_BYBALL = 602331051U;
         static const AkUniqueID HIT_BYPUNCH = 3549005828U;
         static const AkUniqueID HIT_BYWALL = 2308453416U;
+        static const AkUniqueID JOIN = 3695193445U;
         static const AkUniqueID MUSIC = 3991942870U;
-        static const AkUniqueID PARRY_MOVE = 1084997411U;
+        static const AkUniqueID PARRY = 3076648345U;
         static const AkUniqueID PARRY_SUCCESS = 1134971709U;
         static const AkUniqueID PLAY_OUTRO = 431014199U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
-        static const AkUniqueID PUNCH_AFTERPARRY = 972759482U;
         static const AkUniqueID PUNCH_MOVE = 3055455917U;
         static const AkUniqueID PUNCH_TAUNT = 1403211570U;
+        static const AkUniqueID SCORE_UP = 3248278131U;
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
         static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BACK = 2024222415U;
         static const AkUniqueID UI_HOVER = 2118900976U;
+        static const AkUniqueID UI_HOVER_INWINDOW = 2147104942U;
         static const AkUniqueID UI_SELECT = 2774129122U;
     } // namespace EVENTS
 

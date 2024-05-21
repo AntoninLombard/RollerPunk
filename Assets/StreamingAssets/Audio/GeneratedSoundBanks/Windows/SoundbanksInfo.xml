@@ -264,7 +264,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{15E1D4BA-7FBF-F5BF-5C22-99B37BF2F3BB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4D3E59FD-A5C3-300E-1D73-4FFBDAD28E2A}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -272,13 +272,9 @@
 					<ShortName>Intro\RP_M_DownThePowerRoad_M002_Intro_KICK_164Bpm.wav</ShortName>
 					<CachePath>SFX/Intro/RP_M_DownThePowerRoad_M002_Intro_KICK_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="6807394" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Wilhelm Scream by Syna-Max Id-64940 1.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Wilhelm Scream by Syna-Max Id-64940 1_702B0C36.wem</CachePath>
-				</File>
-				<File Id="12181249" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-008.wav</ShortName>
-					<CachePath>SFX/Collision-008_D8C07C79.wem</CachePath>
+				<File Id="10096376" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-004.wav</ShortName>
+					<CachePath>SFX/Collision-004_AAB81F04.wem</CachePath>
 				</File>
 				<File Id="14934721" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-004.wav</ShortName>
@@ -288,13 +284,21 @@
 					<ShortName>taunt_demo-001.wav</ShortName>
 					<CachePath>SFX/taunt_demo-001_D8C07C79.wem</CachePath>
 				</File>
-				<File Id="36126762" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>taunt_demo-009.wav</ShortName>
-					<CachePath>SFX/taunt_demo-009_D8C07C79.wem</CachePath>
+				<File Id="31455442" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-001.wav</ShortName>
+					<CachePath>SFX/Collision-001_6EBA1C93.wem</CachePath>
+				</File>
+				<File Id="39173829" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-002.wav</ShortName>
+					<CachePath>SFX/Collision-002_6ED8CF41.wem</CachePath>
 				</File>
 				<File Id="42961480" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-001.wav</ShortName>
 					<CachePath>SFX/Counter_V2-001_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="43505216" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hover_InWindow.wav</ShortName>
+					<CachePath>SFX/Hover_InWindow_702B0C36.wem</CachePath>
 				</File>
 				<File Id="54912899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm.wav</ShortName>
@@ -324,41 +328,69 @@
 					<ShortName>Ball_Lost-003.wav</ShortName>
 					<CachePath>SFX/Ball_Lost-003_B4B743FF.wem</CachePath>
 				</File>
+				<File Id="94309540" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-005.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-005_D8C07C79.wem</CachePath>
+				</File>
 				<File Id="95593411" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Bass_1_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_Bass_1_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="96173677" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-003.wav</ShortName>
+					<CachePath>SFX/Collision-003_D959F728.wem</CachePath>
 				</File>
 				<File Id="101842239" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_2.wav</ShortName>
 					<CachePath>SFX/M2_2_0762CC47.wem</CachePath>
 				</File>
+				<File Id="115227239" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-001.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-001_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="117249782" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-002.wav</ShortName>
+					<CachePath>SFX/Collision-002_18421DE1.wem</CachePath>
+				</File>
 				<File Id="121020921" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-003.wav</ShortName>
 					<CachePath>SFX/Counter_V2-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="132379828" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-008.wav</ShortName>
+					<CachePath>SFX/Collision-008_09FBB8F6.wem</CachePath>
 				</File>
 				<File Id="133677138" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Outro\RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm.wav</ShortName>
 					<CachePath>SFX/Outro/RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="141114642" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-007.wav</ShortName>
+					<CachePath>SFX/Collision-007_9F3A6175.wem</CachePath>
+				</File>
+				<File Id="158589468" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Join_Char_sel\Join-003.wav</ShortName>
+					<CachePath>SFX/Join_Char_sel/Join-003_0BCF8D5E.wem</CachePath>
+				</File>
 				<File Id="167618205" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-003.wav</ShortName>
 					<CachePath>SFX/Punch_Move-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="178784743" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hover.wav</ShortName>
+					<CachePath>SFX/Hover_0D51912B.wem</CachePath>
 				</File>
 				<File Id="205823263" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-001.wav</ShortName>
 					<CachePath>SFX/Punch_Move-001_D8C07C79.wem</CachePath>
 				</File>
-				<File Id="213999704" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Krotos UI Button Press Generic Mono-001.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Krotos UI Button Press Generic Mono-001_D8C07C79.wem</CachePath>
+				<File Id="220253561" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-006.wav</ShortName>
+					<CachePath>SFX/taunt_demo-006_BC37BB80.wem</CachePath>
 				</File>
 				<File Id="244303097" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-003.wav</ShortName>
 					<CachePath>SFX/taunt_demo-003_D8C07C79.wem</CachePath>
-				</File>
-				<File Id="251919428" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Weapons, Sword, Hard, Hit, Swing, Swoosh 04 SND69198.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Weapons, Sword, Hard, Hit, Swing, Swoosh 04 SND69198_A9F19590.wem</CachePath>
 				</File>
 				<File Id="252802491" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-008.wav</ShortName>
@@ -367,6 +399,18 @@
 				<File Id="266404866" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Guitar_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="280610508" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-006.wav</ShortName>
+					<CachePath>SFX/Collision-006_B07F6DDD.wem</CachePath>
+				</File>
+				<File Id="299114776" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-006.wav</ShortName>
+					<CachePath>SFX/Collision-006_94415774.wem</CachePath>
+				</File>
+				<File Id="299987681" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Parry_Move-003.wav</ShortName>
+					<CachePath>SFX/Parry_Move-003_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="308867496" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-003.wav</ShortName>
@@ -384,9 +428,17 @@
 					<ShortName>taunt_demo-007.wav</ShortName>
 					<CachePath>SFX/taunt_demo-007_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="321318270" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Join_Char_sel\Join-004.wav</ShortName>
+					<CachePath>SFX/Join_Char_sel/Join-004_88186553.wem</CachePath>
+				</File>
 				<File Id="323774518" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Snare_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Snare_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="325068517" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-004.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-004_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="330044123" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_Lead_Guitare_164Bpm.wav</ShortName>
@@ -397,10 +449,6 @@
 					<Path>Media/340196925.wem</Path>
 					<CachePath>SFX/B1/RP_M_DownThePowerRoad_M002_B1_Drums_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="356183335" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-005.wav</ShortName>
-					<CachePath>SFX/Collision-005_D8C07C79.wem</CachePath>
-				</File>
 				<File Id="369612689" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_BASS_164Bpm.wav</ShortName>
 					<Path>Media/369612689.wem</Path>
@@ -410,17 +458,9 @@
 					<ShortName>Drill_Done.wav</ShortName>
 					<CachePath>SFX/Drill_Done_86BC51FA.wem</CachePath>
 				</File>
-				<File Id="374765796" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-003.wav</ShortName>
-					<CachePath>SFX/Collision-003_D8C07C79.wem</CachePath>
-				</File>
 				<File Id="378172409" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Medium.wav</ShortName>
 					<CachePath>SFX/Medium_0762CC47.wem</CachePath>
-				</File>
-				<File Id="381252818" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-004.wav</ShortName>
-					<CachePath>SFX/Collision-004_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="385040290" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_BASS_164Bpm.wav</ShortName>
@@ -455,10 +495,6 @@
 					<ShortName>Punch_AfterParry-002.wav</ShortName>
 					<CachePath>SFX/Punch_AfterParry-002_702B0C36.wem</CachePath>
 				</File>
-				<File Id="445748919" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Wilhelm Scream by Syna-Max Id-64940.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Wilhelm Scream by Syna-Max Id-64940_702B0C36.wem</CachePath>
-				</File>
 				<File Id="450881691" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ball_Lost-001.wav</ShortName>
 					<CachePath>SFX/Ball_Lost-001_9F67C50C.wem</CachePath>
@@ -471,10 +507,6 @@
 				<File Id="455724575" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-006.wav</ShortName>
 					<CachePath>SFX/taunt_demo-006_D8C07C79.wem</CachePath>
-				</File>
-				<File Id="459539678" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-002.wav</ShortName>
-					<CachePath>SFX/Collision-002_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="471181577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Low_2.wav</ShortName>
@@ -496,6 +528,10 @@
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="501829316" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-005.wav</ShortName>
+					<CachePath>SFX/Collision-005_52D456F6.wem</CachePath>
+				</File>
 				<File Id="503999046" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_3.wav</ShortName>
 					<CachePath>SFX/M2_3_0762CC47.wem</CachePath>
@@ -506,7 +542,15 @@
 				</File>
 				<File Id="516317094" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-001.wav</ShortName>
-					<CachePath>SFX/Counter_V2-001_31227A34.wem</CachePath>
+					<CachePath>SFX/Counter_V2-001_789F4BA7.wem</CachePath>
+				</File>
+				<File Id="516495424" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Back.wav</ShortName>
+					<CachePath>SFX/Back_9E250B0D.wem</CachePath>
+				</File>
+				<File Id="519388305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-007.wav</ShortName>
+					<CachePath>SFX/Collision-007_CAF33A06.wem</CachePath>
 				</File>
 				<File Id="522537835" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_HEY_164Bpm.wav</ShortName>
@@ -514,7 +558,7 @@
 				</File>
 				<File Id="564337086" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-004.wav</ShortName>
-					<CachePath>SFX/Counter_V2-004_A13F0930.wem</CachePath>
+					<CachePath>SFX/Counter_V2-004_EDEECE6E.wem</CachePath>
 				</File>
 				<File Id="567488123" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_AfterParry-003.wav</ShortName>
@@ -524,9 +568,9 @@
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Kick_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Kick_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="589470732" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-007.wav</ShortName>
-					<CachePath>SFX/Collision-007_D8C07C79.wem</CachePath>
+				<File Id="578911426" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Join_Char_sel\Join-002.wav</ShortName>
+					<CachePath>SFX/Join_Char_sel/Join-002_DAE46CD4.wem</CachePath>
 				</File>
 				<File Id="592778449" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_Guitar_164Bpm.wav</ShortName>
@@ -536,13 +580,29 @@
 					<ShortName>Hit_ByWall-003.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-003_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="605190562" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-002.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-002_D8C07C79.wem</CachePath>
+				</File>
 				<File Id="606364098" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Synth_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_Synth_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="612595084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Parry_Move-002.wav</ShortName>
+					<CachePath>SFX/Parry_Move-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="614668597" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-001.wav</ShortName>
+					<CachePath>SFX/Collision-001_E81EEC2B.wem</CachePath>
+				</File>
 				<File Id="614962828" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Lead_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_Lead_Guitar_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="616931458" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-008.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-008_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="628417396" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_Guitar_164Bpm.wav</ShortName>
@@ -552,29 +612,25 @@
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_DRUMS_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_DRUMS_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="647030457" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Wilhelm Scream by Syna-Max Id-64940 2.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Wilhelm Scream by Syna-Max Id-64940 2_702B0C36.wem</CachePath>
-				</File>
 				<File Id="651310878" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_779D5FCD.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_578D82AB.wem</CachePath>
 				</File>
-				<File Id="667413221" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\Wilhelm Scream by Syna-Max Id-64940 3.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Wilhelm Scream by Syna-Max Id-64940 3_702B0C36.wem</CachePath>
+				<File Id="672645637" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-007.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-007_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="674914287" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Bass_2_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_Bass_2_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="698107653" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 2_745C59F0.wem</CachePath>
+				<File Id="676265417" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-004.wav</ShortName>
+					<CachePath>SFX/taunt_demo-004_A02E176D.wem</CachePath>
 				</File>
-				<File Id="703726604" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>taunt_demo-005.wav</ShortName>
-					<CachePath>SFX/taunt_demo-005_D8C07C79.wem</CachePath>
+				<File Id="695966176" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Select.wav</ShortName>
+					<CachePath>SFX/Select_702B0C36.wem</CachePath>
 				</File>
 				<File Id="706556744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByBall-002.wav</ShortName>
@@ -587,6 +643,10 @@
 				<File Id="711752289" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_Guitar_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="713186824" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-006.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-006_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="713640916" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_Drums_164Bpm.wav</ShortName>
@@ -608,13 +668,9 @@
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/C1/RP_M_DownThePowerRoad_M002_C1_Guitar_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="783409571" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-006.wav</ShortName>
-					<CachePath>SFX/Collision-006_D8C07C79.wem</CachePath>
-				</File>
-				<File Id="794676280" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Soundly Audio\User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/User Interface, Beep, Digital, Notifications, Short, Fast Motion, Exit Button SND44946 1_A1E7F628.wem</CachePath>
+				<File Id="774795678" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-008.wav</ShortName>
+					<CachePath>SFX/Collision-008_AAED3C7F.wem</CachePath>
 				</File>
 				<File Id="799410258" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_SynthPad_164Bpm.wav</ShortName>
@@ -624,21 +680,49 @@
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Hey_164Bpm.wav</ShortName>
 					<CachePath>SFX/C1/RP_M_DownThePowerRoad_M002_C1_Hey_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="809302258" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>taunt_demo-010.wav</ShortName>
-					<CachePath>SFX/taunt_demo-010_D8C07C79.wem</CachePath>
+				<File Id="818821583" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-007.wav</ShortName>
+					<CachePath>SFX/taunt_demo-007_D6F03943.wem</CachePath>
 				</File>
 				<File Id="821058410" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_Saw.wav</ShortName>
 					<CachePath>SFX/M2_Saw_0762CC47.wem</CachePath>
 				</File>
+				<File Id="844727332" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Join_Char_sel\Join-001.wav</ShortName>
+					<CachePath>SFX/Join_Char_sel/Join-001_C9CAB898.wem</CachePath>
+				</File>
 				<File Id="859755538" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-002.wav</ShortName>
 					<CachePath>SFX/Punch_Move-002_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="870323986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-008.wav</ShortName>
+					<CachePath>SFX/taunt_demo-008_1D781E05.wem</CachePath>
+				</File>
 				<File Id="873930999" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-002.wav</ShortName>
 					<CachePath>SFX/Hit_ByPunch_V3-002_2AD929D0.wem</CachePath>
+				</File>
+				<File Id="876797808" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Parry_Move-005.wav</ShortName>
+					<CachePath>SFX/Parry_Move-005_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="888959787" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-005.wav</ShortName>
+					<CachePath>SFX/Collision-005_A703A4BF.wem</CachePath>
+				</File>
+				<File Id="907544070" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-003.wav</ShortName>
+					<CachePath>SFX/Collision-003_2A58F67E.wem</CachePath>
+				</File>
+				<File Id="908324704" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Parry_Move-004.wav</ShortName>
+					<CachePath>SFX/Parry_Move-004_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="919203908" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Parry_Move-001.wav</ShortName>
+					<CachePath>SFX/Parry_Move-001_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="932054782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_HH_164Bpm.wav</ShortName>
@@ -655,6 +739,10 @@
 				<File Id="977991789" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="1004486920" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-002.wav</ShortName>
+					<CachePath>SFX/taunt_demo-002_5DB25D78.wem</CachePath>
 				</File>
 				<File Id="1007149797" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-005.wav</ShortName>
@@ -673,13 +761,21 @@
 					<ShortName>Hit_ByWall-004.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-004_D8C07C79.wem</CachePath>
 				</File>
-				<File Id="1020232347" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Collision-001.wav</ShortName>
-					<CachePath>SFX/Collision-001_D8C07C79.wem</CachePath>
-				</File>
 				<File Id="1020399212" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intro\RP_M_DownThePowerRoad_M002_Intro_Guitar_FX_164Bpm.wav</ShortName>
 					<CachePath>SFX/Intro/RP_M_DownThePowerRoad_M002_Intro_Guitar_FX_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="1025653342" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Score_Up\Score_Up-003.wav</ShortName>
+					<CachePath>SFX/Score_Up/Score_Up-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="1026149431" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-003.wav</ShortName>
+					<CachePath>SFX/taunt_demo-003_C2BC9D57.wem</CachePath>
+				</File>
+				<File Id="1027612762" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Collision-004.wav</ShortName>
+					<CachePath>SFX/Collision-004_A955EBC1.wem</CachePath>
 				</File>
 				<File Id="1028915986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_AfterParry-001.wav</ShortName>
@@ -691,7 +787,7 @@
 				</File>
 				<File Id="1038358532" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-003.wav</ShortName>
-					<CachePath>SFX/Counter_V2-003_87C6B133.wem</CachePath>
+					<CachePath>SFX/Counter_V2-003_4CA47854.wem</CachePath>
 				</File>
 				<File Id="1039416665" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ball_Grab_V5.wav</ShortName>
@@ -772,31 +868,27 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="155540885" Name="Ball_Punch_Move" DurationType="OneShot" DurationMin="0.46790645" DurationMax="0.46790645">
+				<Event Id="155540885" Name="Ball_Punch_Move" DurationType="OneShot" DurationMin="0.4290234" DurationMax="0.76271296">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4136302296"/>
+						</ShareSets>
+					</PluginRefs>
 					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
-							<MediaRefs>
-								<MediaRef Id="251919428"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
-							<MediaRefs>
-								<MediaRef Id="251919428"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
-							<MediaRefs>
-								<MediaRef Id="251919428"/>
-							</MediaRefs>
-						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
-								<MediaRef Id="251919428"/>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
 							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -809,58 +901,90 @@
 						<ActionPostEventEntry Id="2925030600" Name="AMB_Drill_Done"/>
 					</ActionPostEvent>
 				</Event>
-				<Event Id="1792046091" Name="Collision" DurationType="Mixed" DurationMin="1.5098125" DurationMax="Infinite">
+				<Event Id="1792046091" Name="Collision" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
-								<MediaRef Id="12181249"/>
-								<MediaRef Id="356183335"/>
-								<MediaRef Id="374765796"/>
-								<MediaRef Id="381252818"/>
-								<MediaRef Id="459539678"/>
-								<MediaRef Id="589470732"/>
-								<MediaRef Id="783409571"/>
-								<MediaRef Id="1020232347"/>
+								<MediaRef Id="10096376"/>
+								<MediaRef Id="31455442"/>
+								<MediaRef Id="39173829"/>
+								<MediaRef Id="96173677"/>
+								<MediaRef Id="117249782"/>
+								<MediaRef Id="132379828"/>
+								<MediaRef Id="141114642"/>
+								<MediaRef Id="280610508"/>
+								<MediaRef Id="299114776"/>
+								<MediaRef Id="501829316"/>
+								<MediaRef Id="519388305"/>
+								<MediaRef Id="614668597"/>
+								<MediaRef Id="774795678"/>
+								<MediaRef Id="888959787"/>
+								<MediaRef Id="907544070"/>
+								<MediaRef Id="1027612762"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
-								<MediaRef Id="12181249"/>
-								<MediaRef Id="356183335"/>
-								<MediaRef Id="374765796"/>
-								<MediaRef Id="381252818"/>
-								<MediaRef Id="459539678"/>
-								<MediaRef Id="589470732"/>
-								<MediaRef Id="783409571"/>
-								<MediaRef Id="1020232347"/>
+								<MediaRef Id="10096376"/>
+								<MediaRef Id="31455442"/>
+								<MediaRef Id="39173829"/>
+								<MediaRef Id="96173677"/>
+								<MediaRef Id="117249782"/>
+								<MediaRef Id="132379828"/>
+								<MediaRef Id="141114642"/>
+								<MediaRef Id="280610508"/>
+								<MediaRef Id="299114776"/>
+								<MediaRef Id="501829316"/>
+								<MediaRef Id="519388305"/>
+								<MediaRef Id="614668597"/>
+								<MediaRef Id="774795678"/>
+								<MediaRef Id="888959787"/>
+								<MediaRef Id="907544070"/>
+								<MediaRef Id="1027612762"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
-								<MediaRef Id="12181249"/>
-								<MediaRef Id="356183335"/>
-								<MediaRef Id="374765796"/>
-								<MediaRef Id="381252818"/>
-								<MediaRef Id="459539678"/>
-								<MediaRef Id="589470732"/>
-								<MediaRef Id="783409571"/>
-								<MediaRef Id="1020232347"/>
+								<MediaRef Id="10096376"/>
+								<MediaRef Id="31455442"/>
+								<MediaRef Id="39173829"/>
+								<MediaRef Id="96173677"/>
+								<MediaRef Id="117249782"/>
+								<MediaRef Id="132379828"/>
+								<MediaRef Id="141114642"/>
+								<MediaRef Id="280610508"/>
+								<MediaRef Id="299114776"/>
+								<MediaRef Id="501829316"/>
+								<MediaRef Id="519388305"/>
+								<MediaRef Id="614668597"/>
+								<MediaRef Id="774795678"/>
+								<MediaRef Id="888959787"/>
+								<MediaRef Id="907544070"/>
+								<MediaRef Id="1027612762"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
-								<MediaRef Id="12181249"/>
-								<MediaRef Id="356183335"/>
-								<MediaRef Id="374765796"/>
-								<MediaRef Id="381252818"/>
-								<MediaRef Id="459539678"/>
-								<MediaRef Id="589470732"/>
-								<MediaRef Id="783409571"/>
-								<MediaRef Id="1020232347"/>
+								<MediaRef Id="10096376"/>
+								<MediaRef Id="31455442"/>
+								<MediaRef Id="39173829"/>
+								<MediaRef Id="96173677"/>
+								<MediaRef Id="117249782"/>
+								<MediaRef Id="132379828"/>
+								<MediaRef Id="141114642"/>
+								<MediaRef Id="280610508"/>
+								<MediaRef Id="299114776"/>
+								<MediaRef Id="501829316"/>
+								<MediaRef Id="519388305"/>
+								<MediaRef Id="614668597"/>
+								<MediaRef Id="774795678"/>
+								<MediaRef Id="888959787"/>
+								<MediaRef Id="907544070"/>
+								<MediaRef Id="1027612762"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -870,7 +994,7 @@
 						<MediaRef Id="58165178"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="3.0974374" DurationMax="3.724">
+				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="3.6834946" DurationMax="4.428607">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -1034,7 +1158,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="602331051" Name="Hit_ByBall" DurationType="OneShot" DurationMin="1.2023958" DurationMax="1.3560926">
+				<Event Id="602331051" Name="Hit_ByBall" DurationType="OneShot" DurationMin="1.1886036" DurationMax="1.3560926">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -1083,30 +1207,6 @@
 									<PluginRef Id="4136302296"/>
 								</ShareSets>
 							</PluginRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
-							<MediaRefs>
-								<MediaRef Id="6807394"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
-							<MediaRefs>
-								<MediaRef Id="647030457"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
-							<MediaRefs>
-								<MediaRef Id="667413221"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
-							<MediaRefs>
-								<MediaRef Id="445748919"/>
-							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1210,6 +1310,14 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="3695193445" Name="Join" DurationType="OneShot" DurationMin="1.8254901" DurationMax="2.234617">
+					<MediaRefs>
+						<MediaRef Id="158589468"/>
+						<MediaRef Id="321318270"/>
+						<MediaRef Id="578911426"/>
+						<MediaRef Id="844727332"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3991942870" Name="Music" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -1262,26 +1370,26 @@
 						<ActionSetStateEntry GroupId="3826569560" Id="89505537" Name="Gameplay"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="1084997411" Name="Parry_Move" DurationType="OneShot" DurationMin="0.4815625" DurationMax="0.6795">
+				<Event Id="3076648345" Name="Parry" DurationType="OneShot" DurationMin="0.4815625" DurationMax="1.5197083">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
-								<MediaRef Id="167618205"/>
-								<MediaRef Id="205823263"/>
-								<MediaRef Id="859755538"/>
-								<MediaRef Id="932970665"/>
-								<MediaRef Id="1007149797"/>
+								<MediaRef Id="299987681"/>
+								<MediaRef Id="612595084"/>
+								<MediaRef Id="876797808"/>
+								<MediaRef Id="908324704"/>
+								<MediaRef Id="919203908"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
-								<MediaRef Id="167618205"/>
-								<MediaRef Id="205823263"/>
-								<MediaRef Id="859755538"/>
-								<MediaRef Id="932970665"/>
-								<MediaRef Id="1007149797"/>
+								<MediaRef Id="299987681"/>
+								<MediaRef Id="612595084"/>
+								<MediaRef Id="876797808"/>
+								<MediaRef Id="908324704"/>
+								<MediaRef Id="919203908"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -1297,17 +1405,44 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
-								<MediaRef Id="167618205"/>
-								<MediaRef Id="205823263"/>
-								<MediaRef Id="859755538"/>
-								<MediaRef Id="932970665"/>
-								<MediaRef Id="1007149797"/>
+								<MediaRef Id="299987681"/>
+								<MediaRef Id="612595084"/>
+								<MediaRef Id="876797808"/>
+								<MediaRef Id="908324704"/>
+								<MediaRef Id="919203908"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="1134971709" Name="Parry_Success" DurationType="OneShot" DurationMin="3.0599685" DurationMax="3.6789515">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="516317094"/>
+								<MediaRef Id="564337086"/>
+								<MediaRef Id="731248889"/>
+								<MediaRef Id="1038358532"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="516317094"/>
+								<MediaRef Id="564337086"/>
+								<MediaRef Id="731248889"/>
+								<MediaRef Id="1038358532"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="516317094"/>
+								<MediaRef Id="564337086"/>
+								<MediaRef Id="731248889"/>
+								<MediaRef Id="1038358532"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
@@ -1316,6 +1451,66 @@
 								<MediaRef Id="731248889"/>
 								<MediaRef Id="1038358532"/>
 							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="443616893"/>
+								<MediaRef Id="480938228"/>
+								<MediaRef Id="567488123"/>
+								<MediaRef Id="1009376241"/>
+								<MediaRef Id="1028915986"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="443616893"/>
+								<MediaRef Id="480938228"/>
+								<MediaRef Id="567488123"/>
+								<MediaRef Id="1009376241"/>
+								<MediaRef Id="1028915986"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="443616893"/>
+								<MediaRef Id="480938228"/>
+								<MediaRef Id="567488123"/>
+								<MediaRef Id="1009376241"/>
+								<MediaRef Id="1028915986"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="443616893"/>
+								<MediaRef Id="480938228"/>
+								<MediaRef Id="567488123"/>
+								<MediaRef Id="1009376241"/>
+								<MediaRef Id="1028915986"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1331,71 +1526,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
-				<Event Id="972759482" Name="Punch_AfterParry" DurationType="OneShot" DurationMin="0.6556875" DurationMax="0.9903389">
-					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
-							<MediaRefs>
-								<MediaRef Id="443616893"/>
-								<MediaRef Id="480938228"/>
-								<MediaRef Id="567488123"/>
-								<MediaRef Id="1009376241"/>
-								<MediaRef Id="1028915986"/>
-							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
-							<MediaRefs>
-								<MediaRef Id="443616893"/>
-								<MediaRef Id="480938228"/>
-								<MediaRef Id="567488123"/>
-								<MediaRef Id="1009376241"/>
-								<MediaRef Id="1028915986"/>
-							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
-							<MediaRefs>
-								<MediaRef Id="443616893"/>
-								<MediaRef Id="480938228"/>
-								<MediaRef Id="567488123"/>
-								<MediaRef Id="1009376241"/>
-								<MediaRef Id="1028915986"/>
-							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
-							<MediaRefs>
-								<MediaRef Id="443616893"/>
-								<MediaRef Id="480938228"/>
-								<MediaRef Id="567488123"/>
-								<MediaRef Id="1009376241"/>
-								<MediaRef Id="1028915986"/>
-							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
-						</SwitchContainer>
-					</SwitchContainers>
-				</Event>
-				<Event Id="3055455917" Name="Punch_Move" DurationType="OneShot" DurationMin="0.4815625" DurationMax="0.6795">
+				<Event Id="3055455917" Name="Punch_Move" DurationType="OneShot" DurationMin="0.4290234" DurationMax="0.76271296">
 					<PluginRefs>
 						<ShareSets>
 							<PluginRef Id="4136302296"/>
@@ -1419,69 +1550,69 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1403211570" Name="Punch_Taunt" DurationType="OneShot" DurationMin="1.5733541" DurationMax="5.0809793">
+				<Event Id="1403211570" Name="Punch_Taunt" DurationType="OneShot" DurationMin="1.3908451" DurationMax="4.378771">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="36126762"/>
 								<MediaRef Id="244303097"/>
 								<MediaRef Id="252802491"/>
 								<MediaRef Id="311859118"/>
 								<MediaRef Id="455724575"/>
 								<MediaRef Id="486729442"/>
-								<MediaRef Id="703726604"/>
 								<MediaRef Id="771030889"/>
-								<MediaRef Id="809302258"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="36126762"/>
 								<MediaRef Id="244303097"/>
 								<MediaRef Id="252802491"/>
 								<MediaRef Id="311859118"/>
 								<MediaRef Id="455724575"/>
 								<MediaRef Id="486729442"/>
-								<MediaRef Id="703726604"/>
 								<MediaRef Id="771030889"/>
-								<MediaRef Id="809302258"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="36126762"/>
 								<MediaRef Id="244303097"/>
 								<MediaRef Id="252802491"/>
 								<MediaRef Id="311859118"/>
 								<MediaRef Id="455724575"/>
 								<MediaRef Id="486729442"/>
-								<MediaRef Id="703726604"/>
 								<MediaRef Id="771030889"/>
-								<MediaRef Id="809302258"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="36126762"/>
-								<MediaRef Id="244303097"/>
-								<MediaRef Id="252802491"/>
-								<MediaRef Id="311859118"/>
-								<MediaRef Id="455724575"/>
-								<MediaRef Id="486729442"/>
-								<MediaRef Id="703726604"/>
-								<MediaRef Id="771030889"/>
-								<MediaRef Id="809302258"/>
+								<MediaRef Id="220253561"/>
+								<MediaRef Id="676265417"/>
+								<MediaRef Id="818821583"/>
+								<MediaRef Id="870323986"/>
+								<MediaRef Id="1004486920"/>
+								<MediaRef Id="1026149431"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="3248278131" Name="Score_Up" DurationType="OneShot" DurationMin="0.11214326" DurationMax="0.15850572">
+					<MediaRefs>
+						<MediaRef Id="94309540"/>
+						<MediaRef Id="115227239"/>
+						<MediaRef Id="325068517"/>
+						<MediaRef Id="605190562"/>
+						<MediaRef Id="616931458"/>
+						<MediaRef Id="672645637"/>
+						<MediaRef Id="713186824"/>
+						<MediaRef Id="1025653342"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="3687251531" Name="setplayernumber" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3157003241" Name="test" DurationType="OneShot" DurationMin="1.9143226" DurationMax="1.9143226">
@@ -1512,19 +1643,24 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.33" DurationMax="0.33">
+				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.12660417" DurationMax="0.12660417">
 					<MediaRefs>
-						<MediaRef Id="698107653"/>
+						<MediaRef Id="516495424"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2118900976" Name="UI_Hover" DurationType="OneShot" DurationMin="0.048625" DurationMax="0.048625">
+				<Event Id="2118900976" Name="UI_Hover" DurationType="OneShot" DurationMin="0.0418125" DurationMax="0.0418125">
 					<MediaRefs>
-						<MediaRef Id="213999704"/>
+						<MediaRef Id="178784743"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.325" DurationMax="0.325">
+				<Event Id="2147104942" Name="UI_Hover_InWindow" DurationType="OneShot" DurationMin="0.044" DurationMax="0.044">
 					<MediaRefs>
-						<MediaRef Id="794676280"/>
+						<MediaRef Id="43505216"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.10916667" DurationMax="0.10916667">
+					<MediaRefs>
+						<MediaRef Id="695966176"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -1557,5 +1693,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{350854EA-B8E5-6C03-4112-4C84189A2120}</FileHash>
+	<FileHash>{BC386247-993D-A07A-CF3C-A8B6DAFC5BA2}</FileHash>
 </SoundBanksInfo>
