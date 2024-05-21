@@ -20,7 +20,6 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isTurning { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }   
     [SerializeField] private float speed = 0;
-    [SerializeField] private Vector3 targetForward;
     
     
     [Header("INPUT SYSTEM")]
@@ -49,7 +48,6 @@ public class PlayerController2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetForward = player.character.forward;
         driveAction = input.actions.FindAction("Driving/Drive");
         reverseAction = input.actions.FindAction("Driving/Reverse");
         steerAction = input.actions.FindAction("Driving/Steer");
@@ -65,8 +63,8 @@ public class PlayerController2 : MonoBehaviour
         player.anime.animator.SetBool("Moving",speed > 1);
         player.anime.animator.SetFloat("Direction",steerInput);
         player.anime.animator.SetFloat("Speed",speedRatio);
-        steer(Time.deltaTime);
-        groundCheck(Time.deltaTime);
+        //steer(Time.deltaTime);
+        //groundCheck(Time.deltaTime);
         player.virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(player.virtualCamera.m_Lens.FieldOfView,player.data.minFOV + (player.data.maxFOV -player.data.minFOV) * speedRatio,5f * Time.deltaTime);
         controllerData.throttle.SetValue(gameObject, driveInput);
         controllerData.direction.SetValue(gameObject, steerInput);
@@ -82,13 +80,13 @@ public class PlayerController2 : MonoBehaviour
         
         deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
         deltaVelocity += move(currentVelocity,Time.fixedDeltaTime);
-        deltaVelocity += sliding(targetForward,Time.deltaTime); // TODO change direction 
-        groundCheck(Time.deltaTime);
+        groundCheck(Time.fixedDeltaTime);
+        steer(Time.fixedDeltaTime);
         gravity();
         gripForce();
         
         
-        rb.AddForce(deltaVelocity + currentVelocity - rb.velocity ,ForceMode.VelocityChange);
+        rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
         
         currentVelocity = rb.velocity;
 
@@ -99,7 +97,6 @@ public class PlayerController2 : MonoBehaviour
 
         speed = rb.velocity.magnitude;
         engineSpeed.SetValue(gameObject, speed);
-        previousForward = player.character.forward;
     }
     
     #endregion
