@@ -702,7 +702,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584853206729722574
+    m_lastTime: -8584853056926719859
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -794,11 +794,11 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584858167396781834
+    m_lastTime: -8584853081044471399
     List:
-    - name: AMB_Ball_Lost
+    - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
-      id: 3846266530
+      id: 529746809
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -806,10 +806,10 @@ MonoBehaviour:
       - ElementName: RP_Ambiances
         ObjectType: 12
         guid: 11d81020dfd6864591f72eeb33912022
-      - ElementName: AMB_Ball_Lost
+      - ElementName: AMB_Ball_Steal
         ObjectType: 3
         guid: 6400864745414841b4a0d7a10c3262ea
-      Path: Events\RP_Ambiances\AMB_Ball_Lost
+      Path: Events\RP_Ambiances\AMB_Ball_Steal
       maxAttenuation: 0
       maxDuration: 4.502922
       minDuration: 2.6516263
@@ -830,6 +830,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 7.8089247
       minDuration: 7.8089247
+    - name: AMB_Kill
+      guid: 7844be5888eaf64f93a2e00339f70cc6
+      id: 2469751798
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_Kill
+        ObjectType: 3
+        guid: 7844be5888eaf64f93a2e00339f70cc6
+      Path: Events\RP_Ambiances\AMB_Kill
+      maxAttenuation: 0
+      maxDuration: 4.502922
+      minDuration: 2.6516263
     - name: AMB_RunStart
       guid: 716005349dfcb147828f1a99afc8f4f9
       id: 2349163407
@@ -875,7 +892,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584853242975307023
+    m_lastTime: -8584853081044405651
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -977,8 +994,8 @@ MonoBehaviour:
         guid: 0c8bf4ba67847f41871e1dbcef4d8306
       Path: Events\RP_Feedbacks\Counter
       maxAttenuation: 0
-      maxDuration: 3.724
-      minDuration: 3.0974374
+      maxDuration: 4.428607
+      minDuration: 3.6834946
     - name: Hit_ByBall
       guid: 846fb5f3be68a747be4f29d622bcc5b3
       id: 602331051
@@ -1030,9 +1047,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2.13575
       minDuration: 1.5748541
-    - name: Parry_Move
-      guid: 18f73f752e7d06418423fed6a43972c0
-      id: 1084997411
+    - name: Landing
+      guid: be6bd5739c273f45b35d96428fa3a6c8
+      id: 2548270042
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1040,10 +1057,27 @@ MonoBehaviour:
       - ElementName: RP_Feedbacks
         ObjectType: 12
         guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Parry_Move
+      - ElementName: Landing
+        ObjectType: 3
+        guid: be6bd5739c273f45b35d96428fa3a6c8
+      Path: Events\RP_Feedbacks\Landing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Parry
+      guid: 18f73f752e7d06418423fed6a43972c0
+      id: 3076648345
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Parry
         ObjectType: 3
         guid: 18f73f752e7d06418423fed6a43972c0
-      Path: Events\RP_Feedbacks\Parry_Move
+      Path: Events\RP_Feedbacks\Parry
       maxAttenuation: 0
       maxDuration: 1.5197083
       minDuration: 0.4815625
@@ -1064,23 +1098,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.6789515
       minDuration: 3.0599685
-    - name: Punch_AfterParry
-      guid: b08f90e51e7b9544ae9121007248140f
-      id: 972759482
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Feedbacks
-        ObjectType: 12
-        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
-      - ElementName: Punch_AfterParry
-        ObjectType: 3
-        guid: b08f90e51e7b9544ae9121007248140f
-      Path: Events\RP_Feedbacks\Punch_AfterParry
-      maxAttenuation: 0
-      maxDuration: 0.9903389
-      minDuration: 0.6556875
     - name: Punch_Move
       guid: 141d7e9b557f1e43856c1e846a16496a
       id: 3055455917

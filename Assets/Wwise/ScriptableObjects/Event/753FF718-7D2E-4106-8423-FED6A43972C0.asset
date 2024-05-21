@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
   m_Name: 753FF718-7D2E-4106-8423-FED6A43972C0
   m_EditorClassIdentifier: 
-  objectName: Parry_Move
-  id: 1084997411
+  objectName: Parry
+  id: 3076648345
   guid: 753FF718-7D2E-4106-8423-FED6A43972C0
