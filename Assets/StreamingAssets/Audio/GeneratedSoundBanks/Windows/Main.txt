@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	155540885	Ball_Punch_Move			\RP_Feedbacks\Ball_Punch_Move	
 	431014199	Play_Outro			\Default Work Unit\Play_Outro	
+	529746809	AMB_Ball_Steal			\RP_Ambiances\AMB_Ball_Steal	
 	602331051	Hit_ByBall			\RP_Feedbacks\Hit_ByBall	
 	612075679	Checkpoint			\RP_Feedbacks\Checkpoint	
 	1134971709	Parry_Success			\RP_Feedbacks\Parry_Success	
@@ -13,6 +14,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	2147104942	UI_Hover_InWindow			\RP_UI\UI_Hover_InWindow	
 	2308453416	Hit_ByWall			\RP_Feedbacks\Hit_ByWall	
 	2349163407	AMB_RunStart			\RP_Ambiances\AMB_RunStart	
+	2469751798	AMB_Kill			\RP_Ambiances\AMB_Kill	
+	2548270042	Landing			\RP_Feedbacks\Landing	
 	2618017047	Ball_Grab			\RP_Feedbacks\Ball_Grab	
 	2774129122	UI_Select			\RP_UI\UI_Select	
 	2862969430	Engine_Start			\RP_Vehicule\Engine_Start	
@@ -26,7 +29,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	3549005828	Hit_ByPunch			\RP_Feedbacks\Hit_ByPunch	
 	3687251531	setplayernumber			\RP_Feedbacks\setplayernumber	
 	3695193445	Join			\RP_UI\Join	
-	3846266530	AMB_Ball_Lost			\RP_Ambiances\AMB_Ball_Lost	
 	3991942870	Music			\Default Work Unit\Music	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
