@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a559a010f40bac9478696e09f5e5bb9b, type: 3}
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
-  maxSpeed: 20
-  forwardAccel: 10
+  maxSpeed: 25
+  forwardAccel: 17
   turningRate: 13
   gravityStrength: 10
   gripAccel: 8
@@ -31,7 +31,7 @@ MonoBehaviour:
   stunDuration: 2
   invincibilityDuration: 1
   minFOV: 40
-  maxFOV: 90
+  maxFOV: 70
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 
@@ -72,7 +72,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
       type: 2}
-  collisionSoundThreshold: 10
+  collisionSoundThreshold: 50
   collisionSound:
     idInternal: 0
     valueGuidInternal: 

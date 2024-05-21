@@ -56,7 +56,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 2.9960785, y: 0.1882353, z: 1.3549911, w: 3}
+        m_Name: Main Color
+        m_Overridden: 0
     m_Uint:
       m_Array: []
     m_Int:
@@ -5974,12 +5977,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ba9263d9eacd56343b3343925f0fa5d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 8d22c64adb04fa746a01059a4f29bcb6, type: 2}
     - target: {fileID: -1789236809681585799, guid: 782280465bcb04b41a3415c5addd8235,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: ebbf410f855c4c04c96070f51e9a7a81, type: 2}
+      objectReference: {fileID: 2100000, guid: eccb5d9050ff9f74b9431ba1249d1212, type: 2}
     - target: {fileID: -1382656935688565943, guid: 782280465bcb04b41a3415c5addd8235,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
