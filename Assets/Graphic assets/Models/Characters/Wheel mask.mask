@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wheel mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: character01
+    m_Weight: 1
+  - m_Path: Game Rig
+    m_Weight: 1
+  - m_Path: Game Rig/Root
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-BallBone
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Backpack
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Neck
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Neck/DEF-Head
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerIndex01.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerIndex01.L/DEF-FingerIndex02.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerIndex01.L/DEF-FingerIndex02.L/DEF-FingerIndex03.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerMid01.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerMid01.L/DEF-FingerMid02.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerMid01.L/DEF-FingerMid02.L/DEF-FingerMid03.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerPinky01.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerPinky01.L/DEF-FingerPinky02.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerPinky01.L/DEF-FingerPinky02.L/DEF-FingerPinky03.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerThumb01.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerThumb01.L/DEF-FingerThumb02.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Arm.L/DEF-Forearm.L/DEF-Hand.L/DEF-FingerThumb01.L/DEF-FingerThumb02.L/DEF-FingerThumb03.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.L/DEF-Shoulderpad.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerIndex01.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerIndex01.R/DEF-FingerIndex02.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerIndex01.R/DEF-FingerIndex02.R/DEF-FingerIndex03.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerMid01.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerMid01.R/DEF-FingerMid02.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerMid01.R/DEF-FingerMid02.R/DEF-FingerMid03.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerPinky01.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerPinky01.R/DEF-FingerPinky02.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerPinky01.R/DEF-FingerPinky02.R/DEF-FingerPinky03.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerThumb01.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerThumb01.R/DEF-FingerThumb02.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Arm.R/DEF-Forearm.R/DEF-Hand.R/DEF-FingerThumb01.R/DEF-FingerThumb02.R/DEF-FingerThumb03.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Spine01/DEF-Spine02/DEF-Shoulder.R/DEF-Shoulderpad.R
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Thigh
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Thigh/DEF-Shin
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Thigh/DEF-Shin/DEF-Wheel
+    m_Weight: 0
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Thigh.L
+    m_Weight: 1
+  - m_Path: Game Rig/Root/DEF-Hips/DEF-Thigh.R
+    m_Weight: 1
