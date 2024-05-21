@@ -152,6 +152,23 @@ public class PlayerCombat : MonoBehaviour
         StartCoroutine(death(source));
     }
 
+    public void onParryHit(Player source)
+    {
+        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
+        particleSystemMain.startColor = Color.red;
+        particleSystem.Play();
+        if(source.combat.isHoldingBall)
+        {
+            player.data.ballPunchHitSound.Post(player.character.gameObject);
+            StartCoroutine(death(source));
+        }
+        else
+        {
+            player.data.punchHitSound.Post(player.character.gameObject);
+            StartCoroutine(stun(source));
+        }
+    }
+
     #endregion
 
 
@@ -341,14 +358,14 @@ public class PlayerCombat : MonoBehaviour
             player.data.punchHitSound.Post(player.character.gameObject);
             StartCoroutine(stun(source));
         }
-        
-        particleSystem.Play();
     }
+    
     
     void counter(Player source)
     {
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.green;
+        particleSystemMain.startColor = Color.white;
+        particleSystem.Play();
         player.data.punchCounterSound.Post(gameObject);
         player.anime.animator.SetTrigger("Countered");
         //StartCoroutine(stun(source));
@@ -356,8 +373,7 @@ public class PlayerCombat : MonoBehaviour
     
     void parry(Player source)
     {
-        Vector3 cross = Vector3.Cross(player.character.forward, source.character.forward);
-        float dir = -Vector3.Dot(cross, player.character.up);
+        int  dir = sourceDirection(source.character);
         if (dir > 0) // RIGHT
         {
             player.anime.animator.SetTrigger(ParrySuccessR);
@@ -368,6 +384,8 @@ public class PlayerCombat : MonoBehaviour
         }
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
+        particleSystem.Play();
+        source.combat.onParryHit(player);
         player.data.parrySound.Post(gameObject);
     }
     #endregion
@@ -376,5 +394,13 @@ public class PlayerCombat : MonoBehaviour
     {
         StartCoroutine(stun(null));
         GameManager.Instance.RespawnPlayer(player);
+    }
+
+    int sourceDirection(Transform source)
+    {
+        Vector3 dir = source.position - player.character.position;
+        float value = Vector3.Dot(player.character.right, dir);
+        
+        return value > 0 ?  1 : -1;
     }
 }
