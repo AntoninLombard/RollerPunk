@@ -128,9 +128,9 @@ public class PlayerCombat : MonoBehaviour
         {
             counter(source);
             if (isHoldingBall)
-                player.data.ballPunchCounterSound.Post(player.character.gameObject);
+                player.data.ballPunchCounterSound.Post(gameObject);
             else
-                player.data.punchCounterSound.Post(player.character.gameObject);
+                player.data.punchCounterSound.Post(gameObject);
         }
         else
         {
@@ -149,7 +149,7 @@ public class PlayerCombat : MonoBehaviour
         GameManager.Instance.ball.Toggle(false);
         GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
         GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
-        player.data.grabbingBallSound.Post(player.character.gameObject);
+        player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
     }
 
@@ -171,7 +171,7 @@ public class PlayerCombat : MonoBehaviour
         {
             StartCoroutine(stun(source));
         }
-        player.data.parrySuccessSound.Post(player.character.gameObject);
+        player.data.parrySuccessSound.Post(gameObject);
     }
 
     #endregion
@@ -208,10 +208,10 @@ public class PlayerCombat : MonoBehaviour
 
         if (isHoldingBall)
         {
-            player.data.balLPunchSound.Post(player.character.gameObject);
+            player.data.balLPunchSound.Post(gameObject);
         } else
         {
-            player.data.punchSound.Post(player.character.gameObject);
+            player.data.punchSound.Post(gameObject);
         }
 
         isPunchingLeft = isWindingUpPunchLeft;
@@ -236,7 +236,7 @@ public class PlayerCombat : MonoBehaviour
     {
         isFortified = true;
         player.anime.animator.SetTrigger("Parry");
-        player.data.parrySound.Post(player.character.gameObject);
+        player.data.parrySound.Post(gameObject);
         yield return new WaitForSeconds(player.data.parryWindow);
         isFortified = false;
         isRecovering = true;
@@ -251,7 +251,7 @@ public class PlayerCombat : MonoBehaviour
         isTaunting = true;
         StopCoroutine(punch());
         player.anime.animator.SetTrigger("Taunt");
-        player.data.punchTauntSound.Post(player.character.gameObject);
+        player.data.punchTauntSound.Post(gameObject);
         yield return new WaitForSeconds(player.anime.data.parry.length);
         player.anime.animator.ResetTrigger("Taunt");
         isTaunting = false;
@@ -358,12 +358,12 @@ public class PlayerCombat : MonoBehaviour
         particleSystem.Play();
         if(source.combat.isHoldingBall)
         {
-            player.data.ballPunchHitSound.Post(player.character.gameObject);
+            player.data.ballPunchHitSound.Post(gameObject);
             StartCoroutine(death(source));
         }
         else
         {
-            player.data.punchHitSound.Post(player.character.gameObject);
+            player.data.punchHitSound.Post(gameObject);
             StartCoroutine(stun(source));
         }
     }
@@ -374,7 +374,7 @@ public class PlayerCombat : MonoBehaviour
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.white;
         particleSystem.Play();
-        player.data.punchCounterSound.Post(player.character.gameObject);
+        player.data.punchCounterSound.Post(gameObject);
         player.anime.animator.SetTrigger("Countered");
         //StartCoroutine(stun(source));
     }
