@@ -404,7 +404,19 @@ MonoBehaviour:
   <isHoldingBall>k__BackingField: 0
   OnHitByPunch:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WwiseEventManager, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnGrabbingBall:
     m_PersistentCalls:
       m_Calls: []
@@ -875,6 +887,21 @@ PrefabInstance:
       propertyPath: sliderFill
       value: 
       objectReference: {fileID: 4244576324104983268}
+    - target: {fileID: 3709887135043022127, guid: eb47b7569cc293447837d7b2b4bcc41f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 261.10004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398946538213311990, guid: eb47b7569cc293447837d7b2b4bcc41f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 181.51971
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398946538213311990, guid: eb47b7569cc293447837d7b2b4bcc41f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29.710022
+      objectReference: {fileID: 0}
     - target: {fileID: 7742205903505427791, guid: eb47b7569cc293447837d7b2b4bcc41f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1262,6 +1289,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8963657871566459159}
+    - targetCorrespondingSourceObject: {fileID: 3065489219274897946, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2000908433547280688}
   m_SourcePrefab: {fileID: 100100000, guid: 188551011c7b90243b1c6c7358411fed, type: 3}
 --- !u!1 &463738427857651074 stripped
 GameObject:
@@ -1296,6 +1327,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &2000908433547280688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463738427857651074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91463c6abe9e13742bcd4eaf95942a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2075873140783189414}
 --- !u!2083052967 &1022020563432111704 stripped
 VisualEffect:
   m_CorrespondingSourceObject: {fileID: 2507304159050449344, guid: 188551011c7b90243b1c6c7358411fed,

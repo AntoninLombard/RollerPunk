@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private GameData gameData;
+    [SerializeField] public GameData gameData;
     [SerializeField] private ScoringData scoring;
     
     
@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     {
         currentMultiplier = 1;
         lastRespawnPoint = raceStart;
+        gameData.crowdStart.Post(gameObject);
+        gameData.musicStart.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour
     {
         players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
         ballHolder.ui.OnScoreChange(players[ballHolder]);
+        gameData.crowdScoring.Post(gameObject);
         ResetBall();
     }
     
@@ -119,6 +122,7 @@ public class GameManager : MonoBehaviour
         {
             currentMultiplier = scoring.killMultiplicatorValue;
             ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+            gameData.crowdKill.Post(gameObject);
         }
     }
 
@@ -141,7 +145,7 @@ public class GameManager : MonoBehaviour
                 distanceTraveled %= scoring.distancePerPoint;
                 cumulatedPoints++;
                 ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
-                crowds.SetGlobalValue(cumulatedPoints);
+                gameData.score.SetGlobalValue(cumulatedPoints);
             }
             holderPreviousPosition = ballHolder.character.position;
             holderPreviousForward = ballHolder.character.forward;
@@ -162,6 +166,7 @@ public class GameManager : MonoBehaviour
         kills = 0;
         holderPreviousPosition = Vector3.zero;
         holderPreviousForward = Vector3.zero;
+        gameData.score.SetGlobalValue(cumulatedPoints);
     }
 
     public void RespawnPlayer(Player player)
