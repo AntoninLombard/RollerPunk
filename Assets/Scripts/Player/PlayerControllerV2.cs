@@ -53,7 +53,7 @@ public class PlayerController2 : MonoBehaviour
         driveAction = input.actions.FindAction("Driving/Drive");
         reverseAction = input.actions.FindAction("Driving/Reverse");
         steerAction = input.actions.FindAction("Driving/Steer");
-        controllerData.startEngineSound.Post(this.gameObject);
+        controllerData.startEngineSound.Post(gameObject);
     }
 
     // Update is called once per frame
