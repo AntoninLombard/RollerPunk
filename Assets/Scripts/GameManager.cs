@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         player.camera.gameObject.layer = layer;
         foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
             player.camera.cullingMask -= player.camera.cullingMask & mask;
-        if (player.character != null) player.character.position = raceStart.spawnPoints[nbPlayer].position;
+        player.controller.TeleportPlayer(raceStart.spawnPoints[nbPlayer].position,raceStart.spawnPoints[nbPlayer].rotation);
         player.setPlayerID(nbPlayer);
         player.number = nbPlayer;
         player.color = gameData.playerColors[nbPlayer];
