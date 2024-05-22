@@ -23,14 +23,15 @@ public class Player : MonoBehaviour
     
 	public WwiseListener listener;
     public AK.Wwise.Switch[] playerID;
-    
-    private void Awake()
+    private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
+    private void Start()
     {
         GameManager.Instance.OnPlayerInstantiate(this);
         foreach (Material material in anime.animator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>()?.materials)
         {
-            material.SetColor("_EmissionColor",color);
-        }
+            material.SetColor(EmissionColor,color);
+        } 
         anime.SetColor(color);
         ui.SetColor(color);
     }

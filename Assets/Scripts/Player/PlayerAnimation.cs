@@ -35,8 +35,8 @@ public class PlayerAnimation : MonoBehaviour
     {
         punchLVFX.SetVector4("Color",color);
         punchRVFX.SetVector4("Color",color);
-        parryLVFX.SetVector4("Color",color);
-        parryRVFX.SetVector4("Color",color);
+        parryLVFX.SetVector4("Main Color",color);
+        parryRVFX.SetVector4("Main Color",color);
         counterVFX.SetVector4("Color",color);
         shieldVFX.SetVector4("Color",color);
     }

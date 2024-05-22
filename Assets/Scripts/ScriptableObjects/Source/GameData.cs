@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     [Header("GAME VALUES")]
-    [ColorUsage(true, true)]
     public List<Color> playerColors;
     
     

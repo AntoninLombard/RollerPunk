@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   playerColors:
-  - {r: 0.79129815, g: 0.036889452, b: 0.42326775, a: 1}
-  - {r: 1.0052338, g: 32, b: 0, a: 1}
-  - {r: 0, g: 12.601578, b: 23.968626, a: 1}
-  - {r: 23.96863, g: 14.794329, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.89987373, a: 1}
+  - {r: 0.031413555, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.9638114, a: 1}
+  - {r: 1, g: 0.617801, b: 0, a: 1}
   musicStart:
     idInternal: 0
     valueGuidInternal: 
