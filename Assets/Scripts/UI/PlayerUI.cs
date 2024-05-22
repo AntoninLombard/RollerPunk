@@ -11,6 +11,7 @@ public class PlayerUI : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI textScore;
     [SerializeField] private TextMeshProUGUI textPoints;
+    [SerializeField] private TextMeshProUGUI textCountdown;
     [SerializeField] private Slider slider;
     [SerializeField] private Image sliderFill;
     
@@ -37,6 +38,38 @@ public class PlayerUI : MonoBehaviour
     {
         textScore.color = color;
         textScore.color = color;
+        textCountdown.color = color;
         sliderFill.color = color;
+    }
+
+
+    public void SetReady(bool isReady)
+    {
+        if (isReady)
+        {
+            ToggleCountdown(true);
+            textCountdown.text = "READY";
+        }
+        else
+        {
+            ToggleCountdown(false);
+        }
+    }
+    
+    public void SetCountdown(int value)
+    {
+        if (value > 0)
+        {
+            textCountdown.text = value.ToString();
+        }
+        else
+        {
+            textCountdown.text = "GO!";
+        }
+    }
+
+    public void ToggleCountdown(bool isVisible)
+    {
+        textCountdown.enabled = isVisible;
     }
 }

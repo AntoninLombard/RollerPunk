@@ -285,12 +285,13 @@ public class PlayerController2 : MonoBehaviour
         player.character.position = position;
         player.character.rotation = rotation;
     }
-
-    public void ToggleKinematic(bool isKinematic)
-    {
-        rb.isKinematic = isKinematic;
-    }
     
+    
+    public void TogglePlayerFreeze(bool isFreezed)
+    {
+        rb.isKinematic = !isFreezed;
+        rb.interpolation = isFreezed ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
+    }
     #endregion
     
 }
