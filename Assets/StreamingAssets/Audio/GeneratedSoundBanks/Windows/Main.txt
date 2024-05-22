@@ -29,6 +29,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3549005828	Hit_ByPunch			\RP_Feedbacks\Hit_ByPunch	
 	3687251531	setplayernumber			\RP_Feedbacks\setplayernumber	
 	3695193445	Join			\RP_UI\Join	
+	3766921625	Burst			\RP_Feedbacks\Burst	
 	3991942870	Music			\Default Work Unit\Music	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -110,6 +111,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	323774518	RP_M_DownThePowerRoad_M002_B2_Snare_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\B2\RP_M_DownThePowerRoad_M002_B2_Snare_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Down the Power Road\B2\RP_M_DownThePowerRoad_M002_B2_Snare_164Bpm		524599
 	325068517	Score_Up-004	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Score_Up\Score_Up-004_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_UI\Score_Up\Score_Up-004		6689
 	330044123	RP_M_DownThePowerRoad_M002_D1_Lead_Guitare_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\D1\RP_M_DownThePowerRoad_M002_D1_Lead_Guitare_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Down the Power Road\D1\RP_M_DownThePowerRoad_M002_D1_Lead_Guitare_164Bpm		516354
+	344242536	Doppler_01	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Doppler_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Burst\Doppler_01		154095
 	369933199	AMB_Crowd_Drill_Done	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Drill_Done_86BC51FA.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Ambiances\AMB_Crowd_Drill_Done		216115
 	378172409	Medium	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Medium_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Ambiances\AMB_Crowd\Medium		784543
 	398677519	M2_1	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\M2_1_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\P1_VEH_ENG_Offload\M2_1		1012244
