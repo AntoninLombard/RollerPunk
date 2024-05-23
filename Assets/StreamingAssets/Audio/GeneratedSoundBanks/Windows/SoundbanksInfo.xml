@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E252E8F4-BA01-4002-13F3-0B0DE4B36E6B}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8D3D1E40-8F53-51A3-C4CF-FCE3D9A5CA83}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -264,7 +264,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{15F8E1EB-0543-0259-78B2-9A40EFDF615A}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9B721384-5367-0CD3-F140-9C570CF2AE58}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -304,13 +304,13 @@
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="58165178" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Countdown.wav</ShortName>
-					<CachePath>SFX/Countdown_702B0C36.wem</CachePath>
-				</File>
 				<File Id="73001858" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByWall-002.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="73108266" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bip.wav</ShortName>
+					<CachePath>SFX/Bip_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="88947134" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M1_Start.wav</ShortName>
@@ -559,6 +559,10 @@
 				<File Id="522537835" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_HEY_164Bpm.wav</ShortName>
 					<CachePath>SFX/D1/RP_M_DownThePowerRoad_M002_D1_HEY_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="538919773" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Last_Bip.wav</ShortName>
+					<CachePath>SFX/Last_Bip_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="564337086" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-004.wav</ShortName>
@@ -1068,9 +1072,10 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1505888634" Name="Countdown" DurationType="OneShot" DurationMin="7.3123126" DurationMax="7.3123126">
+				<Event Id="1505888634" Name="Countdown" DurationType="OneShot" DurationMin="4.5" DurationMax="4.6385">
 					<MediaRefs>
-						<MediaRef Id="58165178"/>
+						<MediaRef Id="73108266"/>
+						<MediaRef Id="538919773"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="3.6834946" DurationMax="4.428607">
@@ -1900,5 +1905,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E9EB95D2-215D-D4CB-8D36-2FE68206E231}</FileHash>
+	<FileHash>{DDAEB707-C8F9-489A-AD14-CBC01678C7B1}</FileHash>
 </SoundBanksInfo>
