@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	22664301	Getting_Up			\RP_Feedbacks\Getting_Up	
 	155540885	Ball_Punch_Move			\RP_Feedbacks\Ball_Punch_Move	
 	431014199	Play_Outro			\Default Work Unit\Play_Outro	
 	529746809	AMB_Ball_Steal			\RP_Ambiances\AMB_Ball_Steal	
@@ -92,6 +93,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	132379828	Collision-008	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Collision-008_09FBB8F6.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Collision_02\Collision_Weak\Collision-008		13338
 	133677138	RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Outro\RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Outro\Outro\RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm		115302
 	141114642	Collision-007	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Collision-007_9F3A6175.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Collision_02\Collision_01\Collision-007		16674
+	152747667	RP_GettingUp-002	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\RP_GettingUp-002_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Getting_Up\Getting_Up_02\RP_GettingUp-002		32334
 	158589468	Join-003	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Join_Char_sel\Join-003_0BCF8D5E.wem		\Actor-Mixer Hierarchy\RP_UI\Join_Char_sel\Join-003		46676
 	167618205	Punch_Move-003	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Punch_Move-003_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Parry_Move\Parry_Move_07\Punch_Move-003		15924
 	178784743	Hover	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Hover_0D51912B.wem		\Actor-Mixer Hierarchy\RP_UI\Hover		2314
@@ -175,9 +177,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	873930999	Hit_ByPunch_V3-002	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Hit_ByPunch_V3-002_2AD929D0.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Hit_ByPunch\Hit_ByPunch_02\Hit_ByPunch_V3-002		74671
 	876797808	Parry_Move-005	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Parry_Move-005_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Parry_Move\Parry_Move_05\Parry_Move-005		23348
 	888959787	Collision-005	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Collision-005_A703A4BF.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Collision_02\Collision_Weak\Collision-005		15250
+	904302091	RP_GettingUp-003	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\RP_GettingUp-003_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Getting_Up\Getting_Up_02\RP_GettingUp-003		27438
 	907544070	Collision-003	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Collision-003_2A58F67E.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Collision_02\Collision_01\Collision-003		18813
 	908324704	Parry_Move-004	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Parry_Move-004_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Parry_Move\Parry_Move_05\Parry_Move-004		25733
 	919203908	Parry_Move-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Parry_Move-001_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Parry_Move\Parry_Move_05\Parry_Move-001		27697
+	926862424	RP_GettingUp-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\RP_GettingUp-001_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Getting_Up\Getting_Up_02\RP_GettingUp-001		24982
 	932054782	RP_M_DownThePowerRoad_M002_B2_HH_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\B2\RP_M_DownThePowerRoad_M002_B2_HH_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Down the Power Road\B2\RP_M_DownThePowerRoad_M002_B2_HH_164Bpm		756233
 	932970665	Punch_Move-004	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Punch_Move-004_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Parry_Move\Parry_Move_07\Punch_Move-004		17617
 	944429033	RP_M_DownThePowerRoad_M002_B1_Guitar_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\B1\RP_M_DownThePowerRoad_M002_B1_Guitar_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Down the Power Road\B1\RP_M_DownThePowerRoad_M002_B1_Guitar_164Bpm		308685

@@ -264,7 +264,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{04832FC1-0F0B-D303-B979-8A5CE3359A33}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CFB78403-542C-5781-E44F-C8FF43BF398D}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -367,6 +367,10 @@
 				<File Id="141114642" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-007.wav</ShortName>
 					<CachePath>SFX/Collision-007_9F3A6175.wem</CachePath>
+				</File>
+				<File Id="152747667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-002.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-002_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="158589468" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-003.wav</ShortName>
@@ -720,6 +724,10 @@
 					<ShortName>Collision-005.wav</ShortName>
 					<CachePath>SFX/Collision-005_A703A4BF.wem</CachePath>
 				</File>
+				<File Id="904302091" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-003.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-003_D8C07C79.wem</CachePath>
+				</File>
 				<File Id="907544070" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-003.wav</ShortName>
 					<CachePath>SFX/Collision-003_2A58F67E.wem</CachePath>
@@ -731,6 +739,10 @@
 				<File Id="919203908" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Parry_Move-001.wav</ShortName>
 					<CachePath>SFX/Parry_Move-001_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="926862424" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-001.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-001_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="932054782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_HH_164Bpm.wav</ShortName>
@@ -1239,6 +1251,42 @@
 									<PluginRef Id="759487314"/>
 								</ShareSets>
 							</PluginRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="22664301" Name="Getting_Up" DurationType="OneShot" DurationMin="1.7194583" DurationMax="2.1183333">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1905,5 +1953,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8DCE2FAF-5318-8AA9-76D2-2DDF9EE18B94}</FileHash>
+	<FileHash>{C26397E1-0B26-63F7-856A-29D4F77DAEB4}</FileHash>
 </SoundBanksInfo>
