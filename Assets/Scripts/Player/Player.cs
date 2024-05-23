@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
     public void ToggleActive(bool isActive)
     {
-        controller.TogglePlayerFreeze(isActive);
+        controller.TogglePlayerFreeze(!isActive);
         combat.ToggleInvincibility(!isActive);
     }
 }

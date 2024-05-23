@@ -17,6 +17,11 @@ MonoBehaviour:
   - {r: 0.031413555, g: 1, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.9638114, a: 1}
   - {r: 1, g: 0.617801, b: 0, a: 1}
+  countdownSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d1f1d17b33a5c644f80a84a7e403a1ae,
+      type: 2}
   musicStart:
     idInternal: 0
     valueGuidInternal: 
