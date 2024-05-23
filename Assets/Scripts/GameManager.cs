@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private RespawnPoint raceStart;
     [SerializeField] private List<Checkpoint> checkpoints;
+    [SerializeField] private List<RespawnPoint> respawnpoints;
     
     [field: Header("Ball & Ball holder")]
     [field: SerializeField] public BallScript ball { get; private set; }
@@ -92,11 +93,11 @@ public class GameManager : MonoBehaviour
         player.camera.gameObject.layer = layer;
         foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
             player.camera.cullingMask -= player.camera.cullingMask & mask;
-        if (player.character != null) player.character.position = raceStart.spawnPoints[nbPlayer].position;
         player.setPlayerID(nbPlayer);
         player.number = nbPlayer;
         player.color = gameData.playerColors[nbPlayer];
         nbPlayer++;
+        RespawnPlayer(player);
         player.listener.SetVolumeOffset(nbPlayer);
     }
     public void OnPlayerDeath(Player player)
@@ -132,7 +133,24 @@ public class GameManager : MonoBehaviour
         holderPreviousPosition = player.character.position;
         holderPreviousForward = player.character.forward;
     }
-    
+
+    public void OnPlayerReady()
+    {
+        int count = 0;
+        foreach (Player player in players.Keys)
+        {
+            if (player.isReady)
+            {
+                count++;
+            }
+        }
+
+        if (count == nbPlayer)
+        {
+            StartCoroutine(StartCountdown());
+        }
+
+    }
 
     public void UpdateBallDistance()
     {
@@ -171,8 +189,14 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer(Player player)
     {
-        Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
-        Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
+        Transform spawnPoint = lastRespawnPoint.spawnPoints[player.number];
+        Vector3 pos = spawnPoint.position;
+        Quaternion rot = spawnPoint.rotation;
+        if (Physics.Raycast(spawnPoint.position, -spawnPoint.up,out RaycastHit hit, 10f))
+        {
+            pos = hit.point;
+        }
+
         player.controller.TeleportPlayer(pos,rot);
         if (player == ballHolder)
         {
@@ -190,4 +214,54 @@ public class GameManager : MonoBehaviour
         ball.transform.position = pos.position;
         ball.transform.rotation = pos.rotation;
     }
+    
+    
+    
+    
+    #region COROUTINES
+
+    IEnumerator StartCountdown()
+    {
+        
+        foreach (Player player in players.Keys)
+        {
+            player.ui.ToggleCountdown(true);
+            player.ui.SetCountdown(3);
+        }
+
+        gameData.countdownSound.Post(gameObject);
+        
+        yield return new WaitForSeconds(1);
+
+        foreach (Player player in players.Keys)
+        {
+            player.ui.SetCountdown(2);
+        }
+        //gameData.countdownSound.Post(gameObject);
+        
+        yield return new WaitForSeconds(1);
+        
+        foreach (Player player in players.Keys)
+        {
+            player.ui.SetCountdown(1);
+        }
+        //gameData.countdownSound.Post(gameObject);
+        
+        yield return new WaitForSeconds(1);
+        
+        foreach (Player player in players.Keys)
+        {
+            player.ui.SetCountdown(0);
+            player.ToggleActive(true);
+        }
+        //gameData.countdownSound.Post(gameObject);
+
+        yield return new WaitForSeconds(0.5f);
+        
+        foreach (Player player in players.Keys)
+        {
+            player.ui.ToggleCountdown(false);
+        }
+    }
+    #endregion
 }

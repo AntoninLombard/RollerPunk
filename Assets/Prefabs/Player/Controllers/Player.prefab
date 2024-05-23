@@ -319,6 +319,7 @@ MonoBehaviour:
   anime: {fileID: 3216370738416788856}
   color: {r: 0, g: 0, b: 0, a: 0}
   number: 0
+  isReady: 0
   listener: {fileID: 5529130067093106813}
   playerID:
   - idInternal: 0
@@ -548,7 +549,19 @@ MonoBehaviour:
     m_ActionId: cef94fcb-876d-42f1-9a46-824a7a771772
     m_ActionName: Driving/Reverse[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2504526242335050173}
+        m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
+        m_MethodName: onReady
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fb45708b-8a83-43e2-b9a5-1923f999cc1d
     m_ActionName: Driving/Ready[/XInputControllerWindows/start,/XInputControllerWindows1/start]
   m_NeverAutoSwitchControlSchemes: 1
@@ -1323,9 +1336,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!114 &2000908433547280688
 MonoBehaviour:
   m_ObjectHideFlags: 0

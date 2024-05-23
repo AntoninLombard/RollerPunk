@@ -18,19 +18,24 @@ public class Player : MonoBehaviour
     public PlayerAnimation anime;
     public Color color;
     public int number;
+    public bool isReady;
     
     
     
 	public WwiseListener listener;
     public AK.Wwise.Switch[] playerID;
-    
+    private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
     private void Awake()
     {
+        ToggleActive(false);
+        ui.ToggleCountdown(false);
+        isReady = false;
         GameManager.Instance.OnPlayerInstantiate(this);
         foreach (Material material in anime.animator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>()?.materials)
         {
-            material.SetColor("_EmissionColor",color);
-        }
+            material.SetColor(EmissionColor,color);
+        } 
         anime.SetColor(color);
         ui.SetColor(color);
     }
@@ -40,5 +45,10 @@ public class Player : MonoBehaviour
         playerID[nb].SetValue(gameObject);
     }
 
+    public void ToggleActive(bool isActive)
+    {
+        controller.TogglePlayerFreeze(isActive);
+        combat.ToggleInvincibility(!isActive);
+    }
 }
     

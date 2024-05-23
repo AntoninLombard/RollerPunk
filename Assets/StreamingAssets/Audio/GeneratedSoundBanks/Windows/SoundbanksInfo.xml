@@ -264,7 +264,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A8DAA5AA-6DFE-A46D-6C87-9EE61DA4E492}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{15F8E1EB-0543-0259-78B2-9A40EFDF615A}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -448,6 +448,10 @@
 					<ShortName>B1\RP_M_DownThePowerRoad_M002_B1_Drums_164Bpm.wav</ShortName>
 					<Path>Media/340196925.wem</Path>
 					<CachePath>SFX/B1/RP_M_DownThePowerRoad_M002_B1_Drums_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="344242536" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Doppler.wav</ShortName>
+					<CachePath>SFX/Doppler_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="369612689" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_BASS_164Bpm.wav</ShortName>
@@ -876,12 +880,52 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="155540885" Name="Ball_Punch_Move" DurationType="OneShot" DurationMin="0.4290234" DurationMax="0.76271296">
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="4136302296"/>
-						</ShareSets>
-					</PluginRefs>
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
@@ -896,6 +940,34 @@
 									<PluginRef Id="4136302296"/>
 								</ShareSets>
 							</PluginRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3766921625" Name="Burst" DurationType="OneShot" DurationMin="7.8561873" DurationMax="7.8561873">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="344242536"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="344242536"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="344242536"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="344242536"/>
+							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1622,12 +1694,52 @@
 					</PluginRefs>
 				</Event>
 				<Event Id="3055455917" Name="Punch_Move" DurationType="OneShot" DurationMin="0.4290234" DurationMax="0.76271296">
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="4136302296"/>
-						</ShareSets>
-					</PluginRefs>
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="167618205"/>
+								<MediaRef Id="205823263"/>
+								<MediaRef Id="859755538"/>
+								<MediaRef Id="932970665"/>
+								<MediaRef Id="1007149797"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4136302296"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
@@ -1788,5 +1900,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4A7893B0-89B3-A507-E27E-8079C7E93A9D}</FileHash>
+	<FileHash>{E9EB95D2-215D-D4CB-8D36-2FE68206E231}</FileHash>
 </SoundBanksInfo>

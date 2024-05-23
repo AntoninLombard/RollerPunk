@@ -104,6 +104,18 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+    
+    public void onReady(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            player.isReady = true;
+            player.ui.SetReady(true);
+            GameManager.Instance.OnPlayerReady();
+            Debug.Log("StartPressed");
+        }
+
+    }
 
     #endregion
 
@@ -152,6 +164,7 @@ public class PlayerCombat : MonoBehaviour
         player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
     }
+    
 
     public void onDeath(Player source)
     {
@@ -409,5 +422,11 @@ public class PlayerCombat : MonoBehaviour
         float value = Vector3.Dot(player.character.right, dir);
         
         return value > 0 ?  1 : -1;
+    }
+
+
+    public void ToggleInvincibility(bool isInvincible)
+    {
+        this.isInvincible = isInvincible;
     }
 }

@@ -6,11 +6,11 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     [Header("GAME VALUES")]
-    [ColorUsage(true, true)]
     public List<Color> playerColors;
     
     
     [Header("SOUND")]
+    public AK.Wwise.Event countdownSound;
     public AK.Wwise.Event musicStart;
     public AK.Wwise.RTPC score;
     public AK.Wwise.Event crowdStart;
