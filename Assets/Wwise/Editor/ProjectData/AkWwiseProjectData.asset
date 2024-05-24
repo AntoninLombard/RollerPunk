@@ -768,7 +768,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584851301176362747
+    m_lastTime: -8584850486851502998
     List:
     - name: Music
       guid: 50bd927e93a63341984dac3ccb90a59f
@@ -947,7 +947,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584851300047482795
+    m_lastTime: -8584850487124778815
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -982,7 +982,7 @@ MonoBehaviour:
       Path: Events\RP_Feedbacks\Ball_Punch_Move
       maxAttenuation: 0
       maxDuration: 0.76271296
-      minDuration: 0.4290234
+      minDuration: 0.40267062
     - name: Burst
       guid: f1fc2c41e194c648a9a66b1e1b1bf962
       id: 3766921625
@@ -1203,7 +1203,7 @@ MonoBehaviour:
       Path: Events\RP_Feedbacks\Punch_Move
       maxAttenuation: 0
       maxDuration: 0.76271296
-      minDuration: 0.4290234
+      minDuration: 0.40267062
     - name: Punch_Taunt
       guid: b0bf6c63f16822428898dbdfe8d7bba6
       id: 1403211570
@@ -1236,8 +1236,8 @@ MonoBehaviour:
         guid: 06e6ca4ce90b3b499d49a58634fc1dd2
       Path: Events\RP_Feedbacks\Respawn
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.5
+      minDuration: 4.5
     - name: setplayernumber
       guid: 7ce0baffa6486a41b2b2fdf03aa777e3
       id: 3687251531

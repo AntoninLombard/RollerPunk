@@ -278,7 +278,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{68330FBB-B23D-E08B-5EC7-05F14837394D}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{066B0EE6-0139-523F-F955-E25C9C5D23EC}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -305,6 +305,10 @@
 					<Path>Media/19952398.wem</Path>
 					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164_0762CC47.wem</CachePath>
 					<PrefetchSize>3355</PrefetchSize>
+				</File>
+				<File Id="21342613" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Respawn.wav</ShortName>
+					<CachePath>SFX/Respawn_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="24720921" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 1_164.wav</ShortName>
@@ -462,7 +466,7 @@
 				</File>
 				<File Id="129798207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-002.wav</ShortName>
-					<CachePath>SFX/Punch_Move-002_E1B653D9.wem</CachePath>
+					<CachePath>SFX/Punch_Move-002_86278577.wem</CachePath>
 				</File>
 				<File Id="131661278" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_PERC_164.wav</ShortName>
@@ -866,7 +870,7 @@
 				</File>
 				<File Id="498199362" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-001.wav</ShortName>
-					<CachePath>SFX/Punch_Move-001_59D80A1B.wem</CachePath>
+					<CachePath>SFX/Punch_Move-001_372DB2A6.wem</CachePath>
 				</File>
 				<File Id="498718941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm.wav</ShortName>
@@ -898,7 +902,7 @@
 				</File>
 				<File Id="513368010" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-004.wav</ShortName>
-					<CachePath>SFX/Punch_Move-004_39C9B445.wem</CachePath>
+					<CachePath>SFX/Punch_Move-004_F39E0001.wem</CachePath>
 				</File>
 				<File Id="514629755" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_SNARE_164.wav</ShortName>
@@ -1090,7 +1094,7 @@
 				</File>
 				<File Id="677820568" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-003.wav</ShortName>
-					<CachePath>SFX/Punch_Move-003_DC591189.wem</CachePath>
+					<CachePath>SFX/Punch_Move-003_477E8B1F.wem</CachePath>
 				</File>
 				<File Id="683512672" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_Guitar_164.wav</ShortName>
@@ -1242,7 +1246,7 @@
 				</File>
 				<File Id="810372569" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-005.wav</ShortName>
-					<CachePath>SFX/Punch_Move-005_E15662FA.wem</CachePath>
+					<CachePath>SFX/Punch_Move-005_CE4242E6.wem</CachePath>
 				</File>
 				<File Id="818285052" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar_164.wav</ShortName>
@@ -2302,9 +2306,6 @@
 						<MediaRef Id="1020399212"/>
 						<MediaRef Id="1067298357"/>
 					</MediaRefs>
-					<ActionSetState>
-						<ActionSetStateEntry GroupId="2322231365" Id="446279778" Name="Bed"/>
-					</ActionSetState>
 				</Event>
 				<Event Id="2856297975" Name="Musictst" DurationType="Infinite">
 					<SwitchContainers>
@@ -2725,7 +2726,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="4279841335" Name="Respawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4279841335" Name="Respawn" DurationType="OneShot" DurationMin="4.5" DurationMax="4.5">
+					<MediaRefs>
+						<MediaRef Id="21342613"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3248278131" Name="Score_Up" DurationType="OneShot" DurationMin="0.11214326" DurationMax="0.15850572">
 					<MediaRefs>
 						<MediaRef Id="94309540"/>
@@ -2821,5 +2826,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F71DD514-6AE0-FD5B-2A70-63619FF7921E}</FileHash>
+	<FileHash>{E1CDC54A-9FBB-2E25-94B1-9CD5BFED51B8}</FileHash>
 </SoundBanksInfo>

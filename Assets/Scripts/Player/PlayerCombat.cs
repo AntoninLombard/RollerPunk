@@ -415,7 +415,7 @@ public class PlayerCombat : MonoBehaviour
     {
         StartCoroutine(stun(null));
         GameManager.Instance.RespawnPlayer(player);
-        player.data.respawnSound.Post(gameObject);
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
     }
 
     int sourceDirection(Transform source)
