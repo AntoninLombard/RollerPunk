@@ -20,7 +20,7 @@ MonoBehaviour:
   inertiaRatio: 0
   brakingRatio: 0.5
   drag: 0.8
-  airDrag: 0
+  airDrag: 0.2
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
   punchWindUp: 1

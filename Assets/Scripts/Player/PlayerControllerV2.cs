@@ -289,8 +289,8 @@ public class PlayerController2 : MonoBehaviour
     
     public void TogglePlayerFreeze(bool isFreezed)
     {
-        rb.isKinematic = !isFreezed;
-        rb.interpolation = isFreezed ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
+        rb.isKinematic = isFreezed;
+        //rb.interpolation = isFreezed ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
     }
     #endregion
     
