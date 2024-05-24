@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E252E8F4-BA01-4002-13F3-0B0DE4B36E6B}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{84E239A3-CAA6-1E20-FCEC-DFA39D0350FD}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -30,6 +30,7 @@
 				<Bus Id="759487314" Name="Engines"/>
 				<Bus Id="1291433344" Name="Bass"/>
 				<Bus Id="1404066300" Name="Ambiances"/>
+				<Bus Id="1615767906" Name="Music_Main"/>
 				<Bus Id="1635194249" Name="P4">
 					<PluginRefs>
 						<ShareSets>
@@ -107,22 +108,35 @@
 				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
 			</GameParameters>
 			<StateGroups>
-				<StateGroup Id="3826569560" Name="Music_State">
+				<StateGroup Id="204430455" Name="Gameplay_Music_State">
 					<States>
-						<State Id="89505537" Name="Gameplay"/>
-						<State Id="529726532" Name="End"/>
+						<State Id="733168346" Name="Game_Start"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="3271665593" Name="Game_End"/>
 					</States>
 				</StateGroup>
-				<StateGroup Id="3991942870" Name="Music">
+				<StateGroup Id="676404222" Name="Menu_Music_State">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2607556080" Name="Menu"/>
+						<State Id="2776193354" Name="Menu_Quit"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="2322231365" Name="Gameplay_Music">
 					<States>
 						<State Id="446279778" Name="Bed"/>
-						<State Id="529726532" Name="End"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="1635194249" Name="P4"/>
 						<State Id="1635194252" Name="P1"/>
 						<State Id="1635194254" Name="P3"/>
 						<State Id="1635194255" Name="P2"/>
+						<State Id="3271665593" Name="Game_End"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="4055567060" Name="Menu_Music">
+					<States>
+						<State Id="733168346" Name="Game_Start"/>
+						<State Id="748895195" Name="None"/>
 						<State Id="2607556080" Name="Menu"/>
 					</States>
 				</StateGroup>
@@ -264,13 +278,19 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{15F8E1EB-0543-0259-78B2-9A40EFDF615A}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{68330FBB-B23D-E08B-5EC7-05F14837394D}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="5556493" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intro\RP_M_DownThePowerRoad_M002_Intro_KICK_164Bpm.wav</ShortName>
 					<CachePath>SFX/Intro/RP_M_DownThePowerRoad_M002_Intro_KICK_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="7981215" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/7981215.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>557</PrefetchSize>
 				</File>
 				<File Id="10096376" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-004.wav</ShortName>
@@ -280,6 +300,24 @@
 					<ShortName>Hit_ByPunch_V3-004.wav</ShortName>
 					<CachePath>SFX/Hit_ByPunch_V3-004_5F031281.wem</CachePath>
 				</File>
+				<File Id="19952398" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164.wav</ShortName>
+					<Path>Media/19952398.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3355</PrefetchSize>
+				</File>
+				<File Id="24720921" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/24720921.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A3/RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>605</PrefetchSize>
+				</File>
+				<File Id="25359372" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/25359372.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2676</PrefetchSize>
+				</File>
 				<File Id="30932399" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-001.wav</ShortName>
 					<CachePath>SFX/taunt_demo-001_D8C07C79.wem</CachePath>
@@ -288,9 +326,21 @@
 					<ShortName>Collision-001.wav</ShortName>
 					<CachePath>SFX/Collision-001_6EBA1C93.wem</CachePath>
 				</File>
+				<File Id="38199261" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_Guitar_164.wav</ShortName>
+					<Path>Media/38199261.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3844</PrefetchSize>
+				</File>
 				<File Id="39173829" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-002.wav</ShortName>
 					<CachePath>SFX/Collision-002_6ED8CF41.wem</CachePath>
+				</File>
+				<File Id="42226905" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth 2_164.wav</ShortName>
+					<Path>Media/42226905.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A3/RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3847</PrefetchSize>
 				</File>
 				<File Id="42961480" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-001.wav</ShortName>
@@ -304,13 +354,31 @@
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Hey_164Bpm_0762CC47.wem</CachePath>
 				</File>
-				<File Id="58165178" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Countdown.wav</ShortName>
-					<CachePath>SFX/Countdown_702B0C36.wem</CachePath>
+				<File Id="63618971" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_SFX_164.wav</ShortName>
+					<Path>Media/63618971.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_SFX_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2692</PrefetchSize>
 				</File>
 				<File Id="73001858" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByWall-002.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="73108266" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bip.wav</ShortName>
+					<CachePath>SFX/Bip_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="76850443" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_KICK_164.wav</ShortName>
+					<Path>Media/76850443.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3797</PrefetchSize>
+				</File>
+				<File Id="77425404" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar_164.wav</ShortName>
+					<Path>Media/77425404.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4217</PrefetchSize>
 				</File>
 				<File Id="88947134" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M1_Start.wav</ShortName>
@@ -344,6 +412,30 @@
 					<ShortName>M2_2.wav</ShortName>
 					<CachePath>SFX/M2_2_0762CC47.wem</CachePath>
 				</File>
+				<File Id="107112461" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164.wav</ShortName>
+					<Path>Media/107112461.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A2/RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3194</PrefetchSize>
+				</File>
+				<File Id="107319338" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_PERC_164.wav</ShortName>
+					<Path>Media/107319338.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3265</PrefetchSize>
+				</File>
+				<File Id="109043323" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_TOMLOW_164.wav</ShortName>
+					<Path>Media/109043323.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4197</PrefetchSize>
+				</File>
+				<File Id="113318879" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Guitar_164.wav</ShortName>
+					<Path>Media/113318879.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3948</PrefetchSize>
+				</File>
 				<File Id="115227239" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Score_Up\Score_Up-001.wav</ShortName>
 					<CachePath>SFX/Score_Up/Score_Up-001_D8C07C79.wem</CachePath>
@@ -356,25 +448,89 @@
 					<ShortName>Counter_V2-003.wav</ShortName>
 					<CachePath>SFX/Counter_V2-003_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="122139466" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_HEY_164.wav</ShortName>
+					<Path>Media/122139466.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_HEY_164_0762CC47.wem</CachePath>
+					<PrefetchSize>709</PrefetchSize>
+				</File>
+				<File Id="129634763" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_SNARE_164.wav</ShortName>
+					<Path>Media/129634763.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>641</PrefetchSize>
+				</File>
+				<File Id="129798207" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Punch_Move-002.wav</ShortName>
+					<CachePath>SFX/Punch_Move-002_E1B653D9.wem</CachePath>
+				</File>
+				<File Id="131661278" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_PERC_164.wav</ShortName>
+					<Path>Media/131661278.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3002</PrefetchSize>
+				</File>
 				<File Id="132379828" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-008.wav</ShortName>
 					<CachePath>SFX/Collision-008_09FBB8F6.wem</CachePath>
 				</File>
-				<File Id="133677138" Language="SFX" Streaming="false" Location="Memory">
+				<File Id="132797336" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_DRUMS_164.wav</ShortName>
+					<Path>Media/132797336.wem</Path>
+					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3731</PrefetchSize>
+				</File>
+				<File Id="133677138" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>Outro\RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm.wav</ShortName>
+					<Path>Media/133677138.wem</Path>
 					<CachePath>SFX/Outro/RP_M_DownThePowerRoad_M002_OUTRO_DRUMS_164Bpm_0762CC47.wem</CachePath>
+					<PrefetchSize>3284</PrefetchSize>
+				</File>
+				<File Id="135018568" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164.wav</ShortName>
+					<Path>Media/135018568.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3612</PrefetchSize>
 				</File>
 				<File Id="141114642" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-007.wav</ShortName>
 					<CachePath>SFX/Collision-007_9F3A6175.wem</CachePath>
 				</File>
+				<File Id="145145075" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_Guitar LEAD_164.wav</ShortName>
+					<Path>Media/145145075.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_Guitar LEAD_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3090</PrefetchSize>
+				</File>
+				<File Id="152747667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-002.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-002_D8C07C79.wem</CachePath>
+				</File>
 				<File Id="158589468" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-003.wav</ShortName>
 					<CachePath>SFX/Join_Char_sel/Join-003_0BCF8D5E.wem</CachePath>
 				</File>
+				<File Id="165984581" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_SYNTH_164.wav</ShortName>
+					<Path>Media/165984581.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_SYNTH_164_0762CC47.wem</CachePath>
+					<PrefetchSize>917</PrefetchSize>
+				</File>
 				<File Id="167618205" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-003.wav</ShortName>
 					<CachePath>SFX/Punch_Move-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="171506780" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Synth 2_164.wav</ShortName>
+					<Path>Media/171506780.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Synth 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>913</PrefetchSize>
+				</File>
+				<File Id="174170564" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_TOMLOW_164.wav</ShortName>
+					<Path>Media/174170564.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_Bridge/RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4004</PrefetchSize>
 				</File>
 				<File Id="178784743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hover.wav</ShortName>
@@ -384,9 +540,39 @@
 					<ShortName>Punch_Move-001.wav</ShortName>
 					<CachePath>SFX/Punch_Move-001_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="213643349" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_PERC_164.wav</ShortName>
+					<Path>Media/213643349.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3416</PrefetchSize>
+				</File>
 				<File Id="220253561" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-006.wav</ShortName>
 					<CachePath>SFX/taunt_demo-006_BC37BB80.wem</CachePath>
+				</File>
+				<File Id="222143719" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/222143719.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>573</PrefetchSize>
+				</File>
+				<File Id="238705589" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_DRUMS_164.wav</ShortName>
+					<Path>Media/238705589.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3972</PrefetchSize>
+				</File>
+				<File Id="240397543" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_TOMLOW_164.wav</ShortName>
+					<Path>Media/240397543.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3890</PrefetchSize>
+				</File>
+				<File Id="240966468" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_SFX_164.wav</ShortName>
+					<Path>Media/240966468.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_SFX_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3016</PrefetchSize>
 				</File>
 				<File Id="244303097" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-003.wav</ShortName>
@@ -400,9 +586,39 @@
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/B2/RP_M_DownThePowerRoad_M002_B2_Guitar_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="275882741" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_KICK_164.wav</ShortName>
+					<Path>Media/275882741.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3753</PrefetchSize>
+				</File>
 				<File Id="280610508" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-006.wav</ShortName>
 					<CachePath>SFX/Collision-006_B07F6DDD.wem</CachePath>
+				</File>
+				<File Id="281198872" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 2_164.wav</ShortName>
+					<Path>Media/281198872.wem</Path>
+					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2686</PrefetchSize>
+				</File>
+				<File Id="284994471" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_TOMLOW_164.wav</ShortName>
+					<Path>Media/284994471.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>589</PrefetchSize>
+				</File>
+				<File Id="286886511" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_KICK_164.wav</ShortName>
+					<Path>Media/286886511.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3906</PrefetchSize>
+				</File>
+				<File Id="287073986" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH_164.wav</ShortName>
+					<Path>Media/287073986.wem</Path>
+					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH_164_0762CC47.wem</CachePath>
+					<PrefetchSize>777</PrefetchSize>
 				</File>
 				<File Id="299114776" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-006.wav</ShortName>
@@ -444,6 +660,18 @@
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_Lead_Guitare_164Bpm.wav</ShortName>
 					<CachePath>SFX/D1/RP_M_DownThePowerRoad_M002_D1_Lead_Guitare_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="332362476" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_TOMLOW_164.wav</ShortName>
+					<Path>Media/332362476.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3502</PrefetchSize>
+				</File>
+				<File Id="334493050" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_SNARE_164.wav</ShortName>
+					<Path>Media/334493050.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2802</PrefetchSize>
+				</File>
 				<File Id="340196925" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>B1\RP_M_DownThePowerRoad_M002_B1_Drums_164Bpm.wav</ShortName>
 					<Path>Media/340196925.wem</Path>
@@ -452,6 +680,18 @@
 				<File Id="344242536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Doppler.wav</ShortName>
 					<CachePath>SFX/Doppler_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="349829830" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_Synth Bass_164.wav</ShortName>
+					<Path>Media/349829830.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_Bridge/RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_Synth Bass_164_0762CC47.wem</CachePath>
+					<PrefetchSize>437</PrefetchSize>
+				</File>
+				<File Id="365486018" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_TOMLOW_164.wav</ShortName>
+					<Path>Media/365486018.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3706</PrefetchSize>
 				</File>
 				<File Id="369612689" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_BASS_164Bpm.wav</ShortName>
@@ -462,14 +702,38 @@
 					<ShortName>Drill_Done.wav</ShortName>
 					<CachePath>SFX/Drill_Done_86BC51FA.wem</CachePath>
 				</File>
+				<File Id="373265237" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_DRUM FILL_164.wav</ShortName>
+					<Path>Media/373265237.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_DRUM FILL_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4023</PrefetchSize>
+				</File>
+				<File Id="374838533" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS_164.wav</ShortName>
+					<Path>Media/374838533.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A2/RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3006</PrefetchSize>
+				</File>
 				<File Id="378172409" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Medium.wav</ShortName>
 					<CachePath>SFX/Medium_0762CC47.wem</CachePath>
+				</File>
+				<File Id="379829155" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_Synth Bass_164.wav</ShortName>
+					<Path>Media/379829155.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_Synth Bass_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2757</PrefetchSize>
 				</File>
 				<File Id="385040290" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_BASS_164Bpm.wav</ShortName>
 					<Path>Media/385040290.wem</Path>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_BASS_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="392359955" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164.wav</ShortName>
+					<Path>Media/392359955.wem</Path>
+					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2533</PrefetchSize>
 				</File>
 				<File Id="398677519" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_1.wav</ShortName>
@@ -483,6 +747,18 @@
 					<ShortName>Chain_Loop.wav</ShortName>
 					<CachePath>SFX/Chain_Loop_0762CC47.wem</CachePath>
 				</File>
+				<File Id="408266780" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_HEY_164.wav</ShortName>
+					<Path>Media/408266780.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_HEY_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2586</PrefetchSize>
+				</File>
+				<File Id="408514773" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164.wav</ShortName>
+					<Path>Media/408514773.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2506</PrefetchSize>
+				</File>
 				<File Id="413450912" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Pics_Loop.wav</ShortName>
 					<CachePath>SFX/Pics_Loop_0762CC47.wem</CachePath>
@@ -490,6 +766,18 @@
 				<File Id="424568932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Checkpoint.wav</ShortName>
 					<CachePath>SFX/Checkpoint_702B0C36.wem</CachePath>
+				</File>
+				<File Id="435301999" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare LEAD_164.wav</ShortName>
+					<Path>Media/435301999.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare LEAD_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3510</PrefetchSize>
+				</File>
+				<File Id="437335178" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 1_164.wav</ShortName>
+					<Path>Media/437335178.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>709</PrefetchSize>
 				</File>
 				<File Id="442590708" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-001.wav</ShortName>
@@ -512,9 +800,45 @@
 					<ShortName>taunt_demo-006.wav</ShortName>
 					<CachePath>SFX/taunt_demo-006_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="462283167" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_DRUMS_164.wav</ShortName>
+					<Path>Media/462283167.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3745</PrefetchSize>
+				</File>
+				<File Id="462406626" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_SFX_164.wav</ShortName>
+					<Path>Media/462406626.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_SFX_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2733</PrefetchSize>
+				</File>
+				<File Id="464878171" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare_164.wav</ShortName>
+					<Path>Media/464878171.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare_164_0762CC47.wem</CachePath>
+					<PrefetchSize>909</PrefetchSize>
+				</File>
+				<File Id="465666643" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_PERC_164.wav</ShortName>
+					<Path>Media/465666643.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3287</PrefetchSize>
+				</File>
 				<File Id="471181577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Low_2.wav</ShortName>
 					<CachePath>SFX/Low_2_0762CC47.wem</CachePath>
+				</File>
+				<File Id="473655636" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_PERC_164.wav</ShortName>
+					<Path>Media/473655636.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3271</PrefetchSize>
+				</File>
+				<File Id="476796087" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_DRUMS_164.wav</ShortName>
+					<Path>Media/476796087.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3936</PrefetchSize>
 				</File>
 				<File Id="480938228" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_AfterParry-004.wav</ShortName>
@@ -524,9 +848,25 @@
 					<ShortName>taunt_demo-002.wav</ShortName>
 					<CachePath>SFX/taunt_demo-002_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="489059977" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_TOMLOW_164.wav</ShortName>
+					<Path>Media/489059977.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4107</PrefetchSize>
+				</File>
 				<File Id="493354949" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>High.wav</ShortName>
 					<CachePath>SFX/High_0762CC47.wem</CachePath>
+				</File>
+				<File Id="497905110" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_PERC_164.wav</ShortName>
+					<Path>Media/497905110.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2902</PrefetchSize>
+				</File>
+				<File Id="498199362" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Punch_Move-001.wav</ShortName>
+					<CachePath>SFX/Punch_Move-001_59D80A1B.wem</CachePath>
 				</File>
 				<File Id="498718941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm.wav</ShortName>
@@ -536,13 +876,35 @@
 					<ShortName>Collision-005.wav</ShortName>
 					<CachePath>SFX/Collision-005_52D456F6.wem</CachePath>
 				</File>
+				<File Id="502350003" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 1_164.wav</ShortName>
+					<Path>Media/502350003.wem</Path>
+					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>693</PrefetchSize>
+				</File>
 				<File Id="503999046" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_3.wav</ShortName>
 					<CachePath>SFX/M2_3_0762CC47.wem</CachePath>
 				</File>
+				<File Id="510761819" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164.wav</ShortName>
+					<Path>Media/510761819.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2883</PrefetchSize>
+				</File>
 				<File Id="512674510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_DRUMS_164Bpm.wav</ShortName>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_DRUMS_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="513368010" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Punch_Move-004.wav</ShortName>
+					<CachePath>SFX/Punch_Move-004_39C9B445.wem</CachePath>
+				</File>
+				<File Id="514629755" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_SNARE_164.wav</ShortName>
+					<Path>Media/514629755.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2973</PrefetchSize>
 				</File>
 				<File Id="516317094" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-001.wav</ShortName>
@@ -560,6 +922,28 @@
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_HEY_164Bpm.wav</ShortName>
 					<CachePath>SFX/D1/RP_M_DownThePowerRoad_M002_D1_HEY_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="524160278" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_DRUMS_164.wav</ShortName>
+					<Path>Media/524160278.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_Bridge/RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3509</PrefetchSize>
+				</File>
+				<File Id="528629332" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_PERC_164.wav</ShortName>
+					<Path>Media/528629332.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_Bridge/RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2901</PrefetchSize>
+				</File>
+				<File Id="537038425" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/537038425.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>557</PrefetchSize>
+				</File>
+				<File Id="538919773" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Last_Bip.wav</ShortName>
+					<CachePath>SFX/Last_Bip_D8C07C79.wem</CachePath>
+				</File>
 				<File Id="564337086" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-004.wav</ShortName>
 					<CachePath>SFX/Counter_V2-004_EDEECE6E.wem</CachePath>
@@ -567,6 +951,18 @@
 				<File Id="567488123" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_AfterParry-003.wav</ShortName>
 					<CachePath>SFX/Punch_AfterParry-003_702B0C36.wem</CachePath>
+				</File>
+				<File Id="570410724" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/570410724.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A2/RP_M_DOWN THE POWER ROAD_P3_M002_A2_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>573</PrefetchSize>
+				</File>
+				<File Id="571588263" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_Guitar 2_164.wav</ShortName>
+					<Path>Media/571588263.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_Guitar 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2494</PrefetchSize>
 				</File>
 				<File Id="571968005" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Kick_164Bpm.wav</ShortName>
@@ -576,6 +972,18 @@
 					<ShortName>Join_Char_sel\Join-002.wav</ShortName>
 					<CachePath>SFX/Join_Char_sel/Join-002_DAE46CD4.wem</CachePath>
 				</File>
+				<File Id="579147793" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_DRUMS_164.wav</ShortName>
+					<Path>Media/579147793.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3376</PrefetchSize>
+				</File>
+				<File Id="581161730" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_DRUMS 2_164.wav</ShortName>
+					<Path>Media/581161730.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A3/RP_M_DOWN THE POWER ROAD_P3_M002_A3_DRUMS 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>609</PrefetchSize>
+				</File>
 				<File Id="592778449" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D1\RP_M_DownThePowerRoad_M002_D1_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/D1/RP_M_DownThePowerRoad_M002_D1_Guitar_164Bpm_0762CC47.wem</CachePath>
@@ -583,6 +991,18 @@
 				<File Id="594646012" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByWall-003.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="600273389" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_KICK_164.wav</ShortName>
+					<Path>Media/600273389.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3779</PrefetchSize>
+				</File>
+				<File Id="600932681" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/600932681.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>589</PrefetchSize>
 				</File>
 				<File Id="605190562" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Score_Up\Score_Up-002.wav</ShortName>
@@ -595,6 +1015,12 @@
 				<File Id="612595084" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Parry_Move-002.wav</ShortName>
 					<CachePath>SFX/Parry_Move-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="613259797" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_TOMLOW_164.wav</ShortName>
+					<Path>Media/613259797.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3566</PrefetchSize>
 				</File>
 				<File Id="614668597" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-001.wav</ShortName>
@@ -612,13 +1038,43 @@
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_Guitar_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="634612713" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/634612713.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2853</PrefetchSize>
+				</File>
+				<File Id="636256720" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_TOMLOW_164.wav</ShortName>
+					<Path>Media/636256720.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4179</PrefetchSize>
+				</File>
+				<File Id="636284314" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_TOMLOW_164.wav</ShortName>
+					<Path>Media/636284314.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3345</PrefetchSize>
+				</File>
 				<File Id="639253198" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_DRUMS_164Bpm.wav</ShortName>
 					<CachePath>SFX/D2/RP_M_DownThePowerRoad_M002_D2_DRUMS_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="641192620" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Guitar FX_164.wav</ShortName>
+					<Path>Media/641192620.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_Guitar FX_164_0762CC47.wem</CachePath>
+					<PrefetchSize>709</PrefetchSize>
+				</File>
 				<File Id="651310878" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967.wav</ShortName>
 					<CachePath>SFX/Soundly Audio/Designed, Impact, Cinematic, Impact, Hit, Slam, Smash, Collision, Metal, Musical SND103967_578D82AB.wem</CachePath>
+				</File>
+				<File Id="653673400" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_Synth Bass_164.wav</ShortName>
+					<Path>Media/653673400.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_Synth Bass_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2575</PrefetchSize>
 				</File>
 				<File Id="672645637" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Score_Up\Score_Up-007.wav</ShortName>
@@ -632,9 +1088,49 @@
 					<ShortName>taunt_demo-004.wav</ShortName>
 					<CachePath>SFX/taunt_demo-004_A02E176D.wem</CachePath>
 				</File>
+				<File Id="677820568" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Punch_Move-003.wav</ShortName>
+					<CachePath>SFX/Punch_Move-003_DC591189.wem</CachePath>
+				</File>
+				<File Id="683512672" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_Guitar_164.wav</ShortName>
+					<Path>Media/683512672.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3933</PrefetchSize>
+				</File>
+				<File Id="692331253" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar LEAD_164.wav</ShortName>
+					<Path>Media/692331253.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar LEAD_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3110</PrefetchSize>
+				</File>
+				<File Id="695679820" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/695679820.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>589</PrefetchSize>
+				</File>
 				<File Id="695966176" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Select.wav</ShortName>
 					<CachePath>SFX/Select_702B0C36.wem</CachePath>
+				</File>
+				<File Id="701324123" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_Synth bass_164.wav</ShortName>
+					<Path>Media/701324123.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_Synth bass_164_0762CC47.wem</CachePath>
+					<PrefetchSize>641</PrefetchSize>
+				</File>
+				<File Id="702804740" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_Synth Bass_164.wav</ShortName>
+					<Path>Media/702804740.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_Synth Bass_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2650</PrefetchSize>
+				</File>
+				<File Id="706451525" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_Guitar_164.wav</ShortName>
+					<Path>Media/706451525.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3985</PrefetchSize>
 				</File>
 				<File Id="706556744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByBall-002.wav</ShortName>
@@ -643,6 +1139,18 @@
 				<File Id="706744031" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-002.wav</ShortName>
 					<CachePath>SFX/Counter_V2-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="708718175" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_Guitar SOLO_164.wav</ShortName>
+					<Path>Media/708718175.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_Guitar SOLO_164_0762CC47.wem</CachePath>
+					<PrefetchSize>537</PrefetchSize>
+				</File>
+				<File Id="710801792" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 2_164.wav</ShortName>
+					<Path>Media/710801792.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>709</PrefetchSize>
 				</File>
 				<File Id="711752289" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>D2\RP_M_DownThePowerRoad_M002_D2_Guitar_164Bpm.wav</ShortName>
@@ -660,6 +1168,30 @@
 					<ShortName>Counter_V2-002.wav</ShortName>
 					<CachePath>SFX/Counter_V2-002_4D57AC5A.wem</CachePath>
 				</File>
+				<File Id="736010856" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_KICK_164.wav</ShortName>
+					<Path>Media/736010856.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3755</PrefetchSize>
+				</File>
+				<File Id="739916426" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/739916426.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>553</PrefetchSize>
+				</File>
+				<File Id="762980447" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS 2_164.wav</ShortName>
+					<Path>Media/762980447.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A2/RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3623</PrefetchSize>
+				</File>
+				<File Id="770234939" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_Guitar_164.wav</ShortName>
+					<Path>Media/770234939.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3891</PrefetchSize>
+				</File>
 				<File Id="771030889" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-004.wav</ShortName>
 					<CachePath>SFX/taunt_demo-004_D8C07C79.wem</CachePath>
@@ -668,13 +1200,37 @@
 					<ShortName>Go_Drill.wav</ShortName>
 					<CachePath>SFX/Go_Drill_0762CC47.wem</CachePath>
 				</File>
+				<File Id="771455466" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_SNARE_164.wav</ShortName>
+					<Path>Media/771455466.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>589</PrefetchSize>
+				</File>
 				<File Id="771518876" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/C1/RP_M_DownThePowerRoad_M002_C1_Guitar_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="774400041" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/774400041.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>553</PrefetchSize>
+				</File>
 				<File Id="774795678" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-008.wav</ShortName>
 					<CachePath>SFX/Collision-008_AAED3C7F.wem</CachePath>
+				</File>
+				<File Id="790904664" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/790904664.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>641</PrefetchSize>
+				</File>
+				<File Id="791968952" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_SNARE_164.wav</ShortName>
+					<Path>Media/791968952.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>553</PrefetchSize>
 				</File>
 				<File Id="799410258" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_SynthPad_164Bpm.wav</ShortName>
@@ -684,21 +1240,73 @@
 					<ShortName>C1\RP_M_DownThePowerRoad_M002_C1_Hey_164Bpm.wav</ShortName>
 					<CachePath>SFX/C1/RP_M_DownThePowerRoad_M002_C1_Hey_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="810372569" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Punch_Move-005.wav</ShortName>
+					<CachePath>SFX/Punch_Move-005_E15662FA.wem</CachePath>
+				</File>
+				<File Id="818285052" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar_164.wav</ShortName>
+					<Path>Media/818285052.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3893</PrefetchSize>
+				</File>
 				<File Id="818821583" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-007.wav</ShortName>
 					<CachePath>SFX/taunt_demo-007_D6F03943.wem</CachePath>
+				</File>
+				<File Id="818838944" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_HEY_164.wav</ShortName>
+					<Path>Media/818838944.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_HEY_164_0762CC47.wem</CachePath>
+					<PrefetchSize>537</PrefetchSize>
 				</File>
 				<File Id="821058410" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_Saw.wav</ShortName>
 					<CachePath>SFX/M2_Saw_0762CC47.wem</CachePath>
 				</File>
+				<File Id="840644709" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_PERC_164.wav</ShortName>
+					<Path>Media/840644709.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3105</PrefetchSize>
+				</File>
 				<File Id="844727332" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-001.wav</ShortName>
 					<CachePath>SFX/Join_Char_sel/Join-001_C9CAB898.wem</CachePath>
 				</File>
+				<File Id="849909957" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_Guitar_164.wav</ShortName>
+					<Path>Media/849909957.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3812</PrefetchSize>
+				</File>
+				<File Id="850423519" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_Guitar_164.wav</ShortName>
+					<Path>Media/850423519.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4852</PrefetchSize>
+				</File>
+				<File Id="854946409" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/854946409.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>573</PrefetchSize>
+				</File>
+				<File Id="855021302" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/855021302.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A2/RP_M_DOWN THE POWER ROAD_P3_M002_A2_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2563</PrefetchSize>
+				</File>
 				<File Id="859755538" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-002.wav</ShortName>
 					<CachePath>SFX/Punch_Move-002_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="868771941" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_DRUMS_164.wav</ShortName>
+					<Path>Media/868771941.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A3/RP_M_DOWN THE POWER ROAD_P3_M002_A3_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3677</PrefetchSize>
 				</File>
 				<File Id="870323986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-008.wav</ShortName>
@@ -708,13 +1316,47 @@
 					<ShortName>Hit_ByPunch_V3-002.wav</ShortName>
 					<CachePath>SFX/Hit_ByPunch_V3-002_2AD929D0.wem</CachePath>
 				</File>
+				<File Id="875882344" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitar_164.wav</ShortName>
+					<Path>Media/875882344.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4213</PrefetchSize>
+				</File>
 				<File Id="876797808" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Parry_Move-005.wav</ShortName>
 					<CachePath>SFX/Parry_Move-005_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="877226522" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Guitar SFX_164.wav</ShortName>
+					<Path>Media/877226522.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_Guitar SFX_164_0762CC47.wem</CachePath>
+					<PrefetchSize>641</PrefetchSize>
+				</File>
 				<File Id="888959787" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-005.wav</ShortName>
 					<CachePath>SFX/Collision-005_A703A4BF.wem</CachePath>
+				</File>
+				<File Id="899024066" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_KICK_164.wav</ShortName>
+					<Path>Media/899024066.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_B_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3839</PrefetchSize>
+				</File>
+				<File Id="900041780" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar SOLO_164.wav</ShortName>
+					<Path>Media/900041780.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar SOLO_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3135</PrefetchSize>
+				</File>
+				<File Id="904302091" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-003.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-003_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="906850399" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth 1_164.wav</ShortName>
+					<Path>Media/906850399.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A3/RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4826</PrefetchSize>
 				</File>
 				<File Id="907544070" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-003.wav</ShortName>
@@ -724,9 +1366,25 @@
 					<ShortName>Parry_Move-004.wav</ShortName>
 					<CachePath>SFX/Parry_Move-004_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="909703639" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_KICK_164.wav</ShortName>
+					<Path>Media/909703639.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3770</PrefetchSize>
+				</File>
 				<File Id="919203908" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Parry_Move-001.wav</ShortName>
 					<CachePath>SFX/Parry_Move-001_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="923208002" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_KICK_164.wav</ShortName>
+					<Path>Media/923208002.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_KICK_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3610</PrefetchSize>
+				</File>
+				<File Id="926862424" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-001.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-001_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="932054782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_HH_164Bpm.wav</ShortName>
@@ -740,13 +1398,61 @@
 					<ShortName>B1\RP_M_DownThePowerRoad_M002_B1_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/B1/RP_M_DownThePowerRoad_M002_B1_Guitar_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="944546153" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Guitar_164.wav</ShortName>
+					<Path>Media/944546153.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4059</PrefetchSize>
+				</File>
+				<File Id="945359593" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_TOMLOW_164.wav</ShortName>
+					<Path>Media/945359593.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4041</PrefetchSize>
+				</File>
+				<File Id="961824057" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164.wav</ShortName>
+					<Path>Media/961824057.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164_0762CC47.wem</CachePath>
+					<PrefetchSize>557</PrefetchSize>
+				</File>
+				<File Id="967345844" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_DRUMS_164.wav</ShortName>
+					<Path>Media/967345844.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_A/RP_M_DOWN THE POWER ROAD_P4_A_DRUMS_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3681</PrefetchSize>
+				</File>
+				<File Id="976329560" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_SNARE_164.wav</ShortName>
+					<Path>Media/976329560.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_SNARE_164_0762CC47.wem</CachePath>
+					<PrefetchSize>573</PrefetchSize>
+				</File>
 				<File Id="977991789" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>A1\RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm.wav</ShortName>
 					<CachePath>SFX/A1/RP_M_DownThePowerRoad_M002_A1_Lead_Guitar_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="987404569" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_PERC_164.wav</ShortName>
+					<Path>Media/987404569.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_B/RP_M_DOWN THE POWER ROAD_P2_M002_B_PERC_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3293</PrefetchSize>
+				</File>
+				<File Id="1003822744" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164.wav</ShortName>
+					<Path>Media/1003822744.wem</Path>
+					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164_0762CC47.wem</CachePath>
+					<PrefetchSize>4258</PrefetchSize>
+				</File>
 				<File Id="1004486920" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-002.wav</ShortName>
 					<CachePath>SFX/taunt_demo-002_5DB25D78.wem</CachePath>
+				</File>
+				<File Id="1006105906" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_GUITAR_164.wav</ShortName>
+					<Path>Media/1006105906.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_Bridge/RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_GUITAR_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3807</PrefetchSize>
 				</File>
 				<File Id="1007149797" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-005.wav</ShortName>
@@ -761,6 +1467,12 @@
 					<Path>Media/1013363216.wem</Path>
 					<CachePath>SFX/C1/RP_M_DownThePowerRoad_M002_C1_Drums_164Bpm_0762CC47.wem</CachePath>
 				</File>
+				<File Id="1015391800" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_DRUMS 2_164.wav</ShortName>
+					<Path>Media/1015391800.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_DRUMS 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3496</PrefetchSize>
+				</File>
 				<File Id="1016618322" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByWall-004.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-004_D8C07C79.wem</CachePath>
@@ -768,6 +1480,12 @@
 				<File Id="1020399212" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intro\RP_M_DownThePowerRoad_M002_Intro_Guitar_FX_164Bpm.wav</ShortName>
 					<CachePath>SFX/Intro/RP_M_DownThePowerRoad_M002_Intro_Guitar_FX_164Bpm_0762CC47.wem</CachePath>
+				</File>
+				<File Id="1024803954" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_HEY_164.wav</ShortName>
+					<Path>Media/1024803954.wem</Path>
+					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_HEY_164_0762CC47.wem</CachePath>
+					<PrefetchSize>557</PrefetchSize>
 				</File>
 				<File Id="1025653342" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Score_Up\Score_Up-003.wav</ShortName>
@@ -785,9 +1503,17 @@
 					<ShortName>Punch_AfterParry-001.wav</ShortName>
 					<CachePath>SFX/Punch_AfterParry-001_702B0C36.wem</CachePath>
 				</File>
-				<File Id="1030582443" Language="SFX" Streaming="false" Location="Memory">
+				<File Id="1030582443" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>Outro\RP_M_DownThePowerRoad_M002_OUTRO_Guitar_164Bpm.wav</ShortName>
+					<Path>Media/1030582443.wem</Path>
 					<CachePath>SFX/Outro/RP_M_DownThePowerRoad_M002_OUTRO_Guitar_164Bpm_0762CC47.wem</CachePath>
+					<PrefetchSize>3859</PrefetchSize>
+				</File>
+				<File Id="1031203364" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Synth Bass 1_164.wav</ShortName>
+					<Path>Media/1031203364.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Synth Bass 1_164_0762CC47.wem</CachePath>
+					<PrefetchSize>777</PrefetchSize>
 				</File>
 				<File Id="1038358532" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-003.wav</ShortName>
@@ -797,9 +1523,27 @@
 					<ShortName>Ball_Grab_V5.wav</ShortName>
 					<CachePath>SFX/Ball_Grab_V5_9457137E.wem</CachePath>
 				</File>
+				<File Id="1050802061" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Drum Fill_164.wav</ShortName>
+					<Path>Media/1050802061.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Drum Fill_164_0762CC47.wem</CachePath>
+					<PrefetchSize>777</PrefetchSize>
+				</File>
+				<File Id="1055165452" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 2_164.wav</ShortName>
+					<Path>Media/1055165452.wem</Path>
+					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A3/RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 2_164_0762CC47.wem</CachePath>
+					<PrefetchSize>2729</PrefetchSize>
+				</File>
 				<File Id="1056644497" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ball_Lost-002.wav</ShortName>
 					<CachePath>SFX/Ball_Lost-002_3A207BB8.wem</CachePath>
+				</File>
+				<File Id="1062468837" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_TOMLOW_164.wav</ShortName>
+					<Path>Media/1062468837.wem</Path>
+					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_B/RP_M_DOWN THE POWER ROAD_P4_B_TOMLOW_164_0762CC47.wem</CachePath>
+					<PrefetchSize>3602</PrefetchSize>
 				</File>
 				<File Id="1067298357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>B2\RP_M_DownThePowerRoad_M002_B2_Kick_2_164Bpm.wav</ShortName>
@@ -879,7 +1623,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="155540885" Name="Ball_Punch_Move" DurationType="OneShot" DurationMin="0.4290234" DurationMax="0.76271296">
+				<Event Id="155540885" Name="Ball_Punch_Move" DurationType="OneShot" DurationMin="0.40267062" DurationMax="0.76271296">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -929,11 +1673,11 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
-								<MediaRef Id="167618205"/>
-								<MediaRef Id="205823263"/>
-								<MediaRef Id="859755538"/>
-								<MediaRef Id="932970665"/>
-								<MediaRef Id="1007149797"/>
+								<MediaRef Id="129798207"/>
+								<MediaRef Id="498199362"/>
+								<MediaRef Id="513368010"/>
+								<MediaRef Id="677820568"/>
+								<MediaRef Id="810372569"/>
 							</MediaRefs>
 							<PluginRefs>
 								<ShareSets>
@@ -1068,9 +1812,10 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1505888634" Name="Countdown" DurationType="OneShot" DurationMin="7.3123126" DurationMax="7.3123126">
+				<Event Id="1505888634" Name="Countdown" DurationType="OneShot" DurationMin="4.5" DurationMax="4.6385">
 					<MediaRefs>
-						<MediaRef Id="58165178"/>
+						<MediaRef Id="73108266"/>
+						<MediaRef Id="538919773"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="3.6834946" DurationMax="4.428607">
@@ -1234,6 +1979,42 @@
 									<PluginRef Id="759487314"/>
 								</ShareSets>
 							</PluginRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="22664301" Name="Getting_Up" DurationType="OneShot" DurationMin="1.7194583" DurationMax="2.1183333">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="152747667"/>
+								<MediaRef Id="904302091"/>
+								<MediaRef Id="926862424"/>
+							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1486,56 +2267,195 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="3991942870" Name="Music" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="5556493"/>
+						<MediaRef Id="54912899"/>
+						<MediaRef Id="91746234"/>
+						<MediaRef Id="95593411"/>
+						<MediaRef Id="266404866"/>
+						<MediaRef Id="311419118"/>
+						<MediaRef Id="323774518"/>
+						<MediaRef Id="330044123"/>
+						<MediaRef Id="340196925"/>
+						<MediaRef Id="369612689"/>
+						<MediaRef Id="385040290"/>
+						<MediaRef Id="455358662"/>
+						<MediaRef Id="498718941"/>
+						<MediaRef Id="512674510"/>
+						<MediaRef Id="522537835"/>
+						<MediaRef Id="571968005"/>
+						<MediaRef Id="592778449"/>
+						<MediaRef Id="606364098"/>
+						<MediaRef Id="614962828"/>
+						<MediaRef Id="628417396"/>
+						<MediaRef Id="639253198"/>
+						<MediaRef Id="674914287"/>
+						<MediaRef Id="711752289"/>
+						<MediaRef Id="713640916"/>
+						<MediaRef Id="771518876"/>
+						<MediaRef Id="799410258"/>
+						<MediaRef Id="803935308"/>
+						<MediaRef Id="932054782"/>
+						<MediaRef Id="944429033"/>
+						<MediaRef Id="977991789"/>
+						<MediaRef Id="1013363216"/>
+						<MediaRef Id="1020399212"/>
+						<MediaRef Id="1067298357"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2322231365" Id="446279778" Name="Bed"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2856297975" Name="Musictst" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3826569560" Id="89505537"/>
+							<SwitchValue GroupType="State" GroupId="2322231365" Id="1635194252"/>
 							<MediaRefs>
-								<MediaRef Id="5556493"/>
-								<MediaRef Id="54912899"/>
-								<MediaRef Id="91746234"/>
-								<MediaRef Id="95593411"/>
-								<MediaRef Id="266404866"/>
-								<MediaRef Id="311419118"/>
-								<MediaRef Id="323774518"/>
-								<MediaRef Id="330044123"/>
-								<MediaRef Id="340196925"/>
-								<MediaRef Id="369612689"/>
-								<MediaRef Id="385040290"/>
-								<MediaRef Id="455358662"/>
-								<MediaRef Id="498718941"/>
-								<MediaRef Id="512674510"/>
-								<MediaRef Id="522537835"/>
-								<MediaRef Id="571968005"/>
-								<MediaRef Id="592778449"/>
-								<MediaRef Id="606364098"/>
-								<MediaRef Id="614962828"/>
-								<MediaRef Id="628417396"/>
-								<MediaRef Id="639253198"/>
-								<MediaRef Id="674914287"/>
-								<MediaRef Id="711752289"/>
-								<MediaRef Id="713640916"/>
-								<MediaRef Id="771518876"/>
-								<MediaRef Id="799410258"/>
-								<MediaRef Id="803935308"/>
-								<MediaRef Id="932054782"/>
-								<MediaRef Id="944429033"/>
-								<MediaRef Id="977991789"/>
-								<MediaRef Id="1013363216"/>
-								<MediaRef Id="1020399212"/>
-								<MediaRef Id="1067298357"/>
+								<MediaRef Id="7981215"/>
+								<MediaRef Id="19952398"/>
+								<MediaRef Id="76850443"/>
+								<MediaRef Id="77425404"/>
+								<MediaRef Id="107319338"/>
+								<MediaRef Id="109043323"/>
+								<MediaRef Id="122139466"/>
+								<MediaRef Id="129634763"/>
+								<MediaRef Id="135018568"/>
+								<MediaRef Id="213643349"/>
+								<MediaRef Id="275882741"/>
+								<MediaRef Id="284994471"/>
+								<MediaRef Id="286886511"/>
+								<MediaRef Id="437335178"/>
+								<MediaRef Id="462406626"/>
+								<MediaRef Id="465666643"/>
+								<MediaRef Id="514629755"/>
+								<MediaRef Id="600932681"/>
+								<MediaRef Id="636256720"/>
+								<MediaRef Id="641192620"/>
+								<MediaRef Id="695679820"/>
+								<MediaRef Id="701324123"/>
+								<MediaRef Id="706451525"/>
+								<MediaRef Id="710801792"/>
+								<MediaRef Id="771455466"/>
+								<MediaRef Id="774400041"/>
+								<MediaRef Id="791968952"/>
+								<MediaRef Id="899024066"/>
+								<MediaRef Id="900041780"/>
+								<MediaRef Id="944546153"/>
+								<MediaRef Id="961824057"/>
+								<MediaRef Id="1003822744"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3826569560" Id="529726532"/>
+							<SwitchValue GroupType="State" GroupId="2322231365" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="63618971"/>
+								<MediaRef Id="145145075"/>
+								<MediaRef Id="222143719"/>
+								<MediaRef Id="334493050"/>
+								<MediaRef Id="373265237"/>
+								<MediaRef Id="408514773"/>
+								<MediaRef Id="473655636"/>
+								<MediaRef Id="489059977"/>
+								<MediaRef Id="510761819"/>
+								<MediaRef Id="537038425"/>
+								<MediaRef Id="600273389"/>
+								<MediaRef Id="636284314"/>
+								<MediaRef Id="683512672"/>
+								<MediaRef Id="692331253"/>
+								<MediaRef Id="736010856"/>
+								<MediaRef Id="739916426"/>
+								<MediaRef Id="770234939"/>
+								<MediaRef Id="818285052"/>
+								<MediaRef Id="854946409"/>
+								<MediaRef Id="909703639"/>
+								<MediaRef Id="945359593"/>
+								<MediaRef Id="976329560"/>
+								<MediaRef Id="987404569"/>
+								<MediaRef Id="1024803954"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="2322231365" Id="3271665593"/>
 							<MediaRefs>
 								<MediaRef Id="133677138"/>
 								<MediaRef Id="1030582443"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="2322231365" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="24720921"/>
+								<MediaRef Id="25359372"/>
+								<MediaRef Id="42226905"/>
+								<MediaRef Id="107112461"/>
+								<MediaRef Id="165984581"/>
+								<MediaRef Id="171506780"/>
+								<MediaRef Id="174170564"/>
+								<MediaRef Id="240397543"/>
+								<MediaRef Id="240966468"/>
+								<MediaRef Id="349829830"/>
+								<MediaRef Id="374838533"/>
+								<MediaRef Id="435301999"/>
+								<MediaRef Id="462283167"/>
+								<MediaRef Id="464878171"/>
+								<MediaRef Id="524160278"/>
+								<MediaRef Id="528629332"/>
+								<MediaRef Id="570410724"/>
+								<MediaRef Id="581161730"/>
+								<MediaRef Id="762980447"/>
+								<MediaRef Id="855021302"/>
+								<MediaRef Id="868771941"/>
+								<MediaRef Id="875882344"/>
+								<MediaRef Id="906850399"/>
+								<MediaRef Id="1006105906"/>
+								<MediaRef Id="1031203364"/>
+								<MediaRef Id="1050802061"/>
+								<MediaRef Id="1055165452"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="2322231365" Id="446279778"/>
+							<MediaRefs>
+								<MediaRef Id="132797336"/>
+								<MediaRef Id="281198872"/>
+								<MediaRef Id="287073986"/>
+								<MediaRef Id="392359955"/>
+								<MediaRef Id="502350003"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="2322231365" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="38199261"/>
+								<MediaRef Id="113318879"/>
+								<MediaRef Id="131661278"/>
+								<MediaRef Id="238705589"/>
+								<MediaRef Id="332362476"/>
+								<MediaRef Id="365486018"/>
+								<MediaRef Id="379829155"/>
+								<MediaRef Id="408266780"/>
+								<MediaRef Id="476796087"/>
+								<MediaRef Id="497905110"/>
+								<MediaRef Id="571588263"/>
+								<MediaRef Id="579147793"/>
+								<MediaRef Id="613259797"/>
+								<MediaRef Id="634612713"/>
+								<MediaRef Id="653673400"/>
+								<MediaRef Id="702804740"/>
+								<MediaRef Id="708718175"/>
+								<MediaRef Id="790904664"/>
+								<MediaRef Id="818838944"/>
+								<MediaRef Id="840644709"/>
+								<MediaRef Id="849909957"/>
+								<MediaRef Id="850423519"/>
+								<MediaRef Id="877226522"/>
+								<MediaRef Id="923208002"/>
+								<MediaRef Id="967345844"/>
+								<MediaRef Id="1015391800"/>
+								<MediaRef Id="1062468837"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
-					<ActionSetState>
-						<ActionSetStateEntry GroupId="3826569560" Id="89505537" Name="Gameplay"/>
-					</ActionSetState>
 				</Event>
 				<Event Id="3076648345" Name="Parry" DurationType="OneShot" DurationMin="0.4815625" DurationMax="1.5197083">
 					<SwitchContainers>
@@ -1681,11 +2601,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="431014199" Name="Play_Outro" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
-					<ActionSetState>
-						<ActionSetStateEntry GroupId="3826569560" Id="529726532" Name="End"/>
-					</ActionSetState>
-				</Event>
+				<Event Id="431014199" Name="Play_Outro" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3187507146" Name="Play_test" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<PluginRefs>
 						<Custom>
@@ -1693,7 +2609,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
-				<Event Id="3055455917" Name="Punch_Move" DurationType="OneShot" DurationMin="0.4290234" DurationMax="0.76271296">
+				<Event Id="3055455917" Name="Punch_Move" DurationType="OneShot" DurationMin="0.40267062" DurationMax="0.76271296">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -1743,11 +2659,11 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
-								<MediaRef Id="167618205"/>
-								<MediaRef Id="205823263"/>
-								<MediaRef Id="859755538"/>
-								<MediaRef Id="932970665"/>
-								<MediaRef Id="1007149797"/>
+								<MediaRef Id="129798207"/>
+								<MediaRef Id="498199362"/>
+								<MediaRef Id="513368010"/>
+								<MediaRef Id="677820568"/>
+								<MediaRef Id="810372569"/>
 							</MediaRefs>
 							<PluginRefs>
 								<ShareSets>
@@ -1809,6 +2725,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="4279841335" Name="Respawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3248278131" Name="Score_Up" DurationType="OneShot" DurationMin="0.11214326" DurationMax="0.15850572">
 					<MediaRefs>
 						<MediaRef Id="94309540"/>
@@ -1880,11 +2797,15 @@
 				<GameParameter Id="2995819693" Name="Throttle"/>
 			</GameParameters>
 			<StateGroups>
-				<StateGroup Id="3826569560" Name="Music_State">
+				<StateGroup Id="2322231365" Name="Gameplay_Music">
 					<States>
-						<State Id="89505537" Name="Gameplay"/>
-						<State Id="529726532" Name="End"/>
+						<State Id="446279778" Name="Bed"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="1635194249" Name="P4"/>
+						<State Id="1635194252" Name="P1"/>
+						<State Id="1635194254" Name="P3"/>
+						<State Id="1635194255" Name="P2"/>
+						<State Id="3271665593" Name="Game_End"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
@@ -1900,5 +2821,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E9EB95D2-215D-D4CB-8D36-2FE68206E231}</FileHash>
+	<FileHash>{F71DD514-6AE0-FD5B-2A70-63619FF7921E}</FileHash>
 </SoundBanksInfo>

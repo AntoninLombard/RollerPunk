@@ -103,6 +103,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: d82b6eb836085dc4ca0e595d792b1951,
       type: 2}
+  gettingUpSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d75f383eac5a1c84093ea14257cd0d0e,
+      type: 2}
+  respawnSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d8d250a70fcb5e24da8d1865e7b92bc4,
+      type: 2}
   engineSpeed:
     idInternal: 0
     valueGuidInternal: 
