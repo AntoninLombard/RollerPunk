@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   playerColors:
-  - {r: 1, g: 0, b: 0.89987373, a: 1}
-  - {r: 0.031413555, g: 1, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.9638114, a: 1}
-  - {r: 1, g: 0.617801, b: 0, a: 1}
+  - {r: 1, g: 0.14901961, b: 0.5764706, a: 1}
+  - {r: 0.3726415, g: 1, b: 0.66391516, a: 1}
+  - {r: 1, g: 0.7863391, b: 0.15566039, a: 1}
+  - {r: 0.2078431, g: 0.25158042, b: 0.99607843, a: 1}
   countdownSound:
     idInternal: 0
     valueGuidInternal: 
