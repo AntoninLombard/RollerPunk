@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F8E8314B-8FB2-3F53-C501-F44A9858918E}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{20DF195F-8953-5EE8-CEA8-43F3CA564AE8}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -278,7 +278,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{89A8A8C9-C323-D963-C24D-A1DE21DB2BAC}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{158403F4-FEEF-9B8E-2E1B-5933F7FD7E80}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -411,6 +411,10 @@
 				<File Id="96173677" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-003.wav</ShortName>
 					<CachePath>SFX/Collision-003_D959F728.wem</CachePath>
+				</File>
+				<File Id="101842239" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_2.wav</ShortName>
+					<CachePath>SFX/M2_2_0762CC47.wem</CachePath>
 				</File>
 				<File Id="107112461" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164.wav</ShortName>
@@ -735,9 +739,17 @@
 					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164_0762CC47.wem</CachePath>
 					<PrefetchSize>2533</PrefetchSize>
 				</File>
+				<File Id="398677519" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_1.wav</ShortName>
+					<CachePath>SFX/M2_1_0762CC47.wem</CachePath>
+				</File>
 				<File Id="399989887" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByWall-001.wav</ShortName>
 					<CachePath>SFX/Hit_ByWall-001_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="407524894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chain_Loop.wav</ShortName>
+					<CachePath>SFX/Chain_Loop_0762CC47.wem</CachePath>
 				</File>
 				<File Id="408266780" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_HEY_164.wav</ShortName>
@@ -750,6 +762,14 @@
 					<Path>Media/408514773.wem</Path>
 					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164_0762CC47.wem</CachePath>
 					<PrefetchSize>2506</PrefetchSize>
+				</File>
+				<File Id="413327098" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_Saw.wav</ShortName>
+					<CachePath>SFX/M2_Saw_0762CC47.wem</CachePath>
+				</File>
+				<File Id="413450912" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pics_Loop.wav</ShortName>
+					<CachePath>SFX/Pics_Loop_0762CC47.wem</CachePath>
 				</File>
 				<File Id="424568932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Checkpoint.wav</ShortName>
@@ -869,6 +889,10 @@
 					<Path>Media/502350003.wem</Path>
 					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 1_164_0762CC47.wem</CachePath>
 					<PrefetchSize>693</PrefetchSize>
+				</File>
+				<File Id="503999046" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>M2_3.wav</ShortName>
+					<CachePath>SFX/M2_3_0762CC47.wem</CachePath>
 				</File>
 				<File Id="510761819" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164.wav</ShortName>
@@ -1532,9 +1556,11 @@
 			</Media>
 			<Plugins>
 				<Custom>
+					<Plugin Id="738060054" Name="Guitar Distortion (Custom)" LibName="Wwise Guitar Distortion" LibId="8257539"/>
 					<Plugin Id="756155750" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
 				</Custom>
 				<ShareSets>
+					<Plugin Id="759487314" Name="Engines" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="4136302296" Name="High_Shelf" LibName="Wwise Parametric EQ" LibId="6881283"/>
 				</ShareSets>
@@ -1836,7 +1862,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2862969430" Name="Engine_Start" DurationType="OneShot" DurationMin="0.81114334" DurationMax="1.4452932">
+				<Event Id="2862969430" Name="Engine_Start" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -1879,6 +1905,82 @@
 							<PluginRefs>
 								<ShareSets>
 									<PluginRef Id="3657550167"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="101842239"/>
+								<MediaRef Id="398677519"/>
+								<MediaRef Id="407524894"/>
+								<MediaRef Id="413327098"/>
+								<MediaRef Id="413450912"/>
+								<MediaRef Id="503999046"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="738060054"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="759487314"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="101842239"/>
+								<MediaRef Id="398677519"/>
+								<MediaRef Id="407524894"/>
+								<MediaRef Id="413327098"/>
+								<MediaRef Id="413450912"/>
+								<MediaRef Id="503999046"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="738060054"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="759487314"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="101842239"/>
+								<MediaRef Id="398677519"/>
+								<MediaRef Id="407524894"/>
+								<MediaRef Id="413327098"/>
+								<MediaRef Id="413450912"/>
+								<MediaRef Id="503999046"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="738060054"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="759487314"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="101842239"/>
+								<MediaRef Id="398677519"/>
+								<MediaRef Id="407524894"/>
+								<MediaRef Id="413327098"/>
+								<MediaRef Id="413450912"/>
+								<MediaRef Id="503999046"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="738060054"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="759487314"/>
 								</ShareSets>
 							</PluginRefs>
 						</SwitchContainer>
@@ -2692,9 +2794,12 @@
 				</Event>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="16764168" Name="Direction"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
 				<GameParameter Id="2398231425" Name="Score"/>
+				<GameParameter Id="2907122923" Name="Grounded"/>
+				<GameParameter Id="2995819693" Name="Throttle"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="2322231365" Name="Gameplay_Music">
@@ -2721,5 +2826,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{23D48E44-8EF1-94D6-E6C7-64F85A865328}</FileHash>
+	<FileHash>{8D3E0B8F-042B-27EB-EC17-8002D4852B58}</FileHash>
 </SoundBanksInfo>

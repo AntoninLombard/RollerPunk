@@ -311,6 +311,7 @@ public class PlayerCombat : MonoBehaviour
         player.anime.animator.SetTrigger("Stunned");
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger("GetUp");
+        player.data.gettingUpSound.Post(gameObject);
         isStunned = false;
         isInvincible = false;
     }
@@ -416,6 +417,7 @@ public class PlayerCombat : MonoBehaviour
         StartCoroutine(stun(null));
         GameManager.Instance.RespawnPlayer(player);
         player.data.respawnSound.Post(GameManager.Instance.gameObject);
+        player.data.startEngineSound.Post(gameObject);
     }
 
     int sourceDirection(Transform source)

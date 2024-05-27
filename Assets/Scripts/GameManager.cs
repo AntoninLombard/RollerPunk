@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
     [SerializeField] private RTPC playerNumberRTPC;
-    [SerializeField] private AK.Wwise.Event startEngineSound;
 
     private void Awake()
     {
@@ -108,7 +107,6 @@ public class GameManager : MonoBehaviour
         Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
         Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
         player.controller.TeleportPlayer(pos, rot);
-        startEngineSound.Post(player.gameObject);
 
     }
 
@@ -227,6 +225,7 @@ public class GameManager : MonoBehaviour
     IEnumerator StartCountdown()
     {
         gameData.countdownSound.Post(gameObject);
+
         foreach (Player player in players.Keys)
         {
             player.ui.ToggleCountdown(true);
@@ -239,6 +238,7 @@ public class GameManager : MonoBehaviour
         {
             player.ui.SetCountdown(2);
         }
+
         gameData.countdownSound.Post(gameObject);
         
         yield return new WaitForSeconds(1);
@@ -247,6 +247,7 @@ public class GameManager : MonoBehaviour
         {
             player.ui.SetCountdown(1);
         }
+
         gameData.countdownSound.Post(gameObject);
         
         yield return new WaitForSeconds(1);
@@ -256,6 +257,7 @@ public class GameManager : MonoBehaviour
             player.ui.SetCountdown(0);
             player.ToggleActive(true);
         }
+
         gameData.countdownSound.Post(gameObject);
 
         yield return new WaitForSeconds(0.5f);

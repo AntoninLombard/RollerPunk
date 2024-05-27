@@ -57,11 +57,16 @@ State	ID	Name	State Group			Notes
 	3271665593	Game_End	Gameplay_Music			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	16764168	Direction			\RP_Vehicule\Direction	
 	796049864	RPM			\RP_Vehicule\RPM	
 	1659248646	Player_Number			\Default Work Unit\Player_Number	
 	2398231425	Score			\Default Work Unit\Score	
+	2907122923	Grounded			\RP_Vehicule\Grounded	
+	2995819693	Throttle			\RP_Vehicule\Throttle	
 
 Effect plug-ins	ID	Name	Type				Notes
+	738060054	Guitar Distortion (Custom)	Wwise Guitar Distortion			
+	759487314	Engines	Wwise Parametric EQ			
 	3657550167	New_Parametric_EQ	Wwise Parametric EQ			
 	4136302296	High_Shelf	Wwise Parametric EQ			
 
@@ -97,6 +102,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	94309540	Score_Up-005	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Score_Up\Score_Up-005_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_UI\Score_Up\Score_Up-005		6429
 	95593411	RP_M_DownThePowerRoad_M002_D2_Bass_1_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\D2\RP_M_DownThePowerRoad_M002_D2_Bass_1_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Music 1\Down the Power Road\D2\RP_M_DownThePowerRoad_M002_D2_Bass_1_164Bpm		451066
 	96173677	Collision-003	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Collision-003_D959F728.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Collision_02\Collision_Weak\Collision-003		14232
+	101842239	M2_2	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\M2_2_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\P1_VEH_ENG_Offload\M2_2		585407
 	107112461	RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P3\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164		3194
 	107319338	RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_PERC_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_PERC_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P1\P1_B_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_PERC_164		3265
 	109043323	RP_M_DOWN THE POWER ROAD_P1_M002_A_TOMLOW_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_TOMLOW_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P1\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_TOMLOW_164		4197
@@ -158,9 +164,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	378172409	Medium	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Medium_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Ambiances\AMB_Crowd\Medium		784543
 	379829155	RP_M_DOWN THE POWER ROAD_P4_C_Synth Bass_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_Synth Bass_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P4\P4_C\RP_M_DOWN THE POWER ROAD_P4_C_Synth Bass_164		2757
 	392359955	RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Bed\RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164		2533
+	398677519	M2_1	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\M2_1_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\P1_VEH_ENG_Offload\M2_1		1012244
 	399989887	Hit_ByWall-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Hit_ByWall-001_D8C07C79.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Hit_ByWall\Wall_Hit_02\Hit_ByWall-001		18009
+	407524894	Chain_Loop	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Chain_Loop_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\P1_VEH_ENG_Offload\Chain_Loop		244497
 	408266780	RP_M_DOWN THE POWER ROAD_P4_A_HEY_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_HEY_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P4\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_HEY_164		2586
 	408514773	RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P2\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164		2506
+	413327098	M2_Saw	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\M2_Saw_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\P1_VEH_ENG_Onload\M2_Saw		372991
+	413450912	Pics_Loop	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Pics_Loop_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\Pics_Loop		73695
 	424568932	Checkpoint_01	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Checkpoint_702B0C36.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Checkpoint\Checkpoint_01		111637
 	435301999	RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare LEAD_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare LEAD_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P3\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitare LEAD_164		3510
 	437335178	RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 1_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 1_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P1\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 1_164		709
@@ -184,6 +194,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	498718941	RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\B2\RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Music 1\Down the Power Road\B2\RP_M_DownThePowerRoad_M002_B2_Guitar_Solo_164Bpm		314141
 	501829316	Collision-005	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Collision-005_52D456F6.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Collision_02\Collision_01\Collision-005		18760
 	502350003	RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 1_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 1_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\Bed\RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH BASS 1_164		693
+	503999046	M2_3	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\M2_3_0762CC47.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_P2\P1_VEH_ENG_Offload\M2_3		98866
 	510761819	RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay\P2\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164		2883
 	512674510	RP_M_DownThePowerRoad_M002_A1_DRUMS_164Bpm	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\A1\RP_M_DownThePowerRoad_M002_A1_DRUMS_164Bpm_0762CC47.wem		\Interactive Music Hierarchy\Default Work Unit\Music 1\Down the Power Road\A1\RP_M_DownThePowerRoad_M002_A1_DRUMS_164Bpm		612241
 	513368010	Punch_Move-004	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Punch_Move-004_F39E0001.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Punch_Move\Punch\Punch_Move-004		17427

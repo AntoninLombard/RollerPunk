@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584850439481920322
+    m_lastTime: -8584850438400121824
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -1415,8 +1415,8 @@ MonoBehaviour:
         guid: 7b4ce96814ed7f4dab45c60f77f64457
       Path: Events\RP_Vehicule\Engine_Start
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.4452932
+      minDuration: 0.81114334
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -1749,7 +1749,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584858990557007094
+    m_lastTime: -8584847882175878357
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244
@@ -2387,9 +2387,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 
+  ExpandedFileSystemItemIds: 05000000110000002c00000042000000430000005a000000
   ExpandedWaapiItemIds: 05000000110000002c00000042000000430000005a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
