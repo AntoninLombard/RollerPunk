@@ -72,7 +72,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
       type: 2}
-  collisionSoundThreshold: 50
+  collisionSoundThreshold: 70
   collisionSound:
     idInternal: 0
     valueGuidInternal: 
