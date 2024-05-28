@@ -28,7 +28,8 @@ public class MeshBend : MonoBehaviour
     public enum FillType
     {
         StretchAndRepeat,
-        FillAsBest
+        FillAsBest,
+        ForceFill
     }
     [SerializeField]private bool liveUpdate;
     [SerializeField]private FillType type;
@@ -89,7 +90,10 @@ public class MeshBend : MonoBehaviour
 
     public void CheckIfDirty(Spline spline, int entier, SplineModification modifications)
     {
-        needUpdate = true;
+        if(spline == this.spline)
+        {
+            needUpdate = true;
+        }
     }
 
     public void BuildMesh()
@@ -118,12 +122,16 @@ public class MeshBend : MonoBehaviour
         
         
         if (type == FillType.StretchAndRepeat)
-            scale = Vector3.one *  sectionLength / meshLength;
+            scale.x = sectionLength / meshLength;
         else if (type == FillType.FillAsBest)
         {
             repetitions = Mathf.RoundToInt(splineLength / (meshLength * scale.x)); // TODO Better rounding to closer int
             sectionLength = splineLength / repetitions;
-            scale = Vector3.one * sectionLength;
+            scale.x = sectionLength / meshLength;
+        } else if (type == FillType.ForceFill)
+        {
+            sectionLength = meshLength*scale.x;
+            repetitions = Mathf.RoundToInt(splineLength / (meshLength * scale.x));
         }
         
         
