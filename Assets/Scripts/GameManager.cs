@@ -87,6 +87,15 @@ public class GameManager : MonoBehaviour
         isRaceOn = true;
     }
 
+    void StopGame()
+    {
+        isRaceOn = false;
+        foreach (Player player in players.Keys)
+        {
+            player.ToggleActive(false);
+        }
+    }
+
     public void OnPlayerInstantiate(Player player)
     {
         players.Add(player,0);
@@ -115,6 +124,10 @@ public class GameManager : MonoBehaviour
         players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
         ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
+        if (players[ballHolder] > scoring.maxScore)
+        {
+            StopGame();
+        }
         ResetBall();
     }
     
@@ -210,11 +223,16 @@ public class GameManager : MonoBehaviour
     public void RespawnBall()
     {
         ballHolder = null;
-        Transform pos = lastRespawnPoint.spawnPoints[Random.Range(0, 4)];
-        ball.Toggle(true);
         ball.transform.parent = null;
-        ball.transform.position = pos.position;
-        ball.transform.rotation = pos.rotation;
+        int index = respawnpoints.IndexOf(lastRespawnPoint);
+        Transform pos = respawnpoints[(index+1) % respawnpoints.Count].ballSpawnPoint;
+        if (Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
+        {
+            ball.Toggle(true);
+            ball.transform.parent = null;
+            ball.transform.position = hit.point + hit.normal;
+            ball.transform.rotation = pos.rotation;
+        }
     }
     
     
