@@ -49,7 +49,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ColliderBox punchLeftCollider;
     [SerializeField] private ColliderBox punchRightCollider;
-    
+
+
+    private Gamepad gamepad;
     
     
     
@@ -59,6 +61,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void Awake()
     {
+        gamepad = (Gamepad)player.input.devices.Where(x => x.GetType() == gamepad.GetType() );
         OnHitByPunch.AddListener(onHitByPunch);
         OnGrabbingBall.AddListener(onGrabbingBall);
     }

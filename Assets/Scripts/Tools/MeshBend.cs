@@ -20,6 +20,8 @@ public class MeshBend : MonoBehaviour
     private Spline spline;
     private MeshCollider collider;
     private MeshFilter filter;
+    private float timer;
+    private float updateTimer = 0.2f;
     
     
     [Serializable]
@@ -39,6 +41,20 @@ public class MeshBend : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
+        Spline.Changed += CheckIfDirty;
+        
+        splineContainer = GetComponent<SplineContainer>();
+        spline = splineContainer.Splines.First();
+        collider = GetComponent<MeshCollider>();
+        filter = GetComponent<MeshFilter>();
+    }
+
+    private void OnEnable()
+    {
+                
+        Spline.Changed += CheckIfDirty;
+        
         splineContainer = GetComponent<SplineContainer>();
         spline = splineContainer.Splines.First();
         collider = GetComponent<MeshCollider>();
@@ -56,14 +72,24 @@ public class MeshBend : MonoBehaviour
     
     public void Refresh()
     {
-        //if (needUpdate)
+        timer += Time.deltaTime;
+        if (timer < updateTimer)
+            return;
+        
+        if (needUpdate)
+        {
+            needUpdate = false;
             BuildMesh();
+        }
+
+        timer = 0;
+
     }
 
 
-    public int CheckIfDirty(int a)
+    public void CheckIfDirty(Spline spline, int entier, SplineModification modifications)
     {
-        return 1;
+        needUpdate = true;
     }
 
     public void BuildMesh()
