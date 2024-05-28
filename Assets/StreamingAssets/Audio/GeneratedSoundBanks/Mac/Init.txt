@@ -84,6 +84,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	1635194254	P3	Wwise Meter			
 	1635194255	P2	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
+	3042377063	Drums_B	Wwise Parametric EQ			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
