@@ -162,6 +162,7 @@ public class PlayerCombat : MonoBehaviour
         GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
         GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
         player.data.grabbingBallSound.Post(gameObject);
+        GameManager.Instance.gameData.musicState[player.number].SetValue();
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
     }
     
@@ -293,6 +294,8 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator stun(Player source)
     {
+        player.data.burstSound.Post(source.gameObject);
+
         if (isHoldingBall)
         {
             isHoldingBall = false;
@@ -418,6 +421,7 @@ public class PlayerCombat : MonoBehaviour
         GameManager.Instance.RespawnPlayer(player);
         player.data.respawnSound.Post(GameManager.Instance.gameObject);
         player.data.startEngineSound.Post(gameObject);
+        GameManager.Instance.gameData.musicState[4].SetValue();
     }
 
     int sourceDirection(Transform source)

@@ -49,6 +49,7 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event parrySuccessSound;
     public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.Event gettingUpSound;
+    public AK.Wwise.Event burstSound;
     public AK.Wwise.Event respawnSound;
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC throttle;

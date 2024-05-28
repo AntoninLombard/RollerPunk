@@ -61,7 +61,6 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         lastRespawnPoint = raceStart;
         gameData.crowdStart.Post(gameObject);
-        gameData.musicStart.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -116,7 +115,6 @@ public class GameManager : MonoBehaviour
         Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
         Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
         player.controller.TeleportPlayer(pos, rot);
-
     }
 
     public void OnScoring()
@@ -124,6 +122,7 @@ public class GameManager : MonoBehaviour
         players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
         ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
+        gameData.musicState[4].SetValue();
         if (players[ballHolder] > scoring.maxScore)
         {
             StopGame();
@@ -284,6 +283,8 @@ public class GameManager : MonoBehaviour
         {
             player.ui.ToggleCountdown(false);
         }
+
+        gameData.musicStart.Post(gameObject);
     }
     #endregion
 }

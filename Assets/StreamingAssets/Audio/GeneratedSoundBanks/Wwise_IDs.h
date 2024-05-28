@@ -68,18 +68,6 @@ namespace AK
             } // namespace STATE
         } // namespace GAMEPLAY_MUSIC
 
-        namespace GAMEPLAY_MUSIC_STATE
-        {
-            static const AkUniqueID GROUP = 204430455U;
-
-            namespace STATE
-            {
-                static const AkUniqueID GAME_END = 3271665593U;
-                static const AkUniqueID GAME_START = 733168346U;
-                static const AkUniqueID NONE = 748895195U;
-            } // namespace STATE
-        } // namespace GAMEPLAY_MUSIC_STATE
-
         namespace MENU_MUSIC
         {
             static const AkUniqueID GROUP = 4055567060U;
@@ -103,6 +91,18 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace MENU_MUSIC_STATE
+
+        namespace MUSIC_COOLDOWN
+        {
+            static const AkUniqueID GROUP = 2597434454U;
+
+            namespace STATE
+            {
+                static const AkUniqueID CD_OFF = 3983971318U;
+                static const AkUniqueID CD_ON = 29202488U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MUSIC_COOLDOWN
 
     } // namespace STATES
 
@@ -147,6 +147,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BALL_DUCK = 3218320494U;
         static const AkUniqueID DIRECTION = 16764168U;
         static const AkUniqueID ENVELOPPE_P1 = 256121077U;
         static const AkUniqueID ENVELOPPE_P2 = 256121078U;

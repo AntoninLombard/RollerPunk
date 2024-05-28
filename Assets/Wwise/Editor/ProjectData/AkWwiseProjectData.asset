@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584850438400121824
+    m_lastTime: -8584846989308490109
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -768,7 +768,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584850486851502998
+    m_lastTime: -8584847014642651557
     List:
     - name: Music
       guid: 50bd927e93a63341984dac3ccb90a59f
@@ -1429,8 +1429,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 16ff3389254ae24a8ec01413e62e9d26
     GuidInternal: 
-    m_lastTime: -8584850442194315460
+    m_lastTime: -8584846992034340427
     List:
+    - name: ball_duck
+      guid: 728d84a93c588e41b2d7a0e78a56a21a
+      id: 3218320494
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: ball_duck
+        ObjectType: 13
+        guid: 728d84a93c588e41b2d7a0e78a56a21a
+      Path: Game Parameters\Default Work Unit\ball_duck
     - name: Enveloppe_P1
       guid: b1e665bd53f29c478cb8032b4de05a6a
       id: 256121077
@@ -1847,7 +1861,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: b3b1a5743ece2d4aa387aae00cb3ad5d
     GuidInternal: 
-    m_lastTime: -8584851332766692168
+    m_lastTime: -8584847027425917163
     List:
     - name: Gameplay_Music
       guid: 312358bb7d5da54781aefff3d813ce51
@@ -1976,72 +1990,6 @@ MonoBehaviour:
         - ElementName: P4
           ObjectType: 8
           guid: 6c43666f382d26449f207c73b7a23fd8
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
-    - name: Gameplay_Music_State
-      guid: 3ff7dc2a2273d947a8bd956accd80f61
-      id: 204430455
-      PathAndIcons:
-      - ElementName: States
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: b3b1a5743ece2d4aa387aae00cb3ad5d
-      - ElementName: Gameplay_Music_State
-        ObjectType: 9
-        guid: 3ff7dc2a2273d947a8bd956accd80f61
-      Path: States\Default Work Unit\Gameplay_Music_State
-      values:
-      - name: Game_End
-        guid: 6c483c1a57e2a74abd4af3b8226d5f6d
-        id: 3271665593
-        PathAndIcons:
-        - ElementName: States
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
-        - ElementName: Gameplay_Music_State
-          ObjectType: 9
-          guid: 3ff7dc2a2273d947a8bd956accd80f61
-        - ElementName: Game_End
-          ObjectType: 8
-          guid: 6c483c1a57e2a74abd4af3b8226d5f6d
-      - name: Game_Start
-        guid: 4b6f700a3ff37446908c0dee4a795eac
-        id: 733168346
-        PathAndIcons:
-        - ElementName: States
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
-        - ElementName: Gameplay_Music_State
-          ObjectType: 9
-          guid: 3ff7dc2a2273d947a8bd956accd80f61
-        - ElementName: Game_Start
-          ObjectType: 8
-          guid: 4b6f700a3ff37446908c0dee4a795eac
-      - name: None
-        guid: 64d6870971856e41a1594a1c81b3e2ba
-        id: 748895195
-        PathAndIcons:
-        - ElementName: States
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
-        - ElementName: Gameplay_Music_State
-          ObjectType: 9
-          guid: 3ff7dc2a2273d947a8bd956accd80f61
-        - ElementName: None
-          ObjectType: 8
-          guid: 64d6870971856e41a1594a1c81b3e2ba
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -2174,6 +2122,72 @@ MonoBehaviour:
         - ElementName: None
           ObjectType: 8
           guid: 22478bfe6a1b734e8b66f6eb022a6e10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Music_Cooldown
+      guid: 3220e32e64e3eb468709a979df84f8ec
+      id: 2597434454
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+      - ElementName: Music_Cooldown
+        ObjectType: 9
+        guid: 3220e32e64e3eb468709a979df84f8ec
+      Path: States\Default Work Unit\Music_Cooldown
+      values:
+      - name: CD_Off
+        guid: 4abf4120c8660c42a4b38ba585235e48
+        id: 3983971318
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music_Cooldown
+          ObjectType: 9
+          guid: 3220e32e64e3eb468709a979df84f8ec
+        - ElementName: CD_Off
+          ObjectType: 8
+          guid: 4abf4120c8660c42a4b38ba585235e48
+      - name: CD_On
+        guid: 2d6598aa08f93f47bb0c18f690339cbc
+        id: 29202488
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music_Cooldown
+          ObjectType: 9
+          guid: 3220e32e64e3eb468709a979df84f8ec
+        - ElementName: CD_On
+          ObjectType: 8
+          guid: 2d6598aa08f93f47bb0c18f690339cbc
+      - name: None
+        guid: 2d43e8da2a489d4caf1c37e32d1ce9a4
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: b3b1a5743ece2d4aa387aae00cb3ad5d
+        - ElementName: Music_Cooldown
+          ObjectType: 9
+          guid: 3220e32e64e3eb468709a979df84f8ec
+        - ElementName: None
+          ObjectType: 8
+          guid: 2d43e8da2a489d4caf1c37e32d1ce9a4
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -2387,7 +2401,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 05000000110000002c00000042000000430000005a000000
+  ExpandedFileSystemItemIds: 05000000110000002c00000038000000390000003a00000042000000430000005a000000
   ExpandedWaapiItemIds: 05000000110000002c00000042000000430000005a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

@@ -8,15 +8,12 @@ Switch	ID	Name	Switch Group			Notes
 	1635194255	P2	Player			
 
 State Group	ID	Name			Wwise Object Path	Notes
-	204430455	Gameplay_Music_State			\Default Work Unit\Gameplay_Music_State	
 	676404222	Menu_Music_State			\Default Work Unit\Menu_Music_State	
 	2322231365	Gameplay_Music			\Default Work Unit\Gameplay_Music	
+	2597434454	Music_Cooldown			\Default Work Unit\Music_Cooldown	
 	4055567060	Menu_Music			\Default Work Unit\Menu_Music	
 
 State	ID	Name	State Group			Notes
-	733168346	Game_Start	Gameplay_Music_State			
-	748895195	None	Gameplay_Music_State			
-	3271665593	Game_End	Gameplay_Music_State			
 	748895195	None	Menu_Music_State			
 	2607556080	Menu	Menu_Music_State			
 	2776193354	Menu_Quit	Menu_Music_State			
@@ -27,6 +24,9 @@ State	ID	Name	State Group			Notes
 	1635194254	P3	Gameplay_Music			
 	1635194255	P2	Gameplay_Music			
 	3271665593	Game_End	Gameplay_Music			
+	29202488	CD_On	Music_Cooldown			
+	748895195	None	Music_Cooldown			
+	3983971318	CD_Off	Music_Cooldown			
 	733168346	Game_Start	Menu_Music			
 	748895195	None	Menu_Music			
 	2607556080	Menu	Menu_Music			
