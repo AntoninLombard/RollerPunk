@@ -214,7 +214,7 @@ public class PlayerCombat : MonoBehaviour
         
         yield return new WaitForSeconds(player.data.punchWindUp);
         
-        if (isTaunting || isRecovering)
+        if (isTaunting || isRecovering || !isWindingUpPunch)
         {
             yield break;
         }
@@ -268,9 +268,9 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(player.anime.data.parry.length);
         player.anime.animator.ResetTrigger("Taunt");
         isTaunting = false;
-        isRecovering = true;
-        yield return new WaitForSeconds(player.data.actionsCooldown);
-        isRecovering = false;
+        // isRecovering = true;
+        // yield return new WaitForSeconds(player.data.actionsCooldown);
+        // isRecovering = false;
     }
 
     IEnumerator punchReactWindow(Player source)

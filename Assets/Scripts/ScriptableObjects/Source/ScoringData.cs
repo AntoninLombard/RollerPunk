@@ -9,4 +9,5 @@ public class ScoringData : ScriptableObject
     public float distancePerPoint;
     public int killMultipliatorThreshold;
     public int killMultiplicatorValue;
+    public int maxScore;
 }
