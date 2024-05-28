@@ -12,7 +12,7 @@ public class SplineMeshEditor : Editor
         if (GUILayout.Button("Update"))
         {
             MeshBend meshBend = (MeshBend)target;
-            meshBend.BuildMesh();
+            meshBend.Refresh();
         }
     }
 }
