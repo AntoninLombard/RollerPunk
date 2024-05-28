@@ -151,6 +151,7 @@ public class MeshBend : MonoBehaviour
         float offsetX = 0f;
         float meshOffset = 0f;
         int currentMeshNb = 0;
+        int batchNb = 0;
         MeshRenderer renderer;
         MeshFilter filter;
         MeshCollider collider;
@@ -239,8 +240,10 @@ public class MeshBend : MonoBehaviour
             {
                 Mesh meshBatch = FuseMeshes(newMeshes);
                 newMeshes.Clear();
-                CreateChild(meshBatch,materials.ToArray());
+                GameObject child = CreateChild(meshBatch,materials.ToArray());
+                child.name = "Generated Bend Mesh Batch" + batchNb;
                 currentMeshNb = 0;
+                batchNb++;
             }
             
             offsetX += sectionLength;
