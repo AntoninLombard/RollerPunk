@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         lastRespawnPoint = raceStart;
         gameData.crowdStart.Post(gameObject);
+        gameData.crowdWaiting.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -178,6 +179,7 @@ public class GameManager : MonoBehaviour
                 cumulatedPoints++;
                 ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
                 gameData.score.SetGlobalValue(cumulatedPoints);
+                gameData.scoreUpSound.Post(gameObject);
             }
             holderPreviousPosition = ballHolder.character.position;
             holderPreviousForward = ballHolder.character.forward;
@@ -285,6 +287,7 @@ public class GameManager : MonoBehaviour
         }
 
         gameData.musicStart.Post(gameObject);
+        gameData.crowdRaceStart.Post(gameObject);
     }
     #endregion
 }

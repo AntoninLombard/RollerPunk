@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584846989308490109
+    m_lastTime: -8584846039157404715
     List:
     - name: Ambiances
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -740,7 +740,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584853056926719859
+    m_lastTime: -8584846089795293704
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -768,7 +768,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584847014642651557
+    m_lastTime: -8584846971941880997
     List:
     - name: Music
       guid: 50bd927e93a63341984dac3ccb90a59f
@@ -849,7 +849,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584853081044471399
+    m_lastTime: -8584846089106949607
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -902,9 +902,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 4.502922
       minDuration: 2.6516263
-    - name: AMB_RunStart
+    - name: AMB_Prep
       guid: 716005349dfcb147828f1a99afc8f4f9
-      id: 2349163407
+      id: 2116017607
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -912,10 +912,27 @@ MonoBehaviour:
       - ElementName: RP_Ambiances
         ObjectType: 12
         guid: 11d81020dfd6864591f72eeb33912022
-      - ElementName: AMB_RunStart
+      - ElementName: AMB_Prep
         ObjectType: 3
         guid: 716005349dfcb147828f1a99afc8f4f9
-      Path: Events\RP_Ambiances\AMB_RunStart
+      Path: Events\RP_Ambiances\AMB_Prep
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: AMB_RaceStart
+      guid: f9f3f723dcb0f94fb8e0be8bffe928d1
+      id: 3265704427
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_RaceStart
+        ObjectType: 3
+        guid: f9f3f723dcb0f94fb8e0be8bffe928d1
+      Path: Events\RP_Ambiances\AMB_RaceStart
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1236,8 +1253,8 @@ MonoBehaviour:
         guid: 06e6ca4ce90b3b499d49a58634fc1dd2
       Path: Events\RP_Feedbacks\Respawn
       maxAttenuation: 0
-      maxDuration: 4.5
-      minDuration: 4.5
+      maxDuration: 4.042208
+      minDuration: 4.042208
     - name: setplayernumber
       guid: 7ce0baffa6486a41b2b2fdf03aa777e3
       id: 3687251531
@@ -1283,7 +1300,7 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584853206927402652
+    m_lastTime: -8584846105921110858
     List:
     - name: Join
       guid: 8909090ff5717d459271454105028381
@@ -1317,8 +1334,8 @@ MonoBehaviour:
         guid: 0b29a759e1f60847b0ec88a663f64cfc
       Path: Events\RP_UI\Score_Up
       maxAttenuation: 0
-      maxDuration: 0.15850572
-      minDuration: 0.11214326
+      maxDuration: 3.4598544
+      minDuration: 3.4598544
     - name: UI_Back
       guid: b147f398c136ab49a070625cc968f28f
       id: 2024222415
@@ -1429,7 +1446,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 16ff3389254ae24a8ec01413e62e9d26
     GuidInternal: 
-    m_lastTime: -8584846992034340427
+    m_lastTime: -8584846067678689105
     List:
     - name: ball_duck
       guid: 728d84a93c588e41b2d7a0e78a56a21a
@@ -1445,6 +1462,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: 728d84a93c588e41b2d7a0e78a56a21a
       Path: Game Parameters\Default Work Unit\ball_duck
+    - name: Crowd_Ducking
+      guid: 8740336728c08b4ba7d7c38d4430d552
+      id: 2376406340
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Crowd_Ducking
+        ObjectType: 13
+        guid: 8740336728c08b4ba7d7c38d4430d552
+      Path: Game Parameters\Default Work Unit\Crowd_Ducking
     - name: Enveloppe_P1
       guid: b1e665bd53f29c478cb8032b4de05a6a
       id: 256121077
@@ -1763,7 +1794,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584847882175878357
+    m_lastTime: -8584846049543584092
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244
@@ -2401,7 +2432,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 05000000110000002c00000038000000390000003a00000042000000430000005a000000
+  ExpandedFileSystemItemIds: 02000000050000000800000011000000220000002c00000038000000390000003a00000042000000430000005a000000
   ExpandedWaapiItemIds: 05000000110000002c00000042000000430000005a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

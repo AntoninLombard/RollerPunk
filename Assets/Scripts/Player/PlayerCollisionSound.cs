@@ -18,17 +18,17 @@ public class PlayerCollisionSound : MonoBehaviour
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Characters"))
             {
-                player.data.collisionSound.Post(player.character.gameObject);
+                player.data.collisionSound.Post(player.gameObject);
                 return;
             }
             
             if (vertical > remaining)
             {
-                player.data.wallHitSound.Post(player.character.gameObject);
+                player.data.wallHitSound.Post(player.gameObject);
 ;            }
             else
             {
-                player.data.groundHitSound.Post(player.character.gameObject);
+                player.data.groundHitSound.Post(player.gameObject);
             }
         }
     }

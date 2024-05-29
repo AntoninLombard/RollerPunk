@@ -16,7 +16,8 @@ namespace AK
         static const AkUniqueID AMB_BALL_STEAL = 529746809U;
         static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
         static const AkUniqueID AMB_KILL = 2469751798U;
-        static const AkUniqueID AMB_RUNSTART = 2349163407U;
+        static const AkUniqueID AMB_PREP = 2116017607U;
+        static const AkUniqueID AMB_RACESTART = 3265704427U;
         static const AkUniqueID AMB_START = 1589289402U;
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
@@ -148,6 +149,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BALL_DUCK = 3218320494U;
+        static const AkUniqueID CROWD_DUCKING = 2376406340U;
         static const AkUniqueID DIRECTION = 16764168U;
         static const AkUniqueID ENVELOPPE_P1 = 256121077U;
         static const AkUniqueID ENVELOPPE_P2 = 256121078U;
