@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 35
   forwardAccel: 25
-  turningRate: 13
+  turningRate: 10
   gravityStrength: 10
-  gripAccel: 8
+  gripAccel: 30
   inertiaRatio: 0
   brakingRatio: 0.5
   drag: 0.8
@@ -28,7 +28,7 @@ MonoBehaviour:
   parryWindow: 0.5
   counterWindow: 0.05
   actionsCooldown: 1.5
-  stunDuration: 2
+  stunDuration: 1
   invincibilityDuration: 1
   minFOV: 40
   maxFOV: 70

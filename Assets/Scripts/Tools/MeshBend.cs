@@ -9,8 +9,6 @@ using UnityEngine.Splines;
 
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(MeshFilter))]
-[RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(SplineContainer))]
 [ExecuteInEditMode]
 public class MeshBend : MonoBehaviour
@@ -18,19 +16,22 @@ public class MeshBend : MonoBehaviour
     private bool needUpdate = true;
     private SplineContainer splineContainer;
     private Spline spline;
-    private MeshCollider collider;
-    private MeshFilter filter;
+    private float timer;
+    private float updateTimer = 0.2f;
+    private int  meshBatchSize = 4;
     
     
     [Serializable]
     public enum FillType
     {
         StretchAndRepeat,
-        FillAsBest
+        FillAsBest,
+        ForceFill
     }
     [SerializeField]private bool liveUpdate;
     [SerializeField]private FillType type;
     [SerializeField]private Mesh source;
+    [SerializeField] private List<Material> materials;
     [SerializeField]private Vector3 scale;
     [SerializeField]private Vector3 translation;
     [SerializeField]private Vector3 rotation;
@@ -39,44 +40,85 @@ public class MeshBend : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
+        Spline.Changed += CheckIfDirty;
+        
         splineContainer = GetComponent<SplineContainer>();
         spline = splineContainer.Splines.First();
-        collider = GetComponent<MeshCollider>();
-        filter = GetComponent<MeshFilter>();
+    }
+
+    private void OnEnable()
+    {
+                
+        Spline.Changed += CheckIfDirty;
+        
+        splineContainer = GetComponent<SplineContainer>();
+        spline = splineContainer.Splines.First();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (liveUpdate)
+        if (liveUpdate && needUpdate)
         {
+            timer += Time.deltaTime;
+            if (timer < updateTimer)
+                return;
             Refresh();
+            timer = 0;
         }
     }
     
     public void Refresh()
     {
-        //if (needUpdate)
-            BuildMesh();
+        needUpdate = false;
+        ClearChildrens();
+        BuildMesh();
+        
     }
 
 
-    public int CheckIfDirty(int a)
+    public void CheckIfDirty(Spline spline, int entier, SplineModification modifications)
     {
-        return 1;
+        if(spline == this.spline)
+        {
+            needUpdate = true;
+        }
+    }
+
+    public void ClearChildrens()
+    {
+        while(transform.childCount > 0)
+        {
+            Transform child = transform.GetChild(0);
+            #if UNITY_EDITOR
+            DestroyImmediate(child.gameObject);
+            #else
+            Destroy(child.gameObject);
+            #endif
+        }
+    }
+
+    public GameObject CreateChild(Mesh mesh,Material[] materials)
+    {
+        GameObject child = new GameObject();
+        child.transform.parent = transform;
+        child.transform.position = transform.position;
+        child.transform.rotation = transform.rotation;
+        MeshFilter filter = child.AddComponent<MeshFilter>();
+        MeshCollider collider = child.AddComponent<MeshCollider>();
+        MeshRenderer renderer = child.AddComponent<MeshRenderer>();
+
+        filter.sharedMesh = mesh;
+        collider.sharedMesh = mesh;
+        renderer.materials = materials;
+        
+        return child;
+
     }
 
     public void BuildMesh()
     {
-        if(splineContainer == null)
-            splineContainer = GetComponent<SplineContainer>();
-        if(collider == null)
-            collider = GetComponent<MeshCollider>();
-        if(filter == null)
-            filter = GetComponent<MeshFilter>();
-        if(collider == null)
-            spline = GetComponent<SplineContainer>().Splines.First();
-
         spline = splineContainer.Spline;
         
         List<Mesh> newMeshes = new List<Mesh>();
@@ -92,17 +134,27 @@ public class MeshBend : MonoBehaviour
         
         
         if (type == FillType.StretchAndRepeat)
-            scale = Vector3.one *  sectionLength / meshLength;
+            scale.x = sectionLength / meshLength;
         else if (type == FillType.FillAsBest)
         {
             repetitions = Mathf.RoundToInt(splineLength / (meshLength * scale.x)); // TODO Better rounding to closer int
             sectionLength = splineLength / repetitions;
-            scale = Vector3.one * sectionLength;
+            scale.x = sectionLength / meshLength;
+        } else if (type == FillType.ForceFill)
+        {
+            sectionLength = meshLength*scale.x;
+            repetitions = Mathf.RoundToInt(splineLength / (meshLength * scale.x));
         }
         
         
         
         float offsetX = 0f;
+        float meshOffset = 0f;
+        int currentMeshNb = 0;
+        int batchNb = 0;
+        MeshRenderer renderer;
+        MeshFilter filter;
+        MeshCollider collider;
         for (int rep = 0; rep < repetitions; rep++)
         {
             //Mesh newMesh = new Mesh();
@@ -182,19 +234,50 @@ public class MeshBend : MonoBehaviour
             }
             currentMesh.SetSubMeshes(subMeshDescriptors.ToArray());
             newMeshes.Add(currentMesh);
+            
+            
+            if (currentMeshNb-1 >= meshBatchSize)
+            {
+                Mesh meshBatch = FuseMeshes(newMeshes);
+                newMeshes.Clear();
+                GameObject child = CreateChild(meshBatch,materials.ToArray());
+                child.name = "Generated Bend Mesh Batch" + batchNb;
+                currentMeshNb = 0;
+                batchNb++;
+            }
+            
             offsetX += sectionLength;
+            meshOffset += sectionLength;
+            currentMeshNb++;
         }
 
+
+        if (newMeshes.Count == 0)
+            return;
         
+        
+        Mesh newMesh;
+        if(newMeshes.Count > 1)
+        {
+            newMesh = FuseMeshes(newMeshes);
+        }
+        else
+        {
+            newMesh = newMeshes[0];
+        }
+        CreateChild(newMesh,materials.ToArray());
+    }
+
+    private Mesh FuseMeshes(List<Mesh> meshes)
+    {
         Mesh newMesh = new Mesh();
-        newMesh.indexFormat = IndexFormat.UInt32;
         newMesh.indexFormat = IndexFormat.UInt32;
         List<CombineInstance> finalCombineInstances = new List<CombineInstance>();
         
         for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
         {
             List<CombineInstance> combineMeshes = new List<CombineInstance>();
-            foreach (var mesh in newMeshes)
+            foreach (var mesh in meshes)
             {
                 CombineInstance combineInstance = new CombineInstance
                 {
@@ -216,139 +299,7 @@ public class MeshBend : MonoBehaviour
         
         newMesh.RecalculateBounds();
         newMesh.RecalculateTangents();
-
-
-        newMesh.name = "Generated Bent Mesh";
-        filter.sharedMesh = newMesh;
-        collider.sharedMesh = newMesh;
-        
-        
-        
-
-        
-        // INITIALIZE THE NEW MESH
-//         List<int> triangles = new List<int>();
-//         List<Vector3> vertices = new List<Vector3>();
-//         List<Vector3> normals = new List<Vector3>();
-//         List<Vector2> uv = new List<Vector2>();
-//         List<Vector2> uv2 = new List<Vector2>();
-//         List<Vector2> uv3 = new List<Vector2>();
-//         List<Vector2> uv4 = new List<Vector2>();
-//         List<Vector2> uv5 = new List<Vector2>();
-//         List<Vector2> uv6 = new List<Vector2>();
-//         List<Vector2> uv7 = new List<Vector2>();
-//         List<Vector2> uv8 = new List<Vector2>();
-//         
-//         
-//         for (int i = 0; i < repetitions; i++) {
-//             foreach (var index in source.triangles) {
-//                 triangles.Add(index + source.vertices.Length * i);
-//             }
-//             uv.AddRange(source.uv);
-//             uv2.AddRange(source.uv2);
-//             uv3.AddRange(source.uv3);
-//             uv4.AddRange(source.uv4);
-// #if UNITY_2018_2_OR_NEWER
-//             uv5.AddRange(source.uv5);
-//             uv6.AddRange(source.uv6);
-//             uv7.AddRange(source.uv7);
-//             uv8.AddRange(source.uv8);
-// #endif
-//         }
-//         
-//         
-//         //COMPUTE NEW VERTICES POSITIONS
-//         int subMeshVertexStart = 0;
-//         int subMeshIndexStart = 0;
-//         // for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
-//         // {
-//              float offsetX = 0;
-//         //     SubMeshDescriptor currentSubMesh = source.GetSubMesh(subMeshNb);
-//         //     SubMeshDescriptor newSubMesh = new SubMeshDescriptor();
-//         //         
-//         //     newSubMesh.baseVertex = currentSubMesh.baseVertex;
-//         //     newSubMesh.topology = currentSubMesh.topology;
-//         //     newSubMesh.firstVertex = subMeshVertexStart;
-//         //     newSubMesh.indexStart = subMeshIndexStart;
-//         //     newSubMesh.vertexCount = currentSubMesh.vertexCount * repetitions;
-//         //     newSubMesh.indexCount = currentSubMesh.indexCount * repetitions;
-//         //     
-//         //     subMeshIndexStart = newSubMesh.indexStart;
-//         //     subMeshVertexStart = newSubMesh.vertexCount;
-//             for (int rep = 0; rep < repetitions; rep++)
-//             {
-//                 Mesh newMesh = new Mesh();
-//                 for(int j = 0; j < source.vertexCount ;j++)
-//                 {
-//                     Vector3 currentVert = source.vertices[j];
-//                     Vector3 currentNormal = source.normals[j];
-//                     float posX = (currentVert.x - minX) * scale.x + offsetX;
-//
-//                     currentVert = Vector3.Scale(currentVert, new Vector3(0, scale.y, scale.z));
-//                     //currentVert = Quaternion.Euler(rotation) * currentVert;
-//                     //currentVert += translation;
-//                     if (!spline.Evaluate(posX / splineLength, out float3 splinePos, out float3 splineTangent,
-//                             out float3 splineUp)) continue;
-//                     Quaternion splineRotation =
-//                         Quaternion.LookRotation(splineTangent, splineUp) * Quaternion.Euler(0, -90, 0);
-//
-//                     Quaternion currentRot = splineRotation * Quaternion.Euler(rotation);
-//
-//
-//                     currentVert.x = 0;
-//                     currentVert = currentRot * currentVert;
-//                     currentVert += (Vector3)splinePos + translation;
-//                     normals.Add(splineRotation * currentNormal);
-//                     vertices.Add(currentVert);
-//                 }
-//                 offsetX += sectionLength;
-//             }
-//             //subMeshes.Add(newSubMesh);
-//         //}
-//
-//         // for (int i = 0; i < source.subMeshCount; i++)
-//         // {
-//         //     int indexStart = 0;
-//         //     SubMeshDescriptor currentSubMesh = source.GetSubMesh(i);
-//         //     for (int rep = 0; rep < repetitions; rep++)
-//         //     {
-//         //         for(int j = 0; j < currentSubMesh.indexCount;j++)
-//         //         {
-//         //             triangles.Add(rep * currentSubMesh.indexCount + j);
-//         //         }
-//         //     } 
-//         // }
-//         //newMesh.SetSubMesh();
-//
-//         newMesh.vertices = vertices.ToArray();
-//         newMesh.normals = normals.ToArray();
-//         newMesh.uv = uv.ToArray();
-//         newMesh.uv2 = uv2.ToArray();
-//         newMesh.uv2 = uv3.ToArray();
-//         newMesh.uv4 = uv4.ToArray();
-//         newMesh.uv5 = uv5.ToArray();
-//         newMesh.uv6 = uv6.ToArray();
-//         newMesh.uv7 = uv7.ToArray();
-//         newMesh.uv8 = uv8.ToArray();
-//         newMesh.triangles = triangles.ToArray();
-//         newMesh.hideFlags = source.hideFlags;
-// #if UNITY_2017_3_OR_NEWER
-//         newMesh.indexFormat = source.indexFormat;
-// #endif
-//
-//         //newMesh.SetSubMeshes(subMeshes);
-//
-//         newMesh.RecalculateBounds();
-//         newMesh.RecalculateTangents();
-//
-//
-//         newMesh.name = "Generated Bent Mesh";
-//         filter.sharedMesh = newMesh;
-//         //collider.sharedMesh = newMesh;
-     }
-
-
-
-    //public void GetNewVertice(MeshVe)
+        return newMesh;
+    }
 
 }

@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
         ToggleActive(false);
         ui.ToggleCountdown(false);
         isReady = false;
+        //combat.enabled = true;
         GameManager.Instance.OnPlayerInstantiate(this);
         foreach (Material material in anime.animator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>()?.materials)
         {
@@ -46,8 +47,8 @@ public class Player : MonoBehaviour
 
     public void ToggleActive(bool isActive)
     {
-        controller.TogglePlayerFreeze(!isActive);
-        combat.ToggleInvincibility(!isActive);
+        controller?.TogglePlayerFreeze(!isActive);
+        combat?.ToggleInvincibility(!isActive);
     }
 }
     
