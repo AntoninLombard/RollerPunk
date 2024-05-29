@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{49E3266F-ACCE-C253-FF63-E3C06CDC374A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CD2D7013-7BFC-041E-1AE5-D8F6C1B5F251}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -294,7 +294,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{57728FB7-7FE8-EA5A-FF2C-D485A7043E48}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{98BFE6C8-BEBA-577D-F9F2-8CAF212123C5}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -1753,6 +1753,11 @@
 						<MediaRef Id="73108266"/>
 						<MediaRef Id="538919773"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4136302296"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="3051750219" Name="Counter" DurationType="OneShot" DurationMin="3.6834946" DurationMax="4.428607">
 					<SwitchContainers>
@@ -3068,5 +3073,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1A3C4458-5B57-7BFD-6EB2-F811F7CA78E4}</FileHash>
+	<FileHash>{FC831A53-6299-B0A6-2A10-72F24BE9AB8C}</FileHash>
 </SoundBanksInfo>
