@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a559a010f40bac9478696e09f5e5bb9b, type: 3}
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
-  maxSpeed: 35
-  forwardAccel: 25
+  maxSpeed: 40
+  forwardAccel: 30
   turningRate: 10
   gravityStrength: 10
   gripAccel: 30
@@ -23,15 +23,15 @@ MonoBehaviour:
   airDrag: 0.2
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
-  punchWindUp: 1
-  punchDamageWindow: 0.5
+  punchWindUp: 0.5
+  punchDamageWindow: 0.3
   parryWindow: 0.5
   counterWindow: 0.05
   actionsCooldown: 1.5
   stunDuration: 1
   invincibilityDuration: 1
   minFOV: 40
-  maxFOV: 70
+  maxFOV: 80
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 
