@@ -15,7 +15,7 @@ MonoBehaviour:
   maxSpeed: 40
   forwardAccel: 30
   turningRate: 10
-  gravityStrength: 10
+  gravityStrength: 20
   gripAccel: 30
   inertiaRatio: 0
   brakingRatio: 0.5
@@ -23,10 +23,10 @@ MonoBehaviour:
   airDrag: 0.2
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
-  punchWindUp: 1
-  punchDamageWindow: 0.5
+  punchWindUp: 0.5
+  punchDamageWindow: 0.3
   parryWindow: 0.5
-  counterWindow: 0.05
+  counterWindow: 0.1
   actionsCooldown: 1.5
   stunDuration: 1
   invincibilityDuration: 1
