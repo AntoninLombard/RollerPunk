@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EEC2383C-781F-CB80-6E15-DDA03B722220}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2CC3DE11-783B-77E6-764D-BFF5752B4226}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,6 +21,7 @@
 					<Plugin Id="2376406340" Name="Crowd_Ducking" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="2747378390" Name="Music_Fix" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="3042377063" Name="Drums_B" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="4136302296" Name="High_Shelf" LibName="Wwise Parametric EQ" LibId="6881283"/>
 				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
@@ -30,8 +31,8 @@
 			<Busses>
 				<Bus Id="54442139" Name="Lead"/>
 				<Bus Id="759487314" Name="Engines"/>
+				<Bus Id="1117531639" Name="AMB"/>
 				<Bus Id="1291433344" Name="Bass"/>
-				<Bus Id="1404066300" Name="Ambiances"/>
 				<Bus Id="1615767906" Name="Music_Main"/>
 				<Bus Id="1635194249" Name="P4">
 					<PluginRefs>
@@ -61,6 +62,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Bus>
+				<Bus Id="1695690031" Name="Objects"/>
 				<Bus Id="2077289713" Name="Crowd_OS">
 					<PluginRefs>
 						<ShareSets>
@@ -68,7 +70,13 @@
 						</ShareSets>
 					</PluginRefs>
 				</Bus>
-				<Bus Id="2188949101" Name="Players"/>
+				<Bus Id="2188949101" Name="Players">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4136302296"/>
+						</ShareSets>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="2376466361" Name="Other"/>
 				<Bus Id="2631124778" Name="Engine_P4"/>
 				<Bus Id="2631124780" Name="Engine_P2"/>
@@ -107,6 +115,7 @@
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
 				<GameParameter Id="1551306167" Name="UI"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
+				<GameParameter Id="1775161915" Name="Force_Collision"/>
 				<GameParameter Id="2376406340" Name="Crowd_Ducking"/>
 				<GameParameter Id="2398231425" Name="Score"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
@@ -294,7 +303,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F24DFA37-419A-D9C1-80EB-6606552A8520}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{78C4D66B-4EF1-A875-4F58-03BE99E24661}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -399,6 +408,10 @@
 				<File Id="88947134" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M1_Start.wav</ShortName>
 					<CachePath>SFX/M1_Start_6610B299.wem</CachePath>
+				</File>
+				<File Id="91345779" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-006.wav</ShortName>
+					<CachePath>SFX/taunt_demo-006_4232CC45.wem</CachePath>
 				</File>
 				<File Id="92717575" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByBall-001.wav</ShortName>
@@ -554,10 +567,6 @@
 					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_A/RP_M_DOWN THE POWER ROAD_P1_M002_A_PERC_164_0762CC47.wem</CachePath>
 					<PrefetchSize>3416</PrefetchSize>
 				</File>
-				<File Id="220253561" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>taunt_demo-006.wav</ShortName>
-					<CachePath>SFX/taunt_demo-006_BC37BB80.wem</CachePath>
-				</File>
 				<File Id="222143719" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_Synth Bass 2_164.wav</ShortName>
 					<Path>Media/222143719.wem</Path>
@@ -631,6 +640,10 @@
 				<File Id="311097065" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-004.wav</ShortName>
 					<CachePath>SFX/Counter_V2-004_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="311859118" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-007.wav</ShortName>
+					<CachePath>SFX/taunt_demo-007_019E8AD9.wem</CachePath>
 				</File>
 				<File Id="321318270" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-004.wav</ShortName>
@@ -1042,6 +1055,10 @@
 					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_Bridge/RP_M_DOWN THE POWER ROAD_P4_Bridge_Synth Bass_164_0762CC47.wem</CachePath>
 					<PrefetchSize>2650</PrefetchSize>
 				</File>
+				<File Id="703726604" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-005.wav</ShortName>
+					<CachePath>SFX/taunt_demo-005_A8424B23.wem</CachePath>
+				</File>
 				<File Id="706451525" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_Guitar_164.wav</ShortName>
 					<Path>Media/706451525.wem</Path>
@@ -1145,10 +1162,6 @@
 					<Path>Media/818285052.wem</Path>
 					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar_164_0762CC47.wem</CachePath>
 					<PrefetchSize>3893</PrefetchSize>
-				</File>
-				<File Id="818821583" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>taunt_demo-007.wav</ShortName>
-					<CachePath>SFX/taunt_demo-007_D6F03943.wem</CachePath>
 				</File>
 				<File Id="818838944" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_HEY_164.wav</ShortName>
@@ -1419,14 +1432,11 @@
 			</Media>
 			<Plugins>
 				<Custom>
-					<Plugin Id="738060054" Name="Guitar Distortion (Custom)" LibName="Wwise Guitar Distortion" LibId="8257539"/>
 					<Plugin Id="756155750" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
 				</Custom>
 				<ShareSets>
-					<Plugin Id="759487314" Name="Engines" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="2171939413" Name="Dialog_Leveler_Hard" LibName="Wwise Compressor" LibId="7077891"/>
 					<Plugin Id="2537669967" Name="crowds" LibName="Wwise Parametric EQ" LibId="6881283"/>
-					<Plugin Id="2904483677" Name="ball_grab_meter" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="4136302296" Name="High_Shelf" LibName="Wwise Parametric EQ" LibId="6881283"/>
 				</ShareSets>
@@ -1502,55 +1512,30 @@
 					</PluginRefs>
 				</Event>
 				<Event Id="2618017047" Name="Ball_Grab" DurationType="OneShot" DurationMin="1.9143226" DurationMax="1.9143226">
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="2904483677"/>
-						</ShareSets>
-					</PluginRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1565,11 +1550,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -1580,11 +1560,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -1595,11 +1570,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -1610,11 +1580,6 @@
 								<MediaRef Id="677820568"/>
 								<MediaRef Id="810372569"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1660,7 +1625,7 @@
 						<ActionPostEventEntry Id="2925030600" Name="AMB_Drill_Done"/>
 					</ActionPostEvent>
 				</Event>
-				<Event Id="1792046091" Name="Collision" DurationType="Infinite">
+				<Event Id="1792046091" Name="Collision" DurationType="OneShot" DurationMin="0.72143924" DurationMax="1.0421567">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -1855,14 +1820,6 @@
 								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 							</MediaRefs>
-							<PluginRefs>
-								<Custom>
-									<PluginRef Id="738060054"/>
-								</Custom>
-								<ShareSets>
-									<PluginRef Id="759487314"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -1874,14 +1831,6 @@
 								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 							</MediaRefs>
-							<PluginRefs>
-								<Custom>
-									<PluginRef Id="738060054"/>
-								</Custom>
-								<ShareSets>
-									<PluginRef Id="759487314"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -1893,14 +1842,6 @@
 								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 							</MediaRefs>
-							<PluginRefs>
-								<Custom>
-									<PluginRef Id="738060054"/>
-								</Custom>
-								<ShareSets>
-									<PluginRef Id="759487314"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -1912,14 +1853,6 @@
 								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 							</MediaRefs>
-							<PluginRefs>
-								<Custom>
-									<PluginRef Id="738060054"/>
-								</Custom>
-								<ShareSets>
-									<PluginRef Id="759487314"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -1967,11 +1900,6 @@
 								<MediaRef Id="92717575"/>
 								<MediaRef Id="706556744"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -1979,11 +1907,6 @@
 								<MediaRef Id="92717575"/>
 								<MediaRef Id="706556744"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -1991,11 +1914,6 @@
 								<MediaRef Id="92717575"/>
 								<MediaRef Id="706556744"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -2003,11 +1921,6 @@
 								<MediaRef Id="92717575"/>
 								<MediaRef Id="706556744"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -2021,11 +1934,6 @@
 								<MediaRef Id="442590708"/>
 								<MediaRef Id="873930999"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -2035,11 +1943,6 @@
 								<MediaRef Id="442590708"/>
 								<MediaRef Id="873930999"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -2049,11 +1952,6 @@
 								<MediaRef Id="442590708"/>
 								<MediaRef Id="873930999"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -2063,11 +1961,6 @@
 								<MediaRef Id="442590708"/>
 								<MediaRef Id="873930999"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -2104,9 +1997,17 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="73001858"/>
+								<MediaRef Id="96173677"/>
+								<MediaRef Id="117249782"/>
+								<MediaRef Id="132379828"/>
+								<MediaRef Id="280610508"/>
 								<MediaRef Id="399989887"/>
+								<MediaRef Id="519388305"/>
 								<MediaRef Id="594646012"/>
+								<MediaRef Id="614668597"/>
+								<MediaRef Id="888959787"/>
 								<MediaRef Id="1016618322"/>
+								<MediaRef Id="1027612762"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -2119,7 +2020,7 @@
 						<MediaRef Id="844727332"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2548270042" Name="Landing" DurationType="Infinite">
+				<Event Id="2548270042" Name="Landing" DurationType="OneShot" DurationMin="0.72143924" DurationMax="1.0421567">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -2650,11 +2551,6 @@
 								<MediaRef Id="908324704"/>
 								<MediaRef Id="919203908"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -2665,11 +2561,6 @@
 								<MediaRef Id="908324704"/>
 								<MediaRef Id="919203908"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -2680,11 +2571,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -2695,11 +2581,6 @@
 								<MediaRef Id="908324704"/>
 								<MediaRef Id="919203908"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -2750,11 +2631,6 @@
 								<MediaRef Id="1009376241"/>
 								<MediaRef Id="1028915986"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -2765,11 +2641,6 @@
 								<MediaRef Id="1009376241"/>
 								<MediaRef Id="1028915986"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -2780,11 +2651,6 @@
 								<MediaRef Id="1009376241"/>
 								<MediaRef Id="1028915986"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -2795,11 +2661,6 @@
 								<MediaRef Id="1009376241"/>
 								<MediaRef Id="1028915986"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -2822,11 +2683,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
@@ -2837,11 +2693,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
@@ -2852,11 +2703,6 @@
 								<MediaRef Id="932970665"/>
 								<MediaRef Id="1007149797"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
@@ -2867,11 +2713,6 @@
 								<MediaRef Id="677820568"/>
 								<MediaRef Id="810372569"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="4136302296"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -2881,9 +2722,10 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="220253561"/>
+								<MediaRef Id="91345779"/>
+								<MediaRef Id="311859118"/>
 								<MediaRef Id="676265417"/>
-								<MediaRef Id="818821583"/>
+								<MediaRef Id="703726604"/>
 								<MediaRef Id="870323986"/>
 								<MediaRef Id="1004486920"/>
 								<MediaRef Id="1026149431"/>
@@ -2898,9 +2740,10 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="220253561"/>
+								<MediaRef Id="91345779"/>
+								<MediaRef Id="311859118"/>
 								<MediaRef Id="676265417"/>
-								<MediaRef Id="818821583"/>
+								<MediaRef Id="703726604"/>
 								<MediaRef Id="870323986"/>
 								<MediaRef Id="1004486920"/>
 								<MediaRef Id="1026149431"/>
@@ -2915,9 +2758,10 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="220253561"/>
+								<MediaRef Id="91345779"/>
+								<MediaRef Id="311859118"/>
 								<MediaRef Id="676265417"/>
-								<MediaRef Id="818821583"/>
+								<MediaRef Id="703726604"/>
 								<MediaRef Id="870323986"/>
 								<MediaRef Id="1004486920"/>
 								<MediaRef Id="1026149431"/>
@@ -2932,9 +2776,10 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="30932399"/>
-								<MediaRef Id="220253561"/>
+								<MediaRef Id="91345779"/>
+								<MediaRef Id="311859118"/>
 								<MediaRef Id="676265417"/>
-								<MediaRef Id="818821583"/>
+								<MediaRef Id="703726604"/>
 								<MediaRef Id="870323986"/>
 								<MediaRef Id="1004486920"/>
 								<MediaRef Id="1026149431"/>
@@ -2967,55 +2812,30 @@
 				</Event>
 				<Event Id="3687251531" Name="setplayernumber" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3157003241" Name="test" DurationType="OneShot" DurationMin="1.9143226" DurationMax="1.9143226">
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="2904483677"/>
-						</ShareSets>
-					</PluginRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="1039416665"/>
 							</MediaRefs>
-							<PluginRefs>
-								<ShareSets>
-									<PluginRef Id="2904483677"/>
-								</ShareSets>
-							</PluginRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
@@ -3044,6 +2864,7 @@
 				<GameParameter Id="16764168" Name="Direction"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1659248646" Name="Player_Number"/>
+				<GameParameter Id="1775161915" Name="Force_Collision"/>
 				<GameParameter Id="2398231425" Name="Score"/>
 				<GameParameter Id="2907122923" Name="Grounded"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
@@ -3073,5 +2894,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8ACF9202-9AFC-6BFD-A822-B33EE9483E51}</FileHash>
+	<FileHash>{5A498D61-CAC4-F914-4120-EC774106F083}</FileHash>
 </SoundBanksInfo>

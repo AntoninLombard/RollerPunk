@@ -349,6 +349,7 @@ public class PlayerCombat : MonoBehaviour
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
         player.anime.animator.SetTrigger("Stunned");
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger("GetUp");
         player.data.gettingUpSound.Post(gameObject);

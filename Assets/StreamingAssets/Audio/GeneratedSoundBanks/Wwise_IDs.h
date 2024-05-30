@@ -155,6 +155,7 @@ namespace AK
         static const AkUniqueID ENVELOPPE_P2 = 256121078U;
         static const AkUniqueID ENVELOPPE_P3 = 256121079U;
         static const AkUniqueID ENVELOPPE_P4 = 256121072U;
+        static const AkUniqueID FORCE_COLLISION = 1775161915U;
         static const AkUniqueID GROUNDED = 2907122923U;
         static const AkUniqueID MASTER = 4056684167U;
         static const AkUniqueID MUSIC = 3991942870U;
@@ -187,7 +188,7 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID AMBIANCES = 1404066300U;
+        static const AkUniqueID AMB = 1117531639U;
         static const AkUniqueID BASS = 1291433344U;
         static const AkUniqueID CROWD_OS = 2077289713U;
         static const AkUniqueID DRUMS = 2726606664U;
@@ -202,6 +203,7 @@ namespace AK
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID MUSIC_MAIN = 1615767906U;
+        static const AkUniqueID OBJECTS = 1695690031U;
         static const AkUniqueID OTHER = 2376466361U;
         static const AkUniqueID P1 = 1635194252U;
         static const AkUniqueID P2 = 1635194255U;

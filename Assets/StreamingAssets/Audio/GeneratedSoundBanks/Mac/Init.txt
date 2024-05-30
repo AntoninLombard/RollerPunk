@@ -59,14 +59,15 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	54442139	Lead			\Default Work Unit\Master Audio Bus\Music_Main\Music\Lead	
 	759487314	Engines			\Default Work Unit\Master Audio Bus\Engines	
+	1117531639	AMB			\Default Work Unit\Master Audio Bus\AMB	
 	1291433344	Bass			\Default Work Unit\Master Audio Bus\Music_Main\Music\Bass	
-	1404066300	Ambiances			\Default Work Unit\Master Audio Bus\Ambiances	
 	1615767906	Music_Main			\Default Work Unit\Master Audio Bus\Music_Main	
 	1635194249	P4			\Default Work Unit\Master Audio Bus\Players\P4	
 	1635194252	P1			\Default Work Unit\Master Audio Bus\Players\P1	
 	1635194254	P3			\Default Work Unit\Master Audio Bus\Players\P3	
 	1635194255	P2			\Default Work Unit\Master Audio Bus\Players\P2	
-	2077289713	Crowd_OS			\Default Work Unit\Master Audio Bus\Ambiances\Crowd_OS	
+	1695690031	Objects			\Default Work Unit\Master Audio Bus\Objects	
+	2077289713	Crowd_OS			\Default Work Unit\Master Audio Bus\AMB\Crowd_OS	
 	2188949101	Players			\Default Work Unit\Master Audio Bus\Players	
 	2376466361	Other			\Default Work Unit\Master Audio Bus\Music_Main\Music\Other	
 	2631124778	Engine_P4			\Default Work Unit\Master Audio Bus\Engines\Engine_P4	
@@ -87,6 +88,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	2376406340	Crowd_Ducking	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
 	3042377063	Drums_B	Wwise Parametric EQ			
+	4136302296	High_Shelf	Wwise Parametric EQ			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

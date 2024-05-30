@@ -54,8 +54,9 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;
-    
-    
+    public AK.Wwise.RTPC forceCollision;
+
+
     [Header("ATTACK COLLIDERS")]
     public GameObject punchCollider;
     public GameObject slideCollider;
