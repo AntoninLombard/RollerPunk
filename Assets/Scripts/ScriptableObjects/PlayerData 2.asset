@@ -23,8 +23,8 @@ MonoBehaviour:
   airDrag: 0.2
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
-  punchWindUp: 1
-  punchDamageWindow: 0.5
+  punchWindUp: 0.5
+  punchDamageWindow: 0.3
   parryWindow: 0.5
   counterWindow: 0.05
   actionsCooldown: 1.5
