@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{78791886-E5F1-1BB9-F464-ABF4B7CD8979}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EEC2383C-781F-CB80-6E15-DDA03B722220}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -294,7 +294,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CC156D6B-C2D4-25A9-25D4-BC795ED8468C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F24DFA37-419A-D9C1-80EB-6606552A8520}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -314,7 +314,7 @@
 				</File>
 				<File Id="16521861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Respawn.wav</ShortName>
-					<CachePath>SFX/Respawn_AB415B7A.wem</CachePath>
+					<CachePath>SFX/Respawn_A9B3A257.wem</CachePath>
 				</File>
 				<File Id="19952398" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164.wav</ShortName>
@@ -1122,7 +1122,7 @@
 				</File>
 				<File Id="776626539" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>High.wav</ShortName>
-					<CachePath>SFX/High_3BEF0E59.wem</CachePath>
+					<CachePath>SFX/High_DC655B9D.wem</CachePath>
 				</File>
 				<File Id="790904664" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 1_164.wav</ShortName>
@@ -3073,5 +3073,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6945FD4B-CD32-4CF3-7F39-92762563B144}</FileHash>
+	<FileHash>{8ACF9202-9AFC-6BFD-A822-B33EE9483E51}</FileHash>
 </SoundBanksInfo>
