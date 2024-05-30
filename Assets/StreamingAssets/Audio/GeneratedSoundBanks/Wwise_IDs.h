@@ -16,9 +16,11 @@ namespace AK
         static const AkUniqueID AMB_BALL_STEAL = 529746809U;
         static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
         static const AkUniqueID AMB_KILL = 2469751798U;
+        static const AkUniqueID AMB_POINT = 770146064U;
         static const AkUniqueID AMB_PREP = 2116017607U;
         static const AkUniqueID AMB_RACESTART = 3265704427U;
         static const AkUniqueID AMB_START = 1589289402U;
+        static const AkUniqueID AMB_STUN = 562207882U;
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
         static const AkUniqueID BURST = 3766921625U;

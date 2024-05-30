@@ -14,7 +14,6 @@ public class PlayerCollisionSound : MonoBehaviour
         float vertical = Vector3.Dot(other.impulse, player.character.up);
         float remaining = force - vertical;
 
-        Debug.Log(force);
         player.data.forceCollision.SetValue(player.gameObject, force);
 
         if (force > player.data.collisionSoundThreshold)

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{07DF6D04-B6D6-33DD-BEAD-52B178E05C77}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A8543EE0-257D-9B59-81B6-C70B47F0D234}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -303,7 +303,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D863CB88-CE00-4EB8-C275-FE2432982CCA}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{6D504596-C131-B18D-AFE2-F0D04FBE5AA6}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -411,7 +411,7 @@
 				</File>
 				<File Id="91345779" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-006.wav</ShortName>
-					<CachePath>SFX/taunt_demo-006_4232CC45.wem</CachePath>
+					<CachePath>SFX/taunt_demo-006_048CF837.wem</CachePath>
 				</File>
 				<File Id="92717575" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByBall-001.wav</ShortName>
@@ -643,7 +643,7 @@
 				</File>
 				<File Id="311859118" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-007.wav</ShortName>
-					<CachePath>SFX/taunt_demo-007_019E8AD9.wem</CachePath>
+					<CachePath>SFX/taunt_demo-007_8394C7F7.wem</CachePath>
 				</File>
 				<File Id="321318270" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-004.wav</ShortName>
@@ -736,10 +736,6 @@
 					<Path>Media/408514773.wem</Path>
 					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164_0762CC47.wem</CachePath>
 					<PrefetchSize>2506</PrefetchSize>
-				</File>
-				<File Id="413450912" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Pics_Loop.wav</ShortName>
-					<CachePath>SFX/Pics_Loop_0762CC47.wem</CachePath>
 				</File>
 				<File Id="424568932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Checkpoint.wav</ShortName>
@@ -1053,7 +1049,7 @@
 				</File>
 				<File Id="703726604" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-005.wav</ShortName>
-					<CachePath>SFX/taunt_demo-005_A8424B23.wem</CachePath>
+					<CachePath>SFX/taunt_demo-005_E6991092.wem</CachePath>
 				</File>
 				<File Id="706451525" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_Guitar_164.wav</ShortName>
@@ -1476,6 +1472,18 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="770146064" Name="AMB_Point" DurationType="OneShot" DurationMin="2.6516263" DurationMax="4.502922">
+					<MediaRefs>
+						<MediaRef Id="93796985"/>
+						<MediaRef Id="450881691"/>
+						<MediaRef Id="1056644497"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="2537669967"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="2116017607" Name="AMB_Prep" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="771436220"/>
@@ -1504,6 +1512,18 @@
 						<MediaRef Id="471181577"/>
 						<MediaRef Id="493354949"/>
 						<MediaRef Id="771436220"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="2537669967"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="562207882" Name="AMB_Stun" DurationType="OneShot" DurationMin="2.6516263" DurationMax="4.502922">
+					<MediaRefs>
+						<MediaRef Id="93796985"/>
+						<MediaRef Id="450881691"/>
+						<MediaRef Id="1056644497"/>
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
@@ -1625,7 +1645,7 @@
 						<ActionPostEventEntry Id="2925030600" Name="AMB_Drill_Done"/>
 					</ActionPostEvent>
 				</Event>
-				<Event Id="1792046091" Name="Collision" DurationType="OneShot" DurationMin="0.72143924" DurationMax="1.0421567">
+				<Event Id="1792046091" Name="Collision" DurationType="OneShot" DurationMin="1.9276594" DurationMax="2.3175943">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -1640,12 +1660,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -1661,12 +1685,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -1682,12 +1710,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -1703,12 +1735,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -1816,7 +1852,6 @@
 								<MediaRef Id="101842239"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="407524894"/>
-								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
 							</MediaRefs>
@@ -1827,7 +1862,6 @@
 								<MediaRef Id="101842239"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="407524894"/>
-								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
 							</MediaRefs>
@@ -1838,7 +1872,6 @@
 								<MediaRef Id="101842239"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="407524894"/>
-								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
 							</MediaRefs>
@@ -1849,7 +1882,6 @@
 								<MediaRef Id="101842239"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="407524894"/>
-								<MediaRef Id="413450912"/>
 								<MediaRef Id="503999046"/>
 								<MediaRef Id="821058410"/>
 							</MediaRefs>
@@ -2020,7 +2052,7 @@
 						<MediaRef Id="844727332"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2548270042" Name="Landing" DurationType="OneShot" DurationMin="0.72143924" DurationMax="1.0421567">
+				<Event Id="2548270042" Name="Landing" DurationType="OneShot" DurationMin="1.9276594" DurationMax="2.3175943">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -2035,12 +2067,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -2056,12 +2092,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -2077,12 +2117,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -2098,12 +2142,16 @@
 								<MediaRef Id="280610508"/>
 								<MediaRef Id="299114776"/>
 								<MediaRef Id="501829316"/>
+								<MediaRef Id="516317094"/>
 								<MediaRef Id="519388305"/>
+								<MediaRef Id="564337086"/>
 								<MediaRef Id="614668597"/>
+								<MediaRef Id="731248889"/>
 								<MediaRef Id="774795678"/>
 								<MediaRef Id="888959787"/>
 								<MediaRef Id="907544070"/>
 								<MediaRef Id="1027612762"/>
+								<MediaRef Id="1038358532"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -2894,5 +2942,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{258C3A8E-13AA-1313-35A7-066175546C66}</FileHash>
+	<FileHash>{48B794DD-13A5-3336-D5B7-5CC51986594C}</FileHash>
 </SoundBanksInfo>

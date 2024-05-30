@@ -1066,8 +1066,8 @@ MonoBehaviour:
         guid: ee5128c7eaed844aa55298747c68b800
       Path: Events\RP_Feedbacks\Collision
       maxAttenuation: 0
-      maxDuration: 1.0421567
-      minDuration: 0.72143924
+      maxDuration: 2.3175943
+      minDuration: 1.9276594
     - name: Countdown
       guid: ddd04c2d3d453c49bcd69e81ded6d324
       id: 1505888634
@@ -1185,8 +1185,8 @@ MonoBehaviour:
         guid: be6bd5739c273f45b35d96428fa3a6c8
       Path: Events\RP_Feedbacks\Landing
       maxAttenuation: 0
-      maxDuration: 1.0421567
-      minDuration: 0.72143924
+      maxDuration: 2.3175943
+      minDuration: 1.9276594
     - name: Parry
       guid: 18f73f752e7d06418423fed6a43972c0
       id: 3076648345
@@ -1811,7 +1811,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584845211638644647
+    m_lastTime: -8584845188323263377
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244

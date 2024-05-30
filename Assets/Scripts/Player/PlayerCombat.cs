@@ -311,6 +311,8 @@ public class PlayerCombat : MonoBehaviour
             if (source != null)
             {
                 source.combat.onGrabbingBall();
+                GameManager.Instance.gameData.crowdSteal.Post(gameObject);
+
             }
             else
             {
@@ -387,6 +389,7 @@ public class PlayerCombat : MonoBehaviour
         if(source.combat.isHoldingBall)
         {
             player.data.ballPunchHitSound.Post(gameObject);
+            GameManager.Instance.gameData.crowdStun.Post(GameManager.Instance.gameObject);
             StartCoroutine(death(source));
         }
         else
@@ -427,9 +430,9 @@ public class PlayerCombat : MonoBehaviour
 
     public void onFall()
     {
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         StartCoroutine(stun(null));
         GameManager.Instance.RespawnPlayer(player);
-        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         player.data.startEngineSound.Post(gameObject);
         GameManager.Instance.gameData.musicState[4].SetValue();
     }
