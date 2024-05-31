@@ -21,9 +21,12 @@ public class PlayerControllerData : ScriptableObject
     [Header("COMBAT VALUES")]
     public float punchWindUp;
     public float punchDamageWindow;
+    public float tauntDuration;
+    public float punchHoldDuration;
     public float parryWindow;
     public float counterWindow;
-    public float actionsCooldown;
+    public float punchCooldown;
+    public float parryCooldown;
     public float stunDuration;
     public float invincibilityDuration;
 
@@ -70,5 +73,4 @@ public class PlayerControllerData : ScriptableObject
 
     [Header("CAMERA LAYERS")]
     public List<LayerMask> playerLayer;
-    
 }

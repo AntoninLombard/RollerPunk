@@ -19,11 +19,18 @@ public class PlayerAnimation : MonoBehaviour
     [field :SerializeField] public VisualEffect counterVFX { get; private set; }
     
     
+    
+    private static readonly int PunchWindUpSpeed = Animator.StringToHash("PunchWindUpSpeed");
+    private static readonly int PunchSpeed = Animator.StringToHash("PunchSpeed");
+    private static readonly int ParrySpeed = Animator.StringToHash("ParrySpeed");
+    private static readonly int TauntSpeed = Animator.StringToHash("TauntSpeed");
+    
     void Start()
     {
-        animator.SetFloat("PunchWindUpSpeed",data.punchWindUpR.length/player.data.punchWindUp);
-        animator.SetFloat("PunchSpeed",data.punchL.length/player.data.punchDamageWindow);
-        animator.SetFloat("ParrySpeed",data.parry.length/player.data.parryWindow);
+        animator.SetFloat(PunchWindUpSpeed,data.punchWindUpR.length/player.data.punchWindUp);
+        animator.SetFloat(PunchSpeed,data.punchL.length/player.data.punchDamageWindow);
+        animator.SetFloat(ParrySpeed,data.parry.length/player.data.parryWindow);
+        animator.SetFloat(TauntSpeed,data.parry.length/player.data.tauntDuration);
         punchLVFX.SetFloat("Lifetime",player.data.punchDamageWindow);
         punchRVFX.SetFloat("Lifetime",player.data.punchDamageWindow);
         shieldVFX.SetFloat("Lifetime",player.data.parryWindow);
