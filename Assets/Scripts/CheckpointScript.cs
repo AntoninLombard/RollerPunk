@@ -15,9 +15,10 @@ public class Checkpoint : MonoBehaviour
         Player player = other.transform.parent?.gameObject.GetComponent<Player>();
         if(player == GameManager.Instance.ballHolder)
         {
-            player?.combat.onDeath(null);
             scoring.Post(gameObject);
             GameManager.Instance.OnScoring();
+            player.combat?.onDeath(null);
+            //GameManager.Instance.RespawnPlayer(player);
         }
     }
 }

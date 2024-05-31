@@ -14,5 +14,7 @@ public class PlayerAnimationData : ScriptableObject
     [SerializeField] public AnimationClip parry;
     [SerializeField] public AnimationClip parrySucessL;
     [SerializeField] public AnimationClip parrySucessR;
+    [SerializeField] public AnimationClip tauntL;
+    [SerializeField] public AnimationClip tauntR;
 
 }

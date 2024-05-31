@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int kills;
     [SerializeField] private int currentMultiplier;
     [field: SerializeField] [CanBeNull] public RespawnPoint lastRespawnPoint { get; private set; }
+    
 
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
@@ -109,13 +110,7 @@ public class GameManager : MonoBehaviour
         RespawnPlayer(player);
         player.listener.SetVolumeOffset(nbPlayer);
     }
-    public void OnPlayerDeath(Player player)
-    {
-        Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
-        Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
-        player.controller.TeleportPlayer(pos,rot);
 
-    }
 
     public void OnScoring()
     {
@@ -126,7 +121,6 @@ public class GameManager : MonoBehaviour
         {
             StopGame();
         }
-        ResetBall();
     }
     
     public void OnBallKill()
@@ -213,24 +207,32 @@ public class GameManager : MonoBehaviour
         player.controller.TeleportPlayer(pos,rot);
         if (player == ballHolder)
         {
-            ResetBall();
             RespawnBall();
         }
     }
     
     public void RespawnBall()
     {
+        ResetBall();
         ballHolder = null;
         ball.transform.parent = null;
         int index = respawnpoints.IndexOf(lastRespawnPoint);
-        Transform pos = respawnpoints[(index+1) % respawnpoints.Count].ballSpawnPoint;
-        if (Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
+        Transform pos = raceStart.transform;
+        int i = 1;
+        RespawnPoint currentRespawn = raceStart;
+        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn)
+        {
+            pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
+            i++;
+        }
+        if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
         {
             ball.Toggle(true);
             ball.transform.parent = null;
             ball.transform.position = hit.point + hit.normal;
             ball.transform.rotation = pos.rotation;
         }
+        
     }
     
     
