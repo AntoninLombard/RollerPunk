@@ -184,6 +184,7 @@ public class PlayerCombat : MonoBehaviour
         GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
         GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
         player.data.grabbingBallSound.Post(gameObject);
+        GameManager.Instance.gameData.musicState[player.number].SetValue();
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
     }
     
@@ -342,12 +343,16 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator stun(Player source)
     {
+        player.data.burstSound.Post(source.gameObject);
+
         if (isHoldingBall)
         {
             isHoldingBall = false;
             if (source != null)
             {
                 source.combat.onGrabbingBall();
+                GameManager.Instance.gameData.crowdSteal.Post(gameObject);
+
             }
             else
             {
@@ -360,6 +365,7 @@ public class PlayerCombat : MonoBehaviour
         player.anime.animator.SetTrigger(Stunned);
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger(GetUp);
+        player.data.gettingUpSound.Post(gameObject);
         isStunned = false;
         isInvincible = false;
     }
@@ -385,6 +391,7 @@ public class PlayerCombat : MonoBehaviour
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
         player.anime.animator.SetTrigger(Stunned);
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger(GetUp);
         player.data.gettingUpSound.Post(gameObject);
@@ -422,6 +429,7 @@ public class PlayerCombat : MonoBehaviour
         if(source.combat.isHoldingBall)
         {
             player.data.ballPunchHitSound.Post(gameObject);
+            GameManager.Instance.gameData.crowdStun.Post(GameManager.Instance.gameObject);
             StartCoroutine(death(source));
         }
         else
@@ -462,9 +470,11 @@ public class PlayerCombat : MonoBehaviour
 
     public void onFall()
     {
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         StartCoroutine(stun(null));
         GameManager.Instance.RespawnPlayer(player);
-        player.data.respawnSound.Post(gameObject);
+        player.data.startEngineSound.Post(gameObject);
+        GameManager.Instance.gameData.musicState[4].SetValue();
     }
 
     int sourceDirection(Transform source)

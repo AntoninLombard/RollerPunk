@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     public bool isReady;
     
     
-    
 	public WwiseListener listener;
     public AK.Wwise.Switch[] playerID;
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");

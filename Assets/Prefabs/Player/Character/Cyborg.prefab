@@ -346,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4272342943821034924}
   - component: {fileID: 4014009144695739909}
+  - component: {fileID: 3972718093790576296}
   - component: {fileID: 38929472754969586}
   m_Layer: 6
   m_Name: Cyborg
@@ -393,6 +394,19 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &3972718093790576296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065489219274897946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91463c6abe9e13742bcd4eaf95942a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!54 &38929472754969586
 Rigidbody:
   m_ObjectHideFlags: 0

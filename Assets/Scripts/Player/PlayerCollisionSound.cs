@@ -14,21 +14,23 @@ public class PlayerCollisionSound : MonoBehaviour
         float vertical = Vector3.Dot(other.impulse, player.character.up);
         float remaining = force - vertical;
 
+        player.data.forceCollision.SetValue(player.gameObject, force);
+
         if (force > player.data.collisionSoundThreshold)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Characters"))
             {
-                player.data.collisionSound.Post(player.character.gameObject);
+                player.data.collisionSound.Post(player.gameObject);
                 return;
             }
             
             if (vertical > remaining)
             {
-                player.data.wallHitSound.Post(player.character.gameObject);
+                player.data.wallHitSound.Post(player.gameObject);
 ;            }
             else
             {
-                player.data.groundHitSound.Post(player.character.gameObject);
+                player.data.groundHitSound.Post(player.gameObject);
             }
         }
     }
