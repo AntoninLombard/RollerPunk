@@ -16,28 +16,36 @@ namespace AK
         static const AkUniqueID AMB_BALL_STEAL = 529746809U;
         static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
         static const AkUniqueID AMB_KILL = 2469751798U;
-        static const AkUniqueID AMB_RUNSTART = 2349163407U;
+        static const AkUniqueID AMB_POINT = 770146064U;
+        static const AkUniqueID AMB_PREP = 2116017607U;
+        static const AkUniqueID AMB_RACESTART = 3265704427U;
         static const AkUniqueID AMB_START = 1589289402U;
+        static const AkUniqueID AMB_STUN = 562207882U;
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
+        static const AkUniqueID BRAKE = 103253078U;
         static const AkUniqueID BURST = 3766921625U;
         static const AkUniqueID CHECKPOINT = 612075679U;
         static const AkUniqueID COLLISION = 1792046091U;
         static const AkUniqueID COUNTDOWN = 1505888634U;
         static const AkUniqueID COUNTER = 3051750219U;
+        static const AkUniqueID DERAPAGE_START = 1719170495U;
+        static const AkUniqueID DERAPAGE_STOP = 3605871109U;
         static const AkUniqueID ENGINE_START = 2862969430U;
+        static const AkUniqueID GETTING_UP = 22664301U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
         static const AkUniqueID HIT_BYPUNCH = 3549005828U;
         static const AkUniqueID HIT_BYWALL = 2308453416U;
         static const AkUniqueID JOIN = 3695193445U;
         static const AkUniqueID LANDING = 2548270042U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID MUSICTST = 2856297975U;
         static const AkUniqueID PARRY = 3076648345U;
         static const AkUniqueID PARRY_SUCCESS = 1134971709U;
-        static const AkUniqueID PLAY_OUTRO = 431014199U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID PUNCH_MOVE = 3055455917U;
         static const AkUniqueID PUNCH_TAUNT = 1403211570U;
+        static const AkUniqueID RESPAWN = 4279841335U;
         static const AkUniqueID SCORE_UP = 3248278131U;
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
         static const AkUniqueID TEST = 3157003241U;
@@ -49,34 +57,57 @@ namespace AK
 
     namespace STATES
     {
-        namespace MUSIC
+        namespace GAMEPLAY_MUSIC
         {
-            static const AkUniqueID GROUP = 3991942870U;
+            static const AkUniqueID GROUP = 2322231365U;
 
             namespace STATE
             {
                 static const AkUniqueID BED = 446279778U;
-                static const AkUniqueID END = 529726532U;
-                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID GAME_END = 3271665593U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID P1 = 1635194252U;
                 static const AkUniqueID P2 = 1635194255U;
                 static const AkUniqueID P3 = 1635194254U;
                 static const AkUniqueID P4 = 1635194249U;
             } // namespace STATE
-        } // namespace MUSIC
+        } // namespace GAMEPLAY_MUSIC
 
-        namespace MUSIC_STATE
+        namespace MENU_MUSIC
         {
-            static const AkUniqueID GROUP = 3826569560U;
+            static const AkUniqueID GROUP = 4055567060U;
 
             namespace STATE
             {
-                static const AkUniqueID END = 529726532U;
-                static const AkUniqueID GAMEPLAY = 89505537U;
+                static const AkUniqueID GAME_START = 733168346U;
+                static const AkUniqueID MENU = 2607556080U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
-        } // namespace MUSIC_STATE
+        } // namespace MENU_MUSIC
+
+        namespace MENU_MUSIC_STATE
+        {
+            static const AkUniqueID GROUP = 676404222U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID MENU_QUIT = 2776193354U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MENU_MUSIC_STATE
+
+        namespace MUSIC_COOLDOWN
+        {
+            static const AkUniqueID GROUP = 2597434454U;
+
+            namespace STATE
+            {
+                static const AkUniqueID CD_OFF = 3983971318U;
+                static const AkUniqueID CD_ON = 29202488U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MUSIC_COOLDOWN
 
     } // namespace STATES
 
@@ -112,7 +143,6 @@ namespace AK
 
             namespace SWITCH
             {
-                static const AkUniqueID FALSE = 2452206122U;
                 static const AkUniqueID TRUE = 3053630529U;
             } // namespace SWITCH
         } // namespace THROTTLE
@@ -121,11 +151,14 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BALL_DUCK = 3218320494U;
+        static const AkUniqueID CROWD_DUCKING = 2376406340U;
         static const AkUniqueID DIRECTION = 16764168U;
         static const AkUniqueID ENVELOPPE_P1 = 256121077U;
         static const AkUniqueID ENVELOPPE_P2 = 256121078U;
         static const AkUniqueID ENVELOPPE_P3 = 256121079U;
         static const AkUniqueID ENVELOPPE_P4 = 256121072U;
+        static const AkUniqueID FORCE_COLLISION = 1775161915U;
         static const AkUniqueID GROUNDED = 2907122923U;
         static const AkUniqueID MASTER = 4056684167U;
         static const AkUniqueID MUSIC = 3991942870U;
@@ -158,7 +191,7 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID AMBIANCES = 1404066300U;
+        static const AkUniqueID AMB = 1117531639U;
         static const AkUniqueID BASS = 1291433344U;
         static const AkUniqueID CROWD_OS = 2077289713U;
         static const AkUniqueID DRUMS = 2726606664U;
@@ -172,6 +205,8 @@ namespace AK
         static const AkUniqueID LEAD = 54442139U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID MUSIC_MAIN = 1615767906U;
+        static const AkUniqueID OBJECTS = 1695690031U;
         static const AkUniqueID OTHER = 2376466361U;
         static const AkUniqueID P1 = 1635194252U;
         static const AkUniqueID P2 = 1635194255U;

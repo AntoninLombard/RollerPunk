@@ -48,12 +48,16 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event parrySound;
     public AK.Wwise.Event parrySuccessSound;
     public AK.Wwise.Event punchTauntSound;
+    public AK.Wwise.Event gettingUpSound;
+    public AK.Wwise.Event burstSound;
+    public AK.Wwise.Event respawnSound;
+    public AK.Wwise.Event brakingSound;
     public AK.Wwise.RTPC engineSpeed;
-    //public AK.Wwise.RTPC vehicleSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;
-    
-    
+    public AK.Wwise.RTPC forceCollision;
+
+
     [Header("ATTACK COLLIDERS")]
     public GameObject punchCollider;
     public GameObject slideCollider;

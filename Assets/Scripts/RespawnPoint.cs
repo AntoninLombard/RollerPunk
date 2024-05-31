@@ -6,6 +6,7 @@ using UnityEngine;
 public class RespawnPoint : MonoBehaviour
 {
     [field: SerializeField] public List<Transform> spawnPoints { get; private set; }
+    [field: SerializeField] public Transform ballSpawnPoint { get; private set; }
     private void OnTriggerEnter(Collider other)
     {
         Player hit = other.gameObject.GetComponentInParent<Player>();

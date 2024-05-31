@@ -49,7 +49,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ColliderBox punchLeftCollider;
     [SerializeField] private ColliderBox punchRightCollider;
-    
+
+
+    private Gamepad gamepad;
     
     
     
@@ -59,6 +61,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void Awake()
     {
+        //gamepad = (Gamepad)player.input.devices.Where(x => x.GetType() == gamepad.GetType() );
         OnHitByPunch.AddListener(onHitByPunch);
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
@@ -77,6 +80,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if(context.started)
         {
+            punchInput = true;
             Debug.Log("Pressing Punch Button");
             if (!isBusy)
             {
@@ -85,6 +89,7 @@ public class PlayerCombat : MonoBehaviour
         }
         else if(context.canceled)
         {
+            punchInput = false;
             Debug.Log("Releasing Punch Button");
             if (isWindingUpPunch)
             {
@@ -98,10 +103,14 @@ public class PlayerCombat : MonoBehaviour
     {
         if(context.started)
         {
+            fortifyInput = true;
             if (!isBusy)
             {
                 StartCoroutine(parry());
             }
+        } else if (context.canceled)
+        {
+            fortifyInput = true;
         }
     }
     
@@ -113,7 +122,7 @@ public class PlayerCombat : MonoBehaviour
             player.ui.SetReady(true);
             GameManager.Instance.OnPlayerReady();
             Debug.Log("StartPressed");
-        }
+        } 
 
     }
 
@@ -162,6 +171,7 @@ public class PlayerCombat : MonoBehaviour
         GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
         GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
         player.data.grabbingBallSound.Post(gameObject);
+        GameManager.Instance.gameData.musicState[player.number].SetValue();
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
     }
     
@@ -214,7 +224,7 @@ public class PlayerCombat : MonoBehaviour
         
         yield return new WaitForSeconds(player.data.punchWindUp);
         
-        if (isTaunting || isRecovering)
+        if (isTaunting || isRecovering || !isWindingUpPunch)
         {
             yield break;
         }
@@ -268,9 +278,9 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(player.anime.data.parry.length);
         player.anime.animator.ResetTrigger("Taunt");
         isTaunting = false;
-        isRecovering = true;
-        yield return new WaitForSeconds(player.data.actionsCooldown);
-        isRecovering = false;
+        // isRecovering = true;
+        // yield return new WaitForSeconds(player.data.actionsCooldown);
+        // isRecovering = false;
     }
 
     IEnumerator punchReactWindow(Player source)
@@ -293,12 +303,16 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator stun(Player source)
     {
+        player.data.burstSound.Post(source.gameObject);
+
         if (isHoldingBall)
         {
             isHoldingBall = false;
             if (source != null)
             {
                 source.combat.onGrabbingBall();
+                GameManager.Instance.gameData.crowdSteal.Post(gameObject);
+
             }
             else
             {
@@ -311,6 +325,7 @@ public class PlayerCombat : MonoBehaviour
         player.anime.animator.SetTrigger("Stunned");
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger("GetUp");
+        player.data.gettingUpSound.Post(gameObject);
         isStunned = false;
         isInvincible = false;
     }
@@ -336,8 +351,10 @@ public class PlayerCombat : MonoBehaviour
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
         player.anime.animator.SetTrigger("Stunned");
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger("GetUp");
+        player.data.gettingUpSound.Post(gameObject);
         isStunned = false;
         isInvincible = false;
         GameManager.Instance.OnPlayerDeath(player);
@@ -372,6 +389,7 @@ public class PlayerCombat : MonoBehaviour
         if(source.combat.isHoldingBall)
         {
             player.data.ballPunchHitSound.Post(gameObject);
+            GameManager.Instance.gameData.crowdStun.Post(GameManager.Instance.gameObject);
             StartCoroutine(death(source));
         }
         else
@@ -412,8 +430,11 @@ public class PlayerCombat : MonoBehaviour
 
     public void onFall()
     {
+        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         StartCoroutine(stun(null));
         GameManager.Instance.RespawnPlayer(player);
+        player.data.startEngineSound.Post(gameObject);
+        GameManager.Instance.gameData.musicState[4].SetValue();
     }
 
     int sourceDirection(Transform source)
