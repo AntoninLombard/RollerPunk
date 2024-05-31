@@ -23,11 +23,14 @@ namespace AK
         static const AkUniqueID AMB_STUN = 562207882U;
         static const AkUniqueID BALL_GRAB = 2618017047U;
         static const AkUniqueID BALL_PUNCH_MOVE = 155540885U;
+        static const AkUniqueID BRAKE = 103253078U;
         static const AkUniqueID BURST = 3766921625U;
         static const AkUniqueID CHECKPOINT = 612075679U;
         static const AkUniqueID COLLISION = 1792046091U;
         static const AkUniqueID COUNTDOWN = 1505888634U;
         static const AkUniqueID COUNTER = 3051750219U;
+        static const AkUniqueID DERAPAGE_START = 1719170495U;
+        static const AkUniqueID DERAPAGE_STOP = 3605871109U;
         static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID GETTING_UP = 22664301U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
@@ -141,7 +144,6 @@ namespace AK
 
             namespace SWITCH
             {
-                static const AkUniqueID FALSE = 2452206122U;
                 static const AkUniqueID TRUE = 3053630529U;
             } // namespace SWITCH
         } // namespace THROTTLE

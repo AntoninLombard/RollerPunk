@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
         player.number = nbPlayer;
         player.color = gameData.playerColors[nbPlayer];
         playerNumberRTPC.SetGlobalValue(nbPlayer);
+        Debug.Log(nbPlayer);
         nbPlayer++;
         RespawnPlayer(player);
         player.listener.SetVolumeOffset(nbPlayer);

@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584845200578869036
+    m_lastTime: -8584844472596592456
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584846089795293704
+    m_lastTime: -8584844463675695972
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -866,7 +866,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584846089106949607
+    m_lastTime: -8584845171315936558
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -916,6 +916,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 7844be5888eaf64f93a2e00339f70cc6
       Path: Events\RP_Ambiances\AMB_Kill
+      maxAttenuation: 0
+      maxDuration: 4.502922
+      minDuration: 2.6516263
+    - name: AMB_Point
+      guid: 9f1dbd42d6331444994807039ed22697
+      id: 770146064
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_Point
+        ObjectType: 3
+        guid: 9f1dbd42d6331444994807039ed22697
+      Path: Events\RP_Ambiances\AMB_Point
       maxAttenuation: 0
       maxDuration: 4.502922
       minDuration: 2.6516263
@@ -970,6 +987,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: AMB_Stun
+      guid: 2d22978207610b4aa32e77cf2a62b987
+      id: 562207882
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_Stun
+        ObjectType: 3
+        guid: 2d22978207610b4aa32e77cf2a62b987
+      Path: Events\RP_Ambiances\AMB_Stun
+      maxAttenuation: 0
+      maxDuration: 4.502922
+      minDuration: 2.6516263
   - PhysicalPath: Events\RP_Feedbacks.wwu
     PathAndIcons:
     - ElementName: Events
@@ -981,7 +1015,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584845203393411292
+    m_lastTime: -8584844470108513657
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -1032,8 +1066,8 @@ MonoBehaviour:
         guid: f1fc2c41e194c648a9a66b1e1b1bf962
       Path: Events\RP_Feedbacks\Burst
       maxAttenuation: 0
-      maxDuration: 7.8561873
-      minDuration: 7.8561873
+      maxDuration: 3.9280937
+      minDuration: 2.6631143
     - name: Checkpoint
       guid: 0d141e2b114d4c4b9240ffa5bf4add48
       id: 612075679
@@ -1317,7 +1351,7 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584846105921110858
+    m_lastTime: -8584844649256376656
     List:
     - name: Join
       guid: 8909090ff5717d459271454105028381
@@ -1432,8 +1466,59 @@ MonoBehaviour:
     ParentPath: Events\RP_Vehicule
     guid: b3615b940e8d94469069d49d4d79c295
     GuidInternal: 
-    m_lastTime: -8584859284300749771
+    m_lastTime: -8584844463900601968
     List:
+    - name: Brake
+      guid: e7614087475b8a4c80e8ed796e87aa7f
+      id: 103253078
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: Brake
+        ObjectType: 3
+        guid: e7614087475b8a4c80e8ed796e87aa7f
+      Path: Events\RP_Vehicule\Brake
+      maxAttenuation: 0
+      maxDuration: 1.9472083
+      minDuration: 0.6988223
+    - name: Derapage_Start
+      guid: dd392fdc12719648a2fe5dd34841b54f
+      id: 1719170495
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: Derapage_Start
+        ObjectType: 3
+        guid: dd392fdc12719648a2fe5dd34841b54f
+      Path: Events\RP_Vehicule\Derapage_Start
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Derapage_Stop
+      guid: 0ba27a4dcd2ba44486bc7a0d93189b50
+      id: 3605871109
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Vehicule
+        ObjectType: 12
+        guid: b3615b940e8d94469069d49d4d79c295
+      - ElementName: Derapage_Stop
+        ObjectType: 3
+        guid: 0ba27a4dcd2ba44486bc7a0d93189b50
+      Path: Events\RP_Vehicule\Derapage_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Engine_Start
       guid: 7b4ce96814ed7f4dab45c60f77f64457
       id: 2862969430
@@ -1449,8 +1534,8 @@ MonoBehaviour:
         guid: 7b4ce96814ed7f4dab45c60f77f64457
       Path: Events\RP_Vehicule\Engine_Start
       maxAttenuation: 0
-      maxDuration: 1.4452932
-      minDuration: 0.81114334
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -1811,7 +1896,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\RP_Vehicule
     guid: 8475fbbe91ed934ebdbae4fd07cc3879
     GuidInternal: 
-    m_lastTime: -8584845188323263377
+    m_lastTime: -8584844501079014972
     List:
     - name: Direction
       guid: 6136110bb84f344490180b00896e4244
@@ -2265,7 +2350,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 7e5a09c5ce7412479cd97d3c4b50a46f
     GuidInternal: 
-    m_lastTime: -8584869517668386059
+    m_lastTime: -8584844535663270804
     List:
     - name: Grounded
       guid: c587873dd642bd4f8c76fe75ad18d3c3
@@ -2414,22 +2499,6 @@ MonoBehaviour:
         guid: 9de0bb180a03224499b1ad8a552cb649
       Path: Switches\Default Work Unit\Throttle
       values:
-      - name: False
-        guid: 5da73a300909b14c8696ee074d790889
-        id: 2452206122
-        PathAndIcons:
-        - ElementName: Switches
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: 7e5a09c5ce7412479cd97d3c4b50a46f
-        - ElementName: Throttle
-          ObjectType: 11
-          guid: 9de0bb180a03224499b1ad8a552cb649
-        - ElementName: False
-          ObjectType: 10
-          guid: 5da73a300909b14c8696ee074d790889
       - name: True
         guid: 264ecd327941e747814640100e81ce03
         id: 3053630529
@@ -2463,7 +2532,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 02000000050000000800000011000000220000002c00000038000000390000003a00000042000000430000005a0000007d00000097000000
+  ExpandedFileSystemItemIds: 02000000050000000800000011000000220000002c00000038000000390000003a00000042000000430000005a0000007d0000007f000000800000009700000099000000
   ExpandedWaapiItemIds: 05000000110000002c00000042000000430000005a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

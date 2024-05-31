@@ -118,6 +118,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: d8d250a70fcb5e24da8d1865e7b92bc4,
       type: 2}
+  brakingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c94b3b8e34fdc7049a27769339614aca,
+      type: 2}
   engineSpeed:
     idInternal: 0
     valueGuidInternal: 
