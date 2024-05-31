@@ -96,7 +96,6 @@ public class PlayerController2 : MonoBehaviour
         }
 
         speed = rb.velocity.magnitude;
-        Debug.Log(speed);
         engineSpeed.SetValue(gameObject, speed);
     }
     

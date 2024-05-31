@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584844472596592456
+    m_lastTime: -8584844452684850459
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584844463675695972
+    m_lastTime: -8584844454064287832
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -785,7 +785,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584846971941880997
+    m_lastTime: -8584844459514198572
     List:
     - name: Music
       guid: 50bd927e93a63341984dac3ccb90a59f
@@ -821,23 +821,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Outro
-      guid: a155142f3df8a34f98c3c282952c085e
-      id: 431014199
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: c26fb1ebac2fa748ac3ce864ec3d13ef
-      - ElementName: Play_Outro
-        ObjectType: 3
-        guid: a155142f3df8a34f98c3c282952c085e
-      Path: Events\Default Work Unit\Play_Outro
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: Play_test
       guid: 37b2db60c2ae09418c6243c0338346e0
       id: 3187507146

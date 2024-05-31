@@ -42,7 +42,6 @@ namespace AK
         static const AkUniqueID MUSICTST = 2856297975U;
         static const AkUniqueID PARRY = 3076648345U;
         static const AkUniqueID PARRY_SUCCESS = 1134971709U;
-        static const AkUniqueID PLAY_OUTRO = 431014199U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID PUNCH_MOVE = 3055455917U;
         static const AkUniqueID PUNCH_TAUNT = 1403211570U;

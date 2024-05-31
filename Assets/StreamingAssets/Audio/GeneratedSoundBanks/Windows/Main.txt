@@ -2,7 +2,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	22664301	Getting_Up			\RP_Feedbacks\Getting_Up	
 	103253078	Brake			\RP_Vehicule\Brake	
 	155540885	Ball_Punch_Move			\RP_Feedbacks\Ball_Punch_Move	
-	431014199	Play_Outro			\Default Work Unit\Play_Outro	
 	529746809	AMB_Ball_Steal			\RP_Ambiances\AMB_Ball_Steal	
 	562207882	AMB_Stun			\RP_Ambiances\AMB_Stun	
 	602331051	Hit_ByBall			\RP_Feedbacks\Hit_ByBall	
