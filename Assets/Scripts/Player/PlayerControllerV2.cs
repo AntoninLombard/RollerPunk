@@ -97,6 +97,16 @@ public class PlayerController2 : MonoBehaviour
 
         speed = rb.velocity.magnitude;
         engineSpeed.SetValue(gameObject, speed);
+
+        if (!isGrounded)
+        {
+            player.data.grounded.SetValue(gameObject, 0);
+        }
+        else
+        {
+            player.data.grounded.SetValue(gameObject, 1);
+        }
+            
     }
     
     #endregion

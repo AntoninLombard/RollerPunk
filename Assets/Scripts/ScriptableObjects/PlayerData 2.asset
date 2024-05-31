@@ -72,7 +72,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
       type: 2}
-  collisionSoundThreshold: 1350
+  collisionSoundThreshold: 1400
   collisionSound:
     idInternal: 0
     valueGuidInternal: 
@@ -142,6 +142,11 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: bd74a72a82b20dc4ab28a875b2f5fa88,
+      type: 2}
+  grounded:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9b0875e93fefbc84b8565e531fee2557,
       type: 2}
   punchCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
     type: 3}

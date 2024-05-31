@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{33462B77-0442-6148-6B41-D051E686884B}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{254A13A1-D2AD-7C2C-7CF5-5FF7539A6152}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -310,7 +310,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{47294540-1016-B278-CCDA-15514328025C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F6D0639F-1779-F09B-FC99-7CD41A70FCF3}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -447,6 +447,10 @@
 				<File Id="101842239" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>M2_2.wav</ShortName>
 					<CachePath>SFX/M2_2_0762CC47.wem</CachePath>
+				</File>
+				<File Id="102955077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Derapage_v1.wav</ShortName>
+					<CachePath>SFX/Derapage_v1_18F6E0F6.wem</CachePath>
 				</File>
 				<File Id="104067058" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frein-008.wav</ShortName>
@@ -910,6 +914,10 @@
 					<ShortName>Collision-007.wav</ShortName>
 					<CachePath>SFX/Collision-007_CAF33A06.wem</CachePath>
 				</File>
+				<File Id="523930646" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turning_Grounded.wav</ShortName>
+					<CachePath>SFX/Turning_Grounded_0762CC47.wem</CachePath>
+				</File>
 				<File Id="524160278" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_DRUMS_164.wav</ShortName>
 					<Path>Media/524160278.wem</Path>
@@ -1337,6 +1345,10 @@
 				<File Id="932970665" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-004.wav</ShortName>
 					<CachePath>SFX/Punch_Move-004_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="935073877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Road.wav</ShortName>
+					<CachePath>SFX/Road_0762CC47.wem</CachePath>
 				</File>
 				<File Id="944546153" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Guitar_164.wav</ShortName>
@@ -1995,12 +2007,15 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -2123,12 +2138,15 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -3166,5 +3184,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FA145A20-4565-C51D-A95A-AFC9F2FAD5AD}</FileHash>
+	<FileHash>{A6A09CF4-6276-8D39-B950-5C53F030AB2D}</FileHash>
 </SoundBanksInfo>
