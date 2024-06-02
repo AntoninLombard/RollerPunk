@@ -113,8 +113,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -368,6 +368,7 @@ MonoBehaviour:
   <steerInput>k__BackingField: 0
   <driveInput>k__BackingField: 0
   rb: {fileID: 8963657871566459159}
+  <groundRange>k__BackingField: 0
   engineSpeed:
     idInternal: 0
     valueGuidInternal: 
@@ -395,6 +396,8 @@ MonoBehaviour:
   <isRecovering>k__BackingField: 0
   <isWindingUpPunchLeft>k__BackingField: 0
   <isWindingUpPunchRight>k__BackingField: 0
+  <isHoldingPunchLeft>k__BackingField: 0
+  <isHoldingPunchRight>k__BackingField: 0
   <isPunchingLeft>k__BackingField: 0
   <isPunchingRight>k__BackingField: 0
   <isTaunting>k__BackingField: 0
