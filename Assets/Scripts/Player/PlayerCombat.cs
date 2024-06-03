@@ -86,6 +86,7 @@ public class PlayerCombat : MonoBehaviour
         if (!isBusy)
         {
             StartCoroutine(punch());
+            player.data.windUpSound.Post(gameObject);
         }
     }
     

@@ -54,6 +54,7 @@ namespace AK
         static const AkUniqueID UI_HOVER = 2118900976U;
         static const AkUniqueID UI_HOVER_INWINDOW = 2147104942U;
         static const AkUniqueID UI_SELECT = 2774129122U;
+        static const AkUniqueID WINDUP = 2699564740U;
     } // namespace EVENTS
 
     namespace STATES

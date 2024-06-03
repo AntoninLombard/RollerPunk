@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584841819188541500
+    m_lastTime: -8584841736327123000
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584841827768119726
+    m_lastTime: -8584841742301364041
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -849,7 +849,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584845171315936558
+    m_lastTime: -8584841785173810326
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -885,6 +885,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 7.8089247
       minDuration: 7.8089247
+    - name: AMB_Fall
+      guid: 6044d5480a2d3d4789f33c4a11579eaf
+      id: 3175049353
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_Fall
+        ObjectType: 3
+        guid: 6044d5480a2d3d4789f33c4a11579eaf
+      Path: Events\RP_Ambiances\AMB_Fall
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: AMB_Kill
       guid: 7844be5888eaf64f93a2e00339f70cc6
       id: 2469751798
@@ -998,7 +1015,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584844438313516046
+    m_lastTime: -8584841731698731433
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -1032,8 +1049,8 @@ MonoBehaviour:
         guid: 50ebe91a68392b44ba36e1bb54b44237
       Path: Events\RP_Feedbacks\Ball_Punch_Move
       maxAttenuation: 0
-      maxDuration: 0.76271296
-      minDuration: 0.40267062
+      maxDuration: 5.3702884
+      minDuration: 4.282453
     - name: Burst
       guid: f1fc2c41e194c648a9a66b1e1b1bf962
       id: 3766921625
@@ -1253,8 +1270,8 @@ MonoBehaviour:
         guid: 141d7e9b557f1e43856c1e846a16496a
       Path: Events\RP_Feedbacks\Punch_Move
       maxAttenuation: 0
-      maxDuration: 0.76271296
-      minDuration: 0.40267062
+      maxDuration: 5.3702884
+      minDuration: 4.282453
     - name: Punch_Taunt
       guid: b0bf6c63f16822428898dbdfe8d7bba6
       id: 1403211570
@@ -1323,6 +1340,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.9143226
       minDuration: 1.9143226
+    - name: WindUp
+      guid: 393ab54ee8f6694db30b2bf2284086fa
+      id: 2699564740
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: WindUp
+        ObjectType: 3
+        guid: 393ab54ee8f6694db30b2bf2284086fa
+      Path: Events\RP_Feedbacks\WindUp
+      maxAttenuation: 0
+      maxDuration: 10.9984865
+      minDuration: 5.664384
   - PhysicalPath: Events\RP_UI.wwu
     PathAndIcons:
     - ElementName: Events

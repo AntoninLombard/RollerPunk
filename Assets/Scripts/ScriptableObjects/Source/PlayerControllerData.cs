@@ -42,6 +42,7 @@ public class PlayerControllerData : ScriptableObject
     
     [Header("SOUND")] 
     public AK.Wwise.Event startEngineSound;
+    public AK.Wwise.Event windUpSound;
     public AK.Wwise.Event punchSound; //move
     public AK.Wwise.Event balLPunchSound; //move
     public AK.Wwise.Event punchHitSound;

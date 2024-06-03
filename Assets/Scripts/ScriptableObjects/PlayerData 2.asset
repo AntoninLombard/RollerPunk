@@ -45,6 +45,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
       type: 2}
+  windUpSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3b1757fc011ce434c9fbd2968dfb4499,
+      type: 2}
   punchSound:
     idInternal: 0
     valueGuidInternal: 
