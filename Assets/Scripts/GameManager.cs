@@ -133,7 +133,6 @@ public class GameManager : MonoBehaviour
         {
             currentMultiplier = scoring.killMultiplicatorValue;
             ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
-            ballHolder.controller.StartBoost();
             gameData.crowdKill.Post(gameObject);
         }
     }
@@ -189,6 +188,10 @@ public class GameManager : MonoBehaviour
 
     private void ResetBall()
     {
+        if(ballHolder != null)
+        {
+            ballHolder.ui.OnPointsChange(0, 0);
+        }
         ballHolder = null;
         distanceTraveled = 0;
         cumulatedPoints = 0;

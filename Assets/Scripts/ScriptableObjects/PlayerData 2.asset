@@ -20,7 +20,8 @@ MonoBehaviour:
   boostAccel: 50
   boostDuration: 1
   driftAccel: 25
-  driftTurnMultiplier: 0.75
+  driftSteerOffset: 0.5
+  driftTurnMultiplier: 0.6
   driftDurationForBoost: 2
   brakingRatio: 0.95
   drag: 0.8

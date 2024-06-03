@@ -66,6 +66,7 @@ public class PlayerCombat : MonoBehaviour
     private static readonly int Countered = Animator.StringToHash("Countered");
     private static readonly int WindUpL = Animator.StringToHash("WindUp.L");
     private static readonly int WindUpR = Animator.StringToHash("WindUp.R");
+    private static readonly int Punch = Animator.StringToHash("Punch");
 
 
     private void Awake()
@@ -210,7 +211,6 @@ public class PlayerCombat : MonoBehaviour
         {
             yield break;
         }
-        //TODO start animation here.
         isHoldingPunchLeft = punchSide < 0;
         isHoldingPunchRight = punchSide > 0;
         isWindingUpPunchLeft = false;
@@ -229,7 +229,7 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator punchRelease()
     {
-        //TODO Trigger punch here
+        player.anime.animator.SetTrigger(Punch);
         
         isPunchingLeft = isHoldingPunchLeft;
         isPunchingRight = isHoldingPunchRight;
@@ -313,8 +313,11 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator stun(Player source)
     {
-        player.data.burstSound.Post(source.gameObject);
 
+        if (source != null)
+        {
+            source.controller.StartBoost();
+        }
         if (isHoldingBall)
         {
             isHoldingBall = false;
@@ -342,6 +345,10 @@ public class PlayerCombat : MonoBehaviour
     
     IEnumerator death(Player source)
     {
+        if (source != null)
+        {
+            source.controller.StartBoost();
+        }
         if (isHoldingBall)
         {
             isHoldingBall = false;
@@ -368,6 +375,7 @@ public class PlayerCombat : MonoBehaviour
         isStunned = false;
         isInvincible = false;
         GameManager.Instance.RespawnPlayer(player);
+        player.data.respawnSound.Post(gameObject);
         yield return invincibility();
     }
     
@@ -441,7 +449,7 @@ public class PlayerCombat : MonoBehaviour
     public void onFall()
     {
         player.data.respawnSound.Post(GameManager.Instance.gameObject);
-        StartCoroutine(stun(null));
+        StartCoroutine(death(null));
         GameManager.Instance.RespawnPlayer(player);
         player.data.startEngineSound.Post(gameObject);
         GameManager.Instance.gameData.musicState[4].SetValue();

@@ -66,6 +66,8 @@ public class PlayerController2 : MonoBehaviour
         controllerData.throttle.SetValue(gameObject, player.input.driveInput);
         controllerData.direction.SetValue(gameObject, player.input.steerInput);
         
+        player.anime.animator.SetBool("AirTime", !isGrounded);
+        
         isBraking = player.input.brakeInput != 0;
     }
 
@@ -156,7 +158,7 @@ public class PlayerController2 : MonoBehaviour
         if (isDrifting)
         {
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(
-                (player.input.steerInput + driftingSide) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
+                (player.input.steerInput + driftingSide *  (1 + controllerData.driftSteerOffset)) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
         } else if (player.input.steerInput != 0f)
         {
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(player.input.steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
@@ -232,7 +234,7 @@ public class PlayerController2 : MonoBehaviour
     Vector3 boost(float time)
     {
         if (isBoosting)
-            return player.character.forward * (controllerData.boostAccel * time);
+            return player.character.forward * (controllerData.boostAccel * time * controllerData.ballAccelMultiplier);
         return Vector3.zero;
     }
 
@@ -311,7 +313,13 @@ public class PlayerController2 : MonoBehaviour
             {
                 isDrifting = true;
                 driftingSide = player.input.steerInput > 0 ? 1 : -1;
-                //player.anime.animator.SetTrigger(""); TODO
+                if(driftingSide >0)
+                {
+                    player.anime.animator.SetBool("Drift.R", true);
+                }else
+                {
+                    player.anime.animator.SetBool("Drift.L", true);
+                }
             }
         }
     }
@@ -320,11 +328,18 @@ public class PlayerController2 : MonoBehaviour
     {
         if (isDrifting)
         {
-            //player.anime.animator.SetTrigger(""); TODO
+            if(driftingSide >0)
+            {
+                player.anime.animator.SetBool("Drift.R", false);
+            }else
+            {
+                player.anime.animator.SetBool("Drift.L", false);
+            }
             if (driftDuration > controllerData.driftDurationForBoost)
                 StartBoost();
             isDrifting = false;
             driftDuration = 0;
+            driftingSide = 0;
         }
     }
 
