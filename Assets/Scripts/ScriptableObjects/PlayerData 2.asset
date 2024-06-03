@@ -15,12 +15,16 @@ MonoBehaviour:
   maxSpeed: 40
   forwardAccel: 30
   turningRate: 10
-  gravityStrength: 10
+  gravityStrength: 20
   gripAccel: 30
-  inertiaRatio: 0
-  brakingRatio: 0.5
+  boostAccel: 50
+  boostDuration: 1
+  driftAccel: 25
+  driftTurnMultiplier: 0.75
+  driftDurationForBoost: 2
+  brakingRatio: 0.95
   drag: 0.8
-  airDrag: 0.2
+  airDrag: 0.1
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
   punchWindUp: 0.6
