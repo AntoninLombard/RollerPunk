@@ -204,7 +204,7 @@ public class MeshBend : MonoBehaviour
                 currentVert.x = 0;
                 currentVert = currentRot * currentVert;
                 currentVert += (Vector3)splinePos + translation;
-                normals.Add(splineRotation * currentNormal);
+                normals.Add(currentRot * currentNormal);
                 vertices.Add(currentVert);
             }
                 
