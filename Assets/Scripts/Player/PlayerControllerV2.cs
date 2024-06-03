@@ -35,6 +35,8 @@ public class PlayerController2 : MonoBehaviour
     [Header("CHARACTER PARTS")]
     [SerializeField] public Rigidbody rb;
     
+    [field: Header("GROUND DETECTION")]
+    [field: SerializeField] [field: Range(0.1f,1.0f)] public float groundRange { get; private set; }
 
     [Header("SOUND")] 
     [SerializeField] RTPC engineSpeed;
@@ -147,9 +149,7 @@ public class PlayerController2 : MonoBehaviour
         steerInput = steerAction.ReadValue<float>();
         if (steerInput != 0f)
         {
-            //player.character.rotation = Quaternion.Euler(Vector3.Lerp(player.character.rotation.eulerAngles, player.character.rotation.eulerAngles + new Vector3(0, steerInput * controllerData.turningRate, 0), time * 5f));
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
-            //player.character.rotation = player.character.rotation * Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up);
         }
     }
 
@@ -174,27 +174,27 @@ public class PlayerController2 : MonoBehaviour
 
         int count = 0;
         Vector3 normal = Vector3.zero;
-        if (Physics.Raycast(pos, -player.character.up, out var hitUnder, 0.5f))
+        if (Physics.Raycast(pos, -player.character.up, out var hitUnder, groundRange))
         {
             count += 3;
             normal += hitUnder.normal*3;
         }
-        if (Physics.Raycast(pos, -up - right, out var hitLeft, 0.5f))
+        if (Physics.Raycast(pos, -up - right, out var hitLeft, groundRange))
         {
             count++;
             normal += hitLeft.normal;
         }
-        if (Physics.Raycast(pos, -up + right, out var hitRight, 0.5f))
+        if (Physics.Raycast(pos, -up + right, out var hitRight, groundRange))
         {
             count++;
             normal += hitRight.normal;
         }
-        if (Physics.Raycast(pos, -up + forward, out var hitFront, 0.5f))
+        if (Physics.Raycast(pos, -up + forward, out var hitFront, groundRange))
         {
             count++;
             normal += hitFront.normal;
         }
-        if (Physics.Raycast(pos, -up -forward, out var hitBack, 0.5f))
+        if (Physics.Raycast(pos, -up -forward, out var hitBack, groundRange))
         {
             count++;
             normal += hitBack.normal;
@@ -204,6 +204,7 @@ public class PlayerController2 : MonoBehaviour
         {
             isGrounded = true;
             normal /= count;
+            float dot = Vector3.Dot(normal, player.character.up);
             alignCharToNormal(normal, time);
         }
         else if (Physics.Raycast(player.character.position, Vector3.down, out var hitDown, 0.5f))
@@ -242,41 +243,41 @@ public class PlayerController2 : MonoBehaviour
         Vector3 forward = player.character.forward;
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(player.character.position, -up, out var hitUnder, 0.5f))
+        if (Physics.Raycast(player.character.position, -up, out var hitUnder, groundRange))
         {
             Gizmos.color = Color.green;
         }
-        Gizmos.DrawLine(pos, pos + -player.character.up * 0.5f);
+        Gizmos.DrawLine(pos, pos + -player.character.up * groundRange);
 
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(player.character.position, -up - right, out var hitLeft, 0.5f))
+        if (Physics.Raycast(player.character.position, -up - right, out var hitLeft, groundRange))
         {
             Gizmos.color = Color.green;
         }
-        Gizmos.DrawLine(pos, pos + (-up - right).normalized * 0.5f);
+        Gizmos.DrawLine(pos, pos + (-up - right).normalized * groundRange);
         
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(player.character.position, -up + right, out var hitRight, 0.5f))
+        if (Physics.Raycast(player.character.position, -up + right, out var hitRight, groundRange))
         {
             Gizmos.color = Color.green;
         }
-        Gizmos.DrawLine(pos, pos + (-up + right).normalized * 0.5f);
+        Gizmos.DrawLine(pos, pos + (-up + right).normalized * groundRange);
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(player.character.position, -up + forward, out var hitFront, 0.5f))
+        if (Physics.Raycast(player.character.position, -up + forward, out var hitFront, groundRange))
         {
             Gizmos.color = Color.green;
         }
-        Gizmos.DrawLine(pos, pos + (-up + forward).normalized * 0.5f);
+        Gizmos.DrawLine(pos, pos + (-up + forward).normalized * groundRange);
         
         Gizmos.color = Color.red;
-        if (Physics.Raycast(player.character.position, -up -forward, out var hitBack, 0.5f))
+        if (Physics.Raycast(player.character.position, -up -forward, out var hitBack, groundRange))
         {
             Gizmos.color = Color.green;
         }
-        Gizmos.DrawLine(pos, pos + (-up - forward).normalized * 0.5f);
+        Gizmos.DrawLine(pos, pos + (-up - forward).normalized * groundRange);
     }
 
     public void TeleportPlayer(Vector3 position, Quaternion rotation)
@@ -290,7 +291,7 @@ public class PlayerController2 : MonoBehaviour
     public void TogglePlayerFreeze(bool isFreezed)
     {
         rb.isKinematic = isFreezed;
-        //rb.interpolation = isFreezed ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
+        rb.interpolation = isFreezed ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
     }
     #endregion
     

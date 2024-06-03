@@ -37,11 +37,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int kills;
     [SerializeField] private int currentMultiplier;
     [field: SerializeField] [CanBeNull] public RespawnPoint lastRespawnPoint { get; private set; }
+    
 
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
     [SerializeField] private RTPC playerNumberRTPC;
-    [SerializeField] private AK.Wwise.Event startEngineSound;
 
     private void Awake()
     {
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         lastRespawnPoint = raceStart;
         gameData.crowdStart.Post(gameObject);
-        gameData.musicStart.Post(gameObject);
+        gameData.crowdWaiting.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -88,6 +88,15 @@ public class GameManager : MonoBehaviour
         isRaceOn = true;
     }
 
+    void StopGame()
+    {
+        isRaceOn = false;
+        foreach (Player player in players.Keys)
+        {
+            player.ToggleActive(false);
+        }
+    }
+
     public void OnPlayerInstantiate(Player player)
     {
         players.Add(player,0);
@@ -103,21 +112,18 @@ public class GameManager : MonoBehaviour
         RespawnPlayer(player);
         player.listener.SetVolumeOffset(nbPlayer);
     }
-    public void OnPlayerDeath(Player player)
-    {
-        Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
-        Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
-        player.controller.TeleportPlayer(pos, rot);
-        startEngineSound.Post(player.gameObject);
 
-    }
 
     public void OnScoring()
     {
         players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
         ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
-        ResetBall();
+        gameData.musicState[4].SetValue();
+        if (players[ballHolder] > scoring.maxScore)
+        {
+            StopGame();
+        }
     }
     
     public void OnBallKill()
@@ -168,6 +174,7 @@ public class GameManager : MonoBehaviour
                 cumulatedPoints++;
                 ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
                 gameData.score.SetGlobalValue(cumulatedPoints);
+                gameData.scoreUpSound.Post(gameObject);
             }
             holderPreviousPosition = ballHolder.character.position;
             holderPreviousForward = ballHolder.character.forward;
@@ -204,19 +211,32 @@ public class GameManager : MonoBehaviour
         player.controller.TeleportPlayer(pos,rot);
         if (player == ballHolder)
         {
-            ResetBall();
             RespawnBall();
         }
     }
     
     public void RespawnBall()
     {
+        ResetBall();
         ballHolder = null;
-        Transform pos = lastRespawnPoint.spawnPoints[Random.Range(0, 4)];
-        ball.Toggle(true);
         ball.transform.parent = null;
-        ball.transform.position = pos.position;
-        ball.transform.rotation = pos.rotation;
+        int index = respawnpoints.IndexOf(lastRespawnPoint);
+        Transform pos = raceStart.transform;
+        int i = 1;
+        RespawnPoint currentRespawn = raceStart;
+        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn)
+        {
+            pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
+            i++;
+        }
+        if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
+        {
+            ball.Toggle(true);
+            ball.transform.parent = null;
+            ball.transform.position = hit.point + hit.normal;
+            ball.transform.rotation = pos.rotation;
+        }
+        
     }
     
     
@@ -227,6 +247,7 @@ public class GameManager : MonoBehaviour
     IEnumerator StartCountdown()
     {
         gameData.countdownSound.Post(gameObject);
+
         foreach (Player player in players.Keys)
         {
             player.ui.ToggleCountdown(true);
@@ -239,6 +260,7 @@ public class GameManager : MonoBehaviour
         {
             player.ui.SetCountdown(2);
         }
+
         gameData.countdownSound.Post(gameObject);
         
         yield return new WaitForSeconds(1);
@@ -247,6 +269,7 @@ public class GameManager : MonoBehaviour
         {
             player.ui.SetCountdown(1);
         }
+
         gameData.countdownSound.Post(gameObject);
         
         yield return new WaitForSeconds(1);
@@ -256,6 +279,7 @@ public class GameManager : MonoBehaviour
             player.ui.SetCountdown(0);
             player.ToggleActive(true);
         }
+
         gameData.countdownSound.Post(gameObject);
 
         yield return new WaitForSeconds(0.5f);
@@ -264,6 +288,9 @@ public class GameManager : MonoBehaviour
         {
             player.ui.ToggleCountdown(false);
         }
+
+        gameData.musicStart.Post(gameObject);
+        gameData.crowdRaceStart.Post(gameObject);
     }
     #endregion
 }

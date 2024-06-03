@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     public bool isReady;
     
     
-    
 	public WwiseListener listener;
     public AK.Wwise.Switch[] playerID;
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour
         ToggleActive(false);
         ui.ToggleCountdown(false);
         isReady = false;
+        //combat.enabled = true;
         GameManager.Instance.OnPlayerInstantiate(this);
         foreach (Material material in anime.animator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>()?.materials)
         {
@@ -47,8 +47,8 @@ public class Player : MonoBehaviour
 
     public void ToggleActive(bool isActive)
     {
-        controller.TogglePlayerFreeze(!isActive);
-        combat.ToggleInvincibility(!isActive);
+        controller?.TogglePlayerFreeze(!isActive);
+        combat?.ToggleInvincibility(!isActive);
     }
 }
     

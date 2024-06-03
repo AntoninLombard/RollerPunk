@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal trim
-    second: {fileID: 2100000, guid: b2498c3e2009ef943a140afb07b975d3, type: 2}
+    second: {fileID: 2100000, guid: 5dc35b8993325bf46965fc799ca414bb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Road
-    second: {fileID: 2100000, guid: ffee07aef5bfbd049bd32aa6a6cbe5e1, type: 2}
+    second: {fileID: 2100000, guid: 7cd01a3c158663a4f8cdc6eb5bfbefac, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -42,7 +42,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -69,7 +69,7 @@ ModelImporter:
     minBoneWeight: 0.001
     optimizeBones: 1
     meshOptimizationFlags: -1
-    indexFormat: 0
+    indexFormat: 2
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

@@ -21,9 +21,12 @@ public class PlayerControllerData : ScriptableObject
     [Header("COMBAT VALUES")]
     public float punchWindUp;
     public float punchDamageWindow;
+    public float tauntDuration;
+    public float punchHoldDuration;
     public float parryWindow;
     public float counterWindow;
-    public float actionsCooldown;
+    public float punchCooldown;
+    public float parryCooldown;
     public float stunDuration;
     public float invincibilityDuration;
 
@@ -49,12 +52,15 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event parrySuccessSound;
     public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.Event gettingUpSound;
+    public AK.Wwise.Event burstSound;
     public AK.Wwise.Event respawnSound;
+    public AK.Wwise.Event brakingSound;
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;
-    
-    
+    public AK.Wwise.RTPC forceCollision;
+
+
     [Header("ATTACK COLLIDERS")]
     public GameObject punchCollider;
     public GameObject slideCollider;
@@ -66,5 +72,4 @@ public class PlayerControllerData : ScriptableObject
 
     [Header("CAMERA LAYERS")]
     public List<LayerMask> playerLayer;
-    
 }

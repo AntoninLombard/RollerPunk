@@ -27,3 +27,5 @@ MonoBehaviour:
     type: 3}
   parrySucessR: {fileID: 3873377233160737557, guid: 5ddd509660e7e38408695519faa5d010,
     type: 3}
+  tauntL: {fileID: -4433264575057424465, guid: 5ddd509660e7e38408695519faa5d010, type: 3}
+  tauntR: {fileID: 2449462161558115461, guid: 5ddd509660e7e38408695519faa5d010, type: 3}

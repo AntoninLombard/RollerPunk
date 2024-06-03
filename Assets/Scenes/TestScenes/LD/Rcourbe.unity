@@ -254,6 +254,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 782cc9a3d387aa14ab0b083705e3d7ee,
       type: 2}
+  playerNumberRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 84931dbca886db7489a3a9cc92fb9900,
+      type: 2}
+  startEngineSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: abccd730c74fd3b4e9b6af778e1afb32,
+      type: 2}
 --- !u!1001 &257032276
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,5 +16,10 @@ public class GameData : ScriptableObject
     public AK.Wwise.Event crowdStart;
     public AK.Wwise.Event crowdScoring;
     public AK.Wwise.Event crowdKill;
+    public AK.Wwise.Event crowdStun;
     public AK.Wwise.Event crowdSteal;
+    public AK.Wwise.Event scoreUpSound;
+    public AK.Wwise.Event crowdWaiting;
+    public AK.Wwise.Event crowdRaceStart;
+    public AK.Wwise.State[] musicState;
 }

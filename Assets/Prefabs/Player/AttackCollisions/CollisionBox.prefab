@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8642489518864470867}
   - component: {fileID: 810944970337300998}
-  - component: {fileID: 7805708096981072561}
+  - component: {fileID: 1437148275533974541}
   m_Layer: 0
   m_Name: CollisionBox
   m_TagString: Untagged
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  collider: {fileID: 7805708096981072561}
---- !u!136 &7805708096981072561
-CapsuleCollider:
+  collider: {fileID: 1437148275533974541}
+--- !u!65 &1437148275533974541
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -62,11 +62,9 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 1975
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2.5, z: 2}
+  m_Center: {x: -1, y: 1.25, z: 0}
