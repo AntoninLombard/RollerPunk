@@ -18,19 +18,15 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isAccelerating { get; private set; }
     [field: SerializeField] public bool isBraking { get; private set; }
     [field: SerializeField] public bool isTurning { get; private set; }
-    [field: SerializeField] public bool isGrounded { get; private set; }   
+
+    [field: SerializeField] public bool isBoosting { get; private set; }
+    [field: SerializeField] public bool isGrounded { get; private set; }
+    [field: SerializeField] public bool isDrifting { get; private set; }
+    [SerializeField] private int driftingSide;
+    [SerializeField] private Vector3 driftOffset;
     [SerializeField] private float speed = 0;
     
-    
-    [Header("INPUT SYSTEM")]
-    [SerializeField] private PlayerInput input;
-    private InputAction driveAction;
-    private InputAction reverseAction;
-    private InputAction steerAction;
-    
-    [field: Header("PLAYER INPUTS")]
-    [field: SerializeField] [field: Range(-1.0f,1.0f)] public float steerInput { get; private set; }
-    [field: SerializeField] [field: Range(-1.0f,1.0f)] public float driveInput { get; private set; }
+
     
     [Header("CHARACTER PARTS")]
     [SerializeField] public Rigidbody rb;
@@ -43,6 +39,7 @@ public class PlayerController2 : MonoBehaviour
     
     [SerializeField] private Player player;
     private Vector3 previousForward;
+    private float driftDuration;
     #endregion
 
     #region UNITY FUNCTIONS
@@ -50,9 +47,7 @@ public class PlayerController2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        driveAction = input.actions.FindAction("Driving/Drive");
-        reverseAction = input.actions.FindAction("Driving/Reverse");
-        steerAction = input.actions.FindAction("Driving/Steer");
+
         controllerData.startEngineSound.Post(gameObject);
     }
 
@@ -60,16 +55,18 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         float speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
-        steerInput = steerAction.ReadValue<float>();
-        driveInput = driveAction.ReadValue<float>() - reverseAction.ReadValue<float>();
+        if (isDrifting)
+            driftDuration += Time.deltaTime;
         player.anime.animator.SetBool("Moving",speed > 1);
-        player.anime.animator.SetFloat("Direction",steerInput);
+        player.anime.animator.SetFloat("Direction",player.input.steerInput);
         player.anime.animator.SetFloat("Speed",speedRatio);
         //steer(Time.deltaTime);
         //groundCheck(Time.deltaTime);
         player.virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(player.virtualCamera.m_Lens.FieldOfView,player.data.minFOV + (player.data.maxFOV -player.data.minFOV) * speedRatio,5f * Time.deltaTime);
-        controllerData.throttle.SetValue(gameObject, driveInput);
-        controllerData.direction.SetValue(gameObject, steerInput);
+        controllerData.throttle.SetValue(gameObject, player.input.driveInput);
+        controllerData.direction.SetValue(gameObject, player.input.steerInput);
+        
+        isBraking = player.input.brakeInput != 0;
     }
 
     private void FixedUpdate()
@@ -82,6 +79,7 @@ public class PlayerController2 : MonoBehaviour
         
         deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
         deltaVelocity += move(currentVelocity,Time.fixedDeltaTime);
+        deltaVelocity += boost(Time.fixedDeltaTime);
         groundCheck(Time.fixedDeltaTime);
         steer(Time.fixedDeltaTime);
         gravity();
@@ -89,7 +87,7 @@ public class PlayerController2 : MonoBehaviour
         
         
         rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
-        
+        brake(Time.fixedDeltaTime);
         currentVelocity = rb.velocity;
 
         if (currentVelocity.magnitude > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
@@ -132,34 +130,46 @@ public class PlayerController2 : MonoBehaviour
         }
         else if(!player.combat.isStunned)
         {
-            switch (driveInput)
+            if (isDrifting)
             {
-                case > 0f:
-                    isBraking = false;
-                    isAccelerating = true;
-                    deltaVelocity += player.character.forward * (driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
-                    break;
-                case < 0f:
-                    isBraking = true;
-                    isAccelerating = false;
-                    deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
-                    break;
-                default:
-                    isBraking = false;
-                    isAccelerating = false;
-                    break;
-            }
+                deltaVelocity += player.character.forward * (controllerData.driftAccel * time);
+
+            } else if (player.input.driveInput > 0)
+                deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * time);
+
+            // {
+            //     case > 0f:
+            //         isAccelerating = true;
+            //         deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
+            //         break;
+            //     case < 0f:
+            //         isAccelerating = false;
+            //         deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
+            //         break;
+            //     default:
+            //         isAccelerating = false;
+            //         break;
+            // }
         
         }
         return deltaVelocity;
     }
 
+    private void brake(float time)
+    {
+        if (isBraking)
+            rb.AddForce(-rb.velocity * (controllerData.brakingRatio * time * player.input.brakeInput),ForceMode.VelocityChange);
+    }
+
     private void steer(float time)
     {
-        steerInput = steerAction.ReadValue<float>();
-        if (steerInput != 0f)
+        if (isDrifting)
         {
-            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
+            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(
+                (player.input.steerInput + driftingSide) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
+        } else if (player.input.steerInput != 0f)
+        {
+            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(player.input.steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
         }
     }
 
@@ -228,12 +238,11 @@ public class PlayerController2 : MonoBehaviour
             alignCharToNormal(Vector3.up, time/5);
         }
     }
-    
-    
-    private Vector3 sliding(Vector3 dir,float time)
+
+    Vector3 boost(float time)
     {
-        // if (player.combat.isSliding)
-        //     return -dir  * (controllerData.slidingDrag * time);
+        if (isBoosting)
+            return player.character.forward * (controllerData.boostAccel * time);
         return Vector3.zero;
     }
 
@@ -303,6 +312,46 @@ public class PlayerController2 : MonoBehaviour
         rb.isKinematic = isFreezed;
         rb.interpolation = isFreezed ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
     }
+
+    public void StartDrift()
+    {
+        if (!player.combat.isBusy)
+        {
+            if(player.input.steerInput != 0)
+            {
+                isDrifting = true;
+                driftingSide = player.input.steerInput > 0 ? 1 : -1;
+                //player.anime.animator.SetTrigger(""); TODO
+            }
+        }
+    }
+
+    public void CancelDrift()
+    {
+        if (isDrifting)
+        {
+            //player.anime.animator.SetTrigger(""); TODO
+            if (driftDuration > controllerData.driftDurationForBoost)
+                StartBoost();
+            isDrifting = false;
+            driftDuration = 0;
+        }
+    }
+
+
+    public void StartBoost()
+    {
+        StartCoroutine(Boost());
+    }
+    private IEnumerator Boost()
+    {
+        controllerData.burstSound.Post(gameObject);
+        isBoosting = true;
+        yield return new WaitForSeconds(controllerData.boostDuration);
+        isBoosting = false;
+    }
+    
+    
     #endregion
     
 }

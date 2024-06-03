@@ -11,7 +11,11 @@ public class PlayerControllerData : ScriptableObject
     public float turningRate = 0;
     public float gravityStrength = 0.0f;
     public float gripAccel = 0.0f;
-    [Range(0.0f,1.0f)] public float inertiaRatio = 0.0f;
+    public float boostAccel = 0.0f;
+    public float boostDuration = 0.0f;
+    public float driftAccel;
+    public float driftTurnMultiplier;
+    public float driftDurationForBoost;
     [Range(0.0f,1.0f)] public float brakingRatio = 0;
     [Range(0.0f,1.0f)] public float drag;
     [Range(0.0f,1.0f)] public float airDrag;
@@ -73,4 +77,5 @@ public class PlayerControllerData : ScriptableObject
 
     [Header("CAMERA LAYERS")]
     public List<LayerMask> playerLayer;
+    
 }

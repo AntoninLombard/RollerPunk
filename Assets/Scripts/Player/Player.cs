@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public PlayerController2 controller;
     public PlayerUI ui;
     public PlayerCombat combat;
-    public PlayerInput input;
+    public PlayerInputs input;
     public Camera camera;
     public CinemachineVirtualCamera virtualCamera;
     public Transform character;

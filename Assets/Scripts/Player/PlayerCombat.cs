@@ -20,7 +20,6 @@ public class PlayerCombat : MonoBehaviour
 
 
     [field: Header("CHARACTER STATE")]
-    [SerializeField] public int lastSteerSide;
     [field: SerializeField] public bool isInvincible { get; private set; }
     [field: SerializeField] public bool isRecovering { get; private set; }
     [field: SerializeField] public bool isWindingUpPunchLeft { get; private set; }
@@ -34,7 +33,7 @@ public class PlayerCombat : MonoBehaviour
     [field: SerializeField] public bool isSliding { get; private set; }
     [field: SerializeField] public bool isStunned { get; private set; }
     [field: SerializeField] public bool isHoldingBall { get; private set; }
-    public bool isBusy => isPunchingLeft || isPunchingRight || isRecovering || isFortified || isStunned || isTaunting || isWindingUpPunchLeft || isWindingUpPunchRight;
+    public bool isBusy => isPunchingLeft || isPunchingRight || isRecovering || isFortified || isStunned || isTaunting || isWindingUpPunchLeft || isWindingUpPunchRight || player.controller.isDrifting;
     public bool isPunching => isPunchingLeft || isPunchingRight;
     public bool isWindingUpPunch => isWindingUpPunchLeft || isWindingUpPunchRight;
     public bool isHoldingPunch => isHoldingPunchLeft || isHoldingPunchRight;
@@ -76,69 +75,39 @@ public class PlayerCombat : MonoBehaviour
         OnGrabbingBall.AddListener(onGrabbingBall);
     }
 
-    private void Update()
-    {
-        if(player.controller?.steerInput != 0)
-            lastSteerSide = (player.controller?.steerInput > 0)? 1 : -1;
-    }
     
 
 
     #region INPUT EVENT CALLBACKS
 
-    public void onPunch(InputAction.CallbackContext context)
+    public void StartPunch()
     {
-        if(context.started)
+        if (!isBusy)
         {
-            punchInput = true;
-            Debug.Log("Pressing Punch Button");
-            if (!isBusy)
-            {
-                StartCoroutine(punch());
-            }
-        }
-        else if(context.canceled)
-        {
-            punchInput = false;
-            Debug.Log("Releasing Punch Button");
-            if (isWindingUpPunch)
-            {
-                StartCoroutine(taunt());
-            } else if (!(isTaunting || isRecovering || !isHoldingPunch || isStunned))
-            {
-                StartCoroutine(punchRelease());
-            }
-        }
-    }
-
- 
-    public void onParry(InputAction.CallbackContext context)
-    {
-        if(context.started)
-        {
-            fortifyInput = true;
-            if (!isBusy)
-            {
-                StartCoroutine(parry());
-            }
-        } else if (context.canceled)
-        {
-            fortifyInput = true;
+            StartCoroutine(punch());
         }
     }
     
-    public void onReady(InputAction.CallbackContext context)
+    public void CancelPunch()
     {
-        if (context.started)
+        if (isWindingUpPunch)
         {
-            player.isReady = true;
-            player.ui.SetReady(true);
-            GameManager.Instance.OnPlayerReady();
-            Debug.Log("StartPressed");
-        } 
-
+            StartCoroutine(taunt());
+        } else if (!(isTaunting || isRecovering || !isHoldingPunch || isStunned))
+        {
+            StartCoroutine(punchRelease());
+        }
     }
 
+    public void StartParry()
+    {
+        if (!isBusy)
+        {
+            StartCoroutine(parry());
+        }
+    }
+    
+   
     #endregion
 
 
@@ -219,7 +188,7 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator punch()
     {
         ColliderBox colliderBox;
-        int punchSide = lastSteerSide;
+        int punchSide = player.input.lastSteerSide;
         switch (punchSide)
         {
             case < 0:
@@ -276,6 +245,7 @@ public class PlayerCombat : MonoBehaviour
         {
             player.data.punchSound.Post(gameObject);
         }
+        collider.Toggle(true);
         
         yield return new WaitForSeconds(player.data.punchDamageWindow);
         

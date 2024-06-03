@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
         {
             currentMultiplier = scoring.killMultiplicatorValue;
             ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+            ballHolder.controller.StartBoost();
             gameData.crowdKill.Post(gameObject);
         }
     }
