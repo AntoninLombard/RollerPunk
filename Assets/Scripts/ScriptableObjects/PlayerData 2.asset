@@ -15,22 +15,23 @@ MonoBehaviour:
   maxSpeed: 40
   forwardAccel: 30
   turningRate: 10
-  gravityStrength: 10
+  gravityStrength: 20
   gripAccel: 30
-  boostAccel: 0
-  boostDuration: 0
-  driftAccel: 0
-  driftTurnMultiplier: 0
-  driftDurationForBoost: 0
-  brakingRatio: 0.5
+  boostAccel: 50
+  boostDuration: 1
+  driftAccel: 25
+  driftSteerOffset: 0.5
+  driftTurnMultiplier: 0.6
+  driftDurationForBoost: 2
+  brakingRatio: 0.95
   drag: 0.8
-  airDrag: 0.2
+  airDrag: 0.1
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
   punchWindUp: 0.6
   punchDamageWindow: 0.3
-  tauntDuration: 0.7
-  punchHoldDuration: 1
+  tauntDuration: 1
+  punchHoldDuration: 0.8
   parryWindow: 0.5
   counterWindow: 0.1
   punchCooldown: 0.1
@@ -79,7 +80,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
       type: 2}
-  collisionSoundThreshold: 1400
+  collisionSoundThreshold: 1350
   collisionSound:
     idInternal: 0
     valueGuidInternal: 
@@ -120,16 +121,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 696e0b82e70f42c49a21bd6724d62904,
       type: 2}
-  driftStartSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fcb31a910a7b65443a1c33db24c2c2b7,
-      type: 2}
-  driftStopSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 727daeec60d0e8d42bc5729ce247afa1,
-      type: 2}
   respawnSound:
     idInternal: 0
     valueGuidInternal: 
@@ -159,11 +150,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: bd74a72a82b20dc4ab28a875b2f5fa88,
-      type: 2}
-  grounded:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9b0875e93fefbc84b8565e531fee2557,
       type: 2}
   punchCollider: {fileID: 4759311440069381920, guid: 7fd5f39572df9574e85812f8ffd15f43,
     type: 3}

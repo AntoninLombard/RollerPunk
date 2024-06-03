@@ -47,6 +47,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2d05cf6b649cc2d479bc934670234ef7,
       type: 2}
+  crowdStun:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d713662f7d0e3b24e91eceae47df2a60,
+      type: 2}
   crowdSteal:
     idInternal: 0
     valueGuidInternal: 

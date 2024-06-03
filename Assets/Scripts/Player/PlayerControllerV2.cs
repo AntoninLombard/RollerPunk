@@ -1,12 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using AK.Wwise;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.Splines.Interpolators;
+
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -40,6 +35,11 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private Player player;
     private Vector3 previousForward;
     private float driftDuration;
+    private static readonly int Moving = Animator.StringToHash("Moving");
+    private static readonly int Brake = Animator.StringToHash("Brake");
+    private static readonly int Direction = Animator.StringToHash("Direction");
+    private static readonly int Speed = Animator.StringToHash("Speed");
+
     #endregion
 
     #region UNITY FUNCTIONS
@@ -57,14 +57,17 @@ public class PlayerController2 : MonoBehaviour
         float speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         if (isDrifting)
             driftDuration += Time.deltaTime;
-        player.anime.animator.SetBool("Moving",speed > 1);
-        player.anime.animator.SetFloat("Direction",player.input.steerInput);
-        player.anime.animator.SetFloat("Speed",speedRatio);
+        player.anime.animator.SetBool(Moving,speed > 1);
+        player.anime.animator.SetFloat(Direction,player.input.steerInput);
+        player.anime.animator.SetFloat(Brake,player.input.brakeInput);
+        player.anime.animator.SetFloat(Speed,speedRatio);
         //steer(Time.deltaTime);
         //groundCheck(Time.deltaTime);
         player.virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(player.virtualCamera.m_Lens.FieldOfView,player.data.minFOV + (player.data.maxFOV -player.data.minFOV) * speedRatio,5f * Time.deltaTime);
         controllerData.throttle.SetValue(gameObject, player.input.driveInput);
         controllerData.direction.SetValue(gameObject, player.input.steerInput);
+        
+        player.anime.animator.SetBool("AirTime", !isGrounded);
         
         isBraking = player.input.brakeInput != 0;
     }
@@ -97,16 +100,6 @@ public class PlayerController2 : MonoBehaviour
 
         speed = rb.velocity.magnitude;
         engineSpeed.SetValue(gameObject, speed);
-
-        if (!isGrounded)
-        {
-            player.data.grounded.SetValue(gameObject, 0);
-        }
-        else
-        {
-            player.data.grounded.SetValue(gameObject, 1);
-        }
-            
     }
     
     #endregion
@@ -166,7 +159,7 @@ public class PlayerController2 : MonoBehaviour
         if (isDrifting)
         {
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(
-                (player.input.steerInput + driftingSide) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
+                (player.input.steerInput + driftingSide *  (1 + controllerData.driftSteerOffset)) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
         } else if (player.input.steerInput != 0f)
         {
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(player.input.steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
@@ -242,7 +235,7 @@ public class PlayerController2 : MonoBehaviour
     Vector3 boost(float time)
     {
         if (isBoosting)
-            return player.character.forward * (controllerData.boostAccel * time);
+            return player.character.forward * (controllerData.boostAccel * time * controllerData.ballAccelMultiplier);
         return Vector3.zero;
     }
 
@@ -321,8 +314,13 @@ public class PlayerController2 : MonoBehaviour
             {
                 isDrifting = true;
                 driftingSide = player.input.steerInput > 0 ? 1 : -1;
-                //player.anime.animator.SetTrigger(""); TODO
-                player.data.driftStartSound.Post(gameObject);
+                if(driftingSide >0)
+                {
+                    player.anime.animator.SetBool("Drift.R", true);
+                }else
+                {
+                    player.anime.animator.SetBool("Drift.L", true);
+                }
             }
         }
     }
@@ -331,12 +329,18 @@ public class PlayerController2 : MonoBehaviour
     {
         if (isDrifting)
         {
-            //player.anime.animator.SetTrigger(""); TODO
+            if(driftingSide >0)
+            {
+                player.anime.animator.SetBool("Drift.R", false);
+            }else
+            {
+                player.anime.animator.SetBool("Drift.L", false);
+            }
             if (driftDuration > controllerData.driftDurationForBoost)
                 StartBoost();
             isDrifting = false;
             driftDuration = 0;
-            player.data.driftStopSound.Post(gameObject);
+            driftingSide = 0;
         }
     }
 

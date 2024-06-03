@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(MeshBend))]
 public class SplineMeshEditor : Editor
 {
@@ -16,3 +17,4 @@ public class SplineMeshEditor : Editor
         }
     }
 }
+#endif

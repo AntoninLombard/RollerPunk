@@ -14,6 +14,7 @@ public class PlayerControllerData : ScriptableObject
     public float boostAccel = 0.0f;
     public float boostDuration = 0.0f;
     public float driftAccel;
+    public float driftSteerOffset;
     public float driftTurnMultiplier;
     public float driftDurationForBoost;
     [Range(0.0f,1.0f)] public float brakingRatio = 0;
