@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5DE7FFE4-64B7-0ACC-325E-CE56EFDB1498}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{557B4AA4-5BE9-733B-296D-B1E23F6DA597}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -310,7 +310,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{417A5FCF-468E-6575-C30B-A6A69E841DC8}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A2D252DC-DBF7-1599-8CC5-591652B19756}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -892,7 +892,7 @@
 				</File>
 				<File Id="505768196" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-001.wav</ShortName>
-					<CachePath>SFX/RP_GettingUp-001_17E88647.wem</CachePath>
+					<CachePath>SFX/RP_GettingUp-001_2E77019C.wem</CachePath>
 				</File>
 				<File Id="510761819" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164.wav</ShortName>
@@ -1028,7 +1028,7 @@
 				</File>
 				<File Id="631790069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-003.wav</ShortName>
-					<CachePath>SFX/RP_GettingUp-003_51EE4595.wem</CachePath>
+					<CachePath>SFX/RP_GettingUp-003_7EF64299.wem</CachePath>
 				</File>
 				<File Id="634612713" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 2_164.wav</ShortName>
@@ -1286,7 +1286,7 @@
 				</File>
 				<File Id="874912290" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Derapage_v1.wav</ShortName>
-					<CachePath>SFX/Derapage_v1_A5C7FC3A.wem</CachePath>
+					<CachePath>SFX/Derapage_v1_4903E991.wem</CachePath>
 				</File>
 				<File Id="875882344" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitar_164.wav</ShortName>
@@ -1490,7 +1490,7 @@
 				</File>
 				<File Id="1053059621" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-002.wav</ShortName>
-					<CachePath>SFX/RP_GettingUp-002_6ED05739.wem</CachePath>
+					<CachePath>SFX/RP_GettingUp-002_FE26C8DF.wem</CachePath>
 				</File>
 				<File Id="1055165452" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 2_164.wav</ShortName>
@@ -1543,6 +1543,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="3175049353" Name="AMB_Fall" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2469751798" Name="AMB_Kill" DurationType="OneShot" DurationMin="2.6516263" DurationMax="4.502922">
 					<MediaRefs>
 						<MediaRef Id="93796985"/>
@@ -3288,5 +3289,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8A9FDD47-83C0-0314-91C9-EA5536D24BCD}</FileHash>
+	<FileHash>{CA43FA96-44C4-5E94-073B-0A30088B4142}</FileHash>
 </SoundBanksInfo>

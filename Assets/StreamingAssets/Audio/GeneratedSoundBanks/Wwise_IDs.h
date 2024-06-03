@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID AMB_BALL_STEAL = 529746809U;
         static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
+        static const AkUniqueID AMB_FALL = 3175049353U;
         static const AkUniqueID AMB_KILL = 2469751798U;
         static const AkUniqueID AMB_POINT = 770146064U;
         static const AkUniqueID AMB_PREP = 2116017607U;
