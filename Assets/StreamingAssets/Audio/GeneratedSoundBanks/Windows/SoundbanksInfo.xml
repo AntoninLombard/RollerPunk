@@ -310,7 +310,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{188DE3A5-CAF9-9117-0FB7-E0BF18E21501}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{417A5FCF-468E-6575-C30B-A6A69E841DC8}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -892,7 +892,7 @@
 				</File>
 				<File Id="505768196" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-001.wav</ShortName>
-					<CachePath>SFX/RP_GettingUp-001_52A886C0.wem</CachePath>
+					<CachePath>SFX/RP_GettingUp-001_17E88647.wem</CachePath>
 				</File>
 				<File Id="510761819" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164.wav</ShortName>
@@ -1028,7 +1028,7 @@
 				</File>
 				<File Id="631790069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-003.wav</ShortName>
-					<CachePath>SFX/RP_GettingUp-003_E0156B42.wem</CachePath>
+					<CachePath>SFX/RP_GettingUp-003_51EE4595.wem</CachePath>
 				</File>
 				<File Id="634612713" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 2_164.wav</ShortName>
@@ -1490,7 +1490,7 @@
 				</File>
 				<File Id="1053059621" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-002.wav</ShortName>
-					<CachePath>SFX/RP_GettingUp-002_41DD5825.wem</CachePath>
+					<CachePath>SFX/RP_GettingUp-002_6ED05739.wem</CachePath>
 				</File>
 				<File Id="1055165452" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 2_164.wav</ShortName>
@@ -3169,7 +3169,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1047898967" Name="Skid_Stop" DurationType="OneShot" DurationMin="0.8252085" DurationMax="0.83040285">
+				<Event Id="1047898967" Name="Skid_Stop" DurationType="OneShot" DurationMin="0.5213504" DurationMax="0.554979">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -3288,5 +3288,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B41E6000-5751-57A1-7164-D1E48CF0E6F0}</FileHash>
+	<FileHash>{8A9FDD47-83C0-0314-91C9-EA5536D24BCD}</FileHash>
 </SoundBanksInfo>
