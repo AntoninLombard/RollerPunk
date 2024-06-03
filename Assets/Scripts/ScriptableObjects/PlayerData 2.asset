@@ -30,8 +30,8 @@ MonoBehaviour:
   ballMaxSpeedMultipier: 0.82
   punchWindUp: 0.6
   punchDamageWindow: 0.3
-  tauntDuration: 0.7
-  punchHoldDuration: 1
+  tauntDuration: 1
+  punchHoldDuration: 0.8
   parryWindow: 0.5
   counterWindow: 0.1
   punchCooldown: 0.1

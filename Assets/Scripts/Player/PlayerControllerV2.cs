@@ -1,12 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using AK.Wwise;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.Splines.Interpolators;
+
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -40,6 +35,11 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private Player player;
     private Vector3 previousForward;
     private float driftDuration;
+    private static readonly int Moving = Animator.StringToHash("Moving");
+    private static readonly int Brake = Animator.StringToHash("Brake");
+    private static readonly int Direction = Animator.StringToHash("Direction");
+    private static readonly int Speed = Animator.StringToHash("Speed");
+
     #endregion
 
     #region UNITY FUNCTIONS
@@ -57,9 +57,10 @@ public class PlayerController2 : MonoBehaviour
         float speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         if (isDrifting)
             driftDuration += Time.deltaTime;
-        player.anime.animator.SetBool("Moving",speed > 1);
-        player.anime.animator.SetFloat("Direction",player.input.steerInput);
-        player.anime.animator.SetFloat("Speed",speedRatio);
+        player.anime.animator.SetBool(Moving,speed > 1);
+        player.anime.animator.SetFloat(Direction,player.input.steerInput);
+        player.anime.animator.SetFloat(Brake,player.input.brakeInput);
+        player.anime.animator.SetFloat(Speed,speedRatio);
         //steer(Time.deltaTime);
         //groundCheck(Time.deltaTime);
         player.virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(player.virtualCamera.m_Lens.FieldOfView,player.data.minFOV + (player.data.maxFOV -player.data.minFOV) * speedRatio,5f * Time.deltaTime);
