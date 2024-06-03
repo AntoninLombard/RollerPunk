@@ -322,6 +322,7 @@ public class PlayerController2 : MonoBehaviour
                 isDrifting = true;
                 driftingSide = player.input.steerInput > 0 ? 1 : -1;
                 //player.anime.animator.SetTrigger(""); TODO
+                player.data.driftStartSound.Post(gameObject);
             }
         }
     }
@@ -335,6 +336,7 @@ public class PlayerController2 : MonoBehaviour
                 StartBoost();
             isDrifting = false;
             driftDuration = 0;
+            player.data.driftStopSound.Post(gameObject);
         }
     }
 

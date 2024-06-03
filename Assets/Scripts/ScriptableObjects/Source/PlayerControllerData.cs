@@ -57,6 +57,8 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.Event gettingUpSound;
     public AK.Wwise.Event burstSound;
+    public AK.Wwise.Event driftStartSound;
+    public AK.Wwise.Event driftStopSound;
     public AK.Wwise.Event respawnSound;
     public AK.Wwise.Event brakingSound;
     public AK.Wwise.RTPC engineSpeed;

@@ -29,8 +29,6 @@ namespace AK
         static const AkUniqueID COLLISION = 1792046091U;
         static const AkUniqueID COUNTDOWN = 1505888634U;
         static const AkUniqueID COUNTER = 3051750219U;
-        static const AkUniqueID DERAPAGE_START = 1719170495U;
-        static const AkUniqueID DERAPAGE_STOP = 3605871109U;
         static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID GETTING_UP = 22664301U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
@@ -48,6 +46,8 @@ namespace AK
         static const AkUniqueID RESPAWN = 4279841335U;
         static const AkUniqueID SCORE_UP = 3248278131U;
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
+        static const AkUniqueID SKID_START = 2955095029U;
+        static const AkUniqueID SKID_STOP = 1047898967U;
         static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BACK = 2024222415U;
         static const AkUniqueID UI_HOVER = 2118900976U;
