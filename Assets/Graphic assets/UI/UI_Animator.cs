@@ -60,6 +60,7 @@ public class UI_Animator : MonoBehaviour
                 else
                 {
                     rectTransform.anchoredPosition = new Vector2(panelXCoordinate, panelDestination);
+                    Debug.Log("lmao even");
                     CancelUIAnimations();
                 }
             }
@@ -85,10 +86,12 @@ public class UI_Animator : MonoBehaviour
     public void UIPanelMove(int positionIndex)
     {
         // Changes position of the player panels in CharaSelect, with an option for instant positionning in case of returning to the CharaSelect.
+        // position index values: 0 HIDDEN TOP, 1 PEEKING TOP, 2 DISPLAYED TOP, 3 HIDDEN BOTTOM, 4 PEEKING BOTTOM, 5 DISPLAYED BOTTOM
         CancelUIAnimations();
         panelDestination = panelPositions[positionIndex];
         panelStartingPosition = rectTransform.anchoredPosition.y;
         startTime = Time.time;
+        animating = true;
         panelMoving = true;
     }
 
