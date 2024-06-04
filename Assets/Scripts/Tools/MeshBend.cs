@@ -18,8 +18,7 @@ public class MeshBend : MonoBehaviour
     private Spline spline;
     private float timer;
     private float updateTimer = 0.2f;
-    private int  meshBatchSize = 4;
-    
+    [SerializeField] private int  meshBatchSize = 1;
     
     [Serializable]
     public enum FillType
@@ -110,6 +109,10 @@ public class MeshBend : MonoBehaviour
         MeshRenderer renderer = child.AddComponent<MeshRenderer>();
 
         filter.sharedMesh = mesh;
+        collider.cookingOptions = MeshColliderCookingOptions.EnableMeshCleaning |
+                                  MeshColliderCookingOptions.UseFastMidphase |
+                                  MeshColliderCookingOptions.WeldColocatedVertices |
+                                  MeshColliderCookingOptions.CookForFasterSimulation;
         collider.sharedMesh = mesh;
         renderer.materials = materials;
         
@@ -152,9 +155,7 @@ public class MeshBend : MonoBehaviour
         float meshOffset = 0f;
         int currentMeshNb = 0;
         int batchNb = 0;
-        MeshRenderer renderer;
-        MeshFilter filter;
-        MeshCollider collider;
+        
         for (int rep = 0; rep < repetitions; rep++)
         {
             //Mesh newMesh = new Mesh();
@@ -184,7 +185,9 @@ public class MeshBend : MonoBehaviour
             uv7.AddRange(source.uv7);
             uv8.AddRange(source.uv8);
             #endif
-                
+            
+            
+            
             for(int j = 0; j < source.vertexCount ;j++)
             {
                 Vector3 currentVert = source.vertices[j];
@@ -208,7 +211,8 @@ public class MeshBend : MonoBehaviour
                 vertices.Add(currentVert);
             }
                 
-                
+            currentMesh.indexFormat = source.indexFormat;
+            currentMesh.hideFlags = source.hideFlags;
             currentMesh.vertices = vertices.ToArray();
             currentMesh.normals = normals.ToArray();
             currentMesh.uv = uv.ToArray();
@@ -220,23 +224,22 @@ public class MeshBend : MonoBehaviour
             currentMesh.uv7 = uv7.ToArray();
             currentMesh.uv8 = uv8.ToArray();
             currentMesh.triangles = triangles.ToArray();
-            currentMesh.hideFlags = source.hideFlags;
-            #if UNITY_2017_3_OR_NEWER
-            currentMesh.indexFormat = source.indexFormat;
-            #endif
 
             currentMesh.RecalculateBounds();
             currentMesh.RecalculateTangents();
-            List<SubMeshDescriptor> subMeshDescriptors = new List<SubMeshDescriptor>();
-            for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
+            if(source.subMeshCount > 0)
             {
-                subMeshDescriptors.Add(source.GetSubMesh(subMeshNb));
+                List<SubMeshDescriptor> subMeshDescriptors = new List<SubMeshDescriptor>();
+                for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
+                {
+                    subMeshDescriptors.Add(source.GetSubMesh(subMeshNb));
+                }
+                currentMesh.SetSubMeshes(subMeshDescriptors.ToArray());
             }
-            currentMesh.SetSubMeshes(subMeshDescriptors.ToArray());
             newMeshes.Add(currentMesh);
             
             
-            if (currentMeshNb-1 >= meshBatchSize)
+            if (currentMeshNb+1 >= meshBatchSize)
             {
                 Mesh meshBatch = FuseMeshes(newMeshes);
                 newMeshes.Clear();
@@ -274,33 +277,134 @@ public class MeshBend : MonoBehaviour
         newMesh.indexFormat = IndexFormat.UInt32;
         List<CombineInstance> finalCombineInstances = new List<CombineInstance>();
         
-        for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
+        if(source.subMeshCount > 0)
         {
-            List<CombineInstance> combineMeshes = new List<CombineInstance>();
+            for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
+            {
+                List<CombineInstance> combineMeshes = new List<CombineInstance>();
+                foreach (var mesh in meshes)
+                {
+                    CombineInstance combineInstance = new CombineInstance
+                    {
+                        mesh = mesh,
+                        subMeshIndex = subMeshNb
+                    };
+                    combineMeshes.Add(combineInstance);
+                }
+
+                Mesh subMesh = new Mesh();
+                subMesh.CombineMeshes(combineMeshes.ToArray(), true, false);
+                CombineInstance finalCombineInstance = new CombineInstance
+                {
+                    mesh = subMesh,
+                    subMeshIndex = 0
+                };
+                finalCombineInstances.Add(finalCombineInstance);
+            }
+        }
+        else
+        {
             foreach (var mesh in meshes)
             {
-                CombineInstance combineInstance = new CombineInstance
-                {
-                    mesh = mesh,
-                    subMeshIndex = subMeshNb
-                };
-                combineMeshes.Add(combineInstance);
+                CombineInstance combineInstance = new CombineInstance();
+                combineInstance.mesh = mesh;
+                finalCombineInstances.Add(combineInstance);
             }
-            Mesh subMesh = new Mesh();
-            subMesh.CombineMeshes(combineMeshes.ToArray(),true,false);
-            CombineInstance finalCombineInstance = new CombineInstance
-            {
-                mesh = subMesh,
-                subMeshIndex = 0
-            };
-            finalCombineInstances.Add(finalCombineInstance);
         }
         newMesh.CombineMeshes(finalCombineInstances.ToArray(),false,false);
         
+        newMesh.Optimize();
         newMesh.RecalculateBounds();
         newMesh.RecalculateTangents();
         return newMesh;
     }
+
+
+//     Mesh PrepareMesh()
+//     {
+//         
+//         List<int> triangles = new List<int>();
+//         List<Vector3> vertices = new List<Vector3>();
+//         List<Vector3> normals = new List<Vector3>();
+//         List<Vector2> uv = new List<Vector2>();
+//         List<Vector2> uv2 = new List<Vector2>();
+//         List<Vector2> uv3 = new List<Vector2>();
+//         List<Vector2> uv4 = new List<Vector2>();
+//         List<Vector2> uv5 = new List<Vector2>();
+//         List<Vector2> uv6 = new List<Vector2>();
+//         List<Vector2> uv7 = new List<Vector2>();
+//         List<Vector2> uv8 = new List<Vector2>();
+//
+//             
+//         Mesh newMesh = new Mesh();
+//         newMesh.indexFormat = IndexFormat.UInt32;
+//         triangles.AddRange(source.triangles);
+//         vertices.AddRange(source.vertices);
+//         normals.AddRange(source.normals);
+//         uv.AddRange(source.uv);
+//         uv2.AddRange(source.uv2);
+//         uv3.AddRange(source.uv3);
+//         uv4.AddRange(source.uv4);
+// #if UNITY_2018_2_OR_NEWER
+//         uv5.AddRange(source.uv5);
+//         uv6.AddRange(source.uv6);
+//         uv7.AddRange(source.uv7);
+//         uv8.AddRange(source.uv8);
+// #endif
+//         
+//         newMesh.indexFormat = source.indexFormat;
+//         newMesh.hideFlags = source.hideFlags;
+//         newMesh.vertices = vertices.ToArray();
+//         newMesh.normals = normals.ToArray();
+//         newMesh.uv = uv.ToArray();
+//         newMesh.uv2 = uv2.ToArray();
+//         newMesh.uv2 = uv3.ToArray();
+//         newMesh.uv4 = uv4.ToArray();
+//         newMesh.uv5 = uv5.ToArray();
+//         newMesh.uv6 = uv6.ToArray();
+//         newMesh.uv7 = uv7.ToArray();
+//         newMesh.uv8 = uv8.ToArray();
+//         newMesh.triangles = triangles.ToArray();
+//
+//         newMesh.RecalculateBounds();
+//         newMesh.RecalculateTangents();
+//         
+//         List<SubMeshDescriptor> subMeshDescriptors = new List<SubMeshDescriptor>();
+//         for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
+//         {
+//             subMeshDescriptors.Add(source.GetSubMesh(subMeshNb));
+//         }
+//         newMesh.SetSubMeshes(subMeshDescriptors.ToArray());
+//         
+//         for (int i = 0; i < triangles.Count() / 3; i++)
+//         {
+//             int index0 = triangles[i * 3];
+//             int index1 = triangles[1 + i * 3];
+//             int index2 = triangles[2 + i * 3];
+//
+//             float x = newMesh.vertices[index0].x;
+//             if (x == newMesh.vertices[index1].x && x == newMesh.vertices[index2].x)
+//             {
+//                 triangles.RemoveRange(index0,3);
+//             }
+//
+//             for (int subMeshNb = 0; subMeshNb < newMesh.subMeshCount; subMeshNb++)
+//             {
+//                 SubMeshDescriptor subMeshDescr = newMesh.GetSubMesh(subMeshNb);
+//                 if (index0 >= subMeshDescr.indexStart && index0 < (subMeshDescr.indexCount + subMeshDescr.indexStart))
+//                 {
+//                     subMeshDescr.indexCount -= 3;
+//                     newMesh.SetSubMesh(subMeshNb,subMeshDescr);
+//                 }
+//             }
+//         }
+//
+//         newMesh.triangles = triangles.ToArray();
+//
+//         newMesh.RecalculateBounds();
+//         newMesh.RecalculateTangents();
+//         return newMesh;
+//     }
 
 }
 #endif
