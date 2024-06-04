@@ -170,6 +170,7 @@ namespace AK
         static const AkUniqueID SCORE = 2398231425U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID SKID = 822292696U;
+        static const AkUniqueID SKID_TIME = 33561276U;
         static const AkUniqueID SPEED = 640949982U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;

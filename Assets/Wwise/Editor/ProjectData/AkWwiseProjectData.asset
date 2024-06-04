@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584841736327123000
+    m_lastTime: -8584840838013095567
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584841742301364041
+    m_lastTime: -8584840846522469531
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -1015,7 +1015,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584841731698731433
+    m_lastTime: -8584840866074393873
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -1066,8 +1066,8 @@ MonoBehaviour:
         guid: f1fc2c41e194c648a9a66b1e1b1bf962
       Path: Events\RP_Feedbacks\Burst
       maxAttenuation: 0
-      maxDuration: 3.9280937
-      minDuration: 2.6631143
+      maxDuration: 3.835864
+      minDuration: 2.971053
     - name: Checkpoint
       guid: 0d141e2b114d4c4b9240ffa5bf4add48
       id: 612075679
@@ -1368,7 +1368,7 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584844649256376656
+    m_lastTime: -8584840897150037426
     List:
     - name: Join
       guid: 8909090ff5717d459271454105028381
@@ -1483,7 +1483,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Vehicule
     guid: b3615b940e8d94469069d49d4d79c295
     GuidInternal: 
-    m_lastTime: -8584841819971062374
+    m_lastTime: -8584840839251525015
     List:
     - name: Brake
       guid: e7614087475b8a4c80e8ed796e87aa7f
@@ -1565,7 +1565,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 16ff3389254ae24a8ec01413e62e9d26
     GuidInternal: 
-    m_lastTime: -8584846067678689105
+    m_lastTime: -8584840859277036769
     List:
     - name: ball_duck
       guid: 728d84a93c588e41b2d7a0e78a56a21a
@@ -1735,6 +1735,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: cd1d680ab9cc8f49a1dec262334d99f8
       Path: Game Parameters\Default Work Unit\SFX
+    - name: Skid_Time
+      guid: 678d896a49b65541a3d166a2322ef164
+      id: 33561276
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 16ff3389254ae24a8ec01413e62e9d26
+      - ElementName: Skid_Time
+        ObjectType: 13
+        guid: 678d896a49b65541a3d166a2322ef164
+      Path: Game Parameters\Default Work Unit\Skid_Time
     - name: UI
       guid: a7b3dc0a6717c74d902116f16b95c24f
       id: 1551306167
