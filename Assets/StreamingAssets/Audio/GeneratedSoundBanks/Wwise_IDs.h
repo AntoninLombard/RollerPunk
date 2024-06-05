@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_BALL_STEAL = 529746809U;
+        static const AkUniqueID AMB_CHECKPOINT = 2340856864U;
         static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
         static const AkUniqueID AMB_FALL = 3175049353U;
         static const AkUniqueID AMB_KILL = 2469751798U;
