@@ -8,6 +8,7 @@ public class PlayerInputs : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private PlayerInputData inputData;
     
     [field: Header("PLAYER DRIVING INPUTS")]
     [field: SerializeField] [field: Range(-1.0f,1.0f)] public float steerInput { get; private set; }
@@ -36,9 +37,9 @@ public class PlayerInputs : MonoBehaviour
     }
     private void Update()
     {
-        steerInput = steerAction.ReadValue<float>();
-        driveInput = driveAction.ReadValue<float>();
-        brakeInput = brakeAction.ReadValue<float>();
+        steerInput = inputData.steerCurve.Evaluate(steerAction.ReadValue<float>());
+        driveInput = inputData.driveCurve.Evaluate(driveAction.ReadValue<float>());
+        brakeInput = inputData.brakeCurve.Evaluate(brakeAction.ReadValue<float>());
         if(steerInput != 0)
             lastSteerSide = (steerInput > 0)? 1 : -1;
     }

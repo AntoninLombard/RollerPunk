@@ -8,15 +8,15 @@ public class PlayerControllerData : ScriptableObject
     [Header("DRIVING VALUES")]
     public float maxSpeed;
     public float forwardAccel = 0;
-    public float turningRate = 0;
+    public float minTurningRate = 0;
+    public float maxTurningRate = 0;
     public float gravityStrength = 0.0f;
-    public float friction;
     public float gripAccel = 0.0f;
     public float boostAccel = 0.0f;
     public float boostDuration = 0.0f;
     public float driftAccel;
-    public float driftSteerOffset;
-    public float driftTurnMultiplier;
+    public float driftTurnOffset;
+    public float driftTurnRate;
     public float driftDurationForBoost;
     [Range(0.0f,1.0f)] public float brakingRatio = 0;
     [Range(0.0f,1.0f)] public float drag;

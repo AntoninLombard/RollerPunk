@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 40
   forwardAccel: 60
-  turningRate: 10
+  minTurningRate: 20
+  maxTurningRate: 30
   gravityStrength: 20
-  friction: 0.5
   gripAccel: 25
   boostAccel: 80
   boostDuration: 1
   driftAccel: 50
-  driftSteerOffset: 0.5
-  driftTurnMultiplier: 0.6
+  driftTurnOffset: 5
+  driftTurnRate: 20
   driftDurationForBoost: 2
   brakingRatio: 0.95
   drag: 0.479

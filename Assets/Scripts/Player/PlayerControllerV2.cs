@@ -18,8 +18,9 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isGrounded { get; private set; }
     [field: SerializeField] public bool isDrifting { get; private set; }
     [SerializeField] private int driftingSide;
-    [SerializeField] private Vector3 driftOffset;
     [SerializeField] private float speed = 0;
+    [SerializeField] private float driftInputValue = 0;
+    [SerializeField] private float speedRatio;
     
 
     
@@ -55,7 +56,7 @@ public class PlayerController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
+        speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         if (isDrifting)
             driftDuration += Time.deltaTime;
         player.anime.animator.SetBool(Moving,speed > 1);
@@ -94,10 +95,12 @@ public class PlayerController2 : MonoBehaviour
         rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
         brake(Time.fixedDeltaTime);
         currentVelocity = rb.velocity;
-
-        if (currentVelocity.magnitude > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
+        speed = Vector3.Dot(currentVelocity, player.character.forward);
+        
+        
+        if (speed > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
-            rb.AddForce(currentVelocity.normalized * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
+            rb.AddForce(player.character.forward * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
         }
 
         speed = rb.velocity.magnitude;
@@ -133,33 +136,26 @@ public class PlayerController2 : MonoBehaviour
     {
         Vector3 deltaVelocity = Vector3.zero;
 
-        if (!isGrounded)
+        if (!isGrounded || player.combat.isStunned)
         {
+            return deltaVelocity;
         }
-        else if(!player.combat.isStunned)
-        {
-            if (isDrifting)
-            {
-                deltaVelocity += player.character.forward * (controllerData.driftAccel * time);
+        deltaVelocity += player.character.forward * ((isDrifting ? driftInputValue : player.input.driveInput) * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * time);
 
-            } else if (player.input.driveInput > 0)
-                deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * time);
-
-            // {
-            //     case > 0f:
-            //         isAccelerating = true;
-            //         deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
-            //         break;
-            //     case < 0f:
-            //         isAccelerating = false;
-            //         deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
-            //         break;
-            //     default:
-            //         isAccelerating = false;
-            //         break;
-            // }
-        
-        }
+        // {
+        //     case > 0f:
+        //         isAccelerating = true;
+        //         deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
+        //         break;
+        //     case < 0f:
+        //         isAccelerating = false;
+        //         deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
+        //         break;
+        //     default:
+        //         isAccelerating = false;
+        //         break;
+        // }
+            
         return deltaVelocity;
     }
 
@@ -174,10 +170,11 @@ public class PlayerController2 : MonoBehaviour
         if (isDrifting)
         {
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(
-                (player.input.steerInput + driftingSide *  (1 + controllerData.driftSteerOffset)) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
+                (player.input.steerInput + driftingSide)/2 *  controllerData.driftTurnRate + controllerData.driftTurnOffset * driftingSide,player.character.up) * player.character.rotation, time * 5f);
         } else if (player.input.steerInput != 0f)
         {
-            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(player.input.steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
+            float angle = player.input.steerInput * (controllerData.minTurningRate + (1-speedRatio) * (controllerData.maxTurningRate - controllerData.minTurningRate));
+            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(angle,player.character.up) * player.character.rotation, time * 5f);
         }
     }
 
@@ -243,6 +240,10 @@ public class PlayerController2 : MonoBehaviour
         }
         else
         {
+            if (isGrounded && isDrifting)
+            {
+                CancelDrift(false);
+            }
             isGrounded = false;
             alignCharToNormal(Vector3.up, time/5);
         }
@@ -340,11 +341,12 @@ public class PlayerController2 : MonoBehaviour
                     player.anime.animator.SetBool("Drift.L", true);
                 }
                 player.data.driftStartSound.Post(gameObject);
+                driftInputValue  = player.input.driveInput;
             }
         }
     }
 
-    public void CancelDrift()
+    public void CancelDrift(bool canBoost = true)
     {
         if (isDrifting)
         {
@@ -369,7 +371,8 @@ public class PlayerController2 : MonoBehaviour
             isDrifting = false;
             driftDuration = 0;
             driftingSide = 0;
-            
+            driftInputValue = 0f;
+
         }
     }
 
