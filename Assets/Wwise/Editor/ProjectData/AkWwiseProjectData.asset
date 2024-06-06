@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584840291212794334
+    m_lastTime: -8584839141388406233
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584840252762191337
+    m_lastTime: -8584839165562083036
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -849,7 +849,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584840252762247292
+    m_lastTime: -8584839151457147549
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -866,25 +866,8 @@ MonoBehaviour:
         guid: 6400864745414841b4a0d7a10c3262ea
       Path: Events\RP_Ambiances\AMB_Ball_Steal
       maxAttenuation: 0
-      maxDuration: 4.502922
-      minDuration: 2.6516263
-    - name: Amb_CheckPoint
-      guid: 670fb84c9f869045a0a1c6e8724997d0
-      id: 2340856864
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Ambiances
-        ObjectType: 12
-        guid: 11d81020dfd6864591f72eeb33912022
-      - ElementName: Amb_CheckPoint
-        ObjectType: 3
-        guid: 670fb84c9f869045a0a1c6e8724997d0
-      Path: Events\RP_Ambiances\Amb_CheckPoint
-      maxAttenuation: 50
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 6.5874677
+      minDuration: 6.5874677
     - name: AMB_Drill_Done
       guid: 0836f61b2d69db43a6848e61ddb8f296
       id: 2925030600
@@ -900,8 +883,8 @@ MonoBehaviour:
         guid: 0836f61b2d69db43a6848e61ddb8f296
       Path: Events\RP_Ambiances\AMB_Drill_Done
       maxAttenuation: 0
-      maxDuration: 7.8089247
-      minDuration: 7.8089247
+      maxDuration: 38.012238
+      minDuration: 38.012238
     - name: AMB_Fall
       guid: 6044d5480a2d3d4789f33c4a11579eaf
       id: 3175049353
@@ -917,8 +900,8 @@ MonoBehaviour:
         guid: 6044d5480a2d3d4789f33c4a11579eaf
       Path: Events\RP_Ambiances\AMB_Fall
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 9.522684
+      minDuration: 7.7949944
     - name: AMB_Kill
       guid: 7844be5888eaf64f93a2e00339f70cc6
       id: 2469751798
@@ -934,25 +917,8 @@ MonoBehaviour:
         guid: 7844be5888eaf64f93a2e00339f70cc6
       Path: Events\RP_Ambiances\AMB_Kill
       maxAttenuation: 0
-      maxDuration: 4.502922
-      minDuration: 2.6516263
-    - name: AMB_Point
-      guid: 9f1dbd42d6331444994807039ed22697
-      id: 770146064
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_Ambiances
-        ObjectType: 12
-        guid: 11d81020dfd6864591f72eeb33912022
-      - ElementName: AMB_Point
-        ObjectType: 3
-        guid: 9f1dbd42d6331444994807039ed22697
-      Path: Events\RP_Ambiances\AMB_Point
-      maxAttenuation: 0
-      maxDuration: 4.502922
-      minDuration: 2.6516263
+      maxDuration: 67.79503
+      minDuration: 67.79503
     - name: AMB_Prep
       guid: 716005349dfcb147828f1a99afc8f4f9
       id: 2116017607
@@ -985,8 +951,8 @@ MonoBehaviour:
         guid: f9f3f723dcb0f94fb8e0be8bffe928d1
       Path: Events\RP_Ambiances\AMB_RaceStart
       maxAttenuation: 0
-      maxDuration: 7.5089245
-      minDuration: 7.5089245
+      maxDuration: 38.012238
+      minDuration: 38.012238
     - name: AMB_Start
       guid: e61fc6970344b5438a9d0fe2e591d239
       id: 1589289402
@@ -1032,7 +998,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584840105036461899
+    m_lastTime: -8584839139279687043
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -1385,7 +1351,7 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584840897150037426
+    m_lastTime: -8584839169132242022
     List:
     - name: Join
       guid: 8909090ff5717d459271454105028381

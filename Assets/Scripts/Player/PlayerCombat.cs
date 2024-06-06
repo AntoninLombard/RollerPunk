@@ -325,7 +325,6 @@ public class PlayerCombat : MonoBehaviour
             if (source != null)
             {
                 source.combat.onGrabbingBall();
-                GameManager.Instance.gameData.crowdSteal.Post(gameObject);
 
             }
             else
@@ -449,11 +448,17 @@ public class PlayerCombat : MonoBehaviour
 
     public void onFall()
     {
+        if (isHoldingBall)
+        {
+            GameManager.Instance.gameData.crowdFall.Post(GameManager.Instance.gameObject);
+            GameManager.Instance.gameData.musicState[4].SetValue();
+        }
+
         player.data.respawnSound.Post(GameManager.Instance.gameObject);
         StartCoroutine(death(null));
         GameManager.Instance.RespawnPlayer(player);
         player.data.startEngineSound.Post(gameObject);
-        GameManager.Instance.gameData.musicState[4].SetValue();
+        
     }
 
     int sourceDirection(Transform source)
