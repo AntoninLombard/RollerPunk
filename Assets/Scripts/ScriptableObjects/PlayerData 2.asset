@@ -29,18 +29,18 @@ MonoBehaviour:
   airDrag: 0.093
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
-  punchWindUp: 0.6
-  punchDamageWindow: 0.3
+  punchWindUp: 0.3
+  punchDamageWindow: 0.4
   tauntDuration: 1
-  punchHoldDuration: 0.8
+  punchHoldDuration: 0.5
   parryWindow: 0.5
   counterWindow: 0.1
-  punchCooldown: 0.1
+  punchCooldown: 0
   parryCooldown: 1
   stunDuration: 1
   invincibilityDuration: 1
   minFOV: 40
-  maxFOV: 80
+  maxFOV: 85
   startEngineSound:
     idInternal: 0
     valueGuidInternal: 
