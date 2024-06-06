@@ -28,6 +28,7 @@ public class PlayerController2 : MonoBehaviour
     
     [field: Header("GROUND DETECTION")]
     [field: SerializeField] [field: Range(0.1f,1.0f)] public float groundRange { get; private set; }
+    [SerializeField] private Vector3 groundNormal;
 
     [Header("SOUND")] 
     [SerializeField] RTPC engineSpeed;
@@ -80,7 +81,8 @@ public class PlayerController2 : MonoBehaviour
         Vector3 deltaVelocity = Vector3.zero;
         
         
-        deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
+        // deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
+        // deltaVelocity += friction(currentVelocity, Time.fixedDeltaTime);
         deltaVelocity += move(currentVelocity,Time.fixedDeltaTime);
         deltaVelocity += boost(Time.fixedDeltaTime);
         groundCheck(Time.fixedDeltaTime);
@@ -107,13 +109,26 @@ public class PlayerController2 : MonoBehaviour
     #region DRIVING FUNCTIONS
 
 
-    private Vector3 drag(Vector3 velocity,float time)
-    {
-        if (isGrounded)
-            return -velocity * (controllerData.drag * time);
-        return -velocity * (controllerData.airDrag * time);
-    }
-
+    // private Vector3 drag(Vector3 velocity,float time)
+    // {
+    //     if (isGrounded)
+    //         return -velocity * (controllerData.drag * time);
+    //     return -velocity * (controllerData.airDrag * time);
+    // }
+    
+    // private Vector3 drag(Vector3 velocity,float time)
+    // {
+    //     return -velocity.sqrMagnitude * controllerData.airDrag * time * velocity.normalized;
+    // }
+    //
+    // private Vector3 friction(Vector3 velocity,float time)
+    // {
+    //     if (!isGrounded)
+    //         return Vector3.zero;
+    //     Vector3 forces = rb.GetAccumulatedForce() + (isGrounded? -player.character.up * controllerData.gripAccel : Vector3.down * controllerData.gravityStrength);
+    //     return - controllerData.friction * Vector3.Dot(groundNormal,forces) * time * velocity.normalized;
+    // }
+    
     private Vector3 move(Vector3 currentVelocity,float time)
     {
         Vector3 deltaVelocity = Vector3.zero;
@@ -218,6 +233,7 @@ public class PlayerController2 : MonoBehaviour
             isGrounded = true;
             normal /= count;
             float dot = Vector3.Dot(normal, player.character.up);
+            groundNormal = normal;
             alignCharToNormal(normal, time);
         }
         else if (Physics.Raycast(player.character.position, Vector3.down, out var hitDown, 0.5f))
@@ -310,29 +326,20 @@ public class PlayerController2 : MonoBehaviour
     {
         if (!player.combat.isBusy)
         {
-            if(player.input.steerInput != 0)
+            if(player.input.steerInput != 0 && player.controller.speed > 0 && isGrounded)
             {
                 isDrifting = true;
                 driftingSide = player.input.steerInput > 0 ? 1 : -1;
                 if (driftingSide >0)
                 {
                     player.anime.animator.SetBool("Drift.R", true);
-                    if (speed > 0)
-                    {
-                        player.data.driftStartSound.Post(gameObject);
-                    }
                     
                 }
                 else
                 {
                     player.anime.animator.SetBool("Drift.L", true);
-                    if (speed > 0)
-                    {
-                        player.data.driftStartSound.Post(gameObject);
-                    }
-                    
                 }
-                
+                player.data.driftStartSound.Post(gameObject);
             }
         }
     }
