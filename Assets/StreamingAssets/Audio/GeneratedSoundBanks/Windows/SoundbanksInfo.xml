@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0A5B9DDB-72C4-266D-D708-C5F0F2CCA5BB}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{80B6CCB5-7346-48D1-B8FF-5BAC9E996D65}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -304,7 +304,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A1FA14F9-B46C-9535-97BD-7A357ADB3FDD}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1E27CB73-45B9-E06B-DF36-2F2B2F08887D}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -2523,6 +2523,9 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="562207882" Name="AMB_Stun"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="2308453416" Name="Hit_ByWall" DurationType="OneShot" DurationMin="1.5748541" DurationMax="2.13575">
 					<SwitchContainers>
@@ -3710,5 +3713,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{40899AAE-1F39-50B0-8504-35EC3846D9CE}</FileHash>
+	<FileHash>{3B73BE1B-EDD5-6F64-6C2C-EFF9635C7D43}</FileHash>
 </SoundBanksInfo>
