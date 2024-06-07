@@ -367,8 +367,8 @@ MonoBehaviour:
   <isGrounded>k__BackingField: 0
   <isDrifting>k__BackingField: 0
   driftingSide: 0
-  driftOffset: {x: 0, y: 0, z: 0}
   speed: 0
+  driftInputValue: 0
   speedRatio: 0
   rb: {fileID: 8963657871566459159}
   <groundRange>k__BackingField: 0.4
@@ -770,17 +770,17 @@ PrefabInstance:
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5765
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5765
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5765
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -840,7 +840,7 @@ PrefabInstance:
     - target: {fileID: 9015925852231550463, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9015925852231550463, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -943,17 +943,17 @@ PrefabInstance:
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5765
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5765
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5765
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8642489518864470867, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -1013,7 +1013,7 @@ PrefabInstance:
     - target: {fileID: 9015925852231550463, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
