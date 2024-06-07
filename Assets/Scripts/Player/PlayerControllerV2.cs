@@ -385,8 +385,10 @@ public class PlayerController2 : MonoBehaviour
     {
         controllerData.burstSound.Post(gameObject);
         isBoosting = true;
+        controllerData.maxSpeed = controllerData.maxSpeed * controllerData.boostMaxSpeed;
         yield return new WaitForSeconds(controllerData.boostDuration);
         isBoosting = false;
+        controllerData.maxSpeed = controllerData.maxSpeed / controllerData.boostMaxSpeed;
     }
     
     

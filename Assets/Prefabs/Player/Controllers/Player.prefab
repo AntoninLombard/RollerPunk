@@ -371,7 +371,7 @@ MonoBehaviour:
   driftInputValue: 0
   speedRatio: 0
   rb: {fileID: 8963657871566459159}
-  <groundRange>k__BackingField: 0.4
+  <groundRange>k__BackingField: 0.6
   groundNormal: {x: 0, y: 0, z: 0}
   engineSpeed:
     idInternal: 0
@@ -2150,8 +2150,8 @@ Rigidbody:
   m_GameObject: {fileID: 463738427857651074}
   serializedVersion: 4
   m_Mass: 300
-  m_Drag: 0.2
-  m_AngularDrag: 0
+  m_Drag: 0.3
+  m_AngularDrag: 0.2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

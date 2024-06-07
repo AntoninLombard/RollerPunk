@@ -12,6 +12,7 @@ public class PlayerControllerData : ScriptableObject
     public float maxTurningRate = 0;
     public float gravityStrength = 0.0f;
     public float gripAccel = 0.0f;
+    public float boostMaxSpeed = 0.0f;
     public float boostAccel = 0.0f;
     public float boostDuration = 0.0f;
     public float driftAccel;

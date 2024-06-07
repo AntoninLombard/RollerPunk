@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
   maxSpeed: 40
-  forwardAccel: 60
-  minTurningRate: 20
-  maxTurningRate: 30
+  forwardAccel: 45
+  minTurningRate: 10
+  maxTurningRate: 20
   gravityStrength: 20
   gripAccel: 25
-  boostAccel: 80
+  boostMaxSpeed: 1.4
+  boostAccel: 100
   boostDuration: 1
-  driftAccel: 50
-  driftTurnOffset: 5
-  driftTurnRate: 20
-  driftDurationForBoost: 2
+  driftAccel: 45
+  driftTurnOffset: 0.3
+  driftTurnRate: 16
+  driftDurationForBoost: 1
   brakingRatio: 0.95
-  drag: 0.479
-  airDrag: 0.093
+  drag: 0.825
+  airDrag: 0.09330001
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
   punchWindUp: 0.3
