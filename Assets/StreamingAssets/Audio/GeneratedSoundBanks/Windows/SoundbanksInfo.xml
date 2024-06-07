@@ -304,7 +304,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1E27CB73-45B9-E06B-DF36-2F2B2F08887D}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{2B3DF14D-5E20-94D2-8D63-68293BA167BA}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -336,6 +336,10 @@
 					<ShortName>Respawn.wav</ShortName>
 					<CachePath>SFX/Respawn_755F56E2.wem</CachePath>
 				</File>
+				<File Id="23508453" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drift_Scrape-001.wav</ShortName>
+					<CachePath>SFX/Drift_Scrape-001_BE5E13CF.wem</CachePath>
+				</File>
 				<File Id="24720921" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 1_164.wav</ShortName>
 					<Path>Media/24720921.wem</Path>
@@ -358,7 +362,7 @@
 				</File>
 				<File Id="31587220" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Reaction, Disappointed, Large Audience, Short 01 SND41279.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Reaction, Disappointed, Large Audience, Short 01 SND41279_3A8035BF.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Reaction, Disappointed, Large Audience, Short 01 SND41279_4D745B41.wem</CachePath>
 				</File>
 				<File Id="38199261" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_Guitar_164.wav</ShortName>
@@ -386,7 +390,7 @@
 				</File>
 				<File Id="44419144" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Start.wav</ShortName>
-					<CachePath>SFX/Start_78470209.wem</CachePath>
+					<CachePath>SFX/Start_2C2A31B2.wem</CachePath>
 				</File>
 				<File Id="51679718" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frein-001.wav</ShortName>
@@ -394,7 +398,7 @@
 				</File>
 				<File Id="58609393" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Expldsgn Engine Ignition Burst by newlocknew Id-716972.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_2A973304.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_F10F9317.wem</CachePath>
 				</File>
 				<File Id="63618971" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_SFX_164.wav</ShortName>
@@ -556,7 +560,7 @@
 				</File>
 				<File Id="141119653" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Crowd Yelling Goal, The Football Game Mexico Holland, World Cup 2014 SND80394.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Crowd Yelling Goal, The Football Game Mexico Holland, World Cup 2014 SND80394_556E4F95.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Crowd Yelling Goal, The Football Game Mexico Holland, World Cup 2014 SND80394_F944338A.wem</CachePath>
 				</File>
 				<File Id="145145075" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_Guitar LEAD_164.wav</ShortName>
@@ -578,7 +582,7 @@
 				</File>
 				<File Id="164550782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Crowd Yelling Goal, The Football Game Mexico Holland, World Cup 2014 SND80394.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Crowd Yelling Goal, The Football Game Mexico Holland, World Cup 2014 SND80394_649FF756.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Crowd Yelling Goal, The Football Game Mexico Holland, World Cup 2014 SND80394_F6999407.wem</CachePath>
 				</File>
 				<File Id="165984581" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_SYNTH_164.wav</ShortName>
@@ -601,6 +605,10 @@
 					<Path>Media/174170564.wem</Path>
 					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_Bridge/RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_TOMLOW_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>8224</PrefetchSize>
+				</File>
+				<File Id="175678318" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drift_Scrape-002.wav</ShortName>
+					<CachePath>SFX/Drift_Scrape-002_BE5E13CF.wem</CachePath>
 				</File>
 				<File Id="178784743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hover.wav</ShortName>
@@ -633,6 +641,10 @@
 				<File Id="222475351" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Engine_P1-003.wav</ShortName>
 					<CachePath>SFX/Engine_P1-003_073B4D0C.wem</CachePath>
+				</File>
+				<File Id="224589927" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drift_Scrape-001.wav</ShortName>
+					<CachePath>SFX/Drift_Scrape-001_91E9F71D.wem</CachePath>
 				</File>
 				<File Id="238705589" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_DRUMS_164.wav</ShortName>
@@ -708,7 +720,7 @@
 				</File>
 				<File Id="310425769" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Football, Norway, Valerenga, Goal SND60512.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Norway, Valerenga, Goal SND60512_086B8F04.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Norway, Valerenga, Goal SND60512_ECEAB8B5.wem</CachePath>
 				</File>
 				<File Id="311097065" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-004.wav</ShortName>
@@ -724,7 +736,7 @@
 				</File>
 				<File Id="321214089" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Expldsgn Engine Ignition Burst by newlocknew Id-716972.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_59E91553.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_7EC667A6.wem</CachePath>
 				</File>
 				<File Id="321318270" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-004.wav</ShortName>
@@ -736,7 +748,7 @@
 				</File>
 				<File Id="329525120" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Decpetion_2.wav</ShortName>
-					<CachePath>SFX/Decpetion_2_F36001CD.wem</CachePath>
+					<CachePath>SFX/Decpetion_2_EA32063E.wem</CachePath>
 				</File>
 				<File Id="332362476" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_TOMLOW_164.wav</ShortName>
@@ -768,7 +780,7 @@
 				</File>
 				<File Id="369933199" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Drill_Done.wav</ShortName>
-					<CachePath>SFX/Drill_Done_5B52871F.wem</CachePath>
+					<CachePath>SFX/Drill_Done_AD6E462F.wem</CachePath>
 				</File>
 				<File Id="373265237" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_DRUM FILL_164.wav</ShortName>
@@ -808,7 +820,7 @@
 				</File>
 				<File Id="406013558" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Start.wav</ShortName>
-					<CachePath>SFX/Start_15CF8E1F.wem</CachePath>
+					<CachePath>SFX/Start_50756570.wem</CachePath>
 				</File>
 				<File Id="408266780" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_HEY_164.wav</ShortName>
@@ -828,7 +840,7 @@
 				</File>
 				<File Id="418778936" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592_DB9F387A.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592_3D51987F.wem</CachePath>
 				</File>
 				<File Id="419900665" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WINDUP-004.wav</ShortName>
@@ -842,7 +854,7 @@
 				</File>
 				<File Id="435707598" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowd Ouch by deleted_user_2104797 Id-324897.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_BB0750F8.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_A4633D44.wem</CachePath>
 				</File>
 				<File Id="437335178" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Synth bass 1_164.wav</ShortName>
@@ -860,11 +872,11 @@
 				</File>
 				<File Id="445638819" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Football, English, Medium, Goal Cheer, Offside SND78129.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, English, Medium, Goal Cheer, Offside SND78129_C14779AC.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, English, Medium, Goal Cheer, Offside SND78129_4E1E9528.wem</CachePath>
 				</File>
 				<File Id="449259346" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_73E15D4A.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_A9563EA5.wem</CachePath>
 				</File>
 				<File Id="450881691" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ball_Lost-001.wav</ShortName>
@@ -872,7 +884,7 @@
 				</File>
 				<File Id="453327044" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_D63F26F9.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_4AC231C0.wem</CachePath>
 				</File>
 				<File Id="455019346" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frein-004.wav</ShortName>
@@ -908,7 +920,7 @@
 				</File>
 				<File Id="470923115" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_D0CC3D6E.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_2B098420.wem</CachePath>
 				</File>
 				<File Id="471181577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Low_2.wav</ShortName>
@@ -946,7 +958,7 @@
 				</File>
 				<File Id="496707359" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Decpetion_1.wav</ShortName>
-					<CachePath>SFX/Decpetion_1_8D9D01CC.wem</CachePath>
+					<CachePath>SFX/Decpetion_1_1E768679.wem</CachePath>
 				</File>
 				<File Id="497905110" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_PERC_164.wav</ShortName>
@@ -1006,11 +1018,11 @@
 				</File>
 				<File Id="520517161" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Conspuation-001.wav</ShortName>
-					<CachePath>SFX/Conspuation-001_3CF8418D.wem</CachePath>
+					<CachePath>SFX/Conspuation-001_A798007C.wem</CachePath>
 				</File>
 				<File Id="521168287" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Football, Norway, Valerenga, Goal SND60512.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Norway, Valerenga, Goal SND60512_85D01FAD.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Norway, Valerenga, Goal SND60512_863A2315.wem</CachePath>
 				</File>
 				<File Id="523930646" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Turning_Grounded.wav</ShortName>
@@ -1060,7 +1072,7 @@
 				</File>
 				<File Id="577244038" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Reaction, Audience, Interior, Ohhh SND13839.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Reaction, Audience, Interior, Ohhh SND13839_84DA2CFF.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Reaction, Audience, Interior, Ohhh SND13839_58D80D43.wem</CachePath>
 				</File>
 				<File Id="578911426" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Join_Char_sel\Join-002.wav</ShortName>
@@ -1126,7 +1138,7 @@
 				</File>
 				<File Id="618206588" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Football Match Cheering Large Crowd Ambience  by Dan_AudioFile Id-654085.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Football Match Cheering Large Crowd Ambience  by Dan_AudioFile Id-654085_D0F74882.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Football Match Cheering Large Crowd Ambience  by Dan_AudioFile Id-654085_1ACB8F6A.wem</CachePath>
 				</File>
 				<File Id="631790069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-003.wav</ShortName>
@@ -1204,7 +1216,7 @@
 				</File>
 				<File Id="681576999" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Expldsgn Engine Ignition Burst by newlocknew Id-716972.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_82A85D35.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_223EB0AA.wem</CachePath>
 				</File>
 				<File Id="683512672" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_Guitar_164.wav</ShortName>
@@ -1276,7 +1288,7 @@
 				</File>
 				<File Id="711718980" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Football, English, Medium, Goal Cheer, Offside SND78129.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, English, Medium, Goal Cheer, Offside SND78129_3CCEE142.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, English, Medium, Goal Cheer, Offside SND78129_C3718EFC.wem</CachePath>
 				</File>
 				<File Id="713186824" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Score_Up\Score_Up-006.wav</ShortName>
@@ -1288,7 +1300,7 @@
 				</File>
 				<File Id="728516493" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Expldsgn Engine Ignition Burst by newlocknew Id-716972.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_D2DD344E.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Expldsgn Engine Ignition Burst by newlocknew Id-716972_BB77F52C.wem</CachePath>
 				</File>
 				<File Id="731248889" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Counter_V2-002.wav</ShortName>
@@ -1312,7 +1324,7 @@
 				</File>
 				<File Id="759049153" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592_7DA2861B.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592_0AC3C8BC.wem</CachePath>
 				</File>
 				<File Id="762980447" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS 2_164.wav</ShortName>
@@ -1345,6 +1357,10 @@
 					<Path>Media/774400041.wem</Path>
 					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Synth Bass 1_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>557</PrefetchSize>
+				</File>
+				<File Id="774736922" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drift_Scrape-002.wav</ShortName>
+					<CachePath>SFX/Drift_Scrape-002_91E9F71D.wem</CachePath>
 				</File>
 				<File Id="774795678" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-008.wav</ShortName>
@@ -1404,7 +1420,7 @@
 				</File>
 				<File Id="829195824" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowd Ouch by deleted_user_2104797 Id-324897.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_BA6BEB0C.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_C9C03E33.wem</CachePath>
 				</File>
 				<File Id="840644709" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_PERC_164.wav</ShortName>
@@ -1424,7 +1440,7 @@
 				</File>
 				<File Id="850172191" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowd Ouch by deleted_user_2104797 Id-324897.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_5316D4FD.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_EF45202F.wem</CachePath>
 				</File>
 				<File Id="850423519" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_Bridge\RP_M_DOWN THE POWER ROAD_P4_Bridge_Guitar_164.wav</ShortName>
@@ -1582,7 +1598,7 @@
 				</File>
 				<File Id="971725165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundly Audio\Crowd Ouch by deleted_user_2104797 Id-324897.wav</ShortName>
-					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_607055E6.wem</CachePath>
+					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_FD3C5FDE.wem</CachePath>
 				</File>
 				<File Id="976329560" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_SNARE_164.wav</ShortName>
@@ -1592,7 +1608,7 @@
 				</File>
 				<File Id="979130976" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Decpetion.wav</ShortName>
-					<CachePath>SFX/Decpetion_1B8D46A7.wem</CachePath>
+					<CachePath>SFX/Decpetion_742083AB.wem</CachePath>
 				</File>
 				<File Id="987404569" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_PERC_164.wav</ShortName>
@@ -1640,7 +1656,7 @@
 				</File>
 				<File Id="1018593467" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Conspuation-002.wav</ShortName>
-					<CachePath>SFX/Conspuation-002_C5F7D8AB.wem</CachePath>
+					<CachePath>SFX/Conspuation-002_8661705B.wem</CachePath>
 				</File>
 				<File Id="1018831864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WINDUP-003.wav</ShortName>
@@ -3486,9 +3502,13 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
+								<MediaRef Id="23508453"/>
+								<MediaRef Id="175678318"/>
+								<MediaRef Id="224589927"/>
 								<MediaRef Id="260164601"/>
 								<MediaRef Id="418444728"/>
 								<MediaRef Id="674295964"/>
+								<MediaRef Id="774736922"/>
 								<MediaRef Id="874912290"/>
 								<MediaRef Id="1014756079"/>
 							</MediaRefs>
@@ -3496,9 +3516,13 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
+								<MediaRef Id="23508453"/>
+								<MediaRef Id="175678318"/>
+								<MediaRef Id="224589927"/>
 								<MediaRef Id="260164601"/>
 								<MediaRef Id="418444728"/>
 								<MediaRef Id="674295964"/>
+								<MediaRef Id="774736922"/>
 								<MediaRef Id="874912290"/>
 								<MediaRef Id="1014756079"/>
 							</MediaRefs>
@@ -3506,9 +3530,13 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
+								<MediaRef Id="23508453"/>
+								<MediaRef Id="175678318"/>
+								<MediaRef Id="224589927"/>
 								<MediaRef Id="260164601"/>
 								<MediaRef Id="418444728"/>
 								<MediaRef Id="674295964"/>
+								<MediaRef Id="774736922"/>
 								<MediaRef Id="874912290"/>
 								<MediaRef Id="1014756079"/>
 							</MediaRefs>
@@ -3516,9 +3544,13 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
+								<MediaRef Id="23508453"/>
+								<MediaRef Id="175678318"/>
+								<MediaRef Id="224589927"/>
 								<MediaRef Id="260164601"/>
 								<MediaRef Id="418444728"/>
 								<MediaRef Id="674295964"/>
+								<MediaRef Id="774736922"/>
 								<MediaRef Id="874912290"/>
 								<MediaRef Id="1014756079"/>
 							</MediaRefs>
@@ -3713,5 +3745,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3B73BE1B-EDD5-6F64-6C2C-EFF9635C7D43}</FileHash>
+	<FileHash>{5E301770-DFC3-BCA8-6B0A-7F57C17B255B}</FileHash>
 </SoundBanksInfo>
