@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void OnScoring()
     {
-        players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
+        players[ballHolder] += cumulatedPoints * currentMultiplier;
         ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
         gameData.musicState[4].SetValue();
@@ -144,11 +144,11 @@ public class GameManager : MonoBehaviour
     public void OnBallKill()
     {
         kills++;
+        gameData.crowdKill.Post(gameObject);
         if (kills > scoring.killMultipliatorThreshold)
         {
             currentMultiplier = scoring.killMultiplicatorValue;
             ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
-            gameData.crowdKill.Post(gameObject);
         }
     }
 

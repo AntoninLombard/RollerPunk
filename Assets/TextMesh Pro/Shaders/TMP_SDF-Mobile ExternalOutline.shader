@@ -52,6 +52,8 @@ Shader "TextMeshPro/Mobile/Distance Field External Outline"
         _StencilReadMask ("Stencil Read Mask", Float) = 255
 
         _ColorMask ("Color Mask", Float) = 15
+        
+        _CullMode ("Cull Mask",Float) = 0
     }
 
     CGINCLUDE
