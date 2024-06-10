@@ -15,5 +15,6 @@ public class RespawnPoint : MonoBehaviour
         {
             GameManager.Instance.ChangeLastCheckPoint(this);
         }
+        GameManager.Instance.CompareRespawnPoints(this, hit);
     }
 }

@@ -18,18 +18,18 @@ MonoBehaviour:
   maxTurningRate: 20
   gravityStrength: 20
   gripAccel: 25
-  boostMaxSpeed: 1.4
+  boostMaxSpeed: 50
   boostAccel: 100
-  boostDuration: 1
+  boostDuration: 1.5
   driftAccel: 45
-  driftTurnOffset: 0.3
+  driftTurnOffset: 0.6
   driftTurnRate: 16
   driftDurationForBoost: 1
   brakingRatio: 0.95
   drag: 0.825
-  airDrag: 0.09330001
-  ballAccelMultiplier: 0.79
-  ballMaxSpeedMultipier: 0.82
+  airDrag: 0.138
+  ballAccelMultiplier: 0.899
+  ballMaxSpeedMultipier: 0.899
   punchWindUp: 0.3
   punchDamageWindow: 0.4
   tauntDuration: 1
