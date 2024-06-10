@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584838416971553907
+    m_lastTime: -8584838329650613303
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -785,7 +785,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584844459514198572
+    m_lastTime: -8584838329703724007
     List:
     - name: Music
       guid: 50bd927e93a63341984dac3ccb90a59f
@@ -1466,7 +1466,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Vehicule
     guid: b3615b940e8d94469069d49d4d79c295
     GuidInternal: 
-    m_lastTime: -8584840839251525015
+    m_lastTime: -8584838301691224768
     List:
     - name: Brake
       guid: e7614087475b8a4c80e8ed796e87aa7f
@@ -1483,7 +1483,7 @@ MonoBehaviour:
         guid: e7614087475b8a4c80e8ed796e87aa7f
       Path: Events\RP_Vehicule\Brake
       maxAttenuation: 0
-      maxDuration: 1.9472083
+      maxDuration: Infinity
       minDuration: 0.6988223
     - name: Engine_Start
       guid: 7b4ce96814ed7f4dab45c60f77f64457

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{80B6CCB5-7346-48D1-B8FF-5BAC9E996D65}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DDF0751A-ECCD-AA4F-B74E-3FD17039E4DA}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -304,10 +304,14 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{2B3DF14D-5E20-94D2-8D63-68293BA167BA}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5A464806-6523-2EDD-D158-587385315CC9}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="4366751" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drift_Scrape-001.wav</ShortName>
+					<CachePath>SFX/Drift_Scrape-001_4DD066AC.wem</CachePath>
+				</File>
 				<File Id="7981215" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Synth Bass 2_164.wav</ShortName>
 					<Path>Media/7981215.wem</Path>
@@ -1414,6 +1418,10 @@
 					<ShortName>WindupBreak-002.wav</ShortName>
 					<CachePath>SFX/WindupBreak-002_0950EFD1.wem</CachePath>
 				</File>
+				<File Id="824445085" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drift_Scrape-002.wav</ShortName>
+					<CachePath>SFX/Drift_Scrape-002_4DD066AC.wem</CachePath>
+				</File>
 				<File Id="826461578" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WindupBreak-003.wav</ShortName>
 					<CachePath>SFX/WindupBreak-003_2DA7EA22.wem</CachePath>
@@ -1964,7 +1972,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="103253078" Name="Brake" DurationType="OneShot" DurationMin="0.6988223" DurationMax="1.9472083">
+				<Event Id="103253078" Name="Brake" DurationType="Mixed" DurationMin="0.6988223" DurationMax="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
@@ -2008,6 +2016,7 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
+								<MediaRef Id="4366751"/>
 								<MediaRef Id="51679718"/>
 								<MediaRef Id="90158742"/>
 								<MediaRef Id="104067058"/>
@@ -2015,6 +2024,7 @@
 								<MediaRef Id="455019346"/>
 								<MediaRef Id="484163500"/>
 								<MediaRef Id="808275387"/>
+								<MediaRef Id="824445085"/>
 								<MediaRef Id="953389333"/>
 							</MediaRefs>
 						</SwitchContainer>
@@ -3745,5 +3755,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5E301770-DFC3-BCA8-6B0A-7F57C17B255B}</FileHash>
+	<FileHash>{FF925D26-BD3D-54F3-77EA-AFBFE88829E8}</FileHash>
 </SoundBanksInfo>
