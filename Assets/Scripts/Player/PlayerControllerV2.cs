@@ -19,6 +19,7 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isDrifting { get; private set; }
     [SerializeField] private int driftingSide;
     [SerializeField] private float speed = 0;
+    [SerializeField] private float maxSpeed;
     [SerializeField] private float driftInputValue = 0;
     [SerializeField] private float speedRatio;
     
@@ -51,6 +52,7 @@ public class PlayerController2 : MonoBehaviour
     {
 
         controllerData.startEngineSound.Post(gameObject);
+        maxSpeed = controllerData.maxSpeed;
     }
 
     // Update is called once per frame
@@ -98,9 +100,9 @@ public class PlayerController2 : MonoBehaviour
         speed = Vector3.Dot(currentVelocity, player.character.forward);
         
         
-        if (speed > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
+        if (speed > maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
-            rb.AddForce(player.character.forward * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
+            rb.AddForce(player.character.forward * (maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
         }
 
         speed = rb.velocity.magnitude;
@@ -385,10 +387,10 @@ public class PlayerController2 : MonoBehaviour
     {
         controllerData.burstSound.Post(gameObject);
         isBoosting = true;
-        controllerData.maxSpeed = controllerData.maxSpeed * controllerData.boostMaxSpeed;
+        maxSpeed =  controllerData.boostMaxSpeed;
         yield return new WaitForSeconds(controllerData.boostDuration);
         isBoosting = false;
-        controllerData.maxSpeed = controllerData.maxSpeed / controllerData.boostMaxSpeed;
+        maxSpeed = controllerData.maxSpeed;
     }
     
     
