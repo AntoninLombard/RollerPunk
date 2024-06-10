@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID HIT_BYWALL = 2308453416U;
         static const AkUniqueID JOIN = 3695193445U;
         static const AkUniqueID LANDING = 2548270042U;
+        static const AkUniqueID MENU_MUSIC = 4055567060U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID MUSICTST = 2856297975U;
         static const AkUniqueID PARRY = 3076648345U;

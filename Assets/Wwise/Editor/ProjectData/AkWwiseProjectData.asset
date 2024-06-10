@@ -785,8 +785,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584838329703724007
+    m_lastTime: -8584835788443031863
     List:
+    - name: Menu_Music
+      guid: c192f640a9f93b488f0d42dc2ac09323
+      id: 4055567060
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c26fb1ebac2fa748ac3ce864ec3d13ef
+      - ElementName: Menu_Music
+        ObjectType: 3
+        guid: c192f640a9f93b488f0d42dc2ac09323
+      Path: Events\Default Work Unit\Menu_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Music
       guid: 50bd927e93a63341984dac3ccb90a59f
       id: 3991942870
@@ -849,7 +866,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584839151457147549
+    m_lastTime: -8584835788442955946
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -1351,7 +1368,7 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584839169132242022
+    m_lastTime: -8584835747204506849
     List:
     - name: Join
       guid: 8909090ff5717d459271454105028381

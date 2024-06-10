@@ -304,7 +304,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5A464806-6523-2EDD-D158-587385315CC9}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7120DC05-F58E-74CE-1873-D68128C03187}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -325,6 +325,12 @@
 				<File Id="14934721" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_ByPunch_V3-004.wav</ShortName>
 					<CachePath>SFX/Hit_ByPunch_V3-004_90DFC56E.wem</CachePath>
+				</File>
+				<File Id="16085800" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_Intro\PR_M_NO_FEAR_MENU_M001_INTRO_SFX_151.wav</ShortName>
+					<Path>Media/16085800.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_Intro/PR_M_NO_FEAR_MENU_M001_INTRO_SFX_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>5653</PrefetchSize>
 				</File>
 				<File Id="16521861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Respawn.wav</ShortName>
@@ -668,6 +674,12 @@
 					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_SFX_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>5869</PrefetchSize>
 				</File>
+				<File Id="244720061" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_Outro\PR_M_NO_FEAR_MENU_M001_OUTRO_SFX_151.wav</ShortName>
+					<Path>Media/244720061.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_Outro/PR_M_NO_FEAR_MENU_M001_OUTRO_SFX_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>6595</PrefetchSize>
+				</File>
 				<File Id="257133336" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frein-007.wav</ShortName>
 					<CachePath>SFX/Frein-007_755F56E2.wem</CachePath>
@@ -709,6 +721,12 @@
 					<Path>Media/287073986.wem</Path>
 					<CachePath>SFX/BASE/RP_M_DOWN THE POWER ROAD_BASE_STEMS/RP_M_DOWN THE POWER ROAD_BASE_A_SYNTH_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>777</PrefetchSize>
+				</File>
+				<File Id="291085349" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_A\PR_M_NO_FEAR_MENU_M001_A_DRUMS_151.wav</ShortName>
+					<Path>Media/291085349.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_A/PR_M_NO_FEAR_MENU_M001_A_DRUMS_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>8549</PrefetchSize>
 				</File>
 				<File Id="299114776" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-006.wav</ShortName>
@@ -784,7 +802,7 @@
 				</File>
 				<File Id="369933199" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Drill_Done.wav</ShortName>
-					<CachePath>SFX/Drill_Done_AD6E462F.wem</CachePath>
+					<CachePath>SFX/Drill_Done_86048012.wem</CachePath>
 				</File>
 				<File Id="373265237" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_DRUM FILL_164.wav</ShortName>
@@ -890,6 +908,12 @@
 					<ShortName>Soundly Audio\Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234.wav</ShortName>
 					<CachePath>SFX/Soundly Audio/Crowds, Angry, Boo, Unhappy Crowd, Shouting, Whistling, Argentina SND103234_4AC231C0.wem</CachePath>
 				</File>
+				<File Id="454354669" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_Outro\PR_M_NO_FEAR_MENU_M001_OUTRO_DRUMS_151.wav</ShortName>
+					<Path>Media/454354669.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_Outro/PR_M_NO_FEAR_MENU_M001_OUTRO_DRUMS_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>7494</PrefetchSize>
+				</File>
 				<File Id="455019346" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frein-004.wav</ShortName>
 					<CachePath>SFX/Frein-004_755F56E2.wem</CachePath>
@@ -929,6 +953,12 @@
 				<File Id="471181577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Low_2.wav</ShortName>
 					<CachePath>SFX/Low_2_073B4D0C.wem</CachePath>
+				</File>
+				<File Id="471827372" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_A\PR_M_NO_FEAR_MENU_M001_A_SYNTH_151.wav</ShortName>
+					<Path>Media/471827372.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_A/PR_M_NO_FEAR_MENU_M001_A_SYNTH_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>6749</PrefetchSize>
 				</File>
 				<File Id="473655636" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A\RP_M_DOWN THE POWER ROAD_P2_M002_A_PERC_164.wav</ShortName>
@@ -1237,6 +1267,12 @@
 					<Path>Media/692331253.wem</Path>
 					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar LEAD_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>6902</PrefetchSize>
+				</File>
+				<File Id="695498438" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_Intro\PR_M_NO_FEAR_MENU_M001_INTRO_SYNTH_151.wav</ShortName>
+					<Path>Media/695498438.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_Intro/PR_M_NO_FEAR_MENU_M001_INTRO_SYNTH_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>6802</PrefetchSize>
 				</File>
 				<File Id="695679820" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Synth Bass 1_164.wav</ShortName>
@@ -1608,6 +1644,12 @@
 					<ShortName>Soundly Audio\Crowd Ouch by deleted_user_2104797 Id-324897.wav</ShortName>
 					<CachePath>SFX/Soundly Audio/Crowd Ouch by deleted_user_2104797 Id-324897_FD3C5FDE.wem</CachePath>
 				</File>
+				<File Id="972672954" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_Outro\PR_M_NO_FEAR_MENU_M001_OUTRO_SYNTH_151.wav</ShortName>
+					<Path>Media/972672954.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_Outro/PR_M_NO_FEAR_MENU_M001_OUTRO_SYNTH_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>5184</PrefetchSize>
+				</File>
 				<File Id="976329560" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_B\RP_M_DOWN THE POWER ROAD_P2_M002_B_SNARE_164.wav</ShortName>
 					<Path>Media/976329560.wem</Path>
@@ -1683,6 +1725,12 @@
 				<File Id="1026149431" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>taunt_demo-003.wav</ShortName>
 					<CachePath>SFX/taunt_demo-003_D8CD7CCC.wem</CachePath>
+				</File>
+				<File Id="1027222991" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_A\PR_M_NO_FEAR_MENU_M001_A_SFX_151.wav</ShortName>
+					<Path>Media/1027222991.wem</Path>
+					<CachePath>SFX/MENU/PR_M_NO_FEAR_MENU_M001_STEMS/Menu_A/PR_M_NO_FEAR_MENU_M001_A_SFX_151_073B4D0C.wem</CachePath>
+					<PrefetchSize>641</PrefetchSize>
 				</File>
 				<File Id="1027612762" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-004.wav</ShortName>
@@ -2753,6 +2801,35 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="4055567060" Name="Menu_Music" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="174170564"/>
+						<MediaRef Id="244720061"/>
+						<MediaRef Id="454354669"/>
+						<MediaRef Id="972672954"/>
+					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="4055567060" Id="2607556080"/>
+							<MediaRefs>
+								<MediaRef Id="16085800"/>
+								<MediaRef Id="291085349"/>
+								<MediaRef Id="471827372"/>
+								<MediaRef Id="695498438"/>
+								<MediaRef Id="1027222991"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="4055567060" Id="733168346"/>
+							<MediaRefs>
+								<MediaRef Id="174170564"/>
+								<MediaRef Id="244720061"/>
+								<MediaRef Id="454354669"/>
+								<MediaRef Id="972672954"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3991942870" Name="Music" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="25359372"/>
@@ -3742,6 +3819,13 @@
 						<State Id="3271665593" Name="Game_End"/>
 					</States>
 				</StateGroup>
+				<StateGroup Id="4055567060" Name="Menu_Music">
+					<States>
+						<State Id="733168346" Name="Game_Start"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2607556080" Name="Menu"/>
+					</States>
+				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="1069431850" Name="Player">
@@ -3755,5 +3839,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F747EDE1-EF7E-E075-C985-899A1495BAED}</FileHash>
+	<FileHash>{002050FA-7FAE-DD2D-577E-7F701C4A63CB}</FileHash>
 </SoundBanksInfo>
