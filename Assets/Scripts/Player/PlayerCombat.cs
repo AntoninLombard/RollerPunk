@@ -319,6 +319,10 @@ public class PlayerCombat : MonoBehaviour
         {
             source.controller.StartBoost();
         }
+        if (player.controller.isDrifting)
+        {
+            player.controller.CancelDrift(false);
+        }
         if (isHoldingBall)
         {
             isHoldingBall = false;
@@ -348,6 +352,11 @@ public class PlayerCombat : MonoBehaviour
         if (source != null)
         {
             source.controller.StartBoost();
+        }
+
+        if (player.controller.isDrifting)
+        {
+            player.controller.CancelDrift(false);
         }
         if (isHoldingBall)
         {

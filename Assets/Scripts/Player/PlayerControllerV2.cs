@@ -18,8 +18,10 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isGrounded { get; private set; }
     [field: SerializeField] public bool isDrifting { get; private set; }
     [SerializeField] private int driftingSide;
-    [SerializeField] private Vector3 driftOffset;
     [SerializeField] private float speed = 0;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float driftInputValue = 0;
+    [SerializeField] private float speedRatio;
     
 
     
@@ -28,6 +30,7 @@ public class PlayerController2 : MonoBehaviour
     
     [field: Header("GROUND DETECTION")]
     [field: SerializeField] [field: Range(0.1f,1.0f)] public float groundRange { get; private set; }
+    [SerializeField] private Vector3 groundNormal;
 
     [Header("SOUND")] 
     [SerializeField] RTPC engineSpeed;
@@ -49,12 +52,13 @@ public class PlayerController2 : MonoBehaviour
     {
 
         controllerData.startEngineSound.Post(gameObject);
+        maxSpeed = controllerData.maxSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
+        speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         if (isDrifting)
             driftDuration += Time.deltaTime;
         player.anime.animator.SetBool(Moving,speed > 1);
@@ -80,7 +84,8 @@ public class PlayerController2 : MonoBehaviour
         Vector3 deltaVelocity = Vector3.zero;
         
         
-        deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
+        // deltaVelocity += drag(currentVelocity,Time.fixedDeltaTime);
+        // deltaVelocity += friction(currentVelocity, Time.fixedDeltaTime);
         deltaVelocity += move(currentVelocity,Time.fixedDeltaTime);
         deltaVelocity += boost(Time.fixedDeltaTime);
         groundCheck(Time.fixedDeltaTime);
@@ -92,10 +97,12 @@ public class PlayerController2 : MonoBehaviour
         rb.AddForce(deltaVelocity ,ForceMode.VelocityChange);
         brake(Time.fixedDeltaTime);
         currentVelocity = rb.velocity;
-
-        if (currentVelocity.magnitude > controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
+        speed = Vector3.Dot(currentVelocity, player.character.forward);
+        
+        
+        if (speed > maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier))
         {
-            rb.AddForce(currentVelocity.normalized * (controllerData.maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
+            rb.AddForce(player.character.forward * (maxSpeed * (!player.combat.isHoldingBall? 1 : controllerData.ballMaxSpeedMultipier)) - currentVelocity,ForceMode.VelocityChange);
         }
 
         speed = rb.velocity.magnitude;
@@ -107,44 +114,50 @@ public class PlayerController2 : MonoBehaviour
     #region DRIVING FUNCTIONS
 
 
-    private Vector3 drag(Vector3 velocity,float time)
-    {
-        if (isGrounded)
-            return -velocity * (controllerData.drag * time);
-        return -velocity * (controllerData.airDrag * time);
-    }
-
+    // private Vector3 drag(Vector3 velocity,float time)
+    // {
+    //     if (isGrounded)
+    //         return -velocity * (controllerData.drag * time);
+    //     return -velocity * (controllerData.airDrag * time);
+    // }
+    
+    // private Vector3 drag(Vector3 velocity,float time)
+    // {
+    //     return -velocity.sqrMagnitude * controllerData.airDrag * time * velocity.normalized;
+    // }
+    //
+    // private Vector3 friction(Vector3 velocity,float time)
+    // {
+    //     if (!isGrounded)
+    //         return Vector3.zero;
+    //     Vector3 forces = rb.GetAccumulatedForce() + (isGrounded? -player.character.up * controllerData.gripAccel : Vector3.down * controllerData.gravityStrength);
+    //     return - controllerData.friction * Vector3.Dot(groundNormal,forces) * time * velocity.normalized;
+    // }
+    
     private Vector3 move(Vector3 currentVelocity,float time)
     {
         Vector3 deltaVelocity = Vector3.zero;
 
-        if (!isGrounded)
+        if (!isGrounded || player.combat.isStunned)
         {
+            return deltaVelocity;
         }
-        else if(!player.combat.isStunned)
-        {
-            if (isDrifting)
-            {
-                deltaVelocity += player.character.forward * (controllerData.driftAccel * time);
+        deltaVelocity += player.character.forward * ((isDrifting ? driftInputValue : player.input.driveInput) * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * time);
 
-            } else if (player.input.driveInput > 0)
-                deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * time);
-
-            // {
-            //     case > 0f:
-            //         isAccelerating = true;
-            //         deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
-            //         break;
-            //     case < 0f:
-            //         isAccelerating = false;
-            //         deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
-            //         break;
-            //     default:
-            //         isAccelerating = false;
-            //         break;
-            // }
-        
-        }
+        // {
+        //     case > 0f:
+        //         isAccelerating = true;
+        //         deltaVelocity += player.character.forward * (player.input.driveInput * controllerData.forwardAccel * (!player.combat.isHoldingBall? 1f : controllerData.ballAccelMultiplier) * Time.fixedDeltaTime);
+        //         break;
+        //     case < 0f:
+        //         isAccelerating = false;
+        //         deltaVelocity -= currentVelocity * (controllerData.brakingRatio * Time.fixedDeltaTime);
+        //         break;
+        //     default:
+        //         isAccelerating = false;
+        //         break;
+        // }
+            
         return deltaVelocity;
     }
 
@@ -159,10 +172,11 @@ public class PlayerController2 : MonoBehaviour
         if (isDrifting)
         {
             player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(
-                (player.input.steerInput + driftingSide *  (1 + controllerData.driftSteerOffset)) * controllerData.turningRate * controllerData.driftTurnMultiplier,player.character.up) * player.character.rotation, time * 5f);
+                (player.input.steerInput + driftingSide)/2 *  controllerData.driftTurnRate + controllerData.driftTurnOffset * driftingSide,player.character.up) * player.character.rotation, time * 5f);
         } else if (player.input.steerInput != 0f)
         {
-            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(player.input.steerInput * controllerData.turningRate,player.character.up) * player.character.rotation, time * 5f);
+            float angle = player.input.steerInput * (controllerData.minTurningRate + (1-speedRatio) * (controllerData.maxTurningRate - controllerData.minTurningRate));
+            player.character.rotation = Quaternion.Lerp(player.character.rotation, Quaternion.AngleAxis(angle,player.character.up) * player.character.rotation, time * 5f);
         }
     }
 
@@ -218,6 +232,7 @@ public class PlayerController2 : MonoBehaviour
             isGrounded = true;
             normal /= count;
             float dot = Vector3.Dot(normal, player.character.up);
+            groundNormal = normal;
             alignCharToNormal(normal, time);
         }
         else if (Physics.Raycast(player.character.position, Vector3.down, out var hitDown, 0.5f))
@@ -227,6 +242,10 @@ public class PlayerController2 : MonoBehaviour
         }
         else
         {
+            if (isGrounded && isDrifting)
+            {
+                CancelDrift(false);
+            }
             isGrounded = false;
             alignCharToNormal(Vector3.up, time/5);
         }
@@ -310,28 +329,26 @@ public class PlayerController2 : MonoBehaviour
     {
         if (!player.combat.isBusy)
         {
-            if(player.input.steerInput != 0)
+            if(player.input.steerInput != 0 && player.controller.speed > 0 && isGrounded)
             {
                 isDrifting = true;
                 driftingSide = player.input.steerInput > 0 ? 1 : -1;
                 if (driftingSide >0)
                 {
                     player.anime.animator.SetBool("Drift.R", true);
+                    
                 }
                 else
                 {
                     player.anime.animator.SetBool("Drift.L", true);
                 }
-                if (speed > 0)
-                {
-                    player.data.driftStartSound.Post(gameObject);
-                }
-
+                player.data.driftStartSound.Post(gameObject);
+                driftInputValue  = player.input.driveInput;
             }
         }
     }
 
-    public void CancelDrift()
+    public void CancelDrift(bool canBoost = true)
     {
         if (isDrifting)
         {
@@ -348,10 +365,7 @@ public class PlayerController2 : MonoBehaviour
             isDrifting = false;
             driftDuration = 0;
             driftingSide = 0;
-            if (speed > 0)
-            {
-                player.data.driftStopSound.Post(gameObject);
-            }
+            driftInputValue = 0f;
 
         }
     }
@@ -365,8 +379,10 @@ public class PlayerController2 : MonoBehaviour
     {
         controllerData.burstSound.Post(gameObject);
         isBoosting = true;
+        maxSpeed =  controllerData.boostMaxSpeed;
         yield return new WaitForSeconds(controllerData.boostDuration);
         isBoosting = false;
+        maxSpeed = controllerData.maxSpeed;
     }
     
     

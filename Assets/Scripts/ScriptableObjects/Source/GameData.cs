@@ -8,6 +8,9 @@ public class GameData : ScriptableObject
     [Header("GAME VALUES")]
     public List<Color> playerColors;
     
+    [Header("COUNTDOWN")]
+    [ColorUsage(true, true)]
+    public List<Color> countDownColors;
     
     [Header("SOUND")]
     public AK.Wwise.Event countdownSound;

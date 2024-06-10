@@ -12,20 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a559a010f40bac9478696e09f5e5bb9b, type: 3}
   m_Name: PlayerData 2
   m_EditorClassIdentifier: 
-  maxSpeed: 50
-  forwardAccel: 35
-  turningRate: 10
+  maxSpeed: 40
+  forwardAccel: 45
+  minTurningRate: 10
+  maxTurningRate: 20
   gravityStrength: 20
-  gripAccel: 30
-  boostAccel: 50
+  gripAccel: 25
+  boostMaxSpeed: 1.4
+  boostAccel: 100
   boostDuration: 1
-  driftAccel: 35
-  driftSteerOffset: 0.4
-  driftTurnMultiplier: 0.6
-  driftDurationForBoost: 1.4
+  driftAccel: 45
+  driftTurnOffset: 0.3
+  driftTurnRate: 16
+  driftDurationForBoost: 1
   brakingRatio: 0.95
-  drag: 0.8
-  airDrag: 0.1
+  drag: 0.825
+  airDrag: 0.09330001
   ballAccelMultiplier: 0.79
   ballMaxSpeedMultipier: 0.82
   punchWindUp: 0.3

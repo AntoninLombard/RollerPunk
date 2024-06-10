@@ -31,6 +31,8 @@ public class MeshBend : MonoBehaviour
     [SerializeField]private FillType type;
     [SerializeField]private Mesh source;
     [SerializeField] private List<Material> materials;
+    [SerializeField] private int startCap;
+    [SerializeField] private int  endCap;
     [SerializeField]private Vector3 scale;
     [SerializeField]private Vector3 translation;
     [SerializeField]private Vector3 rotation;
@@ -156,6 +158,8 @@ public class MeshBend : MonoBehaviour
         int currentMeshNb = 0;
         int batchNb = 0;
         
+        GameObject child;
+        
         for (int rep = 0; rep < repetitions; rep++)
         {
             //Mesh newMesh = new Mesh();
@@ -185,7 +189,6 @@ public class MeshBend : MonoBehaviour
             uv7.AddRange(source.uv7);
             uv8.AddRange(source.uv8);
             #endif
-            
             
             
             for(int j = 0; j < source.vertexCount ;j++)
@@ -241,9 +244,13 @@ public class MeshBend : MonoBehaviour
             
             if (currentMeshNb+1 >= meshBatchSize)
             {
-                Mesh meshBatch = FuseMeshes(newMeshes);
+                bool useStartCap = batchNb == 0;
+                bool useEndCap = batchNb * meshBatchSize == repetitions - 1;
+                Mesh meshBatch = FuseMeshes(newMeshes,useStartCap,useEndCap);
                 newMeshes.Clear();
-                GameObject child = CreateChild(meshBatch,materials.ToArray());
+                child = CreateChild(meshBatch,materials.Where((x,i) =>
+                    !(!useStartCap && i == startCap || !useEndCap && i == endCap)
+                ).ToArray());
                 child.name = "Generated Bend Mesh Batch" + batchNb;
                 currentMeshNb = 0;
                 batchNb++;
@@ -262,16 +269,19 @@ public class MeshBend : MonoBehaviour
         Mesh newMesh;
         if(newMeshes.Count > 1)
         {
-            newMesh = FuseMeshes(newMeshes);
+            newMesh = FuseMeshes(newMeshes,batchNb == 0,true);
         }
         else
         {
             newMesh = newMeshes[0];
         }
-        CreateChild(newMesh,materials.ToArray());
+        child = CreateChild(newMesh,materials.Where((x,i) =>
+            !(batchNb == 0 && i == startCap || batchNb * meshBatchSize == repetitions - 1 && i == endCap)
+        ).ToArray());
+        child.name = "Generated Bend Mesh Batch" + batchNb;
     }
 
-    private Mesh FuseMeshes(List<Mesh> meshes)
+    private Mesh FuseMeshes(List<Mesh> meshes,bool useStartCap = false,bool useEndCap = false)
     {
         Mesh newMesh = new Mesh();
         newMesh.indexFormat = IndexFormat.UInt32;
@@ -281,6 +291,11 @@ public class MeshBend : MonoBehaviour
         {
             for (int subMeshNb = 0; subMeshNb < source.subMeshCount; subMeshNb++)
             {
+                if(!useStartCap && subMeshNb == startCap || !useEndCap && subMeshNb == endCap)
+                {
+                    
+                    continue;
+                }
                 List<CombineInstance> combineMeshes = new List<CombineInstance>();
                 foreach (var mesh in meshes)
                 {
@@ -314,6 +329,7 @@ public class MeshBend : MonoBehaviour
         newMesh.CombineMeshes(finalCombineInstances.ToArray(),false,false);
         
         newMesh.Optimize();
+        newMesh.RecalculateNormals();
         newMesh.RecalculateBounds();
         newMesh.RecalculateTangents();
         return newMesh;
