@@ -368,6 +368,7 @@ MonoBehaviour:
   <isDrifting>k__BackingField: 0
   driftingSide: 0
   speed: 0
+  maxSpeed: 0
   driftInputValue: 0
   speedRatio: 0
   rb: {fileID: 8963657871566459159}
@@ -840,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 9015925852231550463, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9015925852231550463, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
@@ -1013,7 +1014,7 @@ PrefabInstance:
     - target: {fileID: 9015925852231550463, guid: 7fd5f39572df9574e85812f8ffd15f43,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

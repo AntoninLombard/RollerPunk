@@ -42,8 +42,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int kills;
     [SerializeField] private int currentMultiplier;
     [field: SerializeField] [CanBeNull] public RespawnPoint lastRespawnPoint { get; private set; }
-    [field: SerializeField][CanBeNull] public RespawnPoint rubberRespawnPoint { get; private set; }
-
 
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
@@ -262,7 +260,12 @@ public class GameManager : MonoBehaviour
 
     public void CompareRespawnPoints(RespawnPoint respawnPoint, Player player)
     {
-        rubberRespawnPoint = respawnPoint;
+        int indexA = respawnpoints.IndexOf(respawnPoint);
+        int indexB = respawnpoints.IndexOf(lastRespawnPoint);
+        int N = respawnpoints.Count;
+        int distanceAB = (indexA - indexB + N) % N;
+        int distanceBA = (indexB - indexA + N) % N;
+        player.controller.Rubberbanding(Mathf.Min(distanceAB, distanceBA));
     }
 
 

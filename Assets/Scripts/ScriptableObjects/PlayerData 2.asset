@@ -25,6 +25,8 @@ MonoBehaviour:
   driftTurnOffset: 0.6
   driftTurnRate: 16
   driftDurationForBoost: 1
+  rubberBandingSpeed: 12
+  rubberBandingRange: 8
   brakingRatio: 0.95
   drag: 0.825
   airDrag: 0.138
