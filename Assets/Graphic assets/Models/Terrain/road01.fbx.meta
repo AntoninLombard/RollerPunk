@@ -12,6 +12,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Metal trim 2
+    second: {fileID: 2100000, guid: 5dc35b8993325bf46965fc799ca414bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal trim 3
+    second: {fileID: 2100000, guid: 5dc35b8993325bf46965fc799ca414bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Road
     second: {fileID: 2100000, guid: 7cd01a3c158663a4f8cdc6eb5bfbefac, type: 2}
   materials:
