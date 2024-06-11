@@ -304,7 +304,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7120DC05-F58E-74CE-1873-D68128C03187}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{BBFFD537-90C8-5DDF-4925-8B4A9A88068E}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -656,6 +656,10 @@
 					<ShortName>Drift_Scrape-001.wav</ShortName>
 					<CachePath>SFX/Drift_Scrape-001_91E9F71D.wem</CachePath>
 				</File>
+				<File Id="228889983" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-007.wav</ShortName>
+					<CachePath>SFX/taunt_demo-007_0CFFED48.wem</CachePath>
+				</File>
 				<File Id="238705589" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_B\RP_M_DOWN THE POWER ROAD_P4_B_DRUMS_164.wav</ShortName>
 					<Path>Media/238705589.wem</Path>
@@ -673,6 +677,10 @@
 					<Path>Media/240966468.wem</Path>
 					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_SFX_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>5869</PrefetchSize>
+				</File>
+				<File Id="244303097" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-003.wav</ShortName>
+					<CachePath>SFX/taunt_demo-003_778F3937.wem</CachePath>
 				</File>
 				<File Id="244720061" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>MENU\PR_M_NO_FEAR_MENU_M001_STEMS\Menu_Outro\PR_M_NO_FEAR_MENU_M001_OUTRO_SFX_151.wav</ShortName>
@@ -693,6 +701,10 @@
 					<Path>Media/275882741.wem</Path>
 					<CachePath>SFX/P1/RP_M_DOWN THE POWER ROAD_P1_M002_STEMS/P1_B/RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_KICK_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>7602</PrefetchSize>
+				</File>
+				<File Id="280473604" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-004.wav</ShortName>
+					<CachePath>SFX/taunt_demo-004_207D2129.wem</CachePath>
 				</File>
 				<File Id="280610508" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-006.wav</ShortName>
@@ -825,6 +837,10 @@
 					<Path>Media/379829155.wem</Path>
 					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_Synth Bass_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>6257</PrefetchSize>
+				</File>
+				<File Id="384317683" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-008.wav</ShortName>
+					<CachePath>SFX/taunt_demo-008_F625F0FA.wem</CachePath>
 				</File>
 				<File Id="392359955" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>BASE\RP_M_DOWN THE POWER ROAD_BASE_STEMS\RP_M_DOWN THE POWER ROAD_BASE_A_GUITAR_164.wav</ShortName>
@@ -971,6 +987,10 @@
 					<Path>Media/476796087.wem</Path>
 					<CachePath>SFX/P4/RP_M_DOWN THE POWER ROAD_P4_STEMS/P4_C/RP_M_DOWN THE POWER ROAD_P4_C_DRUMS_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>8644</PrefetchSize>
+				</File>
+				<File Id="479966056" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-002.wav</ShortName>
+					<CachePath>SFX/taunt_demo-002_EA931D09.wem</CachePath>
 				</File>
 				<File Id="480938228" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_AfterParry-004.wav</ShortName>
@@ -1599,6 +1619,10 @@
 				<File Id="926862424" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RP_GettingUp-001.wav</ShortName>
 					<CachePath>SFX/RP_GettingUp-001_755F56E2.wem</CachePath>
+				</File>
+				<File Id="929466420" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>taunt_demo-001.wav</ShortName>
+					<CachePath>SFX/taunt_demo-001_4EF87F75.wem</CachePath>
 				</File>
 				<File Id="932970665" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-004.wav</ShortName>
@@ -2689,12 +2713,24 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3695193445" Name="Join" DurationType="OneShot" DurationMin="1.8254901" DurationMax="2.234617">
+				<Event Id="3695193445" Name="Join" DurationType="OneShot" DurationMin="1.8254901" DurationMax="5.3702884">
 					<MediaRefs>
+						<MediaRef Id="66567214"/>
+						<MediaRef Id="91345779"/>
 						<MediaRef Id="158589468"/>
+						<MediaRef Id="228889983"/>
+						<MediaRef Id="244303097"/>
+						<MediaRef Id="280473604"/>
 						<MediaRef Id="321318270"/>
+						<MediaRef Id="384317683"/>
+						<MediaRef Id="479966056"/>
 						<MediaRef Id="578911426"/>
+						<MediaRef Id="606326577"/>
+						<MediaRef Id="703726604"/>
+						<MediaRef Id="763276475"/>
+						<MediaRef Id="820428118"/>
 						<MediaRef Id="844727332"/>
+						<MediaRef Id="929466420"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2548270042" Name="Landing" DurationType="OneShot" DurationMin="1.9276594" DurationMax="2.3175943">
@@ -3839,5 +3875,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{002050FA-7FAE-DD2D-577E-7F701C4A63CB}</FileHash>
+	<FileHash>{8942A4DC-BF6E-51DE-2969-38CC215ED21D}</FileHash>
 </SoundBanksInfo>
