@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584839165562083036
+    m_lastTime: -8584834818956875209
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -866,7 +866,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584834986318462550
+    m_lastTime: -8584834837874618106
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -919,6 +919,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 9.522684
       minDuration: 7.7949944
+    - name: AMB_Fire
+      guid: cb21c75b8de40746a5030060c2403e35
+      id: 3207324726
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Ambiances
+        ObjectType: 12
+        guid: 11d81020dfd6864591f72eeb33912022
+      - ElementName: AMB_Fire
+        ObjectType: 3
+        guid: cb21c75b8de40746a5030060c2403e35
+      Path: Events\RP_Ambiances\AMB_Fire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: AMB_Kill
       guid: 7844be5888eaf64f93a2e00339f70cc6
       id: 2469751798
@@ -2563,7 +2580,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 0200000005000000070000000800000011000000220000002b0000002c0000002e00000038000000390000003a00000042000000430000005a0000007d0000007f000000800000008200000097000000990000009a0000009c000000
+  ExpandedFileSystemItemIds: 050000000700000011000000220000002b0000002c0000002e00000038000000390000003a00000042000000430000005a0000007d0000007f000000800000008200000097000000990000009a0000009c000000
   ExpandedWaapiItemIds: 05000000110000002c00000042000000430000005a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
