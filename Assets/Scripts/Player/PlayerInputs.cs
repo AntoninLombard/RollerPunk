@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,9 +33,9 @@ public class PlayerInputs : MonoBehaviour
     
     void Start()
     {
-        driveAction = playerInput.actions.FindAction("Driving/Drive");
-        brakeAction = playerInput.actions.FindAction("Driving/Reverse");
-        steerAction = playerInput.actions.FindAction("Driving/Steer");
+        // driveAction = playerInput.actions.FindAction("Driving/Drive");
+        // brakeAction = playerInput.actions.FindAction("Driving/Reverse");
+        // steerAction = playerInput.actions.FindAction("Driving/Steer");
     }
     private void Update()
     {
@@ -87,19 +89,31 @@ public class PlayerInputs : MonoBehaviour
         }
     }
     
-    public void onReady(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            player.isReady = true;
-            player.ui.SetReady(true);
-            GameManager.Instance.OnPlayerReady();
-            Debug.Log("StartPressed");
-        } 
-
-    }
+    // public void onReady(InputAction.CallbackContext context)
+    // {
+    //     if (context.started)
+    //     {
+    //         player.isReady = true;
+    //         player.ui.SetReady(true);
+    //         GameManager.Instance.OnPlayerReady();
+    //         Debug.Log("StartPressed");
+    //     } 
+    //
+    // }
 
     #endregion
-    
-    
+
+
+    public void SetInput(PlayerInput playerInput)
+    {
+        //this.playerInput = playerInput;
+        //playerInput.actions = this.playerInput.actions;
+        playerInput.actionEvents = this.playerInput.actionEvents;
+        this.playerInput = playerInput;
+        playerInput.currentActionMap = playerInput.actions.FindActionMap("Driving");
+        driveAction = playerInput.actions.FindAction("Driving/Drive");
+        brakeAction = playerInput.actions.FindAction("Driving/Reverse");
+        steerAction = playerInput.actions.FindAction("Driving/Steer");
+
+    }
 }
