@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     [Header("GAME VALUES")]
+    public GameObject playerPrefab;
     public List<Color> playerColors;
     
     [Header("COUNTDOWN")]

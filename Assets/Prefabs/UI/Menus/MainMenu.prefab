@@ -5375,6 +5375,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6673568464012533269}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: PlayerJoinToggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &6080150293190269015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13509,9 +13521,9 @@ GameObject:
   - component: {fileID: 7619347391285117360}
   - component: {fileID: 8667150797741188679}
   - component: {fileID: 7009241377687919292}
-  - component: {fileID: 4204121741199183684}
   - component: {fileID: 9221892762638698243}
   - component: {fileID: 862867720600976554}
+  - component: {fileID: 6673568464012533269}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -13608,51 +13620,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4204121741199183684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5427044930937325642}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 2
-  m_MaxPlayerCount: 4
-  m_AllowJoining: 1
-  m_JoinBehavior: 2
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Join
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 5f0bb0c3-4352-4ef6-bbbd-ff040dc91d5f
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6013644512000239356, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
-      type: 3}
-  m_PlayerPrefab: {fileID: 0}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!114 &9221892762638698243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13710,6 +13677,29 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &6673568464012533269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427044930937325642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec764d8e73c4944ea5a09a751267f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  minNbPlayer: 2
+  maxNbPlayer: 4
+  playerNumber: 0
+  playerPanels:
+  - {fileID: 1202349999968650007}
+  - {fileID: 5806919517923616422}
+  - {fileID: 4537570410951982279}
+  - {fileID: 2684251958873246141}
+  uiModule: {fileID: 862867720600976554}
+  multyEvent: {fileID: 9221892762638698243}
 --- !u!1 &5482873654242125672
 GameObject:
   m_ObjectHideFlags: 0
