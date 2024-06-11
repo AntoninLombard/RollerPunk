@@ -64,6 +64,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7858b644464d3ee4ba2b509554069aae,
       type: 2}
+  crowdFall:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a83112ce76032f84eb48a8051588eb0f,
+      type: 2}
   scoreUpSound:
     idInternal: 0
     valueGuidInternal: 

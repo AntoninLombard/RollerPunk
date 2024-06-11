@@ -17,7 +17,6 @@ namespace AK
         static const AkUniqueID AMB_DRILL_DONE = 2925030600U;
         static const AkUniqueID AMB_FALL = 3175049353U;
         static const AkUniqueID AMB_KILL = 2469751798U;
-        static const AkUniqueID AMB_POINT = 770146064U;
         static const AkUniqueID AMB_PREP = 2116017607U;
         static const AkUniqueID AMB_RACESTART = 3265704427U;
         static const AkUniqueID AMB_START = 1589289402U;
@@ -37,6 +36,7 @@ namespace AK
         static const AkUniqueID HIT_BYWALL = 2308453416U;
         static const AkUniqueID JOIN = 3695193445U;
         static const AkUniqueID LANDING = 2548270042U;
+        static const AkUniqueID MENU_MUSIC = 4055567060U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID MUSICTST = 2856297975U;
         static const AkUniqueID PARRY = 3076648345U;
@@ -54,6 +54,7 @@ namespace AK
         static const AkUniqueID UI_HOVER = 2118900976U;
         static const AkUniqueID UI_HOVER_INWINDOW = 2147104942U;
         static const AkUniqueID UI_SELECT = 2774129122U;
+        static const AkUniqueID WINDUP = 2699564740U;
     } // namespace EVENTS
 
     namespace STATES
@@ -169,6 +170,7 @@ namespace AK
         static const AkUniqueID SCORE = 2398231425U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID SKID = 822292696U;
+        static const AkUniqueID SKID_TIME = 33561276U;
         static const AkUniqueID SPEED = 640949982U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;

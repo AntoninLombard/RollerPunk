@@ -341,9 +341,9 @@ public class PlayerController2 : MonoBehaviour
                 else
                 {
                     player.anime.animator.SetBool("Drift.L", true);
-                }
-                player.data.driftStartSound.Post(gameObject);
+                } 
                 driftInputValue  = player.input.driveInput;
+                player.data.driftStartSound.Post(gameObject);
             }
         }
     }
@@ -355,18 +355,10 @@ public class PlayerController2 : MonoBehaviour
             if(driftingSide >0)
             {
                 player.anime.animator.SetBool("Drift.R", false);
-                if (speed > 0)
-                {
-                    player.data.driftStopSound.Post(gameObject);
-                }
             }
             else
             {
                 player.anime.animator.SetBool("Drift.L", false);
-                if (speed > 0)
-                {
-                    player.data.driftStopSound.Post(gameObject);
-                }
             }
             if (driftDuration > controllerData.driftDurationForBoost)
                 StartBoost();
@@ -374,6 +366,7 @@ public class PlayerController2 : MonoBehaviour
             driftDuration = 0;
             driftingSide = 0;
             driftInputValue = 0f;
+            player.data.driftStopSound.Post(gameObject);
 
         }
     }
