@@ -866,7 +866,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584835788442955946
+    m_lastTime: -8584834986318462550
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -1385,7 +1385,7 @@ MonoBehaviour:
         guid: 8909090ff5717d459271454105028381
       Path: Events\RP_UI\Join
       maxAttenuation: 0
-      maxDuration: 2.234617
+      maxDuration: 5.3702884
       minDuration: 1.8254901
     - name: Score_Up
       guid: 0b29a759e1f60847b0ec88a663f64cfc
