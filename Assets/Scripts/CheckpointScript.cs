@@ -9,15 +9,16 @@ public class Checkpoint : MonoBehaviour
 
     [SerializeField] private AK.Wwise.Event scoring;
     
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
         Debug.Log("CheckPoint Collision");
         Player player = other.transform.parent?.gameObject.GetComponent<Player>();
         if(player == GameManager.Instance.ballHolder)
         {
-            player?.combat.onDeath(null);
             scoring.Post(gameObject);
             GameManager.Instance.OnScoring();
+            player.combat?.onDeath(null);
+            //GameManager.Instance.RespawnPlayer(player);
         }
     }
 }

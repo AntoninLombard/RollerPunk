@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RespawnPoint raceStart;
     [SerializeField] private List<Checkpoint> checkpoints;
     [SerializeField] private List<RespawnPoint> respawnpoints;
+
+    [Header("Visuals")]
+    [SerializeField] private GameObject startLights;
+
+    private Material startLightsMaterial;
     
     [field: Header("Ball & Ball holder")]
     [field: SerializeField] public BallScript ball { get; private set; }
@@ -37,10 +42,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int kills;
     [SerializeField] private int currentMultiplier;
     [field: SerializeField] [CanBeNull] public RespawnPoint lastRespawnPoint { get; private set; }
+    
 
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
     [SerializeField] private RTPC playerNumberRTPC;
+    
+    
+    private static readonly int EmissiveColor01 = Shader.PropertyToID("_Emissive_color_01");
+    private static readonly int EmissiveColor02 = Shader.PropertyToID("_Emissive_color_02");
+    private static readonly int EmissiveColor03 = Shader.PropertyToID("_Emissive_color_03");
 
     private void Awake()
     {
@@ -62,6 +73,11 @@ public class GameManager : MonoBehaviour
         lastRespawnPoint = raceStart;
         gameData.crowdStart.Post(gameObject);
         gameData.crowdWaiting.Post(gameObject);
+        startLightsMaterial = startLights.GetComponent<MeshRenderer>()?.materials[1];
+        
+        startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[0]);
+        startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[0]);
+        startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
     }
 
     // Update is called once per frame
@@ -111,16 +127,11 @@ public class GameManager : MonoBehaviour
         RespawnPlayer(player);
         player.listener.SetVolumeOffset(nbPlayer);
     }
-    public void OnPlayerDeath(Player player)
-    {
-        Vector3 pos = lastRespawnPoint.spawnPoints[player.number].position;
-        Quaternion rot = lastRespawnPoint.spawnPoints[player.number].rotation;
-        player.controller.TeleportPlayer(pos, rot);
-    }
+
 
     public void OnScoring()
     {
-        players[ballHolder] += cumulatedPoints * (1+currentMultiplier);
+        players[ballHolder] += cumulatedPoints * currentMultiplier;
         ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
         gameData.musicState[4].SetValue();
@@ -128,17 +139,16 @@ public class GameManager : MonoBehaviour
         {
             StopGame();
         }
-        ResetBall();
     }
     
     public void OnBallKill()
     {
         kills++;
+        gameData.crowdKill.Post(gameObject);
         if (kills > scoring.killMultipliatorThreshold)
         {
             currentMultiplier = scoring.killMultiplicatorValue;
             ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
-            gameData.crowdKill.Post(gameObject);
         }
     }
 
@@ -160,8 +170,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (count == nbPlayer)
+        if (count == nbPlayer && !isRaceOn)
         {
+            isRaceOn = true;
             StartCoroutine(StartCountdown());
         }
 
@@ -193,6 +204,10 @@ public class GameManager : MonoBehaviour
 
     private void ResetBall()
     {
+        if(ballHolder != null)
+        {
+            ballHolder.ui.OnPointsChange(0, 0);
+        }
         ballHolder = null;
         distanceTraveled = 0;
         cumulatedPoints = 0;
@@ -216,24 +231,32 @@ public class GameManager : MonoBehaviour
         player.controller.TeleportPlayer(pos,rot);
         if (player == ballHolder)
         {
-            ResetBall();
             RespawnBall();
         }
     }
     
     public void RespawnBall()
     {
+        ResetBall();
         ballHolder = null;
         ball.transform.parent = null;
         int index = respawnpoints.IndexOf(lastRespawnPoint);
-        Transform pos = respawnpoints[(index+1) % respawnpoints.Count].ballSpawnPoint;
-        if (Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
+        Transform pos = raceStart.transform;
+        int i = 1;
+        RespawnPoint currentRespawn = raceStart;
+        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn)
+        {
+            pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
+            i++;
+        }
+        if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
         {
             ball.Toggle(true);
             ball.transform.parent = null;
             ball.transform.position = hit.point + hit.normal;
             ball.transform.rotation = pos.rotation;
         }
+        
     }
     
     
@@ -250,6 +273,9 @@ public class GameManager : MonoBehaviour
             player.ui.ToggleCountdown(true);
             player.ui.SetCountdown(3);
         }
+        startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[2]);
+        startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[3]);
+        startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[3]);
         
         yield return new WaitForSeconds(1);
 
@@ -257,7 +283,8 @@ public class GameManager : MonoBehaviour
         {
             player.ui.SetCountdown(2);
         }
-
+        startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[2]);
+        startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[2]);
         gameData.countdownSound.Post(gameObject);
         
         yield return new WaitForSeconds(1);
@@ -266,7 +293,10 @@ public class GameManager : MonoBehaviour
         {
             player.ui.SetCountdown(1);
         }
-
+        
+        startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[2]);
+        startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[2]);
+        startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[2]);
         gameData.countdownSound.Post(gameObject);
         
         yield return new WaitForSeconds(1);
@@ -276,7 +306,10 @@ public class GameManager : MonoBehaviour
             player.ui.SetCountdown(0);
             player.ToggleActive(true);
         }
-
+        
+        startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[1]);
+        startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[1]);
+        startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[1]);
         gameData.countdownSound.Post(gameObject);
 
         yield return new WaitForSeconds(0.5f);

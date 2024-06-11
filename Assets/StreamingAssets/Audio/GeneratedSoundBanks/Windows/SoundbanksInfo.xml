@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2C5C4B28-BBA3-614C-E7E5-003955C82716}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{557B4AA4-5BE9-733B-296D-B1E23F6DA597}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -310,7 +310,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{08289B2D-E371-94A8-1C82-1C745ED9E691}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A2D252DC-DBF7-1599-8CC5-591652B19756}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -448,9 +448,13 @@
 					<ShortName>M2_2.wav</ShortName>
 					<CachePath>SFX/M2_2_0762CC47.wem</CachePath>
 				</File>
+				<File Id="102955077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Derapage_v1.wav</ShortName>
+					<CachePath>SFX/Derapage_v1_F342B75F.wem</CachePath>
+				</File>
 				<File Id="104067058" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frein-008.wav</ShortName>
-					<CachePath>SFX/Frein-008_CB829F1D.wem</CachePath>
+					<CachePath>SFX/Frein-008_83E2273A.wem</CachePath>
 				</File>
 				<File Id="107112461" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_Guitar LEAD_164.wav</ShortName>
@@ -764,6 +768,10 @@
 					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A2/RP_M_DOWN THE POWER ROAD_P2_M002_A2_PERC_164_0762CC47.wem</CachePath>
 					<PrefetchSize>2506</PrefetchSize>
 				</File>
+				<File Id="418444728" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Derapage_v1.wav</ShortName>
+					<CachePath>SFX/Derapage_v1_4892290C.wem</CachePath>
+				</File>
 				<File Id="424568932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Checkpoint.wav</ShortName>
 					<CachePath>SFX/Checkpoint_702B0C36.wem</CachePath>
@@ -882,6 +890,10 @@
 					<ShortName>M2_3.wav</ShortName>
 					<CachePath>SFX/M2_3_0762CC47.wem</CachePath>
 				</File>
+				<File Id="505768196" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-001.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-001_2E77019C.wem</CachePath>
+				</File>
 				<File Id="510761819" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_SNARE_164.wav</ShortName>
 					<Path>Media/510761819.wem</Path>
@@ -909,6 +921,10 @@
 				<File Id="519388305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-007.wav</ShortName>
 					<CachePath>SFX/Collision-007_CAF33A06.wem</CachePath>
+				</File>
+				<File Id="523930646" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turning_Grounded.wav</ShortName>
+					<CachePath>SFX/Turning_Grounded_0762CC47.wem</CachePath>
 				</File>
 				<File Id="524160278" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_Bridge\RP_M_DOWN THE POWER ROAD_P3_M002_Bridge_DRUMS_164.wav</ShortName>
@@ -1010,6 +1026,10 @@
 					<ShortName>Score_Up\Score_Up-008.wav</ShortName>
 					<CachePath>SFX/Score_Up/Score_Up-008_D8C07C79.wem</CachePath>
 				</File>
+				<File Id="631790069" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-003.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-003_7EF64299.wem</CachePath>
+				</File>
 				<File Id="634612713" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P4\RP_M_DOWN THE POWER ROAD_P4_STEMS\P4_A\RP_M_DOWN THE POWER ROAD_P4_A_Synth Bass 2_164.wav</ShortName>
 					<Path>Media/634612713.wem</Path>
@@ -1064,7 +1084,7 @@
 				</File>
 				<File Id="685818048" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Doppler.wav</ShortName>
-					<CachePath>SFX/Doppler_4CB9C3BE.wem</CachePath>
+					<CachePath>SFX/Doppler_B229ECB4.wem</CachePath>
 				</File>
 				<File Id="692331253" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P2\RP_M_DOWN THE POWER ROAD_P2_M002_STEMS\P2_A2\RP_M_DOWN THE POWER ROAD_P2_M002_A2_Guitar LEAD_164.wav</ShortName>
@@ -1264,6 +1284,10 @@
 					<ShortName>Hit_ByPunch_V3-002.wav</ShortName>
 					<CachePath>SFX/Hit_ByPunch_V3-002_2AD929D0.wem</CachePath>
 				</File>
+				<File Id="874912290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Derapage_v1.wav</ShortName>
+					<CachePath>SFX/Derapage_v1_4903E991.wem</CachePath>
+				</File>
 				<File Id="875882344" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A\RP_M_DOWN THE POWER ROAD_P3_M002_A_Guitar_164.wav</ShortName>
 					<Path>Media/875882344.wem</Path>
@@ -1337,6 +1361,10 @@
 				<File Id="932970665" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-004.wav</ShortName>
 					<CachePath>SFX/Punch_Move-004_D8C07C79.wem</CachePath>
+				</File>
+				<File Id="935073877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Road.wav</ShortName>
+					<CachePath>SFX/Road_0762CC47.wem</CachePath>
 				</File>
 				<File Id="944546153" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_A_Guitar_164.wav</ShortName>
@@ -1460,6 +1488,10 @@
 					<CachePath>SFX/P3/RP_M_DOWN THE POWER ROAD_P3_M002_STEMS/P3_A/RP_M_DOWN THE POWER ROAD_P3_M002_A_Drum Fill_164_0762CC47.wem</CachePath>
 					<PrefetchSize>777</PrefetchSize>
 				</File>
+				<File Id="1053059621" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RP_GettingUp-002.wav</ShortName>
+					<CachePath>SFX/RP_GettingUp-002_FE26C8DF.wem</CachePath>
+				</File>
 				<File Id="1055165452" Language="SFX" Streaming="true" Location="Memory">
 					<ShortName>P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A3\RP_M_DOWN THE POWER ROAD_P3_M002_A3_Synth Bass 2_164.wav</ShortName>
 					<Path>Media/1055165452.wem</Path>
@@ -1511,6 +1543,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="3175049353" Name="AMB_Fall" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2469751798" Name="AMB_Kill" DurationType="OneShot" DurationMin="2.6516263" DurationMax="4.502922">
 					<MediaRefs>
 						<MediaRef Id="93796985"/>
@@ -1907,8 +1940,6 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1719170495" Name="Derapage_Start" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="3605871109" Name="Derapage_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2862969430" Name="Engine_Start" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -1959,48 +1990,60 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -2087,48 +2130,60 @@
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="101842239"/>
+								<MediaRef Id="102955077"/>
 								<MediaRef Id="146118369"/>
 								<MediaRef Id="222475351"/>
 								<MediaRef Id="398677519"/>
 								<MediaRef Id="457315114"/>
 								<MediaRef Id="503999046"/>
+								<MediaRef Id="523930646"/>
 								<MediaRef Id="587562894"/>
+								<MediaRef Id="935073877"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -3083,6 +3138,74 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="3687251531" Name="setplayernumber" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2955095029" Name="Skid_Start" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="418444728"/>
+								<MediaRef Id="874912290"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="418444728"/>
+								<MediaRef Id="874912290"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="418444728"/>
+								<MediaRef Id="874912290"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="418444728"/>
+								<MediaRef Id="874912290"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1047898967" Name="Skid_Stop" DurationType="OneShot" DurationMin="0.5213504" DurationMax="0.554979">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194255"/>
+							<MediaRefs>
+								<MediaRef Id="505768196"/>
+								<MediaRef Id="631790069"/>
+								<MediaRef Id="1053059621"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194254"/>
+							<MediaRefs>
+								<MediaRef Id="505768196"/>
+								<MediaRef Id="631790069"/>
+								<MediaRef Id="1053059621"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194249"/>
+							<MediaRefs>
+								<MediaRef Id="505768196"/>
+								<MediaRef Id="631790069"/>
+								<MediaRef Id="1053059621"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1069431850" Id="1635194252" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="505768196"/>
+								<MediaRef Id="631790069"/>
+								<MediaRef Id="1053059621"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3157003241" Name="test" DurationType="OneShot" DurationMin="1.9143226" DurationMax="1.9143226">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -3166,5 +3289,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3F179FDA-C71F-2AF6-4872-4585F4F90945}</FileHash>
+	<FileHash>{CA43FA96-44C4-5E94-073B-0A30088B4142}</FileHash>
 </SoundBanksInfo>

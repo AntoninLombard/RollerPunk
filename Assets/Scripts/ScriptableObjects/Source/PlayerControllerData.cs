@@ -8,10 +8,17 @@ public class PlayerControllerData : ScriptableObject
     [Header("DRIVING VALUES")]
     public float maxSpeed;
     public float forwardAccel = 0;
-    public float turningRate = 0;
+    public float minTurningRate = 0;
+    public float maxTurningRate = 0;
     public float gravityStrength = 0.0f;
     public float gripAccel = 0.0f;
-    [Range(0.0f,1.0f)] public float inertiaRatio = 0.0f;
+    public float boostMaxSpeed = 0.0f;
+    public float boostAccel = 0.0f;
+    public float boostDuration = 0.0f;
+    public float driftAccel;
+    public float driftTurnOffset;
+    public float driftTurnRate;
+    public float driftDurationForBoost;
     [Range(0.0f,1.0f)] public float brakingRatio = 0;
     [Range(0.0f,1.0f)] public float drag;
     [Range(0.0f,1.0f)] public float airDrag;
@@ -21,9 +28,12 @@ public class PlayerControllerData : ScriptableObject
     [Header("COMBAT VALUES")]
     public float punchWindUp;
     public float punchDamageWindow;
+    public float tauntDuration;
+    public float punchHoldDuration;
     public float parryWindow;
     public float counterWindow;
-    public float actionsCooldown;
+    public float punchCooldown;
+    public float parryCooldown;
     public float stunDuration;
     public float invincibilityDuration;
 
@@ -50,12 +60,15 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event punchTauntSound;
     public AK.Wwise.Event gettingUpSound;
     public AK.Wwise.Event burstSound;
+    public AK.Wwise.Event driftStartSound;
+    public AK.Wwise.Event driftStopSound;
     public AK.Wwise.Event respawnSound;
     public AK.Wwise.Event brakingSound;
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;
     public AK.Wwise.RTPC forceCollision;
+    public AK.Wwise.RTPC grounded;
 
 
     [Header("ATTACK COLLIDERS")]
