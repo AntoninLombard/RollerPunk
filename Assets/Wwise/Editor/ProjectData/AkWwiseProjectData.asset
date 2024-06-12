@@ -757,7 +757,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 20433e81f3b756498390487b3b15a687
     GuidInternal: 
-    m_lastTime: -8584834818956875209
+    m_lastTime: -8584834208915002085
     List:
     - name: Main
       guid: 892c147843790d419d58b99f74b8ec6a
@@ -866,7 +866,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Ambiances
     guid: 11d81020dfd6864591f72eeb33912022
     GuidInternal: 
-    m_lastTime: -8584834837874618106
+    m_lastTime: -8584834250850157389
     List:
     - name: AMB_Ball_Steal
       guid: 6400864745414841b4a0d7a10c3262ea
@@ -1385,25 +1385,8 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584835747204506849
+    m_lastTime: -8584834206536330862
     List:
-    - name: Join
-      guid: 8909090ff5717d459271454105028381
-      id: 3695193445
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: RP_UI
-        ObjectType: 12
-        guid: 645774c9e94d1f45a20173b1b3b89490
-      - ElementName: Join
-        ObjectType: 3
-        guid: 8909090ff5717d459271454105028381
-      Path: Events\RP_UI\Join
-      maxAttenuation: 0
-      maxDuration: 5.3702884
-      minDuration: 1.8254901
     - name: Score_Up
       guid: 0b29a759e1f60847b0ec88a663f64cfc
       id: 3248278131
@@ -1438,6 +1421,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.12660417
       minDuration: 0.12660417
+    - name: UI_Cancel_Join
+      guid: 1d5634419c02dc48adcd52673042c12f
+      id: 716650455
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_UI
+        ObjectType: 12
+        guid: 645774c9e94d1f45a20173b1b3b89490
+      - ElementName: UI_Cancel_Join
+        ObjectType: 3
+        guid: 1d5634419c02dc48adcd52673042c12f
+      Path: Events\RP_UI\UI_Cancel_Join
+      maxAttenuation: 0
+      maxDuration: 5.3702884
+      minDuration: 4.282453
     - name: UI_Hover
       guid: 6e768f2bc9c4134b930ee0a13f0f8d72
       id: 2118900976
@@ -1472,6 +1472,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.044
       minDuration: 0.044
+    - name: UI_Join
+      guid: 8909090ff5717d459271454105028381
+      id: 4252773102
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_UI
+        ObjectType: 12
+        guid: 645774c9e94d1f45a20173b1b3b89490
+      - ElementName: UI_Join
+        ObjectType: 3
+        guid: 8909090ff5717d459271454105028381
+      Path: Events\RP_UI\UI_Join
+      maxAttenuation: 0
+      maxDuration: 2.234617
+      minDuration: 1.8254901
+    - name: UI_Save_close
+      guid: 129205a07febbd4faed5b25f47ca3135
+      id: 78821808
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_UI
+        ObjectType: 12
+        guid: 645774c9e94d1f45a20173b1b3b89490
+      - ElementName: UI_Save_close
+        ObjectType: 3
+        guid: 129205a07febbd4faed5b25f47ca3135
+      Path: Events\RP_UI\UI_Save_close
+      maxAttenuation: 0
+      maxDuration: 0.35616666
+      minDuration: 0.35616666
     - name: UI_Select
       guid: 6989d29919fb7240a238f60a0c960870
       id: 2774129122
@@ -1489,6 +1523,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.10916667
       minDuration: 0.10916667
+    - name: UI_Start_Button
+      guid: 58bca8571111244aa0cfaf5857227491
+      id: 2467170825
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_UI
+        ObjectType: 12
+        guid: 645774c9e94d1f45a20173b1b3b89490
+      - ElementName: UI_Start_Button
+        ObjectType: 3
+        guid: 58bca8571111244aa0cfaf5857227491
+      Path: Events\RP_UI\UI_Start_Button
+      maxAttenuation: 0
+      maxDuration: 2.5727785
+      minDuration: 2.5727785
   - PhysicalPath: Events\RP_Vehicule.wwu
     PathAndIcons:
     - ElementName: Events
@@ -2580,7 +2631,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 050000000700000011000000220000002b0000002c0000002e00000038000000390000003a00000042000000430000005a0000007d0000007f000000800000008200000097000000990000009a0000009c000000
+  ExpandedFileSystemItemIds: 0200000005000000070000001100000022000000270000002b0000002c00000038000000390000003a0000003f0000004000000042000000430000004900000055000000560000005a0000007d0000007f000000800000008200000097000000990000009a0000009c000000
   ExpandedWaapiItemIds: 05000000110000002c00000042000000430000005a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

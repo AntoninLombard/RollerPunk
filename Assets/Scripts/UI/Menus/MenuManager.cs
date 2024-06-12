@@ -83,6 +83,7 @@ public class MenuManager : MonoBehaviour
 
         if (count == players.Count)
         {
+            AkSoundEngine.SetState("Menu_Music", "None");
             SceneManager.LoadScene("Scenes/TestScenes/LD/Track_01",LoadSceneMode.Single);
         }
     }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a92dbbcb384b67498a88df29f54d9b0, type: 3}
+  m_Name: 57A8BC58-1111-4A24-A0CF-AF5857227491
+  m_EditorClassIdentifier: 
+  objectName: UI_Start_Button
+  id: 2467170825
+  guid: 57A8BC58-1111-4A24-A0CF-AF5857227491
