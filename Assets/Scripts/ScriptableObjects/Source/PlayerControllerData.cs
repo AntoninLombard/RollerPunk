@@ -19,6 +19,8 @@ public class PlayerControllerData : ScriptableObject
     public float driftTurnOffset;
     public float driftTurnRate;
     public float driftDurationForBoost;
+    public float rubberBandingSpeed;
+    public int rubberBandingRange;
     [Range(0.0f,1.0f)] public float brakingRatio = 0;
     [Range(0.0f,1.0f)] public float drag;
     [Range(0.0f,1.0f)] public float airDrag;

@@ -274,7 +274,18 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void StartWaitForCountdown()
+    public void CompareRespawnPoints(RespawnPoint respawnPoint, Player player)
+    {
+        int indexA = respawnpoints.IndexOf(respawnPoint);
+        int indexB = respawnpoints.IndexOf(lastRespawnPoint);
+        int N = respawnpoints.Count;
+        int distanceAB = (indexA - indexB + N) % N;
+        int distanceBA = (indexB - indexA + N) % N;
+        player.controller.Rubberbanding(Mathf.Min(distanceAB, distanceBA));
+    }
+
+
+void StartWaitForCountdown()
     {
         StartCoroutine(WaitForCountdown());
     }
