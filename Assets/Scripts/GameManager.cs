@@ -6,6 +6,7 @@ using AK.Wwise;
 using JetBrains.Annotations;
 using Random = UnityEngine.Random;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 
 
 public class GameManager : MonoBehaviour
@@ -14,10 +15,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public GameData gameData;
     [SerializeField] private ScoringData scoring;
-    
-    
+
+
     [Header("Players")]
-    [SerializeField] private Dictionary<Player,int> players = new Dictionary<Player, int>();
+    [field: SerializeField] private Dictionary<Player,int> players = new Dictionary<Player, int>();
     [SerializeField] private int nbPlayer;
 
     [Header("Gameplay")] 
@@ -57,18 +58,14 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         else
         {
             Destroy(this);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        
         currentMultiplier = 1;
         lastRespawnPoint = raceStart;
         gameData.crowdStart.Post(gameObject);
@@ -78,7 +75,25 @@ public class GameManager : MonoBehaviour
         startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[0]);
         startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[0]);
         startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
+        
+        StartWaitForCountdown();
     }
+    //
+    // // Start is called before the first frame update
+    // void Start()
+    // {
+    //     currentMultiplier = 1;
+    //     lastRespawnPoint = raceStart;
+    //     gameData.crowdStart.Post(gameObject);
+    //     gameData.crowdWaiting.Post(gameObject);
+    //     startLightsMaterial = startLights.GetComponent<MeshRenderer>()?.materials[1];
+    //     
+    //     startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[0]);
+    //     startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[0]);
+    //     startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
+    //
+    //     StartWaitForCountdown();
+    // }
 
     // Update is called once per frame
     void Update()
@@ -258,8 +273,11 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    
-    
+
+    void StartWaitForCountdown()
+    {
+        StartCoroutine(WaitForCountdown());
+    }
     
     
     #region COROUTINES
@@ -322,5 +340,46 @@ public class GameManager : MonoBehaviour
         gameData.musicStart.Post(gameObject);
         gameData.crowdRaceStart.Post(gameObject);
     }
+
+    IEnumerator WaitForCountdown()
+    {
+        yield return new WaitForSeconds(5);
+        StartCoroutine(StartCountdown());
+    }
     #endregion
+
+    public void SpawnPlayer(PlayerInput playerInput)
+    {
+        GameObject playerGameObject = Instantiate(gameData.playerPrefab,null);
+        Player player = playerGameObject.GetComponent<Player>();
+        player.input.SetInput(playerInput);
+        players.Add(player,0);
+        int layer = (int)Math.Log(player.data.playerLayer[nbPlayer], 2);
+        player.camera.gameObject.layer = layer;
+        foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
+            player.camera.cullingMask -= player.camera.cullingMask & mask;
+        player.setPlayerID(nbPlayer);
+        player.number = nbPlayer;
+        player.color = gameData.playerColors[nbPlayer];
+        playerNumberRTPC.SetGlobalValue(nbPlayer);
+        nbPlayer++;
+        player.Init();
+        RespawnPlayer(player);
+        player.listener.SetVolumeOffset(nbPlayer);
+    }
+
+
+    public void SplitScreenCamera()
+    {
+        int i = 0;
+        foreach (Player player in players.Keys)
+        {
+            float offsetX = i % 2 * 0.5f;
+            float offsetY = i > 1 ? 0f : 0.5f;
+            float sizeX = 0.5f;
+            float sizeY = nbPlayer >= 2 ? 0.5f : 0f;
+            player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
+            i++;
+        }
+    }
 }

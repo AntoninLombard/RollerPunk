@@ -60,7 +60,7 @@ public class UI_Animator : MonoBehaviour
                 else
                 {
                     rectTransform.anchoredPosition = new Vector2(panelXCoordinate, panelDestination);
-                    Debug.Log("lmao even");
+//                    Debug.Log("lmao even");
                     CancelUIAnimations();
                 }
             }
