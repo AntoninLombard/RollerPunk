@@ -18,13 +18,15 @@ MonoBehaviour:
   maxTurningRate: 20
   gravityStrength: 20
   gripAccel: 25
-  boostMaxSpeed: 1.4
+  boostMaxSpeed: 50
   boostAccel: 100
   boostDuration: 1
   driftAccel: 45
-  driftTurnOffset: 0.3
+  driftTurnOffset: 2
   driftTurnRate: 16
   driftDurationForBoost: 1
+  rubberBandingSpeed: 12
+  rubberBandingRange: 7
   brakingRatio: 0.95
   drag: 0.825
   airDrag: 0.09330001
