@@ -57,8 +57,7 @@ public class PlayerCombat : MonoBehaviour
     
     
     
-    private static readonly int ParrySuccessR = Animator.StringToHash("ParrySuccess.R");
-    private static readonly int ParrySuccessL = Animator.StringToHash("ParrySuccess.L");
+    private static readonly int ParrySuccess = Animator.StringToHash("ParrySuccess");
     private static readonly int Parry = Animator.StringToHash("Parry");
     private static readonly int Taunt = Animator.StringToHash("Taunt");
     private static readonly int Stunned = Animator.StringToHash("Stunned");
@@ -440,15 +439,7 @@ public class PlayerCombat : MonoBehaviour
     
     void parry(Player source)
     {
-        int  dir = sourceDirection(source.character);
-        if (dir > 0) // RIGHT
-        {
-            player.anime.animator.SetTrigger(ParrySuccessR);
-        }
-        else if(dir < 0) // LEFT
-        {
-            player.anime.animator.SetTrigger(ParrySuccessL);
-        }
+        player.anime.animator.SetTrigger(ParrySuccess);
         ParticleSystem.MainModule particleSystemMain = particleSystem.main;
         particleSystemMain.startColor = Color.green;
         particleSystem.Play();
@@ -471,13 +462,13 @@ public class PlayerCombat : MonoBehaviour
         
     }
 
-    int sourceDirection(Transform source)
-    {
-        Vector3 dir = source.position - player.character.position;
-        float value = Vector3.Dot(player.character.right, dir);
-        
-        return value > 0 ?  1 : -1;
-    }
+    // int sourceDirection(Transform source)
+    // {
+    //     Vector3 dir = source.position - player.character.position;
+    //     float value = Vector3.Dot(player.character.right, dir);
+    //     
+    //     return value > 0 ?  1 : -1;
+    // }
 
 
     public void ToggleInvincibility(bool isInvincible)
