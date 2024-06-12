@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using AK.Wwise;
 using JetBrains.Annotations;
@@ -71,11 +72,9 @@ public class GameManager : MonoBehaviour
         gameData.crowdStart.Post(gameObject);
         gameData.crowdWaiting.Post(gameObject);
         startLightsMaterial = startLights.GetComponent<MeshRenderer>()?.materials[1];
-        
         startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[0]);
         startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[0]);
         startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
-        
         StartWaitForCountdown();
     }
     //
@@ -385,10 +384,21 @@ void StartWaitForCountdown()
         int i = 0;
         foreach (Player player in players.Keys)
         {
-            float offsetX = i % 2 * 0.5f;
-            float offsetY = i > 1 ? 0f : 0.5f;
-            float sizeX = 0.5f;
-            float sizeY = nbPlayer >= 2 ? 0.5f : 0f;
+            float offsetX, offsetY, sizeX, sizeY;
+            if (nbPlayer == 1)
+            {
+                offsetX = 0;
+                offsetY = 0;
+                sizeX = 1;
+                sizeY = 1;
+            }
+            else
+            {
+                offsetX = i % 2 * 0.5f;
+                offsetY = i > 1 ? 0f : 0.5f;
+                sizeX = 0.5f;
+                sizeY = nbPlayer >= 2 ? 0.5f : 1f;
+            }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
             i++;
         }

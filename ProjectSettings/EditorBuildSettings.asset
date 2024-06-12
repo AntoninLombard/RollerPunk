@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/TestScenes/UITest.unity
+    guid: ec4c4fcc553d3de4993f97b0af9b791f
+  - enabled: 1
     path: Assets/Scenes/TestScenes/LD/Track_01 greyblock.unity
     guid: 2dd7175e11aebd34ea48d6e6085af9f5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TestScenes/LD/Track_02.unity
     guid: be1f00a009fad3840b6d9b0c3a9296e3
   - enabled: 1

@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu]
 public class GameData : ScriptableObject
 {
     [Header("GAME VALUES")]
     public GameObject playerPrefab;
-    public List<Color> playerColors;
+    [ColorUsage(true, true)] public List<Color> playerColors;
+    [ColorUsage(true, true)] public Color ballEmissiveColor;
+    public List<Object> tracks;
     
     [Header("COUNTDOWN")]
     [ColorUsage(true, true)]

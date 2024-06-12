@@ -313,7 +313,7 @@ MonoBehaviour:
   rb: {fileID: 6226094325196750717}
   physicCollider: {fileID: 2018905560708641335}
   triggerCollider: {fileID: 233232843590237667}
-  speed: 0
+  animator: {fileID: 3315617846716271239}
 --- !u!54 &6226094325196750717
 Rigidbody:
   m_ObjectHideFlags: 0
