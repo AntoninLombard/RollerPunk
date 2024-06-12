@@ -160,6 +160,7 @@ namespace AK
         static const AkUniqueID BALL_DUCK = 3218320494U;
         static const AkUniqueID CROWD_DUCKING = 2376406340U;
         static const AkUniqueID DIRECTION = 16764168U;
+        static const AkUniqueID DOPPLER = 4247512087U;
         static const AkUniqueID ENVELOPPE_P1 = 256121077U;
         static const AkUniqueID ENVELOPPE_P2 = 256121078U;
         static const AkUniqueID ENVELOPPE_P3 = 256121079U;

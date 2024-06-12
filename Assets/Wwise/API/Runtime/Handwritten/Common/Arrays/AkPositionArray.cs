@@ -21,8 +21,9 @@ public class AkPositionArray : System.IDisposable
 	public System.IntPtr m_Buffer;
 	private System.IntPtr m_Current;
 	private uint m_MaxCount;
+    private int count;
 
-	public AkPositionArray(uint in_Count)
+    public AkPositionArray(uint in_Count)
 	{
 		m_Buffer = System.Runtime.InteropServices.Marshal.AllocHGlobal((int) in_Count * (sizeof(float) * 6 + sizeof(double) * 3));
 		m_Current = m_Buffer;
@@ -30,7 +31,12 @@ public class AkPositionArray : System.IDisposable
 		Count = 0;
 	}
 
-	public uint Count { get; private set; }
+    public AkPositionArray(int count)
+    {
+        this.count = count;
+    }
+
+    public uint Count { get; private set; }
 
 	public void Dispose()
 	{

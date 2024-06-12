@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DDF0751A-ECCD-AA4F-B74E-3FD17039E4DA}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2DA382CE-1493-355C-066C-22D2B1C85CB5}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -132,6 +132,7 @@
 				<GameParameter Id="3991942870" Name="Music"/>
 				<GameParameter Id="4056684167" Name="Master"/>
 				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+				<GameParameter Id="4247512087" Name="Doppler"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="676404222" Name="Menu_Music_State">
@@ -304,7 +305,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{47AB384F-032A-2BF4-0635-18144891CE58}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{DB68A7D0-8A9D-E321-73BF-7857DDB940AF}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -1871,7 +1872,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="3207324726" Name="AMB_Fire" DurationType="Infinite">
+				<Event Id="3207324726" Name="AMB_Fire" MaxAttenuation="50" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="633649452"/>
 					</MediaRefs>
@@ -3847,6 +3848,7 @@
 				<GameParameter Id="2398231425" Name="Score"/>
 				<GameParameter Id="2907122923" Name="Grounded"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
+				<GameParameter Id="4247512087" Name="Doppler"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="2322231365" Name="Gameplay_Music">
@@ -3880,5 +3882,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8AB5C761-B389-21FB-4A4A-4AC90FEC66E4}</FileHash>
+	<FileHash>{E926D4F9-289C-A12A-0F5B-1E5F72ABB80E}</FileHash>
 </SoundBanksInfo>
