@@ -395,9 +395,9 @@ void StartWaitForCountdown()
             else
             {
                 offsetX = i % 2 * 0.5f;
-                offsetY = i > 1 ? 0f : 0.5f;
+                offsetY = i <= 1 ? 0f : 0.5f;
                 sizeX = 0.5f;
-                sizeY = nbPlayer >= 2 ? 0.5f : 1f;
+                sizeY = nbPlayer > 2 ? 0.5f : 1f;
             }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
             i++;

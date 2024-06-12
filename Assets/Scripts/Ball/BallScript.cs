@@ -9,7 +9,7 @@ public class BallScript : MonoBehaviour
     [SerializeField] private SphereCollider physicCollider;
     [SerializeField] private SphereCollider triggerCollider;
     [SerializeField] private Animator animator;
-
+    [SerializeField] private List<Light> lights;
     private Material material;
     //[SerializeField] private float speed;
     
@@ -40,6 +40,10 @@ public class BallScript : MonoBehaviour
 
     public void SetEmissiveColor(Color color)
     {
+        foreach (var light in lights)
+        {
+            light.color = color;
+        }
         material.SetColor(EmissionColor,color);
     }
 
