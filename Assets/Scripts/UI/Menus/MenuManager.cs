@@ -11,7 +11,9 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     static public MenuManager Instance;
-    
+
+    [SerializeField] private GameData gameData;
+    [SerializeField] private int trackNb;
     
     [SerializeField] private PlayerInputManager inputManager;
     [SerializeField] private int minNbPlayer;
@@ -83,8 +85,7 @@ public class MenuManager : MonoBehaviour
 
         if (count == players.Count)
         {
-            AkSoundEngine.SetState("Menu_Music", "None");
-            SceneManager.LoadScene("Scenes/TestScenes/LD/Track_01",LoadSceneMode.Single);
+            SceneManager.LoadScene(gameData.tracks[trackNb].name,LoadSceneMode.Single);
         }
     }
 }

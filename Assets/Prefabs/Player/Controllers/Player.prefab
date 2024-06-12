@@ -372,6 +372,7 @@ MonoBehaviour:
   maxSpeed: 0
   driftInputValue: 0
   speedRatio: 0
+  rubberBanding: 0
   rb: {fileID: 8963657871566459159}
   <groundRange>k__BackingField: 0.6
   groundNormal: {x: 0, y: 0, z: 0}

@@ -22,9 +22,10 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float driftInputValue = 0;
     [SerializeField] private float speedRatio;
-    
+    [SerializeField] private float rubberBanding;
 
-    
+
+
     [Header("CHARACTER PARTS")]
     [SerializeField] public Rigidbody rb;
     
@@ -380,13 +381,22 @@ public class PlayerController2 : MonoBehaviour
     {
         controllerData.burstSound.Post(gameObject);
         isBoosting = true;
-        maxSpeed =  controllerData.boostMaxSpeed;
+        maxSpeed = controllerData.boostMaxSpeed + rubberBanding;
         yield return new WaitForSeconds(controllerData.boostDuration);
         isBoosting = false;
-        maxSpeed = controllerData.maxSpeed;
+        maxSpeed = controllerData.maxSpeed + rubberBanding;
     }
-    
-    
+
+
+    public void Rubberbanding(int distanceToBall)
+    {
+        int rubberDistance = Mathf.Clamp(distanceToBall, 0, controllerData.rubberBandingRange);
+        float rubberFactor = controllerData.rubberBandingSpeed / controllerData.rubberBandingRange;
+        rubberBanding = rubberFactor * rubberDistance;
+        maxSpeed = controllerData.maxSpeed + rubberBanding;
+    }
+
+
     #endregion
-    
+
 }

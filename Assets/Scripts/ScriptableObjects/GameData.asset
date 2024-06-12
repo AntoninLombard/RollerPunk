@@ -19,11 +19,19 @@ MonoBehaviour:
   - {r: 0.3726415, g: 1, b: 0.66391516, a: 1}
   - {r: 1, g: 0.7863391, b: 0.15566039, a: 1}
   - {r: 0.2078431, g: 0.25158042, b: 0.99607843, a: 1}
+  tracks:
+  - {fileID: 102900000, guid: 2dd7175e11aebd34ea48d6e6085af9f5, type: 3}
+  - {fileID: 102900000, guid: be1f00a009fad3840b6d9b0c3a9296e3, type: 3}
+  - {fileID: 102900000, guid: 431233c04393a2045b8a41628dc7a85c, type: 3}
   countDownColors:
   - {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
   - {r: 0.17254904, g: 3.13853, b: 3.3254902, a: 1}
   - {r: 2.8908849, g: 0.25153932, b: 0, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  menuMusicStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   countdownSound:
     idInternal: 0
     valueGuidInternal: 

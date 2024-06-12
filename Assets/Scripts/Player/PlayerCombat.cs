@@ -152,8 +152,8 @@ public class PlayerCombat : MonoBehaviour
         }
         isHoldingBall = true;
         GameManager.Instance.ball.Toggle(false);
-        GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
-        GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
+        GameManager.Instance.ball.SetEmissiveColor(player.color);
+        GameManager.Instance.ball.AttachTo(ballAnchorPoint);
         player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.gameData.musicState[player.number].SetValue();
         GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
@@ -405,7 +405,8 @@ public class PlayerCombat : MonoBehaviour
     {
         isHoldingBall = false;
         GameManager.Instance.ball.Toggle(true);
-        GameManager.Instance.ball.transform.parent = null;
+        GameManager.Instance.ball.Detach();
+        GameManager.Instance.ball.SetEmissiveColor(GameManager.Instance.gameData.ballEmissiveColor);
     }
 
     void punchHit(Player source)
