@@ -705,7 +705,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.08077394
+        functionName: driftStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a2961c1c8b161bc4ca15525106fe9ef7,
+          type: 3}
+        floatParameter: 0
+        intParameter: -1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -734,7 +742,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.25460687
+        functionName: driftStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a2961c1c8b161bc4ca15525106fe9ef7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -792,7 +808,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.08015972
+        functionName: driftStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a2961c1c8b161bc4ca15525106fe9ef7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -879,7 +903,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.16861181
+        functionName: driftStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a2961c1c8b161bc4ca15525106fe9ef7,
+          type: 3}
+        floatParameter: 0
+        intParameter: -1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -937,7 +969,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.25287187
+        functionName: ParrySuccess
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a2961c1c8b161bc4ca15525106fe9ef7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
