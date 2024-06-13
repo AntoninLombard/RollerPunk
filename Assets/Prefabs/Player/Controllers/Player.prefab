@@ -1929,6 +1929,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 97.93976
       objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Name
+      value: Dark Color
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Value.w
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Value.x
+      value: 0.045006454
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Value.z
+      value: 0.021985658
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7096608221061544528, guid: 188551011c7b90243b1c6c7358411fed,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
