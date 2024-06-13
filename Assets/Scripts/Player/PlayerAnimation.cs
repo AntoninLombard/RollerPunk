@@ -40,8 +40,8 @@ public class PlayerAnimation : MonoBehaviour
 
     public void SetColor(Color color)
     {
-        punchLVFX.SetVector4("Color",color);
-        punchRVFX.SetVector4("Color",color);
+        punchLVFX.SetVector4("Main Color",color);
+        punchRVFX.SetVector4("Main Color",color);
         parryLVFX.SetVector4("Main Color",color);
         parryRVFX.SetVector4("Main Color",color);
         counterVFX.SetVector4("Color",color);
