@@ -305,7 +305,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{DB68A7D0-8A9D-E321-73BF-7857DDB940AF}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{192FEFD8-CC68-421B-6177-5B1F6E75293C}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -784,6 +784,10 @@
 					<Path>Media/334493050.wem</Path>
 					<CachePath>SFX/P2/RP_M_DOWN THE POWER ROAD_P2_M002_STEMS/P2_A/RP_M_DOWN THE POWER ROAD_P2_M002_A_SNARE_164_073B4D0C.wem</CachePath>
 					<PrefetchSize>4821</PrefetchSize>
+				</File>
+				<File Id="339045206" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hachoir_Short.wav</ShortName>
+					<CachePath>SFX/Hachoir_Short_755F56E2.wem</CachePath>
 				</File>
 				<File Id="344242536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Doppler.wav</ShortName>
@@ -2129,8 +2133,9 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="612075679" Name="Checkpoint" DurationType="OneShot" DurationMin="5.3354096" DurationMax="5.3354096">
+				<Event Id="612075679" Name="Checkpoint" DurationType="OneShot" DurationMin="6.424375" DurationMax="6.424375">
 					<MediaRefs>
+						<MediaRef Id="339045206"/>
 						<MediaRef Id="651310878"/>
 						<MediaRef Id="952123787"/>
 					</MediaRefs>
@@ -3882,5 +3887,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7F1DAA3F-58FD-AD92-B424-2F0674A4ECE5}</FileHash>
+	<FileHash>{F94EB169-2B3A-968E-C4FD-61B38A8209D8}</FileHash>
 </SoundBanksInfo>
