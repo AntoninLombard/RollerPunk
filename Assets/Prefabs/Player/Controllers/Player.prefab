@@ -271,7 +271,6 @@ GameObject:
   - component: {fileID: 3216370738416788856}
   - component: {fileID: 3556420744916691152}
   - component: {fileID: 8586351315411225785}
-  - component: {fileID: 1435602356178349144}
   - component: {fileID: 2055838535525329247}
   m_Layer: 0
   m_Name: Player
@@ -497,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2075873140783189414}
-  playerInput: {fileID: 1435602356178349144}
+  playerInput: {fileID: 0}
   inputData: {fileID: 11400000, guid: 8b2db3afe690f364e8a3856fce956d94, type: 2}
   <steerInput>k__BackingField: 0
   <driveInput>k__BackingField: 0
@@ -507,117 +506,6 @@ MonoBehaviour:
   slideInput: 0
   fortifyInput: 0
   driftInput: 0
---- !u!114 &1435602356178349144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3059947211623483126}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3e4b1d94-82f2-4749-ac70-c8e6deb2ca15
-    m_ActionName: Player/Steer[/XInputControllerWindows/leftStick/x]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8ef0be89-1bf6-4b3e-85ac-d31d45404b06
-    m_ActionName: Player/Drive[/XInputControllerWindows/leftStick/y]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4a7f7a88-5f2b-4b4f-a155-067be0e201c1
-    m_ActionName: Menu/Join[/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8586351315411225785}
-        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
-        m_MethodName: onPunch
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9d35ac15-4fc7-4385-8d1a-d682c8858f27
-    m_ActionName: Driving/Punch[/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8586351315411225785}
-        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
-        m_MethodName: onParry
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb
-    m_ActionName: Driving/Fortify[/XInputControllerWindows/buttonWest]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cef94fcb-876d-42f1-9a46-824a7a771772
-    m_ActionName: Driving/Reverse[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8586351315411225785}
-        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
-        m_MethodName: onReady
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: fb45708b-8a83-43e2-b9a5-1923f999cc1d
-    m_ActionName: Driving/Ready[/XInputControllerWindows/start,/XInputControllerWindows1/start]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8586351315411225785}
-        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
-        m_MethodName: onDrift
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 902a9632-19a6-4100-b9b3-a265a1b8bcc1
-    m_ActionName: Driving/Drift[/XInputControllerWindows/buttonWest]
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: Driving
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 7847891520487656286}
 --- !u!114 &2055838535525329247
 MonoBehaviour:
   m_ObjectHideFlags: 0

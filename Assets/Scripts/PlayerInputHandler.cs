@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-   [SerializeField] private List<PlayerInput> playerInputs;
+   [SerializeField] private List<PlayerInstance> players;
    
    private void Awake()
    {
@@ -17,19 +17,37 @@ public class PlayerInputHandler : MonoBehaviour
 
    public void OnPlayerJoin(PlayerInput playerInput)
    {
-      DontDestroyOnLoad(playerInput);
-      playerInputs.Add(playerInput);
+      DontDestroyOnLoad(playerInput.gameObject);
+      players.Add(playerInput.GetComponent<PlayerInstance>());
       playerInput.gameObject.transform.parent = transform;
-      //MenuManager.Instance.OnPlayerJoin(playerInput);
+   }
+   
+   public void OnPlayerLeave(PlayerInput playerInput)
+   {
+      players.Remove(playerInput.GetComponent<PlayerInstance>());
+   }
+
+   public void ClearPlayers()
+   {
+      while(transform.childCount > 0)
+      {
+         Transform child = transform.GetChild(0);
+         #if UNITY_EDITOR
+         DestroyImmediate(child.gameObject);
+         #else
+         Destroy(child.gameObject);
+         #endif
+      }
+      players.Clear();
    }
 
    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
    {
       if (scene.name == "UITest")
          return;
-      foreach (var playerInput in playerInputs)
+      foreach (var player in players)
       {
-         GameManager.Instance.SpawnPlayer(playerInput);
+         GameManager.Instance.SpawnPlayer(player.playerData);
       }
 
       GameManager.Instance.SplitScreenCamera();

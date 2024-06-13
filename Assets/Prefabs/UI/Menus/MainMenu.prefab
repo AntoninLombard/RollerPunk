@@ -13879,7 +13879,7 @@ MonoBehaviour:
     type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
     type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!114 &6673568464012533269
@@ -13894,6 +13894,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec764d8e73c4944ea5a09a751267f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 0}
+  trackNb: 0
+  inputHandler: {fileID: 0}
   inputManager: {fileID: 0}
   minNbPlayer: 2
   maxNbPlayer: 4

@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e196630ff361944aafbf020931a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <playerInput>k__BackingField: {fileID: -7191381097531202988}
+  <playerData>k__BackingField:
+    nb: 0
+    input: {fileID: -7191381097531202988}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    isReady: 0
 --- !u!114 &-7191381097531202988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -102,13 +106,13 @@ MonoBehaviour:
     m_ActionName: Driving/Drift[/XInputControllerWindows/leftShoulder,/XInputControllerWindows1/leftShoulder,/XInputControllerWindows2/leftShoulder]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -4142195103062738133}
-        m_TargetAssemblyTypeName: PlayerInstance, Assembly-CSharp
-        m_MethodName: OnReady
+      - m_Target: {fileID: 8721005442414932933}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -116,7 +120,23 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4a7f7a88-5f2b-4b4f-a155-067be0e201c1
     m_ActionName: Menu/Join[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/Keyboard/anyKey]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8721005442414932933}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ae1349be-93db-4820-addc-35ed35a7fb51
+    m_ActionName: Menu/Cancel[/XInputControllerWindows/buttonEast]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Menu
   m_SplitScreenIndex: -1
