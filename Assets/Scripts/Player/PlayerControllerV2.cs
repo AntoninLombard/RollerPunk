@@ -28,6 +28,7 @@ public class PlayerController2 : MonoBehaviour
 
     [Header("CHARACTER PARTS")]
     [SerializeField] public Rigidbody rb;
+    [SerializeField] public Transform wheel;
     
     [field: Header("GROUND DETECTION")]
     [field: SerializeField] [field: Range(0.1f,1.0f)] public float groundRange { get; private set; }
@@ -73,6 +74,8 @@ public class PlayerController2 : MonoBehaviour
         controllerData.direction.SetValue(gameObject, player.input.steerInput);
         
         player.anime.animator.SetBool("AirTime", !isGrounded);
+        
+        UpdateWheel();
         
         isBraking = player.input.brakeInput != 0;
     }
@@ -254,7 +257,7 @@ public class PlayerController2 : MonoBehaviour
 
     Vector3 boost(float time)
     {
-        if (isBoosting)
+        if (isBoosting && isGrounded)
             return player.character.forward * (controllerData.boostAccel * time * controllerData.ballAccelMultiplier);
         return Vector3.zero;
     }
@@ -343,7 +346,7 @@ public class PlayerController2 : MonoBehaviour
                 {
                     player.anime.animator.SetBool("Drift.L", true);
                 } 
-                driftInputValue  = player.input.driveInput;
+                driftInputValue  = Mathf.Max(player.input.driveInput,0.2f);
                 player.data.driftStartSound.Post(gameObject);
             }
         }
@@ -396,6 +399,11 @@ public class PlayerController2 : MonoBehaviour
         maxSpeed = controllerData.maxSpeed + rubberBanding;
     }
 
+
+    void UpdateWheel()
+    { 
+        wheel.RotateAround(wheel.position,wheel.right, -(speed / (2f * Mathf.PI * 0.27f)) * 360f * Time.deltaTime);
+    }
 
     #endregion
 

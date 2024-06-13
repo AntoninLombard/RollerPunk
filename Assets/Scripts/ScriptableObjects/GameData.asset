@@ -19,6 +19,7 @@ MonoBehaviour:
   - {r: 0.3726415, g: 1, b: 0.66391516, a: 1}
   - {r: 1, g: 0.7863391, b: 0.15566039, a: 1}
   - {r: 0.2078431, g: 0.25158042, b: 0.99607843, a: 1}
+  ballEmissiveColor: {r: 3.8490567, g: 3.3652864, b: 0.12709157, a: 1}
   tracks:
   - {fileID: 102900000, guid: 2dd7175e11aebd34ea48d6e6085af9f5, type: 3}
   - {fileID: 102900000, guid: be1f00a009fad3840b6d9b0c3a9296e3, type: 3}
