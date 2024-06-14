@@ -381,7 +381,6 @@ void StartWaitForCountdown()
 
     public void SplitScreenCamera()
     {
-        int i = 0;
         foreach (Player player in players.Keys)
         {
             float offsetX, offsetY, sizeX, sizeY;
@@ -394,13 +393,33 @@ void StartWaitForCountdown()
             }
             else
             {
-                offsetX = i % 2 * 0.5f;
-                offsetY = i <= 1 ? 0f : 0.5f;
+                switch (player.number)
+                {
+                    case 0:
+                        offsetX = 0;
+                        offsetY = 0.5f;
+                        break;
+                    case 1:
+                        offsetX = 0.5f;
+                        offsetY = 0.5f;
+                        break;
+                    case 2:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                    case 3:
+                        offsetX = 0.5f;
+                        offsetY = 0;
+                        break;
+                    default:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                }
                 sizeX = 0.5f;
                 sizeY = nbPlayer > 2 ? 0.5f : 1f;
             }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
-            i++;
         }
     }
 }

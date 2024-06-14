@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private int maxNbPlayer;
     [SerializeField] private int playerNumber;
     [SerializeField] private List<PlayerInstance> players;
-    [SerializeField] private List<UIPlayerBinding> panelBindings;
+    [SerializeField] private Dictionary<PlayerInstance,PlayerPanel> panelBindings;
 
     
     [SerializeField] private UI_Animator mainMenuPanel;
@@ -45,6 +45,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panelBindings = new Dictionary<PlayerInstance, PlayerPanel>();
         PlayerJoinToggle(false);
         if (Instance == null)
         {
@@ -78,28 +79,18 @@ public class MenuManager : MonoBehaviour
 
     public void OnPlayerJoin(PlayerInput input)
     {
-        PlayerPanel playerPanel = null;
-        int i = 0;
-        for(;i < 4;i++)
-        {
-            if (panelBindings.Exists(y => y.panel == playerPanels[i])) continue;
-            playerPanel = playerPanels[i];
-            break;
-        }
-
+        PlayerPanel panel = playerPanels.Except(panelBindings.Values).First();
         PlayerInstance player = input.GetComponent<PlayerInstance>();
         players.Add(player);
         PlayerData data = player.playerData;
-        data.nb = i;
-        data.color = gameData.playerColors[i];
+        data.nb = playerNumber;
+        data.color = gameData.playerColors[playerNumber];
         data.isReady = false;
         player.playerData = data;
         
-        UIPlayerBinding binding = new UIPlayerBinding();
-        binding.player = player;
-        binding.panel = playerPanel;
-        panelBindings.Add(binding);
-        binding.panel.ChangeState(PlayerPanel.PanelState.Joined);
+        panelBindings.Add(player,panel);
+        panel.ChangeState(PlayerPanel.PanelState.Joined);
+        panel.SetColor(player.playerData.color);
         playerNumber++;
     }
 
@@ -112,9 +103,9 @@ public class MenuManager : MonoBehaviour
     {
         PlayerInstance player = playerInput.GetComponent<PlayerInstance>();
         players.Remove(player);
-        UIPlayerBinding binding = panelBindings.Find(x => x.player == player);
-        binding.panel.ChangeState(PlayerPanel.PanelState.Hide);
-        panelBindings.Remove(binding);
+        PlayerPanel panel = panelBindings[player];
+        panel.ChangeState(PlayerPanel.PanelState.Hide);
+        panelBindings.Remove(player);
         if (players.Count == 0)
         {
             CancelPlayerJoin();
@@ -138,6 +129,15 @@ public class MenuManager : MonoBehaviour
     public void OnPlayerReady(PlayerInstance player)
     {
         player.ToggleReady(!player.playerData.isReady);
+        PlayerPanel panel = panelBindings[player];
+        if (player.playerData.isReady)
+        {
+            panel.ChangePrompt(PlayerPanel.PromptState.Waiting);
+        }
+        else
+        {
+            panel.ChangePrompt(PlayerPanel.PromptState.Ready);
+        }
         if (playerNumber < minNbPlayer)
             return;
         int count = 0;
