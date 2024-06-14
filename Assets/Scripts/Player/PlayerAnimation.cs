@@ -14,8 +14,8 @@ public class PlayerAnimation : MonoBehaviour
     [field :SerializeField] public VisualEffect punchLVFX { get; private set; }
     [field :SerializeField] public VisualEffect punchRVFX { get; private set; }
     [field :SerializeField] public VisualEffect shieldVFX { get; private set; }
-    [field :SerializeField] public VisualEffect parryLVFX { get; private set; }
-    [field :SerializeField] public VisualEffect parryRVFX { get; private set; }
+    [field :SerializeField] public VisualEffect parryVFX1 { get; private set; }
+    [field :SerializeField] public VisualEffect parryVFX2 { get; private set; }
     [field :SerializeField] public VisualEffect counterVFX { get; private set; }
     
     
@@ -40,11 +40,11 @@ public class PlayerAnimation : MonoBehaviour
 
     public void SetColor(Color color)
     {
-        punchLVFX.SetVector4("Core Color",color);
-        punchRVFX.SetVector4("Core Color",color);
-        parryLVFX.SetVector4("Main Color",color);
-        parryRVFX.SetVector4("Main Color",color);
-        counterVFX.SetVector4("Color",color);
-        shieldVFX.SetVector4("Color",color);
+        punchLVFX.SetVector4("Main Color",color);
+        punchRVFX.SetVector4("Main Color",color);
+        parryVFX1.SetVector4("Main Color",color);
+        parryVFX2.SetVector4("Main Color",color);
+        counterVFX.SetVector4("Main Color",color);
+        shieldVFX.SetVector4("Main Color",color);
     }
 }

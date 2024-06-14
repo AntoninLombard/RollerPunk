@@ -457,8 +457,8 @@ MonoBehaviour:
   <punchLVFX>k__BackingField: {fileID: 5778857071076996927}
   <punchRVFX>k__BackingField: {fileID: 1022020563432111704}
   <shieldVFX>k__BackingField: {fileID: 3044704626683875058}
-  <parryLVFX>k__BackingField: {fileID: 8299108519536309838}
-  <parryRVFX>k__BackingField: {fileID: 4449350454105779509}
+  <parryVFX1>k__BackingField: {fileID: 267182241930673627}
+  <parryVFX2>k__BackingField: {fileID: 2776786523483028333}
   <counterVFX>k__BackingField: {fileID: 3044704626683875058}
 --- !u!114 &3556420744916691152
 MonoBehaviour:
@@ -2103,6 +2103,12 @@ PrefabInstance:
       insertIndex: 2
       addedObject: {fileID: 8963657871566459159}
   m_SourcePrefab: {fileID: 100100000, guid: 188551011c7b90243b1c6c7358411fed, type: 3}
+--- !u!2083052967 &267182241930673627 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 3409349463114629699, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &463738427857651074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3065489219274897946, guid: 188551011c7b90243b1c6c7358411fed,
@@ -2154,6 +2160,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &2776786523483028333 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 751090897604576501, guid: 188551011c7b90243b1c6c7358411fed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3235072793054560152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!2083052967 &3044704626683875058 stripped
 VisualEffect:
   m_CorrespondingSourceObject: {fileID: 478999119742316906, guid: 188551011c7b90243b1c6c7358411fed,
@@ -2163,12 +2175,6 @@ VisualEffect:
 --- !u!4 &3061583551361753849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475595491666861409, guid: 188551011c7b90243b1c6c7358411fed,
-    type: 3}
-  m_PrefabInstance: {fileID: 3235072793054560152}
-  m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &4449350454105779509 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 1250326392508158637, guid: 188551011c7b90243b1c6c7358411fed,
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}
@@ -2187,12 +2193,6 @@ Transform:
 --- !u!95 &7979025106373359173 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4782392481088178653, guid: 188551011c7b90243b1c6c7358411fed,
-    type: 3}
-  m_PrefabInstance: {fileID: 3235072793054560152}
-  m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &8299108519536309838 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 6902068429435242966, guid: 188551011c7b90243b1c6c7358411fed,
     type: 3}
   m_PrefabInstance: {fileID: 3235072793054560152}
   m_PrefabAsset: {fileID: 0}
