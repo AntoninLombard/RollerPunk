@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{339E43BC-2534-5198-A265-3071EB4A5B24}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{026ED2BD-850C-1A65-62E3-9704D67F3B56}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,6 +19,8 @@
 					<Plugin Id="1635194254" Name="P3" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="1635194255" Name="P2" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="1650796140" Name="Bass_Boost" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="2060121054" Name="Middle_boost" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="2297212548" Name="Crowds_Master" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="2376406340" Name="Crowd_Ducking" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="2747378390" Name="Music_Fix" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="4136302296" Name="High_Shelf" LibName="Wwise Parametric EQ" LibId="6881283"/>
@@ -37,7 +39,13 @@
 						</ShareSets>
 					</PluginRefs>
 				</Bus>
-				<Bus Id="1117531639" Name="AMB"/>
+				<Bus Id="1117531639" Name="AMB">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="2297212548"/>
+						</ShareSets>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="1291433344" Name="Bass"/>
 				<Bus Id="1615767906" Name="Music_Main"/>
 				<Bus Id="1635194249" Name="P4">
@@ -68,7 +76,13 @@
 						</ShareSets>
 					</PluginRefs>
 				</Bus>
-				<Bus Id="1695690031" Name="Objects"/>
+				<Bus Id="1695690031" Name="Objects">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="2060121054"/>
+						</ShareSets>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="2077289713" Name="Crowd_OS">
 					<PluginRefs>
 						<ShareSets>
@@ -305,7 +319,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{192FEFD8-CC68-421B-6177-5B1F6E75293C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E5349419-4955-9EEB-9973-FB3F880E7E54}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -3887,5 +3901,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F94EB169-2B3A-968E-C4FD-61B38A8209D8}</FileHash>
+	<FileHash>{60E061B0-653B-DE8A-7D52-9CD30F496D59}</FileHash>
 </SoundBanksInfo>

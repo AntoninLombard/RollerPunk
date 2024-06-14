@@ -88,6 +88,8 @@ Effect plug-ins	ID	Name	Type				Notes
 	1635194254	P3	Wwise Meter			
 	1635194255	P2	Wwise Meter			
 	1650796140	Bass_Boost	Wwise Parametric EQ			
+	2060121054	Middle_boost	Wwise Parametric EQ			
+	2297212548	Crowds_Master	Wwise Parametric EQ			
 	2376406340	Crowd_Ducking	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
 	4136302296	High_Shelf	Wwise Parametric EQ			

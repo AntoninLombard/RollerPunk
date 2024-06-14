@@ -15,7 +15,7 @@ public class PlayerCollisionSound : MonoBehaviour
         float remaining = force - vertical;
 
         player.data.forceCollision.SetValue(player.gameObject, force);
-
+        Debug.Log(force);
         if (force > player.data.collisionSoundThreshold)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Characters"))

@@ -18,7 +18,6 @@ public class GameData : ScriptableObject
     public List<Color> countDownColors;
     
     [Header("SOUND")]
-    public AK.Wwise.Event menuMusicStart;
     public AK.Wwise.Event countdownSound;
     public AK.Wwise.Event musicStart;
     public AK.Wwise.RTPC score;
