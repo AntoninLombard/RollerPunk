@@ -43,7 +43,7 @@ public class PlayerInputHandler : MonoBehaviour
 
    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
    {
-      if (scene.name == "UITest")
+      if (scene.name == "MainMenu")
          return;
       foreach (var player in players)
       {
