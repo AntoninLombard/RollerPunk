@@ -10,25 +10,37 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Serializable]
+    private struct UIPlayerBinding
+    {
+        public PlayerPanel panel;
+        public PlayerInstance player;
+    }
+    
     static public MenuManager Instance;
-
+    
     [SerializeField] private GameData gameData;
     [SerializeField] private int trackNb;
-    
+
+    [SerializeField] private PlayerInputHandler inputHandler;
     [SerializeField] private PlayerInputManager inputManager;
     [SerializeField] private int minNbPlayer;
     [SerializeField] private int maxNbPlayer;
     [SerializeField] private int playerNumber;
-    [SerializeField] private Dictionary<PlayerInput,bool> players;
+    [SerializeField] private List<PlayerInstance> players;
+    [SerializeField] private List<UIPlayerBinding> panelBindings;
 
-    [SerializeField] private List<UI_Animator> playerPanels;
+    
+    [SerializeField] private UI_Animator mainMenuPanel;
+    [field : SerializeField] private PlayerPanel[] playerPanels = new PlayerPanel[4];
     
     [SerializeField] private InputSystemUIInputModule uiModule;
     [SerializeField] private MultiplayerEventSystem multyEvent;
-    private void Awake()
-    {
-        players = new Dictionary<PlayerInput, bool>();
-    }
+    
+    
+    // private void Awake()
+    // {
+    // }
 
     // Start is called before the first frame update
     void Start()
@@ -57,36 +69,90 @@ public class MenuManager : MonoBehaviour
         if (isActive)
             inputManager.EnableJoining();
         else
+        {
             inputManager.DisableJoining();
+            inputHandler.ClearPlayers();
+        }
     }
 
 
-    public void OnPlayerJoin(PlayerInput playerInput)
+    public void OnPlayerJoin(PlayerInput input)
     {
-        players.Add(playerInput,false);
-        playerPanels[playerNumber].UIPanelMove(playerNumber < 2 ? 2 : 5);
+        PlayerPanel playerPanel = null;
+        int i = 0;
+        for(;i < 4;i++)
+        {
+            if (panelBindings.Exists(y => y.panel == playerPanels[i])) continue;
+            playerPanel = playerPanels[i];
+            break;
+        }
+
+        PlayerInstance player = input.GetComponent<PlayerInstance>();
+        players.Add(player);
+        PlayerData data = player.playerData;
+        data.nb = i;
+        data.color = gameData.playerColors[i];
+        data.isReady = false;
+        player.playerData = data;
+        
+        UIPlayerBinding binding = new UIPlayerBinding();
+        binding.player = player;
+        binding.panel = playerPanel;
+        panelBindings.Add(binding);
+        binding.panel.ChangeState(PlayerPanel.PanelState.Joined);
         playerNumber++;
     }
 
-
-    public void OnPlayerReady(PlayerInput playerInput)
+    public void OnPlayerLeave(PlayerInput playerInput)
     {
-        players[playerInput] = !players[playerInput];
+        players.Remove(playerInput.GetComponent<PlayerInstance>());
+    }
+
+    public void OnPlayerCancel(PlayerInput playerInput)
+    {
+        PlayerInstance player = playerInput.GetComponent<PlayerInstance>();
+        players.Remove(player);
+        UIPlayerBinding binding = panelBindings.Find(x => x.player == player);
+        binding.panel.ChangeState(PlayerPanel.PanelState.Hide);
+        panelBindings.Remove(binding);
+        if (players.Count == 0)
+        {
+            CancelPlayerJoin();
+        }
+    }
+    
+    
+    public void CancelPlayerJoin()
+    {
+        PlayerJoinToggle(false);
+        for(int i =0 ; i < 4;i++)
+        {
+            playerPanels[i].ChangeState(PlayerPanel.PanelState.Hide);
+        }
+        players.Clear();
+        panelBindings.Clear();
+        playerNumber = 0;
+        mainMenuPanel.UIFadeIn();
+    }
+
+    public void OnPlayerReady(PlayerInstance player)
+    {
+        player.ToggleReady(!player.playerData.isReady);
         if (playerNumber < minNbPlayer)
             return;
         int count = 0;
-        foreach (KeyValuePair<PlayerInput,bool> player in players)
+        foreach (PlayerInstance currentPlayer in players)
         {
-            if (player.Value)
+            if (currentPlayer.playerData.isReady)
             {
                 count++;
             }
         }
 
-        if (count == players.Count)
+        if (count != 0 && count == players.Count)
         {
             AkSoundEngine.SetState("Menu_Music", "None");
-            SceneManager.LoadScene(gameData.tracks[trackNb].name,LoadSceneMode.Single);
+            SceneManager.LoadScene(gameData.tracks[trackNb].name, LoadSceneMode.Single);
         }
     }
 }

@@ -24,6 +24,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Reverse",
+                    "type": "Button",
+                    "id": "cef94fcb-876d-42f1-9a46-824a7a771772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Punch",
                     "type": "Button",
                     "id": "9d35ac15-4fc7-4385-8d1a-d682c8858f27",
@@ -36,24 +45,6 @@
                     "name": "Parry",
                     "type": "Button",
                     "id": "b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Reverse",
-                    "type": "Button",
-                    "id": "cef94fcb-876d-42f1-9a46-824a7a771772",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ready",
-                    "type": "Button",
-                    "id": "fb45708b-8a83-43e2-b9a5-1923f999cc1d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -116,34 +107,23 @@
                 },
                 {
                     "name": "",
-                    "id": "f1ed2752-c3c3-46ca-bc63-7e49f713554d",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Reverse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c6b8005d-6b68-46d7-bd57-8ea79aa87443",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Ready",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1b870798-8a2f-4cff-bb72-992f0151d9fd",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Drift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1ed2752-c3c3-46ca-bc63-7e49f713554d",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Reverse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -161,6 +141,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "ae1349be-93db-4820-addc-35ed35a7fb51",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rebind",
+                    "type": "Button",
+                    "id": "7b6e65e9-bdb9-4ba4-9873-d8cf228a4f88",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -170,7 +168,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -183,6 +181,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf9b2753-fd38-48ec-b350-e812c05766a4",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08b8f073-36f2-4bfd-9ef4-46f920564ff8",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rebind",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

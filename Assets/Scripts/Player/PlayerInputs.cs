@@ -106,14 +106,22 @@ public class PlayerInputs : MonoBehaviour
 
     public void SetInput(PlayerInput playerInput)
     {
-        //this.playerInput = playerInput;
-        //playerInput.actions = this.playerInput.actions;
-        playerInput.actionEvents = this.playerInput.actionEvents;
         this.playerInput = playerInput;
         playerInput.currentActionMap = playerInput.actions.FindActionMap("Driving");
+        playerInput.actions.FindActionMap("Menu").Disable();
         driveAction = playerInput.actions.FindAction("Driving/Drive");
         brakeAction = playerInput.actions.FindAction("Driving/Reverse");
         steerAction = playerInput.actions.FindAction("Driving/Steer");
+
+        playerInput.actions.FindAction("Driving/Punch").started += onPunch;
+        playerInput.actions.FindAction("Driving/Drift").started += onDrift;
+        playerInput.actions.FindAction("Driving/Parry").started += onParry;
+        playerInput.actions.FindAction("Driving/Punch").performed += onPunch;
+        playerInput.actions.FindAction("Driving/Drift").performed += onDrift;
+        playerInput.actions.FindAction("Driving/Parry").performed += onParry;
+        playerInput.actions.FindAction("Driving/Punch").canceled += onPunch;
+        playerInput.actions.FindAction("Driving/Drift").canceled += onDrift;
+        playerInput.actions.FindAction("Driving/Parry").canceled += onParry;
 
     }
 }

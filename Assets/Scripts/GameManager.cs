@@ -358,19 +358,19 @@ void StartWaitForCountdown()
     }
     #endregion
 
-    public void SpawnPlayer(PlayerInput playerInput)
+    public void SpawnPlayer(PlayerData playerData)
     {
         GameObject playerGameObject = Instantiate(gameData.playerPrefab,null);
         Player player = playerGameObject.GetComponent<Player>();
-        player.input.SetInput(playerInput);
+        player.input.SetInput(playerData.input);
         players.Add(player,0);
         int layer = (int)Math.Log(player.data.playerLayer[nbPlayer], 2);
         player.camera.gameObject.layer = layer;
         foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
             player.camera.cullingMask -= player.camera.cullingMask & mask;
         player.setPlayerID(nbPlayer);
-        player.number = nbPlayer;
-        player.color = gameData.playerColors[nbPlayer];
+        player.number = playerData.nb;
+        player.color = playerData.color;
         playerNumberRTPC.SetGlobalValue(nbPlayer);
         nbPlayer++;
         player.Init();
