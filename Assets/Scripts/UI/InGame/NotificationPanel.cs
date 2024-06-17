@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class NotificationPanel : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI rank;
     [SerializeField] private TextMeshProUGUI score;
     [SerializeField] private TextMeshProUGUI points;
-    [SerializeField] private TextMeshProUGUI multiplier;
     [SerializeField] private Image scoreBackground;
     [SerializeField] private Image playerIcon;
     [SerializeField] private Image slider;
@@ -17,6 +17,11 @@ public class NotificationPanel : MonoBehaviour
     [SerializeField] private List<Image> killIcons;
     private int currentIcon;
     // Start is called before the first frame update
+    private void Start()
+    {
+        animator.UIFadeOut();
+    }
+
     void OnEnable()
     {
         GameManager.Instance.onBallGrabbed += OnBallGrabbed;
@@ -25,14 +30,14 @@ public class NotificationPanel : MonoBehaviour
         GameManager.Instance.onScoreChange += OnScoreChange;
         GameManager.Instance.onPointsChange += OnPointsChange;
         GameManager.Instance.onKill += OnKill;
-        animator.UIFadeOut();
     }
 
     void OnBallGrabbed(Player player)
     {
+        points.text = "+0";
         SetColor(player.color);
         animator.UIFadeIn();
-        animator.UIPanelMove(2);
+        animator.UIPanelMove(1);
     }
     
     void OnBallDropped()
@@ -62,9 +67,9 @@ public class NotificationPanel : MonoBehaviour
         this.score.text = score.ToString();
     }
     
-    void OnPointsChange(int points)
+    void OnPointsChange(int points, int multiplier)
     {
-        this.points.text = points.ToString();
+        this.points.text = "+" + points.ToString() + (multiplier>1? " x" +multiplier.ToString() : "");
     }
 
     private void Reset()
@@ -88,6 +93,6 @@ public class NotificationPanel : MonoBehaviour
         playerIcon.color = color;
         slider.color = color;
         scoreBackground.color = color;
-        multiplier.color = color;
+        rank.color = color;
     }
 }

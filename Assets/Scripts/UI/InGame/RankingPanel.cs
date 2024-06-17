@@ -1,21 +1,24 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class RankingPanel : MonoBehaviour
 {
     [Serializable]
     private struct ScorePanel
     {
+        public Image icon;
+        public Image background;
         public CanvasGroup canvasGroup;
         public TextMeshProUGUI rank;
         public TextMeshProUGUI currentScore;
     }
-    
-    
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private Image background;
     [SerializeField] private List<ScorePanel> scorePanels;
     // Start is called before the first frame update
     
@@ -24,23 +27,21 @@ public class RankingPanel : MonoBehaviour
         GameManager.Instance.onScoreChange += OnScoreChange;
     }
 
+
     private void Start()
     {
         InitRankingDisplay();
     }
 
-
-    void InitRankingDisplay()
+    public void InitRankingDisplay()
     {
         IEnumerator<ScorePanel> scorePanelsEnumerator = scorePanels.GetEnumerator();
-        foreach (var playerScore in GameManager.Instance.players.OrderBy(x => x.Value))
+        foreach (var playerScore in GameManager.Instance.players)
         {
-            ScorePanel currentPanel = scorePanelsEnumerator.Current;
-            currentPanel.rank.color = playerScore.Key.color;
-            currentPanel.currentScore.color = playerScore.Key.color;
-            currentPanel.currentScore.text = "0";
-            currentPanel.canvasGroup.alpha = 1;
             scorePanelsEnumerator.MoveNext();
+            ScorePanel currentPanel = scorePanelsEnumerator.Current;
+            SetPanel(currentPanel,playerScore.Key.color,0);
+            currentPanel.canvasGroup.alpha = 1;
         }
 
         while (scorePanelsEnumerator.MoveNext())
@@ -51,16 +52,23 @@ public class RankingPanel : MonoBehaviour
         scorePanelsEnumerator.Dispose();
     }
 
+    void SetPanel(ScorePanel panel,Color color,int score)
+    {
+        panel.icon.color = color;
+        panel.background.color = color;
+        panel.rank.color = color;
+        panel.currentScore.color = color;
+        panel.currentScore.text = score.ToString();
+    }
+
     void UpdateRankingDisplay()
     {
         IEnumerator<ScorePanel> scorePanelsEnumerator = scorePanels.GetEnumerator();
         foreach (var playerScore in GameManager.Instance.players.OrderBy(x => x.Value))
         {
-            ScorePanel currentPanel = scorePanelsEnumerator.Current;
-            currentPanel.rank.color = playerScore.Key.color;
-            currentPanel.currentScore.color = playerScore.Key.color;
-            currentPanel.currentScore.text = playerScore.Value.ToString();
             scorePanelsEnumerator.MoveNext();
+            ScorePanel currentPanel = scorePanelsEnumerator.Current;
+            SetPanel(currentPanel,playerScore.Key.color,playerScore.Value);
         }
         scorePanelsEnumerator.Dispose();
     }
@@ -68,6 +76,12 @@ public class RankingPanel : MonoBehaviour
 
     private void OnScoreChange(int score)
     {
-        //UpdateRankingDisplay();
+        UpdateRankingDisplay();
+    }
+
+    public void SetColor(Color color)
+    {
+        text.color = color;
+        background.color = color;
     }
 }

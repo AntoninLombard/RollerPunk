@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RTPC playerNumberRTPC;
 
     public delegate void OnScoreChange(int score);
-    public delegate void OnPointsChange(int points);
+    public delegate void OnPointsChange(int points,int multiplier);
     public delegate void OnBallDropped();
     public delegate void OnBallGrabbed(Player player);
     public delegate void OnDistanceUpdate(float distanceTraveled, float distancePerPoint);
@@ -143,7 +143,6 @@ public class GameManager : MonoBehaviour
     public void Scoring()
     {
         players[ballHolder] += cumulatedPoints * currentMultiplier;
-        ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
         gameData.musicState[4].SetValue();
         onScoreChange?.Invoke(players[ballHolder]);
@@ -161,7 +160,7 @@ public class GameManager : MonoBehaviour
         if (kills > scoring.killMultipliatorThreshold)
         {
             currentMultiplier = scoring.killMultiplicatorValue;
-            ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+            onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
         }
         onKill?.Invoke(killedPlayer);
     }
@@ -180,6 +179,7 @@ public class GameManager : MonoBehaviour
         ball.Toggle(true);
         ball.Detach();
         ball.SetEmissiveColor(gameData.ballEmissiveColor);
+        RespawnBall();
         onBallDropped?.Invoke();
     }
 
@@ -207,13 +207,12 @@ public class GameManager : MonoBehaviour
         if (ballHolder != null)
         {
             distanceTraveled += (ballHolder.character.position - holderPreviousPosition).magnitude * Vector3.Dot( holderPreviousForward,ballHolder.character.forward);
-            ballHolder.ui.OnDistanceTraveled(distanceTraveled,scoring.distancePerPoint);
             onDistannceUpdate?.Invoke(distanceTraveled,scoring.distancePerPoint);
             if (distanceTraveled >= scoring.distancePerPoint)
             {
                 distanceTraveled %= scoring.distancePerPoint;
                 cumulatedPoints++;
-                onPointsChange?.Invoke(cumulatedPoints);
+                onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
                 gameData.score.SetGlobalValue(cumulatedPoints);
                 gameData.scoreUpSound.Post(gameObject);
             }
@@ -229,10 +228,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetBall()
     {
-        if(ballHolder != null)
-        {
-            ballHolder.ui.OnPointsChange(0, 0);
-        }
         ballHolder = null;
         distanceTraveled = 0;
         cumulatedPoints = 0;
@@ -431,6 +426,7 @@ void StartWaitForCountdown()
                 sizeY = nbPlayer > 2 ? 0.5f : 1f;
             }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
+            player.ui.ToggleRankingSide(player.number % 1 == 0 ? 1 : -1);
         }
     }
 }

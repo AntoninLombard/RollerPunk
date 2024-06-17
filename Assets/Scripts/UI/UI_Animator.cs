@@ -8,12 +8,12 @@ public class UI_Animator : MonoBehaviour
     // This script handles all UI transitions and animations. Way simpler than creating animators and states for each and every fucking GameObject...
     private float startTime;
     [SerializeField] private float animationDuration = 0.5f;
-    private float[] panelPositions = { 300f, 150f, -250f, -300f, -150f, 250f };
+    [SerializeField] private float[] panelPositions;//{ 300f, 150f, -250f, -300f, -150f, 250f };
     private float panelXCoordinate;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
 
-    void Start()
+    void OnEnable()
     {
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
         rectTransform = gameObject.GetComponent<RectTransform>();
