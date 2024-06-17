@@ -17,6 +17,7 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isBoosting { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }
     [field: SerializeField] public bool isDrifting { get; private set; }
+    [field: SerializeField] public bool canBoost { get; private set; }
     [SerializeField] private int driftingSide;
     [SerializeField] private float speed = 0;
     [SerializeField] private float maxSpeed;
@@ -45,10 +46,10 @@ public class PlayerController2 : MonoBehaviour
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
 
-    public delegate void CanBoost(); 
-    public event CanBoost canBoost;
-    public delegate void DriftCanceled(); 
-    public event CanBoost driftCanceled;
+    public delegate void BoostReady(int side); 
+    public event BoostReady boostReady;
+    public delegate void DriftCanceled(int side); 
+    public event DriftCanceled driftCanceled;
     
     #endregion
 
@@ -69,9 +70,10 @@ public class PlayerController2 : MonoBehaviour
         if (isDrifting)
         {
             driftDuration += Time.deltaTime;
-            if (driftDuration > controllerData.driftDurationForBoost)
+            if (driftDuration > controllerData.driftDurationForBoost && !canBoost)
             {
-                canBoost?.Invoke();
+                canBoost = true;
+                boostReady?.Invoke(driftingSide);
             }
         }
         player.anime.animator.SetBool(Moving,speed > 1);
@@ -377,6 +379,8 @@ public class PlayerController2 : MonoBehaviour
             }
             if (driftDuration > controllerData.driftDurationForBoost)
                 StartBoost();
+            driftCanceled?.Invoke(driftingSide);
+            canBoost = false;
             isDrifting = false;
             driftDuration = 0;
             driftingSide = 0;
@@ -389,6 +393,7 @@ public class PlayerController2 : MonoBehaviour
 
     public void StartBoost()
     {
+        canBoost = false;
         StartCoroutine(Boost());
     }
     private IEnumerator Boost()

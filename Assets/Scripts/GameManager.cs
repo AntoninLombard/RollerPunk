@@ -264,12 +264,8 @@ public class GameManager : MonoBehaviour
         int index = respawnpoints.IndexOf(lastRespawnPoint);
         Transform pos = lastRespawnPoint.ballSpawnPoint;
         int i = 1;
-        do
-        {
-            pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
-            i++;
-        } while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn) ;
-        
+        do { i++; } while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn) ;
+        pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
         
         if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
         {

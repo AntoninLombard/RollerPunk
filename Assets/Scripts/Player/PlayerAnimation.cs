@@ -30,7 +30,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void OnEnable()
     {
-        //player.controller.canBoost += StartDriftBoostVFX;
+        player.controller.boostReady += StartDriftBoostVFX;
+        player.controller.driftCanceled += CancelDrift;
     }
 
     void Start()
@@ -64,8 +65,8 @@ public class PlayerAnimation : MonoBehaviour
         vfx.onBoostReady(side);
     }
     
-    public void StopDrif(int side)
+    public void CancelDrift(int side)
     {
-        vfx.onBoostReady(side);
+        vfx.driftStop(side);
     }
 }
