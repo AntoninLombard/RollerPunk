@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public  Dictionary<Player,int> players {get ;private set; }
     [SerializeField] private int nbPlayer;
 
-    [Header("Gameplay")] 
+    [Header("Gameplay")]
+    [SerializeField] private bool isPaused;
     [SerializeField] private bool isRaceOn;
     [SerializeField] private float timer;
     [SerializeField] private RespawnPoint raceStart;
@@ -261,14 +262,11 @@ public class GameManager : MonoBehaviour
         ballHolder = null;
         ball.transform.parent = null;
         int index = respawnpoints.IndexOf(lastRespawnPoint);
-        Transform pos = raceStart.transform;
+        Transform pos = lastRespawnPoint.ballSpawnPoint;
         int i = 1;
-        RespawnPoint currentRespawn = raceStart;
-        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn)
-        {
-            pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
-            i++;
-        }
+        do { i++; } while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn) ;
+        pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
+        
         if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
         {
             ball.Toggle(true);
@@ -397,6 +395,26 @@ void StartWaitForCountdown()
                 sizeX = 1;
                 sizeY = 1;
             }
+            else if (nbPlayer == 2)
+            {
+                switch (player.number)
+                {
+                    case 0:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                    case 1:
+                        offsetX = 0.5f;
+                        offsetY = 0;
+                        break;
+                    default:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                }
+                sizeX = 0.5f;
+                sizeY = 1;
+            }
             else
             {
                 switch (player.number)
@@ -423,7 +441,7 @@ void StartWaitForCountdown()
                         break;
                 }
                 sizeX = 0.5f;
-                sizeY = nbPlayer > 2 ? 0.5f : 1f;
+                sizeY = 0.5f;
             }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
             player.ui.ToggleRankingSide(player.number % 1 == 0 ? 1 : -1);

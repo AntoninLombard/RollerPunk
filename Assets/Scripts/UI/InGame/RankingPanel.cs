@@ -64,7 +64,7 @@ public class RankingPanel : MonoBehaviour
     void UpdateRankingDisplay()
     {
         IEnumerator<ScorePanel> scorePanelsEnumerator = scorePanels.GetEnumerator();
-        foreach (var playerScore in GameManager.Instance.players.OrderBy(x => x.Value))
+        foreach (var playerScore in GameManager.Instance.players.OrderByDescending(x => x.Value))
         {
             scorePanelsEnumerator.MoveNext();
             ScorePanel currentPanel = scorePanelsEnumerator.Current;
