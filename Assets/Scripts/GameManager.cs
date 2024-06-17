@@ -447,4 +447,11 @@ void StartWaitForCountdown()
             player.ui.ToggleRankingSide(player.number % 1 == 0 ? 1 : -1);
         }
     }
+
+
+    void TogglePause(bool isPaused)
+    {
+        Time.timeScale = isPaused ? 0 : 1;
+        this.isPaused = isPaused;
+    }
 }
