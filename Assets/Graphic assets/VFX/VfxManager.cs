@@ -7,6 +7,7 @@ public class VfxManager : MonoBehaviour
 {
     [SerializeField] VisualEffect punchL, punchR, slashL, slashR, slashTornado01, slashTornado02, shield, DSparksHandL, DSparksHandR, DSparksWheelL, DSparksWheelR ;
 
+    [SerializeField] VisualEffect deathArmL, deathArmR, deathHead, deathLeg, bloodBurst01, bloodBurst02 ;
     public void playShield() {
         shield.Play() ;
     }
@@ -60,5 +61,18 @@ public class VfxManager : MonoBehaviour
             DSparksWheelR.Stop() ;
         }
         
+    }
+
+    public void stun() {
+        bloodBurst02.Play() ;
+    }
+
+    public void death() {
+        deathArmL.Play() ;
+        deathArmR.Play() ;
+        deathHead.Play() ;
+        deathLeg.Play() ;
+        bloodBurst01.Play() ;
+        bloodBurst02.Play() ;
     }
 }
