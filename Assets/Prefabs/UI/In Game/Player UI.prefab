@@ -573,7 +573,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 171.37177, y: -35.90915, z: -206.89706, w: 22.601852}
+  m_margin: {x: 189.17194, y: -35.90915, z: -265.09763, w: 22.601852}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1579,7 +1579,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 1
+  m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4379,7 +4379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 80}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 1000, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7320324156817604419
@@ -4429,7 +4429,7 @@ CanvasGroup:
   m_GameObject: {fileID: 5634066348071974912}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &4038224794464089365
@@ -4446,8 +4446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationDuration: 0.5
   panelPositions:
-  - 80
-  - -80
+  - 75
+  - -75
 --- !u!114 &6687242859104995801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4470,6 +4470,7 @@ MonoBehaviour:
   killIcons:
   - {fileID: 3956066349473074697}
   - {fileID: 9159335907806465389}
+  - {fileID: 5929591332246952530}
   - {fileID: 331154525406842830}
   - {fileID: 3521801811232069007}
 --- !u!1 &5641758894065402613
