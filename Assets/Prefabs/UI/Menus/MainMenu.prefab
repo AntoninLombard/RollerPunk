@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: corail.itch.io
+  m_text: linkedin.com/in/lea-lionis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 772e197539d0022488384b4afc8bef8d, type: 2}
   m_sharedMaterial: {fileID: 935119138458246704, guid: 772e197539d0022488384b4afc8bef8d,
