@@ -66,6 +66,7 @@ public class PlayerCombat : MonoBehaviour
     private static readonly int WindUpL = Animator.StringToHash("WindUp.L");
     private static readonly int WindUpR = Animator.StringToHash("WindUp.R");
     private static readonly int Punch = Animator.StringToHash("Punch");
+    private static readonly int BallGrab = Animator.StringToHash("BallGrab");
 
 
     private void Awake()
@@ -156,6 +157,10 @@ public class PlayerCombat : MonoBehaviour
         player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.gameData.musicState[player.number].SetValue();
         GameManager.Instance.BallGrabbed(gameObject.GetComponent<Player>());
+        if (!player.combat.isBusy)
+        {
+            player.anime.animator.SetTrigger(BallGrab);
+        }
     }
     
 

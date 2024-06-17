@@ -45,6 +45,11 @@ public class PlayerController2 : MonoBehaviour
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
 
+    public delegate void CanBoost(); 
+    public event CanBoost canBoost;
+    public delegate void DriftCanceled(); 
+    public event CanBoost driftCanceled;
+    
     #endregion
 
     #region UNITY FUNCTIONS
@@ -62,7 +67,13 @@ public class PlayerController2 : MonoBehaviour
     {
         speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         if (isDrifting)
+        {
             driftDuration += Time.deltaTime;
+            if (driftDuration > controllerData.driftDurationForBoost)
+            {
+                canBoost?.Invoke();
+            }
+        }
         player.anime.animator.SetBool(Moving,speed > 1);
         player.anime.animator.SetFloat(Direction,player.input.steerInput);
         player.anime.animator.SetFloat(Brake,player.input.brakeInput);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] public PlayerAnimationData data;
+    [SerializeField] public VfxManager vfx;
 
     [field:SerializeField] public Animator animator { get; private set; }
     
@@ -24,7 +26,13 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int PunchSpeed = Animator.StringToHash("PunchSpeed");
     private static readonly int ParrySpeed = Animator.StringToHash("ParrySpeed");
     private static readonly int TauntSpeed = Animator.StringToHash("TauntSpeed");
-    
+
+
+    private void OnEnable()
+    {
+        //player.controller.canBoost += StartDriftBoostVFX;
+    }
+
     void Start()
     {
         animator.SetFloat(PunchWindUpSpeed,data.punchWindUpR.length/player.data.punchWindUp);
@@ -46,5 +54,18 @@ public class PlayerAnimation : MonoBehaviour
         parryVFX2.SetVector4("Main Color",color);
         counterVFX.SetVector4("Main Color",color);
         shieldVFX.SetVector4("Main Color",color);
+    }
+
+    
+    
+    
+    public void StartDriftBoostVFX(int side)
+    {
+        vfx.onBoostReady(side);
+    }
+    
+    public void StopDrif(int side)
+    {
+        vfx.onBoostReady(side);
     }
 }

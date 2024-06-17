@@ -6022,7 +6022,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38c5f0e0984a234f91e16fec7845df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 5068406900823456964}
+  shredDuration: 1
+  bloodRainVFX: {fileID: 2376196490581759901}
+  bloodShowerVFX: {fileID: 1731453272877287574}
+  bloodCanonBurst1VFX: {fileID: 1141067758910567019}
+  bloodCanonBurst2VFX: {fileID: 3008531134888291400}
+  canonShotFX: {fileID: 1421429026083671379}
   scoring:
     idInternal: 0
     valueGuidInternal: 
@@ -6418,6 +6423,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e128392c247c63b4cb848f08781f3a1f, type: 3}
+--- !u!2083052967 &1141067758910567019 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4843315494817316077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2777394454886010680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7331191976158950357, guid: e128392c247c63b4cb848f08781f3a1f,
@@ -6769,6 +6780,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e128392c247c63b4cb848f08781f3a1f, type: 3}
+--- !u!2083052967 &1731453272877287574 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6117103594328098320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3556138421692200389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7331191976158950357, guid: e128392c247c63b4cb848f08781f3a1f,
@@ -7041,6 +7058,12 @@ PrefabInstance:
 --- !u!4 &44712459753558299 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7331191976158950357, guid: e128392c247c63b4cb848f08781f3a1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7287802746453942990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &3008531134888291400 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
     type: 3}
   m_PrefabInstance: {fileID: 7287802746453942990}
   m_PrefabAsset: {fileID: 0}
