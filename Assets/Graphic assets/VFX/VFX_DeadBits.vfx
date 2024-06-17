@@ -198,7 +198,7 @@ VisualEffectResource:
     m_UpdateMode: 0
     m_PreWarmDeltaTime: 0.05
     m_PreWarmStepCount: 0
-    m_InitialEventName: OnPlay
+    m_InitialEventName: 
     m_InstancingMode: 0
     m_InstancingCapacity: 64
 --- !u!114 &8926484042661614555
@@ -1495,7 +1495,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: metallic
@@ -5645,7 +5645,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614832}
   m_ExposedName: Main Color
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -5861,7 +5861,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614851}
   m_ExposedName: Blood Particles lifetime range
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -6350,7 +6350,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614879}
   m_ExposedName: Velocity Random.A
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -6532,7 +6532,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614884}
   m_ExposedName: Velocity Random.B
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -6714,7 +6714,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614889}
   m_ExposedName: Blood Particles size range
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -6866,7 +6866,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614893}
   m_ExposedName: DeadBit mesh
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -6946,7 +6946,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614895}
   m_ExposedName: DeadBit mesh texture
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
