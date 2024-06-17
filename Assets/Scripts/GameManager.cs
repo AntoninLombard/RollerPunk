@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScoringData scoring;
 
 
-    [Header("Players")]
-    [field: SerializeField] private Dictionary<Player,int> players = new Dictionary<Player, int>();
+    [field: Header("Players")]
+    [field: SerializeField] public  Dictionary<Player,int> players {get ;private set; }
     [SerializeField] private int nbPlayer;
 
     [Header("Gameplay")] 
@@ -49,7 +49,19 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
     [SerializeField] private RTPC playerNumberRTPC;
-    
+
+    public delegate void OnScoreChange(int score);
+    public delegate void OnPointsChange(int points,int multiplier);
+    public delegate void OnBallDropped();
+    public delegate void OnBallGrabbed(Player player);
+    public delegate void OnDistanceUpdate(float distanceTraveled, float distancePerPoint);
+    public delegate void OnKill(Player player);
+    public event OnScoreChange onScoreChange;
+    public event OnPointsChange onPointsChange;
+    public event OnBallDropped onBallDropped;
+    public event OnBallGrabbed onBallGrabbed;
+    public event OnDistanceUpdate onDistannceUpdate;
+    public event OnKill onKill;
     
     private static readonly int EmissiveColor01 = Shader.PropertyToID("_Emissive_color_01");
     private static readonly int EmissiveColor02 = Shader.PropertyToID("_Emissive_color_02");
@@ -57,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        players = new Dictionary<Player, int>();
         if (Instance == null)
         {
             //DontDestroyOnLoad(gameObject);
@@ -77,22 +90,6 @@ public class GameManager : MonoBehaviour
         startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
         StartWaitForCountdown();
     }
-    //
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     currentMultiplier = 1;
-    //     lastRespawnPoint = raceStart;
-    //     gameData.crowdStart.Post(gameObject);
-    //     gameData.crowdWaiting.Post(gameObject);
-    //     startLightsMaterial = startLights.GetComponent<MeshRenderer>()?.materials[1];
-    //     
-    //     startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[0]);
-    //     startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[0]);
-    //     startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
-    //
-    //     StartWaitForCountdown();
-    // }
 
     // Update is called once per frame
     void Update()
@@ -143,66 +140,79 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void OnScoring()
+    public void Scoring()
     {
         players[ballHolder] += cumulatedPoints * currentMultiplier;
-        ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
         gameData.musicState[4].SetValue();
+        onScoreChange?.Invoke(players[ballHolder]);
+        
         if (players[ballHolder] > scoring.maxScore)
         {
             StopGame();
         }
     }
     
-    public void OnBallKill()
+    public void BallKill(Player killedPlayer)
     {
         kills++;
         gameData.crowdKill.Post(gameObject);
         if (kills > scoring.killMultipliatorThreshold)
         {
             currentMultiplier = scoring.killMultiplicatorValue;
-            ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+            onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
         }
+        onKill?.Invoke(killedPlayer);
     }
 
-    public void OnBallGrabbed(Player player)
+    public void BallGrabbed(Player player)
     {
         ballHolder = player;
         holderPreviousPosition = player.character.position;
         holderPreviousForward = player.character.forward;
+        onBallGrabbed?.Invoke(player);
     }
-
-    public void OnPlayerReady()
+    
+    public void BallDropped()
     {
-        int count = 0;
-        foreach (Player player in players.Keys)
-        {
-            if (player.isReady)
-            {
-                count++;
-            }
-        }
-
-        if (count == nbPlayer && !isRaceOn)
-        {
-            isRaceOn = true;
-            StartCoroutine(StartCountdown());
-        }
-
+        ballHolder = null;
+        ball.Toggle(true);
+        ball.Detach();
+        ball.SetEmissiveColor(gameData.ballEmissiveColor);
+        RespawnBall();
+        onBallDropped?.Invoke();
     }
+
+    // public void OnPlayerReady()
+    // {
+    //     int count = 0;
+    //     foreach (Player player in players.Keys)
+    //     {
+    //         if (player.isReady)
+    //         {
+    //             count++;
+    //         }
+    //     }
+    //
+    //     if (count == nbPlayer && !isRaceOn)
+    //     {
+    //         isRaceOn = true;
+    //         StartCoroutine(StartCountdown());
+    //     }
+    //
+    // }
 
     public void UpdateBallDistance()
     {
         if (ballHolder != null)
         {
             distanceTraveled += (ballHolder.character.position - holderPreviousPosition).magnitude * Vector3.Dot( holderPreviousForward,ballHolder.character.forward);
-            ballHolder.ui.OnDistanceTraveled(distanceTraveled,scoring.distancePerPoint);
+            onDistannceUpdate?.Invoke(distanceTraveled,scoring.distancePerPoint);
             if (distanceTraveled >= scoring.distancePerPoint)
             {
                 distanceTraveled %= scoring.distancePerPoint;
                 cumulatedPoints++;
-                ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+                onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
                 gameData.score.SetGlobalValue(cumulatedPoints);
                 gameData.scoreUpSound.Post(gameObject);
             }
@@ -218,10 +228,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetBall()
     {
-        if(ballHolder != null)
-        {
-            ballHolder.ui.OnPointsChange(0, 0);
-        }
         ballHolder = null;
         distanceTraveled = 0;
         cumulatedPoints = 0;
@@ -420,6 +426,7 @@ void StartWaitForCountdown()
                 sizeY = nbPlayer > 2 ? 0.5f : 1f;
             }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
+            player.ui.ToggleRankingSide(player.number % 1 == 0 ? 1 : -1);
         }
     }
 }

@@ -30,8 +30,6 @@ public class Player : MonoBehaviour
         ToggleActive(false);
         ui.ToggleCountdown(false);
         isReady = false;
-        //combat.enabled = true;
-        //GameManager.Instance.OnPlayerInstantiate(this);
         foreach (Material material in anime.animator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>()?.materials)
         {
             material.SetColor(EmissionColor,color);

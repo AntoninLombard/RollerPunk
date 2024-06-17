@@ -46,15 +46,15 @@ public class PlayerPanel : MonoBehaviour
             case PanelState.Hide:
                 ChangePrompt(PromptState.Join);
                 SetColor(Color.black);
-                animator.UIPanelMove(slideDirection < 0 ? 0 : 3);
+                animator.UIPanelMove(0);
                 break;
             case PanelState.Joining:
                 ChangePrompt(PromptState.Join);
-                animator.UIPanelMove(slideDirection < 0 ? 1 : 4);
+                animator.UIPanelMove(1);
                 break;
             case PanelState.Joined:
                 ChangePrompt(PromptState.Ready);
-                animator.UIPanelMove(slideDirection < 0 ? 2 : 5);
+                animator.UIPanelMove(2);
                 break;
         }
     }

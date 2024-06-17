@@ -72,7 +72,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //gamepad = (Gamepad)player.input.devices.Where(x => x.GetType() == gamepad.GetType() );
         OnHitByPunch.AddListener(onHitByPunch);
-        OnGrabbingBall.AddListener(onGrabbingBall);
+        OnGrabbingBall.AddListener(grabbingBall);
     }
 
     
@@ -143,7 +143,7 @@ public class PlayerCombat : MonoBehaviour
     }
     
 
-    void onGrabbingBall()
+    void grabbingBall()
     {
         if (isStunned)
         {
@@ -155,11 +155,11 @@ public class PlayerCombat : MonoBehaviour
         GameManager.Instance.ball.AttachTo(ballAnchorPoint);
         player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.gameData.musicState[player.number].SetValue();
-        GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
+        GameManager.Instance.BallGrabbed(gameObject.GetComponent<Player>());
     }
     
 
-    public void onDeath(Player source)
+    public void Kill(Player source)
     {
         StartCoroutine(death(source));
     }
@@ -327,7 +327,7 @@ public class PlayerCombat : MonoBehaviour
             isHoldingBall = false;
             if (source != null)
             {
-                source.combat.onGrabbingBall();
+                source.combat.grabbingBall();
 
             }
             else
@@ -348,10 +348,10 @@ public class PlayerCombat : MonoBehaviour
     
     IEnumerator death(Player source)
     {
-        if (source != null)
-        {
-            source.controller.StartBoost();
-        }
+        // if (source != null)
+        // {
+        //     source.controller.StartBoost();
+        // }
 
         if (player.controller.isDrifting)
         {
@@ -363,20 +363,19 @@ public class PlayerCombat : MonoBehaviour
             if (source != null)
             {
                 GameManager.Instance.gameData.crowdSteal.Post(gameObject);
-                source.combat.onGrabbingBall();
+                source.combat.grabbingBall();
             }
             else
             {
                 dropBall(player.character.transform);
             }
         }
-        if(source == GameManager.Instance.ballHolder)
-            GameManager.Instance.OnBallKill();
+        if(source != null && source == GameManager.Instance.ballHolder)
+            GameManager.Instance.BallKill(player);
         isStunned = true;
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
         player.anime.animator.SetTrigger(Stunned);
-        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
         player.anime.animator.SetTrigger(GetUp);
         player.data.gettingUpSound.Post(gameObject);
@@ -403,9 +402,7 @@ public class PlayerCombat : MonoBehaviour
     public void dropBall(Transform pos)
     {
         isHoldingBall = false;
-        GameManager.Instance.ball.Toggle(true);
-        GameManager.Instance.ball.Detach();
-        GameManager.Instance.ball.SetEmissiveColor(GameManager.Instance.gameData.ballEmissiveColor);
+        GameManager.Instance.BallDropped();
     }
 
     void punchHit(Player source)
@@ -447,7 +444,7 @@ public class PlayerCombat : MonoBehaviour
     }
     #endregion
 
-    public void onFall()
+    public void Fall()
     {
         if (isHoldingBall)
         {

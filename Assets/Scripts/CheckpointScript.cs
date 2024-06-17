@@ -13,12 +13,17 @@ public class Checkpoint : MonoBehaviour
     {
         Debug.Log("CheckPoint Collision");
         Player player = other.transform.parent?.gameObject.GetComponent<Player>();
+        if (player == null)
+            return;
         if(player == GameManager.Instance.ballHolder)
         {
             scoring.Post(gameObject);
-            GameManager.Instance.OnScoring();
-            player.combat?.onDeath(null);
-            //GameManager.Instance.RespawnPlayer(player);
+            GameManager.Instance.Scoring();
+            player.combat.Kill(null);
+        }
+        else
+        {
+            player.combat.Kill(null);
         }
     }
 }

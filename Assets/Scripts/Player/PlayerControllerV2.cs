@@ -318,8 +318,8 @@ public class PlayerController2 : MonoBehaviour
     public void TeleportPlayer(Vector3 position, Quaternion rotation)
     {
         rb.velocity = Vector3.zero;
-        player.character.position = position;
-        player.character.rotation = rotation;
+        rb.position = position;
+        rb.rotation = rotation;
     }
     
     
