@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3AC4F28E-7E3E-5F9F-8E39-4449D690C694}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FB947895-A068-C17A-016D-9022F69D1531}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -143,6 +143,7 @@
 				<GameParameter Id="3218320494" Name="ball_duck"/>
 				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
 				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="3956935188" Name="sound_pitcher"/>
 				<GameParameter Id="3991942870" Name="Music"/>
 				<GameParameter Id="4056684167" Name="Master"/>
 				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
@@ -319,7 +320,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CBABBD7E-CAF7-DA33-2080-C848B0029EC6}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A079A748-8E5C-B29E-4A25-7D0C9CE9B0DB}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -3838,9 +3839,17 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.12660417" DurationMax="0.12660417">
+				<Event Id="2024222415" Name="UI_Back" DurationType="OneShot" DurationMin="0.13336156" DurationMax="0.18849614">
 					<MediaRefs>
+						<MediaRef Id="94309540"/>
+						<MediaRef Id="115227239"/>
+						<MediaRef Id="325068517"/>
 						<MediaRef Id="516495424"/>
+						<MediaRef Id="605190562"/>
+						<MediaRef Id="616931458"/>
+						<MediaRef Id="672645637"/>
+						<MediaRef Id="713186824"/>
+						<MediaRef Id="1025653342"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="716650455" Name="UI_Cancel_Join" DurationType="OneShot" DurationMin="4.282453" DurationMax="5.3702884">
@@ -3861,11 +3870,15 @@
 						<MediaRef Id="43505216"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4252773102" Name="UI_Join" DurationType="OneShot" DurationMin="1.8254901" DurationMax="2.234617">
+				<Event Id="4252773102" Name="UI_Join" DurationType="OneShot" DurationMin="4.482453" DurationMax="5.570288">
 					<MediaRefs>
+						<MediaRef Id="66567214"/>
 						<MediaRef Id="158589468"/>
 						<MediaRef Id="321318270"/>
 						<MediaRef Id="578911426"/>
+						<MediaRef Id="606326577"/>
+						<MediaRef Id="763276475"/>
+						<MediaRef Id="820428118"/>
 						<MediaRef Id="844727332"/>
 					</MediaRefs>
 				</Event>
@@ -3873,16 +3886,35 @@
 					<MediaRefs>
 						<MediaRef Id="707092360"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="2024222415" Name="UI_Back"/>
+					</ActionPostEvent>
 				</Event>
-				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.10916667" DurationMax="0.10916667">
+				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.13336156" DurationMax="0.18849614">
 					<MediaRefs>
+						<MediaRef Id="94309540"/>
+						<MediaRef Id="115227239"/>
+						<MediaRef Id="325068517"/>
+						<MediaRef Id="605190562"/>
+						<MediaRef Id="616931458"/>
+						<MediaRef Id="672645637"/>
 						<MediaRef Id="695966176"/>
+						<MediaRef Id="713186824"/>
+						<MediaRef Id="1025653342"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2467170825" Name="UI_Start_Button" DurationType="OneShot" DurationMin="2.5727785" DurationMax="2.5727785">
 					<MediaRefs>
+						<MediaRef Id="94309540"/>
+						<MediaRef Id="115227239"/>
+						<MediaRef Id="325068517"/>
+						<MediaRef Id="605190562"/>
+						<MediaRef Id="616931458"/>
+						<MediaRef Id="672645637"/>
 						<MediaRef Id="695966176"/>
+						<MediaRef Id="713186824"/>
 						<MediaRef Id="989369298"/>
+						<MediaRef Id="1025653342"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2699564740" Name="WindUp" DurationType="OneShot" DurationMin="5.664384" DurationMax="10.9984865">
@@ -3973,5 +4005,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{ADA245A2-FC0E-21EA-FB0E-914B19D4E286}</FileHash>
+	<FileHash>{73EBBA2F-35A8-44B9-F46A-60AD6596C9BC}</FileHash>
 </SoundBanksInfo>

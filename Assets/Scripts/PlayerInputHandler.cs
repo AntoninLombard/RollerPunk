@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInputHandler : MonoBehaviour
 {
    [SerializeField] private List<PlayerInstance> players;
-   
+    [SerializeField] private AK.Wwise.Event backSound;
    private void Awake()
    {
       SceneManager.sceneLoaded += OnSceneLoaded;
@@ -24,6 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
    
    public void OnPlayerLeave(PlayerInput playerInput)
    {
+      backSound.Post(gameObject);
       players.Remove(playerInput.GetComponent<PlayerInstance>());
    }
 

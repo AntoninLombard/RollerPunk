@@ -370,6 +370,12 @@ PrefabInstance:
       propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4639928928382156096, guid: c437a9cdd8f77af45aacf5016ae37d7e,
+        type: 3}
+      propertyPath: backSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: b8fbcf6ba4940394cb83615ddd695c0b,
+        type: 2}
     - target: {fileID: 6429364767857338501, guid: c437a9cdd8f77af45aacf5016ae37d7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -420,6 +426,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8155295737413684541, guid: c437a9cdd8f77af45aacf5016ae37d7e,
+        type: 3}
+      propertyPath: backSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: b8fbcf6ba4940394cb83615ddd695c0b,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
