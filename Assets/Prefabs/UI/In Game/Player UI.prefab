@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 9120667567360794387}
-  background: {fileID: 3022676809556963157}
+  background: {fileID: 8695302436213535381}
   scorePanels:
   - icon: {fileID: 5377453127106311747}
     background: {fileID: 2444595765777964683}
