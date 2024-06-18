@@ -155,4 +155,10 @@ public class MenuManager : MonoBehaviour
             SceneManager.LoadScene(gameData.tracks[trackNb].name, LoadSceneMode.Single);
         }
     }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

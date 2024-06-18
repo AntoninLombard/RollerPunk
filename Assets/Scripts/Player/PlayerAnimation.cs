@@ -26,11 +26,14 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int PunchSpeed = Animator.StringToHash("PunchSpeed");
     private static readonly int ParrySpeed = Animator.StringToHash("ParrySpeed");
     private static readonly int TauntSpeed = Animator.StringToHash("TauntSpeed");
+    private static readonly int Death1 = Animator.StringToHash("Death");
+    private static readonly int Respawn1 = Animator.StringToHash("Respawn");
 
 
     private void OnEnable()
     {
-        //player.controller.canBoost += StartDriftBoostVFX;
+        player.controller.boostReady += StartDriftBoostVFX;
+        player.controller.driftCanceled += CancelDrift;
     }
 
     void Start()
@@ -42,7 +45,8 @@ public class PlayerAnimation : MonoBehaviour
         punchLVFX.SetFloat("Lifetime",player.data.punchDamageWindow);
         punchRVFX.SetFloat("Lifetime",player.data.punchDamageWindow);
         shieldVFX.SetFloat("Lifetime",player.data.parryWindow);
-            
+        vfx.punchWindUpL.SetFloat("Lifetime",player.data.punchWindUp);
+        vfx.punchWindUpR.SetFloat("Lifetime",player.data.punchWindUp);
     }
 
 
@@ -64,8 +68,30 @@ public class PlayerAnimation : MonoBehaviour
         vfx.onBoostReady(side);
     }
     
-    public void StopDrif(int side)
+    public void CancelDrift(int side)
     {
-        vfx.onBoostReady(side);
+        vfx.driftStop(side);
+    }
+
+
+    public void StartPunchWindUp(int side)
+    {
+        vfx.punchWindUpStart(side);
+    }
+
+    public void CancelPunchWindUp()
+    {
+        vfx.punchWindUpCancel();
+    }
+
+    public void Death()
+    {
+        vfx.death();
+        animator.SetTrigger(Death1);
+    }
+
+    public void Respawn()
+    {
+        animator.SetTrigger(Respawn1);
     }
 }
