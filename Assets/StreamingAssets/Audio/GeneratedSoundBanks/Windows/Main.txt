@@ -8,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	602331051	Hit_ByBall			\RP_Feedbacks\Hit_ByBall	
 	612075679	Checkpoint			\RP_Feedbacks\Checkpoint	
 	716650455	UI_Cancel_Join			\RP_UI\UI_Cancel_Join	
+	779278001	Death			\RP_Feedbacks\Death	
 	1047898967	Skid_Stop			\RP_Vehicule\Skid_Stop	
 	1134971709	Parry_Success			\RP_Feedbacks\Parry_Success	
 	1403211570	Punch_Taunt			\RP_Feedbacks\Punch_Taunt	
@@ -41,6 +42,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3549005828	Hit_ByPunch			\RP_Feedbacks\Hit_ByPunch	
 	3687251531	setplayernumber			\RP_Feedbacks\setplayernumber	
 	3766921625	Burst			\RP_Feedbacks\Burst	
+	3787035475	Death_Player			\RP_Feedbacks\Death_Player	
 	3991942870	Music			\Default Work Unit\Music	
 	4055567060	Menu_Music			\Default Work Unit\Menu_Music	
 	4252773102	UI_Join			\RP_UI\UI_Join	
@@ -198,7 +200,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	331689301	RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Inst\P1\P1_B_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164		5496
 	332084788	RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Drums\P2\P1_B_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164		5496
 	332488476	RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Drums\P1\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164		5496
-	333996775	Canon	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\CANON_BLOOD_ABBA90EC.wem		\Actor-Mixer Hierarchy\RP_World\Canon		289109
+	333996775	Canon	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\CANON_BLOOD_CEC72978.wem		\Actor-Mixer Hierarchy\RP_World\Canon		289109
 	339045206	Hachoir_Short	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Hachoir_Short_755F56E2.wem		\Actor-Mixer Hierarchy\RP_World\Hachoir_Short		184741
 	344242536	Doppler_03	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Doppler_D4C1CC92.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Burst\Doppler_03		333879
 	351473515	RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Inst\P1\P1_A_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164		5496
@@ -211,7 +213,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	392419133	RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\P3\RP_M_DOWN THE POWER ROAD_P3_M002_STEMS\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Drums\P4\P3_A2\RP_M_DOWN THE POWER ROAD_P3_M002_A2_DRUMS_164		5496
 	398677519	M2_1	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\M2_1_073B4D0C.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_01\P1_VEH_ENG_turn\M2_1		2207753
 	399989887	Hit_ByWall-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Hit_ByWall-001_755F56E2.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Hit_ByWall\Wall_Hit_01\Wall_Hit_01\Hit_ByWall-001		45261
-	402485965	Rain_Blood	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Rain_Blood_D1838594.wem		\Actor-Mixer Hierarchy\RP_World\Rain_Blood		486097
+	402485965	Rain_Blood	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Rain_Blood_11F544BC.wem		\Actor-Mixer Hierarchy\RP_World\Rain_Blood		486097
 	406013558	Start	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Start_50756570.wem		\Actor-Mixer Hierarchy\RP_World\Ambiances\AMB_Kill\cnam\Start		688552
 	418444728	Derapage_v1	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Derapage_v1_BE5E13CF.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Skid\Drift_01\Skid_01\Drift_Start\Derapage_v1		61593
 	418778936	kill3	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Soundly Audio\Crowds, Sport, Football, Small Crowd, UK, Goal, Cheers SND86592_3D51987F.wem		\Actor-Mixer Hierarchy\RP_World\Ambiances\AMB_Drill_Done\AMB_Kill\kill3		785596
@@ -248,6 +250,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	493354949	High	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\High_073B4D0C.wem		\Actor-Mixer Hierarchy\RP_World\Ambiances\AMB_Crowd\High		2679952
 	496707359	Decpetion_1	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Decpetion_1_1E768679.wem		\Actor-Mixer Hierarchy\RP_World\Ambiances\Deception\AMB_Deception\Decpetion_1		287055
 	498199362	Punch_Move-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Punch_Move-001_45338659.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Punch\Punch_02\Punch\Punch_Move-001		39022
+	500962752	Death_Player	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Death_Player_755F56E2.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Death_Player		145527
 	501829316	Collision-005	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\Collision-005_CCBBEE21.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Collision\Coll1_01\Collision_01\Collision_01\Collision-005		50958
 	503999046	M2_3	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\M2_3_073B4D0C.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Engines\Engine_01\P1_VEH_ENG_turn\M2_3		333442
 	505768196	RP_GettingUp-001	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Windows\SFX\RP_GettingUp-001_3024823F.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Skid_Stop\Skid_Stop_01\RP_GettingUp-001		20998

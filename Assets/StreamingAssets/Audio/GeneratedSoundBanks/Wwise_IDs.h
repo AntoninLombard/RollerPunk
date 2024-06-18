@@ -30,6 +30,8 @@ namespace AK
         static const AkUniqueID COLLISION = 1792046091U;
         static const AkUniqueID COUNTDOWN = 1505888634U;
         static const AkUniqueID COUNTER = 3051750219U;
+        static const AkUniqueID DEATH = 779278001U;
+        static const AkUniqueID DEATH_PLAYER = 3787035475U;
         static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID GETTING_UP = 22664301U;
         static const AkUniqueID HIT_BYBALL = 602331051U;

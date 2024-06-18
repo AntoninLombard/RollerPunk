@@ -320,7 +320,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{69D39D9B-58D4-319F-8A73-12E08F85C700}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{AB80C984-1AB6-3B09-5D34-F874E84CF15F}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -820,7 +820,7 @@
 				</File>
 				<File Id="333996775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CANON_BLOOD.wav</ShortName>
-					<CachePath>SFX/CANON_BLOOD_ABBA90EC.wem</CachePath>
+					<CachePath>SFX/CANON_BLOOD_CEC72978.wem</CachePath>
 				</File>
 				<File Id="339045206" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hachoir_Short.wav</ShortName>
@@ -882,7 +882,7 @@
 				</File>
 				<File Id="402485965" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Rain_Blood.wav</ShortName>
-					<CachePath>SFX/Rain_Blood_D1838594.wem</CachePath>
+					<CachePath>SFX/Rain_Blood_11F544BC.wem</CachePath>
 				</File>
 				<File Id="406013558" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Start.wav</ShortName>
@@ -1055,6 +1055,10 @@
 				<File Id="498199362" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Punch_Move-001.wav</ShortName>
 					<CachePath>SFX/Punch_Move-001_45338659.wem</CachePath>
+				</File>
+				<File Id="500962752" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death_Player.wav</ShortName>
+					<CachePath>SFX/Death_Player_755F56E2.wem</CachePath>
 				</File>
 				<File Id="501829316" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Collision-005.wav</ShortName>
@@ -2314,6 +2318,12 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="779278001" Name="Death" DurationType="OneShot" DurationMin="2.5" DurationMax="2.5">
+					<MediaRefs>
+						<MediaRef Id="500962752"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3787035475" Name="Death_Player" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2862969430" Name="Engine_Start" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -3929,5 +3939,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D337D464-F4D2-AF1A-1B6F-EE13C3E827F1}</FileHash>
+	<FileHash>{1E887B93-6DB1-5EE8-B9DF-B13251CB5B0E}</FileHash>
 </SoundBanksInfo>
