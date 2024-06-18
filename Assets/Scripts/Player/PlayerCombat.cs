@@ -93,6 +93,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (isWindingUpPunch)
         {
+            player.anime.CancelPunchWindUp();
             StartCoroutine(taunt());
         } else if (!(isTaunting || isRecovering || !isHoldingPunch || isStunned))
         {

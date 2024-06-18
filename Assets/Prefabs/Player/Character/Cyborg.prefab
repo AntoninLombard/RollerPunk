@@ -8514,6 +8514,8 @@ MonoBehaviour:
   bloodBurst02: {fileID: 2134746050887349613}
   booster01: {fileID: 6309456822799366952}
   booster02: {fileID: 159180647402165629}
+  punchWindUpL: {fileID: 8228425674698011278}
+  punchWindUpR: {fileID: 5460001583046410913}
 --- !u!4 &6483524001786720313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8011342109744187185, guid: 782280465bcb04b41a3415c5addd8235,
