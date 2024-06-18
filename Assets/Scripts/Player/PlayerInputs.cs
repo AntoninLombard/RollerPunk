@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputs : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] public PlayerInput playerInput;
     [SerializeField] private PlayerInputData inputData;
     
     [field: Header("PLAYER DRIVING INPUTS")]
@@ -89,17 +89,10 @@ public class PlayerInputs : MonoBehaviour
         }
     }
     
-    // public void onReady(InputAction.CallbackContext context)
-    // {
-    //     if (context.started)
-    //     {
-    //         player.isReady = true;
-    //         player.ui.SetReady(true);
-    //         GameManager.Instance.OnPlayerReady();
-    //         Debug.Log("StartPressed");
-    //     } 
-    //
-    // }
+    public void onPause(InputAction.CallbackContext context)
+    {
+        GameManager.Instance.TogglePause(true);
+    }
 
     #endregion
 
@@ -122,6 +115,7 @@ public class PlayerInputs : MonoBehaviour
         playerInput.actions.FindAction("Driving/Punch").canceled += onPunch;
         playerInput.actions.FindAction("Driving/Drift").canceled += onDrift;
         playerInput.actions.FindAction("Driving/Parry").canceled += onParry;
+        playerInput.actions.FindAction("Driving/Pause").started += onPause;
 
     }
 }

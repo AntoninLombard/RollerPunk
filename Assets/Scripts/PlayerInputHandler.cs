@@ -7,10 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+   public static  PlayerInputHandler Instance;
    [SerializeField] private List<PlayerInstance> players;
-   
+
+   ~PlayerInputHandler()
+   {
+      Instance = null;
+      SceneManager.sceneLoaded -= OnSceneLoaded;
+   }
    private void Awake()
    {
+      if (Instance == null)
+         Instance = this;
       SceneManager.sceneLoaded += OnSceneLoaded;
       DontDestroyOnLoad(this);
    }
@@ -44,7 +52,9 @@ public class PlayerInputHandler : MonoBehaviour
    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
    {
       if (scene.name == "MainMenu")
+      {
          return;
+      }
       foreach (var player in players)
       {
          GameManager.Instance.SpawnPlayer(player.playerData);
