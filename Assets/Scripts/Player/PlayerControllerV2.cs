@@ -398,6 +398,7 @@ public class PlayerController2 : MonoBehaviour
     }
     private IEnumerator Boost()
     {
+        player.anime.vfx.Boost();
         controllerData.burstSound.Post(gameObject);
         isBoosting = true;
         maxSpeed = controllerData.boostMaxSpeed + rubberBanding;

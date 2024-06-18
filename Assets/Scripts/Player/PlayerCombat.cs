@@ -48,7 +48,6 @@ public class PlayerCombat : MonoBehaviour
     
     [Header("Parts")] 
     [SerializeField] private Transform ballAnchorPoint;
-    [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ColliderBox punchLeftCollider;
     [SerializeField] private ColliderBox punchRightCollider;
 
@@ -94,9 +93,11 @@ public class PlayerCombat : MonoBehaviour
     {
         if (isWindingUpPunch)
         {
+            player.anime.CancelPunchWindUp();
             StartCoroutine(taunt());
         } else if (!(isTaunting || isRecovering || !isHoldingPunch || isStunned))
         {
+            player.anime.CancelPunchWindUp();
             StartCoroutine(punchRelease());
         }
     }
@@ -171,9 +172,6 @@ public class PlayerCombat : MonoBehaviour
 
     public void onParryHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        particleSystem.Play();
         if(source.combat.isHoldingBall)
         {
             StartCoroutine(death(source));
@@ -210,10 +208,12 @@ public class PlayerCombat : MonoBehaviour
             default:
                 yield break;
         }
+        player.anime.StartPunchWindUp(punchSide);
         
         yield return new WaitForSeconds(player.data.punchWindUp);
         if (isTaunting || isRecovering || !isWindingUpPunch || isStunned)
         {
+            player.anime.CancelPunchWindUp();
             yield break;
         }
         isHoldingPunchLeft = punchSide < 0;
@@ -226,6 +226,7 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(player.data.punchHoldDuration);
         if (isTaunting || isRecovering || !isHoldingPunch || isStunned || isPunching)
         {
+            player.anime.CancelPunchWindUp();
             yield break;
         } 
         yield return punchRelease();
@@ -318,11 +319,6 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator stun(Player source)
     {
-
-        if (source != null)
-        {
-            source.controller.StartBoost();
-        }
         if (player.controller.isDrifting)
         {
             player.controller.CancelDrift(false);
@@ -353,11 +349,6 @@ public class PlayerCombat : MonoBehaviour
     
     IEnumerator death(Player source)
     {
-        // if (source != null)
-        // {
-        //     source.controller.StartBoost();
-        // }
-
         if (player.controller.isDrifting)
         {
             player.controller.CancelDrift(false);
@@ -380,12 +371,11 @@ public class PlayerCombat : MonoBehaviour
         isStunned = true;
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
-        player.anime.animator.SetTrigger(Stunned);
+        player.anime.Death();
         yield return new WaitForSeconds(player.data.stunDuration);
-        player.anime.animator.SetTrigger(GetUp);
-        player.data.gettingUpSound.Post(gameObject);
         isStunned = false;
         isInvincible = false;
+        player.anime.Respawn();
         GameManager.Instance.RespawnPlayer(player);
         player.data.respawnSound.Post(gameObject);
         yield return invincibility();
@@ -412,9 +402,6 @@ public class PlayerCombat : MonoBehaviour
 
     void punchHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        particleSystem.Play();
         if(source.combat.isHoldingBall)
         {
             player.data.ballPunchHitSound.Post(gameObject);
@@ -431,9 +418,6 @@ public class PlayerCombat : MonoBehaviour
     
     void counter(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.white;
-        particleSystem.Play();
         player.data.punchCounterSound.Post(gameObject);
         player.anime.animator.SetTrigger(Countered);
         //StartCoroutine(stun(source));
@@ -442,9 +426,6 @@ public class PlayerCombat : MonoBehaviour
     void parry(Player source)
     {
         player.anime.animator.SetTrigger(ParrySuccess);
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.green;
-        particleSystem.Play();
         source.combat.onParryHit(player);
     }
     #endregion
@@ -456,10 +437,7 @@ public class PlayerCombat : MonoBehaviour
             GameManager.Instance.gameData.crowdFall.Post(GameManager.Instance.gameObject);
             GameManager.Instance.gameData.musicState[4].SetValue();
         }
-
-        player.data.respawnSound.Post(GameManager.Instance.gameObject);
         StartCoroutine(death(null));
-        GameManager.Instance.RespawnPlayer(player);
         player.data.startEngineSound.Post(gameObject);
         
     }

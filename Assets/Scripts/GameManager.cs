@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool isRaceOn;
     [SerializeField] private float timer;
     [SerializeField] private RespawnPoint raceStart;
-    [SerializeField] private List<Checkpoint> checkpoints;
+    [SerializeField] public List<Checkpoint> checkpoints;
     [SerializeField] private List<RespawnPoint> respawnpoints;
 
     [Header("Visuals")]
@@ -264,7 +264,7 @@ public class GameManager : MonoBehaviour
         int index = respawnpoints.IndexOf(lastRespawnPoint);
         Transform pos = lastRespawnPoint.ballSpawnPoint;
         int i = 1;
-        do { i++; } while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn) ;
+        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn) { i++; } ;
         pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
         
         if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
@@ -444,7 +444,14 @@ void StartWaitForCountdown()
                 sizeY = 0.5f;
             }
             player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
-            player.ui.ToggleRankingSide(player.number % 1 == 0 ? 1 : -1);
+            player.ui.ToggleRankingSide(player.number % 2 == 0 ? 1 : -1);
         }
+    }
+
+
+    void TogglePause(bool isPaused)
+    {
+        Time.timeScale = isPaused ? 0 : 1;
+        this.isPaused = isPaused;
     }
 }
