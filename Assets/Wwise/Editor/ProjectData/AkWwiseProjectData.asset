@@ -1032,7 +1032,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584829770266148277
+    m_lastTime: -8584828793987011394
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -1153,6 +1153,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 4.428607
       minDuration: 3.6834946
+    - name: Death
+      guid: 184ca80814da894297457d6e354edcc9
+      id: 779278001
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Death
+        ObjectType: 3
+        guid: 184ca80814da894297457d6e354edcc9
+      Path: Events\RP_Feedbacks\Death
+      maxAttenuation: 0
+      maxDuration: 2.5
+      minDuration: 2.5
+    - name: Death_Player
+      guid: e9397cfb4d685d4a81b841505c3065d2
+      id: 3787035475
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Death_Player
+        ObjectType: 3
+        guid: e9397cfb4d685d4a81b841505c3065d2
+      Path: Events\RP_Feedbacks\Death_Player
+      maxAttenuation: 0
+      maxDuration: 2.5
+      minDuration: 2.5
     - name: Getting_Up
       guid: b592b15195faa141a3ce028904b9a971
       id: 22664301
@@ -2659,7 +2693,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 02000000030000000800000027000000
+  ExpandedFileSystemItemIds: 0200000003000000080000001200000027000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

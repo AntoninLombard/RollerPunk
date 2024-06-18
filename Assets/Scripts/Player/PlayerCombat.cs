@@ -372,6 +372,7 @@ public class PlayerCombat : MonoBehaviour
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
         player.anime.Death();
+        player.data.deathSound.Post(gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
         isStunned = false;
         isInvincible = false;
@@ -439,7 +440,7 @@ public class PlayerCombat : MonoBehaviour
         }
         StartCoroutine(death(null));
         player.data.startEngineSound.Post(gameObject);
-        
+
     }
 
     // int sourceDirection(Transform source)

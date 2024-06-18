@@ -89,7 +89,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9f6ee47bbd2b3824ab2409a685628c69,
       type: 2}
-  collisionSoundThreshold: 2500
+  collisionSoundThreshold: 2000
   collisionSound:
     idInternal: 0
     valueGuidInternal: 
@@ -149,6 +149,11 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c94b3b8e34fdc7049a27769339614aca,
+      type: 2}
+  deathSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c37970fdcc795014ba379a3cbf93bae3,
       type: 2}
   engineSpeed:
     idInternal: 0
