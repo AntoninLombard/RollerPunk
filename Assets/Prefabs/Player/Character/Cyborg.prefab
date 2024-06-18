@@ -8328,6 +8328,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9130615108937391382, guid: 782280465bcb04b41a3415c5addd8235,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130615108937391382, guid: 782280465bcb04b41a3415c5addd8235,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130615108937391382, guid: 782280465bcb04b41a3415c5addd8235,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 64.11666
       objectReference: {fileID: 0}
@@ -8437,6 +8447,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8580725850967207172}
+    - targetCorrespondingSourceObject: {fileID: -7880941676463847691, guid: 782280465bcb04b41a3415c5addd8235,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7658889599139661264}
   m_SourcePrefab: {fileID: 100100000, guid: 782280465bcb04b41a3415c5addd8235, type: 3}
 --- !u!4 &1203029060341878952 stripped
 Transform:
@@ -8444,6 +8458,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3950813050656339720}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2627110159261118973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7880941676463847691, guid: 782280465bcb04b41a3415c5addd8235,
+    type: 3}
+  m_PrefabInstance: {fileID: 3950813050656339720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1818360608 &7658889599139661264
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627110159261118973}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0.000000007874753, y: 0.8177299, z: 0.000000008788469}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources: []
 --- !u!4 &3557459928633594083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 782280465bcb04b41a3415c5addd8235,
