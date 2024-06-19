@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 772a81b884feba5489cb388ba7a65986
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/LD/Track_01 greyblock.unity
     guid: 2dd7175e11aebd34ea48d6e6085af9f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/LD/Track_02.unity
     guid: be1f00a009fad3840b6d9b0c3a9296e3
   - enabled: 1
