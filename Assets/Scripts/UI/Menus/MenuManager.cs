@@ -122,6 +122,7 @@ public class MenuManager : MonoBehaviour
         players.Clear();
         panelBindings.Clear();
         playerNumber = 0;
+        mainMenuPanel.gameObject.SetActive(true);
         mainMenuPanel.UIFadeIn();
     }
 

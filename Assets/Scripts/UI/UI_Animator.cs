@@ -23,6 +23,7 @@ public class UI_Animator : MonoBehaviour
 
     public void UIFadeIn()
     {
+        gameObject.SetActive(true);
         StartCoroutine(FadeIn());
     }
 
@@ -50,6 +51,7 @@ public class UI_Animator : MonoBehaviour
         }
         
         canvasGroup.alpha = 0;
+        gameObject.SetActive(false);
         yield return null;
     }
     
