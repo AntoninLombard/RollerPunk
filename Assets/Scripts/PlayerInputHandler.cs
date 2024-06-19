@@ -8,17 +8,24 @@ using UnityEngine.SceneManagement;
 public class PlayerInputHandler : MonoBehaviour
 {
    public static  PlayerInputHandler Instance;
+   
    [SerializeField] private List<PlayerInstance> players;
 
    ~PlayerInputHandler()
    {
-      Instance = null;
+      //Instance = null;
       SceneManager.sceneLoaded -= OnSceneLoaded;
    }
-   private void Awake()
+   
+
+   private void OnEnable()
    {
       if (Instance == null)
+      {
          Instance = this;
+      }
+      else
+         Destroy(this);
       SceneManager.sceneLoaded += OnSceneLoaded;
       DontDestroyOnLoad(this);
    }

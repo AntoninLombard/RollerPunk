@@ -475,9 +475,13 @@ void StartWaitForCountdown()
 
     public void ReturnToMenu()
     {
+        PlayerInputHandler playerInput = PlayerInputHandler.Instance;
+        Debug.Log(playerInput);
         Time.timeScale = 1;
-        Destroy(PlayerInputHandler.Instance.gameObject);
-        PlayerInputHandler.Instance = null;
+        PlayerInputHandler.Instance.ClearPlayers();
+        GameObject toDestroy = PlayerInputHandler.Instance.gameObject;
+        Destroy(PlayerInputHandler.Instance);
+        Destroy(toDestroy);
         AkSoundEngine.SetRTPCValue("Pause", 0);
         SceneManager.LoadScene("MainMenu");
     }
@@ -486,14 +490,16 @@ void StartWaitForCountdown()
     public void Restart()
     {
         lastRespawnPoint = raceStart;
-        foreach (var player in players.Keys)
+        ballHolder?.combat.dropBall();
+        ball.transform.position = ballSpawn.position;
+        ball.transform.rotation = ballSpawn.rotation;
+        List<Player> playersList = new List<Player>(players.Keys);
+        foreach (var player in playersList)
         {
             players[player] = 0;
             RespawnPlayer(player);
         }
-        ballHolder.combat.dropBall();
-        ball.transform.position = ballSpawn.position;
-        ball.transform.rotation = ballSpawn.rotation;
+        TogglePause(false);
         StartWaitForCountdown();
     }
 
