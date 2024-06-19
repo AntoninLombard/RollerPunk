@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0dfc7c03645e24086f85157e0e3152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
   players: []
 --- !u!114 &943573265854132325
 MonoBehaviour:
@@ -153,4 +154,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0dfc7c03645e24086f85157e0e3152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 943573265854132325}
   players: []

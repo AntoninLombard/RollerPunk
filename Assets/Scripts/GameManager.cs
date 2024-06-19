@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 using Random = UnityEngine.Random;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     
     [field: Header("Ball & Ball holder")]
     [field: SerializeField] public BallScript ball { get; private set; }
+
+    [SerializeField] public Transform ballSpawn;
     [field: SerializeField] [CanBeNull] public Player ballHolder { get; private set; }
     [SerializeField] private Vector3 holderPreviousPosition;
     [SerializeField] private Vector3 holderPreviousForward;
@@ -51,6 +54,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RTPC crowds;
     [SerializeField] private RTPC playerNumberRTPC;
 
+    [Header("UI elements")]
+    [SerializeField] private GameObject miniMap;
+    [SerializeField] private GameObject menu;
     public delegate void OnScoreChange(int score);
     public delegate void OnPointsChange(int points,int multiplier);
     public delegate void OnBallDropped();
@@ -449,9 +455,52 @@ void StartWaitForCountdown()
     }
 
 
-    void TogglePause(bool isPaused)
+    public void TogglePause(bool isPaused)
     {
         Time.timeScale = isPaused ? 0 : 1;
         this.isPaused = isPaused;
+        miniMap.SetActive(!isPaused);
+        menu.SetActive(isPaused);
+        AkSoundEngine.SetRTPCValue("Pause", isPaused? 1 :0);
+        foreach (var player in players.Keys)
+        {
+            if(this.isPaused)
+                player.input.playerInput.SwitchCurrentActionMap("Pause");
+            else
+            {
+                player.input.playerInput.SwitchCurrentActionMap("Driving");
+            }
+        }
     }
+
+    public void ReturnToMenu()
+    {
+        PlayerInputHandler playerInput = PlayerInputHandler.Instance;
+        Debug.Log(playerInput);
+        Time.timeScale = 1;
+        PlayerInputHandler.Instance.ClearPlayers();
+        GameObject toDestroy = PlayerInputHandler.Instance.gameObject;
+        Destroy(PlayerInputHandler.Instance);
+        Destroy(toDestroy);
+        AkSoundEngine.SetRTPCValue("Pause", 0);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
+    public void Restart()
+    {
+        lastRespawnPoint = raceStart;
+        ballHolder?.combat.dropBall();
+        ball.transform.position = ballSpawn.position;
+        ball.transform.rotation = ballSpawn.rotation;
+        List<Player> playersList = new List<Player>(players.Keys);
+        foreach (var player in playersList)
+        {
+            players[player] = 0;
+            RespawnPlayer(player);
+        }
+        TogglePause(false);
+        StartWaitForCountdown();
+    }
+
 }

@@ -333,7 +333,7 @@ public class PlayerCombat : MonoBehaviour
             }
             else
             {
-                dropBall(player.character.transform);
+                dropBall();
             }
         }
         isStunned = true;
@@ -363,7 +363,7 @@ public class PlayerCombat : MonoBehaviour
             }
             else
             {
-                dropBall(player.character.transform);
+                dropBall();
             }
         }
         if(source != null && source == GameManager.Instance.ballHolder)
@@ -395,7 +395,7 @@ public class PlayerCombat : MonoBehaviour
     #region COMBAT HITS & COUNTERS
     
     
-    public void dropBall(Transform pos)
+    public void dropBall()
     {
         isHoldingBall = false;
         GameManager.Instance.BallDropped();
