@@ -1419,8 +1419,42 @@ MonoBehaviour:
     ParentPath: Events\RP_UI
     guid: 645774c9e94d1f45a20173b1b3b89490
     GuidInternal: 
-    m_lastTime: -8584829810077760760
+    m_lastTime: -8584827929648241773
     List:
+    - name: Pause_Off
+      guid: 735ebd66cf4e3541a6518727ff86cf94
+      id: 3967028551
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_UI
+        ObjectType: 12
+        guid: 645774c9e94d1f45a20173b1b3b89490
+      - ElementName: Pause_Off
+        ObjectType: 3
+        guid: 735ebd66cf4e3541a6518727ff86cf94
+      Path: Events\RP_UI\Pause_Off
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Pause_On
+      guid: 1061c86be61d9d4bb7bf08d95b8f8b09
+      id: 3537680115
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_UI
+        ObjectType: 12
+        guid: 645774c9e94d1f45a20173b1b3b89490
+      - ElementName: Pause_On
+        ObjectType: 3
+        guid: 1061c86be61d9d4bb7bf08d95b8f8b09
+      Path: Events\RP_UI\Pause_On
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Score_Up
       guid: 0b29a759e1f60847b0ec88a663f64cfc
       id: 3248278131
@@ -2693,7 +2727,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 0200000003000000080000001200000027000000
+  ExpandedFileSystemItemIds: 020000000300000008000000120000002700000029000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
