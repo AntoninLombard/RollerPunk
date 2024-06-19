@@ -6800,6 +6800,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -6807,6 +6817,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Deadbits Lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Name
+      value: Blood Particles lifetime range
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -6820,8 +6845,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Name
       value: DeadBit mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -6859,6 +6899,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1519805307289292720, guid: d5bef06847b23f046ba7c4a42bf46bd7,
         type: 3}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Overridden
@@ -6956,6 +7001,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -6963,6 +7018,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Deadbits Lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Name
+      value: Blood Particles lifetime range
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -6976,8 +7046,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Name
       value: DeadBit mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -7015,6 +7100,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7070831255929112694, guid: d5bef06847b23f046ba7c4a42bf46bd7,
         type: 3}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Overridden
@@ -7407,6 +7497,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7414,6 +7514,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Deadbits Lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Name
+      value: Blood Particles lifetime range
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -7427,6 +7542,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Name
       value: DeadBit mesh
       objectReference: {fileID: 0}
@@ -7434,6 +7554,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[1].m_Name
       value: DeadBit mesh texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -7476,6 +7606,11 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[1].m_Value
       value: 
       objectReference: {fileID: 2800000, guid: e9ecf2602f2847f45a69df2f6e6dfc88, type: 3}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Overridden
@@ -8598,8 +8733,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Deadbits Lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Name
+      value: Blood Particles lifetime range
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -8610,6 +8770,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Name
       value: Velocity Random.B
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -8640,6 +8815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.z
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907971904823958637, guid: 2c96fd673ea887e449c8d5968bdc6fad,
         type: 3}
@@ -8699,7 +8879,7 @@ PrefabInstance:
     - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
         type: 3}
@@ -8758,6 +8938,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: Blood Particles lifetime range
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Name
       value: Particles velocity
       objectReference: {fileID: 0}
@@ -8808,6 +8993,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
       value: 10
       objectReference: {fileID: 0}
@@ -8829,6 +9024,11 @@ PrefabInstance:
     - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[1].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5540283910115085958, guid: e128392c247c63b4cb848f08781f3a1f,
