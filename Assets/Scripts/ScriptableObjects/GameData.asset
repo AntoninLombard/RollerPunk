@@ -12,16 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3804cea899a35e24099c10649fe44b3d, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 3059947211623483126, guid: fa9809a5847211a4696b12fe027c343e,
+    type: 3}
   playerColors:
   - {r: 1, g: 0.14901961, b: 0.5764706, a: 1}
   - {r: 0.3726415, g: 1, b: 0.66391516, a: 1}
   - {r: 1, g: 0.7863391, b: 0.15566039, a: 1}
   - {r: 0.2078431, g: 0.25158042, b: 0.99607843, a: 1}
+  ballEmissiveColor: {r: 3.8490567, g: 3.3652864, b: 0.12709157, a: 1}
+  tracks:
+  - {fileID: 102900000, guid: 2dd7175e11aebd34ea48d6e6085af9f5, type: 3}
+  - {fileID: 102900000, guid: be1f00a009fad3840b6d9b0c3a9296e3, type: 3}
+  - {fileID: 102900000, guid: 431233c04393a2045b8a41628dc7a85c, type: 3}
   countDownColors:
   - {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
-  - {r: 0.37678784, g: 0.83018863, b: 0.04307583, a: 1}
-  - {r: 1.3207548, g: 0.34017196, b: 0.06852973, a: 1}
-  - {r: 1.735849, g: 0.07369167, b: 0.07369167, a: 1}
+  - {r: 0.17254904, g: 3.13853, b: 3.3254902, a: 1}
+  - {r: 2.8908849, g: 0.25153932, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  menuMusicStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   countdownSound:
     idInternal: 0
     valueGuidInternal: 
@@ -61,6 +72,11 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7858b644464d3ee4ba2b509554069aae,
+      type: 2}
+  crowdFall:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a83112ce76032f84eb48a8051588eb0f,
       type: 2}
   scoreUpSound:
     idInternal: 0

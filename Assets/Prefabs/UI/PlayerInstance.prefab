@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e196630ff361944aafbf020931a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <playerData>k__BackingField:
+    nb: 0
+    input: {fileID: -7191381097531202988}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    isReady: 0
 --- !u!114 &-7191381097531202988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -70,9 +75,69 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3e4b1d94-82f2-4749-ac70-c8e6deb2ca15
+    m_ActionName: Driving/Steer[/XInputControllerWindows/leftStick/x,/XInputControllerWindows1/leftStick/x,/XInputControllerWindows2/leftStick/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8ef0be89-1bf6-4b3e-85ac-d31d45404b06
+    m_ActionName: Driving/Drive[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d35ac15-4fc7-4385-8d1a-d682c8858f27
+    m_ActionName: Driving/Punch[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b3611e6a-e1c5-49f7-80bb-a07b5bf2f1cb
+    m_ActionName: Driving/Parry[/XInputControllerWindows/buttonEast,/XInputControllerWindows1/buttonEast,/XInputControllerWindows2/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cef94fcb-876d-42f1-9a46-824a7a771772
+    m_ActionName: Driving/Reverse[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger,/XInputControllerWindows2/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb45708b-8a83-43e2-b9a5-1923f999cc1d
+    m_ActionName: Driving/Ready[/XInputControllerWindows/start,/XInputControllerWindows1/start,/XInputControllerWindows2/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 902a9632-19a6-4100-b9b3-a265a1b8bcc1
+    m_ActionName: Driving/Drift[/XInputControllerWindows/leftShoulder,/XInputControllerWindows1/leftShoulder,/XInputControllerWindows2/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8721005442414932933}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4a7f7a88-5f2b-4b4f-a155-067be0e201c1
+    m_ActionName: Menu/Join[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8721005442414932933}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ae1349be-93db-4820-addc-35ed35a7fb51
+    m_ActionName: Menu/Cancel[/XInputControllerWindows/buttonEast]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: eba8193d-6ab7-43a3-aa6f-082e57a238db
+  m_DefaultActionMap: Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

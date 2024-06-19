@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] public PlayerInput playerInput;
     [SerializeField] private PlayerInputData inputData;
     
     [field: Header("PLAYER DRIVING INPUTS")]
@@ -31,9 +33,9 @@ public class PlayerInputs : MonoBehaviour
     
     void Start()
     {
-        driveAction = playerInput.actions.FindAction("Driving/Drive");
-        brakeAction = playerInput.actions.FindAction("Driving/Reverse");
-        steerAction = playerInput.actions.FindAction("Driving/Steer");
+        // driveAction = playerInput.actions.FindAction("Driving/Drive");
+        // brakeAction = playerInput.actions.FindAction("Driving/Reverse");
+        // steerAction = playerInput.actions.FindAction("Driving/Steer");
     }
     private void Update()
     {
@@ -46,12 +48,26 @@ public class PlayerInputs : MonoBehaviour
 
     #region INPUT EVENT CALLBACKS
 
-    public void onPunch(InputAction.CallbackContext context)
+    public void onPunchL(InputAction.CallbackContext context)
     {
         if(context.started)
         {
             punchInput = true;
-            player.combat.StartPunch();
+            player.combat.StartPunch(-1);
+        }
+        else if(context.canceled)
+        {
+            punchInput = false;
+            player.combat.CancelPunch();
+        }
+    }
+    
+    public void onPunchR(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            punchInput = true;
+            player.combat.StartPunch(1);
         }
         else if(context.canceled)
         {
@@ -87,19 +103,40 @@ public class PlayerInputs : MonoBehaviour
         }
     }
     
-    public void onReady(InputAction.CallbackContext context)
+    public void onPause(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            player.isReady = true;
-            player.ui.SetReady(true);
-            GameManager.Instance.OnPlayerReady();
-            Debug.Log("StartPressed");
-        } 
-
+        GameManager.Instance.TogglePause(true);
     }
 
     #endregion
-    
-    
+
+
+    public void SetInput(PlayerInput playerInput)
+    {
+        this.playerInput = playerInput;
+        playerInput.currentActionMap = playerInput.actions.FindActionMap("Driving");
+        playerInput.actions.FindActionMap("Menu").Disable();
+        driveAction = playerInput.actions.FindAction("Driving/Drive");
+        brakeAction = playerInput.actions.FindAction("Driving/Reverse");
+        steerAction = playerInput.actions.FindAction("Driving/Steer");
+
+        playerInput.actions.FindAction("Driving/PunchL").started += onPunchL;
+        playerInput.actions.FindAction("Driving/PunchL").performed += onPunchL;
+        playerInput.actions.FindAction("Driving/PunchL").canceled += onPunchL;
+        
+        playerInput.actions.FindAction("Driving/PunchR").started += onPunchR;
+        playerInput.actions.FindAction("Driving/PunchR").performed += onPunchR;
+        playerInput.actions.FindAction("Driving/PunchR").canceled += onPunchR;
+        
+        playerInput.actions.FindAction("Driving/Parry").started += onParry;
+        playerInput.actions.FindAction("Driving/Parry").performed += onParry;
+        playerInput.actions.FindAction("Driving/Parry").canceled += onParry;
+        
+        playerInput.actions.FindAction("Driving/Drift").started += onDrift;
+        playerInput.actions.FindAction("Driving/Drift").started += onDrift;
+        playerInput.actions.FindAction("Driving/Drift").canceled += onDrift;
+        
+        playerInput.actions.FindAction("Driving/Pause").started += onPause;
+
+    }
 }

@@ -9,7 +9,7 @@ public class KillZone : MonoBehaviour
         Player hit = other.gameObject.GetComponentInParent<Player>();
         if (hit != null)
         {
-            hit.combat.onFall();
+            hit.combat.Fall();
         }
     }
 }

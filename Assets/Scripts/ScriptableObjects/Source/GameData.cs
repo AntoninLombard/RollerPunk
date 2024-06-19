@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu]
 public class GameData : ScriptableObject
 {
     [Header("GAME VALUES")]
-    public List<Color> playerColors;
+    public GameObject playerPrefab;
+    [ColorUsage(true, true)] public List<Color> playerColors;
+    [ColorUsage(true, true)] public Color ballEmissiveColor;
+    public List<Object> tracks;
     
     [Header("COUNTDOWN")]
     [ColorUsage(true, true)]
@@ -21,6 +26,7 @@ public class GameData : ScriptableObject
     public AK.Wwise.Event crowdKill;
     public AK.Wwise.Event crowdStun;
     public AK.Wwise.Event crowdSteal;
+    public AK.Wwise.Event crowdFall;
     public AK.Wwise.Event scoreUpSound;
     public AK.Wwise.Event crowdWaiting;
     public AK.Wwise.Event crowdRaceStart;

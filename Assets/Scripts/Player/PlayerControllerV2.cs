@@ -17,16 +17,19 @@ public class PlayerController2 : MonoBehaviour
     [field: SerializeField] public bool isBoosting { get; private set; }
     [field: SerializeField] public bool isGrounded { get; private set; }
     [field: SerializeField] public bool isDrifting { get; private set; }
+    [field: SerializeField] public bool canBoost { get; private set; }
     [SerializeField] private int driftingSide;
     [SerializeField] private float speed = 0;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float driftInputValue = 0;
     [SerializeField] private float speedRatio;
-    
+    [SerializeField] private float rubberBanding;
 
-    
+
+
     [Header("CHARACTER PARTS")]
     [SerializeField] public Rigidbody rb;
+    [SerializeField] public Transform wheel;
     
     [field: Header("GROUND DETECTION")]
     [field: SerializeField] [field: Range(0.1f,1.0f)] public float groundRange { get; private set; }
@@ -43,6 +46,11 @@ public class PlayerController2 : MonoBehaviour
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
 
+    public delegate void BoostReady(int side); 
+    public event BoostReady boostReady;
+    public delegate void DriftCanceled(int side); 
+    public event DriftCanceled driftCanceled;
+    
     #endregion
 
     #region UNITY FUNCTIONS
@@ -60,7 +68,14 @@ public class PlayerController2 : MonoBehaviour
     {
         speedRatio = Vector3.Dot(rb.velocity,player.character.forward) / player.data.maxSpeed;
         if (isDrifting)
+        {
             driftDuration += Time.deltaTime;
+            if (driftDuration > controllerData.driftDurationForBoost && !canBoost)
+            {
+                canBoost = true;
+                boostReady?.Invoke(driftingSide);
+            }
+        }
         player.anime.animator.SetBool(Moving,speed > 1);
         player.anime.animator.SetFloat(Direction,player.input.steerInput);
         player.anime.animator.SetFloat(Brake,player.input.brakeInput);
@@ -72,6 +87,8 @@ public class PlayerController2 : MonoBehaviour
         controllerData.direction.SetValue(gameObject, player.input.steerInput);
         
         player.anime.animator.SetBool("AirTime", !isGrounded);
+        
+        UpdateWheel();
         
         isBraking = player.input.brakeInput != 0;
     }
@@ -253,7 +270,7 @@ public class PlayerController2 : MonoBehaviour
 
     Vector3 boost(float time)
     {
-        if (isBoosting)
+        if (isBoosting && isGrounded)
             return player.character.forward * (controllerData.boostAccel * time * controllerData.ballAccelMultiplier);
         return Vector3.zero;
     }
@@ -314,7 +331,9 @@ public class PlayerController2 : MonoBehaviour
     public void TeleportPlayer(Vector3 position, Quaternion rotation)
     {
         rb.velocity = Vector3.zero;
+        rb.position = position;
         player.character.position = position;
+        rb.rotation = rotation;
         player.character.rotation = rotation;
     }
     
@@ -341,9 +360,9 @@ public class PlayerController2 : MonoBehaviour
                 else
                 {
                     player.anime.animator.SetBool("Drift.L", true);
-                }
+                } 
+                driftInputValue  = Mathf.Max(player.input.driveInput,0.2f);
                 player.data.driftStartSound.Post(gameObject);
-                driftInputValue  = player.input.driveInput;
             }
         }
     }
@@ -355,25 +374,20 @@ public class PlayerController2 : MonoBehaviour
             if(driftingSide >0)
             {
                 player.anime.animator.SetBool("Drift.R", false);
-                if (speed > 0)
-                {
-                    player.data.driftStopSound.Post(gameObject);
-                }
             }
             else
             {
                 player.anime.animator.SetBool("Drift.L", false);
-                if (speed > 0)
-                {
-                    player.data.driftStopSound.Post(gameObject);
-                }
             }
             if (driftDuration > controllerData.driftDurationForBoost)
                 StartBoost();
+            driftCanceled?.Invoke(driftingSide);
+            canBoost = false;
             isDrifting = false;
             driftDuration = 0;
             driftingSide = 0;
             driftInputValue = 0f;
+            player.data.driftStopSound.Post(gameObject);
 
         }
     }
@@ -381,19 +395,35 @@ public class PlayerController2 : MonoBehaviour
 
     public void StartBoost()
     {
+        canBoost = false;
         StartCoroutine(Boost());
     }
     private IEnumerator Boost()
     {
+        player.anime.vfx.Boost();
         controllerData.burstSound.Post(gameObject);
         isBoosting = true;
-        maxSpeed =  controllerData.boostMaxSpeed;
+        maxSpeed = controllerData.boostMaxSpeed + rubberBanding;
         yield return new WaitForSeconds(controllerData.boostDuration);
         isBoosting = false;
-        maxSpeed = controllerData.maxSpeed;
+        maxSpeed = controllerData.maxSpeed + rubberBanding;
     }
-    
-    
+
+
+    public void Rubberbanding(int distanceToBall)
+    {
+        int rubberDistance = Mathf.Clamp(distanceToBall, 0, controllerData.rubberBandingRange);
+        float rubberFactor = controllerData.rubberBandingSpeed / controllerData.rubberBandingRange;
+        rubberBanding = rubberFactor * rubberDistance;
+        maxSpeed = controllerData.maxSpeed + rubberBanding;
+    }
+
+
+    void UpdateWheel()
+    { 
+        wheel.RotateAround(wheel.position,wheel.right, -(speed / (2f * Mathf.PI * 0.27f)) * 360f * Time.deltaTime);
+    }
+
     #endregion
-    
+
 }

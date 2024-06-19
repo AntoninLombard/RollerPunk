@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,52 +8,24 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    
-    [SerializeField] private TextMeshProUGUI textScore;
-    [SerializeField] private TextMeshProUGUI textPoints;
+    [SerializeField] public int side;
     [SerializeField] private TextMeshProUGUI textCountdown;
-    [SerializeField] private Slider slider;
-    [SerializeField] private Image sliderFill;
-    
-    
-    
-    public void OnScoreChange(int newScore)
-    {
-        textScore.text = "Score: " + newScore;
-        textPoints.text = "0";
-        slider.value = 0;
-    }
-    
-    public void OnPointsChange(int points,int multiplier)
-    {
-        textPoints.text = points + " x " + multiplier;
-    }
+    [SerializeField] private Player player;
+    [SerializeField] private NotificationPanel notification;
+    [SerializeField] private RankingPanel rankingLeft;
+    [SerializeField] private RankingPanel rankingRight;
 
-    public void OnDistanceTraveled(float distance, float distanceMax)
+    public void ToggleRankingSide(int side)
     {
-        slider.value = distance / distanceMax;
-    }
-
-    public void SetColor(Color color)
-    {
-        textScore.color = color;
-        textScore.color = color;
-        textCountdown.color = color;
-        sliderFill.color = color;
-    }
-
-
-    public void SetReady(bool isReady)
-    {
-        if (isReady)
+        if (side > 0)
         {
-            ToggleCountdown(true);
-            textCountdown.text = "READY";
+            rankingLeft.gameObject.SetActive(true);
+            rankingRight.gameObject.SetActive(false);
         }
         else
         {
-            ToggleCountdown(false);
+            rankingLeft.gameObject.SetActive(false);
+            rankingRight.gameObject.SetActive(true);
         }
     }
     
@@ -72,4 +45,12 @@ public class PlayerUI : MonoBehaviour
     {
         textCountdown.enabled = isVisible;
     }
+
+    public void SetColor(Color color)
+    {
+        rankingLeft.SetColor(color);
+        rankingRight.SetColor(color);
+        textCountdown.color = color;
+    }
+    
 }

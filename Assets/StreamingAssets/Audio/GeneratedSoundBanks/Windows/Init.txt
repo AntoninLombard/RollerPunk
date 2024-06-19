@@ -51,6 +51,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2412606308	Carpet			\Factory Acoustic Textures\Textures\Carpet	
 	2637588553	Tile			\Factory Acoustic Textures\Textures\Tile	
 	2928161104	Curtains			\Factory Acoustic Textures\Textures\Curtains	
+	3092587493	Pause			\Default Work Unit\Pause	
 	3195498748	Cork_Tiles			\Factory Acoustic Textures\Textures\Cork_Tiles	
 	3670307564	Drywall			\Factory Acoustic Textures\Textures\Drywall	
 	3991942870	Music			\Default Work Unit\Music	
@@ -88,9 +89,10 @@ Effect plug-ins	ID	Name	Type				Notes
 	1635194254	P3	Wwise Meter			
 	1635194255	P2	Wwise Meter			
 	1650796140	Bass_Boost	Wwise Parametric EQ			
+	2060121054	Middle_boost	Wwise Parametric EQ			
+	2297212548	Crowds_Master	Wwise Parametric EQ			
 	2376406340	Crowd_Ducking	Wwise Meter			
 	2747378390	Music_Fix	Wwise Parametric EQ			
-	3042377063	Drums_B	Wwise Parametric EQ			
 	4136302296	High_Shelf	Wwise Parametric EQ			
 
 Audio Devices	ID	Name	Type				Notes

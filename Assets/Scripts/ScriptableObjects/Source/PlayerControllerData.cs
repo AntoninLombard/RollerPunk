@@ -19,6 +19,8 @@ public class PlayerControllerData : ScriptableObject
     public float driftTurnOffset;
     public float driftTurnRate;
     public float driftDurationForBoost;
+    public float rubberBandingSpeed;
+    public int rubberBandingRange;
     [Range(0.0f,1.0f)] public float brakingRatio = 0;
     [Range(0.0f,1.0f)] public float drag;
     [Range(0.0f,1.0f)] public float airDrag;
@@ -44,6 +46,7 @@ public class PlayerControllerData : ScriptableObject
     
     [Header("SOUND")] 
     public AK.Wwise.Event startEngineSound;
+    public AK.Wwise.Event windUpSound;
     public AK.Wwise.Event punchSound; //move
     public AK.Wwise.Event balLPunchSound; //move
     public AK.Wwise.Event punchHitSound;
@@ -64,6 +67,7 @@ public class PlayerControllerData : ScriptableObject
     public AK.Wwise.Event driftStopSound;
     public AK.Wwise.Event respawnSound;
     public AK.Wwise.Event brakingSound;
+    public AK.Wwise.Event deathSound;
     public AK.Wwise.RTPC engineSpeed;
     public AK.Wwise.RTPC throttle;
     public AK.Wwise.RTPC direction;

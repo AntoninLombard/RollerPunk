@@ -25,13 +25,11 @@ public class Player : MonoBehaviour
     public AK.Wwise.Switch[] playerID;
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
 
-    private void Awake()
+    public void Init()
     {
         ToggleActive(false);
         ui.ToggleCountdown(false);
         isReady = false;
-        //combat.enabled = true;
-        GameManager.Instance.OnPlayerInstantiate(this);
         foreach (Material material in anime.animator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>()?.materials)
         {
             material.SetColor(EmissionColor,color);

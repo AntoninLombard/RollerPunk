@@ -24,9 +24,27 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Punch",
+                    "name": "Reverse",
+                    "type": "Button",
+                    "id": "cef94fcb-876d-42f1-9a46-824a7a771772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PunchL",
                     "type": "Button",
                     "id": "9d35ac15-4fc7-4385-8d1a-d682c8858f27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PunchR",
+                    "type": "Button",
+                    "id": "0a65a3c1-24f6-4bfd-ae95-ce6d4808e526",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -42,27 +60,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reverse",
-                    "type": "Button",
-                    "id": "cef94fcb-876d-42f1-9a46-824a7a771772",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ready",
-                    "type": "Button",
-                    "id": "fb45708b-8a83-43e2-b9a5-1923f999cc1d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Drift",
                     "type": "Button",
                     "id": "902a9632-19a6-4100-b9b3-a265a1b8bcc1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "f5086339-7a34-41ab-b068-81ddd0448677",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -95,22 +104,33 @@
                 {
                     "name": "",
                     "id": "20ded568-5e5a-44c8-9b4f-37678008251b",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Punch",
+                    "action": "PunchL",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "70f80c8f-c4aa-428b-b014-ac631d7a83bc",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b870798-8a2f-4cff-bb72-992f0151d9fd",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Drift",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -127,23 +147,23 @@
                 },
                 {
                     "name": "",
-                    "id": "c6b8005d-6b68-46d7-bd57-8ea79aa87443",
+                    "id": "a2e1d811-bca1-4bc4-9813-de765f9201c5",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Ready",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1b870798-8a2f-4cff-bb72-992f0151d9fd",
-                    "path": "<Gamepad>/leftShoulder",
+                    "id": "f7edffd1-4512-4747-863f-934e4b89c812",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Drift",
+                    "action": "PunchR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -161,6 +181,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "ae1349be-93db-4820-addc-35ed35a7fb51",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rebind",
+                    "type": "Button",
+                    "id": "7b6e65e9-bdb9-4ba4-9873-d8cf228a4f88",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -170,7 +208,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -183,6 +221,56 @@
                     "processors": "",
                     "groups": "",
                     "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf9b2753-fd38-48ec-b350-e812c05766a4",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08b8f073-36f2-4bfd-9ef4-46f920564ff8",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rebind",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Pause",
+            "id": "84227b01-b18d-4a75-98f6-85d5c6974426",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "9b19b317-c246-411a-b451-f6dd518d9913",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82da9922-3f7c-499d-876a-24a9bf6d7108",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

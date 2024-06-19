@@ -48,7 +48,6 @@ public class PlayerCombat : MonoBehaviour
     
     [Header("Parts")] 
     [SerializeField] private Transform ballAnchorPoint;
-    [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private ColliderBox punchLeftCollider;
     [SerializeField] private ColliderBox punchRightCollider;
 
@@ -57,8 +56,7 @@ public class PlayerCombat : MonoBehaviour
     
     
     
-    private static readonly int ParrySuccessR = Animator.StringToHash("ParrySuccess.R");
-    private static readonly int ParrySuccessL = Animator.StringToHash("ParrySuccess.L");
+    private static readonly int ParrySuccess = Animator.StringToHash("ParrySuccess");
     private static readonly int Parry = Animator.StringToHash("Parry");
     private static readonly int Taunt = Animator.StringToHash("Taunt");
     private static readonly int Stunned = Animator.StringToHash("Stunned");
@@ -67,13 +65,14 @@ public class PlayerCombat : MonoBehaviour
     private static readonly int WindUpL = Animator.StringToHash("WindUp.L");
     private static readonly int WindUpR = Animator.StringToHash("WindUp.R");
     private static readonly int Punch = Animator.StringToHash("Punch");
+    private static readonly int BallGrab = Animator.StringToHash("BallGrab");
 
 
     private void Awake()
     {
         //gamepad = (Gamepad)player.input.devices.Where(x => x.GetType() == gamepad.GetType() );
         OnHitByPunch.AddListener(onHitByPunch);
-        OnGrabbingBall.AddListener(onGrabbingBall);
+        OnGrabbingBall.AddListener(grabbingBall);
     }
 
     
@@ -81,11 +80,12 @@ public class PlayerCombat : MonoBehaviour
 
     #region INPUT EVENT CALLBACKS
 
-    public void StartPunch()
+    public void StartPunch(int side)
     {
         if (!isBusy)
         {
-            StartCoroutine(punch());
+            StartCoroutine(punch(side));
+            player.data.windUpSound.Post(gameObject);
         }
     }
     
@@ -93,9 +93,11 @@ public class PlayerCombat : MonoBehaviour
     {
         if (isWindingUpPunch)
         {
+            player.anime.CancelPunchWindUp();
             StartCoroutine(taunt());
         } else if (!(isTaunting || isRecovering || !isHoldingPunch || isStunned))
         {
+            player.anime.CancelPunchWindUp();
             StartCoroutine(punchRelease());
         }
     }
@@ -143,7 +145,7 @@ public class PlayerCombat : MonoBehaviour
     }
     
 
-    void onGrabbingBall()
+    void grabbingBall()
     {
         if (isStunned)
         {
@@ -151,24 +153,25 @@ public class PlayerCombat : MonoBehaviour
         }
         isHoldingBall = true;
         GameManager.Instance.ball.Toggle(false);
-        GameManager.Instance.ball.transform.SetParent(ballAnchorPoint);
-        GameManager.Instance.ball.transform.position = ballAnchorPoint.position;
+        GameManager.Instance.ball.SetEmissiveColor(player.color);
+        GameManager.Instance.ball.AttachTo(ballAnchorPoint);
         player.data.grabbingBallSound.Post(gameObject);
         GameManager.Instance.gameData.musicState[player.number].SetValue();
-        GameManager.Instance.OnBallGrabbed(gameObject.GetComponent<Player>());
+        GameManager.Instance.BallGrabbed(gameObject.GetComponent<Player>());
+        if (!player.combat.isBusy)
+        {
+            player.anime.animator.SetTrigger(BallGrab);
+        }
     }
     
 
-    public void onDeath(Player source)
+    public void Kill(Player source)
     {
         StartCoroutine(death(source));
     }
 
     public void onParryHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        particleSystem.Play();
         if(source.combat.isHoldingBall)
         {
             StartCoroutine(death(source));
@@ -186,10 +189,9 @@ public class PlayerCombat : MonoBehaviour
     #region COMBAT COROUTINES
 
     
-    IEnumerator punch()
+    IEnumerator punch(int punchSide)
     {
         ColliderBox colliderBox;
-        int punchSide = player.input.lastSteerSide;
         switch (punchSide)
         {
             case < 0:
@@ -205,10 +207,12 @@ public class PlayerCombat : MonoBehaviour
             default:
                 yield break;
         }
+        player.anime.StartPunchWindUp(punchSide);
         
         yield return new WaitForSeconds(player.data.punchWindUp);
         if (isTaunting || isRecovering || !isWindingUpPunch || isStunned)
         {
+            player.anime.CancelPunchWindUp();
             yield break;
         }
         isHoldingPunchLeft = punchSide < 0;
@@ -221,6 +225,7 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(player.data.punchHoldDuration);
         if (isTaunting || isRecovering || !isHoldingPunch || isStunned || isPunching)
         {
+            player.anime.CancelPunchWindUp();
             yield break;
         } 
         yield return punchRelease();
@@ -282,7 +287,8 @@ public class PlayerCombat : MonoBehaviour
         isWindingUpPunchLeft = false;
         isWindingUpPunchRight = false;
         isTaunting = true;
-        StopCoroutine(punch());
+        StopCoroutine(punch(1));
+        StopCoroutine(punch(-1));
         player.anime.animator.SetTrigger(Taunt);
         player.data.punchTauntSound.Post(gameObject);
         yield return new WaitForSeconds(player.data.tauntDuration);
@@ -313,11 +319,6 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator stun(Player source)
     {
-
-        if (source != null)
-        {
-            source.controller.StartBoost();
-        }
         if (player.controller.isDrifting)
         {
             player.controller.CancelDrift(false);
@@ -327,13 +328,12 @@ public class PlayerCombat : MonoBehaviour
             isHoldingBall = false;
             if (source != null)
             {
-                source.combat.onGrabbingBall();
-                GameManager.Instance.gameData.crowdSteal.Post(gameObject);
+                source.combat.grabbingBall();
 
             }
             else
             {
-                dropBall(player.character.transform);
+                dropBall();
             }
         }
         isStunned = true;
@@ -349,11 +349,6 @@ public class PlayerCombat : MonoBehaviour
     
     IEnumerator death(Player source)
     {
-        if (source != null)
-        {
-            source.controller.StartBoost();
-        }
-
         if (player.controller.isDrifting)
         {
             player.controller.CancelDrift(false);
@@ -364,25 +359,24 @@ public class PlayerCombat : MonoBehaviour
             if (source != null)
             {
                 GameManager.Instance.gameData.crowdSteal.Post(gameObject);
-                source.combat.onGrabbingBall();
+                source.combat.grabbingBall();
             }
             else
             {
-                dropBall(player.character.transform);
+                dropBall();
             }
         }
-        if(source == GameManager.Instance.ballHolder)
-            GameManager.Instance.OnBallKill();
+        if(source != null && source == GameManager.Instance.ballHolder)
+            GameManager.Instance.BallKill(player);
         isStunned = true;
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
-        player.anime.animator.SetTrigger(Stunned);
-        player.data.respawnSound.Post(GameManager.Instance.gameObject);
+        player.anime.Death();
+        player.data.deathSound.Post(gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
-        player.anime.animator.SetTrigger(GetUp);
-        player.data.gettingUpSound.Post(gameObject);
         isStunned = false;
         isInvincible = false;
+        player.anime.Respawn();
         GameManager.Instance.RespawnPlayer(player);
         player.data.respawnSound.Post(gameObject);
         yield return invincibility();
@@ -394,34 +388,34 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(player.data.invincibilityDuration);
         isInvincible = false;
     }
-    
+
+
+    public void Kill()
+    {
+        StartCoroutine(death(null));
+    }
     #endregion
     
     
     #region COMBAT HITS & COUNTERS
     
     
-    public void dropBall(Transform pos)
+    public void dropBall()
     {
         isHoldingBall = false;
-        GameManager.Instance.ball.Toggle(true);
-        GameManager.Instance.ball.transform.parent = null;
+        GameManager.Instance.BallDropped();
     }
 
     void punchHit(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.red;
-        particleSystem.Play();
-        if(source.combat.isHoldingBall)
+        player.data.punchHitSound.Post(gameObject);
+        if (source.combat.isHoldingBall)
         {
-            player.data.ballPunchHitSound.Post(gameObject);
             GameManager.Instance.gameData.crowdStun.Post(GameManager.Instance.gameObject);
             StartCoroutine(death(source));
         }
         else
         {
-            player.data.punchHitSound.Post(gameObject);
             StartCoroutine(stun(source));
         }
     }
@@ -429,9 +423,6 @@ public class PlayerCombat : MonoBehaviour
     
     void counter(Player source)
     {
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.white;
-        particleSystem.Play();
         player.data.punchCounterSound.Post(gameObject);
         player.anime.animator.SetTrigger(Countered);
         //StartCoroutine(stun(source));
@@ -439,38 +430,30 @@ public class PlayerCombat : MonoBehaviour
     
     void parry(Player source)
     {
-        int  dir = sourceDirection(source.character);
-        if (dir > 0) // RIGHT
-        {
-            player.anime.animator.SetTrigger(ParrySuccessR);
-        }
-        else if(dir < 0) // LEFT
-        {
-            player.anime.animator.SetTrigger(ParrySuccessL);
-        }
-        ParticleSystem.MainModule particleSystemMain = particleSystem.main;
-        particleSystemMain.startColor = Color.green;
-        particleSystem.Play();
+        player.anime.animator.SetTrigger(ParrySuccess);
         source.combat.onParryHit(player);
     }
     #endregion
 
-    public void onFall()
+    public void Fall()
     {
-        player.data.respawnSound.Post(GameManager.Instance.gameObject);
+        if (isHoldingBall)
+        {
+            GameManager.Instance.gameData.crowdFall.Post(GameManager.Instance.gameObject);
+            GameManager.Instance.gameData.musicState[4].SetValue();
+        }
         StartCoroutine(death(null));
-        GameManager.Instance.RespawnPlayer(player);
         player.data.startEngineSound.Post(gameObject);
-        GameManager.Instance.gameData.musicState[4].SetValue();
+
     }
 
-    int sourceDirection(Transform source)
-    {
-        Vector3 dir = source.position - player.character.position;
-        float value = Vector3.Dot(player.character.right, dir);
-        
-        return value > 0 ?  1 : -1;
-    }
+    // int sourceDirection(Transform source)
+    // {
+    //     Vector3 dir = source.position - player.character.position;
+    //     float value = Vector3.Dot(player.character.right, dir);
+    //     
+    //     return value > 0 ?  1 : -1;
+    // }
 
 
     public void ToggleInvincibility(bool isInvincible)

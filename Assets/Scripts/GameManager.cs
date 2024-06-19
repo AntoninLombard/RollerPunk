@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using AK.Wwise;
 using JetBrains.Annotations;
+using TMPro;
 using Random = UnityEngine.Random;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -14,17 +18,18 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public GameData gameData;
     [SerializeField] private ScoringData scoring;
-    
-    
-    [Header("Players")]
-    [SerializeField] private Dictionary<Player,int> players = new Dictionary<Player, int>();
+
+
+    [field: Header("Players")]
+    [field: SerializeField] public  Dictionary<Player,int> players {get ;private set; }
     [SerializeField] private int nbPlayer;
 
-    [Header("Gameplay")] 
+    [Header("Gameplay")]
+    [SerializeField] private bool isPaused;
     [SerializeField] private bool isRaceOn;
     [SerializeField] private float timer;
     [SerializeField] private RespawnPoint raceStart;
-    [SerializeField] private List<Checkpoint> checkpoints;
+    [SerializeField] public List<Checkpoint> checkpoints;
     [SerializeField] private List<RespawnPoint> respawnpoints;
 
     [Header("Visuals")]
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
     
     [field: Header("Ball & Ball holder")]
     [field: SerializeField] public BallScript ball { get; private set; }
+
+    [SerializeField] public Transform ballSpawn;
     [field: SerializeField] [CanBeNull] public Player ballHolder { get; private set; }
     [SerializeField] private Vector3 holderPreviousPosition;
     [SerializeField] private Vector3 holderPreviousForward;
@@ -47,7 +54,25 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private RTPC crowds;
     [SerializeField] private RTPC playerNumberRTPC;
-    
+
+    [Header("UI elements")]
+    [SerializeField] private GameObject miniMap;
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject endGame;
+    [SerializeField] private Camera winnerCamera;
+    [SerializeField] private TextMeshProUGUI winnerText;
+    public delegate void OnScoreChange(int score);
+    public delegate void OnPointsChange(int points,int multiplier);
+    public delegate void OnBallDropped();
+    public delegate void OnBallGrabbed(Player player);
+    public delegate void OnDistanceUpdate(float distanceTraveled, float distancePerPoint);
+    public delegate void OnKill(Player player);
+    public event OnScoreChange onScoreChange;
+    public event OnPointsChange onPointsChange;
+    public event OnBallDropped onBallDropped;
+    public event OnBallGrabbed onBallGrabbed;
+    public event OnDistanceUpdate onDistannceUpdate;
+    public event OnKill onKill;
     
     private static readonly int EmissiveColor01 = Shader.PropertyToID("_Emissive_color_01");
     private static readonly int EmissiveColor02 = Shader.PropertyToID("_Emissive_color_02");
@@ -55,29 +80,26 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        players = new Dictionary<Player, int>();
         if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         else
         {
             Destroy(this);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        
         currentMultiplier = 1;
         lastRespawnPoint = raceStart;
         gameData.crowdStart.Post(gameObject);
         gameData.crowdWaiting.Post(gameObject);
         startLightsMaterial = startLights.GetComponent<MeshRenderer>()?.materials[1];
-        
         startLightsMaterial.SetColor(EmissiveColor01,gameData.countDownColors[0]);
         startLightsMaterial.SetColor(EmissiveColor02,gameData.countDownColors[0]);
         startLightsMaterial.SetColor(EmissiveColor03,gameData.countDownColors[0]);
+        StartWaitForCountdown();
     }
 
     // Update is called once per frame
@@ -110,6 +132,7 @@ public class GameManager : MonoBehaviour
         {
             player.ToggleActive(false);
         }
+        EndGame();
     }
 
     public void OnPlayerInstantiate(Player player)
@@ -129,66 +152,84 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void OnScoring()
+    public void Scoring()
     {
         players[ballHolder] += cumulatedPoints * currentMultiplier;
-        ballHolder.ui.OnScoreChange(players[ballHolder]);
         gameData.crowdScoring.Post(gameObject);
         gameData.musicState[4].SetValue();
+        onScoreChange?.Invoke(players[ballHolder]);
+        
         if (players[ballHolder] > scoring.maxScore)
         {
             StopGame();
         }
     }
     
-    public void OnBallKill()
+    public void BallKill(Player killedPlayer)
     {
         kills++;
         gameData.crowdKill.Post(gameObject);
         if (kills > scoring.killMultipliatorThreshold)
         {
             currentMultiplier = scoring.killMultiplicatorValue;
-            ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+            onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
         }
+        onKill?.Invoke(killedPlayer);
     }
 
-    public void OnBallGrabbed(Player player)
+    public void BallGrabbed(Player player)
     {
         ballHolder = player;
         holderPreviousPosition = player.character.position;
         holderPreviousForward = player.character.forward;
+        onBallGrabbed?.Invoke(player);
     }
-
-    public void OnPlayerReady()
+    
+    public void BallDropped()
     {
-        int count = 0;
-        foreach (Player player in players.Keys)
-        {
-            if (player.isReady)
-            {
-                count++;
-            }
-        }
-
-        if (count == nbPlayer && !isRaceOn)
-        {
-            isRaceOn = true;
-            StartCoroutine(StartCountdown());
-        }
-
+        ballHolder = null;
+        ball.Toggle(true);
+        ball.Detach();
+        ball.SetEmissiveColor(gameData.ballEmissiveColor);
+        RespawnBall();
+        onBallDropped?.Invoke();
     }
+
+    // public void OnPlayerReady()
+    // {
+    //     int count = 0;
+    //     foreach (Player player in players.Keys)
+    //     {
+    //         if (player.isReady)
+    //         {
+    //             count++;
+    //         }
+    //     }
+    //
+    //     if (count == nbPlayer && !isRaceOn)
+    //     {
+    //         isRaceOn = true;
+    //         StartCoroutine(StartCountdown());
+    //     }
+    //
+    // }
 
     public void UpdateBallDistance()
     {
         if (ballHolder != null)
         {
             distanceTraveled += (ballHolder.character.position - holderPreviousPosition).magnitude * Vector3.Dot( holderPreviousForward,ballHolder.character.forward);
-            ballHolder.ui.OnDistanceTraveled(distanceTraveled,scoring.distancePerPoint);
+            if (cumulatedPoints == scoring.maxPoint)
+            {
+                onDistannceUpdate?.Invoke(1,1);
+                return;
+            }
+            onDistannceUpdate?.Invoke(distanceTraveled,scoring.distancePerPoint);
             if (distanceTraveled >= scoring.distancePerPoint)
             {
                 distanceTraveled %= scoring.distancePerPoint;
                 cumulatedPoints++;
-                ballHolder.ui.OnPointsChange(cumulatedPoints,currentMultiplier);
+                onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
                 gameData.score.SetGlobalValue(cumulatedPoints);
                 gameData.scoreUpSound.Post(gameObject);
             }
@@ -204,10 +245,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetBall()
     {
-        if(ballHolder != null)
-        {
-            ballHolder.ui.OnPointsChange(0, 0);
-        }
         ballHolder = null;
         distanceTraveled = 0;
         cumulatedPoints = 0;
@@ -241,14 +278,11 @@ public class GameManager : MonoBehaviour
         ballHolder = null;
         ball.transform.parent = null;
         int index = respawnpoints.IndexOf(lastRespawnPoint);
-        Transform pos = raceStart.transform;
+        Transform pos = lastRespawnPoint.ballSpawnPoint;
         int i = 1;
-        RespawnPoint currentRespawn = raceStart;
-        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn)
-        {
-            pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
-            i++;
-        }
+        while (i < respawnpoints.Count && !respawnpoints[(index + i) % respawnpoints.Count].isBallRespawn) { i++; } ;
+        pos = respawnpoints[(index + i) % respawnpoints.Count].ballSpawnPoint;
+        
         if(Physics.Raycast(pos.position, -pos.up, out RaycastHit hit, 8f))
         {
             ball.Toggle(true);
@@ -258,10 +292,25 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    
-    
-    
-    
+
+    public void CompareRespawnPoints(RespawnPoint respawnPoint, Player player)
+    {
+        int indexA = respawnpoints.IndexOf(respawnPoint);
+        int indexB = respawnpoints.IndexOf(lastRespawnPoint);
+        int N = respawnpoints.Count;
+        int distanceAB = (indexA - indexB + N) % N;
+        int distanceBA = (indexB - indexA + N) % N;
+        player.controller.Rubberbanding(Mathf.Min(distanceAB, distanceBA));
+    }
+
+
+void StartWaitForCountdown()
+    {
+        StartCoroutine(WaitForCountdown());
+        //AkSoundEngine.PostEvent("")
+    }
+
+
     #region COROUTINES
 
     IEnumerator StartCountdown()
@@ -322,5 +371,195 @@ public class GameManager : MonoBehaviour
         gameData.musicStart.Post(gameObject);
         gameData.crowdRaceStart.Post(gameObject);
     }
+
+    IEnumerator WaitForCountdown()
+    {
+        yield return new WaitForSeconds(5);
+        StartCoroutine(StartCountdown());
+    }
     #endregion
+
+    public void SpawnPlayer(PlayerData playerData)
+    {
+        GameObject playerGameObject = Instantiate(gameData.playerPrefab,null);
+        Player player = playerGameObject.GetComponent<Player>();
+        player.input.SetInput(playerData.input);
+        players.Add(player,0);
+        int layer = (int)Math.Log(player.data.playerLayer[nbPlayer], 2);
+        player.camera.gameObject.layer = layer;
+        foreach(LayerMask mask in player.data.playerLayer.FindAll(x => x != player.data.playerLayer[nbPlayer]))
+            player.camera.cullingMask -= player.camera.cullingMask & mask;
+        player.setPlayerID(nbPlayer);
+        player.number = playerData.nb;
+        player.color = playerData.color;
+        playerNumberRTPC.SetGlobalValue(nbPlayer);
+        nbPlayer++;
+        player.Init();
+        RespawnPlayer(player);
+        player.listener.SetVolumeOffset(nbPlayer);
+    }
+
+
+    public void SplitScreenCamera()
+    {
+        foreach (Player player in players.Keys)
+        {
+            float offsetX, offsetY, sizeX, sizeY;
+            if (nbPlayer == 1)
+            {
+                offsetX = 0;
+                offsetY = 0;
+                sizeX = 1;
+                sizeY = 1;
+            }
+            else if (nbPlayer == 2)
+            {
+                switch (player.number)
+                {
+                    case 0:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                    case 1:
+                        offsetX = 0.5f;
+                        offsetY = 0;
+                        break;
+                    default:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                }
+                sizeX = 0.5f;
+                sizeY = 1;
+            }
+            else
+            {
+                switch (player.number)
+                {
+                    case 0:
+                        offsetX = 0;
+                        offsetY = 0.5f;
+                        break;
+                    case 1:
+                        offsetX = 0.5f;
+                        offsetY = 0.5f;
+                        break;
+                    case 2:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                    case 3:
+                        offsetX = 0.5f;
+                        offsetY = 0;
+                        break;
+                    default:
+                        offsetX = 0;
+                        offsetY = 0;
+                        break;
+                }
+                sizeX = 0.5f;
+                sizeY = 0.5f;
+            }
+            player.camera.rect = new Rect(offsetX,offsetY,sizeX,sizeY);
+            player.ui.ToggleRankingSide(player.number % 2 == 0 ? 1 : -1);
+        }
+    }
+
+
+    public void TogglePause(bool isPaused)
+    {
+        Time.timeScale = isPaused ? 0 : 1;
+        this.isPaused = isPaused;
+        miniMap.SetActive(!isPaused);
+        menu.SetActive(isPaused);
+        AkSoundEngine.SetRTPCValue("Pause", isPaused? 1 :0);
+        foreach (var player in players.Keys)
+        {
+            if(this.isPaused)
+                player.input.playerInput.SwitchCurrentActionMap("Pause");
+            else
+            {
+                player.input.playerInput.SwitchCurrentActionMap("Driving");
+            }
+        }
+    }
+    
+    public void ToggleEndGame(bool isEndGame)
+    {
+        miniMap.SetActive(!isEndGame);
+        endGame.SetActive(isEndGame);
+        AkSoundEngine.SetRTPCValue("Pause", isEndGame? 1 :0);
+        foreach (var player in players.Keys)
+        {
+            if(isEndGame)
+                player.input.playerInput.SwitchCurrentActionMap("Pause");
+            else
+            {
+                player.input.playerInput.SwitchCurrentActionMap("Driving");
+            }
+        }
+        
+        foreach (var player in players.Keys)
+        {
+            player.camera.enabled = !isEndGame;
+        }
+
+        winnerCamera.enabled = isEndGame;
+        winnerCamera.transform.parent = null;
+    }
+
+    public void ReturnToMenu()
+    {
+        PlayerInputHandler playerInput = PlayerInputHandler.Instance;
+        Debug.Log(playerInput);
+        Time.timeScale = 1;
+        PlayerInputHandler.Instance.ClearPlayers();
+        GameObject toDestroy = PlayerInputHandler.Instance.gameObject;
+        Destroy(PlayerInputHandler.Instance);
+        Destroy(toDestroy);
+        AkSoundEngine.SetRTPCValue("Pause", 0);
+        SceneManager.LoadScene("MainMenu");
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
+    }
+
+
+    public void Restart()
+    {
+        lastRespawnPoint = raceStart;
+        ballHolder?.combat.dropBall();
+        ball.transform.position = ballSpawn.position;
+        ball.transform.rotation = ballSpawn.rotation;
+        List<Player> playersList = new List<Player>(players.Keys);
+        foreach (var player in playersList)
+        {
+            players[player] = 0;
+            onScoreChange?.Invoke(0);
+            player.combat.Kill();
+            player.ToggleActive(false);
+        }
+        
+        TogglePause(false);
+        StartWaitForCountdown();
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
+    }
+
+
+    public void EndGame()
+    {
+        ToggleEndGame(true);
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
+        foreach (var player in players.Keys)
+        {
+            player.combat.Kill();
+            player.ToggleActive(false);
+        }
+        Player winner = players.OrderByDescending(x => x.Value).First().Key;
+        winner.combat.OnGrabbingBall.Invoke();
+        winner.anime.StartVictoryPose();
+        winnerCamera.transform.parent = winner.character;
+        winnerCamera.transform.localPosition = 3 * winner.transform.forward + winner.transform.up * 2.5f;
+        winnerCamera.transform.LookAt(winner.character.transform.position + winner.character.transform.up,winner.character.transform.up);
+        winnerText.text = "Player " + winner.number+1 + " wins !";
+    }
+
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Checkpoint
+  - trailerCam
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - Player 2
   - Player 3
   - Player 4
-  - 
-  - 
+  - trailerCams
+  - PlayerUI
   - 
   - 
   - 

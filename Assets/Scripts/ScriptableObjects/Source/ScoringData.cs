@@ -10,4 +10,5 @@ public class ScoringData : ScriptableObject
     public int killMultipliatorThreshold;
     public int killMultiplicatorValue;
     public int maxScore;
+    public int maxPoint;
 }
