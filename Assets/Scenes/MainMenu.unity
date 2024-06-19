@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 522034215}
   - component: {fileID: 522034214}
   - component: {fileID: 522034213}
+  - component: {fileID: 522034216}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -287,6 +288,35 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &522034216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522034209}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3960617277065f740a1d1186617bd103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1001 &649408680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,36 +329,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerInputHandler
-      objectReference: {fileID: 0}
-    - target: {fileID: 781607484888702133, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2046365893}
-    - target: {fileID: 781607484888702133, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 649408683}
-    - target: {fileID: 781607484888702133, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1278701621}
-    - target: {fileID: 781607484888702133, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 2046365893}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
         type: 3}
@@ -345,31 +345,6 @@ PrefabInstance:
       propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2046365893}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: PlayWwiseEvent
-      objectReference: {fileID: 0}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: WwiseEventManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6429364767857338501, guid: c437a9cdd8f77af45aacf5016ae37d7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -425,18 +400,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c437a9cdd8f77af45aacf5016ae37d7e, type: 3}
---- !u!114 &649408683 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4639928928382156096, guid: c437a9cdd8f77af45aacf5016ae37d7e,
-    type: 3}
-  m_PrefabInstance: {fileID: 649408680}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0dfc7c03645e24086f85157e0e3152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &649408684 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 943573265854132325, guid: c437a9cdd8f77af45aacf5016ae37d7e,
