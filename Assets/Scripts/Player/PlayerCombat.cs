@@ -403,15 +403,14 @@ public class PlayerCombat : MonoBehaviour
 
     void punchHit(Player source)
     {
-        if(source.combat.isHoldingBall)
+        player.data.punchHitSound.Post(gameObject);
+        if (source.combat.isHoldingBall)
         {
-            player.data.ballPunchHitSound.Post(gameObject);
             GameManager.Instance.gameData.crowdStun.Post(GameManager.Instance.gameObject);
             StartCoroutine(death(source));
         }
         else
         {
-            player.data.punchHitSound.Post(gameObject);
             StartCoroutine(stun(source));
         }
     }

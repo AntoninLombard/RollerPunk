@@ -1100,8 +1100,8 @@ MonoBehaviour:
         guid: 0d141e2b114d4c4b9240ffa5bf4add48
       Path: Events\RP_Feedbacks\Checkpoint
       maxAttenuation: 0
-      maxDuration: 7.996166
-      minDuration: 7.996166
+      maxDuration: 7.752509
+      minDuration: 7.752509
     - name: Collision
       guid: ee5128c7eaed844aa55298747c68b800
       id: 1792046091

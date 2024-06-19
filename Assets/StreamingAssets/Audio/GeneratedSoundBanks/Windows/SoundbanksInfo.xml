@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7D6DE982-8F99-7637-9895-F6E527F93EFE}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{570BB411-7AE0-E446-B519-B6854436C239}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -320,7 +320,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{36273763-0C06-9B6E-B985-6A5ED4210491}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{AB72CED7-8C2F-5BB5-9578-54688E8C9A97}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -818,7 +818,7 @@
 				</File>
 				<File Id="333996775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CANON_BLOOD.wav</ShortName>
-					<CachePath>SFX/CANON_BLOOD_CEC72978.wem</CachePath>
+					<CachePath>SFX/CANON_BLOOD_B697A25F.wem</CachePath>
 				</File>
 				<File Id="339045206" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hachoir_Short.wav</ShortName>
@@ -1818,6 +1818,7 @@
 					<Plugin Id="771224584" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
 				<ShareSets>
+					<Plugin Id="577654394" Name="Canon" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="2171939413" Name="Dialog_Leveler_Hard" LibName="Wwise Compressor" LibId="7077891"/>
 					<Plugin Id="2537669967" Name="crowds" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
@@ -2136,7 +2137,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="612075679" Name="Checkpoint" DurationType="OneShot" DurationMin="7.996166" DurationMax="7.996166">
+				<Event Id="612075679" Name="Checkpoint" DurationType="OneShot" DurationMin="7.752509" DurationMax="7.752509">
 					<MediaRefs>
 						<MediaRef Id="333996775"/>
 						<MediaRef Id="339045206"/>
@@ -2146,6 +2147,7 @@
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
+							<PluginRef Id="577654394"/>
 							<PluginRef Id="4136302296"/>
 						</ShareSets>
 					</PluginRefs>
@@ -3983,5 +3985,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5F98E43B-6DF9-46BA-3811-B42461701A88}</FileHash>
+	<FileHash>{07F74673-F300-D3FA-72B3-AA42BCA3DC95}</FileHash>
 </SoundBanksInfo>
