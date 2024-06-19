@@ -15,4 +15,5 @@ MonoBehaviour:
   distancePerPoint: 450
   killMultipliatorThreshold: 5
   killMultiplicatorValue: 2
-  maxScore: 15
+  maxScore: 0
+  maxPoint: 5

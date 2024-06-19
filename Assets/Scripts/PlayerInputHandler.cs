@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInputHandler : MonoBehaviour
 {
    public static  PlayerInputHandler Instance;
-   
+   [SerializeField] private PlayerInputManager inputManager;
    [SerializeField] private List<PlayerInstance> players;
 
    ~PlayerInputHandler()
@@ -62,6 +62,7 @@ public class PlayerInputHandler : MonoBehaviour
       {
          return;
       }
+      inputManager.DisableJoining();
       foreach (var player in players)
       {
          GameManager.Instance.SpawnPlayer(player.playerData);

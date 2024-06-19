@@ -332,7 +332,9 @@ public class PlayerController2 : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         rb.position = position;
+        player.character.position = position;
         rb.rotation = rotation;
+        player.character.rotation = rotation;
     }
     
     

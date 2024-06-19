@@ -48,12 +48,26 @@ public class PlayerInputs : MonoBehaviour
 
     #region INPUT EVENT CALLBACKS
 
-    public void onPunch(InputAction.CallbackContext context)
+    public void onPunchL(InputAction.CallbackContext context)
     {
         if(context.started)
         {
             punchInput = true;
-            player.combat.StartPunch();
+            player.combat.StartPunch(-1);
+        }
+        else if(context.canceled)
+        {
+            punchInput = false;
+            player.combat.CancelPunch();
+        }
+    }
+    
+    public void onPunchR(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            punchInput = true;
+            player.combat.StartPunch(1);
         }
         else if(context.canceled)
         {
@@ -106,15 +120,22 @@ public class PlayerInputs : MonoBehaviour
         brakeAction = playerInput.actions.FindAction("Driving/Reverse");
         steerAction = playerInput.actions.FindAction("Driving/Steer");
 
-        playerInput.actions.FindAction("Driving/Punch").started += onPunch;
-        playerInput.actions.FindAction("Driving/Drift").started += onDrift;
+        playerInput.actions.FindAction("Driving/PunchL").started += onPunchL;
+        playerInput.actions.FindAction("Driving/PunchL").performed += onPunchL;
+        playerInput.actions.FindAction("Driving/PunchL").canceled += onPunchL;
+        
+        playerInput.actions.FindAction("Driving/PunchR").started += onPunchR;
+        playerInput.actions.FindAction("Driving/PunchR").performed += onPunchR;
+        playerInput.actions.FindAction("Driving/PunchR").canceled += onPunchR;
+        
         playerInput.actions.FindAction("Driving/Parry").started += onParry;
-        playerInput.actions.FindAction("Driving/Punch").performed += onPunch;
-        playerInput.actions.FindAction("Driving/Drift").performed += onDrift;
         playerInput.actions.FindAction("Driving/Parry").performed += onParry;
-        playerInput.actions.FindAction("Driving/Punch").canceled += onPunch;
-        playerInput.actions.FindAction("Driving/Drift").canceled += onDrift;
         playerInput.actions.FindAction("Driving/Parry").canceled += onParry;
+        
+        playerInput.actions.FindAction("Driving/Drift").started += onDrift;
+        playerInput.actions.FindAction("Driving/Drift").started += onDrift;
+        playerInput.actions.FindAction("Driving/Drift").canceled += onDrift;
+        
         playerInput.actions.FindAction("Driving/Pause").started += onPause;
 
     }

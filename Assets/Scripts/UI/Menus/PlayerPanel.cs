@@ -65,15 +65,15 @@ public class PlayerPanel : MonoBehaviour
         {
             case PromptState.Join:
                 waitingText.SetActive(false);
-                joinText.SetActive(true);
                 startText.SetActive(false);
                 readyText.SetActive(false);
+                joinText.SetActive(true);
                 break;
             case PromptState.Waiting:
-                waitingText.SetActive(true);
-                joinText.SetActive(false);
-                startText.SetActive(false);
-                readyText.SetActive(false);
+                joinText?.SetActive(false);
+                startText?.SetActive(false);
+                readyText?.SetActive(false);
+                waitingText?.SetActive(true);
                 break;
             case PromptState.Ready:
                 waitingText.SetActive(false);

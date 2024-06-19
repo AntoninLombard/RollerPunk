@@ -28,6 +28,7 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int TauntSpeed = Animator.StringToHash("TauntSpeed");
     private static readonly int Death1 = Animator.StringToHash("Death");
     private static readonly int Respawn1 = Animator.StringToHash("Respawn");
+    private static readonly int VictoryDance = Animator.StringToHash("VictoryDance");
 
 
     private void OnEnable()
@@ -94,4 +95,10 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetTrigger(Respawn1);
     }
+
+    public void StartVictoryPose()
+    {
+        animator.SetTrigger(VictoryDance);
+    }
+    
 }

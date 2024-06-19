@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using AK.Wwise;
 using JetBrains.Annotations;
+using TMPro;
 using Random = UnityEngine.Random;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
@@ -57,6 +58,9 @@ public class GameManager : MonoBehaviour
     [Header("UI elements")]
     [SerializeField] private GameObject miniMap;
     [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject endGame;
+    [SerializeField] private Camera winnerCamera;
+    [SerializeField] private TextMeshProUGUI winnerText;
     public delegate void OnScoreChange(int score);
     public delegate void OnPointsChange(int points,int multiplier);
     public delegate void OnBallDropped();
@@ -128,6 +132,7 @@ public class GameManager : MonoBehaviour
         {
             player.ToggleActive(false);
         }
+        EndGame();
     }
 
     public void OnPlayerInstantiate(Player player)
@@ -214,6 +219,11 @@ public class GameManager : MonoBehaviour
         if (ballHolder != null)
         {
             distanceTraveled += (ballHolder.character.position - holderPreviousPosition).magnitude * Vector3.Dot( holderPreviousForward,ballHolder.character.forward);
+            if (cumulatedPoints == scoring.maxPoint)
+            {
+                onDistannceUpdate?.Invoke(1,1);
+                return;
+            }
             onDistannceUpdate?.Invoke(distanceTraveled,scoring.distancePerPoint);
             if (distanceTraveled >= scoring.distancePerPoint)
             {
@@ -472,6 +482,30 @@ void StartWaitForCountdown()
             }
         }
     }
+    
+    public void ToggleEndGame(bool isEndGame)
+    {
+        miniMap.SetActive(!isEndGame);
+        endGame.SetActive(isEndGame);
+        AkSoundEngine.SetRTPCValue("Pause", isEndGame? 1 :0);
+        foreach (var player in players.Keys)
+        {
+            if(isEndGame)
+                player.input.playerInput.SwitchCurrentActionMap("Pause");
+            else
+            {
+                player.input.playerInput.SwitchCurrentActionMap("Driving");
+            }
+        }
+        
+        foreach (var player in players.Keys)
+        {
+            player.camera.enabled = !isEndGame;
+        }
+
+        winnerCamera.enabled = isEndGame;
+        winnerCamera.transform.parent = null;
+    }
 
     public void ReturnToMenu()
     {
@@ -497,10 +531,31 @@ void StartWaitForCountdown()
         foreach (var player in playersList)
         {
             players[player] = 0;
-            RespawnPlayer(player);
+            onScoreChange?.Invoke(0);
+            player.combat.Kill();
+            player.ToggleActive(false);
         }
+        
         TogglePause(false);
         StartWaitForCountdown();
+    }
+
+
+    public void EndGame()
+    {
+        ToggleEndGame(true);
+        foreach (var player in players.Keys)
+        {
+            player.combat.Kill();
+            player.ToggleActive(false);
+        }
+        Player winner = players.OrderByDescending(x => x.Value).First().Key;
+        winner.combat.OnGrabbingBall.Invoke();
+        winner.anime.StartVictoryPose();
+        winnerCamera.transform.parent = winner.character;
+        winnerCamera.transform.localPosition = 3 * winner.transform.forward + winner.transform.up * 2.5f;
+        winnerCamera.transform.LookAt(winner.character.transform.position + winner.character.transform.up,winner.character.transform.up);
+        winnerText.text = "Player " + winner.number+1 + " wins !";
     }
 
 }
