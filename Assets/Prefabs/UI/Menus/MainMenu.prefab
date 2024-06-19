@@ -14903,6 +14903,16 @@ MonoBehaviour:
   - {fileID: 7335961177310605388}
   uiModule: {fileID: 862867720600976554}
   multyEvent: {fileID: 9221892762638698243}
+  joiningSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 77f2bb43453ab9d438c8b29cf82fdb2c,
+      type: 2}
+  disableJoiningSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5eea2671b41627441aebfceb38f0ae19,
+      type: 2}
 --- !u!114 &6056853684927341398
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -108,24 +108,31 @@ public class Settings : MonoBehaviour
                 if (isPositive)
                 {
                     masterVolume = Mathf.Min(masterVolume + volumeSteps, 100);
+                    AkSoundEngine.SetRTPCValue("Master", masterVolume);
                 } else {
                     masterVolume = Mathf.Max(masterVolume - volumeSteps, 0);
+                    AkSoundEngine.SetRTPCValue("Master", masterVolume);
                 }
                 break;
             case 2:
                 if (isPositive)
                 {
                     musicVolume = Mathf.Min(musicVolume + volumeSteps, 100);
-                } else {
-                    musicVolume = Mathf.Max(musicVolume - volumeSteps, 0);
+                    AkSoundEngine.SetRTPCValue("Music", musicVolume);
                 }
+            else {
+                    musicVolume = Mathf.Max(musicVolume - volumeSteps, 0);
+                    AkSoundEngine.SetRTPCValue("Music", musicVolume);
+                 }
                 break;
             case 3:
                 if (isPositive)
                 {
                     sfxVolume = Mathf.Min(sfxVolume + volumeSteps, 100);
+                    AkSoundEngine.SetRTPCValue("SFX", sfxVolume);
                 } else {
                     sfxVolume = Mathf.Max(sfxVolume - volumeSteps, 0);
+                    AkSoundEngine.SetRTPCValue("SFX", sfxVolume);
                 }
                 break;
         }

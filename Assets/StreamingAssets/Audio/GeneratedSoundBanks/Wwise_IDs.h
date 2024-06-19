@@ -30,6 +30,8 @@ namespace AK
         static const AkUniqueID COLLISION = 1792046091U;
         static const AkUniqueID COUNTDOWN = 1505888634U;
         static const AkUniqueID COUNTER = 3051750219U;
+        static const AkUniqueID DEATH = 779278001U;
+        static const AkUniqueID DEATH_PLAYER = 3787035475U;
         static const AkUniqueID ENGINE_START = 2862969430U;
         static const AkUniqueID GETTING_UP = 22664301U;
         static const AkUniqueID HIT_BYBALL = 602331051U;
@@ -41,6 +43,8 @@ namespace AK
         static const AkUniqueID MUSICTST = 2856297975U;
         static const AkUniqueID PARRY = 3076648345U;
         static const AkUniqueID PARRY_SUCCESS = 1134971709U;
+        static const AkUniqueID PAUSE_OFF = 3967028551U;
+        static const AkUniqueID PAUSE_ON = 3537680115U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID PUNCH_MOVE = 3055455917U;
         static const AkUniqueID PUNCH_TAUNT = 1403211570U;
@@ -49,6 +53,8 @@ namespace AK
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
         static const AkUniqueID SKID_START = 2955095029U;
         static const AkUniqueID SKID_STOP = 1047898967U;
+        static const AkUniqueID STOP_ALL = 452547817U;
+        static const AkUniqueID STOP_MUSIC = 2837384057U;
         static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BACK = 2024222415U;
         static const AkUniqueID UI_CANCEL_JOIN = 716650455U;
@@ -160,6 +166,7 @@ namespace AK
         static const AkUniqueID BALL_DUCK = 3218320494U;
         static const AkUniqueID CROWD_DUCKING = 2376406340U;
         static const AkUniqueID DIRECTION = 16764168U;
+        static const AkUniqueID DOPPLER = 4247512087U;
         static const AkUniqueID ENVELOPPE_P1 = 256121077U;
         static const AkUniqueID ENVELOPPE_P2 = 256121078U;
         static const AkUniqueID ENVELOPPE_P3 = 256121079U;
@@ -175,6 +182,7 @@ namespace AK
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID SKID = 822292696U;
         static const AkUniqueID SKID_TIME = 33561276U;
+        static const AkUniqueID SOUND_PITCHER = 3956935188U;
         static const AkUniqueID SPEED = 640949982U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;

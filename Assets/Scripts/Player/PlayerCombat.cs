@@ -372,6 +372,7 @@ public class PlayerCombat : MonoBehaviour
         isInvincible = true;
         player.controller.rb.velocity = Vector3.zero;
         player.anime.Death();
+        player.data.deathSound.Post(gameObject);
         yield return new WaitForSeconds(player.data.stunDuration);
         isStunned = false;
         isInvincible = false;
@@ -407,15 +408,14 @@ public class PlayerCombat : MonoBehaviour
 
     void punchHit(Player source)
     {
-        if(source.combat.isHoldingBall)
+        player.data.punchHitSound.Post(gameObject);
+        if (source.combat.isHoldingBall)
         {
-            player.data.ballPunchHitSound.Post(gameObject);
             GameManager.Instance.gameData.crowdStun.Post(GameManager.Instance.gameObject);
             StartCoroutine(death(source));
         }
         else
         {
-            player.data.punchHitSound.Post(gameObject);
             StartCoroutine(stun(source));
         }
     }
@@ -444,7 +444,7 @@ public class PlayerCombat : MonoBehaviour
         }
         StartCoroutine(death(null));
         player.data.startEngineSound.Post(gameObject);
-        
+
     }
 
     // int sourceDirection(Transform source)

@@ -243,7 +243,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2638757641929518074}
         m_TargetAssemblyTypeName: WwiseEventManager, Assembly-CSharp
         m_MethodName: PlayWwiseEvent
         m_Mode: 3
@@ -327,9 +327,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2638757641929518074}
         m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
+        m_MethodName: PlayWwiseEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -691,7 +691,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2638757641929518074}
         m_TargetAssemblyTypeName: WwiseEventManager, Assembly-CSharp
         m_MethodName: PlayWwiseEvent
         m_Mode: 3
@@ -775,9 +775,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2638757641929518074}
         m_TargetAssemblyTypeName: UI_Animator, Assembly-CSharp
-        m_MethodName: UIPanelMove
+        m_MethodName: PlayWwiseEvent
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2371,6 +2371,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2638757641929518074}
+        m_TargetAssemblyTypeName: WwiseEventManager, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeselectEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2435,6 +2447,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ReturnToMenu
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2638757641929518074}
+        m_TargetAssemblyTypeName: WwiseEventManager, Assembly-CSharp
+        m_MethodName: PlayWwiseEvent
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3649,6 +3673,7 @@ GameObject:
   - component: {fileID: 6410731122397587943}
   - component: {fileID: 658550367965126364}
   - component: {fileID: 2594496308075984310}
+  - component: {fileID: 2638757641929518074}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -3800,6 +3825,35 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &2638757641929518074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276293384471311756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a05b5abc481bce4fa77d65ec38463f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0b535e35ec075394494d3fc392752e59,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 93d76558e4a9d6e49af736e214d6ab4d,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4832be21626879f45993bee1df0ce25c,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b8fbcf6ba4940394cb83615ddd695c0b,
+      type: 2}
 --- !u!1 &6123063254137887751
 GameObject:
   m_ObjectHideFlags: 0

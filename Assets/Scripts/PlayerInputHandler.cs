@@ -10,8 +10,10 @@ public class PlayerInputHandler : MonoBehaviour
    public static  PlayerInputHandler Instance;
    [SerializeField] private PlayerInputManager inputManager;
    [SerializeField] private List<PlayerInstance> players;
-
+   [SerializeField] private AK.Wwise.Event backSound;
+   
    ~PlayerInputHandler()
+    
    {
       //Instance = null;
       SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -39,6 +41,7 @@ public class PlayerInputHandler : MonoBehaviour
    
    public void OnPlayerLeave(PlayerInput playerInput)
    {
+      backSound.Post(gameObject);
       players.Remove(playerInput.GetComponent<PlayerInstance>());
    }
 

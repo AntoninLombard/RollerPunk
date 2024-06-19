@@ -307,9 +307,10 @@ public class GameManager : MonoBehaviour
 void StartWaitForCountdown()
     {
         StartCoroutine(WaitForCountdown());
+        //AkSoundEngine.PostEvent("")
     }
-    
-    
+
+
     #region COROUTINES
 
     IEnumerator StartCountdown()
@@ -518,6 +519,7 @@ void StartWaitForCountdown()
         Destroy(toDestroy);
         AkSoundEngine.SetRTPCValue("Pause", 0);
         SceneManager.LoadScene("MainMenu");
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
     }
 
 
@@ -538,12 +540,14 @@ void StartWaitForCountdown()
         
         TogglePause(false);
         StartWaitForCountdown();
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
     }
 
 
     public void EndGame()
     {
         ToggleEndGame(true);
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
         foreach (var player in players.Keys)
         {
             player.combat.Kill();
