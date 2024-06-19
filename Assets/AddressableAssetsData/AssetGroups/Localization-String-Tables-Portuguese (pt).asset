@@ -16,7 +16,13 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 4187c103f27cf8f4fb8b56103e516682
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: be24b6e5a20db3b43bdd39703c841fbb
+    m_Address: RollerpunkStrings_pt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 2e87c7dfdf2124b418fadabc3e369763, type: 2}
   m_SchemaSet:
