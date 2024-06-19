@@ -156,4 +156,5 @@ MonoBehaviour:
   backSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b8fbcf6ba4940394cb83615ddd695c0b,
+      type: 2}
