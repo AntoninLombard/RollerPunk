@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	78821808	UI_Save_close			\RP_UI\UI_Save_close	
 	103253078	Brake			\RP_Vehicule\Brake	
 	155540885	Ball_Punch_Move			\RP_Feedbacks\Ball_Punch_Move	
+	452547817	Stop_All			\RP_Feedbacks\Stop_All	
 	529746809	AMB_Ball_Steal			\RP_Ambiances\AMB_Ball_Steal	
 	562207882	AMB_Stun			\RP_Ambiances\AMB_Stun	
 	602331051	Hit_ByBall			\RP_Feedbacks\Hit_ByBall	

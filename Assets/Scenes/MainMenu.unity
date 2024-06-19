@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &202084906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 941888335871572821, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495424183991189594}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &480686698 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6520821601731432677, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495424183991189594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &522034209
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +137,7 @@ GameObject:
   - component: {fileID: 522034215}
   - component: {fileID: 522034214}
   - component: {fileID: 522034213}
+  - component: {fileID: 522034216}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -299,6 +288,36 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &522034216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522034209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3960617277065f740a1d1186617bd103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 35e1354aeecb43042944af6ce4db2ab7,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1001 &649408680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -779,12 +798,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &1089696604 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6405491519005459161, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495424183991189594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1278701621 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6673568464012533269, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
@@ -915,12 +928,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1769907385 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1553839341403695136, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495424183991189594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1943311223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5418434102653454753, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
@@ -939,15 +946,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48708b78de2cea48addccb29defdeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 2046365895}
+  uiModule: {fileID: 0}
   masterVolume: 80
   musicVolume: 80
   sfxVolume: 80
   arrowContainers:
-  - {fileID: 202084906}
-  - {fileID: 1769907385}
-  - {fileID: 1089696604}
-  - {fileID: 480686698}
+  - valueText: {fileID: 0}
+    nameText: {fileID: 0}
+    arrowL: {fileID: 0}
+    arrowR: {fileID: 0}
+    button: {fileID: 0}
+  - valueText: {fileID: 0}
+    nameText: {fileID: 0}
+    arrowL: {fileID: 0}
+    arrowR: {fileID: 0}
+    button: {fileID: 0}
+  - valueText: {fileID: 0}
+    nameText: {fileID: 0}
+    arrowL: {fileID: 0}
+    arrowR: {fileID: 0}
+    button: {fileID: 0}
+  - valueText: {fileID: 0}
+    nameText: {fileID: 0}
+    arrowL: {fileID: 0}
+    arrowR: {fileID: 0}
+    button: {fileID: 0}
 --- !u!114 &1943311233 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7126312488362492157, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
@@ -970,18 +993,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a05b5abc481bce4fa77d65ec38463f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2046365895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9221892762638698243, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495424183991189594}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16c6f78230fa4964a222622d8aae332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1495424183991189594

@@ -519,6 +519,7 @@ void StartWaitForCountdown()
         Destroy(toDestroy);
         AkSoundEngine.SetRTPCValue("Pause", 0);
         SceneManager.LoadScene("MainMenu");
+        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
     }
 
 

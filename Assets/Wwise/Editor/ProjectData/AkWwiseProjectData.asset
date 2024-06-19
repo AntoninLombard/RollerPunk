@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d4cddb47d436bc4e894af1dbc096e7b6
     GuidInternal: 
-    m_lastTime: -8584828088503788741
+    m_lastTime: -8584827909541405481
     List:
     - name: AMB
       guid: e05d0dbf8429dc4a97923dfce56405c6
@@ -785,7 +785,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c26fb1ebac2fa748ac3ce864ec3d13ef
     GuidInternal: 
-    m_lastTime: -8584828156545319571
+    m_lastTime: -8584827897532707042
     List:
     - name: Menu_Music
       guid: c192f640a9f93b488f0d42dc2ac09323
@@ -855,6 +855,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.5
       minDuration: 0.5
+    - name: Stop_Music
+      guid: 3bc92be4f99ce647b46087c1bdb65d40
+      id: 2837384057
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c26fb1ebac2fa748ac3ce864ec3d13ef
+      - ElementName: Stop_Music
+        ObjectType: 3
+        guid: 3bc92be4f99ce647b46087c1bdb65d40
+      Path: Events\Default Work Unit\Stop_Music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\RP_Ambiances.wwu
     PathAndIcons:
     - ElementName: Events
@@ -1032,7 +1049,7 @@ MonoBehaviour:
     ParentPath: Events\RP_Feedbacks
     guid: 516f2ed5ab46564aa5e73e5d2b3d4848
     GuidInternal: 
-    m_lastTime: -8584828157868716762
+    m_lastTime: -8584827889346032108
     List:
     - name: Ball_Grab
       guid: b0e7ece1ad48e34ea95c58477e177d4d
@@ -1374,6 +1391,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_All
+      guid: 5e9560e91656714e87be848fec2b10fe
+      id: 452547817
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: RP_Feedbacks
+        ObjectType: 12
+        guid: 516f2ed5ab46564aa5e73e5d2b3d4848
+      - ElementName: Stop_All
+        ObjectType: 3
+        guid: 5e9560e91656714e87be848fec2b10fe
+      Path: Events\RP_Feedbacks\Stop_All
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: test
       guid: 83dab06271a1b240ae325c19a4199637
       id: 3157003241
@@ -1436,8 +1470,8 @@ MonoBehaviour:
         guid: 735ebd66cf4e3541a6518727ff86cf94
       Path: Events\RP_UI\Pause_Off
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Pause_On
       guid: 1061c86be61d9d4bb7bf08d95b8f8b09
       id: 3537680115
@@ -1453,8 +1487,8 @@ MonoBehaviour:
         guid: 1061c86be61d9d4bb7bf08d95b8f8b09
       Path: Events\RP_UI\Pause_On
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Score_Up
       guid: 0b29a759e1f60847b0ec88a663f64cfc
       id: 3248278131
@@ -2727,7 +2761,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 020000000300000008000000120000002700000029000000
+  ExpandedFileSystemItemIds: 020000000300000008000000120000001300000027000000290000002b00000037000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

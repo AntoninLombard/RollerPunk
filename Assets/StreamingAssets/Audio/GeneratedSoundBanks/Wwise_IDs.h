@@ -53,6 +53,7 @@ namespace AK
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
         static const AkUniqueID SKID_START = 2955095029U;
         static const AkUniqueID SKID_STOP = 1047898967U;
+        static const AkUniqueID STOP_ALL = 452547817U;
         static const AkUniqueID STOP_MUSIC = 2837384057U;
         static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BACK = 2024222415U;
