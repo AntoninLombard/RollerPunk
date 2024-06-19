@@ -18,5 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tracks/Track_01.unity
     guid: 431233c04393a2045b8a41628dc7a85c
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 77ef8fe427b784140ac1a41288e5570f,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: c86fb215e7d004d42a3cc2129766c759,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 35f9b8e61f146c242a208a8b3da834b5,
       type: 2}
