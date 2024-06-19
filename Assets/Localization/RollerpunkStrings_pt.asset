@@ -17,7 +17,183 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: cec565cf4c6fe184dadb6d41884e3fb1, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 21733220352
+    m_Localized: "Come\xE7ar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50749415424
+    m_Localized: "Defini\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152650031104
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 191715778560
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 315389026304
+    m_Localized: 'Confirmar
+
+      <font="Gentlegear-Generic-Hollow SDF">2</font>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 747641413632
+    m_Localized: 'Cancelar
+
+      <font="Gentlegear-Generic-Hollow SDF">4</font>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16398967808000
+    m_Localized: 'Editar controlos
+
+      <font="Gentlegear-Generic-Hollow SDF">u</font>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19314961195008
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19373052305408
+    m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19456120496128
+    m_Localized: Volume principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19552501407744
+    m_Localized: "Volume m\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19628326035456
+    m_Localized: Volume efeitos sonoros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20032262676480
+    m_Localized: Guardar e sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20671256502272
+    m_Localized: Agradecimentos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21064610914304
+    m_Localized: Fechar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21306190241792
+    m_Localized: "PONTUA\xC7\xC3O <size=24>\u25CF \u25CB \u25CB</size>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23248228491264
+    m_Localized: Pega na bola <sprite name=Ball>, e corre para a baliza <sprite name=Check>
+      para marcar pontos !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23469851320320
+    m_Localized: "MULTIPLICADOR <size=24>\u25CF \u25CF \u25CB</size>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23574935412736
+    m_Localized: "Quanto mais conduzires com a bola, mais pontuar\xE1s! Colecciona
+      elimina\xE7\xF5es <sprite name=Kill> para marcar o dobro dos pontos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24296259231744
+    m_Localized: "CONTROLOS <size=24>\u25CF \u25CF \u25CF</size>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24508793004032
+    m_Localized: "Os controlos podem ser personalizados ao sair desta p\xE1gina."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24680352620544
+    m_Localized: "PERSONALIZA\xC7\xC3O DOS CONTROLOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24812821323776
+    m_Localized: "Acelera\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24862758707200
+    m_Localized: Travar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24919935459328
+    m_Localized: Derrapar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24952713945088
+    m_Localized: "Olhar para tr\xE1s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25035723415552
+    m_Localized: "Atacar \xE0 esquerda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25146700505088
+    m_Localized: "Atacar \xE0 direita"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25195274739712
+    m_Localized: Escudo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25229479288832
+    m_Localized: "Provoca\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25316578205696
+    m_Localized: Perfil de karting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25355471986688
+    m_Localized: Perfil de corrida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25412875231232
+    m_Localized: Perfil personalizado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25475194200064
+    m_Localized: "Acelera\xE7\xE3o autom\xE1tica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25597420412928
+    m_Localized: PREMIR <font="Gentlegear-Generic-Hollow SDF">2</font> PARA ENTRAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25732011433984
+    m_Localized: PREMIR <font="Gentlegear-Generic-Hollow SDF">2</font> QUANDO PRONTO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25939822419968
+    m_Localized: ESPERANDO...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25995287896064
+    m_Localized: LENDO...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26100476846080
+    m_Localized: ESCOLHA DO PILOTO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26173591953408
+    m_Localized: EDITANDO CONTROLOS...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26310955409408
+    m_Localized: PREMIR <font="Gentlegear-Generic-Hollow SDF">2</font> PARA INICIAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26451523313664
+    m_Localized: "CONFIGURA\xC7\xC3O..."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
