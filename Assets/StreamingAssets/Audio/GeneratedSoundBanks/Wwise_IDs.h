@@ -43,6 +43,8 @@ namespace AK
         static const AkUniqueID MUSICTST = 2856297975U;
         static const AkUniqueID PARRY = 3076648345U;
         static const AkUniqueID PARRY_SUCCESS = 1134971709U;
+        static const AkUniqueID PAUSE_OFF = 3967028551U;
+        static const AkUniqueID PAUSE_ON = 3537680115U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID PUNCH_MOVE = 3055455917U;
         static const AkUniqueID PUNCH_TAUNT = 1403211570U;
@@ -51,6 +53,7 @@ namespace AK
         static const AkUniqueID SETPLAYERNUMBER = 3687251531U;
         static const AkUniqueID SKID_START = 2955095029U;
         static const AkUniqueID SKID_STOP = 1047898967U;
+        static const AkUniqueID STOP_MUSIC = 2837384057U;
         static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BACK = 2024222415U;
         static const AkUniqueID UI_CANCEL_JOIN = 716650455U;

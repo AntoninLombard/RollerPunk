@@ -26,6 +26,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2618017047	Ball_Grab			\RP_Feedbacks\Ball_Grab	
 	2699564740	WindUp			\RP_Feedbacks\WindUp	
 	2774129122	UI_Select			\RP_UI\UI_Select	
+	2837384057	Stop_Music			\Default Work Unit\Stop_Music	
 	2856297975	Musictst			\Default Work Unit\Musictst	
 	2862969430	Engine_Start			\RP_Vehicule\Engine_Start	
 	2925030600	AMB_Drill_Done			\RP_Ambiances\AMB_Drill_Done	
@@ -39,10 +40,12 @@ Event	ID	Name			Wwise Object Path	Notes
 	3207324726	AMB_Fire			\RP_Ambiances\AMB_Fire	
 	3248278131	Score_Up			\RP_UI\Score_Up	
 	3265704427	AMB_RaceStart			\RP_Ambiances\AMB_RaceStart	
+	3537680115	Pause_On			\RP_UI\Pause_On	
 	3549005828	Hit_ByPunch			\RP_Feedbacks\Hit_ByPunch	
 	3687251531	setplayernumber			\RP_Feedbacks\setplayernumber	
 	3766921625	Burst			\RP_Feedbacks\Burst	
 	3787035475	Death_Player			\RP_Feedbacks\Death_Player	
+	3967028551	Pause_Off			\RP_UI\Pause_Off	
 	3991942870	Music			\Default Work Unit\Music	
 	4055567060	Menu_Music			\Default Work Unit\Menu_Music	
 	4252773102	UI_Join			\RP_UI\UI_Join	
@@ -202,7 +205,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	331689301	RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Inst\P1\P1_B_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_Guitar SOLO_164		5496
 	332084788	RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Drums\P2\P1_B_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo B_TOM FILL_164		5496
 	332488476	RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Drums\P1\P1_B\RP_M_DOWN THE POWER ROAD_P1_M002_B_PERC_164		5496
-	333996775	Canon	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CANON_BLOOD_B697A25F.wem		\Actor-Mixer Hierarchy\RP_World\Canon		176447
+	333996775	Canon	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\CANON_BLOOD_2D49B5E6.wem		\Actor-Mixer Hierarchy\RP_World\Canon		176447
 	339045206	Hachoir_Short	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Hachoir_Short_755F56E2.wem		\Actor-Mixer Hierarchy\RP_World\Hachoir_Short		184741
 	344242536	Doppler_03	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\Doppler_D4C1CC92.wem		\Actor-Mixer Hierarchy\RP_Feedbacks\Burst\Doppler_03		333879
 	351473515	RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164	C:\Users\ELE5f9ae61f9f92c\Documents\Wwise Projects\RP_WwiseProject_2024-03-18\.cache\Mac\SFX\P1\RP_M_DOWN THE POWER ROAD_P1_M002_STEMS\P1_A\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164_06143DC8.wem		\Interactive Music Hierarchy\Default Work Unit\Gameplay_Inst\P1\P1_A_Solo\RP_M_DOWN THE POWER ROAD_P1_M002_Solo A_Guitar_164		5496

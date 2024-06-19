@@ -80,11 +80,11 @@ public class PlayerCombat : MonoBehaviour
 
     #region INPUT EVENT CALLBACKS
 
-    public void StartPunch()
+    public void StartPunch(int side)
     {
         if (!isBusy)
         {
-            StartCoroutine(punch());
+            StartCoroutine(punch(side));
             player.data.windUpSound.Post(gameObject);
         }
     }
@@ -189,10 +189,9 @@ public class PlayerCombat : MonoBehaviour
     #region COMBAT COROUTINES
 
     
-    IEnumerator punch()
+    IEnumerator punch(int punchSide)
     {
         ColliderBox colliderBox;
-        int punchSide = player.input.lastSteerSide;
         switch (punchSide)
         {
             case < 0:
@@ -288,7 +287,8 @@ public class PlayerCombat : MonoBehaviour
         isWindingUpPunchLeft = false;
         isWindingUpPunchRight = false;
         isTaunting = true;
-        StopCoroutine(punch());
+        StopCoroutine(punch(1));
+        StopCoroutine(punch(-1));
         player.anime.animator.SetTrigger(Taunt);
         player.data.punchTauntSound.Post(gameObject);
         yield return new WaitForSeconds(player.data.tauntDuration);
@@ -388,7 +388,12 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(player.data.invincibilityDuration);
         isInvincible = false;
     }
-    
+
+
+    public void Kill()
+    {
+        StartCoroutine(death(null));
+    }
     #endregion
     
     

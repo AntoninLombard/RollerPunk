@@ -21,8 +21,7 @@ public class MenuManager : MonoBehaviour
     
     [SerializeField] private GameData gameData;
     [SerializeField] private int trackNb;
-
-    [SerializeField] private PlayerInputHandler inputHandler;
+    
     [SerializeField] private PlayerInputManager inputManager;
     [SerializeField] private int minNbPlayer;
     [SerializeField] private int maxNbPlayer;
@@ -72,7 +71,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             inputManager.DisableJoining();
-            inputHandler.ClearPlayers();
+            PlayerInputHandler.Instance.ClearPlayers();
         }
     }
 

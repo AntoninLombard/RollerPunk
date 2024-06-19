@@ -33,9 +33,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Punch",
+                    "name": "PunchL",
                     "type": "Button",
                     "id": "9d35ac15-4fc7-4385-8d1a-d682c8858f27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PunchR",
+                    "type": "Button",
+                    "id": "0a65a3c1-24f6-4bfd-ae95-ce6d4808e526",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -95,18 +104,18 @@
                 {
                     "name": "",
                     "id": "20ded568-5e5a-44c8-9b4f-37678008251b",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Punch",
+                    "action": "PunchL",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "70f80c8f-c4aa-428b-b014-ac631d7a83bc",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -144,6 +153,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7edffd1-4512-4747-863f-934e4b89c812",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PunchR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

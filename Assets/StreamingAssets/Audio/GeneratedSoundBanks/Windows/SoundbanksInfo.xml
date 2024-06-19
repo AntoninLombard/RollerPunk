@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{82A1B745-49AD-22B7-F1AC-1FFA3FFC51F5}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7F0D1903-F003-8CD8-78B5-F3FDDA197138}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -320,7 +320,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{2BE437E0-D9CB-E73A-827C-8C0364FB8B12}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4EF3C4B4-6DA7-A73D-11D2-A109978D3F06}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -818,7 +818,7 @@
 				</File>
 				<File Id="333996775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CANON_BLOOD.wav</ShortName>
-					<CachePath>SFX/CANON_BLOOD_B697A25F.wem</CachePath>
+					<CachePath>SFX/CANON_BLOOD_2D49B5E6.wem</CachePath>
 				</File>
 				<File Id="339045206" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hachoir_Short.wav</ShortName>
@@ -3136,6 +3136,9 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2322231365" Id="446279778" Name="Bed"/>
+					</ActionSetState>
 				</Event>
 				<Event Id="2856297975" Name="Musictst" DurationType="Infinite">
 					<MediaRefs>
@@ -3485,6 +3488,8 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="3967028551" Name="Pause_Off" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3537680115" Name="Pause_On" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3187507146" Name="Play_test" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<PluginRefs>
 						<Custom>
@@ -3787,6 +3792,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="2837384057" Name="Stop_Music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3157003241" Name="test" DurationType="OneShot" DurationMin="1.9143226" DurationMax="1.9143226">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -3985,5 +3991,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BC0AF3ED-6D08-BABF-7A63-071327663378}</FileHash>
+	<FileHash>{F92B2FA4-53A0-6B89-7A43-5FBF2A24B325}</FileHash>
 </SoundBanksInfo>

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,22 +6,37 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization.Settings;
 using TMPro;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.SceneManagement;
 
 public class Settings : MonoBehaviour
 {
-
+    [Serializable]
+    public struct Container
+    {
+        public TextMeshProUGUI valueText;
+        public TextMeshProUGUI nameText;
+        public Image arrowL;
+        public Image arrowR;
+        public Button button;
+    }
+    
+    public InputSystemUIInputModule uiModule;
     public int masterVolume = 80;
     public int musicVolume = 80;
     public int sfxVolume = 80;
     private int volumeSteps = 5;
-    public GameObject[] arrowContainers;
+    public Container[] arrowContainers;
     private int buttonToReselect;
     private bool isModifyingValues = false;
     private int currentLanguageIndex = 0;
     private int numberLocales;
 
-    public void Start() 
+    public void Start()
     {
+        uiModule.move.ToInputAction().performed += OnMovePressed;
+        uiModule.leftClick.ToInputAction().performed += OnConfirmPressed;
+        uiModule.cancel.ToInputAction().performed += OnReturnPressed;
         numberLocales = LocalizationSettings.AvailableLocales.Locales.Count;
     }
 
@@ -28,16 +44,16 @@ public class Settings : MonoBehaviour
     {
         buttonToReselect = containerID;
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
-        arrowContainers[containerID].GetComponent<RectTransform>().GetChild(1).GetComponent<Image>().enabled = true;
-        arrowContainers[containerID].GetComponent<RectTransform>().GetChild(3).GetComponent<Image>().enabled = true;
+        arrowContainers[containerID].arrowL.enabled = true;
+        arrowContainers[containerID].arrowR.enabled = true;
         isModifyingValues = true;
     }
 
     private void OnArrowContainerDeselect() 
     {
-        arrowContainers[buttonToReselect].GetComponent<Button>().Select();
-        arrowContainers[buttonToReselect].GetComponent<RectTransform>().GetChild(1).GetComponent<Image>().enabled = false;
-        arrowContainers[buttonToReselect].GetComponent<RectTransform>().GetChild(3).GetComponent<Image>().enabled = false;
+        arrowContainers[buttonToReselect].button.Select();
+        arrowContainers[buttonToReselect].arrowL.enabled = false;
+        arrowContainers[buttonToReselect].arrowR.enabled = false;
         isModifyingValues = false;
     }
 
@@ -134,8 +150,8 @@ public class Settings : MonoBehaviour
 
     public void UpdateValues()
     {
-        arrowContainers[1].GetComponent<RectTransform>().GetChild(2).GetComponent<TextMeshPro>().text = masterVolume.ToString();
-        arrowContainers[2].GetComponent<RectTransform>().GetChild(2).GetComponent<TextMeshPro>().text = musicVolume.ToString();
-        arrowContainers[3].GetComponent<RectTransform>().GetChild(2).GetComponent<TextMeshPro>().text = sfxVolume.ToString();
+        arrowContainers[1].valueText.text = masterVolume.ToString();
+        arrowContainers[2].valueText.text = musicVolume.ToString();
+        arrowContainers[3].valueText.text = sfxVolume.ToString();
     }   
 }
