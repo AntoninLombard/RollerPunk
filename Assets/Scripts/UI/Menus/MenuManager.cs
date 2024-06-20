@@ -66,8 +66,8 @@ public class MenuManager : MonoBehaviour
 
     public void PlayerJoinToggle(bool isActive)
     {
-        multyEvent.enabled = !isActive;
         uiModule.enabled = !isActive;
+        //multyEvent.enabled = !isActive;
         if (isActive)
             inputManager.EnableJoining();
         else

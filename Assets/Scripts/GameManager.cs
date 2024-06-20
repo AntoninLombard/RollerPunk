@@ -559,7 +559,7 @@ void StartWaitForCountdown()
         winnerCamera.transform.parent = winner.character;
         winnerCamera.transform.localPosition = 3 * winner.transform.forward + winner.transform.up * 2.5f;
         winnerCamera.transform.LookAt(winner.character.transform.position + winner.character.transform.up,winner.character.transform.up);
-        winnerText.text = "Player " + winner.number+1 + " wins !";
+        winnerText.text = "Player " + (winner.number+1).ToString() + " wins !";
     }
 
 }

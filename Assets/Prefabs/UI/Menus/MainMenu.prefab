@@ -14729,7 +14729,7 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 315b641b72aea7143a2e8b518f68b9af, type: 2}
   trackNb: 2
   inputManager: {fileID: 0}
-  minNbPlayer: 1
+  minNbPlayer: 2
   maxNbPlayer: 4
   playerNumber: 0
   players: []
@@ -31225,6 +31225,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 923996861156917440}
+    - targetCorrespondingSourceObject: {fileID: 8832698891991471222, guid: b91968bf358593c489ce7188bc9f350d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3359831369697645927}
     - targetCorrespondingSourceObject: {fileID: 1502487209401131290, guid: b91968bf358593c489ce7188bc9f350d,
         type: 3}
       insertIndex: -1
@@ -32150,7 +32154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 8424615583189365628}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!114 &6330206594232688084
@@ -32379,6 +32383,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8424615583189365628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8832698891991471222, guid: b91968bf358593c489ce7188bc9f350d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1044329222171764490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3359831369697645927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424615583189365628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9219321ba45a8d4eb04e80665b59f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: 4758334248291636207, guid: aa87e5eb3ee8d9d49b44a6ac050c9af7,
+    type: 3}
+  m_BindingId: 75442776-a2c5-4691-85c4-8b32e6e3b2ad
+  m_DisplayStringOptions: 0
+  m_ActionLabel: {fileID: 0}
+  m_BindingText: {fileID: 0}
+  m_RebindOverlay: {fileID: 0}
+  m_RebindText: {fileID: 0}
+  m_UpdateBindingUIEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_RebindStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_RebindStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &8425231178333427009 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8832224051579040331, guid: b91968bf358593c489ce7188bc9f350d,
