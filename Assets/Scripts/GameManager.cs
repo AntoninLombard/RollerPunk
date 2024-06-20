@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
         gameData.musicState[4].SetValue();
         onScoreChange?.Invoke(players[ballHolder]);
         
-        if (players[ballHolder] > scoring.maxScore)
+        if (players[ballHolder] >= scoring.maxScore)
         {
             StopGame();
         }
@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
         lastRespawnPoint = respawnPoint;
     }
 
-    private void ResetBall()
+    public void ResetBall()
     {
         ballHolder = null;
         distanceTraveled = 0;
@@ -253,6 +253,7 @@ public class GameManager : MonoBehaviour
         holderPreviousPosition = Vector3.zero;
         holderPreviousForward = Vector3.zero;
         gameData.score.SetGlobalValue(cumulatedPoints);
+        onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
     }
 
     public void RespawnPlayer(Player player)
@@ -518,8 +519,8 @@ void StartWaitForCountdown()
         Destroy(PlayerInputHandler.Instance);
         Destroy(toDestroy);
         AkSoundEngine.SetRTPCValue("Pause", 0);
-        SceneManager.LoadScene("MainMenu");
         AkSoundEngine.SetState("GamePlay_Music", "Game_End");
+        SceneManager.LoadScene(0,LoadSceneMode.Single);
     }
 
 
@@ -559,7 +560,7 @@ void StartWaitForCountdown()
         winnerCamera.transform.parent = winner.character;
         winnerCamera.transform.localPosition = 3 * winner.transform.forward + winner.transform.up * 2.5f;
         winnerCamera.transform.LookAt(winner.character.transform.position + winner.character.transform.up,winner.character.transform.up);
-        winnerText.text = "Player " + winner.number+1 + " wins !";
+        winnerText.text = "Player " + (winner.number+1).ToString() + " wins !";
     }
 
 }

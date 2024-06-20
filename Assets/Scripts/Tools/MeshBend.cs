@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Splines;
 
-#if UNITY_EDITOR
 [DisallowMultipleComponent]
 [RequireComponent(typeof(SplineContainer))]
 [ExecuteInEditMode]
@@ -423,4 +422,3 @@ public class MeshBend : MonoBehaviour
 //     }
 
 }
-#endif

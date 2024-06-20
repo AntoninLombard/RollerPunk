@@ -151,6 +151,7 @@ public class PlayerCombat : MonoBehaviour
         {
             return;
         }
+        GameManager.Instance.ResetBall();
         isHoldingBall = true;
         GameManager.Instance.ball.Toggle(false);
         GameManager.Instance.ball.SetEmissiveColor(player.color);

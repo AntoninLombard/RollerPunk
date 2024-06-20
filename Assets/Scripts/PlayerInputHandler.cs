@@ -12,10 +12,9 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] private List<PlayerInstance> players;
    [SerializeField] private AK.Wwise.Event backSound;
    
-   ~PlayerInputHandler()
-    
+   public void OnDisable()
    {
-      //Instance = null;
+      Instance = null;
       SceneManager.sceneLoaded -= OnSceneLoaded;
    }
    
@@ -50,11 +49,8 @@ public class PlayerInputHandler : MonoBehaviour
       while(transform.childCount > 0)
       {
          Transform child = transform.GetChild(0);
-         #if UNITY_EDITOR
          DestroyImmediate(child.gameObject);
-         #else
-         Destroy(child.gameObject);
-         #endif
+         //Destroy(child.gameObject);
       }
       players.Clear();
    }

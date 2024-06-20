@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class MenuManager : MonoBehaviour
 {
@@ -27,10 +28,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private int maxNbPlayer;
     [SerializeField] private int playerNumber;
     [SerializeField] private List<PlayerInstance> players;
-    [SerializeField] private Dictionary<PlayerInstance,PlayerPanel> panelBindings;
+    [SerializeField] public Dictionary<PlayerInstance,PlayerPanel> panelBindings;
 
     
     [SerializeField] private UI_Animator mainMenuPanel;
+    [SerializeField] private GameObject defaultButton;
     [field : SerializeField] private PlayerPanel[] playerPanels = new PlayerPanel[4];
     
     [SerializeField] private InputSystemUIInputModule uiModule;
@@ -64,8 +66,8 @@ public class MenuManager : MonoBehaviour
 
     public void PlayerJoinToggle(bool isActive)
     {
-        multyEvent.enabled = !isActive;
         uiModule.enabled = !isActive;
+        //multyEvent.enabled = !isActive;
         if (isActive)
             inputManager.EnableJoining();
         else
@@ -124,20 +126,21 @@ public class MenuManager : MonoBehaviour
         playerNumber = 0;
         mainMenuPanel.gameObject.SetActive(true);
         mainMenuPanel.UIFadeIn();
+        multyEvent.SetSelectedGameObject(defaultButton);
     }
 
     public void OnPlayerReady(PlayerInstance player)
     {
         player.ToggleReady(!player.playerData.isReady);
         PlayerPanel panel = panelBindings[player];
-        if (player.playerData.isReady)
-        {
-            panel.ChangePrompt(PlayerPanel.PromptState.Waiting);
-        }
-        else
-        {
-            panel.ChangePrompt(PlayerPanel.PromptState.Ready);
-        }
+        // if (player.playerData.isReady)
+        // {
+        //     panel.ChangePrompt(PlayerPanel.PromptState.Waiting);
+        // }
+        // else
+        // {
+        //     panel.ChangePrompt(PlayerPanel.PromptState.Ready);
+        // }
         if (playerNumber < minNbPlayer)
             return;
         int count = 0;
@@ -152,13 +155,28 @@ public class MenuManager : MonoBehaviour
         if (count != 0 && count == players.Count)
         {
             AkSoundEngine.SetState("Menu_Music", "None");
-            SceneManager.LoadScene(gameData.tracks[trackNb].name, LoadSceneMode.Single);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
+    }
+
+    public void OnPlayerNext(PlayerInstance player)
+    {
+        panelBindings[player].NextState();
+    }
+    
+    public void OnPlayerCancel(PlayerInstance player)
+    {
+        panelBindings[player].PreviousState();
     }
 
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OnPlayerRebind(PlayerInstance player)
+    {
+        panelBindings[player].ToggleRebindMenu();
     }
 }

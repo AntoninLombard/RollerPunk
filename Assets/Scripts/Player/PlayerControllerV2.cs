@@ -45,6 +45,7 @@ public class PlayerController2 : MonoBehaviour
     private static readonly int Brake = Animator.StringToHash("Brake");
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
+    private static readonly int AirTime = Animator.StringToHash("AirTime");
 
     public delegate void BoostReady(int side); 
     public event BoostReady boostReady;
@@ -86,7 +87,7 @@ public class PlayerController2 : MonoBehaviour
         controllerData.throttle.SetValue(gameObject, player.input.driveInput);
         controllerData.direction.SetValue(gameObject, player.input.steerInput);
         
-        player.anime.animator.SetBool("AirTime", !isGrounded);
+        player.anime.animator.SetBool(AirTime, !isGrounded);
         
         UpdateWheel();
         
@@ -215,6 +216,8 @@ public class PlayerController2 : MonoBehaviour
         Vector3 up = player.character.up;
         Vector3 right = player.character.right;
         Vector3 forward = player.character.forward;
+        
+        pos += up* 0.05f;
 
         int count = 0;
         Vector3 normal = Vector3.zero;

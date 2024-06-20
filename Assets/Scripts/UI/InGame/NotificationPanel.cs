@@ -34,10 +34,13 @@ public class NotificationPanel : MonoBehaviour
 
     void OnBallGrabbed(Player player)
     {
+        currentIcon = 0;
         foreach (var icon in killIcons)
         {
             icon.gameObject.SetActive(false);
         }
+
+        score.text = GameManager.Instance.players[player].ToString();
         points.text = "+0";
         SetColor(player.color);
         animator.UIFadeIn();
