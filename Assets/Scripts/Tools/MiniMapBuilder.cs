@@ -15,6 +15,7 @@ public class MiniMapBuilder : MonoBehaviour
     void OnEnable()
     {
         Spline fullSpline = new Spline();
+        if (splineContainers.Count == 0) return;
         foreach (SplineContainer splineContainer in splineContainers)
         {
             foreach (BezierKnot knot in splineContainer.Spline.Knots)

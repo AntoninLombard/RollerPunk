@@ -155,7 +155,7 @@ public class MenuManager : MonoBehaviour
         if (count != 0 && count == players.Count)
         {
             AkSoundEngine.SetState("Menu_Music", "None");
-            SceneManager.LoadScene(gameData.tracks[trackNb].name, LoadSceneMode.Single);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }
 

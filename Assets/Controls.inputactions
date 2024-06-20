@@ -224,17 +224,6 @@
                 },
                 {
                     "name": "",
-                    "id": "6f89caad-96fa-4731-a016-746c25ed7098",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Join",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "bf9b2753-fd38-48ec-b350-e812c05766a4",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",

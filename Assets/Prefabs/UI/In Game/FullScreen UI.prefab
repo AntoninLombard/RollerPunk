@@ -885,8 +885,8 @@ GameObject:
   - component: {fileID: 2712525632079245225}
   - component: {fileID: 5386825610711652630}
   - component: {fileID: 3660219077183013068}
-  - component: {fileID: 7193680634463902313}
   - component: {fileID: 3700227462537556866}
+  - component: {fileID: 7193680634463902313}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -980,22 +980,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7193680634463902313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347965050972905509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16c6f78230fa4964a222622d8aae332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
 --- !u!114 &3700227462537556866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1021,22 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &7193680634463902313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347965050972905509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16c6f78230fa4964a222622d8aae332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+  m_PlayerRoot: {fileID: 0}
 --- !u!1 &1508205951122373682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,7 +2143,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2507,7 +2507,6 @@ GameObject:
   - component: {fileID: 943306133934731637}
   - component: {fileID: 4694646984836751193}
   - component: {fileID: 176460815791626447}
-  - component: {fileID: 6722379445872902199}
   m_Layer: 5
   m_Name: Minimap
   m_TagString: Untagged
@@ -2544,9 +2543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputContainer: {fileID: 5137124885758952582}
   resolution: 0
-  splineContainers:
-  - {fileID: 0}
-  - {fileID: 0}
+  splineContainers: []
 --- !u!114 &5137124885758952582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3018,27 +3015,6 @@ MonoBehaviour:
   m_Capped: 1
   m_Radius: 7.18
   m_Range: {x: 0, y: 1}
---- !u!114 &6722379445872902199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4658435360613832603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a831516cfd16f40b5bfc86b5b37736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
-  scale: 1
-  playerIcon: {fileID: 2967579517972227204, guid: ca4f9c0e1cfad22458130e410e9e88c6,
-    type: 3}
-  ballIcon: {fileID: 2967579517972227204, guid: 9687ef0cd1cad5c45b554c3f5f74f8ea,
-    type: 3}
-  ballPos: {fileID: 0}
-  checkpointIcon: {fileID: 2967579517972227204, guid: f1660b7320468024d8f5a82e822561be,
-    type: 3}
 --- !u!1 &4753326710074061654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,9 +3161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputContainer: {fileID: 5030521958673844994}
   resolution: 0
-  splineContainers:
-  - {fileID: 0}
-  - {fileID: 0}
+  splineContainers: []
 --- !u!114 &5030521958673844994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3671,8 +3645,8 @@ GameObject:
   - component: {fileID: 8848729657112596989}
   - component: {fileID: 3042175265996100845}
   - component: {fileID: 6410731122397587943}
-  - component: {fileID: 658550367965126364}
   - component: {fileID: 2594496308075984310}
+  - component: {fileID: 658550367965126364}
   - component: {fileID: 2638757641929518074}
   m_Layer: 5
   m_Name: Menu
@@ -3768,22 +3742,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &658550367965126364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5276293384471311756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16c6f78230fa4964a222622d8aae332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
 --- !u!114 &2594496308075984310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3825,6 +3783,22 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &658550367965126364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276293384471311756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16c6f78230fa4964a222622d8aae332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+  m_PlayerRoot: {fileID: 0}
 --- !u!114 &2638757641929518074
 MonoBehaviour:
   m_ObjectHideFlags: 0
