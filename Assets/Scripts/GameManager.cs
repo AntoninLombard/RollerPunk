@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     {
         kills++;
         gameData.crowdKill.Post(gameObject);
-        if (kills > scoring.killMultipliatorThreshold)
+        if (kills >= scoring.killMultipliatorThreshold)
         {
             currentMultiplier = scoring.killMultiplicatorValue;
             onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
