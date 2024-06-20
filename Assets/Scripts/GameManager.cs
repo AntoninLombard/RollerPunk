@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
         gameData.musicState[4].SetValue();
         onScoreChange?.Invoke(players[ballHolder]);
         
-        if (players[ballHolder] > scoring.maxScore)
+        if (players[ballHolder] >= scoring.maxScore)
         {
             StopGame();
         }
@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
         lastRespawnPoint = respawnPoint;
     }
 
-    private void ResetBall()
+    public void ResetBall()
     {
         ballHolder = null;
         distanceTraveled = 0;
@@ -253,6 +253,7 @@ public class GameManager : MonoBehaviour
         holderPreviousPosition = Vector3.zero;
         holderPreviousForward = Vector3.zero;
         gameData.score.SetGlobalValue(cumulatedPoints);
+        onPointsChange?.Invoke(cumulatedPoints,currentMultiplier);
     }
 
     public void RespawnPlayer(Player player)
