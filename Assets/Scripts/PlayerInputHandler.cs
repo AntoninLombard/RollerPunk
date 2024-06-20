@@ -12,10 +12,9 @@ public class PlayerInputHandler : MonoBehaviour
    [SerializeField] private List<PlayerInstance> players;
    [SerializeField] private AK.Wwise.Event backSound;
    
-   ~PlayerInputHandler()
-    
+   public void OnDisable()
    {
-      //Instance = null;
+      Instance = null;
       SceneManager.sceneLoaded -= OnSceneLoaded;
    }
    
