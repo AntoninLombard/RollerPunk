@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -22,7 +20,7 @@ public class NotificationPanel : MonoBehaviour
         animator.UIFadeOut();
     }
 
-    void OnEnable()
+    void Awake()
     {
         GameManager.Instance.onBallGrabbed += OnBallGrabbed;
         GameManager.Instance.onBallDropped += OnBallDropped;
@@ -31,6 +29,26 @@ public class NotificationPanel : MonoBehaviour
         GameManager.Instance.onPointsChange += OnPointsChange;
         GameManager.Instance.onKill += OnKill;
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.onBallGrabbed -= OnBallGrabbed;
+        GameManager.Instance.onBallDropped -= OnBallDropped;
+        GameManager.Instance.onDistannceUpdate -= OnDistannceUpdate;
+        GameManager.Instance.onScoreChange -= OnScoreChange;
+        GameManager.Instance.onPointsChange -= OnPointsChange;
+        GameManager.Instance.onKill -= OnKill;
+    }
+
+    // void OnDisable()
+    // {
+    //     GameManager.Instance.onBallGrabbed -= OnBallGrabbed;
+    //     GameManager.Instance.onBallDropped -= OnBallDropped;
+    //     GameManager.Instance.onDistannceUpdate -= OnDistannceUpdate;
+    //     GameManager.Instance.onScoreChange -= OnScoreChange;
+    //     GameManager.Instance.onPointsChange -= OnPointsChange;
+    //     GameManager.Instance.onKill -= OnKill;
+    // }
 
     void OnBallGrabbed(Player player)
     {
