@@ -59,7 +59,7 @@ public class NotificationPanel : MonoBehaviour
         }
 
         score.text = GameManager.Instance.players[player].ToString();
-        points.text = "+0";
+        points.text = "+" + GameManager.Instance.cumulatedPoints;
         SetColor(player.color);
         animator.UIFadeIn();
         animator.UIPanelMove(1);

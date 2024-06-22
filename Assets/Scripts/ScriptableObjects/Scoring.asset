@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c814782b1632d564f8eebb9184b36ab8, type: 3}
   m_Name: Scoring
   m_EditorClassIdentifier: 
-  distancePerPoint: 450
+  distancePerPoint: 350
   killMultipliatorThreshold: 5
   killMultiplicatorValue: 2
-  maxScore: 15
+  maxScore: 8
   maxPoint: 5

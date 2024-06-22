@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] [CanBeNull] public Player ballHolder { get; private set; }
     [SerializeField] private Vector3 holderPreviousPosition;
     [SerializeField] private Vector3 holderPreviousForward;
-    [SerializeField] private float distanceTraveled = 0;
-    [SerializeField] private int cumulatedPoints;
-    [SerializeField] private int kills;
-    [SerializeField] private int currentMultiplier;
+    [SerializeField] public float distanceTraveled = 0;
+    [SerializeField] public int cumulatedPoints;
+    [SerializeField] public int kills;
+    [SerializeField] public int currentMultiplier;
     [field: SerializeField] [CanBeNull] public RespawnPoint lastRespawnPoint { get; private set; }
     
 
@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour
     {
         ballHolder = null;
         distanceTraveled = 0;
-        cumulatedPoints = 0;
+        cumulatedPoints = 1;
         currentMultiplier = 1;
         kills = 0;
         holderPreviousPosition = Vector3.zero;

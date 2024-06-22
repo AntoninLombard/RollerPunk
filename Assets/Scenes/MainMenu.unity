@@ -2569,6 +2569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6673568464012533269, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
         type: 3}
+      propertyPath: minNbPlayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673568464012533269, guid: 9e691c0e0b26ad9489d1e4eb0d65d452,
+        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 649408684}
