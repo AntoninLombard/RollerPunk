@@ -35,15 +35,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 315389026304
-    m_Localized: Valider <font="Gentlegear-Generic-Hollow SDF">2</font>
+    m_Localized: Valider <font="Gentlegear">3</font>
     m_Metadata:
       m_Items: []
   - m_Id: 747641413632
-    m_Localized: Annuler <font="Gentlegear-Generic-Hollow SDF">4</font>
+    m_Localized: Annuler <font="Gentlegear">2</font>
     m_Metadata:
       m_Items: []
   - m_Id: 16398967808000
-    m_Localized: "Modifier les contr\xF4les <font=\"Gentlegear-Generic-Hollow SDF\">u</font>"
+    m_Localized: "Modifier les contr\xF4les <font=\"Gentlegear\"><</font>"
     m_Metadata:
       m_Items: []
   - m_Id: 19314961195008
@@ -79,25 +79,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21306190241792
-    m_Localized: "SCORE  <size=24>\u25CF \u25CB \u25CB</size>"
+    m_Localized: COMMENT GAGNER (1/6)
     m_Metadata:
       m_Items: []
   - m_Id: 23248228491264
-    m_Localized: Prend la balle <sprite name=Ball>, et fonce dans un but <sprite
+    m_Localized: Prends la balle <sprite name=Ball>, et fonce dans un but <sprite
       name=Check> pour marquer des points !
     m_Metadata:
       m_Items: []
   - m_Id: 23469851320320
-    m_Localized: "MULTIPLICATEUR  <size=24>\u25CF \u25CF \u25CB</size>"
+    m_Localized: MULTIPLICATEUR (2/6)
     m_Metadata:
       m_Items: []
   - m_Id: 23574935412736
-    m_Localized: Rouler longtemps avec la balle donne plus de points ! Tuer <sprite
-      name=Kill> permet de doubler les points !
+    m_Localized: "Roule avec la balle pour remplir le multiplicateur et gagner plus
+      de points d'un coup ! Le multiplicateur retourne \xE0 z\xE9ro si tu tombe ou
+      perd la balle."
     m_Metadata:
       m_Items: []
   - m_Id: 24296259231744
-    m_Localized: "CONTR\xD4LES  <size=24>\u25CF \u25CF \u25CF</size>"
+    m_Localized: "CONTR\xD4LES (6/6)"
     m_Metadata:
       m_Items: []
   - m_Id: 24508793004032
@@ -157,11 +158,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 25597420412928
-    m_Localized: <font="Gentlegear-Generic-Hollow SDF">2</font> POUR REJOINDRE
+    m_Localized: <font="Gentlegear">3</font> POUR REJOINDRE
     m_Metadata:
       m_Items: []
   - m_Id: 25732011433984
-    m_Localized: "<font=\"Gentlegear-Generic-Hollow SDF\">2</font> PR\xCAT !"
+    m_Localized: "<font=\"Gentlegear\">3</font> PR\xCAT !"
     m_Metadata:
       m_Items: []
   - m_Id: 25939822419968
@@ -181,11 +182,39 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26310955409408
-    m_Localized: <font="Gentlegear-Generic-Hollow SDF">2</font> POUR COMMENCER
+    m_Localized: <font="Gentlegear">3</font> POUR COMMENCER
     m_Metadata:
       m_Items: []
   - m_Id: 26451523313664
     m_Localized: REGLAGES...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5852989241745408
+    m_Localized: ATTAQUER (3/6)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5853295056838656
+    m_Localized: Maintiens un bouton d'attaque pour taper et voler la balle ! Taper
+      un bouclier renvoie l'attaque.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5858955240726528
+    m_Localized: "S\xC9RIE DE MORTS (4/6)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859239656480768
+    m_Localized: En tenant la balle, attaquer ou utiliser un bouclier contre une
+      attaque permet de tuer les autres ! Accumule 5 morts pour doubler ton multiplicateur
+      !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859746282266624
+    m_Localized: MOURIR (5/6)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859845293006848
+    m_Localized: "Apr\xE8s une mort, tu r\xE9appara\xEEt juste derri\xE8re la balle
+      ! S'auto-d\xE9truire peut permettre de revenir \xE0 l'assaut plus vite."
     m_Metadata:
       m_Items: []
   references:

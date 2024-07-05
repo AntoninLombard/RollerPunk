@@ -35,15 +35,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 315389026304
-    m_Localized: Confirm <font="Gentlegear-Generic-Hollow SDF">2</font>
+    m_Localized: Confirm <font="Gentlegear">3</font>
     m_Metadata:
       m_Items: []
   - m_Id: 747641413632
-    m_Localized: Cancel <font="Gentlegear-Generic-Hollow SDF">4</font>
+    m_Localized: Cancel <font="Gentlegear">2</font>
     m_Metadata:
       m_Items: []
   - m_Id: 16398967808000
-    m_Localized: Edit controls <font="Gentlegear-Generic-Hollow SDF">u</font>
+    m_Localized: Edit controls <font="Gentlegear"><</font>
     m_Metadata:
       m_Items: []
   - m_Id: 19314961195008
@@ -79,25 +79,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21306190241792
-    m_Localized: "SCORING  <size=24>\u25CF \u25CB \u25CB</size>"
+    m_Localized: HOW TO WIN (1/6)
     m_Metadata:
       m_Items: []
   - m_Id: 23248228491264
-    m_Localized: Grab the ball <sprite name=Ball>, then drive into a checkpoint <sprite
+    m_Localized: Grab the ball <sprite name=Ball>, then drive into a goal <sprite
       name=Check> to score points!
     m_Metadata:
       m_Items: []
   - m_Id: 23469851320320
-    m_Localized: "MULTIPLIER  <size=24>\u25CF \u25CF \u25CB</size>"
+    m_Localized: MULTIPLIER (2/6)
     m_Metadata:
       m_Items: []
   - m_Id: 23574935412736
-    m_Localized: The more you drive with the ball, the more you'll score! Collect
-      kills <sprite name=Kill> to double points!
+    m_Localized: Drive around with the ball to fill the multiplier and get more points
+      when scoring! The multiplier gets reset if you fall or lose the ball.
     m_Metadata:
       m_Items: []
   - m_Id: 24296259231744
-    m_Localized: "CONTROLS  <size=24>\u25CF \u25CF \u25CF</size>"
+    m_Localized: CONTROLS (6/6)
     m_Metadata:
       m_Items: []
   - m_Id: 24508793004032
@@ -159,11 +159,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 25597420412928
-    m_Localized: PRESS <font="Gentlegear-Generic-Hollow SDF">2</font> TO JOIN
+    m_Localized: PRESS <font="Gentlegear">3</font> TO JOIN
     m_Metadata:
       m_Items: []
   - m_Id: 25732011433984
-    m_Localized: PRESS <font="Gentlegear-Generic-Hollow SDF">2</font> WHEN READY
+    m_Localized: PRESS <font="Gentlegear">3</font> WHEN READY
     m_Metadata:
       m_Items: []
   - m_Id: 25939822419968
@@ -183,11 +183,38 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26310955409408
-    m_Localized: PRESS <font="Gentlegear-Generic-Hollow SDF">2</font> TO START
+    m_Localized: PRESS <font="Gentlegear">3</font> TO START
     m_Metadata:
       m_Items: []
   - m_Id: 26451523313664
     m_Localized: SETTING UP...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5852989241745408
+    m_Localized: ATTACKING (3/6)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5853295056838656
+    m_Localized: Hold the attack buttons to punch and steal the ball! Hitting a shield
+      returns the attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5858955240726528
+    m_Localized: KILLSTREAK (4/6)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859239656480768
+    m_Localized: When you hold the ball, attacking or shielding attacks will kill
+      other players! Collect 5 kills to double your multiplier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859746282266624
+    m_Localized: DEATH (5/6)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859845293006848
+    m_Localized: When you die, you respawn right behind the ball! You can self-destruct
+      to catch up quickly if necessary.
     m_Metadata:
       m_Items: []
   references:

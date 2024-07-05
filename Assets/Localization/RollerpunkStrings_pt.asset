@@ -37,19 +37,19 @@ MonoBehaviour:
   - m_Id: 315389026304
     m_Localized: 'Confirmar
 
-      <font="Gentlegear-Generic-Hollow SDF">2</font>'
+      <font="Gentlegear">3</font>'
     m_Metadata:
       m_Items: []
   - m_Id: 747641413632
     m_Localized: 'Cancelar
 
-      <font="Gentlegear-Generic-Hollow SDF">4</font>'
+      <font="Gentlegear">2</font>'
     m_Metadata:
       m_Items: []
   - m_Id: 16398967808000
     m_Localized: 'Editar controlos
 
-      <font="Gentlegear-Generic-Hollow SDF">u</font>'
+      <font="Gentlegear"><</font>'
     m_Metadata:
       m_Items: []
   - m_Id: 19314961195008
@@ -85,25 +85,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21306190241792
-    m_Localized: "PONTUA\xC7\xC3O <size=24>\u25CF \u25CB \u25CB</size>"
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 23248228491264
-    m_Localized: Pega na bola <sprite name=Ball>, e corre para a baliza <sprite name=Check>
-      para marcar pontos !
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 23469851320320
-    m_Localized: "MULTIPLICADOR <size=24>\u25CF \u25CF \u25CB</size>"
+    m_Localized: MULTIPLICADOR (2/6)
     m_Metadata:
       m_Items: []
   - m_Id: 23574935412736
-    m_Localized: "Quanto mais conduzires com a bola, mais pontuar\xE1s! Colecciona
-      elimina\xE7\xF5es <sprite name=Kill> para marcar o dobro dos pontos!"
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 24296259231744
-    m_Localized: "CONTROLOS <size=24>\u25CF \u25CF \u25CF</size>"
+    m_Localized: CONTROLOS (6/6)
     m_Metadata:
       m_Items: []
   - m_Id: 24508793004032
@@ -163,11 +161,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 25597420412928
-    m_Localized: PREMIR <font="Gentlegear-Generic-Hollow SDF">2</font> PARA ENTRAR
+    m_Localized: PREMIR <font="Gentlegear">3</font> PARA ENTRAR
     m_Metadata:
       m_Items: []
   - m_Id: 25732011433984
-    m_Localized: PREMIR <font="Gentlegear-Generic-Hollow SDF">2</font> QUANDO PRONTO
+    m_Localized: PREMIR <font="Gentlegear">3</font> QUANDO PRONTO
     m_Metadata:
       m_Items: []
   - m_Id: 25939822419968
@@ -187,11 +185,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26310955409408
-    m_Localized: PREMIR <font="Gentlegear-Generic-Hollow SDF">2</font> PARA INICIAR
+    m_Localized: PREMIR <font="Gentlegear">3</font> PARA INICIAR
     m_Metadata:
       m_Items: []
   - m_Id: 26451523313664
     m_Localized: "CONFIGURA\xC7\xC3O..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5852989241745408
+    m_Localized: ATACAR (3/6)
     m_Metadata:
       m_Items: []
   references:

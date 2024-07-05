@@ -183,6 +183,30 @@ MonoBehaviour:
     m_Key: Settings instruction
     m_Metadata:
       m_Items: []
+  - m_Id: 5852989241745408
+    m_Key: Attacking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5853295056838656
+    m_Key: Attacking explanation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5858955240726528
+    m_Key: Killstreak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859239656480768
+    m_Key: Killstreak explanation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859746282266624
+    m_Key: Death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5859845293006848
+    m_Key: Death explanation
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
