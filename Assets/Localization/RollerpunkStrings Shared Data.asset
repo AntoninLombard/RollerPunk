@@ -207,6 +207,14 @@ MonoBehaviour:
     m_Key: Death explanation
     m_Metadata:
       m_Items: []
+  - m_Id: 6853058380226560
+    m_Key: Match settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6853834364215296
+    m_Key: Ruleset
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -217,6 +217,14 @@ MonoBehaviour:
       ! S'auto-d\xE9truire peut permettre de revenir \xE0 l'assaut plus vite."
     m_Metadata:
       m_Items: []
+  - m_Id: 6853058380226560
+    m_Localized: "R\xE9glages du match"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6853834364215296
+    m_Localized: "R\xE8gles"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
