@@ -199,7 +199,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8039996671975424
-    m_Localized: '[track A]'
+    m_Localized: Tournament Terrain
     m_Metadata:
       m_Items: []
   - m_Id: 5853295056838656
@@ -250,7 +250,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8040018780151808
-    m_Localized: '[track B]'
+    m_Localized: 8-Loop Deathzone
     m_Metadata:
       m_Items: []
   - m_Id: 8040498738552832

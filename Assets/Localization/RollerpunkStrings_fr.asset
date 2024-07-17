@@ -199,7 +199,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5858955240726528
-    m_Localized: "S\xC9RIE DE MORTS (4/6)"
+    m_Localized: "S\xC9RIE D'ELIMINATIONS (4/6)"
     m_Metadata:
       m_Items: []
   - m_Id: 5859239656480768
@@ -242,11 +242,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8039996671975424
-    m_Localized: '[track A]'
+    m_Localized: Tournament Terrain
     m_Metadata:
       m_Items: []
   - m_Id: 8040018780151808
-    m_Localized: '[track B]'
+    m_Localized: 8-Loop Deathzone
     m_Metadata:
       m_Items: []
   - m_Id: 8040498738552832
