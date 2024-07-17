@@ -199,7 +199,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5858955240726528
-    m_Localized: "S\xC9RIE D'ELIMINATIONS (4/6)"
+    m_Localized: "S\xC9RIE D'\xC9LIMINATIONS (4/6)"
     m_Metadata:
       m_Items: []
   - m_Id: 5859239656480768
@@ -213,7 +213,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5859845293006848
-    m_Localized: "Apr\xE8s une mort, tu r\xE9appara\xEEt juste derri\xE8re la balle
+    m_Localized: "Apr\xE8s une mort, tu r\xE9appara\xEEs juste derri\xE8re la balle
       ! S'auto-d\xE9truire peut permettre de revenir \xE0 l'assaut plus vite."
     m_Metadata:
       m_Items: []
