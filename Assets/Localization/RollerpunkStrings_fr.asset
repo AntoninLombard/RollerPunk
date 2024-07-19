@@ -253,6 +253,14 @@ MonoBehaviour:
     m_Localized: Circuit
     m_Metadata:
       m_Items: []
+  - m_Id: 10847058259382272
+    m_Localized: Attaquer / feinter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10850273612828672
+    m_Localized: Tourner
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
