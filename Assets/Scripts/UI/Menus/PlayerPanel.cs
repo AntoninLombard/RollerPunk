@@ -17,6 +17,9 @@ public class PlayerPanel : MonoBehaviour
         Tutorial1,
         Tutorial2,
         Tutorial3,
+        Tutorial4,
+        Tutorial5,
+        Tutorial6,
         WaitReady,
         Ready,
         Rebind
@@ -48,6 +51,9 @@ public class PlayerPanel : MonoBehaviour
     [SerializeField] private GameObject tutorial1;
     [SerializeField] private GameObject tutorial2;
     [SerializeField] private GameObject tutorial3;
+    [SerializeField] private GameObject tutorial4;
+    [SerializeField] private GameObject tutorial5;
+    [SerializeField] private GameObject tutorial6;
 
     [SerializeField] private GameObject rebindMenu;
     
@@ -75,6 +81,15 @@ public class PlayerPanel : MonoBehaviour
                 ChangeState(PanelState.Tutorial3);
                 break;
             case PanelState.Tutorial3:
+                ChangeState(PanelState.Tutorial4);
+                break;
+            case PanelState.Tutorial4:
+                ChangeState(PanelState.Tutorial5);
+                break;
+            case PanelState.Tutorial5:
+                ChangeState(PanelState.Tutorial6);
+                break;
+            case PanelState.Tutorial6:
                 ChangeState(PanelState.WaitReady);
                 break;
             case PanelState.WaitReady:
@@ -110,8 +125,17 @@ public class PlayerPanel : MonoBehaviour
             case PanelState.Tutorial3:
                 ChangeState(PanelState.Tutorial2);
                 break;
-            case PanelState.WaitReady:
+            case PanelState.Tutorial4:
                 ChangeState(PanelState.Tutorial3);
+                break;
+            case PanelState.Tutorial5:
+                ChangeState(PanelState.Tutorial4);
+                break;
+            case PanelState.Tutorial6:
+                ChangeState(PanelState.Tutorial5);
+                break;
+            case PanelState.WaitReady:
+                ChangeState(PanelState.Tutorial6);
                 break;
             case PanelState.Ready:
                 ChangeState(PanelState.WaitReady);
@@ -155,6 +179,18 @@ public class PlayerPanel : MonoBehaviour
             case PanelState.Tutorial3:
                 ChangePrompt(PromptState.Next);
                 tutorial3.SetActive(true);
+                break;
+            case PanelState.Tutorial4:
+                ChangePrompt(PromptState.Next);
+                tutorial4.SetActive(true);
+                break;
+            case PanelState.Tutorial5:
+                ChangePrompt(PromptState.Next);
+                tutorial5.SetActive(true);
+                break;
+            case PanelState.Tutorial6:
+                ChangePrompt(PromptState.Next);
+                tutorial6.SetActive(true);
                 break;
             case PanelState.WaitReady:
                 ChangePrompt(PromptState.Ready);
@@ -222,6 +258,9 @@ public class PlayerPanel : MonoBehaviour
         tutorial1.SetActive(isActive);
         tutorial2.SetActive(isActive);
         tutorial3.SetActive(isActive);
+        tutorial4.SetActive(isActive);
+        tutorial5.SetActive(isActive);
+        tutorial6.SetActive(isActive);
         rebindMenu.SetActive(isActive);
     }
 

@@ -291,6 +291,13 @@ public class GameManager : MonoBehaviour
             ball.transform.position = hit.point + hit.normal;
             ball.transform.rotation = pos.rotation;
         }
+        // else
+        // {
+        //     ball.Toggle(true);
+        //     ball.transform.parent = null;
+        //     ball.transform.position = pos.position;
+        //     ball.transform.rotation = pos.rotation;
+        // }
         
     }
 

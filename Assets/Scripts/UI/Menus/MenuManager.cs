@@ -32,6 +32,7 @@ public class MenuManager : MonoBehaviour
 
     
     [SerializeField] private UI_Animator mainMenuPanel;
+    [SerializeField] private UI_Animator gameSettingPanel;
     [SerializeField] private GameObject defaultButton;
     [field : SerializeField] private PlayerPanel[] playerPanels = new PlayerPanel[4];
     
@@ -154,8 +155,11 @@ public class MenuManager : MonoBehaviour
 
         if (count != 0 && count == players.Count)
         {
-            AkSoundEngine.SetState("Menu_Music", "None");
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
+            gameSettingPanel.gameObject.SetActive(true);
+            gameSettingPanel.UIFadeIn();
+            uiModule.enabled = true;
+            //StartGame(1);
+            //TODO trigger UI to pick track here 
         }
     }
 
@@ -178,5 +182,11 @@ public class MenuManager : MonoBehaviour
     public void OnPlayerRebind(PlayerInstance player)
     {
         panelBindings[player].ToggleRebindMenu();
+    }
+
+    public void StartGame(int track_nb)
+    {
+        AkSoundEngine.SetState("Menu_Music", "None");
+        SceneManager.LoadScene(1 + track_nb, LoadSceneMode.Single);
     }
 }
