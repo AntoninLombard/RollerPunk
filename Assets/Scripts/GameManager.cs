@@ -526,7 +526,7 @@ void StartWaitForCountdown()
         Destroy(PlayerInputHandler.Instance);
         Destroy(toDestroy);
         AkSoundEngine.SetRTPCValue("Pause", 0);
-        AkSoundEngine.SetState("GamePlay_Music", "Game_End");
+        //AkSoundEngine.SetState("GamePlay_Music", "Game_End");
         SceneManager.LoadScene(0,LoadSceneMode.Single);
     }
 

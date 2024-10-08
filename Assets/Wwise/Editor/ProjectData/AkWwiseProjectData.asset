@@ -950,7 +950,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: cb21c75b8de40746a5030060c2403e35
       Path: Events\RP_Ambiances\AMB_Fire
-      maxAttenuation: 50
+      maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
     - name: AMB_Kill
@@ -2761,7 +2761,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584908118906775808
     List: []
-  ExpandedFileSystemItemIds: 02000000130000002b000000
+  ExpandedFileSystemItemIds: 0200000009000000130000002b000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

@@ -320,7 +320,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{BF5C93BA-1974-B283-9F42-7D3F5F606A1C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{16CA29EB-55CB-B23E-044C-CF800F0FA249}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -1880,7 +1880,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="3207324726" Name="AMB_Fire" MaxAttenuation="50" DurationType="Infinite">
+				<Event Id="3207324726" Name="AMB_Fire" MaxAttenuation="40" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="633649452"/>
 					</MediaRefs>
@@ -3992,5 +3992,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{54CE1E20-81D9-4150-0C4C-BC1E347FAED0}</FileHash>
+	<FileHash>{5F04167A-535D-9D2D-1E84-A3904E06ACDC}</FileHash>
 </SoundBanksInfo>
